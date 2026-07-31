@@ -1,0 +1,408 @@
+{
+  "policy": {
+    "min_distance_m": 0.6,
+    "near_objects_have_no_direction_label": true
+  },
+  "sample_count": 15,
+  "eligible_count": 9,
+  "filtered_count": 6,
+  "distance_validation_pass_count": 15,
+  "samples": [
+    {
+      "recognition_status": "eligible",
+      "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
+      "take_name": "sfu_cooking_007_3",
+      "frame": 10890,
+      "camera": "cam01",
+      "object_id": "oyster sauce bottle_0",
+      "distance_m": 1.521424797412529,
+      "min_distance_m": 0.6,
+      "spatial_relation": {
+        "lateral": "right",
+        "longitudinal": "behind",
+        "vertical": "slightly_above"
+      },
+      "distance_validation": {
+        "world_direct_m": 1.5214247974125286,
+        "human_components_m": 1.521424797412529,
+        "agreement_residual_m": 4.440892098500626e-16,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.3484375762982158,
+          "hip_width_m": 0.1922767059419416,
+          "torso_length_m": 0.5655770171578496,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "eligible",
+      "take_uid": "35bfade9-8ead-46a4-b2f0-cdcfb86df1d6",
+      "take_name": "iiith_cooking_32_1",
+      "frame": 750,
+      "camera": "cam02",
+      "object_id": "stainless salt container_0",
+      "distance_m": 1.1890917747340624,
+      "min_distance_m": 0.6,
+      "spatial_relation": {
+        "lateral": "left",
+        "longitudinal": "behind",
+        "vertical": "above"
+      },
+      "distance_validation": {
+        "world_direct_m": 1.1890917747340621,
+        "human_components_m": 1.1890917747340624,
+        "agreement_residual_m": 2.220446049250313e-16,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.3550754504229427,
+          "hip_width_m": 0.19676670556932602,
+          "torso_length_m": 0.5744174619881565,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "filtered_near_or_invalid",
+      "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+      "take_name": "sfu_cooking_010_1",
+      "frame": 9540,
+      "camera": "cam05",
+      "object_id": "cooking oil bottle_0",
+      "distance_m": 0.4188376300281209,
+      "min_distance_m": 0.6,
+      "spatial_relation": null,
+      "distance_validation": {
+        "world_direct_m": 0.4188376300281208,
+        "human_components_m": 0.4188376300281209,
+        "agreement_residual_m": 1.1102230246251565e-16,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.42428558548329004,
+          "hip_width_m": 0.14486983534536405,
+          "torso_length_m": 0.5430961051016884,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "eligible",
+      "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+      "take_name": "iiith_cooking_30_1",
+      "frame": 9030,
+      "camera": "cam02",
+      "object_id": "stainless dinner plate_0",
+      "distance_m": 1.0610600750774053,
+      "min_distance_m": 0.6,
+      "spatial_relation": {
+        "lateral": "same_lateral_position",
+        "longitudinal": "behind",
+        "vertical": "below"
+      },
+      "distance_validation": {
+        "world_direct_m": 1.0610600750774053,
+        "human_components_m": 1.0610600750774053,
+        "agreement_residual_m": 0.0,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.3408718787934796,
+          "hip_width_m": 0.1808142302559222,
+          "torso_length_m": 0.5388670146022273,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "filtered_near_or_invalid",
+      "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+      "take_name": "iiith_cooking_30_1",
+      "frame": 9510,
+      "camera": "cam02",
+      "object_id": "tawa pan_0",
+      "distance_m": 0.549810463402118,
+      "min_distance_m": 0.6,
+      "spatial_relation": null,
+      "distance_validation": {
+        "world_direct_m": 0.5498104634021179,
+        "human_components_m": 0.549810463402118,
+        "agreement_residual_m": 1.1102230246251565e-16,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.35877840913642484,
+          "hip_width_m": 0.213498920225957,
+          "torso_length_m": 0.5129699691459656,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "eligible",
+      "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+      "take_name": "sfu_cooking_008_3",
+      "frame": 6450,
+      "camera": "cam04",
+      "object_id": "salad cream bottle_0",
+      "distance_m": 0.9433859077549308,
+      "min_distance_m": 0.6,
+      "spatial_relation": {
+        "lateral": "left",
+        "longitudinal": "behind",
+        "vertical": "below"
+      },
+      "distance_validation": {
+        "world_direct_m": 0.9433859077549309,
+        "human_components_m": 0.9433859077549308,
+        "agreement_residual_m": 1.1102230246251565e-16,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.36390111068481,
+          "hip_width_m": 0.24768354704556178,
+          "torso_length_m": 0.5788774708088601,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "eligible",
+      "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+      "take_name": "sfu_cooking_008_3",
+      "frame": 90,
+      "camera": "cam04",
+      "object_id": "wooden chopping board_0",
+      "distance_m": 1.5348353623224145,
+      "min_distance_m": 0.6,
+      "spatial_relation": {
+        "lateral": "right",
+        "longitudinal": "behind",
+        "vertical": "same_height"
+      },
+      "distance_validation": {
+        "world_direct_m": 1.5348353623224142,
+        "human_components_m": 1.5348353623224145,
+        "agreement_residual_m": 2.220446049250313e-16,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.3514115345705187,
+          "hip_width_m": 0.22662872416616664,
+          "torso_length_m": 0.503630579453099,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "filtered_near_or_invalid",
+      "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+      "take_name": "sfu_cooking_010_3",
+      "frame": 7140,
+      "camera": "cam05",
+      "object_id": "napkin_0",
+      "distance_m": 0.47627930196039353,
+      "min_distance_m": 0.6,
+      "spatial_relation": null,
+      "distance_validation": {
+        "world_direct_m": 0.47627930196039353,
+        "human_components_m": 0.47627930196039353,
+        "agreement_residual_m": 0.0,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.35499696956213705,
+          "hip_width_m": 0.22129793201855816,
+          "torso_length_m": 0.5532726927788313,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "eligible",
+      "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+      "take_name": "sfu_cooking_010_3",
+      "frame": 5190,
+      "camera": "cam04",
+      "object_id": "chopping board_0",
+      "distance_m": 0.7478768702345371,
+      "min_distance_m": 0.6,
+      "spatial_relation": {
+        "lateral": "same_lateral_position",
+        "longitudinal": "front",
+        "vertical": "above"
+      },
+      "distance_validation": {
+        "world_direct_m": 0.747876870234537,
+        "human_components_m": 0.7478768702345371,
+        "agreement_residual_m": 1.1102230246251565e-16,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.3367087138822952,
+          "hip_width_m": 0.27080655151176486,
+          "torso_length_m": 0.5563643985006586,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "eligible",
+      "take_uid": "fcf26143-bd53-49f7-a876-78829e4faf71",
+      "take_name": "iiith_cooking_31_3",
+      "frame": 720,
+      "camera": "cam04",
+      "object_id": "Small stainless plate_0",
+      "distance_m": 1.3081493581795747,
+      "min_distance_m": 0.6,
+      "spatial_relation": {
+        "lateral": "right",
+        "longitudinal": "behind",
+        "vertical": "above"
+      },
+      "distance_validation": {
+        "world_direct_m": 1.3081493581795745,
+        "human_components_m": 1.3081493581795747,
+        "agreement_residual_m": 2.220446049250313e-16,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.3630847838079879,
+          "hip_width_m": 0.18943691016811584,
+          "torso_length_m": 0.5265113075231972,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "filtered_near_or_invalid",
+      "take_uid": "fcf26143-bd53-49f7-a876-78829e4faf71",
+      "take_name": "iiith_cooking_31_3",
+      "frame": 1650,
+      "camera": "cam03",
+      "object_id": "Chopping board_0",
+      "distance_m": 0.43993167129713256,
+      "min_distance_m": 0.6,
+      "spatial_relation": null,
+      "distance_validation": {
+        "world_direct_m": 0.43993167129713256,
+        "human_components_m": 0.43993167129713256,
+        "agreement_residual_m": 0.0,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.3749782288442687,
+          "hip_width_m": 0.23072058822041341,
+          "torso_length_m": 0.524990027483509,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "eligible",
+      "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+      "take_name": "uniandes_cooking_001_5",
+      "frame": 6690,
+      "camera": "cam04",
+      "object_id": "egg whisk_1",
+      "distance_m": 0.6965984506831696,
+      "min_distance_m": 0.6,
+      "spatial_relation": {
+        "lateral": "right",
+        "longitudinal": "front",
+        "vertical": "below"
+      },
+      "distance_validation": {
+        "world_direct_m": 0.6965984506831696,
+        "human_components_m": 0.6965984506831696,
+        "agreement_residual_m": 0.0,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.3618621569916462,
+          "hip_width_m": 0.2691322394869295,
+          "torso_length_m": 0.5469119232694395,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "eligible",
+      "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+      "take_name": "uniandes_cooking_001_5",
+      "frame": 5580,
+      "camera": "cam04",
+      "object_id": "heat extractor range hood_0",
+      "distance_m": 1.3878663952374253,
+      "min_distance_m": 0.6,
+      "spatial_relation": {
+        "lateral": "same_lateral_position",
+        "longitudinal": "front",
+        "vertical": "above"
+      },
+      "distance_validation": {
+        "world_direct_m": 1.3878663952374253,
+        "human_components_m": 1.3878663952374253,
+        "agreement_residual_m": 0.0,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.3674002476892184,
+          "hip_width_m": 0.22128605962466413,
+          "torso_length_m": 0.5512669645700854,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "filtered_near_or_invalid",
+      "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+      "take_name": "iiith_cooking_145_2",
+      "frame": 10890,
+      "camera": "cam01",
+      "object_id": "White chopping board_0",
+      "distance_m": 0.256210755298145,
+      "min_distance_m": 0.6,
+      "spatial_relation": null,
+      "distance_validation": {
+        "world_direct_m": 0.256210755298145,
+        "human_components_m": 0.256210755298145,
+        "agreement_residual_m": 0.0,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.2502735623263728,
+          "hip_width_m": 0.16308318035135194,
+          "torso_length_m": 0.45922089657572507,
+          "plausible": true
+        },
+        "validated": true
+      }
+    },
+    {
+      "recognition_status": "filtered_near_or_invalid",
+      "take_uid": "c785b2ec-1efd-4135-9707-d54386109075",
+      "take_name": "iiith_cooking_29_3",
+      "frame": 180,
+      "camera": "cam01",
+      "object_id": "chopping board_0",
+      "distance_m": 0.32723498642726984,
+      "min_distance_m": 0.6,
+      "spatial_relation": null,
+      "distance_validation": {
+        "world_direct_m": 0.32723498642726984,
+        "human_components_m": 0.32723498642726984,
+        "agreement_residual_m": 0.0,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.3518545145583444,
+          "hip_width_m": 0.2129406140942475,
+          "torso_length_m": 0.5387759601898064,
+          "plausible": true
+        },
+        "validated": true
+      }
+    }
+  ]
+}

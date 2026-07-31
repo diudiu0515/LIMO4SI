@@ -1,0 +1,54 @@
+{
+  "candidate_count": 3,
+  "filtered_near_count": 1,
+  "min_distance_m": 0.6,
+  "sample_count": 2,
+  "accepted_count": 2,
+  "all_accepted": true,
+  "samples": [
+    {
+      "take_uid": "35bfade9-8ead-46a4-b2f0-cdcfb86df1d6",
+      "frame": 750,
+      "camera": "cam02",
+      "object_id": "stainless salt container_0",
+      "projected_centroid_px": [
+        2066.8380609823603,
+        965.6853804636886
+      ],
+      "camera_depth_m": 1.765901272870688,
+      "inside_image": true,
+      "inside_relation_mask": true,
+      "pose_joint_count": 13,
+      "forward_axis_drawn": true,
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "accepted": true,
+      "topdown_image": "outputs/spatial/val_3/acceptance_far/iiith_cooking_32_1_frame750_stainless_salt_container_0_topdown.jpg",
+      "reprojection_image": "outputs/spatial/val_3/acceptance_far/iiith_cooking_32_1_frame750_stainless_salt_container_0_reprojection.jpg"
+    },
+    {
+      "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
+      "frame": 10890,
+      "camera": "cam01",
+      "object_id": "oyster sauce bottle_0",
+      "projected_centroid_px": [
+        1398.9052101989378,
+        1295.5054410632736
+      ],
+      "camera_depth_m": 0.917635581574259,
+      "inside_image": true,
+      "inside_relation_mask": true,
+      "pose_joint_count": 10,
+      "forward_axis_drawn": true,
+      "orientation": {
+        "forward_sign": -1,
+        "source": "visual_review_no_nose"
+      },
+      "accepted": true,
+      "topdown_image": "outputs/spatial/val_3/acceptance_far/sfu_cooking_007_3_frame10890_oyster_sauce_bottle_0_topdown.jpg",
+      "reprojection_image": "outputs/spatial/val_3/acceptance_far/sfu_cooking_007_3_frame10890_oyster_sauce_bottle_0_reprojection.jpg"
+    }
+  ]
+}

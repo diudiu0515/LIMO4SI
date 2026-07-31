@@ -31,6 +31,7 @@ def parse_args() -> argparse.Namespace:
         default=Path("outputs/spatial/val_3/acceptance"),
     )
     parser.add_argument("--dead-zone-m", type=float, default=0.15)
+    parser.add_argument("--min-distance-m", type=float, default=0.60)
     return parser.parse_args()
 
 
@@ -201,8 +202,12 @@ def main() -> None:
     result_files = sorted(
         path for path in args.results.glob("*.json") if path.name != "summary.json"
     )
-    results = [json.loads(path.read_text()) for path in result_files]
-    results = [row for row in results if row.get("status") == "ok"]
+    all_results = [json.loads(path.read_text()) for path in result_files]
+    results = [
+        row for row in all_results
+        if row.get("status") == "ok"
+        and row["distance_m"] >= args.min_distance_m
+    ]
     takes = {
         row["take_uid"]: row
         for row in json.loads((args.root / "takes.json").read_text())
@@ -230,6 +235,9 @@ def main() -> None:
         print(topdown)
         print(reprojection)
     report = {
+        "candidate_count": len(all_results),
+        "filtered_near_count": len(all_results) - len(results),
+        "min_distance_m": args.min_distance_m,
         "sample_count": len(reports),
         "accepted_count": sum(row["accepted"] for row in reports),
         "all_accepted": all(row["accepted"] for row in reports),
