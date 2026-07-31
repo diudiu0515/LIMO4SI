@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+  "take_name": "iiith_cooking_30_1",
+  "frame": 9030,
+  "camera": "cam02",
+  "object_id": "stainless dinner plate_0",
+  "object_xyz_world_m": [
+    0.36381,
+    -0.189501,
+    -1.238717
+  ],
+  "human_frame": {
+    "origin": [
+      -0.435516457902106,
+      -0.2431235920667723,
+      -0.5429797548844446
+    ],
+    "right": [
+      -0.1882679879855708,
+      0.9781038118348568,
+      -0.08870229971081879
+    ],
+    "up": [
+      -0.009966491858952903,
+      0.08841000431819962,
+      0.9960343067266716
+    ],
+    "forward": [
+      -0.9820671228281143,
+      -0.1884054256399716,
+      0.006896509952920163
+    ]
+  },
+  "orientation": {
+    "forward_sign": 1,
+    "source": "nose"
+  },
+  "human_xyz_m": {
+    "right": -0.036325628635667594,
+    "up": -0.6962038716417472,
+    "forward": -0.7998931808301245
+  },
+  "distance_m": 1.0610600750774053,
+  "horizontal_distance_m": 0.8007175856906795,
+  "lateral_relation": "same_lateral_position",
+  "longitudinal_relation": "behind",
+  "vertical_relation": "below",
+  "text_zh": "物体在人的左右中线附近、后方、下方，前向分量 -0.80 m，右向分量 -0.04 m，高度差 -0.70 m，直线距离 1.06 m",
+  "quality": {
+    "mask_pixels": 129664,
+    "point_cloud_scanned": 2777738,
+    "point_cloud_quality": 2583775,
+    "point_cloud_in_image": 1616502,
+    "points_in_mask": 28468,
+    "robust_inliers": 28207,
+    "max_point_dist_std_m": 0.1,
+    "pose_reprojection": {
+      "joint_count": 13,
+      "positive_depth_joint_count": 13,
+      "median_px": 0.7755239207172968,
+      "mean_px": 0.7985727206735752,
+      "max_px": 2.3453040612217038
+    }
+  },
+  "inputs": {
+    "point_cloud": "data/egoexo4d/takes/iiith_cooking_30_1/trajectory/semidense_points.csv.gz",
+    "camera_pose": "outputs/calibration/val_12/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json"
+  }
+}

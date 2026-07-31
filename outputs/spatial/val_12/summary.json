@@ -1,0 +1,871 @@
+{
+  "sample_count": 12,
+  "success_count": 12,
+  "error_count": 0,
+  "samples": [
+    {
+      "status": "ok",
+      "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+      "take_name": "iiith_cooking_30_1",
+      "frame": 9030,
+      "camera": "cam02",
+      "object_id": "stainless dinner plate_0",
+      "object_xyz_world_m": [
+        0.36381,
+        -0.189501,
+        -1.238717
+      ],
+      "human_frame": {
+        "origin": [
+          -0.435516457902106,
+          -0.2431235920667723,
+          -0.5429797548844446
+        ],
+        "right": [
+          -0.1882679879855708,
+          0.9781038118348568,
+          -0.08870229971081879
+        ],
+        "up": [
+          -0.009966491858952903,
+          0.08841000431819962,
+          0.9960343067266716
+        ],
+        "forward": [
+          -0.9820671228281143,
+          -0.1884054256399716,
+          0.006896509952920163
+        ]
+      },
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "human_xyz_m": {
+        "right": -0.036325628635667594,
+        "up": -0.6962038716417472,
+        "forward": -0.7998931808301245
+      },
+      "distance_m": 1.0610600750774053,
+      "horizontal_distance_m": 0.8007175856906795,
+      "lateral_relation": "same_lateral_position",
+      "longitudinal_relation": "behind",
+      "vertical_relation": "below",
+      "text_zh": "物体在人的左右中线附近、后方、下方，前向分量 -0.80 m，右向分量 -0.04 m，高度差 -0.70 m，直线距离 1.06 m",
+      "quality": {
+        "mask_pixels": 129664,
+        "point_cloud_scanned": 2777738,
+        "point_cloud_quality": 2583775,
+        "point_cloud_in_image": 1616502,
+        "points_in_mask": 28468,
+        "robust_inliers": 28207,
+        "max_point_dist_std_m": 0.1,
+        "pose_reprojection": {
+          "joint_count": 13,
+          "positive_depth_joint_count": 13,
+          "median_px": 0.7755239207172968,
+          "mean_px": 0.7985727206735752,
+          "max_px": 2.3453040612217038
+        }
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/iiith_cooking_30_1/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json"
+      },
+      "output_path": "outputs/spatial/val_12/iiith_cooking_30_1_frame9030_stainless dinner plate_0.json"
+    },
+    {
+      "status": "ok",
+      "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+      "take_name": "iiith_cooking_30_1",
+      "frame": 9510,
+      "camera": "cam02",
+      "object_id": "tawa pan_0",
+      "object_xyz_world_m": [
+        -0.952338,
+        -0.792138,
+        -0.380512
+      ],
+      "human_frame": {
+        "origin": [
+          -0.5273106155321512,
+          -0.4725859296352685,
+          -0.5202608548950752
+        ],
+        "right": [
+          -0.7723784051429824,
+          0.63498819064664,
+          0.014886134759879273
+        ],
+        "up": [
+          0.01132890704010445,
+          -0.009660465677690322,
+          0.9998891594912741
+        ],
+        "forward": [
+          -0.6350616152264752,
+          -0.7724614379645088,
+          -0.0002678128896730645
+        ]
+      },
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "human_xyz_m": {
+        "right": 0.12745050266558855,
+        "up": 0.13800529114076315,
+        "forward": 0.5167228025294546
+      },
+      "distance_m": 0.549810463402118,
+      "horizontal_distance_m": 0.5322086858400611,
+      "lateral_relation": "same_lateral_position",
+      "longitudinal_relation": "front",
+      "vertical_relation": "slightly_above",
+      "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.52 m，右向分量 0.13 m，高度差 0.14 m，直线距离 0.55 m",
+      "quality": {
+        "mask_pixels": 124817,
+        "point_cloud_scanned": 2777738,
+        "point_cloud_quality": 2583775,
+        "point_cloud_in_image": 1616502,
+        "points_in_mask": 28216,
+        "robust_inliers": 25305,
+        "max_point_dist_std_m": 0.1,
+        "pose_reprojection": {
+          "joint_count": 13,
+          "positive_depth_joint_count": 13,
+          "median_px": 0.7615883493214957,
+          "mean_px": 0.9628001863527278,
+          "max_px": 1.9505568852619144
+        }
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/iiith_cooking_30_1/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json"
+      },
+      "output_path": "outputs/spatial/val_12/iiith_cooking_30_1_frame9510_tawa pan_0.json"
+    },
+    {
+      "status": "ok",
+      "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+      "take_name": "sfu_cooking_008_3",
+      "frame": 6450,
+      "camera": "cam04",
+      "object_id": "salad cream bottle_0",
+      "object_xyz_world_m": [
+        -0.5162150000000001,
+        0.110731,
+        -0.9171155
+      ],
+      "human_frame": {
+        "origin": [
+          0.2829716991349289,
+          -0.3342759743538384,
+          -0.6863637206940678
+        ],
+        "right": [
+          0.15136212828715878,
+          -0.9879322330963549,
+          -0.03285435937027354
+        ],
+        "up": [
+          0.03210811847864999,
+          -0.028305884106484172,
+          0.9990835028428361
+        ],
+        "forward": [
+          0.9879567677019793,
+          0.15227829699008222,
+          -0.02743620632772792
+        ]
+      },
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "human_xyz_m": {
+        "right": -0.5530221317140449,
+        "up": -0.2687969930212102,
+        "forward": -0.715466050436919
+      },
+      "distance_m": 0.9433859077549308,
+      "horizontal_distance_m": 0.904281564278157,
+      "lateral_relation": "left",
+      "longitudinal_relation": "behind",
+      "vertical_relation": "below",
+      "text_zh": "物体在人的左侧、后方、下方，前向分量 -0.72 m，右向分量 -0.55 m，高度差 -0.27 m，直线距离 0.94 m",
+      "quality": {
+        "mask_pixels": 66695,
+        "point_cloud_scanned": 10055304,
+        "point_cloud_quality": 8643163,
+        "point_cloud_in_image": 6199552,
+        "points_in_mask": 21358,
+        "robust_inliers": 20052,
+        "max_point_dist_std_m": 0.1,
+        "pose_reprojection": {
+          "joint_count": 17,
+          "positive_depth_joint_count": 17,
+          "median_px": 0.6304435766641132,
+          "mean_px": 1.0716335837713107,
+          "max_px": 2.28364607349382
+        }
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/sfu_cooking_008_3/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/44d647ce-72d2-4312-b80c-99faea2d017d.json"
+      },
+      "output_path": "outputs/spatial/val_12/sfu_cooking_008_3_frame6450_salad cream bottle_0.json"
+    },
+    {
+      "status": "ok",
+      "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+      "take_name": "sfu_cooking_008_3",
+      "frame": 90,
+      "camera": "cam04",
+      "object_id": "wooden chopping board_0",
+      "object_xyz_world_m": [
+        0.591066,
+        -1.183944,
+        -0.528011
+      ],
+      "human_frame": {
+        "origin": [
+          -0.19397879477156627,
+          0.13293632602424305,
+          -0.6004711032826265
+        ],
+        "right": [
+          0.9685917738717861,
+          0.2422799918917737,
+          -0.05594980890788424
+        ],
+        "up": [
+          0.03337055124501455,
+          0.09631801581331266,
+          0.9947910565236252
+        ],
+        "forward": [
+          -0.24640694368769434,
+          0.9654135100353157,
+          -0.0852078209073611
+        ]
+      },
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "human_xyz_m": {
+        "right": 0.4372800466929051,
+        "up": -0.02855925981235187,
+        "forward": -1.4709487138845454
+      },
+      "distance_m": 1.5348353623224145,
+      "horizontal_distance_m": 1.5345696328659535,
+      "lateral_relation": "right",
+      "longitudinal_relation": "behind",
+      "vertical_relation": "same_height",
+      "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -1.47 m，右向分量 0.44 m，高度差 -0.03 m，直线距离 1.53 m",
+      "quality": {
+        "mask_pixels": 55508,
+        "point_cloud_scanned": 10055304,
+        "point_cloud_quality": 8643163,
+        "point_cloud_in_image": 6199552,
+        "points_in_mask": 106440,
+        "robust_inliers": 102823,
+        "max_point_dist_std_m": 0.1,
+        "pose_reprojection": {
+          "joint_count": 17,
+          "positive_depth_joint_count": 17,
+          "median_px": 0.592462107458065,
+          "mean_px": 1.378815934403509,
+          "max_px": 3.8294370619094256
+        }
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/sfu_cooking_008_3/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/44d647ce-72d2-4312-b80c-99faea2d017d.json"
+      },
+      "output_path": "outputs/spatial/val_12/sfu_cooking_008_3_frame90_wooden chopping board_0.json"
+    },
+    {
+      "status": "ok",
+      "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+      "take_name": "sfu_cooking_010_3",
+      "frame": 7140,
+      "camera": "cam05",
+      "object_id": "napkin_0",
+      "object_xyz_world_m": [
+        -0.904089,
+        -0.893754,
+        -0.489522
+      ],
+      "human_frame": {
+        "origin": [
+          -0.5195841575707073,
+          -0.6178195925247959,
+          -0.5429841585386568
+        ],
+        "right": [
+          -0.46227992217661773,
+          0.8787690277497162,
+          -0.11858444004252273
+        ],
+        "up": [
+          -0.13878680864114404,
+          0.0603798920113281,
+          0.9884798887119085
+        ],
+        "forward": [
+          -0.8758056264375028,
+          -0.4734123620148916,
+          -0.09404913711403473
+        ]
+      },
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "human_xyz_m": {
+        "right": -0.07107352247870428,
+        "up": 0.0895495787848547,
+        "forward": 0.4623541941172416
+      },
+      "distance_m": 0.47627930196039353,
+      "horizontal_distance_m": 0.46778504295812495,
+      "lateral_relation": "same_lateral_position",
+      "longitudinal_relation": "front",
+      "vertical_relation": "slightly_above",
+      "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.46 m，右向分量 -0.07 m，高度差 0.09 m，直线距离 0.48 m",
+      "quality": {
+        "mask_pixels": 31163,
+        "point_cloud_scanned": 10441352,
+        "point_cloud_quality": 9612274,
+        "point_cloud_in_image": 6488306,
+        "points_in_mask": 152498,
+        "robust_inliers": 125531,
+        "max_point_dist_std_m": 0.1,
+        "pose_reprojection": {
+          "joint_count": 17,
+          "positive_depth_joint_count": 17,
+          "median_px": 6.915300366811402e-13,
+          "mean_px": 6.590691987438012e-13,
+          "max_px": 1.6277477997478347e-12
+        }
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/sfu_cooking_010_3/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json"
+      },
+      "output_path": "outputs/spatial/val_12/sfu_cooking_010_3_frame7140_napkin_0.json"
+    },
+    {
+      "status": "ok",
+      "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+      "take_name": "sfu_cooking_010_3",
+      "frame": 5190,
+      "camera": "cam04",
+      "object_id": "chopping board_0",
+      "object_xyz_world_m": [
+        0.313539,
+        -0.223165,
+        -0.672454
+      ],
+      "human_frame": {
+        "origin": [
+          -0.21267429716736802,
+          0.22848463321291007,
+          -0.9525111151295704
+        ],
+        "right": [
+          -0.5276765132050361,
+          -0.8491294112528077,
+          0.02316765756902269
+        ],
+        "up": [
+          0.16241940988086853,
+          -0.07408694465898708,
+          0.9839365121414322
+        ],
+        "forward": [
+          0.8337730103006008,
+          -0.5229630652125983,
+          -0.17700903851983912
+        ]
+      },
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "human_xyz_m": {
+        "right": 0.11232685663431284,
+        "up": 0.39448701563946775,
+        "forward": 0.6253658807468851
+      },
+      "distance_m": 0.7478768702345371,
+      "horizontal_distance_m": 0.6353737541980097,
+      "lateral_relation": "same_lateral_position",
+      "longitudinal_relation": "front",
+      "vertical_relation": "above",
+      "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.63 m，右向分量 0.11 m，高度差 0.39 m，直线距离 0.75 m",
+      "quality": {
+        "mask_pixels": 28693,
+        "point_cloud_scanned": 10441352,
+        "point_cloud_quality": 9612274,
+        "point_cloud_in_image": 8183054,
+        "points_in_mask": 161704,
+        "robust_inliers": 141853,
+        "max_point_dist_std_m": 0.1,
+        "pose_reprojection": {
+          "joint_count": 14,
+          "positive_depth_joint_count": 14,
+          "median_px": 1.016845989170083e-12,
+          "mean_px": 1.032900119544827e-12,
+          "max_px": 1.4380373887290168e-12
+        }
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/sfu_cooking_010_3/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json"
+      },
+      "output_path": "outputs/spatial/val_12/sfu_cooking_010_3_frame5190_chopping board_0.json"
+    },
+    {
+      "status": "ok",
+      "take_uid": "fcf26143-bd53-49f7-a876-78829e4faf71",
+      "take_name": "iiith_cooking_31_3",
+      "frame": 720,
+      "camera": "cam04",
+      "object_id": "Small stainless plate_0",
+      "object_xyz_world_m": [
+        0.125269,
+        -1.015067,
+        0.042625
+      ],
+      "human_frame": {
+        "origin": [
+          -0.725981681928063,
+          -0.20332263260406544,
+          -0.5298242133138225
+        ],
+        "right": [
+          0.797696514218673,
+          0.5998062723171504,
+          0.06255163381065798
+        ],
+        "up": [
+          -0.07513486741925798,
+          -0.004067119053859522,
+          0.997165086753689
+        ],
+        "forward": [
+          -0.5983602785122597,
+          0.8001349225172004,
+          -0.04182203805561238
+        ]
+      },
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "human_xyz_m": {
+        "right": 0.22795797218449074,
+        "up": 0.51016922331244,
+        "forward": -1.1828006044164627
+      },
+      "distance_m": 1.3081493581795747,
+      "horizontal_distance_m": 1.2045671865406322,
+      "lateral_relation": "right",
+      "longitudinal_relation": "behind",
+      "vertical_relation": "above",
+      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.18 m，右向分量 0.23 m，高度差 0.51 m，直线距离 1.31 m",
+      "quality": {
+        "mask_pixels": 28114,
+        "point_cloud_scanned": 3404054,
+        "point_cloud_quality": 3186523,
+        "point_cloud_in_image": 1945943,
+        "points_in_mask": 1075,
+        "robust_inliers": 891,
+        "max_point_dist_std_m": 0.1,
+        "pose_reprojection": {
+          "joint_count": 13,
+          "positive_depth_joint_count": 13,
+          "median_px": 0.4025943928279356,
+          "mean_px": 0.48496642187580263,
+          "max_px": 1.5742631602566506
+        }
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/iiith_cooking_31_3/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/fcf26143-bd53-49f7-a876-78829e4faf71.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/fcf26143-bd53-49f7-a876-78829e4faf71.json"
+      },
+      "output_path": "outputs/spatial/val_12/iiith_cooking_31_3_frame720_Small stainless plate_0.json"
+    },
+    {
+      "status": "ok",
+      "take_uid": "fcf26143-bd53-49f7-a876-78829e4faf71",
+      "take_name": "iiith_cooking_31_3",
+      "frame": 1650,
+      "camera": "cam03",
+      "object_id": "Chopping board_0",
+      "object_xyz_world_m": [
+        -1.000127,
+        0.169744,
+        -0.502127
+      ],
+      "human_frame": {
+        "origin": [
+          -0.6989237098436112,
+          -0.14853968856400906,
+          -0.541010762721005
+        ],
+        "right": [
+          0.6609363862939334,
+          0.7463233524893215,
+          -0.07851462794802248
+        ],
+        "up": [
+          0.03254008993526089,
+          0.07602438550959303,
+          0.996574851857548
+        ],
+        "forward": [
+          -0.749736110788137,
+          0.661227454312802,
+          -0.02596185361813936
+        ]
+      },
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "human_xyz_m": {
+        "right": 0.03541339119269275,
+        "up": 0.05314671976366973,
+        "forward": 0.4352714019010249
+      },
+      "distance_m": 0.43993167129713256,
+      "horizontal_distance_m": 0.4367096307486821,
+      "lateral_relation": "same_lateral_position",
+      "longitudinal_relation": "front",
+      "vertical_relation": "slightly_above",
+      "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.44 m，右向分量 0.04 m，高度差 0.05 m，直线距离 0.44 m",
+      "quality": {
+        "mask_pixels": 80023,
+        "point_cloud_scanned": 3404054,
+        "point_cloud_quality": 3186523,
+        "point_cloud_in_image": 2386698,
+        "points_in_mask": 18641,
+        "robust_inliers": 14677,
+        "max_point_dist_std_m": 0.1,
+        "pose_reprojection": {
+          "joint_count": 13,
+          "positive_depth_joint_count": 13,
+          "median_px": 0.4037779269059643,
+          "mean_px": 0.6270257548037951,
+          "max_px": 3.0095801384573435
+        }
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/iiith_cooking_31_3/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/fcf26143-bd53-49f7-a876-78829e4faf71.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/fcf26143-bd53-49f7-a876-78829e4faf71.json"
+      },
+      "output_path": "outputs/spatial/val_12/iiith_cooking_31_3_frame1650_Chopping board_0.json"
+    },
+    {
+      "status": "ok",
+      "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+      "take_name": "uniandes_cooking_001_5",
+      "frame": 6690,
+      "camera": "cam04",
+      "object_id": "egg whisk_1",
+      "object_xyz_world_m": [
+        -0.070778,
+        0.539263,
+        -0.723034
+      ],
+      "human_frame": {
+        "origin": [
+          -0.6181228981484255,
+          0.13820735345030236,
+          -0.5654988219105141
+        ],
+        "right": [
+          0.9482703443804482,
+          -0.3003806984836389,
+          0.10273650737234287
+        ],
+        "up": [
+          -0.07317595330425591,
+          0.1080861170375198,
+          0.9914447393383884
+        ],
+        "forward": [
+          0.3089152534702675,
+          0.9476754862727182,
+          -0.0805142154601758
+        ]
+      },
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "human_xyz_m": {
+        "right": 0.3823769458354893,
+        "up": -0.15289136073425993,
+        "forward": 0.5618376140848368
+      },
+      "distance_m": 0.6965984506831696,
+      "horizontal_distance_m": 0.6796128554603854,
+      "lateral_relation": "right",
+      "longitudinal_relation": "front",
+      "vertical_relation": "below",
+      "text_zh": "物体在人的右侧、前方、下方，前向分量 0.56 m，右向分量 0.38 m，高度差 -0.15 m，直线距离 0.70 m",
+      "quality": {
+        "mask_pixels": 38997,
+        "point_cloud_scanned": 34818915,
+        "point_cloud_quality": 30700605,
+        "point_cloud_in_image": 21988183,
+        "points_in_mask": 39084,
+        "robust_inliers": 35679,
+        "max_point_dist_std_m": 0.1,
+        "pose_reprojection": {
+          "joint_count": 13,
+          "positive_depth_joint_count": 13,
+          "median_px": 2.5421149729252077e-12,
+          "mean_px": 2.692043258981599e-12,
+          "max_px": 4.321595453972853e-12
+        }
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/uniandes_cooking_001_5/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/3528e260-6a6d-46d7-b97d-b6c029ec7304.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/3528e260-6a6d-46d7-b97d-b6c029ec7304.json"
+      },
+      "output_path": "outputs/spatial/val_12/uniandes_cooking_001_5_frame6690_egg whisk_1.json"
+    },
+    {
+      "status": "ok",
+      "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+      "take_name": "uniandes_cooking_001_5",
+      "frame": 5580,
+      "camera": "cam04",
+      "object_id": "heat extractor range hood_0",
+      "object_xyz_world_m": [
+        0.662589,
+        -1.053722,
+        0.582174
+      ],
+      "human_frame": {
+        "origin": [
+          0.7610039949486279,
+          -0.29323874640049113,
+          -0.5746115638765948
+        ],
+        "right": [
+          -0.989134505629173,
+          0.11047802234343398,
+          0.09699245513345386
+        ],
+        "up": [
+          0.10067351585368553,
+          0.028230191849749946,
+          0.9945189286654045
+        ],
+        "forward": [
+          -0.10713436880566894,
+          -0.9934775603138756,
+          0.039045667792994655
+        ]
+      },
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "human_xyz_m": {
+        "right": 0.1255284533953625,
+        "up": 1.1190687679803197,
+        "forward": 0.8112341406452904
+      },
+      "distance_m": 1.3878663952374253,
+      "horizontal_distance_m": 0.8208886791522554,
+      "lateral_relation": "same_lateral_position",
+      "longitudinal_relation": "front",
+      "vertical_relation": "above",
+      "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.81 m，右向分量 0.13 m，高度差 1.12 m，直线距离 1.39 m",
+      "quality": {
+        "mask_pixels": 186886,
+        "point_cloud_scanned": 34818915,
+        "point_cloud_quality": 30700605,
+        "point_cloud_in_image": 21988183,
+        "points_in_mask": 375985,
+        "robust_inliers": 373845,
+        "max_point_dist_std_m": 0.1,
+        "pose_reprojection": {
+          "joint_count": 15,
+          "positive_depth_joint_count": 15,
+          "median_px": 2.5421149729252077e-13,
+          "mean_px": 2.762040322557317e-13,
+          "max_px": 5.084229945850415e-13
+        }
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/uniandes_cooking_001_5/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/3528e260-6a6d-46d7-b97d-b6c029ec7304.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/3528e260-6a6d-46d7-b97d-b6c029ec7304.json"
+      },
+      "output_path": "outputs/spatial/val_12/uniandes_cooking_001_5_frame5580_heat extractor range hood_0.json"
+    },
+    {
+      "status": "ok",
+      "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+      "take_name": "iiith_cooking_145_2",
+      "frame": 10890,
+      "camera": "cam01",
+      "object_id": "White chopping board_0",
+      "object_xyz_world_m": [
+        -0.192655,
+        0.741121,
+        -0.370042
+      ],
+      "human_frame": {
+        "origin": [
+          -0.15139896408450798,
+          0.49835086837313974,
+          -0.44078487116637616
+        ],
+        "right": [
+          0.8850625092396432,
+          0.46331249867887664,
+          -0.04478708861225825
+        ],
+        "up": [
+          0.02111607222271784,
+          0.05615512505955208,
+          0.998198734432894
+        ],
+        "forward": [
+          -0.4649929743902711,
+          0.8844140040147952,
+          -0.03991745570808211
+        ]
+      },
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "human_xyz_m": {
+        "right": 0.07279589838038017,
+        "up": 0.08337706613664166,
+        "forward": 0.23106919559276048
+      },
+      "distance_m": 0.256210755298145,
+      "horizontal_distance_m": 0.24226476420002155,
+      "lateral_relation": "same_lateral_position",
+      "longitudinal_relation": "front",
+      "vertical_relation": "slightly_above",
+      "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.23 m，右向分量 0.07 m，高度差 0.08 m，直线距离 0.26 m",
+      "quality": {
+        "mask_pixels": 67562,
+        "point_cloud_scanned": 4032696,
+        "point_cloud_quality": 3569347,
+        "point_cloud_in_image": 2307251,
+        "points_in_mask": 125196,
+        "robust_inliers": 113933,
+        "max_point_dist_std_m": 0.1,
+        "pose_reprojection": {
+          "joint_count": 12,
+          "positive_depth_joint_count": 12,
+          "median_px": 6.855304085846244e-13,
+          "mean_px": 7.2846498687926e-13,
+          "max_px": 1.1368683772161603e-12
+        }
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/iiith_cooking_145_2/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/fac6316e-d141-4bbd-b88b-a624491acb30.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/fac6316e-d141-4bbd-b88b-a624491acb30.json"
+      },
+      "output_path": "outputs/spatial/val_12/iiith_cooking_145_2_frame10890_White chopping board_0.json"
+    },
+    {
+      "status": "ok",
+      "take_uid": "c785b2ec-1efd-4135-9707-d54386109075",
+      "take_name": "iiith_cooking_29_3",
+      "frame": 180,
+      "camera": "cam01",
+      "object_id": "chopping board_0",
+      "object_xyz_world_m": [
+        -0.749845,
+        -0.675352,
+        -0.453415
+      ],
+      "human_frame": {
+        "origin": [
+          -0.47621731291297015,
+          -0.5228610348542206,
+          -0.5480571193252068
+        ],
+        "right": [
+          -0.648491453527407,
+          0.7506888117130902,
+          -0.1261948599218652
+        ],
+        "up": [
+          -0.08563799744883414,
+          0.09278065879840926,
+          0.9919969167018043
+        ],
+        "forward": [
+          -0.7563894288624506,
+          -0.654108597498704,
+          -0.00412002225894314
+        ]
+      },
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "human_xyz_m": {
+        "right": 0.05102860611119023,
+        "up": 0.10316940552238821,
+        "forward": 0.3063248136611879
+      },
+      "distance_m": 0.32723498642726984,
+      "horizontal_distance_m": 0.31054598710370174,
+      "lateral_relation": "same_lateral_position",
+      "longitudinal_relation": "front",
+      "vertical_relation": "slightly_above",
+      "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.31 m，右向分量 0.05 m，高度差 0.10 m，直线距离 0.33 m",
+      "quality": {
+        "mask_pixels": 80060,
+        "point_cloud_scanned": 3347502,
+        "point_cloud_quality": 3122589,
+        "point_cloud_in_image": 1203822,
+        "points_in_mask": 17577,
+        "robust_inliers": 13849,
+        "max_point_dist_std_m": 0.1,
+        "pose_reprojection": {
+          "joint_count": 13,
+          "positive_depth_joint_count": 13,
+          "median_px": 0.9126471545026142,
+          "mean_px": 1.6043372760576946,
+          "max_px": 6.914589350391067
+        }
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/iiith_cooking_29_3/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/c785b2ec-1efd-4135-9707-d54386109075.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/c785b2ec-1efd-4135-9707-d54386109075.json"
+      },
+      "output_path": "outputs/spatial/val_12/iiith_cooking_29_3_frame180_chopping board_0.json"
+    }
+  ]
+}

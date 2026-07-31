@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
+  "take_name": "sfu_cooking_007_3",
+  "frame": 10890,
+  "camera": "cam01",
+  "object_id": "oyster sauce bottle_0",
+  "object_xyz_world_m": [
+    2.8797875,
+    -0.783569,
+    -0.6012014999999999
+  ],
+  "human_frame": {
+    "origin": [
+      4.069195258069465,
+      -1.729117055746722,
+      -0.6785414864204579
+    ],
+    "right": [
+      -0.9455501906514642,
+      -0.3221858577044052,
+      0.04616394755928747
+    ],
+    "up": [
+      0.039496844851164566,
+      0.02720348633184157,
+      0.9988493227600428
+    ],
+    "forward": [
+      0.32307094608736164,
+      -0.946285497842311,
+      0.012996936852467023
+    ]
+  },
+  "orientation": {
+    "forward_sign": -1,
+    "source": "visual_review_no_nose"
+  },
+  "human_xyz_m": {
+    "right": 0.823572840140773,
+    "up": 0.05599534298370947,
+    "forward": -1.2780163194295886
+  },
+  "distance_m": 1.521424797412529,
+  "horizontal_distance_m": 1.5203940067449264,
+  "lateral_relation": "right",
+  "longitudinal_relation": "behind",
+  "vertical_relation": "slightly_above",
+  "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.28 m，右向分量 0.82 m，高度差 0.06 m，直线距离 1.52 m",
+  "quality": {
+    "mask_pixels": 50235,
+    "point_cloud_scanned": 17974280,
+    "point_cloud_quality": 15477467,
+    "point_cloud_in_image": 12421635,
+    "points_in_mask": 59092,
+    "robust_inliers": 46398,
+    "max_point_dist_std_m": 0.1,
+    "pose_reprojection": {
+      "joint_count": 10,
+      "positive_depth_joint_count": 10,
+      "median_px": 2.3087254776378533e-13,
+      "mean_px": 1.9438384549692263e-13,
+      "max_px": 3.2155493553843715e-13
+    }
+  },
+  "inputs": {
+    "point_cloud": "data/egoexo4d/takes/sfu_cooking_007_3/trajectory/semidense_points.csv.gz",
+    "camera_pose": "data/egoexo4d/annotations/ego_pose/val/camera_pose/f76f2040-989c-42df-b2fb-e0903165443d.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/f76f2040-989c-42df-b2fb-e0903165443d.json"
+  }
+}

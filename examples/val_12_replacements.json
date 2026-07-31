@@ -1,0 +1,18 @@
+[
+  {
+    "take_uid": "fcf26143-bd53-49f7-a876-78829e4faf71",
+    "camera": "cam04",
+    "frame": 720,
+    "object_id": "Small stainless plate_0",
+    "camera_pose_path": "outputs/calibration/val_12/fcf26143-bd53-49f7-a876-78829e4faf71.json",
+    "orientation_source": "nose"
+  },
+  {
+    "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+    "camera": "cam04",
+    "frame": 0,
+    "object_id": "wastebin_0",
+    "camera_pose_path": "outputs/calibration/val_12/3528e260-6a6d-46d7-b97d-b6c029ec7304.json",
+    "orientation_source": "nose"
+  }
+]

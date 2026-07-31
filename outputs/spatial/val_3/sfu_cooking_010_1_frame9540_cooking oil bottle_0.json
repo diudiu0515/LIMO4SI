@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+  "take_name": "sfu_cooking_010_1",
+  "frame": 9540,
+  "camera": "cam05",
+  "object_id": "cooking oil bottle_0",
+  "object_xyz_world_m": [
+    -0.9056930000000001,
+    -0.7219845,
+    -0.4824225
+  ],
+  "human_frame": {
+    "origin": [
+      -0.9105457606017691,
+      -0.30842172502076104,
+      -0.5485076132524282
+    ],
+    "right": [
+      -0.7237538174926159,
+      0.6863071026720898,
+      -0.0718538272237942
+    ],
+    "up": [
+      -0.1398061706459243,
+      -0.04386806540420576,
+      0.9892066657109702
+    ],
+    "forward": [
+      -0.6757474722958186,
+      -0.7259877090278692,
+      -0.12769964771399375
+    ]
+  },
+  "orientation": {
+    "forward_sign": 1,
+    "source": "nose"
+  },
+  "human_xyz_m": {
+    "right": -0.2920917421896439,
+    "up": 0.08283558751830578,
+    "forward": 0.28852320515460933
+  },
+  "distance_m": 0.4188376300281209,
+  "horizontal_distance_m": 0.41056452083450923,
+  "lateral_relation": "left",
+  "longitudinal_relation": "front",
+  "vertical_relation": "slightly_above",
+  "text_zh": "物体在人的左侧、前方、略偏上，前向分量 0.29 m，右向分量 -0.29 m，高度差 0.08 m，直线距离 0.42 m",
+  "quality": {
+    "mask_pixels": 49357,
+    "point_cloud_scanned": 10441352,
+    "point_cloud_quality": 9612274,
+    "point_cloud_in_image": 6488306,
+    "points_in_mask": 258468,
+    "robust_inliers": 226584,
+    "max_point_dist_std_m": 0.1,
+    "pose_reprojection": {
+      "joint_count": 17,
+      "positive_depth_joint_count": 17,
+      "median_px": 4.687428401686771e-13,
+      "mean_px": 1.931290195536518e-12,
+      "max_px": 1.3223030407310724e-11
+    }
+  },
+  "inputs": {
+    "point_cloud": "data/egoexo4d/takes/sfu_cooking_010_1/trajectory/semidense_points.csv.gz",
+    "camera_pose": "data/egoexo4d/annotations/ego_pose/val/camera_pose/e2b190bb-f8b2-43a7-b2da-b80f3708dcf3.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/e2b190bb-f8b2-43a7-b2da-b80f3708dcf3.json"
+  }
+}

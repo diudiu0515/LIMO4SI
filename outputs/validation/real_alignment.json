@@ -1,0 +1,30 @@
+{
+  "take_uid": "35bfade9-8ead-46a4-b2f0-cdcfb86df1d6",
+  "take_name": "iiith_cooking_32_1",
+  "frame": 750,
+  "camera": "cam02",
+  "object_id": "stainless salt container_0",
+  "video_path": "data/egoexo4d/takes/iiith_cooking_32_1/frame_aligned_videos/downscaled/448/cam02.mp4",
+  "video_size": [
+    796,
+    448
+  ],
+  "mask_original_size": [
+    3840,
+    2160
+  ],
+  "mask_pixels_original": 16383,
+  "pose_joint_count": 13,
+  "output_image": "outputs/validation/real_alignment.jpg",
+  "validated": [
+    "video_frame_read",
+    "relation_mask_decode",
+    "relation_mask_video_alignment",
+    "egopose_frame_camera_alignment"
+  ],
+  "not_yet_validated": [
+    "object_3d_position",
+    "human_centric_direction",
+    "metric_distance"
+  ]
+}

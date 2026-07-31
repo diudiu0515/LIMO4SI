@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+  "take_name": "iiith_cooking_145_2",
+  "frame": 10890,
+  "camera": "cam01",
+  "object_id": "White chopping board_0",
+  "object_xyz_world_m": [
+    -0.192655,
+    0.741121,
+    -0.370042
+  ],
+  "human_frame": {
+    "origin": [
+      -0.15139896408450798,
+      0.49835086837313974,
+      -0.44078487116637616
+    ],
+    "right": [
+      0.8850625092396432,
+      0.46331249867887664,
+      -0.04478708861225825
+    ],
+    "up": [
+      0.02111607222271784,
+      0.05615512505955208,
+      0.998198734432894
+    ],
+    "forward": [
+      -0.4649929743902711,
+      0.8844140040147952,
+      -0.03991745570808211
+    ]
+  },
+  "orientation": {
+    "forward_sign": 1,
+    "source": "nose"
+  },
+  "human_xyz_m": {
+    "right": 0.07279589838038017,
+    "up": 0.08337706613664166,
+    "forward": 0.23106919559276048
+  },
+  "distance_m": 0.256210755298145,
+  "horizontal_distance_m": 0.24226476420002155,
+  "lateral_relation": "same_lateral_position",
+  "longitudinal_relation": "front",
+  "vertical_relation": "slightly_above",
+  "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.23 m，右向分量 0.07 m，高度差 0.08 m，直线距离 0.26 m",
+  "quality": {
+    "mask_pixels": 67562,
+    "point_cloud_scanned": 4032696,
+    "point_cloud_quality": 3569347,
+    "point_cloud_in_image": 2307251,
+    "points_in_mask": 125196,
+    "robust_inliers": 113933,
+    "max_point_dist_std_m": 0.1,
+    "pose_reprojection": {
+      "joint_count": 12,
+      "positive_depth_joint_count": 12,
+      "median_px": 6.855304085846244e-13,
+      "mean_px": 7.2846498687926e-13,
+      "max_px": 1.1368683772161603e-12
+    }
+  },
+  "inputs": {
+    "point_cloud": "data/egoexo4d/takes/iiith_cooking_145_2/trajectory/semidense_points.csv.gz",
+    "camera_pose": "outputs/calibration/val_12/fac6316e-d141-4bbd-b88b-a624491acb30.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/fac6316e-d141-4bbd-b88b-a624491acb30.json"
+  }
+}

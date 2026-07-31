@@ -1,0 +1,98 @@
+[
+  {
+    "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+    "camera": "cam02",
+    "frame": 9030,
+    "object_id": "stainless dinner plate_0",
+    "camera_pose_path": "outputs/calibration/val_12/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json",
+    "orientation_source": "nose"
+  },
+  {
+    "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+    "camera": "cam02",
+    "frame": 9510,
+    "object_id": "tawa pan_0",
+    "camera_pose_path": "outputs/calibration/val_12/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json",
+    "orientation_source": "nose"
+  },
+  {
+    "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+    "camera": "cam04",
+    "frame": 6450,
+    "object_id": "salad cream bottle_0",
+    "camera_pose_path": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json",
+    "orientation_source": "nose"
+  },
+  {
+    "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+    "camera": "cam04",
+    "frame": 90,
+    "object_id": "wooden chopping board_0",
+    "camera_pose_path": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json",
+    "orientation_source": "nose"
+  },
+  {
+    "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+    "camera": "cam05",
+    "frame": 7140,
+    "object_id": "napkin_0",
+    "camera_pose_path": "outputs/calibration/val_12/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json",
+    "orientation_source": "nose"
+  },
+  {
+    "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+    "camera": "cam04",
+    "frame": 5190,
+    "object_id": "chopping board_0",
+    "camera_pose_path": "outputs/calibration/val_12/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json",
+    "orientation_source": "nose"
+  },
+  {
+    "take_uid": "fcf26143-bd53-49f7-a876-78829e4faf71",
+    "camera": "cam04",
+    "frame": 720,
+    "object_id": "Small stainless plate_0",
+    "camera_pose_path": "outputs/calibration/val_12/fcf26143-bd53-49f7-a876-78829e4faf71.json",
+    "orientation_source": "nose"
+  },
+  {
+    "take_uid": "fcf26143-bd53-49f7-a876-78829e4faf71",
+    "camera": "cam03",
+    "frame": 1650,
+    "object_id": "Chopping board_0",
+    "camera_pose_path": "outputs/calibration/val_12/fcf26143-bd53-49f7-a876-78829e4faf71.json",
+    "orientation_source": "nose"
+  },
+  {
+    "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+    "camera": "cam04",
+    "frame": 6690,
+    "object_id": "egg whisk_1",
+    "camera_pose_path": "outputs/calibration/val_12/3528e260-6a6d-46d7-b97d-b6c029ec7304.json",
+    "orientation_source": "nose"
+  },
+  {
+    "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+    "camera": "cam04",
+    "frame": 5580,
+    "object_id": "heat extractor range hood_0",
+    "camera_pose_path": "outputs/calibration/val_12/3528e260-6a6d-46d7-b97d-b6c029ec7304.json",
+    "orientation_source": "nose"
+  },
+  {
+    "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+    "camera": "cam01",
+    "frame": 10890,
+    "object_id": "White chopping board_0",
+    "camera_pose_path": "outputs/calibration/val_12/fac6316e-d141-4bbd-b88b-a624491acb30.json",
+    "orientation_source": "nose"
+  },
+  {
+    "take_uid": "c785b2ec-1efd-4135-9707-d54386109075",
+    "camera": "cam01",
+    "frame": 180,
+    "object_id": "chopping board_0",
+    "camera_pose_path": "outputs/calibration/val_12/c785b2ec-1efd-4135-9707-d54386109075.json",
+    "orientation_source": "nose"
+  }
+]

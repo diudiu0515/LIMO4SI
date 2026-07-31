@@ -1,0 +1,30 @@
+{
+  "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+  "take_name": "sfu_cooking_010_1",
+  "frame": 9540,
+  "camera": "cam05",
+  "object_id": "cooking oil bottle_0",
+  "video_path": "data/egoexo4d/takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/cam05.mp4",
+  "video_size": [
+    796,
+    448
+  ],
+  "mask_original_size": [
+    3840,
+    2160
+  ],
+  "mask_pixels_original": 49357,
+  "pose_joint_count": 17,
+  "output_image": "outputs/validation/sfu010_oil_frame9540.jpg",
+  "validated": [
+    "video_frame_read",
+    "relation_mask_decode",
+    "relation_mask_video_alignment",
+    "egopose_frame_camera_alignment"
+  ],
+  "not_yet_validated": [
+    "object_3d_position",
+    "human_centric_direction",
+    "metric_distance"
+  ]
+}
