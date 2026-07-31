@@ -1,0 +1,164 @@
+{
+  "candidate_count": 12,
+  "filtered_near_count": 5,
+  "min_distance_m": 0.6,
+  "sample_count": 7,
+  "accepted_count": 7,
+  "all_accepted": true,
+  "samples": [
+    {
+      "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+      "frame": 9030,
+      "camera": "cam02",
+      "object_id": "stainless dinner plate_0",
+      "projected_centroid_px": [
+        1636.0217897257,
+        2029.3436923582049
+      ],
+      "camera_depth_m": 1.6793742449557665,
+      "inside_image": true,
+      "inside_relation_mask": true,
+      "pose_joint_count": 13,
+      "forward_axis_drawn": true,
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "accepted": true,
+      "topdown_image": "outputs/spatial/val_12/acceptance_far/iiith_cooking_30_1_frame9030_stainless_dinner_plate_0_topdown.jpg",
+      "reprojection_image": "outputs/spatial/val_12/acceptance_far/iiith_cooking_30_1_frame9030_stainless_dinner_plate_0_reprojection.jpg"
+    },
+    {
+      "take_uid": "fcf26143-bd53-49f7-a876-78829e4faf71",
+      "frame": 720,
+      "camera": "cam04",
+      "object_id": "Small stainless plate_0",
+      "projected_centroid_px": [
+        161.65194384350676,
+        1014.9883891355195
+      ],
+      "camera_depth_m": 0.4291342146982453,
+      "inside_image": true,
+      "inside_relation_mask": true,
+      "pose_joint_count": 13,
+      "forward_axis_drawn": true,
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "accepted": true,
+      "topdown_image": "outputs/spatial/val_12/acceptance_far/iiith_cooking_31_3_frame720_Small_stainless_plate_0_topdown.jpg",
+      "reprojection_image": "outputs/spatial/val_12/acceptance_far/iiith_cooking_31_3_frame720_Small_stainless_plate_0_reprojection.jpg"
+    },
+    {
+      "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+      "frame": 6450,
+      "camera": "cam04",
+      "object_id": "salad cream bottle_0",
+      "projected_centroid_px": [
+        2852.5446962037154,
+        1251.2893448360655
+      ],
+      "camera_depth_m": 1.7124778185854854,
+      "inside_image": true,
+      "inside_relation_mask": true,
+      "pose_joint_count": 17,
+      "forward_axis_drawn": true,
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "accepted": true,
+      "topdown_image": "outputs/spatial/val_12/acceptance_far/sfu_cooking_008_3_frame6450_salad_cream_bottle_0_topdown.jpg",
+      "reprojection_image": "outputs/spatial/val_12/acceptance_far/sfu_cooking_008_3_frame6450_salad_cream_bottle_0_reprojection.jpg"
+    },
+    {
+      "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+      "frame": 90,
+      "camera": "cam04",
+      "object_id": "wooden chopping board_0",
+      "projected_centroid_px": [
+        1501.000470662345,
+        1218.870730434981
+      ],
+      "camera_depth_m": 1.0765607740070173,
+      "inside_image": true,
+      "inside_relation_mask": true,
+      "pose_joint_count": 17,
+      "forward_axis_drawn": true,
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "accepted": true,
+      "topdown_image": "outputs/spatial/val_12/acceptance_far/sfu_cooking_008_3_frame90_wooden_chopping_board_0_topdown.jpg",
+      "reprojection_image": "outputs/spatial/val_12/acceptance_far/sfu_cooking_008_3_frame90_wooden_chopping_board_0_reprojection.jpg"
+    },
+    {
+      "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+      "frame": 5190,
+      "camera": "cam04",
+      "object_id": "chopping board_0",
+      "projected_centroid_px": [
+        2676.7118027838237,
+        1327.4398216448346
+      ],
+      "camera_depth_m": 1.2103893076576695,
+      "inside_image": true,
+      "inside_relation_mask": true,
+      "pose_joint_count": 14,
+      "forward_axis_drawn": true,
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "accepted": true,
+      "topdown_image": "outputs/spatial/val_12/acceptance_far/sfu_cooking_010_3_frame5190_chopping_board_0_topdown.jpg",
+      "reprojection_image": "outputs/spatial/val_12/acceptance_far/sfu_cooking_010_3_frame5190_chopping_board_0_reprojection.jpg"
+    },
+    {
+      "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+      "frame": 5580,
+      "camera": "cam04",
+      "object_id": "heat extractor range hood_0",
+      "projected_centroid_px": [
+        1820.1496681862752,
+        509.67867988954333
+      ],
+      "camera_depth_m": 2.3172818506436332,
+      "inside_image": true,
+      "inside_relation_mask": true,
+      "pose_joint_count": 15,
+      "forward_axis_drawn": true,
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "accepted": true,
+      "topdown_image": "outputs/spatial/val_12/acceptance_far/uniandes_cooking_001_5_frame5580_heat_extractor_range_hood_0_topdown.jpg",
+      "reprojection_image": "outputs/spatial/val_12/acceptance_far/uniandes_cooking_001_5_frame5580_heat_extractor_range_hood_0_reprojection.jpg"
+    },
+    {
+      "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+      "frame": 6690,
+      "camera": "cam04",
+      "object_id": "egg whisk_1",
+      "projected_centroid_px": [
+        806.305496983551,
+        1748.9955694685173
+      ],
+      "camera_depth_m": 1.046713650852087,
+      "inside_image": true,
+      "inside_relation_mask": true,
+      "pose_joint_count": 13,
+      "forward_axis_drawn": true,
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "accepted": true,
+      "topdown_image": "outputs/spatial/val_12/acceptance_far/uniandes_cooking_001_5_frame6690_egg_whisk_1_topdown.jpg",
+      "reprojection_image": "outputs/spatial/val_12/acceptance_far/uniandes_cooking_001_5_frame6690_egg_whisk_1_reprojection.jpg"
+    }
+  ]
+}

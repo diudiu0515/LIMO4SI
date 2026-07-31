@@ -15,6 +15,7 @@ PROJECT_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT_ROOT / "src"))
 
 from limo4si.human_frame import HumanFrame, build_human_frame, describe_relation  # noqa: E402
+from limo4si.distance_validation import validate_metric_distance  # noqa: E402
 from limo4si.spatial_real import (  # noqa: E402
     project_world_points,
     robust_object_center,
@@ -36,6 +37,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-dist-std-m", type=float, default=0.10)
     parser.add_argument("--min-points", type=int, default=8)
     parser.add_argument("--dead-zone-m", type=float, default=0.15)
+    parser.add_argument("--min-distance-m", type=float, default=0.60)
     return parser.parse_args()
 
 
@@ -90,6 +92,7 @@ def process_sample(
     max_dist_std_m: float,
     min_points: int,
     dead_zone_m: float,
+    min_distance_m: float,
 ) -> dict:
     uid = sample["take_uid"]
     camera = sample["camera"]
@@ -145,9 +148,25 @@ def process_sample(
     object_center, inliers = robust_object_center(selection, min_points=min_points)
     human_xyz = frame_3d.world_to_human(object_center)
     relation = describe_relation(human_xyz, dead_zone_m=dead_zone_m)
+    distance_validation = validate_metric_distance(
+        object_center,
+        frame_3d.to_dict(),
+        relation["human_xyz_m"],
+        pose_record["annotation3D"],
+    )
+    eligible = (
+        relation["distance_m"] >= min_distance_m
+        and distance_validation["validated"]
+    )
+    if not eligible:
+        relation["lateral_relation"] = None
+        relation["longitudinal_relation"] = None
+        relation["vertical_relation"] = None
+        relation["text_zh"] = None
 
     result = {
-        "status": "ok",
+        "status": "ok" if eligible else "filtered_near_or_invalid",
+        "recognition_status": "eligible" if eligible else "filtered_near_or_invalid",
         "take_uid": uid,
         "take_name": take_name,
         "frame": frame,
@@ -162,6 +181,8 @@ def process_sample(
                 "nose" if "nose" in joints else "body_cross_product",
             ),
         },
+        "distance_policy": {"min_distance_m": min_distance_m},
+        "distance_validation": distance_validation,
         **relation,
         "quality": {
             "mask_pixels": int(mask.sum()),
@@ -214,6 +235,7 @@ def main() -> None:
                 max_dist_std_m=args.max_dist_std_m,
                 min_points=args.min_points,
                 dead_zone_m=args.dead_zone_m,
+                min_distance_m=args.min_distance_m,
             )
         except Exception as error:
             result = {"status": "error", **sample, "error": str(error)}
@@ -223,6 +245,9 @@ def main() -> None:
     summary = {
         "sample_count": len(results),
         "success_count": sum(row["status"] == "ok" for row in results),
+        "filtered_count": sum(
+            row["status"] == "filtered_near_or_invalid" for row in results
+        ),
         "error_count": sum(row["status"] == "error" for row in results),
         "samples": results,
     }
