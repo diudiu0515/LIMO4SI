@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+  "take_name": "sfu_cooking_008_3",
+  "frame": 6450,
+  "camera": "cam04",
+  "object_id": "salad cream bottle_0",
+  "object_xyz_world_m": [
+    -0.5162150000000001,
+    0.110731,
+    -0.9171155
+  ],
+  "human_frame": {
+    "origin": [
+      0.2829716991349289,
+      -0.3342759743538384,
+      -0.6863637206940678
+    ],
+    "right": [
+      0.15136212828715878,
+      -0.9879322330963549,
+      -0.03285435937027354
+    ],
+    "up": [
+      0.03210811847864999,
+      -0.028305884106484172,
+      0.9990835028428361
+    ],
+    "forward": [
+      0.9879567677019793,
+      0.15227829699008222,
+      -0.02743620632772792
+    ]
+  },
+  "orientation": {
+    "forward_sign": 1,
+    "source": "nose"
+  },
+  "human_xyz_m": {
+    "right": -0.5530221317140449,
+    "up": -0.2687969930212102,
+    "forward": -0.715466050436919
+  },
+  "distance_m": 0.9433859077549308,
+  "horizontal_distance_m": 0.904281564278157,
+  "lateral_relation": "left",
+  "longitudinal_relation": "behind",
+  "vertical_relation": "below",
+  "text_zh": "物体在人的左侧、后方、下方，前向分量 -0.72 m，右向分量 -0.55 m，高度差 -0.27 m，直线距离 0.94 m",
+  "quality": {
+    "mask_pixels": 66695,
+    "point_cloud_scanned": 10055304,
+    "point_cloud_quality": 8643163,
+    "point_cloud_in_image": 6199552,
+    "points_in_mask": 21358,
+    "robust_inliers": 20052,
+    "max_point_dist_std_m": 0.1,
+    "pose_reprojection": {
+      "joint_count": 17,
+      "positive_depth_joint_count": 17,
+      "median_px": 0.6304435766641132,
+      "mean_px": 1.0716335837713107,
+      "max_px": 2.28364607349382
+    }
+  },
+  "inputs": {
+    "point_cloud": "data/egoexo4d/takes/sfu_cooking_008_3/trajectory/semidense_points.csv.gz",
+    "camera_pose": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/44d647ce-72d2-4312-b80c-99faea2d017d.json"
+  }
+}

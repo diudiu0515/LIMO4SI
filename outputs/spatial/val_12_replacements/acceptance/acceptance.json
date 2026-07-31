@@ -1,0 +1,51 @@
+{
+  "sample_count": 2,
+  "accepted_count": 1,
+  "all_accepted": false,
+  "samples": [
+    {
+      "take_uid": "fcf26143-bd53-49f7-a876-78829e4faf71",
+      "frame": 720,
+      "camera": "cam04",
+      "object_id": "Small stainless plate_0",
+      "projected_centroid_px": [
+        161.65194384350676,
+        1014.9883891355195
+      ],
+      "camera_depth_m": 0.4291342146982453,
+      "inside_image": true,
+      "inside_relation_mask": true,
+      "pose_joint_count": 13,
+      "forward_axis_drawn": true,
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "accepted": true,
+      "topdown_image": "outputs/spatial/val_12_replacements/acceptance/iiith_cooking_31_3_frame720_Small_stainless_plate_0_topdown.jpg",
+      "reprojection_image": "outputs/spatial/val_12_replacements/acceptance/iiith_cooking_31_3_frame720_Small_stainless_plate_0_reprojection.jpg"
+    },
+    {
+      "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+      "frame": 0,
+      "camera": "cam04",
+      "object_id": "wastebin_0",
+      "projected_centroid_px": [
+        800.0798712408315,
+        1694.6213989702983
+      ],
+      "camera_depth_m": 1.0014238558962318,
+      "inside_image": true,
+      "inside_relation_mask": false,
+      "pose_joint_count": 15,
+      "forward_axis_drawn": true,
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "accepted": false,
+      "topdown_image": "outputs/spatial/val_12_replacements/acceptance/uniandes_cooking_001_5_frame0_wastebin_0_topdown.jpg",
+      "reprojection_image": "outputs/spatial/val_12_replacements/acceptance/uniandes_cooking_001_5_frame0_wastebin_0_reprojection.jpg"
+    }
+  ]
+}

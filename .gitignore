@@ -1,0 +1,7 @@
+# These five GitHub-LFS-over-2-GiB files are stored losslessly as chunks.
+# Run scripts/restore_lfs_chunks.sh after cloning to reconstruct them.
+/data/egoexo4d/takes/minnesota_cooking_060_4/trajectory/semidense_observations.csv.gz
+/data/egoexo4d/takes/sfu_cooking_007_3/trajectory/semidense_observations.csv.gz
+/data/egoexo4d/takes/uniandes_cooking_001_5/trajectory/semidense_observations.csv.gz
+/data/egoexo4d/takes/upenn_0711_Cooking_3_2/trajectory/semidense_observations.csv.gz
+/data/egoexo4d/takes/upenn_0711_Cooking_3_3/trajectory/semidense_observations.csv.gz

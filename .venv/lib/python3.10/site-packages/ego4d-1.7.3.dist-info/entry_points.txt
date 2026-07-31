@@ -1,0 +1,5 @@
+[console_scripts]
+ego4d = ego4d.cli.cli:main
+ego4d_validation = ego4d.internal.validation.cli:main
+egoexo = ego4d.egoexo.download.cli:main
+egoexo_internal = ego4d.internal.download.cli:internal_main

@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+  "take_name": "uniandes_cooking_001_5",
+  "frame": 0,
+  "camera": "cam04",
+  "object_id": "wastebin_0",
+  "object_xyz_world_m": [
+    -0.117202,
+    0.530422,
+    -0.647892
+  ],
+  "human_frame": {
+    "origin": [
+      -0.061394915431902286,
+      -0.022318413351622463,
+      -0.5866344047344365
+    ],
+    "right": [
+      0.9574250522556083,
+      0.28855077179586025,
+      -0.008701804948344088
+    ],
+    "up": [
+      0.039527518477889594,
+      -0.10117567764557175,
+      0.9940830234622959
+    ],
+    "forward": [
+      -0.28596301263681945,
+      0.9521039514406884,
+      0.10827382442077829
+    ]
+  },
+  "orientation": {
+    "forward_sign": 1,
+    "source": "nose"
+  },
+  "human_xyz_m": {
+    "right": 0.10659562366213488,
+    "up": -0.11902493696102746,
+    "forward": 0.5355924995883874
+  },
+  "distance_m": 0.5589176041402103,
+  "horizontal_distance_m": 0.546097017570373,
+  "lateral_relation": "same_lateral_position",
+  "longitudinal_relation": "front",
+  "vertical_relation": "slightly_below",
+  "text_zh": "物体在人的左右中线附近、前方、略偏下，前向分量 0.54 m，右向分量 0.11 m，高度差 -0.12 m，直线距离 0.56 m",
+  "quality": {
+    "mask_pixels": 50347,
+    "point_cloud_scanned": 34818915,
+    "point_cloud_quality": 30700605,
+    "point_cloud_in_image": 21988183,
+    "points_in_mask": 61772,
+    "robust_inliers": 56037,
+    "max_point_dist_std_m": 0.1,
+    "pose_reprojection": {
+      "joint_count": 15,
+      "positive_depth_joint_count": 15,
+      "median_px": 7.190186943645084e-13,
+      "mean_px": 7.271610447763221e-13,
+      "max_px": 9.374856803373542e-13
+    }
+  },
+  "inputs": {
+    "point_cloud": "data/egoexo4d/takes/uniandes_cooking_001_5/trajectory/semidense_points.csv.gz",
+    "camera_pose": "outputs/calibration/val_12/3528e260-6a6d-46d7-b97d-b6c029ec7304.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/3528e260-6a6d-46d7-b97d-b6c029ec7304.json"
+  }
+}

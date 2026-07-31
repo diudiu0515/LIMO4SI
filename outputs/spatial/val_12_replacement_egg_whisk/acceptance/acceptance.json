@@ -1,0 +1,29 @@
+{
+  "sample_count": 1,
+  "accepted_count": 1,
+  "all_accepted": true,
+  "samples": [
+    {
+      "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+      "frame": 6690,
+      "camera": "cam04",
+      "object_id": "egg whisk_1",
+      "projected_centroid_px": [
+        806.305496983551,
+        1748.9955694685173
+      ],
+      "camera_depth_m": 1.046713650852087,
+      "inside_image": true,
+      "inside_relation_mask": true,
+      "pose_joint_count": 13,
+      "forward_axis_drawn": true,
+      "orientation": {
+        "forward_sign": 1,
+        "source": "nose"
+      },
+      "accepted": true,
+      "topdown_image": "outputs/spatial/val_12_replacement_egg_whisk/acceptance/uniandes_cooking_001_5_frame6690_egg_whisk_1_topdown.jpg",
+      "reprojection_image": "outputs/spatial/val_12_replacement_egg_whisk/acceptance/uniandes_cooking_001_5_frame6690_egg_whisk_1_reprojection.jpg"
+    }
+  ]
+}

@@ -1,0 +1,379 @@
+{
+  "selected_sample_count": 12,
+  "available_skeleton_take_count": 7,
+  "excluded_unusable_for_spatial": [
+    {
+      "take_uid": "2df948cb-cc89-432c-842f-2419f7cf5fff",
+      "take_name": "sfu_cooking_008_1"
+    },
+    {
+      "take_uid": "a347a301-3d4f-4e2a-9fab-4f0229e48db7",
+      "take_name": "upenn_0711_Cooking_3_3"
+    },
+    {
+      "take_uid": "4c075527-7526-4c00-9681-53258fe70881",
+      "take_name": "minnesota_cooking_060_4"
+    },
+    {
+      "take_uid": "6eb10b39-5171-4293-afba-4084f5825748",
+      "take_name": "sfu_cooking_007_1"
+    },
+    {
+      "take_uid": "5b225fd3-e57a-446e-b228-dd452c17a235",
+      "take_name": "upenn_0711_Cooking_3_2"
+    }
+  ],
+  "takes": [
+    {
+      "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+      "take_name": "iiith_cooking_30_1",
+      "requested_count": 2,
+      "selected": [
+        {
+          "camera": "cam02",
+          "frame": 9030,
+          "object_id": "stainless dinner plate_0",
+          "mask_pixels": 129664
+        },
+        {
+          "camera": "cam02",
+          "frame": 9510,
+          "object_id": "tawa pan_0",
+          "mask_pixels": 124817
+        }
+      ],
+      "calibrations": {
+        "cam03": {
+          "point_count": 5459,
+          "median_px": 0.48868925174037975,
+          "mean_px": 0.8357611486317235,
+          "p95_px": 1.454101578129844,
+          "max_px": 98.08634470441207,
+          "accepted": true
+        },
+        "cam04": {
+          "point_count": 5459,
+          "median_px": 0.24653339358777507,
+          "mean_px": 0.5969393830123448,
+          "p95_px": 1.8867995186749484,
+          "max_px": 324.005030774772,
+          "accepted": true
+        },
+        "cam01": {
+          "point_count": 5459,
+          "median_px": 0.9376676202532455,
+          "mean_px": 1.1964909202529321,
+          "p95_px": 2.959078810637604,
+          "max_px": 37.69313511503675,
+          "accepted": true
+        },
+        "cam02": {
+          "point_count": 5459,
+          "median_px": 1.0292744812747878,
+          "mean_px": 1.13451316406218,
+          "p95_px": 2.4142196859075336,
+          "max_px": 8.277220241726804,
+          "accepted": true
+        }
+      }
+    },
+    {
+      "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+      "take_name": "sfu_cooking_008_3",
+      "requested_count": 2,
+      "selected": [
+        {
+          "camera": "cam04",
+          "frame": 6450,
+          "object_id": "salad cream bottle_0",
+          "mask_pixels": 66695
+        },
+        {
+          "camera": "cam04",
+          "frame": 90,
+          "object_id": "wooden chopping board_0",
+          "mask_pixels": 55508
+        }
+      ],
+      "calibrations": {
+        "cam01": {
+          "point_count": 6000,
+          "median_px": 0.21764206349103293,
+          "mean_px": 0.3312818591978833,
+          "p95_px": 1.054242021443667,
+          "max_px": 4.728852511470687,
+          "accepted": true
+        },
+        "cam05": {
+          "point_count": 6000,
+          "median_px": 0.5009960828542834,
+          "mean_px": 1.0528744317121141,
+          "p95_px": 3.7311952863312428,
+          "max_px": 13.229399226740155,
+          "accepted": true
+        },
+        "cam02": {
+          "point_count": 6000,
+          "median_px": 0.06888641146549919,
+          "mean_px": 0.13685757392808567,
+          "p95_px": 0.4058967928690159,
+          "max_px": 3.2240830303719994,
+          "accepted": true
+        },
+        "cam04": {
+          "point_count": 6000,
+          "median_px": 0.5538137527659651,
+          "mean_px": 0.6400747489034386,
+          "p95_px": 1.2822787248731693,
+          "max_px": 7.699342306966779,
+          "accepted": true
+        }
+      }
+    },
+    {
+      "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+      "take_name": "sfu_cooking_010_3",
+      "requested_count": 2,
+      "selected": [
+        {
+          "camera": "cam05",
+          "frame": 7140,
+          "object_id": "napkin_0",
+          "mask_pixels": 31163
+        },
+        {
+          "camera": "cam04",
+          "frame": 5190,
+          "object_id": "chopping board_0",
+          "mask_pixels": 28693
+        }
+      ],
+      "calibrations": {
+        "cam01": {
+          "point_count": 6000,
+          "median_px": 3.410605131648481e-13,
+          "mean_px": 4.01527753454862e-13,
+          "p95_px": 7.190186943645084e-13,
+          "max_px": 1.9057386696477137e-12,
+          "accepted": true
+        },
+        "cam05": {
+          "point_count": 6000,
+          "median_px": 2.5421149729252077e-13,
+          "mean_px": 2.9567280603234704e-13,
+          "p95_px": 6.12222357532858e-13,
+          "max_px": 5.1964337151436327e-11,
+          "accepted": true
+        },
+        "cam02": {
+          "point_count": 6000,
+          "median_px": 5.084229945850415e-13,
+          "mean_px": 5.66740571233162e-13,
+          "p95_px": 9.165725883006586e-13,
+          "max_px": 1.7353542628454474e-12,
+          "accepted": true
+        },
+        "cam04": {
+          "point_count": 6000,
+          "median_px": 1.016845989170083e-12,
+          "mean_px": 1.1288796372424164e-12,
+          "p95_px": 1.5252689837551246e-12,
+          "max_px": 4.256277910306711e-11,
+          "accepted": true
+        }
+      }
+    },
+    {
+      "take_uid": "fcf26143-bd53-49f7-a876-78829e4faf71",
+      "take_name": "iiith_cooking_31_3",
+      "requested_count": 2,
+      "selected": [
+        {
+          "camera": "cam03",
+          "frame": 480,
+          "object_id": "Tray_0",
+          "mask_pixels": 81052
+        },
+        {
+          "camera": "cam03",
+          "frame": 1650,
+          "object_id": "Chopping board_0",
+          "mask_pixels": 80023
+        }
+      ],
+      "calibrations": {
+        "cam01": {
+          "point_count": 6000,
+          "median_px": 0.6035547287848115,
+          "mean_px": 1.1722665962903387,
+          "p95_px": 3.303164906823573,
+          "max_px": 545.5334756902158,
+          "accepted": true
+        },
+        "cam02": {
+          "point_count": 6000,
+          "median_px": 0.8575891591565841,
+          "mean_px": 1.2044171977491525,
+          "p95_px": 3.0913854103739626,
+          "max_px": 7.203656582730173,
+          "accepted": true
+        },
+        "cam03": {
+          "point_count": 6000,
+          "median_px": 0.3838897059688639,
+          "mean_px": 0.579962171773723,
+          "p95_px": 1.6621180125986386,
+          "max_px": 11.230922203128994,
+          "accepted": true
+        },
+        "cam04": {
+          "point_count": 6000,
+          "median_px": 0.4535804442100734,
+          "mean_px": 0.6946018240360844,
+          "p95_px": 2.0476586308544,
+          "max_px": 63.66144534839964,
+          "accepted": true
+        }
+      }
+    },
+    {
+      "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+      "take_name": "uniandes_cooking_001_5",
+      "requested_count": 2,
+      "selected": [
+        {
+          "camera": "cam04",
+          "frame": 4290,
+          "object_id": "kitchen napkin_0",
+          "mask_pixels": 187151
+        },
+        {
+          "camera": "cam04",
+          "frame": 5580,
+          "object_id": "heat extractor range hood_0",
+          "mask_pixels": 186886
+        }
+      ],
+      "calibrations": {
+        "cam03": {
+          "point_count": 6000,
+          "median_px": 5.084229945850415e-13,
+          "mean_px": 6.600131572315357e-13,
+          "p95_px": 1.368970808788651e-12,
+          "max_px": 1.0809221133972381e-11,
+          "accepted": true
+        },
+        "cam04": {
+          "point_count": 6000,
+          "median_px": 3.2155493553843715e-13,
+          "mean_px": 4.5235432345761654e-13,
+          "p95_px": 1.2505552149377763e-12,
+          "max_px": 1.3228771611274038e-11,
+          "accepted": true
+        },
+        "cam01": {
+          "point_count": 6000,
+          "median_px": 1.8410599683081325e-12,
+          "mean_px": 2.350344508919381e-12,
+          "p95_px": 4.702276028933555e-12,
+          "max_px": 1.5468095945557204e-10,
+          "accepted": true
+        },
+        "cam02": {
+          "point_count": 6000,
+          "median_px": 9.165725883006586e-13,
+          "mean_px": 9.090279331120759e-13,
+          "p95_px": 1.4779288903810084e-12,
+          "max_px": 2.5724394843074972e-12,
+          "accepted": true
+        }
+      }
+    },
+    {
+      "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+      "take_name": "iiith_cooking_145_2",
+      "requested_count": 1,
+      "selected": [
+        {
+          "camera": "cam01",
+          "frame": 10890,
+          "object_id": "White chopping board_0",
+          "mask_pixels": 67562
+        }
+      ],
+      "calibrations": {
+        "cam01": {
+          "point_count": 6000,
+          "median_px": 7.279509460923746e-13,
+          "mean_px": 7.477245089242116e-13,
+          "p95_px": 1.3642420526593924e-12,
+          "max_px": 2.2737367544323206e-12,
+          "accepted": true
+        },
+        "cam03": {
+          "point_count": 6000,
+          "median_px": 6.915300366811402e-13,
+          "mean_px": 6.759850364857282e-13,
+          "p95_px": 1.1368683772161603e-12,
+          "max_px": 2.7284841053187847e-12,
+          "accepted": true
+        },
+        "cam04": {
+          "point_count": 6000,
+          "median_px": 3.2155493553843715e-13,
+          "mean_px": 3.8587619490590725e-13,
+          "p95_px": 6.821210263296962e-13,
+          "max_px": 1.3258049636636544e-12,
+          "accepted": true
+        }
+      }
+    },
+    {
+      "take_uid": "c785b2ec-1efd-4135-9707-d54386109075",
+      "take_name": "iiith_cooking_29_3",
+      "requested_count": 1,
+      "selected": [
+        {
+          "camera": "cam01",
+          "frame": 180,
+          "object_id": "chopping board_0",
+          "mask_pixels": 80060
+        }
+      ],
+      "calibrations": {
+        "cam01": {
+          "point_count": 6000,
+          "median_px": 0.8131171917895805,
+          "mean_px": 1.2641123067792066,
+          "p95_px": 3.4042376686633484,
+          "max_px": 44.0095552684946,
+          "accepted": true
+        },
+        "cam02": {
+          "point_count": 6000,
+          "median_px": 0.8223113887459446,
+          "mean_px": 1.010888703943629,
+          "p95_px": 2.4696976809224367,
+          "max_px": 6.278062750069435,
+          "accepted": true
+        },
+        "cam03": {
+          "point_count": 6000,
+          "median_px": 0.3194069330369078,
+          "mean_px": 0.3447467169540342,
+          "p95_px": 0.7084034089965191,
+          "max_px": 3.672471839736902,
+          "accepted": true
+        },
+        "cam04": {
+          "point_count": 6000,
+          "median_px": 0.6165656107588187,
+          "mean_px": 0.9442755987524521,
+          "p95_px": 2.5748088726224583,
+          "max_px": 94.20540146150292,
+          "accepted": true
+        }
+      }
+    }
+  ]
+}

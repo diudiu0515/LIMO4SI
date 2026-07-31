@@ -1,0 +1,71 @@
+{
+  "status": "ok",
+  "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+  "take_name": "uniandes_cooking_001_5",
+  "frame": 5580,
+  "camera": "cam04",
+  "object_id": "heat extractor range hood_0",
+  "object_xyz_world_m": [
+    0.662589,
+    -1.053722,
+    0.582174
+  ],
+  "human_frame": {
+    "origin": [
+      0.7610039949486279,
+      -0.29323874640049113,
+      -0.5746115638765948
+    ],
+    "right": [
+      -0.989134505629173,
+      0.11047802234343398,
+      0.09699245513345386
+    ],
+    "up": [
+      0.10067351585368553,
+      0.028230191849749946,
+      0.9945189286654045
+    ],
+    "forward": [
+      -0.10713436880566894,
+      -0.9934775603138756,
+      0.039045667792994655
+    ]
+  },
+  "orientation": {
+    "forward_sign": 1,
+    "source": "nose"
+  },
+  "human_xyz_m": {
+    "right": 0.1255284533953625,
+    "up": 1.1190687679803197,
+    "forward": 0.8112341406452904
+  },
+  "distance_m": 1.3878663952374253,
+  "horizontal_distance_m": 0.8208886791522554,
+  "lateral_relation": "same_lateral_position",
+  "longitudinal_relation": "front",
+  "vertical_relation": "above",
+  "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.81 m，右向分量 0.13 m，高度差 1.12 m，直线距离 1.39 m",
+  "quality": {
+    "mask_pixels": 186886,
+    "point_cloud_scanned": 34818915,
+    "point_cloud_quality": 30700605,
+    "point_cloud_in_image": 21988183,
+    "points_in_mask": 375985,
+    "robust_inliers": 373845,
+    "max_point_dist_std_m": 0.1,
+    "pose_reprojection": {
+      "joint_count": 15,
+      "positive_depth_joint_count": 15,
+      "median_px": 2.5421149729252077e-13,
+      "mean_px": 2.762040322557317e-13,
+      "max_px": 5.084229945850415e-13
+    }
+  },
+  "inputs": {
+    "point_cloud": "data/egoexo4d/takes/uniandes_cooking_001_5/trajectory/semidense_points.csv.gz",
+    "camera_pose": "outputs/calibration/val_12/3528e260-6a6d-46d7-b97d-b6c029ec7304.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/3528e260-6a6d-46d7-b97d-b6c029ec7304.json"
+  }
+}
