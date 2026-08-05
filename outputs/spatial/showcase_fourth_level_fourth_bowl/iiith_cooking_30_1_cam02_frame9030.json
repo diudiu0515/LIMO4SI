@@ -1,0 +1,148 @@
+{
+  "status": "ok",
+  "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+  "take_name": "iiith_cooking_30_1",
+  "camera": "cam02",
+  "frame": 9030,
+  "query": {
+    "raw": "第四层架子上的右数第四个碗（不锈钢盆）",
+    "target": "bowl",
+    "support": "shelf",
+    "level_from_top": 4,
+    "ordinal": 4,
+    "order": "right_to_left"
+  },
+  "selection": {
+    "status": "resolved",
+    "reason": "resolved_by_candidate_index",
+    "matching_candidate_indices": [
+      0
+    ],
+    "level_convention": "top_to_bottom_in_image",
+    "ordering_frame": "image",
+    "manual_confirmation": true
+  },
+  "candidates": [
+    {
+      "index": 0,
+      "label": "bowl",
+      "score": 0.10554888099431992,
+      "box_xyxy": [
+        555.967529296875,
+        383.96661376953125,
+        711.0682983398438,
+        447.315185546875
+      ],
+      "center_xy": [
+        633.5179443359375,
+        415.6408996582031
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    }
+  ],
+  "mask_provenance": "grounding_dino_plus_sam2",
+  "overlay": "outputs/spatial/showcase_fourth_level_fourth_bowl/iiith_cooking_30_1_cam02_frame9030_candidates.jpg",
+  "recognition_status": "eligible",
+  "filter_reason": null,
+  "min_distance_m": 0.6,
+  "selected_candidate_index": 0,
+  "object_xyz_world_m": [
+    -0.951589,
+    -0.8017434999999999,
+    -0.381231
+  ],
+  "human_frame": {
+    "origin": [
+      -0.435516457902106,
+      -0.2431235920667723,
+      -0.5429797548844446
+    ],
+    "right": [
+      -0.1882679879855708,
+      0.9781038118348568,
+      -0.08870229971081879
+    ],
+    "up": [
+      -0.009966491858952903,
+      0.08841000431819962,
+      0.9960343067266716
+    ],
+    "forward": [
+      -0.9820671228281143,
+      -0.1884054256399716,
+      0.006896509952920163
+    ]
+  },
+  "orientation": {
+    "forward_sign": 1,
+    "source": "nose_or_default"
+  },
+  "distance_definition": {
+    "distance_m": "Euclidean distance from pelvis midpoint to robust 3D object centroid",
+    "horizontal_distance_m": "Euclidean norm of right and forward components",
+    "minimum_eligible_m": 0.6
+  },
+  "distance_validation": {
+    "world_direct_m": 0.777527960882037,
+    "human_components_m": 0.777527960882037,
+    "agreement_residual_m": 0.0,
+    "agreement_pass": true,
+    "skeleton_scale": {
+      "shoulder_width_m": 0.3408718787934796,
+      "hip_width_m": 0.1808142302559222,
+      "torso_length_m": 0.5388670146022273,
+      "plausible": true
+    },
+    "validated": true
+  },
+  "raw_relation_before_filter": {
+    "human_xyz_m": {
+      "right": -0.46357580869456927,
+      "up": 0.116863153252069,
+      "forward": 0.6131804000117241
+    },
+    "distance_m": 0.777527960882037,
+    "horizontal_distance_m": 0.7686954750519622,
+    "lateral_relation": "left",
+    "longitudinal_relation": "front",
+    "vertical_relation": "slightly_above",
+    "text_zh": "物体在人的左侧、前方、略偏上，前向分量 0.61 m，右向分量 -0.46 m，高度差 0.12 m，直线距离 0.78 m"
+  },
+  "human_xyz_m": {
+    "right": -0.46357580869456927,
+    "up": 0.116863153252069,
+    "forward": 0.6131804000117241
+  },
+  "distance_m": 0.777527960882037,
+  "horizontal_distance_m": 0.7686954750519622,
+  "lateral_relation": "left",
+  "longitudinal_relation": "front",
+  "vertical_relation": "slightly_above",
+  "text_zh": "物体在人的左侧、前方、略偏上，前向分量 0.61 m，右向分量 -0.46 m，高度差 0.12 m，直线距离 0.78 m",
+  "quality": {
+    "mask_pixels_video": 5291,
+    "mask_pixels_calibration": 122631,
+    "points_in_mask": 29662,
+    "robust_inliers": 25276
+  },
+  "inputs": {
+    "video": "data/egoexo4d/takes/iiith_cooking_30_1/frame_aligned_videos/downscaled/448/cam02.mp4",
+    "point_cloud": "data/egoexo4d/takes/iiith_cooking_30_1/trajectory/semidense_points.csv.gz",
+    "camera_pose": "/root/autodl-tmp/LIMO4SI/outputs/calibration/val_12/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json"
+  },
+  "acceptance_topdown": "outputs/spatial/showcase_fourth_level_fourth_bowl/iiith_cooking_30_1_cam02_frame9030_topdown.jpg",
+  "acceptance_reprojection": "outputs/spatial/showcase_fourth_level_fourth_bowl/iiith_cooking_30_1_cam02_frame9030_reprojection.jpg",
+  "reprojection_check": {
+    "projected_centroid_px": [
+      2871.6944959834436,
+      1920.2554489732784
+    ],
+    "camera_depth_m": 0.5328631017971821,
+    "inside_video_image": true,
+    "inside_selected_mask": true,
+    "pose_joint_count": 13,
+    "forward_axis_drawn": true
+  }
+}

@@ -1,0 +1,539 @@
+{
+  "status": "ok",
+  "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
+  "take_name": "sfu_cooking_007_3",
+  "camera": "cam01",
+  "frame": 10890,
+  "query": {
+    "raw": "蚝油瓶",
+    "target": "oyster sauce bottle",
+    "support": null,
+    "level_from_top": null,
+    "ordinal": null,
+    "order": null
+  },
+  "selection": {
+    "status": "resolved",
+    "reason": "resolved_by_candidate_index",
+    "matching_candidate_indices": [
+      0
+    ],
+    "level_convention": "top_to_bottom_in_image",
+    "ordering_frame": "image",
+    "manual_confirmation": true
+  },
+  "candidates": [
+    {
+      "index": 0,
+      "label": "oyster sauce bottle",
+      "score": 0.16087381541728973,
+      "box_xyxy": [
+        311.1676330566406,
+        249.9802703857422,
+        352.2500305175781,
+        267.73431396484375
+      ],
+      "center_xy": [
+        331.7088317871094,
+        258.8572998046875
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 1,
+      "label": "sauce bottle",
+      "score": 0.1351449340581894,
+      "box_xyxy": [
+        241.27362060546875,
+        -0.043018341064453125,
+        352.7378845214844,
+        268.50115966796875
+      ],
+      "center_xy": [
+        297.0057373046875,
+        134.22906494140625
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 2,
+      "label": "sauce bottle",
+      "score": 0.1188463345170021,
+      "box_xyxy": [
+        296.9252014160156,
+        238.357177734375,
+        309.82818603515625,
+        262.33648681640625
+      ],
+      "center_xy": [
+        303.376708984375,
+        250.34683227539062
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 3,
+      "label": "sauce bottle",
+      "score": 0.1028771698474884,
+      "box_xyxy": [
+        134.72256469726562,
+        220.87454223632812,
+        200.5061492919922,
+        335.68988037109375
+      ],
+      "center_xy": [
+        167.61434936523438,
+        278.2822265625
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 4,
+      "label": "sauce bottle",
+      "score": 0.10097130388021469,
+      "box_xyxy": [
+        93.91403198242188,
+        2.990115165710449,
+        205.20050048828125,
+        226.9403076171875
+      ],
+      "center_xy": [
+        149.55726623535156,
+        114.9652099609375
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 5,
+      "label": "sauce bottle",
+      "score": 0.08918838202953339,
+      "box_xyxy": [
+        272.78570556640625,
+        291.4664306640625,
+        375.45489501953125,
+        445.783935546875
+      ],
+      "center_xy": [
+        324.12030029296875,
+        368.62518310546875
+      ],
+      "level_from_top": 5,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 6,
+      "label": "sauce",
+      "score": 0.08838213980197906,
+      "box_xyxy": [
+        91.3685531616211,
+        235.05838012695312,
+        129.2102813720703,
+        278.56561279296875
+      ],
+      "center_xy": [
+        110.28941345214844,
+        256.81201171875
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 7,
+      "label": "sauce",
+      "score": 0.08478933572769165,
+      "box_xyxy": [
+        200.57456970214844,
+        282.10968017578125,
+        254.1160125732422,
+        343.5823974609375
+      ],
+      "center_xy": [
+        227.3452911376953,
+        312.8460388183594
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 8,
+      "label": "sauce bottle",
+      "score": 0.08168753236532211,
+      "box_xyxy": [
+        0.40182608366012573,
+        283.2794189453125,
+        214.81427001953125,
+        447.5052795410156
+      ],
+      "center_xy": [
+        107.60804748535156,
+        365.392333984375
+      ],
+      "level_from_top": 5,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 9,
+      "label": "sauce",
+      "score": 0.0785192996263504,
+      "box_xyxy": [
+        198.21620178222656,
+        113.51449584960938,
+        219.59092712402344,
+        123.23290252685547
+      ],
+      "center_xy": [
+        208.903564453125,
+        118.37370300292969
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 10,
+      "label": "sauce bottle",
+      "score": 0.06949743628501892,
+      "box_xyxy": [
+        482.2001647949219,
+        221.66854858398438,
+        613.7213745117188,
+        382.3331604003906
+      ],
+      "center_xy": [
+        547.9607543945312,
+        302.0008544921875
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 11,
+      "label": "sauce",
+      "score": 0.06882746517658234,
+      "box_xyxy": [
+        483.4836120605469,
+        155.37889099121094,
+        545.0319213867188,
+        207.84629821777344
+      ],
+      "center_xy": [
+        514.2577514648438,
+        181.6125946044922
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 12,
+      "label": "sauce bottle",
+      "score": 0.0666077584028244,
+      "box_xyxy": [
+        643.3037109375,
+        199.5135955810547,
+        686.8683471679688,
+        285.59588623046875
+      ],
+      "center_xy": [
+        665.0860595703125,
+        242.55474853515625
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 13,
+      "label": "sauce",
+      "score": 0.06651093065738678,
+      "box_xyxy": [
+        209.47018432617188,
+        99.57164764404297,
+        252.58267211914062,
+        114.24373626708984
+      ],
+      "center_xy": [
+        231.02642822265625,
+        106.9076919555664
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 14,
+      "label": "sauce bottle",
+      "score": 0.06604921817779541,
+      "box_xyxy": [
+        380.2698974609375,
+        291.6864318847656,
+        541.7476806640625,
+        446.7342529296875
+      ],
+      "center_xy": [
+        461.0087890625,
+        369.2103271484375
+      ],
+      "level_from_top": 5,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 15,
+      "label": "sauce",
+      "score": 0.06568898260593414,
+      "box_xyxy": [
+        175.39585876464844,
+        243.59970092773438,
+        213.07952880859375,
+        277.55401611328125
+      ],
+      "center_xy": [
+        194.23770141601562,
+        260.57684326171875
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 16,
+      "label": "sauce",
+      "score": 0.06561429053544998,
+      "box_xyxy": [
+        333.75994873046875,
+        109.05256652832031,
+        398.38037109375,
+        126.30166625976562
+      ],
+      "center_xy": [
+        366.0701599121094,
+        117.67711639404297
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 17,
+      "label": "sauce bottle",
+      "score": 0.06485194712877274,
+      "box_xyxy": [
+        271.3474426269531,
+        225.37506103515625,
+        311.6397399902344,
+        311.4058837890625
+      ],
+      "center_xy": [
+        291.49359130859375,
+        268.3904724121094
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 18,
+      "label": "sauce bottle",
+      "score": 0.06463095545768738,
+      "box_xyxy": [
+        434.5054626464844,
+        148.8319549560547,
+        601.3619384765625,
+        228.39276123046875
+      ],
+      "center_xy": [
+        517.9337158203125,
+        188.61236572265625
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 19,
+      "label": "sauce",
+      "score": 0.05890735983848572,
+      "box_xyxy": [
+        0.34805870056152344,
+        222.30506896972656,
+        86.18741607666016,
+        309.45050048828125
+      ],
+      "center_xy": [
+        43.267738342285156,
+        265.8777770996094
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 20,
+      "label": "sauce",
+      "score": 0.05700811371207237,
+      "box_xyxy": [
+        514.7645263671875,
+        122.22631072998047,
+        573.4024658203125,
+        152.36187744140625
+      ],
+      "center_xy": [
+        544.08349609375,
+        137.29409790039062
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 21,
+      "label": "sauce",
+      "score": 0.056736428290605545,
+      "box_xyxy": [
+        441.16607666015625,
+        131.5743408203125,
+        512.5034790039062,
+        162.7433624267578
+      ],
+      "center_xy": [
+        476.83477783203125,
+        147.15884399414062
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 22,
+      "label": "sauce",
+      "score": 0.05574484169483185,
+      "box_xyxy": [
+        297.0740661621094,
+        235.94244384765625,
+        352.9753112792969,
+        268.8045654296875
+      ],
+      "center_xy": [
+        325.0246887207031,
+        252.37350463867188
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 23,
+      "label": "sauce",
+      "score": 0.05066923797130585,
+      "box_xyxy": [
+        537.4122314453125,
+        116.14738464355469,
+        552.1224365234375,
+        128.10877990722656
+      ],
+      "center_xy": [
+        544.767333984375,
+        122.12808227539062
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    }
+  ],
+  "mask_provenance": "grounding_dino_plus_sam2",
+  "overlay": "outputs/spatial/open_vocab_validated/sfu_cooking_007_3_cam01_frame10890_candidates.jpg",
+  "recognition_status": "eligible",
+  "filter_reason": null,
+  "min_distance_m": 0.6,
+  "selected_candidate_index": 0,
+  "object_xyz_world_m": [
+    2.797491,
+    -0.900227,
+    -0.600617
+  ],
+  "human_frame": {
+    "origin": [
+      4.069195258069465,
+      -1.729117055746722,
+      -0.6785414864204579
+    ],
+    "right": [
+      -0.9455501906514642,
+      -0.3221858577044052,
+      0.04616394755928747
+    ],
+    "up": [
+      0.039496844851164566,
+      0.02720348633184157,
+      0.9988493227600428
+    ],
+    "forward": [
+      0.32307094608736164,
+      -0.946285497842311,
+      0.012996936852467023
+    ]
+  },
+  "orientation": {
+    "forward_sign": -1,
+    "source": "visual_review_no_nose"
+  },
+  "distance_definition": {
+    "distance_m": "Euclidean distance from pelvis midpoint to robust 3D object centroid",
+    "horizontal_distance_m": "Euclidean norm of right and forward components",
+    "minimum_eligible_m": 0.6
+  },
+  "distance_validation": {
+    "world_direct_m": 1.5199877203753012,
+    "human_components_m": 1.5199877203753014,
+    "agreement_residual_m": 2.220446049250313e-16,
+    "agreement_pass": true,
+    "skeleton_scale": {
+      "shoulder_width_m": 0.3484375762982158,
+      "hip_width_m": 0.1922767059419416,
+      "torso_length_m": 0.5655770171578496,
+      "plausible": true
+    },
+    "validated": true
+  },
+  "raw_relation_before_filter": {
+    "human_xyz_m": {
+      "right": 0.9390008520211501,
+      "up": 0.05015521401206887,
+      "forward": -1.1942045572273885
+    },
+    "distance_m": 1.5199877203753014,
+    "horizontal_distance_m": 1.5191600062531625,
+    "lateral_relation": "right",
+    "longitudinal_relation": "behind",
+    "vertical_relation": "slightly_above",
+    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.19 m，右向分量 0.94 m，高度差 0.05 m，直线距离 1.52 m"
+  },
+  "human_xyz_m": {
+    "right": 0.9390008520211501,
+    "up": 0.05015521401206887,
+    "forward": -1.1942045572273885
+  },
+  "distance_m": 1.5199877203753014,
+  "horizontal_distance_m": 1.5191600062531625,
+  "lateral_relation": "right",
+  "longitudinal_relation": "behind",
+  "vertical_relation": "slightly_above",
+  "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.19 m，右向分量 0.94 m，高度差 0.05 m，直线距离 1.52 m",
+  "quality": {
+    "mask_pixels_video": 470,
+    "mask_pixels_calibration": 10959,
+    "points_in_mask": 25697,
+    "robust_inliers": 19705
+  },
+  "inputs": {
+    "video": "data/egoexo4d/takes/sfu_cooking_007_3/frame_aligned_videos/downscaled/448/cam01.mp4",
+    "point_cloud": "data/egoexo4d/takes/sfu_cooking_007_3/trajectory/semidense_points.csv.gz",
+    "camera_pose": "data/egoexo4d/annotations/ego_pose/val/camera_pose/f76f2040-989c-42df-b2fb-e0903165443d.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/f76f2040-989c-42df-b2fb-e0903165443d.json"
+  },
+  "acceptance_topdown": "outputs/spatial/open_vocab_validated/sfu_cooking_007_3_cam01_frame10890_topdown.jpg",
+  "acceptance_reprojection": "outputs/spatial/open_vocab_validated/sfu_cooking_007_3_cam01_frame10890_reprojection.jpg",
+  "reprojection_check": {
+    "projected_centroid_px": [
+      1602.2471786712165,
+      1265.0794797904614
+    ],
+    "camera_depth_m": 0.9504057042032301,
+    "inside_video_image": true,
+    "inside_selected_mask": true,
+    "pose_joint_count": 10,
+    "forward_axis_drawn": true
+  }
+}

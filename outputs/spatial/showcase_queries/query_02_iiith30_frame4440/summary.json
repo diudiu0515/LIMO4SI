@@ -1,0 +1,261 @@
+{
+  "sample_count": 3,
+  "success_count": 1,
+  "filtered_count": 2,
+  "min_distance_m": 0.6,
+  "distance_definition": "Euclidean distance from pelvis midpoint to robust 3D object centroid in Ego-Exo4D world meters.",
+  "samples": [
+    {
+      "status": "filtered_near_or_invalid",
+      "recognition_status": "filtered_near_or_invalid",
+      "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+      "take_name": "iiith_cooking_30_1",
+      "camera": "cam03",
+      "frame": 4440,
+      "object_id": "stainless bowl_0",
+      "query": "Where is the bowl relative to the person?",
+      "object_xyz_world_m": [
+        -0.719927,
+        0.31682299999999997,
+        -0.509085
+      ],
+      "human_frame": {
+        "origin": [
+          -0.6258500271633722,
+          -0.08353375575452052,
+          -0.5252054565000108
+        ],
+        "right": [
+          0.6415703610074331,
+          0.766960783976596,
+          0.012594749652021862
+        ],
+        "up": [
+          -0.019214368772831118,
+          -0.00034559033573153253,
+          0.9998153272479781
+        ],
+        "forward": [
+          -0.7668234998416871,
+          0.6416938806076657,
+          -0.014514946821170022
+        ]
+      },
+      "human_xyz_m": {
+        "right": 0.24690396695242572,
+        "up": 0.0177867497144261,
+        "forward": 0.3288129262238772
+      },
+      "distance_m": 0.4115773047850878,
+      "horizontal_distance_m": 0.41119278854176594,
+      "lateral_relation": null,
+      "longitudinal_relation": null,
+      "vertical_relation": null,
+      "text_zh": null,
+      "raw_relation_before_filter": {
+        "human_xyz_m": {
+          "right": 0.24690396695242572,
+          "up": 0.0177867497144261,
+          "forward": 0.3288129262238772
+        },
+        "distance_m": 0.4115773047850878,
+        "horizontal_distance_m": 0.41119278854176594,
+        "lateral_relation": "right",
+        "longitudinal_relation": "front",
+        "vertical_relation": "same_height",
+        "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.33 m，右向分量 0.25 m，高度差 0.02 m，直线距离 0.41 m"
+      },
+      "distance_validation": {
+        "world_direct_m": 0.4115773047850878,
+        "human_components_m": 0.4115773047850878,
+        "agreement_residual_m": 0.0,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.3482394515143394,
+          "hip_width_m": 0.17814265728705164,
+          "torso_length_m": 0.5191240026452791,
+          "plausible": true
+        },
+        "validated": true
+      },
+      "quality": {
+        "mask_pixels": 48974,
+        "points_in_mask": 12328,
+        "robust_inliers": 8276
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/iiith_cooking_30_1/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json"
+      }
+    },
+    {
+      "status": "filtered_near_or_invalid",
+      "recognition_status": "filtered_near_or_invalid",
+      "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+      "take_name": "iiith_cooking_30_1",
+      "camera": "cam03",
+      "frame": 4440,
+      "object_id": "stainless spoon_0",
+      "query": "Where is the spoon relative to the person?",
+      "object_xyz_world_m": [
+        -0.686437,
+        0.256212,
+        -0.506263
+      ],
+      "human_frame": {
+        "origin": [
+          -0.6258500271633722,
+          -0.08353375575452052,
+          -0.5252054565000108
+        ],
+        "right": [
+          0.6415703610074331,
+          0.766960783976596,
+          0.012594749652021862
+        ],
+        "up": [
+          -0.019214368772831118,
+          -0.00034559033573153253,
+          0.9998153272479781
+        ],
+        "forward": [
+          -0.7668234998416871,
+          0.6416938806076657,
+          -0.014514946821170022
+        ]
+      },
+      "human_xyz_m": {
+        "right": 0.22193944064847726,
+        "up": 0.01998568593355679,
+        "forward": 0.2641973382367386
+      },
+      "distance_m": 0.3456251965481848,
+      "horizontal_distance_m": 0.34504687920156096,
+      "lateral_relation": null,
+      "longitudinal_relation": null,
+      "vertical_relation": null,
+      "text_zh": null,
+      "raw_relation_before_filter": {
+        "human_xyz_m": {
+          "right": 0.22193944064847726,
+          "up": 0.01998568593355679,
+          "forward": 0.2641973382367386
+        },
+        "distance_m": 0.3456251965481848,
+        "horizontal_distance_m": 0.34504687920156096,
+        "lateral_relation": "right",
+        "longitudinal_relation": "front",
+        "vertical_relation": "same_height",
+        "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.26 m，右向分量 0.22 m，高度差 0.02 m，直线距离 0.35 m"
+      },
+      "distance_validation": {
+        "world_direct_m": 0.3456251965481848,
+        "human_components_m": 0.3456251965481848,
+        "agreement_residual_m": 0.0,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.3482394515143394,
+          "hip_width_m": 0.17814265728705164,
+          "torso_length_m": 0.5191240026452791,
+          "plausible": true
+        },
+        "validated": true
+      },
+      "quality": {
+        "mask_pixels": 10048,
+        "points_in_mask": 4762,
+        "robust_inliers": 3231
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/iiith_cooking_30_1/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json"
+      }
+    },
+    {
+      "status": "ok",
+      "recognition_status": "eligible",
+      "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+      "take_name": "iiith_cooking_30_1",
+      "camera": "cam03",
+      "frame": 4440,
+      "object_id": "stainless paprika container_0",
+      "query": "Where is the paprika container relative to the person?",
+      "object_xyz_world_m": [
+        0.462057,
+        -0.7728645000000001,
+        0.0013
+      ],
+      "human_frame": {
+        "origin": [
+          -0.6258500271633722,
+          -0.08353375575452052,
+          -0.5252054565000108
+        ],
+        "right": [
+          0.6415703610074331,
+          0.766960783976596,
+          0.012594749652021862
+        ],
+        "up": [
+          -0.019214368772831118,
+          -0.00034559033573153253,
+          0.9998153272479781
+        ],
+        "forward": [
+          -0.7668234998416871,
+          0.6416938806076657,
+          -0.014514946821170022
+        ]
+      },
+      "human_xyz_m": {
+        "right": 0.1759104605490857,
+        "up": 0.5057430045212667,
+        "forward": -1.284214193070988
+      },
+      "distance_m": 1.3913757833302112,
+      "horizontal_distance_m": 1.2962062273479327,
+      "lateral_relation": "right",
+      "longitudinal_relation": "behind",
+      "vertical_relation": "above",
+      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.28 m，右向分量 0.18 m，高度差 0.51 m，直线距离 1.39 m",
+      "raw_relation_before_filter": {
+        "human_xyz_m": {
+          "right": 0.1759104605490857,
+          "up": 0.5057430045212667,
+          "forward": -1.284214193070988
+        },
+        "distance_m": 1.3913757833302112,
+        "horizontal_distance_m": 1.2962062273479327,
+        "lateral_relation": "right",
+        "longitudinal_relation": "behind",
+        "vertical_relation": "above",
+        "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.28 m，右向分量 0.18 m，高度差 0.51 m，直线距离 1.39 m"
+      },
+      "distance_validation": {
+        "world_direct_m": 1.3913757833302107,
+        "human_components_m": 1.3913757833302112,
+        "agreement_residual_m": 4.440892098500626e-16,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.3482394515143394,
+          "hip_width_m": 0.17814265728705164,
+          "torso_length_m": 0.5191240026452791,
+          "plausible": true
+        },
+        "validated": true
+      },
+      "quality": {
+        "mask_pixels": 16961,
+        "points_in_mask": 2380,
+        "robust_inliers": 2032
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/iiith_cooking_30_1/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json"
+      }
+    }
+  ]
+}

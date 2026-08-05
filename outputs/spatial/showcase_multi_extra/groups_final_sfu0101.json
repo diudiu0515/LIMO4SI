@@ -1,0 +1,57 @@
+[
+  {
+    "name": "final_sfu0101_5460",
+    "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+    "camera": "cam05",
+    "frame": 5460,
+    "objects": [
+      "white plate_0",
+      "cooking oil bottle_0",
+      "white bowl_0"
+    ]
+  },
+  {
+    "name": "final_sfu0101_13920",
+    "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+    "camera": "cam05",
+    "frame": 13920,
+    "objects": [
+      "white plate_0",
+      "cooking oil bottle_0",
+      "white bowl_0"
+    ]
+  },
+  {
+    "name": "final_sfu0101_14910",
+    "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+    "camera": "cam05",
+    "frame": 14910,
+    "objects": [
+      "white plate_0",
+      "cooking oil bottle_0",
+      "white bowl_0"
+    ]
+  },
+  {
+    "name": "final_sfu0101_15600",
+    "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+    "camera": "cam05",
+    "frame": 15600,
+    "objects": [
+      "white plate_0",
+      "cooking oil bottle_0",
+      "white bowl_0"
+    ]
+  },
+  {
+    "name": "final_sfu0101_18510",
+    "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+    "camera": "cam05",
+    "frame": 18510,
+    "objects": [
+      "omelet_0",
+      "cooking oil bottle_0",
+      "red fork_0"
+    ]
+  }
+]

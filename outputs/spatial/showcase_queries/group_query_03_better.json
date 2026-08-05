@@ -1,0 +1,19 @@
+[
+  {
+    "name": "query_03_iiith30_frame4440_better",
+    "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+    "camera": "cam03",
+    "frame": 4440,
+    "camera_pose_path": "outputs/calibration/val_12/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json",
+    "objects": [
+      "stainless paprika container_0",
+      "mixed vegetables_0",
+      "sliced onion_0"
+    ],
+    "queries": [
+      "Where is the paprika container relative to the person?",
+      "Where are the mixed vegetables relative to the person?",
+      "Where is the sliced onion relative to the person?"
+    ]
+  }
+]

@@ -1,0 +1,539 @@
+{
+  "status": "ok",
+  "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+  "take_name": "sfu_cooking_008_3",
+  "camera": "cam04",
+  "frame": 6450,
+  "query": {
+    "raw": "salad cream bottle",
+    "target": "salad cream bottle",
+    "support": null,
+    "level_from_top": null,
+    "ordinal": null,
+    "order": null
+  },
+  "selection": {
+    "status": "resolved",
+    "reason": "resolved_by_candidate_index",
+    "matching_candidate_indices": [
+      10
+    ],
+    "level_convention": "top_to_bottom_in_image",
+    "ordering_frame": "image",
+    "manual_confirmation": true
+  },
+  "candidates": [
+    {
+      "index": 0,
+      "label": "salad cream bottle",
+      "score": 0.13174499571323395,
+      "box_xyxy": [
+        220.51080322265625,
+        351.41357421875,
+        338.0595703125,
+        414.15679931640625
+      ],
+      "center_xy": [
+        279.2851867675781,
+        382.7851867675781
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 1,
+      "label": "salad cream",
+      "score": 0.11313927918672562,
+      "box_xyxy": [
+        290.5156555175781,
+        376.3782043457031,
+        340.2207946777344,
+        415.7835388183594
+      ],
+      "center_xy": [
+        315.36822509765625,
+        396.08087158203125
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 2,
+      "label": "salad cream",
+      "score": 0.11083437502384186,
+      "box_xyxy": [
+        563.134521484375,
+        27.808307647705078,
+        644.2771606445312,
+        60.85735321044922
+      ],
+      "center_xy": [
+        603.705810546875,
+        44.33283233642578
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 3,
+      "label": "salad cream bottle",
+      "score": 0.10836973041296005,
+      "box_xyxy": [
+        222.99749755859375,
+        245.2802734375,
+        293.8017883300781,
+        292.4531555175781
+      ],
+      "center_xy": [
+        258.399658203125,
+        268.86669921875
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 4,
+      "label": "salad cream bottle",
+      "score": 0.10137076675891876,
+      "box_xyxy": [
+        364.4561462402344,
+        141.96597290039062,
+        500.6719055175781,
+        315.8999328613281
+      ],
+      "center_xy": [
+        432.56402587890625,
+        228.93295288085938
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 5,
+      "label": "cream",
+      "score": 0.09916325658559799,
+      "box_xyxy": [
+        443.32818603515625,
+        141.56259155273438,
+        484.10040283203125,
+        159.478515625
+      ],
+      "center_xy": [
+        463.71429443359375,
+        150.5205535888672
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 6,
+      "label": "salad cream bottle",
+      "score": 0.09764882177114487,
+      "box_xyxy": [
+        363.7803649902344,
+        141.56143188476562,
+        483.43597412109375,
+        201.23040771484375
+      ],
+      "center_xy": [
+        423.608154296875,
+        171.3959197998047
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 7,
+      "label": "salad cream bottle",
+      "score": 0.087413489818573,
+      "box_xyxy": [
+        8.659662246704102,
+        171.5863800048828,
+        120.1741943359375,
+        320.36810302734375
+      ],
+      "center_xy": [
+        64.41693115234375,
+        245.97723388671875
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 8,
+      "label": "cream",
+      "score": 0.08336981385946274,
+      "box_xyxy": [
+        172.27565002441406,
+        295.7814636230469,
+        374.2526550292969,
+        435.75567626953125
+      ],
+      "center_xy": [
+        273.26416015625,
+        365.7685546875
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 9,
+      "label": "cream",
+      "score": 0.08265116810798645,
+      "box_xyxy": [
+        172.18853759765625,
+        138.7807159423828,
+        226.3192596435547,
+        165.7122039794922
+      ],
+      "center_xy": [
+        199.25390625,
+        152.2464599609375
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 10,
+      "label": "cream",
+      "score": 0.07906840741634369,
+      "box_xyxy": [
+        565.0538330078125,
+        231.74864196777344,
+        621.688232421875,
+        286.86322021484375
+      ],
+      "center_xy": [
+        593.3710327148438,
+        259.3059387207031
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 11,
+      "label": "cream",
+      "score": 0.07794535160064697,
+      "box_xyxy": [
+        70.04903411865234,
+        238.30520629882812,
+        220.3409423828125,
+        446.6809387207031
+      ],
+      "center_xy": [
+        145.1949920654297,
+        342.4930725097656
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 12,
+      "label": "cream",
+      "score": 0.07617608457803726,
+      "box_xyxy": [
+        302.3221435546875,
+        137.00064086914062,
+        371.4118347167969,
+        184.5354461669922
+      ],
+      "center_xy": [
+        336.86700439453125,
+        160.76803588867188
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 13,
+      "label": "cream",
+      "score": 0.07161714136600494,
+      "box_xyxy": [
+        535.2435302734375,
+        231.23269653320312,
+        622.220947265625,
+        315.8341369628906
+      ],
+      "center_xy": [
+        578.7322387695312,
+        273.5334167480469
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 14,
+      "label": "cream",
+      "score": 0.07005249708890915,
+      "box_xyxy": [
+        231.7046356201172,
+        263.242431640625,
+        282.84844970703125,
+        278.13592529296875
+      ],
+      "center_xy": [
+        257.27655029296875,
+        270.6891784667969
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 15,
+      "label": "cream",
+      "score": 0.06581830978393555,
+      "box_xyxy": [
+        690.4216918945312,
+        150.8748016357422,
+        721.85791015625,
+        192.44046020507812
+      ],
+      "center_xy": [
+        706.1397705078125,
+        171.65762329101562
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 16,
+      "label": "cream",
+      "score": 0.06349889189004898,
+      "box_xyxy": [
+        365.6656799316406,
+        -0.04996442794799805,
+        490.3571472167969,
+        70.3432388305664
+      ],
+      "center_xy": [
+        428.01141357421875,
+        35.146636962890625
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 17,
+      "label": "cream",
+      "score": 0.06190375238656998,
+      "box_xyxy": [
+        252.7420196533203,
+        186.63320922851562,
+        295.6521301269531,
+        218.3978729248047
+      ],
+      "center_xy": [
+        274.19708251953125,
+        202.51553344726562
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 18,
+      "label": "salad cream",
+      "score": 0.059624724090099335,
+      "box_xyxy": [
+        282.2008056640625,
+        123.68527221679688,
+        295.13397216796875,
+        141.45094299316406
+      ],
+      "center_xy": [
+        288.6673889160156,
+        132.568115234375
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 19,
+      "label": "cream",
+      "score": 0.057812660932540894,
+      "box_xyxy": [
+        224.3434295654297,
+        216.60250854492188,
+        341.835205078125,
+        293.279296875
+      ],
+      "center_xy": [
+        283.0893249511719,
+        254.94090270996094
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 20,
+      "label": "cream",
+      "score": 0.05620110407471657,
+      "box_xyxy": [
+        0.14415660500526428,
+        346.00811767578125,
+        61.29390335083008,
+        447.5208435058594
+      ],
+      "center_xy": [
+        30.719030380249023,
+        396.76446533203125
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 21,
+      "label": "cream",
+      "score": 0.05360930413007736,
+      "box_xyxy": [
+        649.4793090820312,
+        61.89942169189453,
+        669.98681640625,
+        85.87552642822266
+      ],
+      "center_xy": [
+        659.7330322265625,
+        73.8874740600586
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 22,
+      "label": "cream",
+      "score": 0.05353514105081558,
+      "box_xyxy": [
+        731.3416748046875,
+        234.12071228027344,
+        789.3307495117188,
+        250.73336791992188
+      ],
+      "center_xy": [
+        760.336181640625,
+        242.42703247070312
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 23,
+      "label": "cream",
+      "score": 0.052100785076618195,
+      "box_xyxy": [
+        31.588491439819336,
+        163.36997985839844,
+        63.250946044921875,
+        184.9541015625
+      ],
+      "center_xy": [
+        47.41971969604492,
+        174.16204833984375
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    }
+  ],
+  "mask_provenance": "grounding_dino_plus_sam2",
+  "overlay": "outputs/spatial/open_vocab_validated/sfu_cooking_008_3_cam04_frame6450_candidates.jpg",
+  "recognition_status": "eligible",
+  "filter_reason": null,
+  "min_distance_m": 0.6,
+  "selected_candidate_index": 10,
+  "object_xyz_world_m": [
+    -0.522012,
+    0.163085,
+    -0.908314
+  ],
+  "human_frame": {
+    "origin": [
+      0.2829716991349289,
+      -0.3342759743538384,
+      -0.6863637206940678
+    ],
+    "right": [
+      0.15136212828715878,
+      -0.9879322330963549,
+      -0.03285435937027354
+    ],
+    "up": [
+      0.03210811847864999,
+      -0.028305884106484172,
+      0.9990835028428361
+    ],
+    "forward": [
+      0.9879567677019793,
+      0.15227829699008222,
+      -0.02743620632772792
+    ]
+  },
+  "orientation": {
+    "forward_sign": 1,
+    "source": "nose_or_default"
+  },
+  "distance_definition": {
+    "distance_m": "Euclidean distance from pelvis midpoint to robust 3D object centroid",
+    "horizontal_distance_m": "Euclidean norm of right and forward components",
+    "minimum_eligible_m": 0.6
+  },
+  "distance_validation": {
+    "world_direct_m": 0.9719200693303615,
+    "human_components_m": 0.9719200693303615,
+    "agreement_residual_m": 0.0,
+    "agreement_pass": true,
+    "skeleton_scale": {
+      "shoulder_width_m": 0.36390111068481,
+      "hip_width_m": 0.24768354704556178,
+      "torso_length_m": 0.5788774708088601,
+      "plausible": true
+    },
+    "validated": true
+  },
+  "raw_relation_before_filter": {
+    "human_xyz_m": {
+      "right": -0.6059109497472496,
+      "up": -0.26167161659027055,
+      "forward": -0.7134623376286621
+    },
+    "distance_m": 0.9719200693303615,
+    "horizontal_distance_m": 0.9360323638839465,
+    "lateral_relation": "left",
+    "longitudinal_relation": "behind",
+    "vertical_relation": "below",
+    "text_zh": "物体在人的左侧、后方、下方，前向分量 -0.71 m，右向分量 -0.61 m，高度差 -0.26 m，直线距离 0.97 m"
+  },
+  "human_xyz_m": {
+    "right": -0.6059109497472496,
+    "up": -0.26167161659027055,
+    "forward": -0.7134623376286621
+  },
+  "distance_m": 0.9719200693303615,
+  "horizontal_distance_m": 0.9360323638839465,
+  "lateral_relation": "left",
+  "longitudinal_relation": "behind",
+  "vertical_relation": "below",
+  "text_zh": "物体在人的左侧、后方、下方，前向分量 -0.71 m，右向分量 -0.61 m，高度差 -0.26 m，直线距离 0.97 m",
+  "quality": {
+    "mask_pixels_video": 1619,
+    "mask_pixels_calibration": 37679,
+    "points_in_mask": 14140,
+    "robust_inliers": 10703
+  },
+  "inputs": {
+    "video": "data/egoexo4d/takes/sfu_cooking_008_3/frame_aligned_videos/downscaled/448/cam04.mp4",
+    "point_cloud": "data/egoexo4d/takes/sfu_cooking_008_3/trajectory/semidense_points.csv.gz",
+    "camera_pose": "/root/autodl-tmp/LIMO4SI/outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/44d647ce-72d2-4312-b80c-99faea2d017d.json"
+  },
+  "acceptance_topdown": "outputs/spatial/open_vocab_validated/sfu_cooking_008_3_cam04_frame6450_topdown.jpg",
+  "acceptance_reprojection": "outputs/spatial/open_vocab_validated/sfu_cooking_008_3_cam04_frame6450_reprojection.jpg",
+  "reprojection_check": {
+    "projected_centroid_px": [
+      2899.546455900233,
+      1250.8752520033095
+    ],
+    "camera_depth_m": 1.6953420142090336,
+    "inside_video_image": true,
+    "inside_selected_mask": true,
+    "pose_joint_count": 17,
+    "forward_axis_drawn": true
+  }
+}

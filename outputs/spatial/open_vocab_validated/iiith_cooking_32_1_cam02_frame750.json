@@ -1,0 +1,441 @@
+{
+  "status": "needs_confirmation",
+  "take_uid": "35bfade9-8ead-46a4-b2f0-cdcfb86df1d6",
+  "take_name": "iiith_cooking_32_1",
+  "camera": "cam02",
+  "frame": 750,
+  "query": {
+    "raw": "stainless salt container",
+    "target": "stainless salt container",
+    "support": null,
+    "level_from_top": null,
+    "ordinal": null,
+    "order": null
+  },
+  "selection": {
+    "status": "needs_confirmation",
+    "reason": "ambiguous_candidates",
+    "matching_candidate_indices": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "level_convention": "top_to_bottom_in_image",
+    "ordering_frame": "image"
+  },
+  "candidates": [
+    {
+      "index": 0,
+      "label": "stainless salt container",
+      "score": 0.1515759974718094,
+      "box_xyxy": [
+        521.781005859375,
+        356.9468078613281,
+        700.8446044921875,
+        447.395751953125
+      ],
+      "center_xy": [
+        611.3128051757812,
+        402.1712646484375
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 1,
+      "label": "container",
+      "score": 0.11212477833032608,
+      "box_xyxy": [
+        167.92129516601562,
+        147.8528289794922,
+        210.72276306152344,
+        197.3945770263672
+      ],
+      "center_xy": [
+        189.322021484375,
+        172.6237030029297
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 2,
+      "label": "stainless salt container",
+      "score": 0.09176985919475555,
+      "box_xyxy": [
+        388.40643310546875,
+        344.9363708496094,
+        700.9798583984375,
+        447.15338134765625
+      ],
+      "center_xy": [
+        544.693115234375,
+        396.04486083984375
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 3,
+      "label": "container",
+      "score": 0.08799353986978531,
+      "box_xyxy": [
+        531.9951171875,
+        156.93820190429688,
+        580.7728271484375,
+        301.92559814453125
+      ],
+      "center_xy": [
+        556.3839721679688,
+        229.43190002441406
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 4,
+      "label": "container",
+      "score": 0.08184240758419037,
+      "box_xyxy": [
+        167.11585998535156,
+        147.17335510253906,
+        218.80810546875,
+        242.35592651367188
+      ],
+      "center_xy": [
+        192.96197509765625,
+        194.7646484375
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 5,
+      "label": "container",
+      "score": 0.08100735396146774,
+      "box_xyxy": [
+        0.44795477390289307,
+        356.3541564941406,
+        184.6424102783203,
+        447.36810302734375
+      ],
+      "center_xy": [
+        92.54518127441406,
+        401.86114501953125
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 6,
+      "label": "container",
+      "score": 0.08035708963871002,
+      "box_xyxy": [
+        533.119384765625,
+        107.11225128173828,
+        578.7241821289062,
+        159.07357788085938
+      ],
+      "center_xy": [
+        555.9217529296875,
+        133.09291076660156
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 7,
+      "label": "container",
+      "score": 0.07999031245708466,
+      "box_xyxy": [
+        168.28897094726562,
+        195.46713256835938,
+        213.82020568847656,
+        241.41867065429688
+      ],
+      "center_xy": [
+        191.05459594726562,
+        218.44290161132812
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 8,
+      "label": "container",
+      "score": 0.07022439688444138,
+      "box_xyxy": [
+        170.44151306152344,
+        237.55007934570312,
+        223.51541137695312,
+        302.0553894042969
+      ],
+      "center_xy": [
+        196.97845458984375,
+        269.802734375
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 9,
+      "label": "stainless container",
+      "score": 0.07004722207784653,
+      "box_xyxy": [
+        170.00794982910156,
+        300.83416748046875,
+        201.4517822265625,
+        363.5429992675781
+      ],
+      "center_xy": [
+        185.7298583984375,
+        332.1885986328125
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 10,
+      "label": "container",
+      "score": 0.06919295340776443,
+      "box_xyxy": [
+        530.5220947265625,
+        61.01062774658203,
+        572.4403686523438,
+        111.77061462402344
+      ],
+      "center_xy": [
+        551.481201171875,
+        86.390625
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 11,
+      "label": "container",
+      "score": 0.06756969541311264,
+      "box_xyxy": [
+        0.6598098874092102,
+        74.66069030761719,
+        172.78807067871094,
+        316.0473327636719
+      ],
+      "center_xy": [
+        86.72393798828125,
+        195.35400390625
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 12,
+      "label": "stainless container",
+      "score": 0.06389600783586502,
+      "box_xyxy": [
+        388.8894958496094,
+        344.829345703125,
+        551.2451171875,
+        447.345947265625
+      ],
+      "center_xy": [
+        470.06732177734375,
+        396.087646484375
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 13,
+      "label": "container",
+      "score": 0.06344461441040039,
+      "box_xyxy": [
+        530.4064331054688,
+        61.32460021972656,
+        581.3109130859375,
+        159.20652770996094
+      ],
+      "center_xy": [
+        555.858642578125,
+        110.26556396484375
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 14,
+      "label": "container",
+      "score": 0.06292781233787537,
+      "box_xyxy": [
+        449.3409729003906,
+        228.10227966308594,
+        498.9532165527344,
+        305.70806884765625
+      ],
+      "center_xy": [
+        474.1470947265625,
+        266.9051818847656
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 15,
+      "label": "container",
+      "score": 0.062437791377305984,
+      "box_xyxy": [
+        568.8291625976562,
+        360.88836669921875,
+        675.9735717773438,
+        424.6648254394531
+      ],
+      "center_xy": [
+        622.4013671875,
+        392.776611328125
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 16,
+      "label": "container",
+      "score": 0.05994434654712677,
+      "box_xyxy": [
+        60.30570602416992,
+        141.41502380371094,
+        166.4319305419922,
+        251.9213104248047
+      ],
+      "center_xy": [
+        113.36882019042969,
+        196.6681671142578
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 17,
+      "label": "stainless container",
+      "score": 0.058515116572380066,
+      "box_xyxy": [
+        559.2881469726562,
+        246.75640869140625,
+        653.7086791992188,
+        368.1589660644531
+      ],
+      "center_xy": [
+        606.4984130859375,
+        307.45770263671875
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 18,
+      "label": "stainless container",
+      "score": 0.05533181130886078,
+      "box_xyxy": [
+        522.048828125,
+        380.5697937011719,
+        544.5151977539062,
+        407.6836853027344
+      ],
+      "center_xy": [
+        533.281982421875,
+        394.1267395019531
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 19,
+      "label": "stainless container",
+      "score": 0.05260136350989342,
+      "box_xyxy": [
+        522.2046508789062,
+        244.26980590820312,
+        700.640869140625,
+        447.070556640625
+      ],
+      "center_xy": [
+        611.4227294921875,
+        345.670166015625
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 20,
+      "label": "container",
+      "score": 0.05251657962799072,
+      "box_xyxy": [
+        0.71504807472229,
+        75.90921020507812,
+        170.60501098632812,
+        148.661376953125
+      ],
+      "center_xy": [
+        85.66002655029297,
+        112.28529357910156
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 21,
+      "label": "container",
+      "score": 0.051832012832164764,
+      "box_xyxy": [
+        209.4697265625,
+        0.14333605766296387,
+        303.87078857421875,
+        34.49580383300781
+      ],
+      "center_xy": [
+        256.6702575683594,
+        17.319570541381836
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 22,
+      "label": "container",
+      "score": 0.05100878328084946,
+      "box_xyxy": [
+        528.70068359375,
+        62.89433670043945,
+        582.3087768554688,
+        307.4825439453125
+      ],
+      "center_xy": [
+        555.5047607421875,
+        185.18844604492188
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    }
+  ],
+  "mask_provenance": "grounding_dino_plus_sam2",
+  "overlay": "outputs/spatial/open_vocab_validated/iiith_cooking_32_1_cam02_frame750_candidates.jpg"
+}

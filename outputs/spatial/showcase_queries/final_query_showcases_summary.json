@@ -1,0 +1,181 @@
+{
+  "group_count": 5,
+  "note": "Five query-style showcases on other takes. All answers are person-centric: object relative to the person.",
+  "groups": [
+    {
+      "name": "query_01_iiith32_frame5280",
+      "original_image": "outputs/spatial/showcase_queries/query_01_iiith32_frame5280/showcase_original_multi.jpg",
+      "topdown_image": "outputs/spatial/showcase_queries/query_01_iiith32_frame5280/showcase_topdown_multi.jpg",
+      "summary": "outputs/spatial/showcase_queries/query_01_iiith32_frame5280/summary.json",
+      "qa": [
+        {
+          "query": "Where is the salt container relative to the person?",
+          "answer": "stainless salt container_0 is left + same_longitudinal_position relative to the person",
+          "status": "ok",
+          "distance_m": 1.0372619756925032,
+          "lateral": "left",
+          "longitudinal": "same_longitudinal_position",
+          "vertical": "above"
+        },
+        {
+          "query": "Where is the bowl relative to the person?",
+          "answer": "stainless bowl_0 is right + front relative to the person",
+          "status": "ok",
+          "distance_m": 0.6762769502336156,
+          "lateral": "right",
+          "longitudinal": "front",
+          "vertical": "above"
+        },
+        {
+          "query": "Where is the pan relative to the person?",
+          "answer": "tawa pan_0 is right + front relative to the person",
+          "status": "ok",
+          "distance_m": 0.6103541905645342,
+          "lateral": "right",
+          "longitudinal": "front",
+          "vertical": "above"
+        }
+      ]
+    },
+    {
+      "name": "query_02_iiith30_frame4440",
+      "original_image": "outputs/spatial/showcase_queries/query_02_iiith30_frame4440/showcase_original_multi.jpg",
+      "topdown_image": "outputs/spatial/showcase_queries/query_02_iiith30_frame4440/showcase_topdown_multi.jpg",
+      "summary": "outputs/spatial/showcase_queries/query_02_iiith30_frame4440/summary.json",
+      "qa": [
+        {
+          "query": "Where is the bowl relative to the person?",
+          "answer": "stainless bowl_0 is too close, so direction is skipped",
+          "status": "filtered_near_or_invalid",
+          "distance_m": 0.4115773047850878,
+          "lateral": null,
+          "longitudinal": null,
+          "vertical": null
+        },
+        {
+          "query": "Where is the spoon relative to the person?",
+          "answer": "stainless spoon_0 is too close, so direction is skipped",
+          "status": "filtered_near_or_invalid",
+          "distance_m": 0.3456251965481848,
+          "lateral": null,
+          "longitudinal": null,
+          "vertical": null
+        },
+        {
+          "query": "Where is the paprika container relative to the person?",
+          "answer": "stainless paprika container_0 is right + behind relative to the person",
+          "status": "ok",
+          "distance_m": 1.3913757833302112,
+          "lateral": "right",
+          "longitudinal": "behind",
+          "vertical": "above"
+        }
+      ]
+    },
+    {
+      "name": "query_03_iiith30_frame4440_better",
+      "original_image": "outputs/spatial/showcase_queries/query_03_iiith30_frame4440_better/showcase_original_multi.jpg",
+      "topdown_image": "outputs/spatial/showcase_queries/query_03_iiith30_frame4440_better/showcase_topdown_multi.jpg",
+      "summary": "outputs/spatial/showcase_queries/query_03_iiith30_frame4440_better/summary.json",
+      "qa": [
+        {
+          "query": "Where is the paprika container relative to the person?",
+          "answer": "stainless paprika container_0 is right + behind relative to the person",
+          "status": "ok",
+          "distance_m": 1.3913757833302112,
+          "lateral": "right",
+          "longitudinal": "behind",
+          "vertical": "above"
+        },
+        {
+          "query": "Where are the mixed vegetables relative to the person?",
+          "answer": "mixed vegetables_0 is left + same_longitudinal_position relative to the person",
+          "status": "ok",
+          "distance_m": 0.7862016163811885,
+          "lateral": "left",
+          "longitudinal": "same_longitudinal_position",
+          "vertical": "below"
+        },
+        {
+          "query": "Where is the sliced onion relative to the person?",
+          "answer": "sliced onion_0 is too close, so direction is skipped",
+          "status": "filtered_near_or_invalid",
+          "distance_m": 0.5479358100605091,
+          "lateral": null,
+          "longitudinal": null,
+          "vertical": null
+        }
+      ]
+    },
+    {
+      "name": "query_04_iiith145_frame11250",
+      "original_image": "outputs/spatial/showcase_queries/query_04_iiith145_frame11250/showcase_original_multi.jpg",
+      "topdown_image": "outputs/spatial/showcase_queries/query_04_iiith145_frame11250/showcase_topdown_multi.jpg",
+      "summary": "outputs/spatial/showcase_queries/query_04_iiith145_frame11250/summary.json",
+      "qa": [
+        {
+          "query": "Where is the large bowl relative to the person?",
+          "answer": "Large steel bowl_0 is left + behind relative to the person",
+          "status": "ok",
+          "distance_m": 0.9845654535833047,
+          "lateral": "left",
+          "longitudinal": "behind",
+          "vertical": "above"
+        },
+        {
+          "query": "Where is the salt container relative to the person?",
+          "answer": "Salt container_0 is right + same_longitudinal_position relative to the person",
+          "status": "ok",
+          "distance_m": 0.999043334290659,
+          "lateral": "right",
+          "longitudinal": "same_longitudinal_position",
+          "vertical": "above"
+        },
+        {
+          "query": "Where is the chopping board relative to the person?",
+          "answer": "White chopping board_0 is left + behind relative to the person",
+          "status": "ok",
+          "distance_m": 0.6019330190103548,
+          "lateral": "left",
+          "longitudinal": "behind",
+          "vertical": "slightly_above"
+        }
+      ]
+    },
+    {
+      "name": "query_05_iiith31_frame4170",
+      "original_image": "outputs/spatial/showcase_queries/query_05_iiith31_frame4170/showcase_original_multi.jpg",
+      "topdown_image": "outputs/spatial/showcase_queries/query_05_iiith31_frame4170/showcase_topdown_multi.jpg",
+      "summary": "outputs/spatial/showcase_queries/query_05_iiith31_frame4170/summary.json",
+      "qa": [
+        {
+          "query": "Where is the chopping board relative to the person?",
+          "answer": "Chopping board_0 is right + same_longitudinal_position relative to the person",
+          "status": "ok",
+          "distance_m": 0.6712893770502608,
+          "lateral": "right",
+          "longitudinal": "same_longitudinal_position",
+          "vertical": "slightly_above"
+        },
+        {
+          "query": "Where is the knife relative to the person?",
+          "answer": "Knife_0 is right + same_longitudinal_position relative to the person",
+          "status": "ok",
+          "distance_m": 0.7027399925735756,
+          "lateral": "right",
+          "longitudinal": "same_longitudinal_position",
+          "vertical": "slightly_above"
+        },
+        {
+          "query": "Where is the tray relative to the person?",
+          "answer": "Tray_0 is too close, so direction is skipped",
+          "status": "filtered_near_or_invalid",
+          "distance_m": 0.46776102918119455,
+          "lateral": null,
+          "longitudinal": null,
+          "vertical": null
+        }
+      ]
+    }
+  ]
+}
