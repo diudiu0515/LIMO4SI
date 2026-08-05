@@ -1,0 +1,555 @@
+{
+  "status": "filtered_near_or_invalid",
+  "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+  "take_name": "sfu_cooking_010_1",
+  "camera": "cam05",
+  "frame": 9540,
+  "query": {
+    "raw": "杯子",
+    "target": "cup",
+    "support": null,
+    "level_from_top": null,
+    "ordinal": null,
+    "order": null
+  },
+  "selection": {
+    "status": "resolved",
+    "reason": "resolved_by_candidate_index",
+    "matching_candidate_indices": [
+      14
+    ],
+    "level_convention": "top_to_bottom_in_image",
+    "ordering_frame": "image",
+    "manual_confirmation": true
+  },
+  "candidates": [
+    {
+      "index": 0,
+      "label": "glass",
+      "score": 0.19105982780456543,
+      "box_xyxy": [
+        442.18890380859375,
+        155.16819763183594,
+        491.91461181640625,
+        186.16722106933594
+      ],
+      "center_xy": [
+        467.0517578125,
+        170.66770935058594
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 1,
+      "label": "glass",
+      "score": 0.13881658017635345,
+      "box_xyxy": [
+        115.93021392822266,
+        144.8347930908203,
+        143.902587890625,
+        163.83880615234375
+      ],
+      "center_xy": [
+        129.91639709472656,
+        154.3367919921875
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 2,
+      "label": "glass",
+      "score": 0.13612355291843414,
+      "box_xyxy": [
+        406.0555419921875,
+        182.384033203125,
+        458.2652893066406,
+        211.45335388183594
+      ],
+      "center_xy": [
+        432.160400390625,
+        196.918701171875
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 3,
+      "label": "glass",
+      "score": 0.12167780101299286,
+      "box_xyxy": [
+        483.0331115722656,
+        138.14739990234375,
+        554.60400390625,
+        175.26756286621094
+      ],
+      "center_xy": [
+        518.8185424804688,
+        156.70748901367188
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 4,
+      "label": "glass",
+      "score": 0.10931888967752457,
+      "box_xyxy": [
+        426.8417663574219,
+        202.06385803222656,
+        503.8518371582031,
+        261.02484130859375
+      ],
+      "center_xy": [
+        465.3468017578125,
+        231.54434204101562
+      ],
+      "level_from_top": 5,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 5,
+      "label": "glass",
+      "score": 0.10775149613618851,
+      "box_xyxy": [
+        303.38421630859375,
+        402.2340393066406,
+        349.28179931640625,
+        438.4009094238281
+      ],
+      "center_xy": [
+        326.3330078125,
+        420.3174743652344
+      ],
+      "level_from_top": 6,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 6,
+      "label": "glass",
+      "score": 0.09180493652820587,
+      "box_xyxy": [
+        448.9951477050781,
+        164.58853149414062,
+        481.88348388671875,
+        179.40570068359375
+      ],
+      "center_xy": [
+        465.4393310546875,
+        171.9971160888672
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 7,
+      "label": "glass",
+      "score": 0.08543036133050919,
+      "box_xyxy": [
+        0.06106209754943848,
+        21.076717376708984,
+        41.70420837402344,
+        131.40150451660156
+      ],
+      "center_xy": [
+        20.88263511657715,
+        76.2391128540039
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 8,
+      "label": "glass",
+      "score": 0.08442162722349167,
+      "box_xyxy": [
+        441.0173645019531,
+        118.01266479492188,
+        506.4832458496094,
+        147.36184692382812
+      ],
+      "center_xy": [
+        473.75030517578125,
+        132.687255859375
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 9,
+      "label": "glass",
+      "score": 0.08268511295318604,
+      "box_xyxy": [
+        367.7973327636719,
+        161.12673950195312,
+        417.2341003417969,
+        194.7828369140625
+      ],
+      "center_xy": [
+        392.5157165527344,
+        177.9547882080078
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 10,
+      "label": "glass",
+      "score": 0.08156975358724594,
+      "box_xyxy": [
+        0.030454691499471664,
+        104.3296890258789,
+        12.585214614868164,
+        127.16570281982422
+      ],
+      "center_xy": [
+        6.307834625244141,
+        115.74769592285156
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 11,
+      "label": "glass",
+      "score": 0.08084744215011597,
+      "box_xyxy": [
+        219.4345245361328,
+        133.79171752929688,
+        237.91233825683594,
+        150.2433319091797
+      ],
+      "center_xy": [
+        228.67343139648438,
+        142.01751708984375
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 12,
+      "label": "glass",
+      "score": 0.0798267275094986,
+      "box_xyxy": [
+        504.7229919433594,
+        88.53643035888672,
+        552.656982421875,
+        142.71388244628906
+      ],
+      "center_xy": [
+        528.6900024414062,
+        115.62515258789062
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 13,
+      "label": "glass",
+      "score": 0.07506255060434341,
+      "box_xyxy": [
+        197.47390747070312,
+        110.89970397949219,
+        236.60450744628906,
+        139.1087646484375
+      ],
+      "center_xy": [
+        217.03921508789062,
+        125.00423431396484
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 14,
+      "label": "glass",
+      "score": 0.07137373834848404,
+      "box_xyxy": [
+        406.6895446777344,
+        193.3599853515625,
+        449.26953125,
+        211.2013397216797
+      ],
+      "center_xy": [
+        427.97955322265625,
+        202.28067016601562
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 15,
+      "label": "glass",
+      "score": 0.06410428136587143,
+      "box_xyxy": [
+        96.80831909179688,
+        114.85173034667969,
+        244.12550354003906,
+        209.89920043945312
+      ],
+      "center_xy": [
+        170.4669189453125,
+        162.37545776367188
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 16,
+      "label": "glass",
+      "score": 0.05910131335258484,
+      "box_xyxy": [
+        578.184814453125,
+        143.1151123046875,
+        655.9172973632812,
+        264.56695556640625
+      ],
+      "center_xy": [
+        617.051025390625,
+        203.84103393554688
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 17,
+      "label": "glass",
+      "score": 0.0568278543651104,
+      "box_xyxy": [
+        437.2839050292969,
+        33.399024963378906,
+        472.6044616699219,
+        127.421875
+      ],
+      "center_xy": [
+        454.9441833496094,
+        80.41044616699219
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 18,
+      "label": "glass",
+      "score": 0.05625507980585098,
+      "box_xyxy": [
+        422.1264953613281,
+        181.1845703125,
+        444.7951965332031,
+        203.5172882080078
+      ],
+      "center_xy": [
+        433.4608459472656,
+        192.35092163085938
+      ],
+      "level_from_top": 4,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 19,
+      "label": "glass",
+      "score": 0.05495167523622513,
+      "box_xyxy": [
+        200.6508331298828,
+        125.76148986816406,
+        236.59600830078125,
+        139.37283325195312
+      ],
+      "center_xy": [
+        218.6234130859375,
+        132.56716918945312
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 20,
+      "label": "glass",
+      "score": 0.05352918803691864,
+      "box_xyxy": [
+        0.7433314323425293,
+        79.24229431152344,
+        23.110057830810547,
+        116.5085678100586
+      ],
+      "center_xy": [
+        11.926694869995117,
+        97.87542724609375
+      ],
+      "level_from_top": 2,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 21,
+      "label": "glass",
+      "score": 0.05348388850688934,
+      "box_xyxy": [
+        551.182373046875,
+        126.86141967773438,
+        569.981689453125,
+        171.4495391845703
+      ],
+      "center_xy": [
+        560.58203125,
+        149.15548706054688
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 22,
+      "label": "glass",
+      "score": 0.052195921540260315,
+      "box_xyxy": [
+        14.689679145812988,
+        59.30340576171875,
+        24.284515380859375,
+        73.88033294677734
+      ],
+      "center_xy": [
+        19.487096786499023,
+        66.59187316894531
+      ],
+      "level_from_top": 1,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 23,
+      "label": "glass",
+      "score": 0.05117256939411163,
+      "box_xyxy": [
+        367.5836486816406,
+        160.7359619140625,
+        450.5581359863281,
+        211.36483764648438
+      ],
+      "center_xy": [
+        409.0708923339844,
+        186.05039978027344
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    },
+    {
+      "index": 24,
+      "label": "glass",
+      "score": 0.05108112096786499,
+      "box_xyxy": [
+        217.1730194091797,
+        156.04437255859375,
+        239.30545043945312,
+        166.99899291992188
+      ],
+      "center_xy": [
+        228.23922729492188,
+        161.5216827392578
+      ],
+      "level_from_top": 3,
+      "ordinal_in_level": null
+    }
+  ],
+  "mask_provenance": "grounding_dino_plus_sam2",
+  "overlay": "outputs/spatial/open_vocab_validated/sfu_cooking_010_1_cam05_frame9540_candidates.jpg",
+  "recognition_status": "filtered_near_or_invalid",
+  "filter_reason": "distance_below_threshold_or_distance_validation_failed",
+  "min_distance_m": 0.6,
+  "selected_candidate_index": 14,
+  "object_xyz_world_m": [
+    -0.979376,
+    -0.704326,
+    -0.5019845000000001
+  ],
+  "human_frame": {
+    "origin": [
+      -0.9105457606017691,
+      -0.30842172502076104,
+      -0.5485076132524282
+    ],
+    "right": [
+      -0.7237538174926159,
+      0.6863071026720898,
+      -0.0718538272237942
+    ],
+    "up": [
+      -0.1398061706459243,
+      -0.04386806540420576,
+      0.9892066657109702
+    ],
+    "forward": [
+      -0.6757474722958186,
+      -0.7259877090278692,
+      -0.12769964771399375
+    ]
+  },
+  "orientation": {
+    "forward_sign": 1
+  },
+  "distance_definition": {
+    "distance_m": "Euclidean distance from pelvis midpoint to robust 3D object centroid",
+    "horizontal_distance_m": "Euclidean norm of right and forward components",
+    "minimum_eligible_m": 0.6
+  },
+  "distance_validation": {
+    "world_direct_m": 0.4045271274823889,
+    "human_components_m": 0.4045271274823889,
+    "agreement_residual_m": 0.0,
+    "agreement_pass": true,
+    "skeleton_scale": {
+      "shoulder_width_m": 0.42428558548329004,
+      "hip_width_m": 0.14486983534536405,
+      "torso_length_m": 0.5430961051016884,
+      "plausible": true
+    },
+    "validated": true
+  },
+  "raw_relation_before_filter": {
+    "human_xyz_m": {
+      "right": -0.2252386311146485,
+      "up": 0.07301142056243115,
+      "forward": 0.3279925127044946
+    },
+    "distance_m": 0.4045271274823889,
+    "horizontal_distance_m": 0.39788381386606914,
+    "lateral_relation": "left",
+    "longitudinal_relation": "front",
+    "vertical_relation": "slightly_above",
+    "text_zh": "物体在人的左侧、前方、略偏上，前向分量 0.33 m，右向分量 -0.23 m，高度差 0.07 m，直线距离 0.40 m"
+  },
+  "human_xyz_m": {
+    "right": -0.2252386311146485,
+    "up": 0.07301142056243115,
+    "forward": 0.3279925127044946
+  },
+  "distance_m": 0.4045271274823889,
+  "horizontal_distance_m": 0.39788381386606914,
+  "lateral_relation": null,
+  "longitudinal_relation": null,
+  "vertical_relation": null,
+  "text_zh": null,
+  "quality": {
+    "mask_pixels_video": 381,
+    "mask_pixels_calibration": 8895,
+    "points_in_mask": 70847,
+    "robust_inliers": 56278
+  },
+  "inputs": {
+    "video": "data/egoexo4d/takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/cam05.mp4",
+    "point_cloud": "data/egoexo4d/takes/sfu_cooking_010_1/trajectory/semidense_points.csv.gz",
+    "camera_pose": "data/egoexo4d/annotations/ego_pose/val/camera_pose/e2b190bb-f8b2-43a7-b2da-b80f3708dcf3.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/e2b190bb-f8b2-43a7-b2da-b80f3708dcf3.json"
+  },
+  "acceptance_topdown": "outputs/spatial/open_vocab_validated/sfu_cooking_010_1_cam05_frame9540_topdown.jpg",
+  "acceptance_reprojection": "outputs/spatial/open_vocab_validated/sfu_cooking_010_1_cam05_frame9540_reprojection.jpg",
+  "reprojection_check": {
+    "projected_centroid_px": [
+      2073.2275450192797,
+      985.2142804071658
+    ],
+    "camera_depth_m": 1.1420865809507081,
+    "inside_video_image": true,
+    "inside_selected_mask": true,
+    "pose_joint_count": 17,
+    "forward_axis_drawn": true
+  }
+}

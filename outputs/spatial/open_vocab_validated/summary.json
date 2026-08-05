@@ -1,0 +1,98 @@
+{
+  "sample_count": 4,
+  "eligible_count": 2,
+  "filtered_count": 1,
+  "needs_confirmation_count": 1,
+  "min_distance_m": 0.6,
+  "distance_definition": "Euclidean distance from pelvis midpoint to robust 3D object centroid in Ego-Exo4D world meters.",
+  "samples": [
+    {
+      "file": "outputs/spatial/open_vocab_validated/iiith_cooking_32_1_cam02_frame750.json",
+      "status": "needs_confirmation",
+      "recognition_status": null,
+      "take_name": "iiith_cooking_32_1",
+      "camera": "cam02",
+      "frame": 750,
+      "query": "stainless salt container",
+      "selected_candidate_index": null,
+      "distance_m": null,
+      "relation": {
+        "lateral": null,
+        "longitudinal": null,
+        "vertical": null
+      },
+      "distance_validated": null,
+      "inside_selected_mask": null,
+      "pose_joint_count": null,
+      "forward_axis_drawn": null,
+      "topdown": null,
+      "reprojection": null
+    },
+    {
+      "file": "outputs/spatial/open_vocab_validated/sfu_cooking_007_3_cam01_frame10890.json",
+      "status": "ok",
+      "recognition_status": "eligible",
+      "take_name": "sfu_cooking_007_3",
+      "camera": "cam01",
+      "frame": 10890,
+      "query": "蚝油瓶",
+      "selected_candidate_index": 0,
+      "distance_m": 1.5199877203753014,
+      "relation": {
+        "lateral": "right",
+        "longitudinal": "behind",
+        "vertical": "slightly_above"
+      },
+      "distance_validated": true,
+      "inside_selected_mask": true,
+      "pose_joint_count": 10,
+      "forward_axis_drawn": true,
+      "topdown": "outputs/spatial/open_vocab_validated/sfu_cooking_007_3_cam01_frame10890_topdown.jpg",
+      "reprojection": "outputs/spatial/open_vocab_validated/sfu_cooking_007_3_cam01_frame10890_reprojection.jpg"
+    },
+    {
+      "file": "outputs/spatial/open_vocab_validated/sfu_cooking_008_3_cam04_frame6450.json",
+      "status": "ok",
+      "recognition_status": "eligible",
+      "take_name": "sfu_cooking_008_3",
+      "camera": "cam04",
+      "frame": 6450,
+      "query": "salad cream bottle",
+      "selected_candidate_index": 10,
+      "distance_m": 0.9719200693303615,
+      "relation": {
+        "lateral": "left",
+        "longitudinal": "behind",
+        "vertical": "below"
+      },
+      "distance_validated": true,
+      "inside_selected_mask": true,
+      "pose_joint_count": 17,
+      "forward_axis_drawn": true,
+      "topdown": "outputs/spatial/open_vocab_validated/sfu_cooking_008_3_cam04_frame6450_topdown.jpg",
+      "reprojection": "outputs/spatial/open_vocab_validated/sfu_cooking_008_3_cam04_frame6450_reprojection.jpg"
+    },
+    {
+      "file": "outputs/spatial/open_vocab_validated/sfu_cooking_010_1_cam05_frame9540.json",
+      "status": "filtered_near_or_invalid",
+      "recognition_status": "filtered_near_or_invalid",
+      "take_name": "sfu_cooking_010_1",
+      "camera": "cam05",
+      "frame": 9540,
+      "query": "杯子",
+      "selected_candidate_index": 14,
+      "distance_m": 0.4045271274823889,
+      "relation": {
+        "lateral": null,
+        "longitudinal": null,
+        "vertical": null
+      },
+      "distance_validated": true,
+      "inside_selected_mask": true,
+      "pose_joint_count": 17,
+      "forward_axis_drawn": true,
+      "topdown": "outputs/spatial/open_vocab_validated/sfu_cooking_010_1_cam05_frame9540_topdown.jpg",
+      "reprojection": "outputs/spatial/open_vocab_validated/sfu_cooking_010_1_cam05_frame9540_reprojection.jpg"
+    }
+  ]
+}

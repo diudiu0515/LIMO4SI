@@ -1,0 +1,261 @@
+{
+  "sample_count": 3,
+  "success_count": 3,
+  "filtered_count": 0,
+  "min_distance_m": 0.6,
+  "distance_definition": "Euclidean distance from pelvis midpoint to robust 3D object centroid in Ego-Exo4D world meters.",
+  "samples": [
+    {
+      "status": "ok",
+      "recognition_status": "eligible",
+      "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+      "take_name": "iiith_cooking_145_2",
+      "camera": "cam01",
+      "frame": 11250,
+      "object_id": "Large steel bowl_0",
+      "query": "Where is the large bowl relative to the person?",
+      "object_xyz_world_m": [
+        -0.359922,
+        1.051152,
+        -0.170162
+      ],
+      "human_frame": {
+        "origin": [
+          0.16626110253562706,
+          0.2586457094104282,
+          -0.4240010324036807
+        ],
+        "right": [
+          0.9697227152864358,
+          -0.22624339737025279,
+          -0.09193356625231208
+        ],
+        "up": [
+          0.1097661224378294,
+          0.06751897140607947,
+          0.9916615283781197
+        ],
+        "forward": [
+          -0.21814961339059438,
+          -0.9717279010333248,
+          0.09030854074174427
+        ]
+      },
+      "human_xyz_m": {
+        "right": -0.7128873500518775,
+        "up": 0.2474745335512699,
+        "forward": -0.6323900013198276
+      },
+      "distance_m": 0.9845654535833047,
+      "horizontal_distance_m": 0.9529561834802689,
+      "lateral_relation": "left",
+      "longitudinal_relation": "behind",
+      "vertical_relation": "above",
+      "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.63 m，右向分量 -0.71 m，高度差 0.25 m，直线距离 0.98 m",
+      "raw_relation_before_filter": {
+        "human_xyz_m": {
+          "right": -0.7128873500518775,
+          "up": 0.2474745335512699,
+          "forward": -0.6323900013198276
+        },
+        "distance_m": 0.9845654535833047,
+        "horizontal_distance_m": 0.9529561834802689,
+        "lateral_relation": "left",
+        "longitudinal_relation": "behind",
+        "vertical_relation": "above",
+        "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.63 m，右向分量 -0.71 m，高度差 0.25 m，直线距离 0.98 m"
+      },
+      "distance_validation": {
+        "world_direct_m": 0.9845654535833045,
+        "human_components_m": 0.9845654535833047,
+        "agreement_residual_m": 2.220446049250313e-16,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.2826189798187059,
+          "hip_width_m": 0.19025135682661248,
+          "torso_length_m": 0.4201849163765348,
+          "plausible": true
+        },
+        "validated": true
+      },
+      "quality": {
+        "mask_pixels": 64678,
+        "points_in_mask": 121870,
+        "robust_inliers": 99189
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/iiith_cooking_145_2/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/fac6316e-d141-4bbd-b88b-a624491acb30.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/fac6316e-d141-4bbd-b88b-a624491acb30.json"
+      }
+    },
+    {
+      "status": "ok",
+      "recognition_status": "eligible",
+      "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+      "take_name": "iiith_cooking_145_2",
+      "camera": "cam01",
+      "frame": 11250,
+      "object_id": "Salt container_0",
+      "query": "Where is the salt container relative to the person?",
+      "object_xyz_world_m": [
+        0.8731964999999999,
+        0.207142,
+        0.28004249999999997
+      ],
+      "human_frame": {
+        "origin": [
+          0.16626110253562706,
+          0.2586457094104282,
+          -0.4240010324036807
+        ],
+        "right": [
+          0.9697227152864358,
+          -0.22624339737025279,
+          -0.09193356625231208
+        ],
+        "up": [
+          0.1097661224378294,
+          0.06751897140607947,
+          0.9916615283781197
+        ],
+        "forward": [
+          -0.21814961339059438,
+          -0.9717279010333248,
+          0.09030854074174427
+        ]
+      },
+      "human_xyz_m": {
+        "right": 0.6324584546246873,
+        "up": 0.7722929652988845,
+        "forward": -0.040588948178114065
+      },
+      "distance_m": 0.999043334290659,
+      "horizontal_distance_m": 0.6337595439442733,
+      "lateral_relation": "right",
+      "longitudinal_relation": "same_longitudinal_position",
+      "vertical_relation": "above",
+      "text_zh": "物体在人的右侧、前后原点附近、上方，前向分量 -0.04 m，右向分量 0.63 m，高度差 0.77 m，直线距离 1.00 m",
+      "raw_relation_before_filter": {
+        "human_xyz_m": {
+          "right": 0.6324584546246873,
+          "up": 0.7722929652988845,
+          "forward": -0.040588948178114065
+        },
+        "distance_m": 0.999043334290659,
+        "horizontal_distance_m": 0.6337595439442733,
+        "lateral_relation": "right",
+        "longitudinal_relation": "same_longitudinal_position",
+        "vertical_relation": "above",
+        "text_zh": "物体在人的右侧、前后原点附近、上方，前向分量 -0.04 m，右向分量 0.63 m，高度差 0.77 m，直线距离 1.00 m"
+      },
+      "distance_validation": {
+        "world_direct_m": 0.9990433342906588,
+        "human_components_m": 0.999043334290659,
+        "agreement_residual_m": 1.1102230246251565e-16,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.2826189798187059,
+          "hip_width_m": 0.19025135682661248,
+          "torso_length_m": 0.4201849163765348,
+          "plausible": true
+        },
+        "validated": true
+      },
+      "quality": {
+        "mask_pixels": 11935,
+        "points_in_mask": 2967,
+        "robust_inliers": 1768
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/iiith_cooking_145_2/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/fac6316e-d141-4bbd-b88b-a624491acb30.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/fac6316e-d141-4bbd-b88b-a624491acb30.json"
+      }
+    },
+    {
+      "status": "ok",
+      "recognition_status": "eligible",
+      "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+      "take_name": "iiith_cooking_145_2",
+      "camera": "cam01",
+      "frame": 11250,
+      "object_id": "White chopping board_0",
+      "query": "Where is the chopping board relative to the person?",
+      "object_xyz_world_m": [
+        -0.1878705,
+        0.741646,
+        -0.363794
+      ],
+      "human_frame": {
+        "origin": [
+          0.16626110253562706,
+          0.2586457094104282,
+          -0.4240010324036807
+        ],
+        "right": [
+          0.9697227152864358,
+          -0.22624339737025279,
+          -0.09193356625231208
+        ],
+        "up": [
+          0.1097661224378294,
+          0.06751897140607947,
+          0.9916615283781197
+        ],
+        "forward": [
+          -0.21814961339059438,
+          -0.9717279010333248,
+          0.09030854074174427
+        ]
+      },
+      "human_xyz_m": {
+        "right": -0.45822013305572806,
+        "up": 0.053445027738959976,
+        "forward": -0.3866539771517846
+      },
+      "distance_m": 0.6019330190103548,
+      "horizontal_distance_m": 0.5995556591217381,
+      "lateral_relation": "left",
+      "longitudinal_relation": "behind",
+      "vertical_relation": "slightly_above",
+      "text_zh": "物体在人的左侧、后方、略偏上，前向分量 -0.39 m，右向分量 -0.46 m，高度差 0.05 m，直线距离 0.60 m",
+      "raw_relation_before_filter": {
+        "human_xyz_m": {
+          "right": -0.45822013305572806,
+          "up": 0.053445027738959976,
+          "forward": -0.3866539771517846
+        },
+        "distance_m": 0.6019330190103548,
+        "horizontal_distance_m": 0.5995556591217381,
+        "lateral_relation": "left",
+        "longitudinal_relation": "behind",
+        "vertical_relation": "slightly_above",
+        "text_zh": "物体在人的左侧、后方、略偏上，前向分量 -0.39 m，右向分量 -0.46 m，高度差 0.05 m，直线距离 0.60 m"
+      },
+      "distance_validation": {
+        "world_direct_m": 0.6019330190103547,
+        "human_components_m": 0.6019330190103548,
+        "agreement_residual_m": 1.1102230246251565e-16,
+        "agreement_pass": true,
+        "skeleton_scale": {
+          "shoulder_width_m": 0.2826189798187059,
+          "hip_width_m": 0.19025135682661248,
+          "torso_length_m": 0.4201849163765348,
+          "plausible": true
+        },
+        "validated": true
+      },
+      "quality": {
+        "mask_pixels": 73942,
+        "points_in_mask": 141265,
+        "robust_inliers": 128052
+      },
+      "inputs": {
+        "point_cloud": "data/egoexo4d/takes/iiith_cooking_145_2/trajectory/semidense_points.csv.gz",
+        "camera_pose": "outputs/calibration/val_12/fac6316e-d141-4bbd-b88b-a624491acb30.json",
+        "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/fac6316e-d141-4bbd-b88b-a624491acb30.json"
+      }
+    }
+  ]
+}

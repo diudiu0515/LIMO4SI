@@ -1,0 +1,23 @@
+[
+  {
+    "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+    "camera": "cam04",
+    "frame": 3450,
+    "object_id": "stainless bowl_0",
+    "camera_pose_path": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json"
+  },
+  {
+    "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+    "camera": "cam04",
+    "frame": 3450,
+    "object_id": "wooden chopping board_0",
+    "camera_pose_path": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json"
+  },
+  {
+    "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+    "camera": "cam04",
+    "frame": 3450,
+    "object_id": "knife_0",
+    "camera_pose_path": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json"
+  }
+]

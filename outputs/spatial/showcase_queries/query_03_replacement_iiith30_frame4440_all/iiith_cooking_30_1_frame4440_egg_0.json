@@ -1,0 +1,84 @@
+{
+  "status": "filtered_near_or_invalid",
+  "recognition_status": "filtered_near_or_invalid",
+  "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+  "take_name": "iiith_cooking_30_1",
+  "camera": "cam03",
+  "frame": 4440,
+  "object_id": "egg_0",
+  "query": "Where is the egg relative to the person?",
+  "object_xyz_world_m": [
+    -0.896452,
+    0.115545,
+    -0.49220450000000004
+  ],
+  "human_frame": {
+    "origin": [
+      -0.6258500271633722,
+      -0.08353375575452052,
+      -0.5252054565000108
+    ],
+    "right": [
+      0.6415703610074331,
+      0.766960783976596,
+      0.012594749652021862
+    ],
+    "up": [
+      -0.019214368772831118,
+      -0.00034559033573153253,
+      0.9998153272479781
+    ],
+    "forward": [
+      -0.7668234998416871,
+      0.6416938806076657,
+      -0.014514946821170022
+    ]
+  },
+  "human_xyz_m": {
+    "right": -0.020508968030151717,
+    "up": 0.038125508525254946,
+    "forward": 0.3347725640726666
+  },
+  "distance_m": 0.33756013068157015,
+  "horizontal_distance_m": 0.3354001899603658,
+  "lateral_relation": null,
+  "longitudinal_relation": null,
+  "vertical_relation": null,
+  "text_zh": null,
+  "raw_relation_before_filter": {
+    "human_xyz_m": {
+      "right": -0.020508968030151717,
+      "up": 0.038125508525254946,
+      "forward": 0.3347725640726666
+    },
+    "distance_m": 0.33756013068157015,
+    "horizontal_distance_m": 0.3354001899603658,
+    "lateral_relation": "same_lateral_position",
+    "longitudinal_relation": "front",
+    "vertical_relation": "same_height",
+    "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.33 m，右向分量 -0.02 m，高度差 0.04 m，直线距离 0.34 m"
+  },
+  "distance_validation": {
+    "world_direct_m": 0.3375601306815701,
+    "human_components_m": 0.33756013068157015,
+    "agreement_residual_m": 5.551115123125783e-17,
+    "agreement_pass": true,
+    "skeleton_scale": {
+      "shoulder_width_m": 0.3482394515143394,
+      "hip_width_m": 0.17814265728705164,
+      "torso_length_m": 0.5191240026452791,
+      "plausible": true
+    },
+    "validated": true
+  },
+  "quality": {
+    "mask_pixels": 5076,
+    "points_in_mask": 2967,
+    "robust_inliers": 2220
+  },
+  "inputs": {
+    "point_cloud": "data/egoexo4d/takes/iiith_cooking_30_1/trajectory/semidense_points.csv.gz",
+    "camera_pose": "outputs/calibration/val_12/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/360be2ce-99dd-424e-a7c6-a5908c7aa2f3.json"
+  }
+}

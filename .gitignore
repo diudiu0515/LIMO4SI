@@ -5,3 +5,9 @@
 /data/egoexo4d/takes/uniandes_cooking_001_5/trajectory/semidense_observations.csv.gz
 /data/egoexo4d/takes/upenn_0711_Cooking_3_2/trajectory/semidense_observations.csv.gz
 /data/egoexo4d/takes/upenn_0711_Cooking_3_3/trajectory/semidense_observations.csv.gz
+# Local runtime/cache noise
+.hf-cache/
+.vscode/
+__pycache__/
+*.pyc
+.venv/

@@ -1,0 +1,167 @@
+{
+  "group_count": 5,
+  "note": "All spatial relations and distances are person-centric: object relative to the person. Distance is auxiliary.",
+  "distance_definition": "3D Euclidean distance in meters from the pelvis midpoint (human-frame origin) to the robust median 3D centroid of object points selected by the object mask.",
+  "groups": [
+    {
+      "name": "final_sfu0101_5460",
+      "original_image": "outputs/spatial/showcase_multi_extra/final_sfu0101_5460/showcase_original_multi.jpg",
+      "topdown_image": "outputs/spatial/showcase_multi_extra/final_sfu0101_5460/showcase_topdown_multi.jpg",
+      "summary": "outputs/spatial/showcase_multi_extra/final_sfu0101_5460/summary.json",
+      "objects": [
+        {
+          "object_id": "white plate_0",
+          "status": "ok",
+          "lateral": "left",
+          "longitudinal": "behind",
+          "vertical": "above",
+          "distance_m": 2.893919971773723
+        },
+        {
+          "object_id": "cooking oil bottle_0",
+          "status": "ok",
+          "lateral": "left",
+          "longitudinal": "front",
+          "vertical": "above",
+          "distance_m": 2.870846104176559
+        },
+        {
+          "object_id": "white bowl_0",
+          "status": "ok",
+          "lateral": "left",
+          "longitudinal": "behind",
+          "vertical": "slightly_above",
+          "distance_m": 0.6969794709418237
+        }
+      ]
+    },
+    {
+      "name": "final_sfu0101_13920",
+      "original_image": "outputs/spatial/showcase_multi_extra/final_sfu0101_13920/showcase_original_multi.jpg",
+      "topdown_image": "outputs/spatial/showcase_multi_extra/final_sfu0101_13920/showcase_topdown_multi.jpg",
+      "summary": "outputs/spatial/showcase_multi_extra/final_sfu0101_13920/summary.json",
+      "objects": [
+        {
+          "object_id": "white plate_0",
+          "status": "ok",
+          "lateral": "left",
+          "longitudinal": "front",
+          "vertical": "above",
+          "distance_m": 0.9794474385890125
+        },
+        {
+          "object_id": "cooking oil bottle_0",
+          "status": "ok",
+          "lateral": "right",
+          "longitudinal": "front",
+          "vertical": "same_height",
+          "distance_m": 0.8096535387251341
+        },
+        {
+          "object_id": "white bowl_0",
+          "status": "ok",
+          "lateral": "left",
+          "longitudinal": "behind",
+          "vertical": "slightly_above",
+          "distance_m": 1.5431235845450122
+        }
+      ]
+    },
+    {
+      "name": "final_sfu0101_14910",
+      "original_image": "outputs/spatial/showcase_multi_extra/final_sfu0101_14910/showcase_original_multi.jpg",
+      "topdown_image": "outputs/spatial/showcase_multi_extra/final_sfu0101_14910/showcase_topdown_multi.jpg",
+      "summary": "outputs/spatial/showcase_multi_extra/final_sfu0101_14910/summary.json",
+      "objects": [
+        {
+          "object_id": "white plate_0",
+          "status": "ok",
+          "lateral": "left",
+          "longitudinal": "front",
+          "vertical": "above",
+          "distance_m": 0.9734395646473673
+        },
+        {
+          "object_id": "cooking oil bottle_0",
+          "status": "ok",
+          "lateral": "right",
+          "longitudinal": "front",
+          "vertical": "same_height",
+          "distance_m": 0.8078413016422855
+        },
+        {
+          "object_id": "white bowl_0",
+          "status": "ok",
+          "lateral": "left",
+          "longitudinal": "behind",
+          "vertical": "slightly_above",
+          "distance_m": 1.5474010649714316
+        }
+      ]
+    },
+    {
+      "name": "final_sfu0101_15600",
+      "original_image": "outputs/spatial/showcase_multi_extra/final_sfu0101_15600/showcase_original_multi.jpg",
+      "topdown_image": "outputs/spatial/showcase_multi_extra/final_sfu0101_15600/showcase_topdown_multi.jpg",
+      "summary": "outputs/spatial/showcase_multi_extra/final_sfu0101_15600/summary.json",
+      "objects": [
+        {
+          "object_id": "white plate_0",
+          "status": "ok",
+          "lateral": "left",
+          "longitudinal": "front",
+          "vertical": "above",
+          "distance_m": 0.9733336275086603
+        },
+        {
+          "object_id": "cooking oil bottle_0",
+          "status": "ok",
+          "lateral": "right",
+          "longitudinal": "front",
+          "vertical": "same_height",
+          "distance_m": 0.7717250198625831
+        },
+        {
+          "object_id": "white bowl_0",
+          "status": "ok",
+          "lateral": "left",
+          "longitudinal": "behind",
+          "vertical": "slightly_above",
+          "distance_m": 1.577894237716537
+        }
+      ]
+    },
+    {
+      "name": "final_sfu0101_18510",
+      "original_image": "outputs/spatial/showcase_multi_extra/final_sfu0101_18510/showcase_original_multi.jpg",
+      "topdown_image": "outputs/spatial/showcase_multi_extra/final_sfu0101_18510/showcase_topdown_multi.jpg",
+      "summary": "outputs/spatial/showcase_multi_extra/final_sfu0101_18510/summary.json",
+      "objects": [
+        {
+          "object_id": "omelet_0",
+          "status": "ok",
+          "lateral": "left",
+          "longitudinal": "same_longitudinal_position",
+          "vertical": "below",
+          "distance_m": 0.6678411510209803
+        },
+        {
+          "object_id": "cooking oil bottle_0",
+          "status": "filtered_near_or_invalid",
+          "lateral": null,
+          "longitudinal": null,
+          "vertical": null,
+          "distance_m": 0.5546816143128189
+        },
+        {
+          "object_id": "red fork_0",
+          "status": "ok",
+          "lateral": "left",
+          "longitudinal": "front",
+          "vertical": "slightly_above",
+          "distance_m": 0.9520911647723207
+        }
+      ]
+    }
+  ]
+}

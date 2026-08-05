@@ -1,0 +1,88 @@
+{
+  "status": "filtered_near_or_invalid",
+  "recognition_status": "filtered_near_or_invalid",
+  "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+  "take_name": "sfu_cooking_008_3",
+  "frame": 3450,
+  "camera": "cam04",
+  "object_id": "wooden chopping board_0",
+  "object_xyz_world_m": [
+    0.5773765,
+    -1.2120769999999998,
+    -0.524584
+  ],
+  "human_frame": {
+    "origin": [
+      0.08530286691438158,
+      -0.9732016901844629,
+      -0.5907276059446662
+    ],
+    "right": [
+      -0.9268461341924731,
+      -0.3745753191875013,
+      -0.025486737493241093
+    ],
+    "up": [
+      0.02205800672930442,
+      -0.12209609392870892,
+      0.9922731419253884
+    ],
+    "forward": [
+      0.3747928599527983,
+      -0.9191223390294317,
+      -0.12142667756909423
+    ]
+  },
+  "orientation": {
+    "forward_sign": 1,
+    "source": "nose"
+  },
+  "distance_policy": {
+    "min_distance_m": 0.6
+  },
+  "distance_validation": {
+    "world_direct_m": 0.5509744555103365,
+    "human_components_m": 0.5509744555103365,
+    "agreement_residual_m": 0.0,
+    "agreement_pass": true,
+    "skeleton_scale": {
+      "shoulder_width_m": 0.38350254970287057,
+      "hip_width_m": 0.21759637492062472,
+      "torso_length_m": 0.4938955126943998,
+      "plausible": true
+    },
+    "validated": true
+  },
+  "human_xyz_m": {
+    "right": -0.3682855338648509,
+    "up": 0.10565242946339179,
+    "forward": 0.39594971943325913
+  },
+  "distance_m": 0.5509744555103365,
+  "horizontal_distance_m": 0.5407498634058032,
+  "lateral_relation": null,
+  "longitudinal_relation": null,
+  "vertical_relation": null,
+  "text_zh": null,
+  "quality": {
+    "mask_pixels": 69409,
+    "point_cloud_scanned": 10055304,
+    "point_cloud_quality": 8643163,
+    "point_cloud_in_image": 6199552,
+    "points_in_mask": 147852,
+    "robust_inliers": 141252,
+    "max_point_dist_std_m": 0.1,
+    "pose_reprojection": {
+      "joint_count": 15,
+      "positive_depth_joint_count": 15,
+      "median_px": 0.6721147524457612,
+      "mean_px": 0.6939097344968772,
+      "max_px": 1.3836522879497053
+    }
+  },
+  "inputs": {
+    "point_cloud": "data/egoexo4d/takes/sfu_cooking_008_3/trajectory/semidense_points.csv.gz",
+    "camera_pose": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/44d647ce-72d2-4312-b80c-99faea2d017d.json"
+  }
+}

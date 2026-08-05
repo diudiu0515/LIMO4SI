@@ -1,0 +1,83 @@
+{
+  "status": "filtered_near_or_invalid",
+  "recognition_status": "filtered_near_or_invalid",
+  "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+  "take_name": "sfu_cooking_008_3",
+  "camera": "cam04",
+  "frame": 3510,
+  "object_id": "wooden chopping board_0",
+  "object_xyz_world_m": [
+    0.6504415,
+    -1.21866,
+    -0.5193875
+  ],
+  "human_frame": {
+    "origin": [
+      0.19076473475142341,
+      -0.9394927954793242,
+      -0.598990024469187
+    ],
+    "right": [
+      -0.6428348937981533,
+      -0.7521472656166527,
+      0.14504409722877196
+    ],
+    "up": [
+      0.1902080601015622,
+      0.026685136814858738,
+      0.9813810663272309
+    ],
+    "forward": [
+      0.7420136071447191,
+      -0.6584545499110511,
+      -0.12591033521326903
+    ]
+  },
+  "human_xyz_m": {
+    "right": -0.07397553874121165,
+    "up": 0.1581050210907473,
+    "forward": 0.5148825501655627
+  },
+  "distance_m": 0.5436668267341235,
+  "horizontal_distance_m": 0.5201696077214101,
+  "lateral_relation": null,
+  "longitudinal_relation": null,
+  "vertical_relation": null,
+  "text_zh": null,
+  "raw_relation_before_filter": {
+    "human_xyz_m": {
+      "right": -0.07397553874121165,
+      "up": 0.1581050210907473,
+      "forward": 0.5148825501655627
+    },
+    "distance_m": 0.5436668267341235,
+    "horizontal_distance_m": 0.5201696077214101,
+    "lateral_relation": "same_lateral_position",
+    "longitudinal_relation": "front",
+    "vertical_relation": "above",
+    "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.51 m，右向分量 -0.07 m，高度差 0.16 m，直线距离 0.54 m"
+  },
+  "distance_validation": {
+    "world_direct_m": 0.5436668267341235,
+    "human_components_m": 0.5436668267341235,
+    "agreement_residual_m": 0.0,
+    "agreement_pass": true,
+    "skeleton_scale": {
+      "shoulder_width_m": 0.34758342403575515,
+      "hip_width_m": 0.2474959012367053,
+      "torso_length_m": 0.49410209828267015,
+      "plausible": true
+    },
+    "validated": true
+  },
+  "quality": {
+    "mask_pixels": 47181,
+    "points_in_mask": 75819,
+    "robust_inliers": 73042
+  },
+  "inputs": {
+    "point_cloud": "data/egoexo4d/takes/sfu_cooking_008_3/trajectory/semidense_points.csv.gz",
+    "camera_pose": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/44d647ce-72d2-4312-b80c-99faea2d017d.json"
+  }
+}
