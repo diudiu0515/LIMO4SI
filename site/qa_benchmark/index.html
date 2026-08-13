@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>LIMO4SI QA Benchmark Viewer</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <div class="mark">QA</div>
+          <div>
+            <h1>LIMO4SI</h1>
+            <p>Task 1 & Task 3 examples</p>
+          </div>
+        </div>
+        <div class="tabs" id="groupTabs"></div>
+        <div class="note">
+          <span>Definition</span>
+          <p>All relations are person-centric: the object is described relative to the person, not the camera.</p>
+        </div>
+      </aside>
+
+      <section class="content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Benchmark Task 1 + Task 3</p>
+            <h2 id="caseTitle">Human Spatial QA</h2>
+          </div>
+          <div class="viewSwitch" role="tablist" aria-label="view mode">
+            <button class="active" id="videoBtn" type="button">Video</button>
+            <button id="originalBtn" type="button">Photo</button>
+            <button id="topdownBtn" type="button">Top-down</button>
+          </div>
+        </header>
+
+        <section class="overviewPanel">
+          <div class="sectionHead compact">
+            <div>
+            </div>
+          </div>
+          <div id="taskGrid" class="taskGrid"></div>
+        </section>
+
+        <section class="visualPanel">
+          <video id="mainVideo" controls muted loop playsinline preload="metadata" poster="">
+            <source id="mainVideoSource" src="" type="video/mp4" />
+            Your browser cannot play this video. Use the direct video link below.
+          </video>
+          <img id="mainImage" alt="QA evidence visualization" />
+          <p id="videoFallback" class="videoFallback hidden"></p>
+        </section>
+
+        <section class="qaPanel">
+          <div class="sectionHead">
+            <div>
+              <p class="eyebrow">Task + Question / Answer</p>
+              <h3>Examples</h3>
+            </div>
+            <button class="ghost" id="toggleGroupJson" type="button">Show group JSON</button>
+          </div>
+          <div id="qaList" class="qaList"></div>
+
+          <pre id="groupJson" class="jsonBlock hidden"></pre>
+        </section>
+      </section>
+    </main>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
