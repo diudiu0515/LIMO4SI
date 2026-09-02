@@ -329,29 +329,29 @@ window.QA_DATA = {
           "task_id": "task1_dynamic_human_referenced_relations",
           "task_name": "Task 1 · Dynamic Human-Referenced Relations",
           "question_type": "relation_change_over_video",
-          "question": "Across the 15-second clip, what is the large steel bowl's overall left/right transition relative to the person?",
+          "question": "The large steel bowl stays fixed in the scene while the person moves and turns. How does the bowl's left/right relation in the person's changing body frame differ between the start and end?",
           "options": [
             {
               "label": "A",
-              "text": "It begins on the person's left and ends on the person's right."
+              "text": "It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion."
             },
             {
               "label": "B",
-              "text": "It begins on the person's right and ends on the person's left."
+              "text": "The bowl itself moves from the person's right side to the left side."
             },
             {
               "label": "C",
-              "text": "It stays on the person's left for the entire clip."
+              "text": "It remains on the person's left in the body frame for the entire clip."
             },
             {
               "label": "D",
-              "text": "It stays centered relative to the person for the entire clip."
+              "text": "It remains centered in the person's body frame at both endpoints."
             }
           ],
           "correct_option": "A",
-          "correct_answer": "It begins on the person's left and ends on the person's right.",
-          "answer": "It begins on the person's left and ends on the person's right.",
-          "explanation": "Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame.",
+          "correct_answer": "It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.",
+          "answer": "It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.",
+          "explanation": "Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes.",
           "status": "ok",
           "quality": "high",
           "method": "Rebuilds the person's body-centric frame at every valid pose sample and transforms the fixed 3D object center into that changing frame.",
@@ -969,7 +969,10 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true
-          }
+          },
+          "question_categories": [
+            "spatial_relation_change"
+          ]
         }
       ],
       "video_clip": "./outputs/spatial/showcase_queries/query_04_iiith145_frame11250/showcase_clip_15s.mp4",
@@ -1573,7 +1576,10 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true
-          }
+          },
+          "question_categories": [
+            "spatial_relation_change"
+          ]
         }
       ],
       "video_clip": "./outputs/spatial/showcase_queries/query_02_iiith30_frame4440/showcase_clip_15s.mp4",
@@ -3377,7 +3383,10 @@ window.QA_DATA = {
                 "lateral_relation": "left"
               }
             ]
-          }
+          },
+          "question_categories": [
+            "relation_consistency"
+          ]
         }
       ],
       "video_clip": "./outputs/spatial/showcase_queries/query_01_iiith32_frame5280/showcase_clip_15s.mp4",
@@ -5730,7 +5739,10 @@ window.QA_DATA = {
             "H_Q": true,
             "S_Q": true,
             "visibility_scope": "body/head-forward FOV proxy plus listed-object blocker test; not gaze ground truth or dense ray casting"
-          }
+          },
+          "question_categories": [
+            "body_forward_visibility"
+          ]
         }
       ],
       "video_clip": "./outputs/spatial/showcase_multi/sfu0083_cam04_3450/showcase_clip_15s.mp4",
@@ -6774,7 +6786,10 @@ window.QA_DATA = {
               "White chopping board_0"
             ],
             "sampled_frame_count": 31
-          }
+          },
+          "question_categories": [
+            "relation_consistency"
+          ]
         }
       ],
       "video_clip": "./outputs/spatial/showcase_diverse_new/diverse_iiith_145_2_frame7380/showcase_clip_15s.mp4",
@@ -9289,7 +9304,10 @@ window.QA_DATA = {
                 }
               }
             ]
-          }
+          },
+          "question_categories": [
+            "relation_consistency"
+          ]
         }
       ],
       "video_clip": "./outputs/spatial/showcase_queries/query_03_iiith29_frame4350/showcase_clip_15s.mp4",
@@ -11312,7 +11330,10 @@ window.QA_DATA = {
                 }
               }
             ]
-          }
+          },
+          "question_categories": [
+            "relation_consistency"
+          ]
         }
       ],
       "video_clip": "./outputs/spatial/showcase_diverse_new/diverse_iiith_31_3_frame1620/showcase_clip_15s.mp4",
@@ -11649,32 +11670,32 @@ window.QA_DATA = {
           "task_id": "task1_dynamic_human_referenced_relations",
           "task_name": "Task 1 · Dynamic Human-Referenced Relations",
           "question_type": "relation_change_over_video",
-          "question": "As the person moves across the scene, how does the white plate's lateral relation to the person change over the clip?",
+          "question": "As the person approaches the scene-fixed white plate, what combined distance and left/right change occurs?",
           "options": [
             {
               "label": "A",
-              "text": "It changes from the person's right side to the person's left side."
+              "text": "The pelvis-to-plate distance decreases from about 3.05 m to 1.86 m, while the plate changes from the person's left to the person's right."
             },
             {
               "label": "B",
-              "text": "It remains on the person's left throughout."
+              "text": "The distance increases while the plate changes from right to left."
             },
             {
               "label": "C",
-              "text": "It remains centered relative to the person throughout."
+              "text": "The distance decreases, but the plate stays on the person's left throughout."
             },
             {
               "label": "D",
-              "text": "The white plate changes from the person's left side to the person's right side."
+              "text": "The distance stays nearly constant and the plate remains centered."
             }
           ],
-          "correct_option": "D",
-          "correct_answer": "The white plate changes from the person's left side to the person's right side.",
-          "answer": "The white plate changes from the person's left side to the person's right side.",
-          "explanation": "The first body-centric sample is left and the final sample is right; 24 valid poses cover the 15-second window.",
+          "correct_option": "A",
+          "correct_answer": "The pelvis-to-plate distance decreases from about 3.05 m to 1.86 m, while the plate changes from the person's left to the person's right.",
+          "answer": "The pelvis-to-plate distance decreases from about 3.05 m to 1.86 m, while the plate changes from the person's left to the person's right.",
+          "explanation": "Across 24 valid body poses, distance changes by -1.19 m and the endpoint lateral labels are left then right.",
           "status": "ok",
           "quality": "high",
-          "method": "Transforms the fixed white-plate 3D center into the person's changing body-centric frame across the full timeline.",
+          "method": "Uses the same fixed 3D plate center with every human pelvis/body-frame sample; jointly checks Euclidean distance and body-centric lateral relation.",
           "result_json": {
             "status": "ok",
             "answer_type": "relation_change_over_video",
@@ -12200,8 +12221,38 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true,
-            "sampled_frame_count": 24
-          }
+            "sampled_frame_count": 24,
+            "distance_series_m": [
+              3.050361089649149,
+              3.036353597604818,
+              3.020535918313878,
+              3.0274695466267714,
+              3.0257966349511727,
+              3.0257585928393786,
+              2.914993102605808,
+              2.8726223774220196,
+              2.893919971773723,
+              2.7494929729962267,
+              2.4943262630506315,
+              2.2726580826533995,
+              2.006332467318223,
+              1.7334379101258057,
+              1.763241432816776,
+              1.833873924046279,
+              1.7986068014973986,
+              1.8320232729245474,
+              1.8257085875261303,
+              1.8282042438004997,
+              1.8495866233525753,
+              1.8285879532387659,
+              1.867939581485668,
+              1.8577855422863496
+            ]
+          },
+          "question_categories": [
+            "spatial_relation_change",
+            "metric_distance_change"
+          ]
         }
       ],
       "video_clip": "./outputs/spatial/showcase_multi/sfu0101_cam05_5460/showcase_clip_15s.mp4",
@@ -13076,7 +13127,10 @@ window.QA_DATA = {
             "H_Q": true,
             "S_Q": true,
             "sampled_frame_count": 26
-          }
+          },
+          "question_categories": [
+            "spatial_relation_change"
+          ]
         }
       ],
       "video_clip": "./outputs/spatial/val_3/showcase_clip_15s.mp4",
@@ -13764,7 +13818,10 @@ window.QA_DATA = {
               1.8563659456831345
             ],
             "sampled_frame_count": 22
-          }
+          },
+          "question_categories": [
+            "metric_distance_change"
+          ]
         }
       ],
       "video_clip": "./outputs/spatial/val_12_replacement_egg_whisk/showcase_clip_15s.mp4",
@@ -13774,6 +13831,2312 @@ window.QA_DATA = {
         "start_sec": 215.5,
         "duration_sec": 15.0,
         "source_video": "data/egoexo4d/takes/uniandes_cooking_001_5/frame_aligned_videos/downscaled/448/cam04.mp4"
+      },
+      "case_policy": "one temporal question per unique video window"
+    },
+    {
+      "name": "diverse_sfu_008_3_frame6960",
+      "title": "Task 1 · second body-forward visibility example · sfu_cooking_008_3 · cam04 · 15s dynamic window around frame 6960",
+      "original_image": "./outputs/spatial/showcase_diverse_new/diverse_sfu_008_3_frame6960/showcase_original_multi.jpg",
+      "topdown_image": "./outputs/spatial/showcase_diverse_new/diverse_sfu_008_3_frame6960/showcase_topdown_multi.jpg",
+      "summary_path": "outputs/spatial/showcase_diverse_new/diverse_sfu_008_3_frame6960/summary.json",
+      "raw_summary": {
+        "sample_count": 3,
+        "success_count": 1,
+        "filtered_count": 2,
+        "min_distance_m": 0.6,
+        "distance_definition": "Euclidean distance from pelvis midpoint to robust 3D object centroid in Ego-Exo4D world meters.",
+        "samples": [
+          {
+            "status": "filtered_near_or_invalid",
+            "recognition_status": "filtered_near_or_invalid",
+            "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+            "take_name": "sfu_cooking_008_3",
+            "camera": "cam04",
+            "frame": 6960,
+            "object_id": "wooden chopping board_0",
+            "query": "Where is wooden chopping board relative to the person?",
+            "object_xyz_world_m": [
+              0.54672,
+              -1.2770325,
+              -0.515345
+            ],
+            "human_frame": {
+              "origin": [
+                0.381757406214816,
+                -0.8457613559621885,
+                -0.5971409293090778
+              ],
+              "right": [
+                -0.763918683524313,
+                -0.6195503360803579,
+                0.1805148914222763
+              ],
+              "up": [
+                0.20312420836959832,
+                0.034655095814169166,
+                0.9785395139228332
+              ],
+              "forward": [
+                0.6125102455769247,
+                -0.7841915616715258,
+                -0.09937199638967226
+              ]
+            },
+            "human_xyz_m": {
+              "right": 0.1559415580532652,
+              "up": 0.09860270236166578,
+              "forward": 0.43111224598525494
+            },
+            "distance_m": 0.46893286414960733,
+            "horizontal_distance_m": 0.45844905732974395,
+            "lateral_relation": null,
+            "longitudinal_relation": null,
+            "vertical_relation": null,
+            "text_zh": null,
+            "raw_relation_before_filter": {
+              "human_xyz_m": {
+                "right": 0.1559415580532652,
+                "up": 0.09860270236166578,
+                "forward": 0.43111224598525494
+              },
+              "distance_m": 0.46893286414960733,
+              "horizontal_distance_m": 0.45844905732974395,
+              "lateral_relation": "right",
+              "longitudinal_relation": "front",
+              "vertical_relation": "slightly_above",
+              "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.43 m，右向分量 0.16 m，高度差 0.10 m，直线距离 0.47 m"
+            },
+            "distance_validation": {
+              "world_direct_m": 0.4689328641496073,
+              "human_components_m": 0.46893286414960733,
+              "agreement_residual_m": 5.551115123125783e-17,
+              "agreement_pass": true,
+              "skeleton_scale": {
+                "shoulder_width_m": 0.3512845977758443,
+                "hip_width_m": 0.26074226156215563,
+                "torso_length_m": 0.4974178522398879,
+                "plausible": true
+              },
+              "validated": true
+            },
+            "quality": {
+              "mask_pixels": 43332,
+              "mask_source": "mask",
+              "points_in_mask": 93107,
+              "robust_inliers": 83770
+            },
+            "inputs": {
+              "point_cloud": "data/egoexo4d/takes/sfu_cooking_008_3/trajectory/semidense_points.csv.gz",
+              "camera_pose": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json",
+              "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/44d647ce-72d2-4312-b80c-99faea2d017d.json"
+            }
+          },
+          {
+            "status": "filtered_near_or_invalid",
+            "recognition_status": "filtered_near_or_invalid",
+            "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+            "take_name": "sfu_cooking_008_3",
+            "camera": "cam04",
+            "frame": 6960,
+            "object_id": "stainless bowl_0",
+            "query": "Where is stainless bowl relative to the person?",
+            "object_xyz_world_m": [
+              0.601259,
+              -1.292706,
+              -0.5143515000000001
+            ],
+            "human_frame": {
+              "origin": [
+                0.381757406214816,
+                -0.8457613559621885,
+                -0.5971409293090778
+              ],
+              "right": [
+                -0.763918683524313,
+                -0.6195503360803579,
+                0.1805148914222763
+              ],
+              "up": [
+                0.20312420836959832,
+                0.034655095814169166,
+                0.9785395139228332
+              ],
+              "forward": [
+                0.6125102455769247,
+                -0.7841915616715258,
+                -0.09937199638967226
+              ]
+            },
+            "human_xyz_m": {
+              "right": 0.12416806070971614,
+              "up": 0.11010990592477424,
+              "forward": 0.4767102426322203
+            },
+            "distance_m": 0.5047717841892955,
+            "horizontal_distance_m": 0.49261583686568794,
+            "lateral_relation": null,
+            "longitudinal_relation": null,
+            "vertical_relation": null,
+            "text_zh": null,
+            "raw_relation_before_filter": {
+              "human_xyz_m": {
+                "right": 0.12416806070971614,
+                "up": 0.11010990592477424,
+                "forward": 0.4767102426322203
+              },
+              "distance_m": 0.5047717841892955,
+              "horizontal_distance_m": 0.49261583686568794,
+              "lateral_relation": "same_lateral_position",
+              "longitudinal_relation": "front",
+              "vertical_relation": "slightly_above",
+              "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.48 m，右向分量 0.12 m，高度差 0.11 m，直线距离 0.50 m"
+            },
+            "distance_validation": {
+              "world_direct_m": 0.5047717841892955,
+              "human_components_m": 0.5047717841892955,
+              "agreement_residual_m": 0.0,
+              "agreement_pass": true,
+              "skeleton_scale": {
+                "shoulder_width_m": 0.3512845977758443,
+                "hip_width_m": 0.26074226156215563,
+                "torso_length_m": 0.4974178522398879,
+                "plausible": true
+              },
+              "validated": true
+            },
+            "quality": {
+              "mask_pixels": 23575,
+              "mask_source": "mask",
+              "points_in_mask": 46618,
+              "robust_inliers": 41356
+            },
+            "inputs": {
+              "point_cloud": "data/egoexo4d/takes/sfu_cooking_008_3/trajectory/semidense_points.csv.gz",
+              "camera_pose": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json",
+              "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/44d647ce-72d2-4312-b80c-99faea2d017d.json"
+            }
+          },
+          {
+            "status": "ok",
+            "recognition_status": "eligible",
+            "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+            "take_name": "sfu_cooking_008_3",
+            "camera": "cam04",
+            "frame": 6960,
+            "object_id": "cucumber peel_0",
+            "query": "Where is cucumber peel relative to the person?",
+            "object_xyz_world_m": [
+              0.985155,
+              -1.045374,
+              -0.734294
+            ],
+            "human_frame": {
+              "origin": [
+                0.381757406214816,
+                -0.8457613559621885,
+                -0.5971409293090778
+              ],
+              "right": [
+                -0.763918683524313,
+                -0.6195503360803579,
+                0.1805148914222763
+              ],
+              "up": [
+                0.20312420836959832,
+                0.034655095814169166,
+                0.9785395139228332
+              ],
+              "forward": [
+                0.6125102455769247,
+                -0.7841915616715258,
+                -0.09937199638967226
+              ]
+            },
+            "human_xyz_m": {
+              "right": -0.3620347864506046,
+              "up": -0.018562635862033036,
+              "forward": 0.5397509338528131
+            },
+            "distance_m": 0.6501883024520397,
+            "horizontal_distance_m": 0.6499232702368171,
+            "lateral_relation": "left",
+            "longitudinal_relation": "front",
+            "vertical_relation": "same_height",
+            "text_zh": "物体在人的左侧、前方、近似同高，前向分量 0.54 m，右向分量 -0.36 m，高度差 -0.02 m，直线距离 0.65 m",
+            "raw_relation_before_filter": {
+              "human_xyz_m": {
+                "right": -0.3620347864506046,
+                "up": -0.018562635862033036,
+                "forward": 0.5397509338528131
+              },
+              "distance_m": 0.6501883024520397,
+              "horizontal_distance_m": 0.6499232702368171,
+              "lateral_relation": "left",
+              "longitudinal_relation": "front",
+              "vertical_relation": "same_height",
+              "text_zh": "物体在人的左侧、前方、近似同高，前向分量 0.54 m，右向分量 -0.36 m，高度差 -0.02 m，直线距离 0.65 m"
+            },
+            "distance_validation": {
+              "world_direct_m": 0.6501883024520397,
+              "human_components_m": 0.6501883024520397,
+              "agreement_residual_m": 0.0,
+              "agreement_pass": true,
+              "skeleton_scale": {
+                "shoulder_width_m": 0.3512845977758443,
+                "hip_width_m": 0.26074226156215563,
+                "torso_length_m": 0.4974178522398879,
+                "plausible": true
+              },
+              "validated": true
+            },
+            "quality": {
+              "mask_pixels": 43852,
+              "mask_source": "mask",
+              "points_in_mask": 15108,
+              "robust_inliers": 13429
+            },
+            "inputs": {
+              "point_cloud": "data/egoexo4d/takes/sfu_cooking_008_3/trajectory/semidense_points.csv.gz",
+              "camera_pose": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json",
+              "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/44d647ce-72d2-4312-b80c-99faea2d017d.json"
+            }
+          }
+        ]
+      },
+      "dynamic_timeline": {
+        "frames": [
+          6735,
+          6750,
+          6765,
+          6780,
+          6795,
+          6810,
+          6825,
+          6840,
+          6855,
+          6870,
+          6885,
+          6900,
+          6915,
+          6930,
+          6945,
+          6960,
+          6975,
+          6990,
+          7005,
+          7020,
+          7035,
+          7050,
+          7065,
+          7080,
+          7095,
+          7110,
+          7125,
+          7140,
+          7155,
+          7170,
+          7185
+        ],
+        "sample_count": 31,
+        "human_motion": {
+          "status": "ok",
+          "start_frame": 6735,
+          "end_frame": 7185,
+          "sample_count": 31,
+          "displacement_m": 0.9885272758927133,
+          "path_length_m": 2.0601706077079247,
+          "body_turn_deg": 152.73717796840802
+        }
+      },
+      "qa": [
+        {
+          "task_id": "task1_dynamic_human_referenced_relations",
+          "task_name": "Task 1 · Dynamic Human-Referenced Relations",
+          "question_type": "body_forward_visibility_change_cause_over_video",
+          "question": "The scene-fixed cucumber peel begins inside the person's peripheral body-forward field and ends outside it. Which measured human change explains this transition?",
+          "options": [
+            {
+              "label": "A",
+              "text": "The person's body orientation changes substantially, rotating the body-forward field away from the scene-fixed peel."
+            },
+            {
+              "label": "B",
+              "text": "The cucumber peel moves behind a measured physical blocker."
+            },
+            {
+              "label": "C",
+              "text": "The peel stays in the central body-forward field throughout."
+            },
+            {
+              "label": "D",
+              "text": "Only the external camera viewpoint changes the human-relative field label."
+            }
+          ],
+          "correct_option": "A",
+          "correct_answer": "The person's body orientation changes substantially, rotating the body-forward field away from the scene-fixed peel.",
+          "answer": "The person's body orientation changes substantially, rotating the body-forward field away from the scene-fixed peel.",
+          "explanation": "The endpoint forward angles are 42.1° and 110.5°, while the human body-turn estimate is about 152.7°.",
+          "status": "ok",
+          "quality": "audited_proxy",
+          "method": "Transforms the fixed 3D target direction into each valid human body frame. This is a body-forward directional proxy, not gaze or physical-occlusion truth.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "body_forward_visibility_change_cause_over_video",
+            "visibility_track": {
+              "object_id": "cucumber peel_0",
+              "states": [
+                {
+                  "frame": 6735,
+                  "t_sec_from_center": -7.5,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 42.124138947612735,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5608656502709417,
+                        -1.0432241577984942,
+                        0.009268739342136975
+                      ],
+                      "forward": [
+                        0.7076871842437297,
+                        0.5432710417250178,
+                        -0.4517028054818737
+                      ],
+                      "right": [
+                        -0.7319055015552292,
+                        -0.6691631826722731,
+                        0.12858838108127205
+                      ],
+                      "up": [
+                        0.20043081799384913,
+                        -0.03105472137222803,
+                        0.9792155490385199
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5608656502709417,
+                      -1.0432241577984942,
+                      0.009268739342136975
+                    ],
+                    "target_distance_from_observer_m": 0.8561025764784155,
+                    "angle_to_view_direction_deg": 42.124138947612735,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (42.1° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6750,
+                  "t_sec_from_center": -7.0,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 41.783129054722096,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5611759600949696,
+                        -1.0431653196793882,
+                        0.008311878246169257
+                      ],
+                      "forward": [
+                        0.7221018719794654,
+                        0.5271763628508717,
+                        -0.44794415827765605
+                      ],
+                      "right": [
+                        -0.7180933064658955,
+                        -0.6847852124841186,
+                        0.12414191867358072
+                      ],
+                      "up": [
+                        0.18838358758457244,
+                        -0.019541760294173333,
+                        0.9819010864304869
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5611759600949696,
+                      -1.0431653196793882,
+                      0.008311878246169257
+                    ],
+                    "target_distance_from_observer_m": 0.8551178836589225,
+                    "angle_to_view_direction_deg": 41.783129054722096,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (41.8° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6765,
+                  "t_sec_from_center": -6.5,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 44.37262065394712,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5692781376279512,
+                        -1.0467524146007672,
+                        0.003924280533693954
+                      ],
+                      "forward": [
+                        0.6969841375656649,
+                        0.5763099936648177,
+                        -0.42670821785372776
+                      ],
+                      "right": [
+                        -0.7144652871558493,
+                        -0.6872368605739607,
+                        0.1313196516815217
+                      ],
+                      "up": [
+                        0.21335578117133558,
+                        -0.035246741881811004,
+                        0.9763385569706269
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5692781376279512,
+                      -1.0467524146007672,
+                      0.003924280533693954
+                    ],
+                    "target_distance_from_observer_m": 0.8473025990738818,
+                    "angle_to_view_direction_deg": 44.37262065394712,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (44.4° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6780,
+                  "t_sec_from_center": -6.0,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 44.56458932953527,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5685208263699101,
+                        -1.0444273721810748,
+                        0.004210200955135324
+                      ],
+                      "forward": [
+                        0.7050783251126866,
+                        0.5706530303624816,
+                        -0.42097467191554994
+                      ],
+                      "right": [
+                        -0.7272775813318978,
+                        -0.6732893467603901,
+                        0.13322452938926715
+                      ],
+                      "up": [
+                        0.19544913303775946,
+                        -0.01709589806264501,
+                        0.9805648202256799
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5685208263699101,
+                      -1.0444273721810748,
+                      0.004210200955135324
+                    ],
+                    "target_distance_from_observer_m": 0.8479229832768059,
+                    "angle_to_view_direction_deg": 44.56458932953527,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (44.6° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6795,
+                  "t_sec_from_center": -5.5,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 42.59295248417863,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5674342504410677,
+                        -1.0443872659069537,
+                        0.001988323061945744
+                      ],
+                      "forward": [
+                        0.6962321079277749,
+                        0.5575090821236657,
+                        -0.45215536626261
+                      ],
+                      "right": [
+                        -0.7360755719013721,
+                        -0.6635667473057676,
+                        0.1336859166857585
+                      ],
+                      "up": [
+                        0.20144909741230646,
+                        -0.02619688411699357,
+                        0.9791486018037956
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5674342504410677,
+                      -1.0443872659069537,
+                      0.001988323061945744
+                    ],
+                    "target_distance_from_observer_m": 0.8465242214548513,
+                    "angle_to_view_direction_deg": 42.59295248417863,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (42.6° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6810,
+                  "t_sec_from_center": -5.0,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 44.7523064555299,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.566059075342745,
+                        -1.0452754195445382,
+                        0.0025638144463096327
+                      ],
+                      "forward": [
+                        0.7061783544380601,
+                        0.5733600199902972,
+                        -0.4154159592503393
+                      ],
+                      "right": [
+                        -0.7879566768800634,
+                        -0.6008983558087742,
+                        0.13433332180229574
+                      ],
+                      "up": [
+                        0.17406284044919945,
+                        -0.00811419338205524,
+                        0.984701115791241
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.566059075342745,
+                      -1.0452754195445382,
+                      0.0025638144463096327
+                    ],
+                    "target_distance_from_observer_m": 0.8477032750278943,
+                    "angle_to_view_direction_deg": 44.7523064555299,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (44.8° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6825,
+                  "t_sec_from_center": -4.5,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 44.393314913719934,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5613517021931402,
+                        -1.0428630031304922,
+                        0.003950913036457037
+                      ],
+                      "forward": [
+                        0.7174943900009971,
+                        0.560224860391449,
+                        -0.4139443273152544
+                      ],
+                      "right": [
+                        -0.742873003937596,
+                        -0.6578595553421799,
+                        0.12393750629136321
+                      ],
+                      "up": [
+                        0.19197065098152447,
+                        -0.03198567314710101,
+                        0.9808792922042224
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5613517021931402,
+                      -1.0428630031304922,
+                      0.003950913036457037
+                    ],
+                    "target_distance_from_observer_m": 0.8512467867554359,
+                    "angle_to_view_direction_deg": 44.393314913719934,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (44.4° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6840,
+                  "t_sec_from_center": -4.0,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 45.78676181600232,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5629281996587532,
+                        -1.0444147710570275,
+                        8.331798541051823e-05
+                      ],
+                      "forward": [
+                        0.7178912509591453,
+                        0.5750430500097977,
+                        -0.39237436515621515
+                      ],
+                      "right": [
+                        -0.7283806684339237,
+                        -0.672445853144562,
+                        0.1314464774744187
+                      ],
+                      "up": [
+                        0.20294696364343293,
+                        -0.028502134325125265,
+                        0.9787748251190483
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5629281996587532,
+                      -1.0444147710570275,
+                      8.331798541051823e-05
+                    ],
+                    "target_distance_from_observer_m": 0.8471047374545941,
+                    "angle_to_view_direction_deg": 45.78676181600232,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (45.8° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6855,
+                  "t_sec_from_center": -3.5,
+                  "visible": false,
+                  "visibility_state": "outside_field_of_view",
+                  "fov_zone": "outside",
+                  "blocker": null,
+                  "angle_deg": 93.03403256872147,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5655880278780134,
+                        -1.0451691411378277,
+                        -0.0006169567811966509
+                      ],
+                      "forward": [
+                        -0.7807653105975287,
+                        -0.49181679295092745,
+                        -0.3853852253771657
+                      ],
+                      "right": [
+                        -0.7399065225689065,
+                        -0.6594295912843303,
+                        0.13300733813804835
+                      ],
+                      "up": [
+                        0.20588231899071624,
+                        -0.03374612964447406,
+                        0.9779947185240947
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5655880278780134,
+                      -1.0451691411378277,
+                      -0.0006169567811966509
+                    ],
+                    "target_distance_from_observer_m": 0.8451736447671869,
+                    "angle_to_view_direction_deg": 93.03403256872147,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": false,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": false,
+                    "fov_zone": "outside",
+                    "visibility_state": "outside_field_of_view",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": false,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely not visible: the cucumber peel_0 is 93.0° from the view direction, outside the 110° field of view."
+                  }
+                },
+                {
+                  "frame": 6870,
+                  "t_sec_from_center": -3.0,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 44.20274564006609,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5614488944787478,
+                        -1.0414537693327177,
+                        0.0023625016203390557
+                      ],
+                      "forward": [
+                        0.7028054749820135,
+                        0.5698721500178469,
+                        -0.4258053510341822
+                      ],
+                      "right": [
+                        -0.743173562541281,
+                        -0.655127652300092,
+                        0.13601770153722872
+                      ],
+                      "up": [
+                        0.18727955877085034,
+                        -0.008510001517040374,
+                        0.9822697932547736
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5614488944787478,
+                      -1.0414537693327177,
+                      0.0023625016203390557
+                    ],
+                    "target_distance_from_observer_m": 0.8498264725483596,
+                    "angle_to_view_direction_deg": 44.20274564006609,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (44.2° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6885,
+                  "t_sec_from_center": -2.5,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 37.90357591381775,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5039444071096333,
+                        -1.085856489444897,
+                        -0.0011908003852178703
+                      ],
+                      "forward": [
+                        -0.08011368635354424,
+                        0.09635595081757896,
+                        -0.9921175978687639
+                      ],
+                      "right": [
+                        -0.8013299358454454,
+                        -0.5812937816715539,
+                        0.1413077255776127
+                      ],
+                      "up": [
+                        0.17399963174115046,
+                        -0.000479882390233139,
+                        0.9847456005826254
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5039444071096333,
+                      -1.085856489444897,
+                      -0.0011908003852178703
+                    ],
+                    "target_distance_from_observer_m": 0.8778626133666848,
+                    "angle_to_view_direction_deg": 37.90357591381775,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (37.9° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6900,
+                  "t_sec_from_center": -2.0,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 43.519620759483416,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5629993189917512,
+                        -1.0407626807271273,
+                        0.0021280980348143685
+                      ],
+                      "forward": [
+                        0.6977161694224229,
+                        0.5657728277835545,
+                        -0.43942377526517745
+                      ],
+                      "right": [
+                        -0.7386623227892944,
+                        -0.6629608968102673,
+                        0.12190497197428267
+                      ],
+                      "up": [
+                        0.18094427079427614,
+                        -0.020801840494524403,
+                        0.9832733365136921
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5629993189917512,
+                      -1.0407626807271273,
+                      0.0021280980348143685
+                    ],
+                    "target_distance_from_observer_m": 0.8488546340493008,
+                    "angle_to_view_direction_deg": 43.519620759483416,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (43.5° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6915,
+                  "t_sec_from_center": -1.5,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 45.141187040947095,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.564673962190211,
+                        -1.038678587480082,
+                        0.00018683299665988966
+                      ],
+                      "forward": [
+                        0.7051672679979366,
+                        0.5753768427532396,
+                        -0.4143435928883663
+                      ],
+                      "right": [
+                        -0.7227054212854338,
+                        -0.6796983306772698,
+                        0.12532778350859172
+                      ],
+                      "up": [
+                        0.08270285948664635,
+                        0.09498339570748697,
+                        0.9920374950437141
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.564673962190211,
+                      -1.038678587480082,
+                      0.00018683299665988966
+                    ],
+                    "target_distance_from_observer_m": 0.8463517151550392,
+                    "angle_to_view_direction_deg": 45.141187040947095,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (45.1° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6930,
+                  "t_sec_from_center": -1.0,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 45.374116766032195,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5638059962130894,
+                        -1.032714478291169,
+                        0.002457958379421985
+                      ],
+                      "forward": [
+                        0.6980785228302195,
+                        0.5798567317864542,
+                        -0.4200625507767988
+                      ],
+                      "right": [
+                        -0.730306422759437,
+                        -0.6702735919171385,
+                        0.13185537855852358
+                      ],
+                      "up": [
+                        0.18411453544495807,
+                        -0.007254162415441785,
+                        0.9828780264944057
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5638059962130894,
+                      -1.032714478291169,
+                      0.002457958379421985
+                    ],
+                    "target_distance_from_observer_m": 0.8488219452028982,
+                    "angle_to_view_direction_deg": 45.374116766032195,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (45.4° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6945,
+                  "t_sec_from_center": -0.5,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 45.84378933321977,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5667916142954934,
+                        -1.018862355011796,
+                        0.00446757225993359
+                      ],
+                      "forward": [
+                        0.7054777916435465,
+                        0.5694919045454754,
+                        -0.42187682580927816
+                      ],
+                      "right": [
+                        -0.7371455559226929,
+                        -0.6572799011128792,
+                        0.15684247185143405
+                      ],
+                      "up": [
+                        0.19834462937652503,
+                        0.011421434718798583,
+                        0.9800657931110813
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5667916142954934,
+                      -1.018862355011796,
+                      0.00446757225993359
+                    ],
+                    "target_distance_from_observer_m": 0.849411237544034,
+                    "angle_to_view_direction_deg": 45.84378933321977,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (45.8° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6960,
+                  "t_sec_from_center": 0.0,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 35.56060906075722,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5297148098177936,
+                        -1.0229933488422178,
+                        0.012339981886193025
+                      ],
+                      "forward": [
+                        -0.07054392153504366,
+                        0.02849981006459866,
+                        -0.9971014572052032
+                      ],
+                      "right": [
+                        -0.763918683524313,
+                        -0.6195503360803579,
+                        0.1805148914222763
+                      ],
+                      "up": [
+                        0.20312420836959832,
+                        0.034655095814169166,
+                        0.9785395139228332
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5297148098177936,
+                      -1.0229933488422178,
+                      0.012339981886193025
+                    ],
+                    "target_distance_from_observer_m": 0.8748651114810114,
+                    "angle_to_view_direction_deg": 35.56060906075722,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (35.6° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6975,
+                  "t_sec_from_center": 0.5,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 38.73893229870432,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5581449860351547,
+                        -0.9881879070851678,
+                        0.0087911945197262
+                      ],
+                      "forward": [
+                        -0.14751625242015023,
+                        0.029125966989713727,
+                        -0.9886306860091025
+                      ],
+                      "right": [
+                        -0.8237532825370536,
+                        -0.500356207024775,
+                        0.26659744110026584
+                      ],
+                      "up": [
+                        0.2628655140468416,
+                        0.07956230091235886,
+                        0.9615464428712847
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5581449860351547,
+                      -0.9881879070851678,
+                      0.0087911945197262
+                    ],
+                    "target_distance_from_observer_m": 0.8589431922796411,
+                    "angle_to_view_direction_deg": 38.73893229870432,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (38.7° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 6990,
+                  "t_sec_from_center": 1.0,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 40.90252594414085,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.5182145763098738,
+                        -0.9759354301628662,
+                        0.02485685097738341
+                      ],
+                      "forward": [
+                        0.7826402427646237,
+                        0.4319939552001318,
+                        -0.4481690228874344
+                      ],
+                      "right": [
+                        -0.6860380654624401,
+                        -0.7121847773861182,
+                        0.1488106703030332
+                      ],
+                      "up": [
+                        0.23944110987277462,
+                        -0.02786260217240694,
+                        0.970511015034387
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.5182145763098738,
+                      -0.9759354301628662,
+                      0.02485685097738341
+                    ],
+                    "target_distance_from_observer_m": 0.8939603396105593,
+                    "angle_to_view_direction_deg": 40.90252594414085,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (40.9° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 7005,
+                  "t_sec_from_center": 1.5,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 48.70576839086929,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.34442150882244826,
+                        -0.908174432987347,
+                        0.08011119723080955
+                      ],
+                      "forward": [
+                        -0.10665551544619528,
+                        0.22419225926770003,
+                        -0.9686910920976566
+                      ],
+                      "right": [
+                        -0.06257193062458237,
+                        -0.9808676368044018,
+                        -0.18434595891329056
+                      ],
+                      "up": [
+                        -0.07900423545479432,
+                        -0.17926035715069932,
+                        0.9806243190612842
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.34442150882244826,
+                      -0.908174432987347,
+                      0.08011119723080955
+                    ],
+                    "target_distance_from_observer_m": 1.0452841494931353,
+                    "angle_to_view_direction_deg": 48.70576839086929,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (48.7° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 7020,
+                  "t_sec_from_center": 2.0,
+                  "visible": false,
+                  "visibility_state": "outside_field_of_view",
+                  "fov_zone": "outside",
+                  "blocker": null,
+                  "angle_deg": 74.1859384904135,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        0.025847333630593383,
+                        -0.6271949743991563,
+                        0.09739569232798587
+                      ],
+                      "forward": [
+                        -0.1207060956642129,
+                        0.5261505177524525,
+                        -0.8417812489823756
+                      ],
+                      "right": [
+                        0.8011203121324775,
+                        -0.5979039503767404,
+                        -0.026778939722292932
+                      ],
+                      "up": [
+                        0.01337087876299571,
+                        -0.026852483750432588,
+                        0.999549980600039
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      0.025847333630593383,
+                      -0.6271949743991563,
+                      0.09739569232798587
+                    ],
+                    "target_distance_from_observer_m": 1.3367320750742115,
+                    "angle_to_view_direction_deg": 74.1859384904135,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": false,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": false,
+                    "fov_zone": "outside",
+                    "visibility_state": "outside_field_of_view",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": false,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely not visible: the cucumber peel_0 is 74.2° from the view direction, outside the 110° field of view."
+                  }
+                },
+                {
+                  "frame": 7035,
+                  "t_sec_from_center": 2.5,
+                  "visible": true,
+                  "visibility_state": "visible_peripheral",
+                  "fov_zone": "peripheral",
+                  "blocker": null,
+                  "angle_deg": 48.8468091265346,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        -0.20893092594502355,
+                        -0.33288231801081225,
+                        0.08554730028213323
+                      ],
+                      "forward": [
+                        0.10205281671146052,
+                        -0.19815505017832988,
+                        -0.9748434739434227
+                      ],
+                      "right": [
+                        0.9970919432040972,
+                        0.07555008151332744,
+                        0.009992095916619368
+                      ],
+                      "up": [
+                        -0.011964446606431553,
+                        0.0256991516567941,
+                        0.9995981220578213
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      -0.20893092594502355,
+                      -0.33288231801081225,
+                      0.08554730028213323
+                    ],
+                    "target_distance_from_observer_m": 1.6141949551067447,
+                    "angle_to_view_direction_deg": 48.8468091265346,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "peripheral",
+                    "visibility_state": "visible_peripheral",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's peripheral field of view (48.8° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 7050,
+                  "t_sec_from_center": 3.0,
+                  "visible": false,
+                  "visibility_state": "outside_field_of_view",
+                  "fov_zone": "outside",
+                  "blocker": null,
+                  "angle_deg": 96.67593144976492,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        -0.17923785286260774,
+                        -0.06623592739732143,
+                        0.07499177495394575
+                      ],
+                      "forward": [
+                        -0.558391844577827,
+                        0.2049684629160102,
+                        -0.8038572492170609
+                      ],
+                      "right": [
+                        0.8190705032884076,
+                        0.5601980313716965,
+                        -0.12369994458426663
+                      ],
+                      "up": [
+                        0.13279571809125273,
+                        0.02462963163487809,
+                        0.9908373622861416
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      -0.17923785286260774,
+                      -0.06623592739732143,
+                      0.07499177495394575
+                    ],
+                    "target_distance_from_observer_m": 1.7232137263149976,
+                    "angle_to_view_direction_deg": 96.67593144976492,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": false,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": false,
+                    "fov_zone": "outside",
+                    "visibility_state": "outside_field_of_view",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": false,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely not visible: the cucumber peel_0 is 96.7° from the view direction, outside the 110° field of view."
+                  }
+                },
+                {
+                  "frame": 7065,
+                  "t_sec_from_center": 3.5,
+                  "visible": false,
+                  "visibility_state": "outside_field_of_view",
+                  "fov_zone": "outside",
+                  "blocker": null,
+                  "angle_deg": 88.50930329128745,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        -0.34075623050926496,
+                        0.03776822826471338,
+                        0.10451123282438124
+                      ],
+                      "forward": [
+                        -0.2009987385772162,
+                        0.40048093702536347,
+                        -0.8939879899470993
+                      ],
+                      "right": [
+                        0.953690717422195,
+                        0.2922239875872131,
+                        0.07126820175483173
+                      ],
+                      "up": [
+                        -0.08846548965730351,
+                        0.04604629331453304,
+                        0.9950143697513546
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      -0.34075623050926496,
+                      0.03776822826471338,
+                      0.10451123282438124
+                    ],
+                    "target_distance_from_observer_m": 1.9065235105957667,
+                    "angle_to_view_direction_deg": 88.50930329128745,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": false,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": false,
+                    "fov_zone": "outside",
+                    "visibility_state": "outside_field_of_view",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": false,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely not visible: the cucumber peel_0 is 88.5° from the view direction, outside the 110° field of view."
+                  }
+                },
+                {
+                  "frame": 7080,
+                  "t_sec_from_center": 4.0,
+                  "visible": false,
+                  "visibility_state": "outside_field_of_view",
+                  "fov_zone": "outside",
+                  "blocker": null,
+                  "angle_deg": 87.93377957708717,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        -0.44998798274999796,
+                        0.0853108151360329,
+                        0.09756802935001768
+                      ],
+                      "forward": [
+                        -0.02504553293989452,
+                        0.5284984612039773,
+                        -0.848564728105514
+                      ],
+                      "right": [
+                        0.9140831459146497,
+                        0.39936361398937115,
+                        0.07043228078179584
+                      ],
+                      "up": [
+                        -0.09668905405279193,
+                        0.045958941929428836,
+                        0.9942529871632791
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      -0.44998798274999796,
+                      0.0853108151360329,
+                      0.09756802935001768
+                    ],
+                    "target_distance_from_observer_m": 2.0075054092056877,
+                    "angle_to_view_direction_deg": 87.93377957708717,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": false,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": false,
+                    "fov_zone": "outside",
+                    "visibility_state": "outside_field_of_view",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": false,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely not visible: the cucumber peel_0 is 87.9° from the view direction, outside the 110° field of view."
+                  }
+                },
+                {
+                  "frame": 7095,
+                  "t_sec_from_center": 4.5,
+                  "visible": true,
+                  "visibility_state": "visible_central",
+                  "fov_zone": "central",
+                  "blocker": null,
+                  "angle_deg": 29.431495805976986,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        -0.55759043293906,
+                        0.05317011572593822,
+                        0.05692044224443143
+                      ],
+                      "forward": [
+                        0.3927064404998111,
+                        -0.5391860114954776,
+                        -0.7450235543911126
+                      ],
+                      "right": [
+                        0.6245735626572633,
+                        0.7803472907169726,
+                        0.03108006918097832
+                      ],
+                      "up": [
+                        -0.05428285998505859,
+                        0.00367734348359483,
+                        0.9985188271919294
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      -0.55759043293906,
+                      0.05317011572593822,
+                      0.05692044224443143
+                    ],
+                    "target_distance_from_observer_m": 2.052530861806121,
+                    "angle_to_view_direction_deg": 29.431495805976986,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": true,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "central",
+                    "visibility_state": "visible_central",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium_high",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's central field of view (29.4° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 7110,
+                  "t_sec_from_center": 5.0,
+                  "visible": true,
+                  "visibility_state": "visible_central",
+                  "fov_zone": "central",
+                  "blocker": null,
+                  "angle_deg": 29.048425608366564,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        -0.604252396651543,
+                        0.032293407289685716,
+                        0.0445948639475571
+                      ],
+                      "forward": [
+                        0.43682763447748235,
+                        -0.49291261315667795,
+                        -0.7524750982908752
+                      ],
+                      "right": [
+                        0.6198553352841226,
+                        0.7793617557768393,
+                        0.09151293325126553
+                      ],
+                      "up": [
+                        -0.20476843650000165,
+                        0.04806633229945831,
+                        0.977629538788913
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      -0.604252396651543,
+                      0.032293407289685716,
+                      0.0445948639475571
+                    ],
+                    "target_distance_from_observer_m": 2.0722574105662224,
+                    "angle_to_view_direction_deg": 29.048425608366564,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": true,
+                    "inside_central_fov": true,
+                    "inside_peripheral_fov": true,
+                    "fov_zone": "central",
+                    "visibility_state": "visible_central",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": true,
+                    "visibility_confidence": "medium_high",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely visible: the cucumber peel_0 is in the person's central field of view (29.0° from view direction), and no listed object blocks the sightline."
+                  }
+                },
+                {
+                  "frame": 7125,
+                  "t_sec_from_center": 5.5,
+                  "visible": false,
+                  "visibility_state": "outside_field_of_view",
+                  "fov_zone": "outside",
+                  "blocker": null,
+                  "angle_deg": 121.43772966026947,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        -0.624856737297417,
+                        0.07124953956784313,
+                        0.029593806269464774
+                      ],
+                      "forward": [
+                        -0.24072131203536892,
+                        0.893900579214662,
+                        -0.37814680272569046
+                      ],
+                      "right": [
+                        0.8882885375748807,
+                        0.419152262570713,
+                        0.18776276200283054
+                      ],
+                      "up": [
+                        -0.22910090702588395,
+                        0.050055182968537774,
+                        0.9721148353244607
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      -0.624856737297417,
+                      0.07124953956784313,
+                      0.029593806269464774
+                    ],
+                    "target_distance_from_observer_m": 2.1029765818761845,
+                    "angle_to_view_direction_deg": 121.43772966026947,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": false,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": false,
+                    "fov_zone": "outside",
+                    "visibility_state": "outside_field_of_view",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": false,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely not visible: the cucumber peel_0 is 121.4° from the view direction, outside the 110° field of view."
+                  }
+                },
+                {
+                  "frame": 7140,
+                  "t_sec_from_center": 6.0,
+                  "visible": false,
+                  "visibility_state": "outside_field_of_view",
+                  "fov_zone": "outside",
+                  "blocker": null,
+                  "angle_deg": 114.83852044708776,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        -0.5004369349805695,
+                        0.12454176477126713,
+                        0.030143214680143637
+                      ],
+                      "forward": [
+                        -0.17569287823467056,
+                        0.8422485042776643,
+                        -0.5096562268624356
+                      ],
+                      "right": [
+                        0.9730755674263055,
+                        0.2031877064319136,
+                        0.10880577205696387
+                      ],
+                      "up": [
+                        -0.12685505521285478,
+                        0.07799154728887463,
+                        0.9888503999687873
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      -0.5004369349805695,
+                      0.12454176477126713,
+                      0.030143214680143637
+                    ],
+                    "target_distance_from_observer_m": 2.0396201972738917,
+                    "angle_to_view_direction_deg": 114.83852044708776,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": false,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": false,
+                    "fov_zone": "outside",
+                    "visibility_state": "outside_field_of_view",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": false,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely not visible: the cucumber peel_0 is 114.8° from the view direction, outside the 110° field of view."
+                  }
+                },
+                {
+                  "frame": 7155,
+                  "t_sec_from_center": 6.5,
+                  "visible": false,
+                  "visibility_state": "outside_field_of_view",
+                  "fov_zone": "outside",
+                  "blocker": null,
+                  "angle_deg": 116.43264895037753,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        -0.3754722663059765,
+                        0.1260628308937773,
+                        0.056658681192689575
+                      ],
+                      "forward": [
+                        -0.12838743161599261,
+                        0.890765160618006,
+                        -0.4359519423425324
+                      ],
+                      "right": [
+                        0.9164035965987286,
+                        0.39917038862194737,
+                        0.029452486963206338
+                      ],
+                      "up": [
+                        -0.06884752178909692,
+                        0.08471480594698902,
+                        0.9940238530321412
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      -0.3754722663059765,
+                      0.1260628308937773,
+                      0.056658681192689575
+                    ],
+                    "target_distance_from_observer_m": 1.9619319433853037,
+                    "angle_to_view_direction_deg": 116.43264895037753,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": false,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": false,
+                    "fov_zone": "outside",
+                    "visibility_state": "outside_field_of_view",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": false,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely not visible: the cucumber peel_0 is 116.4° from the view direction, outside the 110° field of view."
+                  }
+                },
+                {
+                  "frame": 7170,
+                  "t_sec_from_center": 7.0,
+                  "visible": false,
+                  "visibility_state": "outside_field_of_view",
+                  "fov_zone": "outside",
+                  "blocker": null,
+                  "angle_deg": 99.25471325680773,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        -0.3569750363870953,
+                        0.11730365654933468,
+                        0.0685033037181429
+                      ],
+                      "forward": [
+                        0.1294803136594678,
+                        0.8119884208674641,
+                        -0.569130611329076
+                      ],
+                      "right": [
+                        0.8971783556239037,
+                        0.44159666578572576,
+                        0.007961342029948092
+                      ],
+                      "up": [
+                        -0.041549839385640094,
+                        0.06644243426366146,
+                        0.9969247783941104
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      -0.3569750363870953,
+                      0.11730365654933468,
+                      0.0685033037181429
+                    ],
+                    "target_distance_from_observer_m": 1.9487472587456278,
+                    "angle_to_view_direction_deg": 99.25471325680773,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": false,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": false,
+                    "fov_zone": "outside",
+                    "visibility_state": "outside_field_of_view",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": false,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely not visible: the cucumber peel_0 is 99.3° from the view direction, outside the 110° field of view."
+                  }
+                },
+                {
+                  "frame": 7185,
+                  "t_sec_from_center": 7.5,
+                  "visible": false,
+                  "visibility_state": "outside_field_of_view",
+                  "fov_zone": "outside",
+                  "blocker": null,
+                  "angle_deg": 110.50296727494549,
+                  "raw": {
+                    "status": "ok",
+                    "answer_type": "visibility_occlusion",
+                    "target_object_id": "cucumber peel_0",
+                    "observer": {
+                      "origin": [
+                        -0.308117286374346,
+                        0.12893110734953514,
+                        0.05927424494164288
+                      ],
+                      "forward": [
+                        -0.2915375963119125,
+                        0.6952089568162219,
+                        -0.6570314576176494
+                      ],
+                      "right": [
+                        0.9537013576630667,
+                        0.3006176517557536,
+                        0.009096584220446978
+                      ],
+                      "up": [
+                        -0.031740362573083415,
+                        0.07052642656692114,
+                        0.9970048006601724
+                      ],
+                      "source": "eyes_to_nose/eye_midpoint",
+                      "approximations": []
+                    },
+                    "observer_origin_world_m": [
+                      -0.308117286374346,
+                      0.12893110734953514,
+                      0.05927424494164288
+                    ],
+                    "target_distance_from_observer_m": 1.9186704384106437,
+                    "angle_to_view_direction_deg": 110.50296727494549,
+                    "fov_degrees": 110.0,
+                    "central_fov_degrees": 70.0,
+                    "peripheral_fov_degrees": 110.0,
+                    "inside_fov": false,
+                    "inside_central_fov": false,
+                    "inside_peripheral_fov": false,
+                    "fov_zone": "outside",
+                    "visibility_state": "outside_field_of_view",
+                    "blocker": null,
+                    "occluders": [],
+                    "visible": false,
+                    "visibility_confidence": "medium",
+                    "approximations": [
+                      "visibility uses geometric FOV and listed-object sightline occlusion",
+                      "occlusion is radius-scored from object centers, not dense pixel/depth ray-casting"
+                    ],
+                    "answer": "Likely not visible: the cucumber peel_0 is 110.5° from the view direction, outside the 110° field of view."
+                  }
+                }
+              ],
+              "changed": true,
+              "change_cause_proxy": "human_rotation_or_head/body_direction_change"
+            },
+            "human_motion": {
+              "status": "ok",
+              "start_frame": 6735,
+              "end_frame": 7185,
+              "sample_count": 31,
+              "displacement_m": 0.9885272758927133,
+              "path_length_m": 2.0601706077079247,
+              "body_turn_deg": 152.73717796840802
+            },
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true
+          },
+          "question_categories": [
+            "body_forward_visibility"
+          ]
+        }
+      ],
+      "video_clip": "./outputs/spatial/showcase_diverse_new/diverse_sfu_008_3_frame6960/showcase_clip_15s.mp4",
+      "video_window": {
+        "center_frame": 6960,
+        "fps": 30.0,
+        "start_sec": 224.5,
+        "duration_sec": 15.0,
+        "source_video": "data/egoexo4d/takes/sfu_cooking_008_3/frame_aligned_videos/downscaled/448/cam04.mp4"
       },
       "case_policy": "one temporal question per unique video window"
     },
@@ -15262,7 +17625,10 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true
-          }
+          },
+          "question_categories": [
+            "body_centric_position"
+          ]
         }
       ]
     },
@@ -16752,7 +19118,10 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true
-          }
+          },
+          "question_categories": [
+            "body_orientation"
+          ]
         }
       ]
     },
@@ -18256,7 +20625,10 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true
-          }
+          },
+          "question_categories": [
+            "metric_distance"
+          ]
         }
       ]
     },
@@ -19746,7 +22118,10 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true
-          }
+          },
+          "question_categories": [
+            "body_forward_visibility"
+          ]
         }
       ]
     },
@@ -21250,7 +23625,10 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true
-          }
+          },
+          "question_categories": [
+            "relation_change"
+          ]
         }
       ]
     },
@@ -21421,7 +23799,10 @@ window.QA_DATA = {
             "approximations": [
               "2D image-plane person tracking; not metric 3D identity"
             ]
-          }
+          },
+          "question_categories": [
+            "image_plane_topology"
+          ]
         }
       ],
       "video_clip": "./outputs/hoim3/bedroom_data05/win02_view0_15s.mp4",
@@ -23024,7 +25405,10 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true
-          }
+          },
+          "question_categories": [
+            "metric_distance"
+          ]
         }
       ]
     },
@@ -24515,7 +26899,10 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true
-          }
+          },
+          "question_categories": [
+            "body_centric_position"
+          ]
         }
       ]
     },
@@ -26020,7 +28407,10 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true
-          }
+          },
+          "question_categories": [
+            "metric_distance"
+          ]
         }
       ]
     },
@@ -27528,7 +29918,11 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true
-          }
+          },
+          "question_categories": [
+            "body_orientation",
+            "metric_distance"
+          ]
         }
       ]
     },
@@ -29050,7 +31444,11 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true
-          }
+          },
+          "question_categories": [
+            "relation_change",
+            "metric_distance"
+          ]
         }
       ]
     },
@@ -30555,9 +32953,1595 @@ window.QA_DATA = {
             "T_Q": true,
             "H_Q": true,
             "S_Q": true
-          }
+          },
+          "question_categories": [
+            "metric_distance"
+          ]
         }
       ]
+    },
+    {
+      "name": "hoi_m3_bedroom_data01_win01",
+      "title": "Task 4 · HOI-M3 · bedroom_data01 · window 01",
+      "dataset": "HOI-M3",
+      "video_clip": "./outputs/hoim3/bedroom_data01/win01_view0_15s.mp4",
+      "original_video": "./hoim3_data/videos/bedroom_data01/0.mp4",
+      "localization_video": "./multihuman_media/hoi_m3_bedroom_data01_win01_localized.mp4",
+      "localization_image": "./multihuman_media/hoi_m3_bedroom_data01_win01_localized.jpg",
+      "original_image": "./multihuman_media/hoi_m3_bedroom_data01_win01_localized.jpg",
+      "topdown_image": "./multihuman_media/hoi_m3_bedroom_data01_win01_curated.svg",
+      "video_window": {
+        "start_sec": 0.0,
+        "duration_sec": 15.0,
+        "metric_sample_count": 16,
+        "visual_sample_fps": 2.0,
+        "source": "data/HOI-M3/videos/bedroom_data01/0.mp4"
+      },
+      "visual_person_audit": {
+        "scene_id": "hoi_m3_bedroom_data01_win01",
+        "status": "complete_and_identity_aligned",
+        "detector": "IDEA Research Grounding DINO tiny (local weights)",
+        "tracking": "motion + box overlap + HSV appearance Hungarian association",
+        "sample_fps": 2.0,
+        "box_threshold": 0.3,
+        "duration_sec": 15.015,
+        "sample_count": 31,
+        "sampled_visible_counts": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "mode_visible_person_count": 2,
+        "max_visible_person_count": 2,
+        "persistent_visible_person_count": 2,
+        "metric_3d_track_count": 2,
+        "metric_identity_alignment": {
+          "status": "aligned",
+          "mapping": {
+            "A": "V1",
+            "B": "V2"
+          },
+          "best_cost": 0.432,
+          "alternative_cost": 1.4986,
+          "margin": 1.0665,
+          "metric_motion_profiles": {
+            "A": [
+              0.7752581323915737,
+              0.2247418676084263,
+              1.7555157840251923
+            ],
+            "B": [
+              0.3740117489703313,
+              0.6259882510296687,
+              2.084011733531952
+            ]
+          },
+          "visual_motion_profiles": {
+            "V1": [
+              0.8566596532266544,
+              0.1433403467733456,
+              0.13900378706397515
+            ],
+            "V2": [
+              0.5086245767014117,
+              0.4913754232985883,
+              0.29819278219316175
+            ]
+          },
+          "criterion": "start-middle-end segment-motion profile; accept only when assignment margin >= 0.18"
+        },
+        "geometry_scope": "all visible people have 2D localization; metric distance/orientation applies only to visually aligned SMPL-X tracks",
+        "visible_2d_tracks": [
+          {
+            "id": "A",
+            "first_seen_sec": 0.0,
+            "last_seen_sec": 14.935,
+            "coverage": 1.0,
+            "observations": 31,
+            "mean_score": 0.804,
+            "normalized_path_length": 0.2178,
+            "normalized_displacement": 0.1361
+          },
+          {
+            "id": "B",
+            "first_seen_sec": 0.0,
+            "last_seen_sec": 14.935,
+            "coverage": 1.0,
+            "observations": 31,
+            "mean_score": 0.846,
+            "normalized_path_length": 0.9509,
+            "normalized_displacement": 0.1023
+          }
+        ]
+      },
+      "case_policy": "one temporal question per unique video window",
+      "qa": [
+        {
+          "task_id": "task4_multi_human_relational_dynamics",
+          "task_name": "Task 4 · Multi-Human Relational Dynamics",
+          "question_type": "body_forward_field_transition_over_video",
+          "question": "Ignoring physical occlusion, how does the one-sided body-forward field relation change over this clip?",
+          "options": [
+            {
+              "label": "A",
+              "text": "The relation stays mutual for all 16 samples."
+            },
+            {
+              "label": "B",
+              "text": "Neither person enters the other's body-forward field at any time."
+            },
+            {
+              "label": "C",
+              "text": "Early, only B keeps A inside the ±60° body-forward field; later, only A keeps B inside the field for most samples."
+            },
+            {
+              "label": "D",
+              "text": "Only A contains B early, then only B contains A later."
+            }
+          ],
+          "correct_option": "C",
+          "correct_answer": "Early, only B keeps A inside the ±60° body-forward field; later, only A keeps B inside the field for most samples.",
+          "answer": "Early, only B keeps A inside the ±60° body-forward field; later, only A keeps B inside the field for most samples.",
+          "explanation": "The 16-sample state sequence is ['b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field']; the first six are B-only and the final segment is predominantly A-only.",
+          "status": "ok",
+          "quality": "audited_proxy",
+          "method": "Uses ground-plane SMPL-X root-forward directions at all 16 samples. It does not claim eye gaze or an unobstructed physical sightline.",
+          "result_json": {
+            "scene_id": "hoi_m3_bedroom_data01_win01",
+            "pair_timeline": {
+              "status": "ok",
+              "pair": [
+                "A",
+                "B"
+              ],
+              "states": [
+                {
+                  "t": 0.0,
+                  "frame_id": 0,
+                  "distance_m": 2.1666194161489907,
+                  "facing_score": 0.17164069734519732,
+                  "facing_state": "side_by_side_or_oblique",
+                  "b_relative_to_a": "right_behind",
+                  "a_relative_to_b": "left_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "b_only_body_forward_field",
+                    "a_contains_b": false,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 130.45241109132309,
+                    "b_to_a_angle_deg": 7.20779593443101,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        4.6332173347473145,
+                        1.263270616531372,
+                        2.0060348510742188
+                      ],
+                      "head_xyz_m": [
+                        4.6332173347473145,
+                        2.863270616531372,
+                        2.0060348510742188
+                      ],
+                      "forward_unit": [
+                        0.9752531044073074,
+                        0.043675133141169824,
+                        -0.2167345498276884
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        2.9033994674682617,
+                        1.238986611366272,
+                        0.7016652226448059
+                      ],
+                      "head_xyz_m": [
+                        2.9033994674682617,
+                        2.838986611366272,
+                        0.7016652226448059
+                      ],
+                      "forward_unit": [
+                        0.8666389861598802,
+                        0.04887178192734765,
+                        0.49653642021408734
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 1.0009550561255707,
+                  "frame_id": 60,
+                  "distance_m": 2.1384504014404353,
+                  "facing_score": 0.22796759561599533,
+                  "facing_state": "side_by_side_or_oblique",
+                  "b_relative_to_a": "right_behind",
+                  "a_relative_to_b": "center_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "b_only_body_forward_field",
+                    "a_contains_b": false,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 122.91491299054393,
+                    "b_to_a_angle_deg": 2.1003659718136785,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        4.6253180503845215,
+                        1.2699525356292725,
+                        1.9736196994781494
+                      ],
+                      "head_xyz_m": [
+                        4.6253180503845215,
+                        2.8699525356292725,
+                        1.9736196994781494
+                      ],
+                      "forward_unit": [
+                        0.94331263753755,
+                        0.043329104514693906,
+                        -0.3290651251103731
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        2.9370920658111572,
+                        1.2339740991592407,
+                        0.6615340709686279
+                      ],
+                      "head_xyz_m": [
+                        2.9370920658111572,
+                        2.833974099159241,
+                        0.6615340709686279
+                      ],
+                      "forward_unit": [
+                        0.8079883180100411,
+                        0.09337784617461733,
+                        0.5817520569822632
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 2.0019101122511413,
+                  "frame_id": 120,
+                  "distance_m": 2.1360418821873823,
+                  "facing_score": 0.22399331530736766,
+                  "facing_state": "side_by_side_or_oblique",
+                  "b_relative_to_a": "right_behind",
+                  "a_relative_to_b": "left_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "b_only_body_forward_field",
+                    "a_contains_b": false,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 122.9031059833395,
+                    "b_to_a_angle_deg": 7.603874147476491,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        4.617070198059082,
+                        1.2708778381347656,
+                        1.9679536819458008
+                      ],
+                      "head_xyz_m": [
+                        4.617070198059082,
+                        2.8708778381347657,
+                        1.9679536819458008
+                      ],
+                      "forward_unit": [
+                        0.9406343046881448,
+                        0.06020343296352322,
+                        -0.3340398950773051
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        2.923708200454712,
+                        1.2354177236557007,
+                        0.6664381623268127
+                      ],
+                      "head_xyz_m": [
+                        2.923708200454712,
+                        2.8354177236557008,
+                        0.6664381623268127
+                      ],
+                      "forward_unit": [
+                        0.859001761825462,
+                        0.13154303819053362,
+                        0.49478520823116384
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 3.002865168376712,
+                  "frame_id": 180,
+                  "distance_m": 2.129196686147101,
+                  "facing_score": 0.23139948610017702,
+                  "facing_state": "side_by_side_or_oblique",
+                  "b_relative_to_a": "right_behind",
+                  "a_relative_to_b": "center_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "b_only_body_forward_field",
+                    "a_contains_b": false,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 122.47215826778479,
+                    "b_to_a_angle_deg": 1.4297062699401935,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        4.618196964263916,
+                        1.2726025581359863,
+                        1.9603657722473145
+                      ],
+                      "head_xyz_m": [
+                        4.618196964263916,
+                        2.8726025581359864,
+                        1.9603657722473145
+                      ],
+                      "forward_unit": [
+                        0.9369676370681186,
+                        0.04196507801333707,
+                        -0.34688698348932184
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        2.922736644744873,
+                        1.2370822429656982,
+                        0.6728755235671997
+                      ],
+                      "head_xyz_m": [
+                        2.922736644744873,
+                        2.8370822429656983,
+                        0.6728755235671997
+                      ],
+                      "forward_unit": [
+                        0.8043086132747472,
+                        0.1304729660510786,
+                        0.579710668990909
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 4.003820224502283,
+                  "frame_id": 240,
+                  "distance_m": 2.1984912812915187,
+                  "facing_score": 0.2230698611304784,
+                  "facing_state": "side_by_side_or_oblique",
+                  "b_relative_to_a": "right_behind",
+                  "a_relative_to_b": "center_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "b_only_body_forward_field",
+                    "a_contains_b": false,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 123.58188965268965,
+                    "b_to_a_angle_deg": 2.1924445950062683,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        4.66235876083374,
+                        1.3969708681106567,
+                        2.012852430343628
+                      ],
+                      "head_xyz_m": [
+                        4.66235876083374,
+                        2.996970868110657,
+                        2.012852430343628
+                      ],
+                      "forward_unit": [
+                        0.9456985896147695,
+                        -0.003412264595149624,
+                        -0.32502697434362054
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        2.9215776920318604,
+                        1.2383573055267334,
+                        0.6794781684875488
+                      ],
+                      "head_xyz_m": [
+                        2.9215776920318604,
+                        2.8383573055267335,
+                        0.6794781684875488
+                      ],
+                      "forward_unit": [
+                        0.8098477594624046,
+                        0.1279325489212381,
+                        0.5725206279429923
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 5.004775280627853,
+                  "frame_id": 300,
+                  "distance_m": 2.1728880331445004,
+                  "facing_score": 0.48036060647212514,
+                  "facing_state": "side_by_side_or_oblique",
+                  "b_relative_to_a": "right_same_depth",
+                  "a_relative_to_b": "left_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "b_only_body_forward_field",
+                    "a_contains_b": false,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 91.34068499701465,
+                    "b_to_a_angle_deg": 10.22493588754727,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        4.609481334686279,
+                        1.2569314241409302,
+                        2.023186445236206
+                      ],
+                      "head_xyz_m": [
+                        4.609481334686279,
+                        2.8569314241409303,
+                        2.023186445236206
+                      ],
+                      "forward_unit": [
+                        0.6566713734588068,
+                        0.005923419883965438,
+                        -0.7541535787733177
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        2.9379079341888428,
+                        1.235213041305542,
+                        0.6350895166397095
+                      ],
+                      "head_xyz_m": [
+                        2.9379079341888428,
+                        2.835213041305542,
+                        0.6350895166397095
+                      ],
+                      "forward_unit": [
+                        0.8657912104361959,
+                        0.10400753565735457,
+                        0.4894772849253689
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 6.005730336753424,
+                  "frame_id": 360,
+                  "distance_m": 1.8899006612916445,
+                  "facing_score": 0.6597758579515398,
+                  "facing_state": "facing_each_other",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "right_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "mutual_body_forward_field",
+                    "a_contains_b": true,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 49.6882165439295,
+                    "b_to_a_angle_deg": 47.73155255436342,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        4.6136980056762695,
+                        1.2562599182128906,
+                        1.5325746536254883
+                      ],
+                      "head_xyz_m": [
+                        4.6136980056762695,
+                        2.8562599182128907,
+                        1.5325746536254883
+                      ],
+                      "forward_unit": [
+                        -0.29471226502059034,
+                        0.13687364157121806,
+                        -0.9457326721063765
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        2.8742434978485107,
+                        1.2304174900054932,
+                        0.7940933108329773
+                      ],
+                      "head_xyz_m": [
+                        2.8742434978485107,
+                        2.8304174900054933,
+                        0.7940933108329773
+                      ],
+                      "forward_unit": [
+                        0.32625709654110746,
+                        0.14892392763499773,
+                        0.9334762828986779
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 7.006685392878994,
+                  "frame_id": 420,
+                  "distance_m": 1.133126830784039,
+                  "facing_score": 0.6934572384976507,
+                  "facing_state": "facing_each_other",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "right_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "a_only_body_forward_field",
+                    "a_contains_b": true,
+                    "b_contains_a": false,
+                    "a_to_b_angle_deg": 27.22575511943912,
+                    "b_to_a_angle_deg": 60.15180840632591,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        4.190971851348877,
+                        1.2536437511444092,
+                        1.1476634740829468
+                      ],
+                      "head_xyz_m": [
+                        4.190971851348877,
+                        2.8536437511444093,
+                        1.1476634740829468
+                      ],
+                      "forward_unit": [
+                        -0.8710649391361268,
+                        0.16209481120044944,
+                        0.4636498074944779
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        3.058274984359741,
+                        1.226731777191162,
+                        1.1634738445281982
+                      ],
+                      "head_xyz_m": [
+                        3.058274984359741,
+                        2.826731777191162,
+                        1.1634738445281982
+                      ],
+                      "forward_unit": [
+                        0.5057010488846931,
+                        0.12595158229063366,
+                        0.8534650831026463
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 7.9909578647358055,
+                  "frame_id": 479,
+                  "distance_m": 1.2865000604355918,
+                  "facing_score": 0.1921400587903863,
+                  "facing_state": "side_by_side_or_oblique",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "right_behind",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "a_only_body_forward_field",
+                    "a_contains_b": true,
+                    "b_contains_a": false,
+                    "a_to_b_angle_deg": 37.17200174860267,
+                    "b_to_a_angle_deg": 114.3648177195805,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        3.791779041290283,
+                        0.9405931234359741,
+                        0.6140415072441101
+                      ],
+                      "head_xyz_m": [
+                        3.791779041290283,
+                        2.540593123435974,
+                        0.6140415072441101
+                      ],
+                      "forward_unit": [
+                        0.1666085270111304,
+                        0.3587758903586779,
+                        0.9184342432773941
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        3.223860502243042,
+                        1.2205109596252441,
+                        1.7339508533477783
+                      ],
+                      "head_xyz_m": [
+                        3.223860502243042,
+                        2.8205109596252442,
+                        1.7339508533477783
+                      ],
+                      "forward_unit": [
+                        0.6239554227083804,
+                        0.07789139662232429,
+                        0.7775683640716295
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 8.991912920861376,
+                  "frame_id": 539,
+                  "distance_m": 1.8235701608815964,
+                  "facing_score": 0.09916856347946074,
+                  "facing_state": "side_by_side_or_oblique",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "right_behind",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "a_only_body_forward_field",
+                    "a_contains_b": true,
+                    "b_contains_a": false,
+                    "a_to_b_angle_deg": 22.261885679475387,
+                    "b_to_a_angle_deg": 136.6458950667221,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        3.841931104660034,
+                        0.8690057396888733,
+                        0.6063507199287415
+                      ],
+                      "head_xyz_m": [
+                        3.841931104660034,
+                        2.4690057396888734,
+                        0.6063507199287415
+                      ],
+                      "forward_unit": [
+                        0.27693824561119457,
+                        0.22304586572702714,
+                        0.934642043725765
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        3.6623077392578125,
+                        1.2139217853546143,
+                        2.387972593307495
+                      ],
+                      "head_xyz_m": [
+                        3.6623077392578125,
+                        2.8139217853546143,
+                        2.387972593307495
+                      ],
+                      "forward_unit": [
+                        0.6082060159771318,
+                        0.0788078517488022,
+                        0.7898574331054712
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 9.992867976986947,
+                  "frame_id": 599,
+                  "distance_m": 2.3446567959827527,
+                  "facing_score": 0.02488733250390529,
+                  "facing_state": "side_by_side_or_oblique",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "right_behind",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "a_only_body_forward_field",
+                    "a_contains_b": true,
+                    "b_contains_a": false,
+                    "a_to_b_angle_deg": 17.398046970646604,
+                    "b_to_a_angle_deg": 154.75278197806344,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        3.86674165725708,
+                        0.8370662331581116,
+                        0.6270058751106262
+                      ],
+                      "head_xyz_m": [
+                        3.86674165725708,
+                        2.4370662331581117,
+                        0.6270058751106262
+                      ],
+                      "forward_unit": [
+                        0.3645500497479531,
+                        0.3466366405422186,
+                        0.8642605513746243
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        4.087582588195801,
+                        1.2039310932159424,
+                        2.9322292804718018
+                      ],
+                      "head_xyz_m": [
+                        4.087582588195801,
+                        2.8039310932159425,
+                        2.9322292804718018
+                      ],
+                      "forward_unit": [
+                        0.5094442951570264,
+                        0.0737396715593276,
+                        0.8573383060206066
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 10.993823033112518,
+                  "frame_id": 659,
+                  "distance_m": 2.961835509329305,
+                  "facing_score": 0.08943225401733279,
+                  "facing_state": "side_by_side_or_oblique",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "right_behind",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "a_only_body_forward_field",
+                    "a_contains_b": true,
+                    "b_contains_a": false,
+                    "a_to_b_angle_deg": 5.092303608621113,
+                    "b_to_a_angle_deg": 144.80433305641625,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        3.8993523120880127,
+                        0.7903352975845337,
+                        0.6344510316848755
+                      ],
+                      "head_xyz_m": [
+                        3.8993523120880127,
+                        2.390335297584534,
+                        0.6344510316848755
+                      ],
+                      "forward_unit": [
+                        0.2254452750433603,
+                        0.47312230249275355,
+                        0.851662911511696
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        4.395539283752441,
+                        1.1912254095077515,
+                        3.526777982711792
+                      ],
+                      "head_xyz_m": [
+                        4.395539283752441,
+                        2.7912254095077516,
+                        3.526777982711792
+                      ],
+                      "forward_unit": [
+                        0.7047370956680922,
+                        0.06529850015275886,
+                        0.7064571691667532
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 11.994778089238087,
+                  "frame_id": 719,
+                  "distance_m": 3.2652038127745295,
+                  "facing_score": 0.6968032879630601,
+                  "facing_state": "facing_each_other",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "right_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "a_only_body_forward_field",
+                    "a_contains_b": true,
+                    "b_contains_a": false,
+                    "a_to_b_angle_deg": 4.348606278624617,
+                    "b_to_a_angle_deg": 66.64135255519452,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        3.89536190032959,
+                        0.796207070350647,
+                        0.6308249831199646
+                      ],
+                      "head_xyz_m": [
+                        3.89536190032959,
+                        2.396207070350647,
+                        0.6308249831199646
+                      ],
+                      "forward_unit": [
+                        0.1314330073929413,
+                        0.4690543615268526,
+                        0.8733346268757948
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        4.61878776550293,
+                        1.2116602659225464,
+                        3.7876603603363037
+                      ],
+                      "head_xyz_m": [
+                        4.61878776550293,
+                        2.8116602659225465,
+                        3.7876603603363037
+                      ],
+                      "forward_unit": [
+                        0.8037459950116259,
+                        0.079245435255213,
+                        -0.5896715496731918
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 12.995733145363658,
+                  "frame_id": 779,
+                  "distance_m": 2.8142196346921735,
+                  "facing_score": 0.9414356663092318,
+                  "facing_state": "facing_each_other",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "left_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "mutual_body_forward_field",
+                    "a_contains_b": true,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 4.514503254781333,
+                    "b_to_a_angle_deg": 27.62839205111781,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        3.881856679916382,
+                        0.813167154788971,
+                        0.6557632088661194
+                      ],
+                      "head_xyz_m": [
+                        3.881856679916382,
+                        2.413167154788971,
+                        0.6557632088661194
+                      ],
+                      "forward_unit": [
+                        0.1768495619856062,
+                        0.576359400318802,
+                        0.7978308555637906
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        4.268922805786133,
+                        1.2050343751907349,
+                        3.415555238723755
+                      ],
+                      "head_xyz_m": [
+                        4.268922805786133,
+                        2.805034375190735,
+                        3.415555238723755
+                      ],
+                      "forward_unit": [
+                        -0.5734500459206892,
+                        0.17363918307705428,
+                        -0.8006275531943008
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 13.99668820148923,
+                  "frame_id": 839,
+                  "distance_m": 2.381720924584296,
+                  "facing_score": 0.6957454687547686,
+                  "facing_state": "facing_each_other",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "left_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "a_only_body_forward_field",
+                    "a_contains_b": true,
+                    "b_contains_a": false,
+                    "a_to_b_angle_deg": 19.624477090949014,
+                    "b_to_a_angle_deg": 63.28345990528836,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        3.889939069747925,
+                        0.8033282160758972,
+                        0.6575256586074829
+                      ],
+                      "head_xyz_m": [
+                        3.889939069747925,
+                        2.4033282160758973,
+                        0.6575256586074829
+                      ],
+                      "forward_unit": [
+                        0.21687258968982906,
+                        0.6047418104136906,
+                        0.7663247500758403
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        3.7334847450256348,
+                        1.2103910446166992,
+                        2.9989817142486572
+                      ],
+                      "head_xyz_m": [
+                        3.7334847450256348,
+                        2.8103910446166993,
+                        2.9989817142486572
+                      ],
+                      "forward_unit": [
+                        -0.8446613068529779,
+                        0.19549902436122596,
+                        -0.49832460121815003
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                },
+                {
+                  "t": 14.9976432576148,
+                  "frame_id": 899,
+                  "distance_m": 2.238273966982599,
+                  "facing_score": 0.27922472806235366,
+                  "facing_state": "side_by_side_or_oblique",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "left_behind",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "a_only_body_forward_field",
+                    "a_contains_b": true,
+                    "b_contains_a": false,
+                    "a_to_b_angle_deg": 35.80979653803251,
+                    "b_to_a_angle_deg": 104.62634753702115,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        3.887265205383301,
+                        0.8015405535697937,
+                        0.6586268544197083
+                      ],
+                      "head_xyz_m": [
+                        3.887265205383301,
+                        2.401540553569794,
+                        0.6586268544197083
+                      ],
+                      "forward_unit": [
+                        0.24354679394848786,
+                        0.5849693150043824,
+                        0.7736251415645155
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        3.195000648498535,
+                        1.210286259651184,
+                        2.747542142868042
+                      ],
+                      "head_xyz_m": [
+                        3.195000648498535,
+                        2.810286259651184,
+                        2.747542142868042
+                      ],
+                      "forward_unit": [
+                        -0.9925121223855504,
+                        0.10382952866117613,
+                        -0.06433596113938268
+                      ]
+                    },
+                    "computed_from": [
+                      "SMPL-X transl as pelvis/root proxy",
+                      "SMPL-X global_orient-derived body forward",
+                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
+                    ],
+                    "limitations": [
+                      "pelvis uses SMPL-X transl/root proxy",
+                      "body forward uses SMPL-X global orientation",
+                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
+                    ]
+                  }
+                }
+              ],
+              "distance_change_m": 0.07165455083360817,
+              "facing_changed": false,
+              "los_changed": null,
+              "line_of_sight_evidence_status": "missing_blocker_geometry"
+            },
+            "body_forward_field_sequence": [
+              "b_only_body_forward_field",
+              "b_only_body_forward_field",
+              "b_only_body_forward_field",
+              "b_only_body_forward_field",
+              "b_only_body_forward_field",
+              "b_only_body_forward_field",
+              "mutual_body_forward_field",
+              "a_only_body_forward_field",
+              "a_only_body_forward_field",
+              "a_only_body_forward_field",
+              "a_only_body_forward_field",
+              "a_only_body_forward_field",
+              "a_only_body_forward_field",
+              "mutual_body_forward_field",
+              "a_only_body_forward_field",
+              "a_only_body_forward_field"
+            ],
+            "visual_person_audit": {
+              "scene_id": "hoi_m3_bedroom_data01_win01",
+              "status": "complete_and_identity_aligned",
+              "detector": "IDEA Research Grounding DINO tiny (local weights)",
+              "tracking": "motion + box overlap + HSV appearance Hungarian association",
+              "sample_fps": 2.0,
+              "box_threshold": 0.3,
+              "duration_sec": 15.015,
+              "sample_count": 31,
+              "sampled_visible_counts": [
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2,
+                2
+              ],
+              "mode_visible_person_count": 2,
+              "max_visible_person_count": 2,
+              "persistent_visible_person_count": 2,
+              "metric_3d_track_count": 2,
+              "metric_identity_alignment": {
+                "status": "aligned",
+                "mapping": {
+                  "A": "V1",
+                  "B": "V2"
+                },
+                "best_cost": 0.432,
+                "alternative_cost": 1.4986,
+                "margin": 1.0665,
+                "metric_motion_profiles": {
+                  "A": [
+                    0.7752581323915737,
+                    0.2247418676084263,
+                    1.7555157840251923
+                  ],
+                  "B": [
+                    0.3740117489703313,
+                    0.6259882510296687,
+                    2.084011733531952
+                  ]
+                },
+                "visual_motion_profiles": {
+                  "V1": [
+                    0.8566596532266544,
+                    0.1433403467733456,
+                    0.13900378706397515
+                  ],
+                  "V2": [
+                    0.5086245767014117,
+                    0.4913754232985883,
+                    0.29819278219316175
+                  ]
+                },
+                "criterion": "start-middle-end segment-motion profile; accept only when assignment margin >= 0.18"
+              },
+              "geometry_scope": "all visible people have 2D localization; metric distance/orientation applies only to visually aligned SMPL-X tracks",
+              "visible_2d_tracks": [
+                {
+                  "id": "A",
+                  "first_seen_sec": 0.0,
+                  "last_seen_sec": 14.935,
+                  "coverage": 1.0,
+                  "observations": 31,
+                  "mean_score": 0.804,
+                  "normalized_path_length": 0.2178,
+                  "normalized_displacement": 0.1361
+                },
+                {
+                  "id": "B",
+                  "first_seen_sec": 0.0,
+                  "last_seen_sec": 14.935,
+                  "coverage": 1.0,
+                  "observations": 31,
+                  "mean_score": 0.846,
+                  "normalized_path_length": 0.9509,
+                  "normalized_displacement": 0.1023
+                }
+              ]
+            },
+            "answer_type": "body_forward_field_transition_over_video",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true
+          },
+          "question_categories": [
+            "body_forward_visibility"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "hoi_m3_bedroom_data05_win_extra_90s",
+      "title": "Task 4 · HOI-M3 · second three-person 2D topology example",
+      "video_clip": "./outputs/hoim3/bedroom_data05/win_extra_90s_view0_15s.mp4",
+      "original_image": "./multihuman_media/hoi_m3_bedroom_data05_win_extra_90s_localized.jpg",
+      "localization_video": "./multihuman_media/hoi_m3_bedroom_data05_win_extra_90s_localized.mp4",
+      "duration_sec": 15.015015015015015,
+      "visual_person_audit": {
+        "scene_id": "hoi_m3_bedroom_data05_win_extra_90s",
+        "status": "complete_visible_2d_tracks",
+        "detector": "IDEA Research Grounding DINO tiny (local weights)",
+        "tracking": "motion + box overlap + HSV appearance Hungarian association",
+        "sample_fps": 2.0,
+        "sample_count": 31,
+        "persistent_visible_person_count": 3,
+        "metric_3d_track_count": 0,
+        "geometry_scope": "all three visible people have endpoint-valid 2D tracks; no metric 3D claim",
+        "visible_2d_tracks": [
+          {
+            "id": "V1",
+            "first_seen_sec": 0,
+            "last_seen_sec": 14.935,
+            "coverage": 1,
+            "observations": 31,
+            "mean_score": 0.767,
+            "normalized_path_length": 0.2794,
+            "normalized_displacement": 0.0303
+          },
+          {
+            "id": "V2",
+            "first_seen_sec": 0,
+            "last_seen_sec": 14.935,
+            "coverage": 1,
+            "observations": 30,
+            "mean_score": 0.638,
+            "normalized_path_length": 0.2436,
+            "normalized_displacement": 0.0782
+          },
+          {
+            "id": "V3",
+            "first_seen_sec": 0,
+            "last_seen_sec": 14.935,
+            "coverage": 1,
+            "observations": 31,
+            "mean_score": 0.734,
+            "normalized_path_length": 1.3496,
+            "normalized_displacement": 0.187
+          }
+        ],
+        "endpoint_gate": {
+          "max_endpoint_gap_sec": 0.55,
+          "all_tracks_have_start_observation": true,
+          "all_tracks_have_end_observation": true
+        }
+      },
+      "qa": [
+        {
+          "task_id": "task4_multi_human_relational_dynamics",
+          "task_name": "Task 4 · Multi-Human Relational Dynamics",
+          "question_type": "visible_pair_topology_consistency_2d",
+          "question": "Among the three endpoint-valid visible tracks, which pair is closest in the camera plane at both the start and the end?",
+          "options": [
+            {
+              "label": "A",
+              "text": "V1–V2 is closest at both endpoints."
+            },
+            {
+              "label": "B",
+              "text": "V1–V3 is closest at both endpoints."
+            },
+            {
+              "label": "C",
+              "text": "V2–V3 is the closest visible pair at both endpoints."
+            },
+            {
+              "label": "D",
+              "text": "The closest pair changes from V1–V2 to V2–V3."
+            }
+          ],
+          "correct_option": "C",
+          "correct_answer": "V2–V3 is the closest visible pair at both endpoints.",
+          "answer": "V2–V3 is the closest visible pair at both endpoints.",
+          "explanation": "Normalized start distances are [0.2863, 0.431, 0.2105] and end distances are [0.3622, 0.4188, 0.0601] in pair order ['V1–V2', 'V1–V3', 'V2–V3'].",
+          "status": "ok",
+          "quality": "high_2d_topology",
+          "method": "Detects people at 2 Hz, associates all three tracks across the clip, requires a real observation within 0.55 s of both endpoints, then compares box-center separation normalized by frame diagonal.",
+          "result_json": {
+            "scene_id": "hoi_m3_bedroom_data05_win_extra_90s",
+            "start_pair_distances_normalized": [
+              {
+                "pair": "V1–V2",
+                "distance": 0.2863
+              },
+              {
+                "pair": "V1–V3",
+                "distance": 0.431
+              },
+              {
+                "pair": "V2–V3",
+                "distance": 0.2105
+              }
+            ],
+            "end_pair_distances_normalized": [
+              {
+                "pair": "V1–V2",
+                "distance": 0.3622
+              },
+              {
+                "pair": "V1–V3",
+                "distance": 0.4188
+              },
+              {
+                "pair": "V2–V3",
+                "distance": 0.0601
+              }
+            ],
+            "visual_person_audit": {
+              "scene_id": "hoi_m3_bedroom_data05_win_extra_90s",
+              "status": "complete_visible_2d_tracks",
+              "detector": "IDEA Research Grounding DINO tiny (local weights)",
+              "tracking": "motion + box overlap + HSV appearance Hungarian association",
+              "sample_fps": 2.0,
+              "sample_count": 31,
+              "persistent_visible_person_count": 3,
+              "metric_3d_track_count": 0,
+              "geometry_scope": "all three visible people have endpoint-valid 2D tracks; no metric 3D claim",
+              "visible_2d_tracks": [
+                {
+                  "id": "V1",
+                  "first_seen_sec": 0,
+                  "last_seen_sec": 14.935,
+                  "coverage": 1,
+                  "observations": 31,
+                  "mean_score": 0.767,
+                  "normalized_path_length": 0.2794,
+                  "normalized_displacement": 0.0303
+                },
+                {
+                  "id": "V2",
+                  "first_seen_sec": 0,
+                  "last_seen_sec": 14.935,
+                  "coverage": 1,
+                  "observations": 30,
+                  "mean_score": 0.638,
+                  "normalized_path_length": 0.2436,
+                  "normalized_displacement": 0.0782
+                },
+                {
+                  "id": "V3",
+                  "first_seen_sec": 0,
+                  "last_seen_sec": 14.935,
+                  "coverage": 1,
+                  "observations": 31,
+                  "mean_score": 0.734,
+                  "normalized_path_length": 1.3496,
+                  "normalized_displacement": 0.187
+                }
+              ],
+              "endpoint_gate": {
+                "max_endpoint_gap_sec": 0.55,
+                "all_tracks_have_start_observation": true,
+                "all_tracks_have_end_observation": true
+              }
+            },
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "answer_type": "visible_pair_topology_consistency_2d"
+          },
+          "question_categories": [
+            "image_plane_topology"
+          ]
+        }
+      ],
+      "case_policy": "one temporal question per unique video window"
     }
   ],
   "release_policy": {

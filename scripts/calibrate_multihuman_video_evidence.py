@@ -281,8 +281,11 @@ def mismatch_qas(scene_id: str, tracks: list[dict[str, Any]], audit: dict[str, A
         for i in range(len(tracks)):
             for j in range(i+1,len(tracks)):
                 a,b=tracks[i],tracks[j]
-                ds=float(np.linalg.norm(center(nearest_box(a,0))-center(nearest_box(b,0)))/diag)
-                de=float(np.linalg.norm(center(nearest_box(a,audit['duration_sec']))-center(nearest_box(b,audit['duration_sec'])))/diag)
+                a0=box_at(a,0,max_gap=1.1); b0=box_at(b,0,max_gap=1.1); a1=box_at(a,audit['duration_sec'],max_gap=1.1); b1=box_at(b,audit['duration_sec'],max_gap=1.1)
+                if any(x is None for x in (a0,b0,a1,b1)):
+                    return rows
+                ds=float(np.linalg.norm(center(a0)-center(b0))/diag)
+                de=float(np.linalg.norm(center(a1)-center(b1))/diag)
                 pairs.append((a['id']+'–'+b['id'],ds,de))
         sp=min(pairs,key=lambda x:x[1]); ep=min(pairs,key=lambda x:x[2])
         correct=f'The closest pair changes from {sp[0]} at the start to {ep[0]} at the end.' if sp[0]!=ep[0] else f'{sp[0]} is the closest visible pair at both the start and the end.'

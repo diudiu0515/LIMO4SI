@@ -8,12 +8,12 @@
 
 | 项目 | 当前真实状态 |
 |---|---:|
-| 展示 case | 22 |
-| QA | 22 |
+| 展示 case | 25 |
+| QA | 25 |
 | 每个 case 的问题数 | 1 |
-| 不重复的视频窗口 | 22 / 22 |
-| Task 1 | 10 case；4 个核心类型 + 6 个多样化 temporal case |
-| Task 4 | 12 case；六类能力均覆盖，并增加 6 个动态模式 |
+| 不重复的视频窗口 | 25 / 25 |
+| Task 1 | 11 case；四类能力均至少 2 例 |
+| Task 4 | 14 case；六类能力均至少 2 例 |
 | 每题选项 | 4 个互不重复选项 |
 | 视频长度 | 每段约 15 秒 |
 | 非 Task 1 / Task 4 题 | 0 |
@@ -29,6 +29,7 @@
 
 ```bash
 python scripts/build_task1_task4_curated.py
+python scripts/build_task1_task4_scaled.py
 python scripts/build_static_qa_site.py
 ```
 
@@ -124,17 +125,18 @@ http://<服务器IP>:8000/
 
 ```bash
 python scripts/build_task1_task4_curated.py
+python scripts/build_task1_task4_scaled.py
 python scripts/build_static_qa_site.py
 ```
 
 审计文件 `outputs/qa/task1_task4_curated_audit.json` 应满足：
 
 - `status = ok`
-- `case_count = 22`
-- `qa_count = 22`
+- `case_count = 25`
+- `qa_count = 25`
 - `one_question_per_case = true`
-- `unique_case_windows = 22`
-- Task 1 = 10，Task 4 = 12
+- `unique_case_windows = 25`
+- Task 1 = 11，Task 4 = 14；每个能力类别至少 2 例
 
 ## 工作原则
 
