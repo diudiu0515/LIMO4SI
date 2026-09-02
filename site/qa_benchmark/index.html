@@ -12,7 +12,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <body>
 <main class="staticShell">
 <h1>Humans in Space QA Benchmark</h1>
-<p class="topNote">当前只展示 Task 1 和 Task 4。每个 case 只有一道需要整段视频证据的问题；先看 15 秒视频、人体定位与俯视图，再作答。提交后显示答案；定位图、俯视图和计算证据默认折叠，可按需展开。</p>
+<p class="topNote">This site shows only Task 1 and Task 4. Each case contains one question that requires evidence from the full 15-second clip. Submit an answer first; localization views, top-down views, and computed evidence are collapsed by default and can be expanded when needed.</p>
 <nav class="caseNav">
 
 <a href="#case-1">Case 1</a>
@@ -50,7 +50,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/spatial/showcase_queries/query_04_iiith145_frame11250/showcase_clip_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./outputs/spatial/showcase_queries/query_04_iiith145_frame11250/showcase_original_multi.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
 <figure><img src="./outputs/spatial/showcase_queries/query_04_iiith145_frame11250/showcase_topdown_multi.jpg" loading="lazy" alt="topdown"><figcaption>Top-down human-centered map</figcaption></figure>
 </div></details><div class="qaList">
@@ -66,10 +66,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">It remains on the person's left in the body frame for the entire clip.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">It remains centered in the person's body frame at both endpoints.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.</div><div class="explanation">Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Rebuilds the person's body-centric frame at every valid pose sample and transforms the fixed 3D object center into that changing frame.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -119,7 +119,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/spatial/showcase_queries/query_02_iiith30_frame4440/showcase_clip_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./outputs/spatial/showcase_queries/query_02_iiith30_frame4440/showcase_original_multi.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
 <figure><img src="./outputs/spatial/showcase_queries/query_02_iiith30_frame4440/showcase_topdown_multi.jpg" loading="lazy" alt="topdown"><figcaption>Top-down human-centered map</figcaption></figure>
 </div></details><div class="qaList">
@@ -135,10 +135,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">It remains on the person's left side throughout.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">It changes from the person's right side to the person's left side.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">It changes from the person's right side to the person's left side.</div><div class="explanation">The body-centric relation changes right → left while the measured body turn is 56.7° and net displacement is 0.20 m.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses all valid poses in the clip; the rotation-dominant label requires body turn ≥45° and net displacement <0.35 m.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -188,7 +188,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/spatial/showcase_queries/query_01_iiith32_frame5280/showcase_clip_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./outputs/spatial/showcase_queries/query_01_iiith32_frame5280/showcase_original_multi.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
 <figure><img src="./outputs/spatial/showcase_queries/query_01_iiith32_frame5280/showcase_topdown_multi.jpg" loading="lazy" alt="topdown"><figcaption>Top-down human-centered map</figcaption></figure>
 </div></details><div class="qaList">
@@ -204,10 +204,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The tawa pan stays on the person's left throughout.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">No listed object stays on the person's left throughout.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The stainless salt container stays on the person's left throughout.</div><div class="explanation">The stainless salt container is classified left in all 21 valid body-centric pose samples.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Applies an all-samples consistency gate: a candidate is accepted only if its lateral label is left at every valid pose sample.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -232,7 +232,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/spatial/showcase_multi/sfu0083_cam04_3450/showcase_clip_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./outputs/spatial/showcase_multi/sfu0083_cam04_3450/showcase_original_multi.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
 <figure><img src="./outputs/spatial/showcase_multi/sfu0083_cam04_3450/showcase_topdown_multi.jpg" loading="lazy" alt="topdown"><figcaption>Top-down human-centered map</figcaption></figure>
 </div></details><div class="qaList">
@@ -248,10 +248,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The knife remains outside the person's forward field for the whole clip.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The camera viewpoint alone determines the person's visibility state.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The person's body/head direction changes; no listed blocker is detected on the final sightline.</div><div class="explanation">The first samples place the knife outside the forward field, the final four samples place it in the central zone, body turn is about 74.6°, and the listed-object blocker field remains empty.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Compares the target direction with the person's body/head-forward direction over the full pose timeline and checks only explicitly listed blocker geometry.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -291,7 +291,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/spatial/showcase_diverse_new/diverse_iiith_145_2_frame7380/showcase_clip_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./outputs/spatial/showcase_diverse_new/diverse_iiith_145_2_frame7380/showcase_original_multi.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
 <figure><img src="./outputs/spatial/showcase_diverse_new/diverse_iiith_145_2_frame7380/showcase_topdown_multi.jpg" loading="lazy" alt="topdown"><figcaption>Top-down human-centered map</figcaption></figure>
 </div></details><div class="qaList">
@@ -307,10 +307,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The small steel bowl remains nearest throughout.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The nearest listed object changes during the clip.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The white chopping board remains nearest in all 31 samples.</div><div class="explanation">Per-sample pelvis-to-object 3D distances select the white chopping board 31/31 times.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Ranks every listed scene-fixed 3D object by distance from the changing human pelvis at every valid pose sample; all-samples agreement is required.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -334,7 +334,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/spatial/showcase_queries/query_03_iiith29_frame4350/showcase_clip_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./outputs/spatial/showcase_queries/query_03_iiith29_frame4350/showcase_original_multi.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
 <figure><img src="./outputs/spatial/showcase_queries/query_03_iiith29_frame4350/showcase_topdown_multi.jpg" loading="lazy" alt="topdown"><figcaption>Top-down human-centered map</figcaption></figure>
 </div></details><div class="qaList">
@@ -350,10 +350,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At least one listed object crosses from front to behind during the clip.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The steel bowl, oil container and steel plate all remain in front of the person in all 26 samples.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The steel bowl, oil container and steel plate all remain in front of the person in all 26 samples.</div><div class="explanation">The front counts are {'steel bowl_0': 26, 'oil container_0': 26, 'steel plate_0': 26}; each equals the 26-sample timeline length.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Checks the longitudinal body-centric relation of every listed object at every valid human pose, not only the endpoints.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -379,7 +379,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/spatial/showcase_diverse_new/diverse_iiith_31_3_frame1620/showcase_clip_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./outputs/spatial/showcase_diverse_new/diverse_iiith_31_3_frame1620/showcase_original_multi.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
 <figure><img src="./outputs/spatial/showcase_diverse_new/diverse_iiith_31_3_frame1620/showcase_topdown_multi.jpg" loading="lazy" alt="topdown"><figcaption>Top-down human-centered map</figcaption></figure>
 </div></details><div class="qaList">
@@ -395,10 +395,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The knife is nearest and below throughout.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">No object satisfies both conditions for the whole clip.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The chopped tomato is nearest and below the body origin in all 19 samples.</div><div class="explanation">The chopped tomato wins all 19 distance rankings and has below in 19/19 vertical-relation samples.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Combines the all-samples nearest-distance ranking with the all-samples vertical body-centric relation.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -423,7 +423,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/spatial/showcase_multi/sfu0101_cam05_5460/showcase_clip_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./outputs/spatial/showcase_multi/sfu0101_cam05_5460/showcase_original_multi.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
 <figure><img src="./outputs/spatial/showcase_multi/sfu0101_cam05_5460/showcase_topdown_multi.jpg" loading="lazy" alt="topdown"><figcaption>Top-down human-centered map</figcaption></figure>
 </div></details><div class="qaList">
@@ -439,10 +439,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The distance decreases, but the plate stays on the person's left throughout.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The distance stays nearly constant and the plate remains centered.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The pelvis-to-plate distance decreases from about 3.05 m to 1.86 m, while the plate changes from the person's left to the person's right.</div><div class="explanation">Across 24 valid body poses, distance changes by -1.19 m and the endpoint lateral labels are left then right.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses the same fixed 3D plate center with every human pelvis/body-frame sample; jointly checks Euclidean distance and body-centric lateral relation.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -492,7 +492,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/spatial/val_3/showcase_clip_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./outputs/spatial/val_3/showcase_original_multi.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
 <figure><img src="./outputs/spatial/val_3/showcase_topdown_multi.jpg" loading="lazy" alt="topdown"><figcaption>Top-down human-centered map</figcaption></figure>
 </div></details><div class="qaList">
@@ -508,10 +508,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">It remains in front throughout.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">It remains behind throughout.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">It begins in front of the person and ends behind the person.</div><div class="explanation">Across 26 valid poses, the longitudinal body-centric label changes from front at the first sample to behind at the final sample.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses the person's full body-frame timeline and the validated scene-fixed bottle center; the answer is not based on camera left/right.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -561,7 +561,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/spatial/val_12_replacement_egg_whisk/showcase_clip_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./outputs/spatial/val_12_replacement_egg_whisk/showcase_original_multi.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
 <figure><img src="./outputs/spatial/val_12_replacement_egg_whisk/showcase_topdown_multi.jpg" loading="lazy" alt="topdown"><figcaption>Top-down human-centered map</figcaption></figure>
 </div></details><div class="qaList">
@@ -577,10 +577,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The person moves substantially farther from it: about 0.55 m at the start and 1.86 m at the end.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The distance increases briefly but returns to its starting value by the end.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The person moves substantially farther from it: about 0.55 m at the start and 1.86 m at the end.</div><div class="explanation">The pelvis-to-object Euclidean distance changes by +1.30 m across 22 valid pose samples.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Computes Euclidean distance from the human pelvis origin to the fixed 3D object center at every valid pose sample.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -635,7 +635,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/spatial/showcase_diverse_new/diverse_sfu_008_3_frame6960/showcase_clip_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./outputs/spatial/showcase_diverse_new/diverse_sfu_008_3_frame6960/showcase_original_multi.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
 <figure><img src="./outputs/spatial/showcase_diverse_new/diverse_sfu_008_3_frame6960/showcase_topdown_multi.jpg" loading="lazy" alt="topdown"><figcaption>Top-down human-centered map</figcaption></figure>
 </div></details><div class="qaList">
@@ -651,10 +651,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The peel stays in the central body-forward field throughout.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Only the external camera viewpoint changes the human-relative field label.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The person's body orientation changes substantially, rotating the body-forward field away from the scene-fixed peel.</div><div class="explanation">The endpoint forward angles are 42.1° and 110.5°, while the human body-turn estimate is about 152.7°.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Transforms the fixed 3D target direction into each valid human body frame. This is a body-forward directional proxy, not gaze or physical-occlusion truth.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -693,14 +693,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
 <div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice ok"><strong>多人覆盖校准：complete_and_identity_aligned</strong><br>原视频定位层覆盖 2 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data02/win08_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data02_win08_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data02/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data02_win08_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data02_win08_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
 </div></details><div class="qaList">
@@ -716,10 +716,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">B crosses from A's right side to A's left side.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">B remains behind A throughout.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">B stays right-and-in-front of A in all 16 metric samples.</div><div class="explanation">The dense metric timeline contains 16 samples and every sample is right_front relative to A.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses A's ground-plane body-forward axis and right axis at every sampled time; all-samples consistency is required.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -1227,14 +1227,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
 <div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice ok"><strong>多人覆盖校准：complete_and_identity_aligned</strong><br>原视频定位层覆盖 2 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data01/win06_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data01_win06_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data01/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data01_win06_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data01_win06_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
 </div></details><div class="qaList">
@@ -1250,10 +1250,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They face each other in 14 of 16 metric samples, so facing each other is dominant.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">No dominant orientation can be determined because only one frame is used.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">They face each other in 14 of 16 metric samples, so facing each other is dominant.</div><div class="explanation">Facing-score classification gives {'facing_each_other': 14, 'side_by_side_or_oblique': 2} across the 16-sample timeline.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Projects both SMPL-X root-forward vectors and the A↔B direction onto the ground plane, then aggregates the facing state over all samples.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -1762,14 +1762,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
 <div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice ok"><strong>多人覆盖校准：complete_and_identity_aligned</strong><br>原视频定位层覆盖 2 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data03/win04_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data03_win04_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data03/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data03_win04_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data03_win04_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
 </div></details><div class="qaList">
@@ -1785,10 +1785,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They separate briefly but return to approximately their starting distance by the end.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They move substantially farther apart: about 1.08 m at the start, above 3 m in the second half, and 3.09 m at the end.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">They move substantially farther apart: about 1.08 m at the start, above 3 m in the second half, and 3.09 m at the end.</div><div class="explanation">Across 16 metric samples, distance ranges from 1.04 m to 3.37 m; net change is +2.02 m.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Computes Euclidean distance between aligned SMPL-X pelvis/root translations at approximately 1 Hz across the full 15 seconds.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -2311,14 +2311,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
 <div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice ok"><strong>多人覆盖校准：complete_and_identity_aligned</strong><br>原视频定位层覆盖 2 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data02/win05_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data02_win05_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data02/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data02_win05_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data02_win05_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
 </div></details><div class="qaList">
@@ -2334,10 +2334,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Only B keeps A inside the body-forward field throughout.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Neither person contains the other in the body-forward field at any sampled time.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">Each person stays inside the other's ±60° body-forward field in all 16 metric samples.</div><div class="explanation">The directional field state is mutual_body_forward_field in all 16 samples. This does not claim gaze contact or an unoccluded sightline.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Measures the ground-plane angle from each SMPL-X body-forward vector to the other person's pelvis; accepts inside-field at ≤60°. Dense occlusion is deliberately not inferred.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -2845,14 +2845,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
 <div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice ok"><strong>多人覆盖校准：complete_and_identity_aligned</strong><br>原视频定位层覆盖 2 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data03/win03_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data03_win03_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data03/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data03_win03_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data03_win03_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
 </div></details><div class="qaList">
@@ -2868,10 +2868,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">B alternates left and right at nearly every sampled second.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">B remains directly behind A throughout the clip.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">B is left-front for the first four samples, then moves to A's right-front side for the remaining twelve samples.</div><div class="explanation">The lateral sequence has 4/4 left samples before the transition and 12/12 right samples after it.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Transforms B's pelvis into A's ground-plane body frame at each of 16 samples and requires the new side to persist after the crossing.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -3394,14 +3394,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
 <div class="metaBox"><strong>3 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice"><strong>多人覆盖校准：coverage_mismatch</strong><br>原视频定位层覆盖 3 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice"><strong>Multi-person coverage audit: coverage_mismatch</strong><br>The original-video localization layer covers 3 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data05/win02_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data05_win02_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data05/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data05_win02_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
 </div></details><div class="qaList">
 <article class="card task4_multi_human_relational_dynamics">
@@ -3416,10 +3416,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The same pair remains closest at both endpoints.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The closest pair changes from V2–V3 at the start to V1–V3 at the end.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The closest pair changes from V2–V3 at the start to V1–V3 at the end.</div><div class="explanation">All three persistent visible tracks are included; normalized image-plane pair distances change the closest pair from V2–V3 to V1–V3.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses Grounding DINO person detections plus temporal association for all three visible people; compares pairwise box-center separation normalized by frame diagonal. It does not claim metric 3D distance.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -3551,14 +3551,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
 <div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice ok"><strong>多人覆盖校准：complete_and_identity_aligned</strong><br>原视频定位层覆盖 2 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data01/win02_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data01_win02_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data01/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data01_win02_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data01_win02_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
 </div></details><div class="qaList">
@@ -3574,10 +3574,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They remain within a narrow 0.1 m distance band.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They separate briefly but return to the starting distance by the end.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">They separate and remain far apart: distance grows from 1.49 m to about 3.55 m.</div><div class="explanation">The 16-sample series rises above 3 m from t≈7 s onward and ends at 3.55 m; net change is +2.06 m.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses all 16 aligned SMPL-X pelvis/root samples and checks that the late high-distance state persists rather than relying only on two frames.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -4100,14 +4100,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
 <div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice ok"><strong>多人覆盖校准：complete_and_identity_aligned</strong><br>原视频定位层覆盖 2 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data01/win04_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data01_win04_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data01/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data01_win04_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data01_win04_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
 </div></details><div class="qaList">
@@ -4123,10 +4123,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">B is on A's right-and-behind side in 13 of 16 samples, so right-behind dominates.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The four position quadrants occur equally often.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">B is on A's right-and-behind side in 13 of 16 samples, so right-behind dominates.</div><div class="explanation">The complete position counts are {'right_behind': 13, 'left_behind': 1, 'left_front': 2}; right_behind is the clear temporal majority.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Transforms B into A's body-centric frame at each sampled second and aggregates the full position sequence.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -4636,14 +4636,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
 <div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice ok"><strong>多人覆盖校准：complete_and_identity_aligned</strong><br>原视频定位层覆盖 2 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data02/win04_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data02_win04_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data02/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data02_win04_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data02_win04_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
 </div></details><div class="qaList">
@@ -4659,10 +4659,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Their distance is constant throughout.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They first separate from about 1.24 m to 2.68 m, then partially approach and finish near 2.08 m.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">They first separate from about 1.24 m to 2.68 m, then partially approach and finish near 2.08 m.</div><div class="explanation">The maximum occurs near t=7.0 s, so start/end alone would miss the out-then-partway-back pattern.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Finds the peak and endpoint over all 16 metric pelvis-distance samples; this question requires the middle of the video.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -5186,14 +5186,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
 <div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice ok"><strong>多人覆盖校准：complete_and_identity_aligned</strong><br>原视频定位层覆盖 2 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data02/win06_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data02_win06_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data02/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data02_win06_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data02_win06_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
 </div></details><div class="qaList">
@@ -5209,10 +5209,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They approach to about 0.96 m while facing each other is dominant (14/16 samples).</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They approach, but side-by-side orientation dominates all 16 samples.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">They approach to about 0.96 m while facing each other is dominant (14/16 samples).</div><div class="explanation">The minimum distance occurs near t=9.0 s, and the facing-state aggregate is {'facing_each_other': 14, 'side_by_side_or_oblique': 2}.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Jointly aggregates the 16-sample pelvis-distance series and the ground-plane SMPL-X body-facing score.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -5739,14 +5739,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
 <div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice ok"><strong>多人覆盖校准：complete_and_identity_aligned</strong><br>原视频定位层覆盖 2 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data03/win09_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data03_win09_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data03/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data03_win09_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data03_win09_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
 </div></details><div class="qaList">
@@ -5762,10 +5762,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">B approaches but remains on A's right side throughout.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">B stays at the same distance and directly behind A throughout.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">B approaches from about 2.72 m to 1.14 m and crosses from A's right side to A's left side.</div><div class="explanation">The first seven samples are right-front; later samples become center/left-front while the metric distance drops by more than 1.5 m.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Combines all-sample metric distance with B's per-sample position in A's body-centric frame.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -6306,14 +6306,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
 <div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice ok"><strong>多人覆盖校准：complete_and_identity_aligned</strong><br>原视频定位层覆盖 2 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data03/win08_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data03_win08_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data03/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data03_win08_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data03_win08_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
 </div></details><div class="qaList">
@@ -6329,10 +6329,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They are close early, move apart to about 2.41 m near the middle, then come close again at about 0.68 m.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Their distance remains almost unchanged throughout.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">They are close early, move apart to about 2.41 m near the middle, then come close again at about 0.68 m.</div><div class="explanation">The 16-sample series has an interior maximum near t=9.0 s and low values at both the early and final phases.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses the full metric distance curve and requires a middle maximum with lower distances on both sides.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -6856,14 +6856,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
 <div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice ok"><strong>多人覆盖校准：complete_and_identity_aligned</strong><br>原视频定位层覆盖 2 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data01/win01_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data01_win01_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data01/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data01_win01_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data01_win01_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
 </div></details><div class="qaList">
@@ -6879,10 +6879,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Early, only B keeps A inside the ±60° body-forward field; later, only A keeps B inside the field for most samples.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Only A contains B early, then only B contains A later.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">Early, only B keeps A inside the ±60° body-forward field; later, only A keeps B inside the field for most samples.</div><div class="explanation">The 16-sample state sequence is ['b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field']; the first six are B-only and the final segment is predominantly A-only.</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses ground-plane SMPL-X root-forward directions at all 16 samples. It does not claim eye gaze or an unobstructed physical sightline.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -6902,12 +6902,12 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="metaBox"><strong>15s</strong><span>video window</span></div>
 <div class="metaBox"><strong>3 / 0</strong><span>visible 2D / metric 3D tracks</span></div>
 </div>
-<div class="coverageNotice ok"><strong>多人覆盖校准：complete_visible_2d_tracks</strong><br>原视频定位层覆盖 3 条持续可见人物轨迹；米制距离和身体朝向只使用 0 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_visible_2d_tracks</strong><br>The original-video localization layer covers 3 persistent visible-person tracks. Metric distance and body orientation use only 0 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data05/win_extra_90s_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
 <div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data05_win_extra_90s_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data05_win_extra_90s_localized.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
 </div></details><div class="qaList">
 <article class="card task4_multi_human_relational_dynamics">
@@ -6922,10 +6922,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">V2–V3 is the closest visible pair at both endpoints.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The closest pair changes from V1–V2 to V2–V3.</span></button>
 </div>
-<button type="button" class="submitAnswer" disabled>提交答案</button>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
 <div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">V2–V3 is the closest visible pair at both endpoints.</div><div class="explanation">Normalized start distances are [0.2863, 0.431, 0.2105] and end distances are [0.3622, 0.4188, 0.0601] in pair order ['V1–V2', 'V1–V3', 'V2–V3'].</div></div>
-<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Detects people at 2 Hz, associates all three tracks across the clip, requires a real observation within 0.55 s of both endpoints, then compares box-center separation normalized by frame diagonal.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
@@ -6955,7 +6955,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         if(btn.dataset.option===correct) btn.classList.add('correctChoice');
         if(btn.dataset.option===selected && selected!==correct) btn.classList.add('wrongChoice');
       });
-      var ok=selected===correct; feedback.hidden=false; feedback.textContent=ok?'回答正确。':'回答不正确，正确选项是 '+correct+'。'; feedback.style.color=ok?'#166534':'#991b1b';
+      var ok=selected===correct; feedback.hidden=false; feedback.textContent=ok?'Correct.':'Incorrect. The correct option is '+correct+'。'; feedback.style.color=ok?'#166534':'#991b1b';
       answer.classList.remove('hidden');
     });
   });

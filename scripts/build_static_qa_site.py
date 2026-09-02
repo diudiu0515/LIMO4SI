@@ -180,7 +180,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <body>
 <main class="staticShell">
 <h1>Humans in Space QA Benchmark</h1>
-<p class="topNote">当前只展示 Task 1 和 Task 4。每个 case 只有一道需要整段视频证据的问题；先看 15 秒视频、人体定位与俯视图，再作答。提交后显示答案；定位图、俯视图和计算证据默认折叠，可按需展开。</p>
+<p class="topNote">This site shows only Task 1 and Task 4. Each case contains one question that requires evidence from the full 15-second clip. Submit an answer first; localization views, top-down views, and computed evidence are collapsed by default and can be expanded when needed.</p>
 <nav class="caseNav">
 ''')
     for i, _ in enumerate(data.get('groups', []), 1):
@@ -202,7 +202,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         parts.append('</div>')
         if audit:
             cls = 'coverageNotice ok' if str(audit.get('status','')).startswith('complete_') else 'coverageNotice'
-            parts.append(f'<div class="{cls}"><strong>多人覆盖校准：{esc(audit.get("status"))}</strong><br>原视频定位层覆盖 {esc(audit.get("persistent_visible_person_count"))} 条持续可见人物轨迹；米制距离和身体朝向只使用 {esc(audit.get("metric_3d_track_count"))} 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>')
+            parts.append(f'<div class="{cls}"><strong>Multi-person coverage audit: {esc(audit.get("status"))}</strong><br>The original-video localization layer covers {esc(audit.get("persistent_visible_person_count"))} persistent visible-person tracks. Metric distance and body orientation use only {esc(audit.get("metric_3d_track_count"))} SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>')
         if group.get('video_clip'):
             parts.append('<div class="videoPanel"><div class="taskName">15-second evidence video</div>')
             parts.append(f'<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="{esc(group["video_clip"])}" type="video/mp4">Your browser cannot play this video.</video></div>')
@@ -212,7 +212,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         if group.get('original_video'):
             parts.append('<details class="originalVideoBox"><summary>Show original full video on this page</summary>')
             parts.append(f'<video class="inlineVideo" controls muted playsinline preload="none"><source src="{esc(group["original_video"])}" type="video/mp4">Your browser cannot play this video.</video></details>')
-        parts.append('<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">')
+        parts.append('<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">')
         if group.get('original_image'):
             original_caption = 'Original-video localization: boxes + head/pelvis points + persistent 2D IDs' if group.get('localization_image') else 'Photo / skeleton evidence'
             parts.append(f'<figure><img src="{esc(group["original_image"])}" loading="lazy" alt="original"><figcaption>{esc(original_caption)}</figcaption></figure>')
@@ -232,10 +232,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
             for opt in q.get('options', []):
                 parts.append(f'<button type="button" class="option" data-option="{esc(opt.get("label"))}"><span class="optionLabel">{esc(opt.get("label"))}</span><span class="optionText">{display_text(group, opt.get("text"))}</span></button>')
             parts.append('</div>')
-            parts.append('<button type="button" class="submitAnswer" disabled>提交答案</button>')
+            parts.append('<button type="button" class="submitAnswer" disabled>Submit answer</button>')
             parts.append('<div class="feedback" hidden></div>')
             parts.append(f'<div class="answerBox hidden"><div class="answerLabel">Correct answer: {esc(q.get("correct_option"))}</div><div class="answer">{display_text(group, q.get("correct_answer"))}</div><div class="explanation">{display_text(group, q.get("explanation"))}</div></div>')
-            parts.append('<details class="questionEvidence"><summary>展开本题计算证据</summary>')
+            parts.append('<details class="questionEvidence"><summary>Show computed evidence for this question</summary>')
             parts.append(f'<div class="methodBox">{display_text(group, q.get("method"))}</div>')
             parts.append(f'<pre class="jsonBlock">{display_text(group, dump_json(evidence_payload(group, q)))}</pre></details>')
             parts.append('</article>')
@@ -258,7 +258,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         if(btn.dataset.option===correct) btn.classList.add('correctChoice');
         if(btn.dataset.option===selected && selected!==correct) btn.classList.add('wrongChoice');
       });
-      var ok=selected===correct; feedback.hidden=false; feedback.textContent=ok?'回答正确。':'回答不正确，正确选项是 '+correct+'。'; feedback.style.color=ok?'#166534':'#991b1b';
+      var ok=selected===correct; feedback.hidden=false; feedback.textContent=ok?'Correct.':'Incorrect. The correct option is '+correct+'。'; feedback.style.color=ok?'#166534':'#991b1b';
       answer.classList.remove('hidden');
     });
   });
