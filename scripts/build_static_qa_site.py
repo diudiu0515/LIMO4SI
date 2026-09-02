@@ -174,13 +174,13 @@ def build_static_html(data: dict[str, Any]) -> str:
 <title>Humans in Space QA</title>
 <link rel="stylesheet" href="styles.css" />
 <style>
-body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px}.caseNav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px}.caseNav a{padding:8px 10px;border:1px solid #dbe3ef;border-radius:999px;background:white;color:#2456d6;text-decoration:none;font-weight:750;font-size:13px}.staticCase{margin:28px 0;padding:18px;border-radius:18px;background:white;box-shadow:0 12px 30px rgba(15,23,42,.08)}.mediaGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.mediaGrid img{width:100%;border-radius:14px;border:1px solid #dbe3ef;background:#f8fafc}.videoPanel{margin:10px 0 16px}.inlineVideo{display:block;width:100%;max-height:440px;border-radius:14px;border:1px solid #dbe3ef;background:#0f172a}.originalVideoBox{margin:12px 0 16px;border:1px solid #dbe3ef;border-radius:14px;background:#f8fafc;padding:10px}.originalVideoBox summary{cursor:pointer;font-weight:850;color:#2456d6}.originalVideoBox .inlineVideo{margin-top:10px}.qaList{display:grid;gap:14px}.answerBox{display:block}.answerBox.hidden{display:none}.option{cursor:pointer;text-align:left;width:100%;font:inherit}.option.selected{outline:3px solid #7c3aed;background:#f3e8ff}.option.correctChoice{border-color:#16a34a;background:#dcfce7}.option.wrongChoice{border-color:#dc2626;background:#fee2e2}.submitAnswer{margin-top:10px;padding:9px 14px;border:0;border-radius:9px;background:#2456d6;color:#fff;font-weight:800;cursor:pointer}.submitAnswer:disabled{opacity:.45;cursor:not-allowed}.feedback{margin-top:10px;padding:10px;border-radius:10px;background:#f8fafc;border:1px solid #dbe3ef}.jsonBlock{white-space:pre-wrap}.topNote{padding:14px;border-radius:14px;background:white;border:1px solid #dbe3ef;color:#475569}.metaGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:14px 0}.metaBox{background:#f8fafc;border:1px solid #dbe3ef;border-radius:12px;padding:10px}.metaBox strong{display:block;color:#0f172a}.metaBox span{color:#64748b;font-size:13px}.coverageNotice{margin:12px 0;padding:12px 14px;border-radius:12px;border:1px solid #f59e0b;background:#fffbeb;color:#92400e;line-height:1.5}.coverageNotice.ok{border-color:#86efac;background:#f0fdf4;color:#166534}@media(max-width:900px){.mediaGrid{grid-template-columns:1fr}.staticShell{padding:14px}}
+body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px}.caseNav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px}.caseNav a{padding:8px 10px;border:1px solid #dbe3ef;border-radius:999px;background:white;color:#2456d6;text-decoration:none;font-weight:750;font-size:13px}.staticCase{margin:28px 0;padding:18px;border-radius:18px;background:white;box-shadow:0 12px 30px rgba(15,23,42,.08)}.mediaGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.mediaGrid img{width:100%;border-radius:14px;border:1px solid #dbe3ef;background:#f8fafc}.videoPanel{margin:10px auto 16px;max-width:860px}.inlineVideo{display:block;width:100%;max-height:360px;border-radius:14px;border:1px solid #dbe3ef;background:#0f172a}.originalVideoBox{margin:12px 0 16px;border:1px solid #dbe3ef;border-radius:14px;background:#f8fafc;padding:10px}.originalVideoBox summary{cursor:pointer;font-weight:850;color:#2456d6}.originalVideoBox .inlineVideo{margin:10px auto 0}.visualEvidenceBox{margin:14px 0;padding:12px 14px;border:1px solid #dbe3ef;border-radius:14px;background:#f8fafc}.visualEvidenceBox summary,.questionEvidence summary{cursor:pointer;font-weight:850;color:#2456d6}.questionEvidence{margin-top:12px;padding:10px 12px;border:1px solid #dbe3ef;border-radius:10px;background:#f8fafc}.qaList{display:grid;gap:14px}.answerBox{display:block}.answerBox.hidden{display:none}.option{cursor:pointer;text-align:left;width:100%;font:inherit}.option.selected{outline:3px solid #7c3aed;background:#f3e8ff}.option.correctChoice{border-color:#16a34a;background:#dcfce7}.option.wrongChoice{border-color:#dc2626;background:#fee2e2}.submitAnswer{margin-top:10px;padding:9px 14px;border:0;border-radius:9px;background:#2456d6;color:#fff;font-weight:800;cursor:pointer}.submitAnswer:disabled{opacity:.45;cursor:not-allowed}.feedback{margin-top:10px;padding:10px;border-radius:10px;background:#f8fafc;border:1px solid #dbe3ef}.jsonBlock{white-space:pre-wrap}.topNote{padding:14px;border-radius:14px;background:white;border:1px solid #dbe3ef;color:#475569}.metaGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:14px 0}.metaBox{background:#f8fafc;border:1px solid #dbe3ef;border-radius:12px;padding:10px}.metaBox strong{display:block;color:#0f172a}.metaBox span{color:#64748b;font-size:13px}.coverageNotice{margin:12px 0;padding:12px 14px;border-radius:12px;border:1px solid #f59e0b;background:#fffbeb;color:#92400e;line-height:1.5}.coverageNotice.ok{border-color:#86efac;background:#f0fdf4;color:#166534}@media(max-width:900px){.mediaGrid{grid-template-columns:1fr}.staticShell{padding:14px}}
 </style>
 </head>
 <body>
 <main class="staticShell">
 <h1>Humans in Space QA Benchmark</h1>
-<p class="topNote">当前只展示 Task 1 和 Task 4。每个 case 只有一道需要整段视频证据的问题；先看 15 秒视频、人体定位与俯视图，再作答。提交后显示答案和本题直接相关的计算证据。</p>
+<p class="topNote">当前只展示 Task 1 和 Task 4。每个 case 只有一道需要整段视频证据的问题；先看 15 秒视频、人体定位与俯视图，再作答。提交后显示答案；定位图、俯视图和计算证据默认折叠，可按需展开。</p>
 <nav class="caseNav">
 ''')
     for i, _ in enumerate(data.get('groups', []), 1):
@@ -212,14 +212,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         if group.get('original_video'):
             parts.append('<details class="originalVideoBox"><summary>Show original full video on this page</summary>')
             parts.append(f'<video class="inlineVideo" controls muted playsinline preload="none"><source src="{esc(group["original_video"])}" type="video/mp4">Your browser cannot play this video.</video></details>')
-        parts.append('<div class="mediaGrid">')
+        parts.append('<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">')
         if group.get('original_image'):
             original_caption = 'Original-video localization: boxes + head/pelvis points + persistent 2D IDs' if group.get('localization_image') else 'Photo / skeleton evidence'
             parts.append(f'<figure><img src="{esc(group["original_image"])}" loading="lazy" alt="original"><figcaption>{esc(original_caption)}</figcaption></figure>')
         if group.get('topdown_image'):
             topdown_caption = 'Metric 3D top-down map (SMPL-X tracks only)' if group.get('visual_person_audit') else 'Top-down human-centered map'
             parts.append(f'<figure><img src="{esc(group["topdown_image"])}" loading="lazy" alt="topdown"><figcaption>{esc(topdown_caption)}</figcaption></figure>')
-        parts.append('</div><div class="qaList">')
+        parts.append('</div></details><div class="qaList">')
         for qi, q in enumerate(qa, 1):
             status_class = 'ok' if q.get('status') == 'ok' else 'skip'
             parts.append(f'<article class="card {esc(q.get("task_id"))}">')
@@ -235,8 +235,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
             parts.append('<button type="button" class="submitAnswer" disabled>提交答案</button>')
             parts.append('<div class="feedback" hidden></div>')
             parts.append(f'<div class="answerBox hidden"><div class="answerLabel">Correct answer: {esc(q.get("correct_option"))}</div><div class="answer">{display_text(group, q.get("correct_answer"))}</div><div class="explanation">{display_text(group, q.get("explanation"))}</div></div>')
+            parts.append('<details class="questionEvidence"><summary>展开本题计算证据</summary>')
             parts.append(f'<div class="methodBox">{display_text(group, q.get("method"))}</div>')
-            parts.append('<details class="evidenceDetails"><summary>查看本题新版证据</summary>')
             parts.append(f'<pre class="jsonBlock">{display_text(group, dump_json(evidence_payload(group, q)))}</pre></details>')
             parts.append('</article>')
         parts.append('</div></section>')
