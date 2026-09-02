@@ -207,8 +207,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
             parts.append('<div class="videoPanel"><div class="taskName">15-second evidence video</div>')
             parts.append(f'<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="{esc(group["video_clip"])}" type="video/mp4">Your browser cannot play this video.</video></div>')
         if group.get('localization_video'):
-            parts.append('<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>')
-            parts.append(f'<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="{esc(group["localization_video"])}" type="video/mp4">Your browser cannot play this video.</video></div>')
+            parts.append('<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>')
+            parts.append(f'<video class="inlineVideo" controls muted playsinline preload="none"><source src="{esc(group["localization_video"])}" type="video/mp4">Your browser cannot play this video.</video></details>')
         if group.get('original_video'):
             parts.append('<details class="originalVideoBox"><summary>Show original full video on this page</summary>')
             parts.append(f'<video class="inlineVideo" controls muted playsinline preload="none"><source src="{esc(group["original_video"])}" type="video/mp4">Your browser cannot play this video.</video></details>')

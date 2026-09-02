@@ -273,6 +273,34 @@ def validate_scale(data: dict[str, Any]) -> dict[str, Any]:
     }
 
 
+def rewrite_case9_from_human_review(group: dict[str, Any]) -> None:
+    """Replace the rejected body-frame proxy with reviewed visible endpoints."""
+    group["qa"] = [qa(
+        task_id=TASK1_ID, task_name=TASK1_NAME,
+        qtype="relation_change_over_video",
+        question="How does the oyster-sauce bottle's visible position relative to the person change from the beginning to the end of the clip?",
+        correct="It begins behind the person and ends on the person's right side.",
+        distractors=[
+            "It begins on the person's right and ends behind the person.",
+            "It remains behind the person throughout.",
+            "It remains on the person's left side throughout.",
+        ],
+        explanation="Human review of the original video endpoints places the bottle behind the person at the beginning and to the person's right at the end.",
+        method="Uses human-reviewed endpoint localization in the original video. The previous body-frame proxy for this case was rejected because it disagreed with the visible evidence.",
+        result={
+            "answer_type": "relation_change_over_video",
+            "endpoint_visual_labels": {
+                "start": "behind the person",
+                "end": "on the person's right side",
+            },
+            "evidence_scope": "human-reviewed original-video endpoints",
+            "rejected_previous_proxy": "front-to-behind body-frame output",
+        },
+        quality="human_reviewed_visual",
+    )]
+
+
+
 def main() -> None:
     ap = argparse.ArgumentParser()
     ap.add_argument("--site-data", type=Path, default=Path("site/qa_benchmark/data.js"))
@@ -293,6 +321,7 @@ def main() -> None:
     by_name = {g["name"]: g for g in data["groups"]}
     rewrite_case1(by_name["query_04_iiith145_frame11250"])
     rewrite_joint_relation_distance(by_name["sfu0101_cam05_5460"])
+    rewrite_case9_from_human_review(by_name["val_3"])
     add_task1_visibility(data, ego)
     add_task4_visibility(data, dense, audits)
     add_task4_topology(data, evidence)
