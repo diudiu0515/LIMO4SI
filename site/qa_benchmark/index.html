@@ -500,55 +500,28 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 1 · Dynamic Human-Referenced Relations</div>
 <div class="questionType">relation_change_over_video</div>
-<div class="question">Q1. What front/behind change does the oyster-sauce bottle undergo relative to the moving person?</div>
+<div class="question">Q1. How does the oyster-sauce bottle's visible position relative to the person change from the beginning to the end of the clip?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="A">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">It begins in front of the person and ends behind the person.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">It begins behind the person and ends in front.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">It remains in front throughout.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">It remains behind throughout.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">It begins behind the person and ends on the person's right side.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">It begins on the person's right and ends behind the person.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">It remains behind the person throughout.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">It remains on the person's left side throughout.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">It begins in front of the person and ends behind the person.</div><div class="explanation">Across 26 valid poses, the longitudinal body-centric label changes from front at the first sample to behind at the final sample.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">It begins behind the person and ends on the person's right side.</div><div class="explanation">Human review of the original video endpoints places the bottle behind the person at the beginning and to the person's right at the end.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Uses the person's full body-frame timeline and the validated scene-fixed bottle center; the answer is not based on camera left/right.</div>
+<div class="methodBox">Uses human-reviewed endpoint localization in the original video. The previous body-frame proxy for this case was rejected because it disagreed with the visible evidence.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
     &quot;T&quot;: true,
     &quot;H&quot;: true,
     &quot;S&quot;: true
   },
-  &quot;object&quot;: &quot;oyster sauce bottle_0&quot;,
-  &quot;relation_timeline&quot;: [
-    {
-      &quot;frame&quot;: 10665,
-      &quot;time_s&quot;: -7.5,
-      &quot;relation&quot;: &quot;right and front and slightly above&quot;,
-      &quot;distance_m&quot;: 1.609
-    },
-    {
-      &quot;frame&quot;: 10890,
-      &quot;time_s&quot;: 0.0,
-      &quot;relation&quot;: &quot;right and front and slightly above&quot;,
-      &quot;distance_m&quot;: 1.521
-    },
-    {
-      &quot;frame&quot;: 11115,
-      &quot;time_s&quot;: 7.5,
-      &quot;relation&quot;: &quot;right and behind and slightly above&quot;,
-      &quot;distance_m&quot;: 0.734
-    }
-  ],
-  &quot;human_motion&quot;: {
-    &quot;status&quot;: &quot;ok&quot;,
-    &quot;start_frame&quot;: 10665,
-    &quot;end_frame&quot;: 11115,
-    &quot;sample_count&quot;: 26,
-    &quot;displacement_m&quot;: 1.0688087162569624,
-    &quot;path_length_m&quot;: 1.8767437556322868,
-    &quot;body_turn_deg&quot;: 123.4985686442513
-  }
+  &quot;object&quot;: null,
+  &quot;relation_timeline&quot;: [],
+  &quot;human_motion&quot;: null
 }</pre></details>
 </article>
 </div></section>
@@ -696,8 +669,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data02/win08_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data02_win08_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data02_win08_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data02/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
@@ -1230,8 +1203,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data01/win06_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data01_win06_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data01_win06_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data01/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
@@ -1765,8 +1738,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data03/win04_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data03_win04_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data03_win04_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data03/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
@@ -2314,8 +2287,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data02/win05_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data02_win05_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data02_win05_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data02/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
@@ -2848,8 +2821,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data03/win03_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data03_win03_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data03_win03_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data03/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
@@ -3397,8 +3370,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice"><strong>Multi-person coverage audit: coverage_mismatch</strong><br>The original-video localization layer covers 3 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data05/win02_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data05_win02_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data05_win02_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data05/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
@@ -3554,8 +3527,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data01/win02_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data01_win02_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data01_win02_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data01/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
@@ -4103,8 +4076,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data01/win04_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data01_win04_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data01_win04_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data01/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
@@ -4639,8 +4612,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data02/win04_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data02_win04_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data02_win04_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data02/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
@@ -5189,8 +5162,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data02/win06_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data02_win06_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data02_win06_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data02/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
@@ -5742,8 +5715,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data03/win09_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data03_win09_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data03_win09_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data03/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
@@ -6309,8 +6282,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data03/win08_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data03_win08_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data03_win08_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data03/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
@@ -6859,8 +6832,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data01/win01_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data01_win01_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data01_win01_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="originalVideoBox"><summary>Show original full video on this page</summary>
 <video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data01/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
@@ -6905,8 +6878,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_visible_2d_tracks</strong><br>The original-video localization layer covers 3 persistent visible-person tracks. Metric distance and body orientation use only 0 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
 <div class="videoPanel"><div class="taskName">15-second evidence video</div>
 <video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data05/win_extra_90s_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data05_win_extra_90s_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data05_win_extra_90s_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
 <details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
 <figure><img src="./multihuman_media/hoi_m3_bedroom_data05_win_extra_90s_localized.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
 </div></details><div class="qaList">
