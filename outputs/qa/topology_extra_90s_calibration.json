@@ -1,0 +1,59 @@
+{
+  "scene_id": "hoi_m3_bedroom_data05_win_extra_90s",
+  "duration_sec": 15.015015015015015,
+  "sample_count": 31,
+  "visible_tracks": [
+    {
+      "id": "V1",
+      "first_seen_sec": 0,
+      "last_seen_sec": 14.935,
+      "coverage": 1,
+      "observations": 31,
+      "mean_score": 0.767,
+      "normalized_path_length": 0.2794,
+      "normalized_displacement": 0.0303
+    },
+    {
+      "id": "V2",
+      "first_seen_sec": 0,
+      "last_seen_sec": 14.935,
+      "coverage": 1,
+      "observations": 30,
+      "mean_score": 0.638,
+      "normalized_path_length": 0.2436,
+      "normalized_displacement": 0.0782
+    },
+    {
+      "id": "V3",
+      "first_seen_sec": 0,
+      "last_seen_sec": 14.935,
+      "coverage": 1,
+      "observations": 31,
+      "mean_score": 0.734,
+      "normalized_path_length": 1.3496,
+      "normalized_displacement": 0.187
+    }
+  ],
+  "endpoint_gate": {
+    "max_endpoint_gap_sec": 0.55,
+    "all_tracks_have_start_observation": true,
+    "all_tracks_have_end_observation": true
+  },
+  "pairs": [
+    {
+      "pair": "V1–V2",
+      "start": 0.2863,
+      "end": 0.3622
+    },
+    {
+      "pair": "V1–V3",
+      "start": 0.431,
+      "end": 0.4188
+    },
+    {
+      "pair": "V2–V3",
+      "start": 0.2105,
+      "end": 0.0601
+    }
+  ]
+}

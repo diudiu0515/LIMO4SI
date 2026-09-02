@@ -37,6 +37,9 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <a href="#case-20">Case 20</a>
 <a href="#case-21">Case 21</a>
 <a href="#case-22">Case 22</a>
+<a href="#case-23">Case 23</a>
+<a href="#case-24">Case 24</a>
+<a href="#case-25">Case 25</a>
 </nav>
 <section class="staticCase" id="case-1">
 <p class="eyebrow">Case 1</p><h2>Task 1 · overall relation change · iiith_cooking_145_2 · cam01 · 15s dynamic window around frame 11250</h2>
@@ -55,17 +58,17 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 1 · Dynamic Human-Referenced Relations</div>
 <div class="questionType">relation_change_over_video</div>
-<div class="question">Q1. Across the 15-second clip, what is the large steel bowl's overall left/right transition relative to the person?</div>
+<div class="question">Q1. The large steel bowl stays fixed in the scene while the person moves and turns. How does the bowl's left/right relation in the person's changing body frame differ between the start and end?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="A">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">It begins on the person's left and ends on the person's right.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">It begins on the person's right and ends on the person's left.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">It stays on the person's left for the entire clip.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">It stays centered relative to the person for the entire clip.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The bowl itself moves from the person's right side to the left side.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">It remains on the person's left in the body frame for the entire clip.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">It remains centered in the person's body frame at both endpoints.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>提交答案</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">It begins on the person's left and ends on the person's right.</div><div class="explanation">Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.</div><div class="explanation">Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes.</div></div>
 <details class="questionEvidence"><summary>展开本题计算证据</summary>
 <div class="methodBox">Rebuilds the person's body-centric frame at every valid pose sample and transforms the fixed 3D object center into that changing frame.</div>
 <pre class="jsonBlock">{
@@ -428,19 +431,19 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 1 · Dynamic Human-Referenced Relations</div>
 <div class="questionType">relation_change_over_video</div>
-<div class="question">Q1. As the person moves across the scene, how does the white plate's lateral relation to the person change over the clip?</div>
+<div class="question">Q1. As the person approaches the scene-fixed white plate, what combined distance and left/right change occurs?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="D">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">It changes from the person's right side to the person's left side.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">It remains on the person's left throughout.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">It remains centered relative to the person throughout.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The white plate changes from the person's left side to the person's right side.</span></button>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The pelvis-to-plate distance decreases from about 3.05 m to 1.86 m, while the plate changes from the person's left to the person's right.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The distance increases while the plate changes from right to left.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The distance decreases, but the plate stays on the person's left throughout.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The distance stays nearly constant and the plate remains centered.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>提交答案</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The white plate changes from the person's left side to the person's right side.</div><div class="explanation">The first body-centric sample is left and the final sample is right; 24 valid poses cover the 15-second window.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The pelvis-to-plate distance decreases from about 3.05 m to 1.86 m, while the plate changes from the person's left to the person's right.</div><div class="explanation">Across 24 valid body poses, distance changes by -1.19 m and the endpoint lateral labels are left then right.</div></div>
 <details class="questionEvidence"><summary>展开本题计算证据</summary>
-<div class="methodBox">Transforms the fixed white-plate 3D center into the person's changing body-centric frame across the full timeline.</div>
+<div class="methodBox">Uses the same fixed 3D plate center with every human pelvis/body-frame sample; jointly checks Euclidean distance and body-centric lateral relation.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
     &quot;T&quot;: true,
@@ -624,7 +627,66 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </article>
 </div></section>
 <section class="staticCase" id="case-11">
-<p class="eyebrow">Case 11</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 08</h2>
+<p class="eyebrow">Case 11</p><h2>Task 1 · second body-forward visibility example · sfu_cooking_008_3 · cam04 · 15s dynamic window around frame 6960</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">15-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/spatial/showcase_diverse_new/diverse_sfu_008_3_frame6960/showcase_clip_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<figure><img src="./outputs/spatial/showcase_diverse_new/diverse_sfu_008_3_frame6960/showcase_original_multi.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
+<figure><img src="./outputs/spatial/showcase_diverse_new/diverse_sfu_008_3_frame6960/showcase_topdown_multi.jpg" loading="lazy" alt="topdown"><figcaption>Top-down human-centered map</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task1_dynamic_human_referenced_relations">
+<div class="cardHead"><div>
+<div class="taskName">Task 1 · Dynamic Human-Referenced Relations</div>
+<div class="questionType">body_forward_visibility_change_cause_over_video</div>
+<div class="question">Q1. The scene-fixed cucumber peel begins inside the person's peripheral body-forward field and ends outside it. Which measured human change explains this transition?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The person's body orientation changes substantially, rotating the body-forward field away from the scene-fixed peel.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The cucumber peel moves behind a measured physical blocker.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The peel stays in the central body-forward field throughout.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Only the external camera viewpoint changes the human-relative field label.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>提交答案</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The person's body orientation changes substantially, rotating the body-forward field away from the scene-fixed peel.</div><div class="explanation">The endpoint forward angles are 42.1° and 110.5°, while the human body-turn estimate is about 152.7°.</div></div>
+<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<div class="methodBox">Transforms the fixed 3D target direction into each valid human body frame. This is a body-forward directional proxy, not gaze or physical-occlusion truth.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;object&quot;: &quot;cucumber peel_0&quot;,
+  &quot;visibility_timeline&quot;: [
+    {
+      &quot;frame&quot;: 6735,
+      &quot;time_s&quot;: -7.5,
+      &quot;state&quot;: &quot;visible_peripheral&quot;,
+      &quot;fov_zone&quot;: &quot;peripheral&quot;,
+      &quot;blocker&quot;: null,
+      &quot;angle_deg&quot;: 42.124138947612735
+    },
+    {
+      &quot;frame&quot;: 7185,
+      &quot;time_s&quot;: 7.5,
+      &quot;state&quot;: &quot;outside_field_of_view&quot;,
+      &quot;fov_zone&quot;: &quot;outside&quot;,
+      &quot;blocker&quot;: null,
+      &quot;angle_deg&quot;: 110.50296727494549
+    }
+  ],
+  &quot;change_cause_proxy&quot;: &quot;human_rotation_or_head/body_direction_change&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-12">
+<p class="eyebrow">Case 12</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 08</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -1157,8 +1219,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-12">
-<p class="eyebrow">Case 12</p><h2>Task 4 · HOI-M3 · bedroom_data01 · window 06</h2>
+<section class="staticCase" id="case-13">
+<p class="eyebrow">Case 13</p><h2>Task 4 · HOI-M3 · bedroom_data01 · window 06</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -1692,8 +1754,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-13">
-<p class="eyebrow">Case 13</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 04</h2>
+<section class="staticCase" id="case-14">
+<p class="eyebrow">Case 14</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 04</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -2241,8 +2303,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-14">
-<p class="eyebrow">Case 14</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 05</h2>
+<section class="staticCase" id="case-15">
+<p class="eyebrow">Case 15</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 05</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -2775,8 +2837,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-15">
-<p class="eyebrow">Case 15</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 03</h2>
+<section class="staticCase" id="case-16">
+<p class="eyebrow">Case 16</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 03</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -3324,8 +3386,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-16">
-<p class="eyebrow">Case 16</p><h2>Task 4 · HOI-M3 · three-person topology change</h2>
+<section class="staticCase" id="case-17">
+<p class="eyebrow">Case 17</p><h2>Task 4 · HOI-M3 · three-person topology change</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -3481,8 +3543,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-17">
-<p class="eyebrow">Case 17</p><h2>Task 4 · HOI-M3 · bedroom_data01 · window 02</h2>
+<section class="staticCase" id="case-18">
+<p class="eyebrow">Case 18</p><h2>Task 4 · HOI-M3 · bedroom_data01 · window 02</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -4030,8 +4092,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-18">
-<p class="eyebrow">Case 18</p><h2>Task 4 · HOI-M3 · bedroom_data01 · window 04</h2>
+<section class="staticCase" id="case-19">
+<p class="eyebrow">Case 19</p><h2>Task 4 · HOI-M3 · bedroom_data01 · window 04</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -4566,8 +4628,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-19">
-<p class="eyebrow">Case 19</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 04</h2>
+<section class="staticCase" id="case-20">
+<p class="eyebrow">Case 20</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 04</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -5116,8 +5178,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-20">
-<p class="eyebrow">Case 20</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 06</h2>
+<section class="staticCase" id="case-21">
+<p class="eyebrow">Case 21</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 06</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -5669,8 +5731,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-21">
-<p class="eyebrow">Case 21</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 09</h2>
+<section class="staticCase" id="case-22">
+<p class="eyebrow">Case 22</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 09</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -6236,8 +6298,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-22">
-<p class="eyebrow">Case 22</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 08</h2>
+<section class="staticCase" id="case-23">
+<p class="eyebrow">Case 23</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 08</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -6783,6 +6845,95 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     0.6835003328280604
   ],
   &quot;peak_sample_index&quot;: 9
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-24">
+<p class="eyebrow">Case 24</p><h2>Task 4 · HOI-M3 · bedroom_data01 · window 01</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+<div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
+</div>
+<div class="coverageNotice ok"><strong>多人覆盖校准：complete_and_identity_aligned</strong><br>原视频定位层覆盖 2 条持续可见人物轨迹；米制距离和身体朝向只使用 2 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="videoPanel"><div class="taskName">15-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data01/win01_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
+<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data01_win01_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="originalVideoBox"><summary>Show original full video on this page</summary>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data01/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
+<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<figure><img src="./multihuman_media/hoi_m3_bedroom_data01_win01_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
+<figure><img src="./multihuman_media/hoi_m3_bedroom_data01_win01_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task4_multi_human_relational_dynamics">
+<div class="cardHead"><div>
+<div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
+<div class="questionType">body_forward_field_transition_over_video</div>
+<div class="question">Q1. Ignoring physical occlusion, how does the one-sided body-forward field relation change over this clip?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="C">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The relation stays mutual for all 16 samples.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Neither person enters the other's body-forward field at any time.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Early, only B keeps A inside the ±60° body-forward field; later, only A keeps B inside the field for most samples.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Only A contains B early, then only B contains A later.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>提交答案</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">Early, only B keeps A inside the ±60° body-forward field; later, only A keeps B inside the field for most samples.</div><div class="explanation">The 16-sample state sequence is ['b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field']; the first six are B-only and the final segment is predominantly A-only.</div></div>
+<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<div class="methodBox">Uses ground-plane SMPL-X root-forward directions at all 16 samples. It does not claim eye gaze or an unobstructed physical sightline.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;answer_type&quot;: &quot;body_forward_field_transition_over_video&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-25">
+<p class="eyebrow">Case 25</p><h2>Task 4 · HOI-M3 · second three-person 2D topology example</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15s</strong><span>video window</span></div>
+<div class="metaBox"><strong>3 / 0</strong><span>visible 2D / metric 3D tracks</span></div>
+</div>
+<div class="coverageNotice ok"><strong>多人覆盖校准：complete_visible_2d_tracks</strong><br>原视频定位层覆盖 3 条持续可见人物轨迹；米制距离和身体朝向只使用 0 条 SMPL-X 3D 轨迹，不把未标注人物编入三维答案。</div>
+<div class="videoPanel"><div class="taskName">15-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data05/win_extra_90s_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<div class="videoPanel"><div class="taskName">Original-video person localization evidence (2D)</div>
+<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./multihuman_media/hoi_m3_bedroom_data05_win_extra_90s_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>展开定位图和俯视图证据</summary><div class="mediaGrid">
+<figure><img src="./multihuman_media/hoi_m3_bedroom_data05_win_extra_90s_localized.jpg" loading="lazy" alt="original"><figcaption>Photo / skeleton evidence</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task4_multi_human_relational_dynamics">
+<div class="cardHead"><div>
+<div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
+<div class="questionType">visible_pair_topology_consistency_2d</div>
+<div class="question">Q1. Among the three endpoint-valid visible tracks, which pair is closest in the camera plane at both the start and the end?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="C">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">V1–V2 is closest at both endpoints.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">V1–V3 is closest at both endpoints.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">V2–V3 is the closest visible pair at both endpoints.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The closest pair changes from V1–V2 to V2–V3.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>提交答案</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">V2–V3 is the closest visible pair at both endpoints.</div><div class="explanation">Normalized start distances are [0.2863, 0.431, 0.2105] and end distances are [0.3622, 0.4188, 0.0601] in pair order ['V1–V2', 'V1–V3', 'V2–V3'].</div></div>
+<details class="questionEvidence"><summary>展开本题计算证据</summary>
+<div class="methodBox">Detects people at 2 Hz, associates all three tracks across the clip, requires a real observation within 0.55 s of both endpoints, then compares box-center separation normalized by frame diagonal.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;answer_type&quot;: &quot;visible_pair_topology_consistency_2d&quot;
 }</pre></details>
 </article>
 </div></section>

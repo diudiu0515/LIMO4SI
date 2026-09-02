@@ -22,14 +22,14 @@ Benchmark 已从旧版 Task 1 / Task 3 调整为新版 Task 1 / Task 4：
 
 ## 高质量问题模板与覆盖
 
-当前发布 22 个 case、22 道题，使用 22 个不同视频窗口；每题有 4 个互不重复的选项。
+当前发布 25 个 case、25 道题，使用 25 个不同视频窗口；每题有 4 个互不重复的选项。
 
-Task 1 共 10 个 case：
+Task 1 共 11 个 case：
 
 - 4 个核心类型：总体关系变化、转身引起的方位变化、全程关系保持、body-forward 可见方向变化原因。
 - 6 个扩展 temporal 模式：最近物体保持、多物体前方保持、最近且垂直关系保持、左右翻转、前后翻转、人物距离显著变化。
 
-Task 4 共 12 个 case：
+Task 4 共 14 个 case：
 
 - 六类核心能力均已覆盖：position、orientation、distance、topology、visibility、relation change。
 - 另有 6 个动态模式：持续分离、主导方位、先分离再靠近、面对时靠近、靠近并横跨人体左右、近—远—再近。
@@ -41,7 +41,7 @@ Task 4 共 12 个 case：
 - `site/qa_benchmark/data.js`
 - `site/qa_benchmark/index.html`
 
-审计要求为：`status = ok`、22 case、22 QA、每个 case 一题、22 个唯一窗口、Task 1 为 10、Task 4 为 12。
+审计要求为：`status = ok`、25 case、25 QA、每个 case 一题、25 个唯一窗口，并且 Task 1 四类、Task 4 六类能力均至少有 2 个独立样例。
 
 ## 网站可视化
 
@@ -54,6 +54,7 @@ Task 4 共 12 个 case：
 ## 关键实现
 
 - `scripts/build_task1_task4_curated.py`：生成新版 22-case curated benchmark 与硬门控审计。
+- `scripts/build_task1_task4_scaled.py`：补齐能力类别、修正文案并执行每类至少两例的发布硬门控。
 - `scripts/build_static_qa_site.py`：生成可直接验收的静态网站。
 - `scripts/build_multihuman_dynamic_qa.py`、`scripts/calibrate_multihuman_video_evidence.py`：构建和校准多人时序证据。
 - `src/limo4si/multihuman.py`：多人距离、朝向和 body-centric 关系计算。
