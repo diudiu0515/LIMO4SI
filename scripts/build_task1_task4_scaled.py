@@ -234,6 +234,59 @@ def add_task4_topology(data: dict[str, Any], evidence: dict[str, Any]) -> None:
     })
 
 
+
+VISIBLE_PERSON_DESCRIPTORS = {
+    "V1": "the dark-blue-clad man",
+    "V2": "the red-clad woman",
+    "V3": "the green-top woman",
+}
+
+
+def _replace_person_ids(text: str, aliases: dict[str, str]) -> str:
+    """Replace display IDs token-safely; metric IDs remain intact in result_json."""
+    centered = re.fullmatch(r"Which (A|B)-centered position statement remains true for (A|B) across (.+)\?", text)
+    if centered and centered.group(1) in aliases and centered.group(2) in aliases:
+        text = f"Which statement about {centered.group(2)}, expressed in {centered.group(1)}'s body-centered frame, remains true across {centered.group(3)}?"
+    malformed = re.fullmatch(r"Which position statement remains true for (.+) across (.+)\?, centered on (.+)", text)
+    if malformed:
+        text = f"Which statement about {malformed.group(1)}, expressed in {malformed.group(3)}'s body-centered frame, remains true across {malformed.group(2)}?"
+    for left, right in re.findall(r"\b(A|B|V1|V2|V3)–(A|B|V1|V2|V3)\b", text):
+        if left in aliases and right in aliases:
+            text = text.replace(f"{left}–{right}", f"{aliases[left]} and {aliases[right]}")
+    for source in sorted(aliases, key=len, reverse=True):
+        shown = aliases[source]
+        text = re.sub(rf"\b{re.escape(source)}'s\b", shown + "'s", text)
+        text = re.sub(rf"\b{re.escape(source)}\b", shown, text)
+    # Normalize pair names even when rebuilding an already generated release.
+    text = re.sub(r"(the [a-z-]+(?: [a-z-]+)* (?:man|woman))–(the [a-z-]+(?: [a-z-]+)* (?:man|woman))", r"\1 and \2", text)
+    text = text.replace(" man–the ", " man and the ").replace(" woman–the ", " woman and the ")
+    if text.startswith("the "):
+        text = "The " + text[4:]
+    return text
+
+
+def apply_person_descriptions(data: dict[str, Any]) -> None:
+    """Resolve per-clip metric identities to stable, visually audited descriptions."""
+    display_fields = ("question", "correct_answer", "explanation", "method")
+    for group in data["groups"]:
+        if not str(group.get("name", "")).startswith("hoi_m3"):
+            continue
+        alignment = (group.get("visual_person_audit") or {}).get("metric_identity_alignment") or {}
+        metric_to_visible = alignment.get("mapping") or {}
+        aliases = dict(VISIBLE_PERSON_DESCRIPTORS)
+        for metric_id, visible_id in metric_to_visible.items():
+            if visible_id not in VISIBLE_PERSON_DESCRIPTORS:
+                raise ValueError(f"Unknown visible identity {visible_id} in {group['name']}")
+            aliases[metric_id] = VISIBLE_PERSON_DESCRIPTORS[visible_id]
+        group["person_display_aliases"] = aliases
+        for question in group.get("qa", []):
+            for field in display_fields:
+                if isinstance(question.get(field), str):
+                    question[field] = _replace_person_ids(question[field], aliases)
+            for option in question.get("options", []):
+                option["text"] = _replace_person_ids(option["text"], aliases)
+
+
 def validate_scale(data: dict[str, Any]) -> dict[str, Any]:
     names = [g["name"] for g in data["groups"]]
     if len(names) != len(set(names)):
@@ -246,6 +299,10 @@ def validate_scale(data: dict[str, Any]) -> dict[str, Any]:
         q["question_categories"] = categories(group, q)
         if len(q.get("options", [])) != 4 or len({x["text"] for x in q["options"]}) != 4:
             raise ValueError(f"four-option gate failed: {group['name']}")
+        if q["task_id"] == TASK4_ID:
+            visible_text = " ".join([q.get("question", ""), q.get("correct_answer", ""), q.get("explanation", ""), q.get("method", ""), *[x["text"] for x in q["options"]]])
+            if re.search(r"\b(?:A|B|V1|V2|V3)\b", visible_text):
+                raise ValueError(f"raw person ID leaked into display text: {group['name']}")
         counts[q["task_id"]].update(q["question_categories"])
     errors = []
     for task_id, required in REQUIRED_CATEGORIES.items():
@@ -273,33 +330,6 @@ def validate_scale(data: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def rewrite_case9_from_human_review(group: dict[str, Any]) -> None:
-    """Replace the rejected body-frame proxy with reviewed visible endpoints."""
-    group["qa"] = [qa(
-        task_id=TASK1_ID, task_name=TASK1_NAME,
-        qtype="relation_change_over_video",
-        question="How does the oyster-sauce bottle's visible position relative to the person change from the beginning to the end of the clip?",
-        correct="It begins behind the person and ends on the person's right side.",
-        distractors=[
-            "It begins on the person's right and ends behind the person.",
-            "It remains behind the person throughout.",
-            "It remains on the person's left side throughout.",
-        ],
-        explanation="Human review of the original video endpoints places the bottle behind the person at the beginning and to the person's right at the end.",
-        method="Uses human-reviewed endpoint localization in the original video. The previous body-frame proxy for this case was rejected because it disagreed with the visible evidence.",
-        result={
-            "answer_type": "relation_change_over_video",
-            "endpoint_visual_labels": {
-                "start": "behind the person",
-                "end": "on the person's right side",
-            },
-            "evidence_scope": "human-reviewed original-video endpoints",
-            "rejected_previous_proxy": "front-to-behind body-frame output",
-        },
-        quality="human_reviewed_visual",
-    )]
-
-
 
 def main() -> None:
     ap = argparse.ArgumentParser()
@@ -321,10 +351,10 @@ def main() -> None:
     by_name = {g["name"]: g for g in data["groups"]}
     rewrite_case1(by_name["query_04_iiith145_frame11250"])
     rewrite_joint_relation_distance(by_name["sfu0101_cam05_5460"])
-    rewrite_case9_from_human_review(by_name["val_3"])
     add_task1_visibility(data, ego)
     add_task4_visibility(data, dense, audits)
     add_task4_topology(data, evidence)
+    apply_person_descriptions(data)
     audit = validate_scale(data)
 
     save_js(resolve(args.site_data), data)

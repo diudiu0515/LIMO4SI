@@ -35,9 +35,15 @@ DISPLAY_ALIASES = json.loads(_ALIAS_PATH.read_text(encoding='utf-8')) if _ALIAS_
 
 def display_text(group: dict[str, Any], value: Any) -> str:
     text = '' if value is None else str(value)
-    for source, shown in DISPLAY_ALIASES.get(str(group.get('name', '')), {}).items():
-        text = text.replace(source, shown)
-        text = text.replace(source.replace('_0', ''), shown)
+    aliases = dict(DISPLAY_ALIASES.get(str(group.get('name', '')), {}))
+    aliases.update(group.get('person_display_aliases') or {})
+    for source, shown in aliases.items():
+        if source in {'A', 'B', 'V1', 'V2', 'V3'}:
+            text = re.sub(rf"\b{re.escape(source)}'s\b", shown + "'s", text)
+            text = re.sub(rf"\b{re.escape(source)}\b", shown, text)
+        else:
+            text = text.replace(source, shown)
+            text = text.replace(source.replace('_0', ''), shown)
     return text
 
 

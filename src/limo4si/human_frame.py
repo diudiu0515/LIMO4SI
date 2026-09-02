@@ -83,6 +83,20 @@ class HumanFrame:
         return asdict(self)
 
 
+def apply_forward_sign(frame: HumanFrame, forward_sign: int) -> HumanFrame:
+    """Apply a take-level audited front/back calibration to a body frame."""
+    if forward_sign not in (-1, 1):
+        raise ValueError("forward_sign must be -1 or 1")
+    if forward_sign == 1:
+        return frame
+    return HumanFrame(
+        origin=frame.origin,
+        right=frame.right,
+        up=frame.up,
+        forward=tuple(-value for value in frame.forward),
+    )
+
+
 def build_human_frame(
     joints: Mapping[str, Sequence[float]],
     *,
