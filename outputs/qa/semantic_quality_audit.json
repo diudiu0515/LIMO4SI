@@ -1,0 +1,259 @@
+{
+  "status": "ok",
+  "kept_groups": 19,
+  "kept_qas": 36,
+  "decisions": [
+    {
+      "case_id": "sfu0083_cam04_3450",
+      "qa_index": 1,
+      "question_type": "relation_change_over_video",
+      "kept": true,
+      "reason": "robust relation change"
+    },
+    {
+      "case_id": "sfu0083_cam04_3450",
+      "qa_index": 2,
+      "question_type": "objects_along_human_path_sides",
+      "kept": true,
+      "reason": "clear path-side evidence"
+    },
+    {
+      "case_id": "query_01_iiith32_frame5280",
+      "qa_index": 1,
+      "question_type": "relation_consistency_over_video",
+      "kept": true,
+      "reason": "has at least one object consistently left"
+    },
+    {
+      "case_id": "query_01_iiith32_frame5280",
+      "qa_index": 2,
+      "question_type": "reachability_change_over_video",
+      "kept": true,
+      "reason": "reachability state changes over timeline"
+    },
+    {
+      "case_id": "query_01_iiith32_frame5280",
+      "qa_index": 3,
+      "question_type": "objects_along_human_path_sides",
+      "kept": true,
+      "reason": "clear path-side evidence"
+    },
+    {
+      "case_id": "query_02_iiith30_frame4440",
+      "qa_index": 1,
+      "question_type": "relation_change_over_video",
+      "kept": true,
+      "reason": "robust relation change"
+    },
+    {
+      "case_id": "query_02_iiith30_frame4440",
+      "qa_index": 2,
+      "question_type": "hand_approach_over_video",
+      "kept": true,
+      "reason": "approach=0.498m"
+    },
+    {
+      "case_id": "query_02_iiith30_frame4440",
+      "qa_index": 3,
+      "question_type": "objects_along_human_path_sides",
+      "kept": true,
+      "reason": "clear path-side evidence"
+    },
+    {
+      "case_id": "query_03_replacement_iiith30_frame4440_all",
+      "qa_index": 1,
+      "question_type": "relation_change_over_video",
+      "kept": true,
+      "reason": "robust relation change"
+    },
+    {
+      "case_id": "query_03_replacement_iiith30_frame4440_all",
+      "qa_index": 2,
+      "question_type": "hand_approach_over_video",
+      "kept": true,
+      "reason": "approach=0.498m"
+    },
+    {
+      "case_id": "query_03_replacement_iiith30_frame4440_all",
+      "qa_index": 3,
+      "question_type": "objects_along_human_path_sides",
+      "kept": true,
+      "reason": "clear path-side evidence"
+    },
+    {
+      "case_id": "query_04_iiith145_frame11250",
+      "qa_index": 1,
+      "question_type": "relation_change_over_video",
+      "kept": true,
+      "reason": "robust relation change"
+    },
+    {
+      "case_id": "query_04_iiith145_frame11250",
+      "qa_index": 2,
+      "question_type": "reachability_change_over_video",
+      "kept": true,
+      "reason": "reachability state changes over timeline"
+    },
+    {
+      "case_id": "query_04_iiith145_frame11250",
+      "qa_index": 3,
+      "question_type": "objects_along_human_path_sides",
+      "kept": true,
+      "reason": "clear path-side evidence"
+    },
+    {
+      "case_id": "query_05_iiith31_frame4170",
+      "qa_index": 1,
+      "question_type": "objects_along_human_path_sides",
+      "kept": true,
+      "reason": "clear path-side evidence"
+    },
+    {
+      "case_id": "diverse_sfu_010_3_frame6750",
+      "qa_index": 1,
+      "question_type": "objects_along_human_path_sides",
+      "kept": true,
+      "reason": "clear path-side evidence"
+    },
+    {
+      "case_id": "diverse_sfu0103_extra_frame2730",
+      "qa_index": 1,
+      "question_type": "reachability_change_over_video",
+      "kept": true,
+      "reason": "reachability state changes over timeline"
+    },
+    {
+      "case_id": "diverse_sfu0103_extra_frame3390",
+      "qa_index": 1,
+      "question_type": "objects_along_human_path_sides",
+      "kept": true,
+      "reason": "clear path-side evidence"
+    },
+    {
+      "case_id": "diverse_sfu0103_extra_frame4410",
+      "qa_index": 1,
+      "question_type": "reachability_change_over_video",
+      "kept": true,
+      "reason": "reachability state changes over timeline"
+    },
+    {
+      "case_id": "diverse_sfu0103_extra_frame6630",
+      "qa_index": 1,
+      "question_type": "objects_along_human_path_sides",
+      "kept": true,
+      "reason": "clear path-side evidence"
+    },
+    {
+      "case_id": "diverse_sfu_008_3_frame6960",
+      "qa_index": 1,
+      "question_type": "relation_change_over_video",
+      "kept": true,
+      "reason": "robust relation change"
+    },
+    {
+      "case_id": "diverse_sfu_008_3_frame6960",
+      "qa_index": 2,
+      "question_type": "objects_along_human_path_sides",
+      "kept": true,
+      "reason": "clear path-side evidence"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data01_win01",
+      "qa_index": 1,
+      "question_type": "relative_position_from_a",
+      "kept": true,
+      "reason": "relative position changes"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data01_win01",
+      "qa_index": 2,
+      "question_type": "mid_clip_social_spacing",
+      "kept": true,
+      "reason": "mid distance=1.027m"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data02_win01",
+      "qa_index": 1,
+      "question_type": "distance_change_between_people",
+      "kept": true,
+      "reason": "distance change=0.195m"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data02_win01",
+      "qa_index": 2,
+      "question_type": "facing_relation_change",
+      "kept": true,
+      "reason": "facing state changes"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data02_win01",
+      "qa_index": 3,
+      "question_type": "relative_position_from_a",
+      "kept": true,
+      "reason": "relative position changes"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data02_win02",
+      "qa_index": 1,
+      "question_type": "visible_human_motion_ranking_2d",
+      "kept": true,
+      "reason": "not rejected by semantic gate"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data03_win01",
+      "qa_index": 1,
+      "question_type": "distance_change_between_people",
+      "kept": true,
+      "reason": "distance change=0.258m"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data03_win01",
+      "qa_index": 2,
+      "question_type": "relative_position_from_a",
+      "kept": true,
+      "reason": "relative position changes"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data03_win02",
+      "qa_index": 1,
+      "question_type": "relative_position_from_a",
+      "kept": true,
+      "reason": "relative position changes"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data03_win02",
+      "qa_index": 2,
+      "question_type": "mid_clip_social_spacing",
+      "kept": true,
+      "reason": "mid distance=0.737m"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data05_win01",
+      "qa_index": 1,
+      "question_type": "visible_human_motion_ranking_2d",
+      "kept": true,
+      "reason": "not rejected by semantic gate"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data05_win01",
+      "qa_index": 2,
+      "question_type": "closest_visible_pair_change_2d",
+      "kept": true,
+      "reason": "not rejected by semantic gate"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data05_win02",
+      "qa_index": 1,
+      "question_type": "visible_human_motion_ranking_2d",
+      "kept": true,
+      "reason": "not rejected by semantic gate"
+    },
+    {
+      "case_id": "hoi_m3_bedroom_data05_win02",
+      "qa_index": 2,
+      "question_type": "closest_visible_pair_change_2d",
+      "kept": true,
+      "reason": "not rejected by semantic gate"
+    }
+  ]
+}

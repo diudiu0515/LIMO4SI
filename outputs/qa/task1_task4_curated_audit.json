@@ -1,0 +1,47 @@
+{
+  "status": "ok",
+  "case_count": 22,
+  "qa_count": 22,
+  "one_question_per_case": true,
+  "unique_case_windows": 22,
+  "task_counts": {
+    "task1_dynamic_human_referenced_relations": 10,
+    "task4_multi_human_relational_dynamics": 12
+  },
+  "question_type_counts": {
+    "relation_change_over_video": 3,
+    "turn_induced_relation_change_over_video": 1,
+    "relation_consistency_over_video": 1,
+    "body_forward_visibility_change_cause_over_video": 1,
+    "nearest_object_consistency_over_video": 1,
+    "multi_object_front_consistency_over_video": 1,
+    "nearest_and_vertical_consistency_over_video": 1,
+    "human_object_distance_pattern_over_video": 1,
+    "position_consistency_between_people": 1,
+    "dominant_facing_relation_over_video": 1,
+    "metric_distance_pattern_over_video": 1,
+    "body_forward_visibility_consistency": 1,
+    "body_centric_relation_change_over_video": 1,
+    "visible_pair_topology_change_2d": 1,
+    "metric_separation_over_video": 1,
+    "dominant_body_centric_position": 1,
+    "nonmonotonic_distance_pattern": 1,
+    "approach_while_facing": 1,
+    "coupled_distance_relation_change": 1,
+    "distance_out_and_back_over_video": 1
+  },
+  "hard_gates": [
+    "Task 1 answers come from multi-frame 3D body/object timelines",
+    "metric Task 4 requires complete_and_identity_aligned visual-person audit",
+    "metric Task 4 uses 16 pose samples over 15 seconds",
+    "three-person topology includes all three visible tracks and remains explicitly 2D",
+    "missing blocker geometry produces unknown, never clear line of sight",
+    "four unique options and exactly one question per case"
+  ],
+  "honest_limitations": [
+    "Task 1 visibility and Task 4 body-forward visibility are directional FOV proxies, not gaze ground truth",
+    "no physical occlusion/partition QA is released because the local subset lacks blocker geometry",
+    "SMPL-X transl/global_orient are pelvis/root and body-forward proxies; fitted head joints are not loaded",
+    "three-person topology is image-plane topology, not metric 3D distance"
+  ]
+}

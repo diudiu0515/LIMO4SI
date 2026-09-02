@@ -1,0 +1,667 @@
+{
+  "status": "ok",
+  "groups": [
+    {
+      "scene_id": "hoi_m3_bedroom_data01_win01",
+      "status": "complete_and_identity_aligned",
+      "detector": "IDEA Research Grounding DINO tiny (local weights)",
+      "tracking": "motion + box overlap + HSV appearance Hungarian association",
+      "sample_fps": 2.0,
+      "box_threshold": 0.3,
+      "duration_sec": 15.015,
+      "sample_count": 31,
+      "sampled_visible_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mode_visible_person_count": 2,
+      "max_visible_person_count": 2,
+      "persistent_visible_person_count": 2,
+      "metric_3d_track_count": 2,
+      "metric_identity_alignment": {
+        "status": "aligned",
+        "mapping": {
+          "A": "V1",
+          "B": "V2"
+        },
+        "best_cost": 0.432,
+        "alternative_cost": 1.4986,
+        "margin": 1.0665,
+        "metric_motion_profiles": {
+          "A": [
+            0.7752581323915737,
+            0.2247418676084263,
+            1.7555157840251923
+          ],
+          "B": [
+            0.3740117489703313,
+            0.6259882510296687,
+            2.084011733531952
+          ]
+        },
+        "visual_motion_profiles": {
+          "V1": [
+            0.8566596532266544,
+            0.1433403467733456,
+            0.13900378706397515
+          ],
+          "V2": [
+            0.5086245767014117,
+            0.4913754232985883,
+            0.29819278219316175
+          ]
+        },
+        "criterion": "start-middle-end segment-motion profile; accept only when assignment margin >= 0.18"
+      },
+      "geometry_scope": "all visible people have 2D localization; metric distance/orientation applies only to visually aligned SMPL-X tracks",
+      "visible_2d_tracks": [
+        {
+          "id": "A",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.935,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.804,
+          "normalized_path_length": 0.2178,
+          "normalized_displacement": 0.1361
+        },
+        {
+          "id": "B",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.935,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.846,
+          "normalized_path_length": 0.9509,
+          "normalized_displacement": 0.1023
+        }
+      ]
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data02_win01",
+      "status": "complete_and_identity_aligned",
+      "detector": "IDEA Research Grounding DINO tiny (local weights)",
+      "tracking": "motion + box overlap + HSV appearance Hungarian association",
+      "sample_fps": 2.0,
+      "box_threshold": 0.3,
+      "duration_sec": 15.015,
+      "sample_count": 31,
+      "sampled_visible_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mode_visible_person_count": 2,
+      "max_visible_person_count": 2,
+      "persistent_visible_person_count": 2,
+      "metric_3d_track_count": 2,
+      "metric_identity_alignment": {
+        "status": "aligned",
+        "mapping": {
+          "A": "V1",
+          "B": "V2"
+        },
+        "best_cost": 0.7626,
+        "alternative_cost": 2.34,
+        "margin": 1.5774,
+        "metric_motion_profiles": {
+          "A": [
+            0.650530301136399,
+            0.349469698863601,
+            2.539205253124237
+          ],
+          "B": [
+            0.25618577501214584,
+            0.7438142249878541,
+            4.2898067235946655
+          ]
+        },
+        "visual_motion_profiles": {
+          "V1": [
+            0.9257929553485953,
+            0.07420704465140475,
+            0.11877965178156406
+          ],
+          "V2": [
+            0.15012579152542968,
+            0.8498742084745703,
+            0.7136831534766243
+          ]
+        },
+        "criterion": "start-middle-end segment-motion profile; accept only when assignment margin >= 0.18"
+      },
+      "geometry_scope": "all visible people have 2D localization; metric distance/orientation applies only to visually aligned SMPL-X tracks",
+      "visible_2d_tracks": [
+        {
+          "id": "A",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.935,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.839,
+          "normalized_path_length": 0.471,
+          "normalized_displacement": 0.1114
+        },
+        {
+          "id": "B",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.935,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.814,
+          "normalized_path_length": 1.0385,
+          "normalized_displacement": 0.5208
+        }
+      ]
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data02_win02",
+      "status": "identity_unresolved",
+      "detector": "IDEA Research Grounding DINO tiny (local weights)",
+      "tracking": "motion + box overlap + HSV appearance Hungarian association",
+      "sample_fps": 2.0,
+      "box_threshold": 0.3,
+      "duration_sec": 14.998,
+      "sample_count": 31,
+      "sampled_visible_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mode_visible_person_count": 2,
+      "max_visible_person_count": 2,
+      "persistent_visible_person_count": 2,
+      "metric_3d_track_count": 2,
+      "metric_identity_alignment": {
+        "status": "unavailable",
+        "reason": "requires exactly two visible and two metric tracks"
+      },
+      "geometry_scope": "all visible people have 2D localization; metric distance/orientation applies only to visually aligned SMPL-X tracks",
+      "visible_2d_tracks": [
+        {
+          "id": "V1",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.918,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.86,
+          "normalized_path_length": 0.3545,
+          "normalized_displacement": 0.0131
+        },
+        {
+          "id": "V2",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.918,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.871,
+          "normalized_path_length": 0.0487,
+          "normalized_displacement": 0.0096
+        }
+      ]
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data03_win01",
+      "status": "complete_and_identity_aligned",
+      "detector": "IDEA Research Grounding DINO tiny (local weights)",
+      "tracking": "motion + box overlap + HSV appearance Hungarian association",
+      "sample_fps": 2.0,
+      "box_threshold": 0.3,
+      "duration_sec": 15.015,
+      "sample_count": 31,
+      "sampled_visible_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mode_visible_person_count": 2,
+      "max_visible_person_count": 2,
+      "persistent_visible_person_count": 2,
+      "metric_3d_track_count": 2,
+      "metric_identity_alignment": {
+        "status": "aligned",
+        "mapping": {
+          "A": "V2",
+          "B": "V1"
+        },
+        "best_cost": 0.2901,
+        "alternative_cost": 0.7643,
+        "margin": 0.4742,
+        "metric_motion_profiles": {
+          "A": [
+            0.013754048756606841,
+            0.9862459512433932,
+            3.2157012224197388
+          ],
+          "B": [
+            0.1337329782047244,
+            0.8662670217952756,
+            2.856764316558838
+          ]
+        },
+        "visual_motion_profiles": {
+          "V1": [
+            0.27736346035667814,
+            0.7226365396433219,
+            0.21075750464863433
+          ],
+          "V2": [
+            0.015178379074458665,
+            0.9848216209255414,
+            0.24420006391135116
+          ]
+        },
+        "criterion": "start-middle-end segment-motion profile; accept only when assignment margin >= 0.18"
+      },
+      "geometry_scope": "all visible people have 2D localization; metric distance/orientation applies only to visually aligned SMPL-X tracks",
+      "visible_2d_tracks": [
+        {
+          "id": "B",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.935,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.841,
+          "normalized_path_length": 0.3775,
+          "normalized_displacement": 0.1768
+        },
+        {
+          "id": "A",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.935,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.848,
+          "normalized_path_length": 0.4867,
+          "normalized_displacement": 0.2396
+        }
+      ]
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data03_win02",
+      "status": "complete_and_identity_aligned",
+      "detector": "IDEA Research Grounding DINO tiny (local weights)",
+      "tracking": "motion + box overlap + HSV appearance Hungarian association",
+      "sample_fps": 2.0,
+      "box_threshold": 0.3,
+      "duration_sec": 14.998,
+      "sample_count": 31,
+      "sampled_visible_counts": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "mode_visible_person_count": 2,
+      "max_visible_person_count": 2,
+      "persistent_visible_person_count": 2,
+      "metric_3d_track_count": 2,
+      "metric_identity_alignment": {
+        "status": "aligned",
+        "mapping": {
+          "A": "V2",
+          "B": "V1"
+        },
+        "best_cost": 0.0765,
+        "alternative_cost": 0.8784,
+        "margin": 0.8019,
+        "metric_motion_profiles": {
+          "A": [
+            0.5783697732405817,
+            0.42163022675941825,
+            0.04859408549964428
+          ],
+          "B": [
+            0.3778887598063581,
+            0.6221112401936418,
+            0.014084362424910069
+          ]
+        },
+        "visual_motion_profiles": {
+          "V1": [
+            0.3415327835076565,
+            0.6584672164923435,
+            0.024626833026210094
+          ],
+          "V2": [
+            0.5802660588459461,
+            0.41973394115405394,
+            0.031208234834132015
+          ]
+        },
+        "criterion": "start-middle-end segment-motion profile; accept only when assignment margin >= 0.18"
+      },
+      "geometry_scope": "all visible people have 2D localization; metric distance/orientation applies only to visually aligned SMPL-X tracks",
+      "visible_2d_tracks": [
+        {
+          "id": "B",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.918,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.765,
+          "normalized_path_length": 0.1559,
+          "normalized_displacement": 0.0078
+        },
+        {
+          "id": "A",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.918,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.745,
+          "normalized_path_length": 0.2658,
+          "normalized_displacement": 0.0061
+        }
+      ]
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data05_win01",
+      "status": "coverage_mismatch",
+      "detector": "IDEA Research Grounding DINO tiny (local weights)",
+      "tracking": "motion + box overlap + HSV appearance Hungarian association",
+      "sample_fps": 2.0,
+      "box_threshold": 0.3,
+      "duration_sec": 15.015,
+      "sample_count": 31,
+      "sampled_visible_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "mode_visible_person_count": 3,
+      "max_visible_person_count": 4,
+      "persistent_visible_person_count": 3,
+      "metric_3d_track_count": 2,
+      "metric_identity_alignment": {
+        "status": "unavailable",
+        "reason": "visible count exceeds metric track count"
+      },
+      "geometry_scope": "all visible people have 2D localization; metric distance/orientation applies only to visually aligned SMPL-X tracks",
+      "visible_2d_tracks": [
+        {
+          "id": "V1",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.935,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.812,
+          "normalized_path_length": 1.1167,
+          "normalized_displacement": 0.4287
+        },
+        {
+          "id": "V2",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.935,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.814,
+          "normalized_path_length": 0.2585,
+          "normalized_displacement": 0.0792
+        },
+        {
+          "id": "V3",
+          "first_seen_sec": 4.5,
+          "last_seen_sec": 14.935,
+          "coverage": 0.733,
+          "observations": 22,
+          "mean_score": 0.693,
+          "normalized_path_length": 0.4217,
+          "normalized_displacement": 0.0651
+        }
+      ]
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data05_win02",
+      "status": "coverage_mismatch",
+      "detector": "IDEA Research Grounding DINO tiny (local weights)",
+      "tracking": "motion + box overlap + HSV appearance Hungarian association",
+      "sample_fps": 2.0,
+      "box_threshold": 0.3,
+      "duration_sec": 14.998,
+      "sample_count": 31,
+      "sampled_visible_counts": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "mode_visible_person_count": 3,
+      "max_visible_person_count": 3,
+      "persistent_visible_person_count": 3,
+      "metric_3d_track_count": 2,
+      "metric_identity_alignment": {
+        "status": "unavailable",
+        "reason": "visible count exceeds metric track count"
+      },
+      "geometry_scope": "all visible people have 2D localization; metric distance/orientation applies only to visually aligned SMPL-X tracks",
+      "visible_2d_tracks": [
+        {
+          "id": "V1",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.918,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.833,
+          "normalized_path_length": 0.9823,
+          "normalized_displacement": 0.4499
+        },
+        {
+          "id": "V2",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.918,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.794,
+          "normalized_path_length": 1.0608,
+          "normalized_displacement": 0.3372
+        },
+        {
+          "id": "V3",
+          "first_seen_sec": 0.0,
+          "last_seen_sec": 14.918,
+          "coverage": 1.0,
+          "observations": 31,
+          "mean_score": 0.817,
+          "normalized_path_length": 0.1274,
+          "normalized_displacement": 0.0343
+        }
+      ]
+    }
+  ]
+}

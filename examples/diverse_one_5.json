@@ -1,0 +1,20 @@
+[
+  {
+    "name": "diverse_iiith_145_2_frame7380",
+    "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+    "camera": "cam01",
+    "frame": 7380,
+    "camera_pose_path": "outputs/calibration/val_12/fac6316e-d141-4bbd-b88b-a624491acb30.json",
+    "objects": [
+      "White chopping board_0",
+      "Steel tomato bowl_0",
+      "small steel bowl_0"
+    ],
+    "queries": [
+      "Where is White chopping board relative to the person?",
+      "Where is Steel tomato bowl relative to the person?",
+      "Where is small steel bowl relative to the person?"
+    ],
+    "selection_note": "diverse_take_bbox_ranked; prefer one frame per take"
+  }
+]

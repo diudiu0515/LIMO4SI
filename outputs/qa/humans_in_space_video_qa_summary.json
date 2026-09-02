@@ -1,0 +1,38 @@
+{
+  "groups": 16,
+  "qa": 140,
+  "option_counts": {
+    "4": 140
+  },
+  "task_counts": {
+    "task1_dynamic_human_referenced_relations": 84,
+    "task2_human_induced_spatial_change": 12,
+    "task3_human_scene_topological_reasoning": 12,
+    "task4_multi_human_relational_dynamics": 32
+  },
+  "question_types": {
+    "relation_change_over_video": 12,
+    "relation_consistency_over_video": 12,
+    "visibility_change_cause_over_video": 12,
+    "hand_approach_over_video": 12,
+    "relation_change_cause_proxy_over_video": 12,
+    "nearest_object_change_over_video": 12,
+    "reachability_change_over_video": 12,
+    "object_motion_proxy_over_video": 12,
+    "objects_along_human_path_sides": 12,
+    "multi_human_evidence_gate": 12,
+    "distance_change_between_people": 4,
+    "facing_relation_change": 4,
+    "line_of_sight_change": 4,
+    "relative_position_from_a": 4,
+    "mid_clip_social_spacing": 4
+  },
+  "status": {
+    "ok": 116,
+    "missing_evidence": 24
+  },
+  "hoim3_groups": [
+    "hoi_m3_sequence_name"
+  ],
+  "errors": []
+}

@@ -1,0 +1,13 @@
+{
+  "principle": "reachability and reach-for intent are separated again because their questions and evidence are different.",
+  "reachability": {
+    "answers": "can the person reach the target in the current pose?",
+    "method": "static_reachability_answer: shoulder-elbow-wrist arm span + object 3D center",
+    "records": 17
+  },
+  "reach_for_intent": {
+    "answers": "is the person moving a hand toward an object?",
+    "method": "reach_for_intent: short temporal wrist trajectory + hand-object distance trend",
+    "records": 34
+  }
+}

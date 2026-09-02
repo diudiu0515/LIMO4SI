@@ -1,4 +1,4 @@
-# Task 1 & Task 3 Website Acceptance
+# Legacy Task 1 & Task 3 Website Acceptance
 
 当前网站展示已改为 Task + Question / Answer 形式，不再使用 richer / expanded task 标注。
 

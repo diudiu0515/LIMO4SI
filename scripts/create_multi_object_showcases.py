@@ -16,7 +16,36 @@ from limo4si.spatial_real import iter_semidense_points, project_world_points, ro
 from limo4si.spatial_visuals import draw_pose_skeleton, draw_forward_axis
 
 COLORS=[(30,110,240),(40,180,40),(210,90,210),(0,170,230)]
+_ALIAS_PATH=ROOT/'configs/object_display_aliases.json'
+DISPLAY_ALIASES=json.loads(_ALIAS_PATH.read_text(encoding='utf-8')) if _ALIAS_PATH.exists() else {}
+
+def display_label(case_name, take, object_id):
+    return DISPLAY_ALIASES.get(case_name, {}).get(object_id, object_id).replace('_0','').replace('_1','')
+
 REL={'left':'left','right':'right','front':'front','behind':'behind','above':'above','below':'below','slightly_above':'slightly above','slightly_below':'slightly below','same_lateral_position':'center','same_longitudinal_position':'near origin','same_height':'same height'}
+
+
+def relation_mask(record):
+    """Decode an Ego-Exo4D Relations mask, with bbox fallback for pycocotools/numpy issues."""
+    try:
+        return decode_mask(record).astype(bool), "mask"
+    except Exception:
+        h, w = int(record.get('height', 0)), int(record.get('width', 0))
+        mask = np.zeros((h, w), dtype=bool)
+        clicks = record.get('intSegClicks', {}) or {}
+        ul = clicks.get('upperLeft') or []
+        br = clicks.get('bottomRight') or []
+        if ul and br and h > 0 and w > 0:
+            x1 = max(0, min(w - 1, int(round(float(ul[0].get('x', 0))))))
+            y1 = max(0, min(h - 1, int(round(float(ul[0].get('y', 0))))))
+            x2 = max(0, min(w - 1, int(round(float(br[0].get('x', 0))))))
+            y2 = max(0, min(h - 1, int(round(float(br[0].get('y', 0))))))
+            if x2 < x1:
+                x1, x2 = x2, x1
+            if y2 < y1:
+                y1, y2 = y2, y1
+            mask[y1:y2 + 1, x1:x2 + 1] = True
+        return mask, "bbox_fallback"
 
 
 def xyz_dict(annotation):
@@ -72,7 +101,8 @@ def make_group(group, root: Path, output_root: Path, min_distance_m: float, dead
     results=[]
     queries = group.get('queries', [])
     for obj_index, obj in enumerate(objects):
-        mask=decode_mask(relations[uid]['object_masks'][obj][cam]['annotation'][str(frame)]).astype(bool)
+        mask_record=relations[uid]['object_masks'][obj][cam]['annotation'][str(frame)]
+        mask, mask_source = relation_mask(mask_record)
         sel=select_from_cached(mask, xyz, depth, px, py, finite)
         center,inliers=robust_object_center(sel)
         rel=describe_relation(frame3d.world_to_human(center), dead_zone_m=dead_zone_m)
@@ -81,7 +111,7 @@ def make_group(group, root: Path, output_root: Path, min_distance_m: float, dead
         raw=dict(rel)
         if not eligible:
             rel['lateral_relation']=rel['longitudinal_relation']=rel['vertical_relation']=rel['text_zh']=None
-        row={'status':'ok' if eligible else 'filtered_near_or_invalid','recognition_status':'eligible' if eligible else 'filtered_near_or_invalid','take_uid':uid,'take_name':take,'camera':cam,'frame':frame,'object_id':obj,'query': queries[obj_index] if obj_index < len(queries) else f'Where is {obj} relative to the person?','object_xyz_world_m':center.tolist(),'human_frame':frame3d.to_dict(),'human_xyz_m':rel['human_xyz_m'],'distance_m':rel['distance_m'],'horizontal_distance_m':rel['horizontal_distance_m'],'lateral_relation':rel['lateral_relation'],'longitudinal_relation':rel['longitudinal_relation'],'vertical_relation':rel['vertical_relation'],'text_zh':rel['text_zh'],'raw_relation_before_filter':raw,'distance_validation':check,'quality':{'mask_pixels':int(mask.sum()),'points_in_mask':int(len(sel.xyz_world)),'robust_inliers':int(len(inliers))},'inputs':{'point_cloud':str(cloud),'camera_pose':str(camera_path),'body_pose':str(body_path)}}
+        row={'status':'ok' if eligible else 'filtered_near_or_invalid','recognition_status':'eligible' if eligible else 'filtered_near_or_invalid','take_uid':uid,'take_name':take,'camera':cam,'frame':frame,'object_id':obj,'query': queries[obj_index] if obj_index < len(queries) else f'Where is {obj} relative to the person?','object_xyz_world_m':center.tolist(),'human_frame':frame3d.to_dict(),'human_xyz_m':rel['human_xyz_m'],'distance_m':rel['distance_m'],'horizontal_distance_m':rel['horizontal_distance_m'],'lateral_relation':rel['lateral_relation'],'longitudinal_relation':rel['longitudinal_relation'],'vertical_relation':rel['vertical_relation'],'text_zh':rel['text_zh'],'raw_relation_before_filter':raw,'distance_validation':check,'quality':{'mask_pixels':int(mask.sum()),'mask_source':mask_source,'points_in_mask':int(len(sel.xyz_world)),'robust_inliers':int(len(inliers))},'inputs':{'point_cloud':str(cloud),'camera_pose':str(camera_path),'body_pose':str(body_path)}}
         (out/f"{take}_frame{frame}_{obj}.json").write_text(json.dumps(row,ensure_ascii=False,indent=2)+'\n')
         results.append(row)
     summary={'sample_count':len(results),'success_count':sum(r['status']=='ok' for r in results),'filtered_count':sum(r['status']!='ok' for r in results),'min_distance_m':min_distance_m,'distance_definition':'Euclidean distance from pelvis midpoint to robust 3D object centroid in Ego-Exo4D world meters.','samples':results}
@@ -97,8 +127,9 @@ def draw_images(root,out,relations,cal,pose,summary):
     ann_w=int(round(2*cal['camera_intrinsics'][0][2])); ann_h=int(round(2*cal['camera_intrinsics'][1][2]))
     canvas=img.copy(); legend=[]
     for i,r in enumerate(results,1):
-        color=COLORS[(i-1)%len(COLORS)]; obj=r['object_id']; short=obj.replace('_0','').replace('_1','')
-        mask=decode_mask(relations[uid]['object_masks'][obj][cam]['annotation'][str(frame)]).astype(bool)
+        color=COLORS[(i-1)%len(COLORS)]; obj=r['object_id']; short=display_label(out.name, take, obj)
+        mask_record=relations[uid]['object_masks'][obj][cam]['annotation'][str(frame)]
+        mask, _mask_source = relation_mask(mask_record)
         sm=cv2.resize(mask.astype('uint8'),(w,h),interpolation=cv2.INTER_NEAREST).astype(bool)
         overlay=canvas.copy(); overlay[sm]=(np.array(color)*0.75+overlay[sm].astype(np.float32)*0.25).astype(np.uint8)
         canvas=cv2.addWeighted(canvas,0.72,overlay,0.28,0)

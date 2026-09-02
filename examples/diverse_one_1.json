@@ -1,0 +1,18 @@
+[
+  {
+    "name": "diverse_sfu_010_3_frame6750",
+    "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+    "camera": "cam04",
+    "frame": 6750,
+    "camera_pose_path": "outputs/calibration/val_12/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json",
+    "objects": [
+      "salt package_0",
+      "chopping board_0"
+    ],
+    "queries": [
+      "Where is salt package relative to the person?",
+      "Where is chopping board relative to the person?"
+    ],
+    "selection_note": "diverse_take_bbox_ranked; prefer one frame per take"
+  }
+]

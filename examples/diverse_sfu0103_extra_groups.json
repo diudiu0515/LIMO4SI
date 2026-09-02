@@ -1,0 +1,74 @@
+[
+  {
+    "name": "diverse_sfu0103_extra_frame6630",
+    "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+    "camera": "cam04",
+    "frame": 6630,
+    "camera_pose_path": "outputs/calibration/val_12/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json",
+    "objects": [
+      "salt package_0",
+      "chopping board_0",
+      "knife_0"
+    ],
+    "queries": [
+      "Where is salt package relative to the person?",
+      "Where is chopping board relative to the person?",
+      "Where is knife relative to the person?"
+    ],
+    "selection_note": "sfu0103 spread frames with multiple visible objects"
+  },
+  {
+    "name": "diverse_sfu0103_extra_frame4410",
+    "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+    "camera": "cam04",
+    "frame": 4410,
+    "camera_pose_path": "outputs/calibration/val_12/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json",
+    "objects": [
+      "chopped tomato_2",
+      "chopping board_0",
+      "knife_0"
+    ],
+    "queries": [
+      "Where is chopped tomato_2 relative to the person?",
+      "Where is chopping board relative to the person?",
+      "Where is knife relative to the person?"
+    ],
+    "selection_note": "sfu0103 spread frames with multiple visible objects"
+  },
+  {
+    "name": "diverse_sfu0103_extra_frame3390",
+    "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+    "camera": "cam04",
+    "frame": 3390,
+    "camera_pose_path": "outputs/calibration/val_12/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json",
+    "objects": [
+      "chopped tomato_2",
+      "chopping board_0",
+      "chopped tomato_4"
+    ],
+    "queries": [
+      "Where is chopped tomato_2 relative to the person?",
+      "Where is chopping board relative to the person?",
+      "Where is chopped tomato_4 relative to the person?"
+    ],
+    "selection_note": "sfu0103 spread frames with multiple visible objects"
+  },
+  {
+    "name": "diverse_sfu0103_extra_frame2730",
+    "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+    "camera": "cam04",
+    "frame": 2730,
+    "camera_pose_path": "outputs/calibration/val_12/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json",
+    "objects": [
+      "chopped tomato_2",
+      "chopping board_0",
+      "knife_0"
+    ],
+    "queries": [
+      "Where is chopped tomato_2 relative to the person?",
+      "Where is chopping board relative to the person?",
+      "Where is knife relative to the person?"
+    ],
+    "selection_note": "sfu0103 spread frames with multiple visible objects"
+  }
+]

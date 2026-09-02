@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="480" viewBox="0 0 820 480">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#334155"/></marker></defs>
+<rect width="820" height="480" fill="#f8fafc"/>
+<polyline points="535.7,258.0 565.4,348.2 572.2,345.8" fill="none" stroke="#2563eb" stroke-width="4"/>
+<circle cx="535.7" cy="258.0" r="10" fill="#2563eb"/><text x="547.7" y="250.0" font-size="16" font-weight="700">A t0</text>
+<line x1="535.7" y1="258.0" x2="478.3" y2="288.1" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="565.4" cy="348.2" r="10" fill="#2563eb"/><text x="577.4" y="340.2" font-size="16" font-weight="700">A t1</text>
+<line x1="565.4" y1="348.2" x2="544.1" y2="324.1" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="572.2" cy="345.8" r="10" fill="#2563eb"/><text x="584.2" y="337.8" font-size="16" font-weight="700">A t2</text>
+<line x1="572.2" y1="345.8" x2="578.0" y2="323.1" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<polyline points="231.3,111.8 228.3,113.1 227.8,113.3" fill="none" stroke="#dc2626" stroke-width="4"/>
+<circle cx="231.3" cy="111.8" r="10" fill="#dc2626"/><text x="243.3" y="103.8" font-size="16" font-weight="700">B t0</text>
+<line x1="231.3" y1="111.8" x2="218.2" y2="76.2" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="228.3" cy="113.1" r="10" fill="#dc2626"/><text x="240.3" y="105.1" font-size="16" font-weight="700">B t1</text>
+<line x1="228.3" y1="113.1" x2="214.7" y2="79.3" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="227.8" cy="113.3" r="10" fill="#dc2626"/><text x="239.8" y="105.3" font-size="16" font-weight="700">B t2</text>
+<line x1="227.8" y1="113.3" x2="211.6" y2="79.7" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="20" y="465" font-size="16" fill="#334155">HOI-M3 · bedroom_data05 · window 04 · SMPL-X 2 tracked people 15s</text></svg>

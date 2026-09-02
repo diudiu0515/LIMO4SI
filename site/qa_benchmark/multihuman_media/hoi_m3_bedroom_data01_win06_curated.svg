@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="480" viewBox="0 0 820 480">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#334155"/></marker></defs>
+<rect width="820" height="480" fill="#f8fafc"/>
+<polyline points="578.6,335.9 577.4,336.3 577.4,335.0" fill="none" stroke="#2563eb" stroke-width="4"/>
+<circle cx="578.6" cy="335.9" r="10" fill="#2563eb"/><text x="590.6" y="327.9" font-size="16" font-weight="700">A t0</text>
+<line x1="578.6" y1="335.9" x2="585.2" y2="319.4" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="577.4" cy="336.3" r="10" fill="#2563eb"/><text x="589.4" y="328.3" font-size="16" font-weight="700">A t1</text>
+<line x1="577.4" y1="336.3" x2="574.7" y2="319.2" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="577.4" cy="335.0" r="10" fill="#2563eb"/><text x="589.4" y="327.0" font-size="16" font-weight="700">A t2</text>
+<line x1="577.4" y1="335.0" x2="590.7" y2="318.5" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<polyline points="222.7,124.6 221.4,123.8 228.2,123.7" fill="none" stroke="#dc2626" stroke-width="4"/>
+<circle cx="222.7" cy="124.6" r="10" fill="#dc2626"/><text x="234.7" y="116.6" font-size="16" font-weight="700">B t0</text>
+<line x1="222.7" y1="124.6" x2="285.3" y2="143.7" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="221.4" cy="123.8" r="10" fill="#dc2626"/><text x="233.4" y="115.8" font-size="16" font-weight="700">B t1</text>
+<line x1="221.4" y1="123.8" x2="285.1" y2="137.4" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="228.2" cy="123.7" r="10" fill="#dc2626"/><text x="240.2" y="115.7" font-size="16" font-weight="700">B t2</text>
+<line x1="228.2" y1="123.7" x2="301.7" y2="129.1" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="20" y="465" font-size="16" fill="#334155">hoi_m3_bedroom_data01_win06 · start / middle / end metric tracks</text></svg>

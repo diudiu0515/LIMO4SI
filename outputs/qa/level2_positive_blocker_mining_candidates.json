@@ -1,0 +1,77 @@
+{
+  "candidate_count": 6,
+  "candidates": [
+    {
+      "summary": "outputs/spatial/showcase_queries/query_04_iiith145_frame11250/summary.json",
+      "take_name": "iiith_cooking_145_2",
+      "camera": "cam01",
+      "frame": 11250,
+      "target": "Large steel bowl_0",
+      "candidate_blocker": "White chopping board_0",
+      "tube_radius_m": 0.35,
+      "perpendicular_distance_m": 0.3142123754950809,
+      "depth_from_observer_m": 0.7801615583520182,
+      "target_depth_m": 1.03345904589974
+    },
+    {
+      "summary": "outputs/spatial/showcase_multi_extra/extra_sfu0101_18510/summary.json",
+      "take_name": "sfu_cooking_010_1",
+      "camera": "cam05",
+      "frame": 18510,
+      "target": "omelet_0",
+      "candidate_blocker": "red fork_0",
+      "tube_radius_m": 0.75,
+      "perpendicular_distance_m": 0.6244672262412119,
+      "depth_from_observer_m": 0.7486170620578474,
+      "target_depth_m": 1.1551452750321833
+    },
+    {
+      "summary": "outputs/spatial/showcase_multi_extra/final_sfu0101_18510/summary.json",
+      "take_name": "sfu_cooking_010_1",
+      "camera": "cam05",
+      "frame": 18510,
+      "target": "omelet_0",
+      "candidate_blocker": "red fork_0",
+      "tube_radius_m": 0.75,
+      "perpendicular_distance_m": 0.6244672262412119,
+      "depth_from_observer_m": 0.7486170620578474,
+      "target_depth_m": 1.1551452750321833
+    },
+    {
+      "summary": "outputs/spatial/showcase_multi/sfu0083_cam04_3450/summary.json",
+      "take_name": "sfu_cooking_008_3",
+      "camera": "cam04",
+      "frame": 3450,
+      "target": "knife_0",
+      "candidate_blocker": "stainless bowl_0",
+      "tube_radius_m": 0.75,
+      "perpendicular_distance_m": 0.7284976558320966,
+      "depth_from_observer_m": 0.1579354844406904,
+      "target_depth_m": 0.8271372076694866
+    },
+    {
+      "summary": "outputs/spatial/showcase_multi_extra/extra_sfu0101_18510/summary.json",
+      "take_name": "sfu_cooking_010_1",
+      "camera": "cam05",
+      "frame": 18510,
+      "target": "red fork_0",
+      "candidate_blocker": "omelet_0",
+      "tube_radius_m": 0.75,
+      "perpendicular_distance_m": 0.7399392302003857,
+      "depth_from_observer_m": 0.8870459638821651,
+      "target_depth_m": 0.9748778499142935
+    },
+    {
+      "summary": "outputs/spatial/showcase_multi_extra/final_sfu0101_18510/summary.json",
+      "take_name": "sfu_cooking_010_1",
+      "camera": "cam05",
+      "frame": 18510,
+      "target": "red fork_0",
+      "candidate_blocker": "omelet_0",
+      "tube_radius_m": 0.75,
+      "perpendicular_distance_m": 0.7399392302003857,
+      "depth_from_observer_m": 0.8870459638821651,
+      "target_depth_m": 0.9748778499142935
+    }
+  ]
+}

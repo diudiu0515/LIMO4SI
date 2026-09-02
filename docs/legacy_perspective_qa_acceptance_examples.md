@@ -1,4 +1,4 @@
-# Perspective-Grounded QA Acceptance Examples
+# Legacy Perspective-Grounded QA Acceptance Examples
 
 每个 task 抽 3 条真实由 `scripts/build_perspective_qa.py` 生成的结果，用于人工验收。
 

@@ -1,0 +1,85 @@
+{
+  "status": "filtered_near_or_invalid",
+  "recognition_status": "filtered_near_or_invalid",
+  "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+  "take_name": "iiith_cooking_145_2",
+  "camera": "cam01",
+  "frame": 7380,
+  "object_id": "Steel tomato bowl_0",
+  "query": "Where is Steel tomato bowl relative to the person?",
+  "object_xyz_world_m": [
+    0.077509,
+    0.105849,
+    -0.145799
+  ],
+  "human_frame": {
+    "origin": [
+      -0.16427989589509248,
+      0.49033510073683645,
+      -0.4115830242714508
+    ],
+    "right": [
+      0.8817129096932339,
+      0.46533005789554943,
+      0.07778355931182117
+    ],
+    "up": [
+      -0.08813579971343295,
+      0.0004934557401364193,
+      0.9961083461703883
+    ],
+    "forward": [
+      -0.4634807716498761,
+      0.8851371044761128,
+      -0.041447323079762816
+    ]
+  },
+  "human_xyz_m": {
+    "right": 0.05494907883132319,
+    "up": 0.243249700280592,
+    "forward": -0.4634034542867618
+  },
+  "distance_m": 0.5262438402451013,
+  "horizontal_distance_m": 0.4666499359362582,
+  "lateral_relation": null,
+  "longitudinal_relation": null,
+  "vertical_relation": null,
+  "text_zh": null,
+  "raw_relation_before_filter": {
+    "human_xyz_m": {
+      "right": 0.05494907883132319,
+      "up": 0.243249700280592,
+      "forward": -0.4634034542867618
+    },
+    "distance_m": 0.5262438402451013,
+    "horizontal_distance_m": 0.4666499359362582,
+    "lateral_relation": "same_lateral_position",
+    "longitudinal_relation": "behind",
+    "vertical_relation": "above",
+    "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.46 m，右向分量 0.05 m，高度差 0.24 m，直线距离 0.53 m"
+  },
+  "distance_validation": {
+    "world_direct_m": 0.5262438402451014,
+    "human_components_m": 0.5262438402451013,
+    "agreement_residual_m": 1.1102230246251565e-16,
+    "agreement_pass": true,
+    "skeleton_scale": {
+      "shoulder_width_m": 0.27162956792897563,
+      "hip_width_m": 0.17481651628657915,
+      "torso_length_m": 0.41699922229521086,
+      "plausible": true
+    },
+    "validated": true
+  },
+  "quality": {
+    "mask_pixels": 23530,
+    "mask_source": "mask",
+    "points_in_mask": 16632,
+    "robust_inliers": 13195
+  },
+  "inputs": {
+    "point_cloud": "data/egoexo4d/takes/iiith_cooking_145_2/trajectory/semidense_points.csv.gz",
+    "camera_pose": "outputs/calibration/val_12/fac6316e-d141-4bbd-b88b-a624491acb30.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/fac6316e-d141-4bbd-b88b-a624491acb30.json"
+  }
+}

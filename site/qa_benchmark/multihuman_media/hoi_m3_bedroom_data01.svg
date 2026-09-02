@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="480" viewBox="0 0 820 480">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#334155"/></marker></defs>
+<rect width="820" height="480" fill="#f8fafc"/>
+<polyline points="594.4,134.8 598.4,138.4 439.6,304.9" fill="none" stroke="#2563eb" stroke-width="4"/>
+<circle cx="594.4" cy="134.8" r="10" fill="#2563eb"/><text x="606.4" y="126.8" font-size="16" font-weight="700">A t0</text>
+<line x1="594.4" y1="134.8" x2="671.8" y2="145.7" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="598.4" cy="138.4" r="10" fill="#2563eb"/><text x="610.4" y="130.4" font-size="16" font-weight="700">A t1</text>
+<line x1="598.4" y1="138.4" x2="671.2" y2="158.3" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="439.6" cy="304.9" r="10" fill="#2563eb"/><text x="451.6" y="296.9" font-size="16" font-weight="700">A t2</text>
+<line x1="439.6" y1="304.9" x2="432.9" y2="254.9" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<polyline points="201.6,321.9 206.0,325.2 255.7,213.4" fill="none" stroke="#dc2626" stroke-width="4"/>
+<circle cx="201.6" cy="321.9" r="10" fill="#dc2626"/><text x="213.6" y="313.9" font-size="16" font-weight="700">B t0</text>
+<line x1="201.6" y1="321.9" x2="270.5" y2="297.0" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="206.0" cy="325.2" r="10" fill="#dc2626"/><text x="218.0" y="317.2" font-size="16" font-weight="700">B t1</text>
+<line x1="206.0" y1="325.2" x2="270.0" y2="296.1" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="255.7" cy="213.4" r="10" fill="#dc2626"/><text x="267.7" y="205.4" font-size="16" font-weight="700">B t2</text>
+<line x1="255.7" y1="213.4" x2="292.9" y2="169.3" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="20" y="465" font-size="16" fill="#334155">HOI-M3 · bedroom_data01 · SMPL-X two-person 15s window</text></svg>

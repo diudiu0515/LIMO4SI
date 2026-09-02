@@ -1,0 +1,85 @@
+{
+  "status": "ok",
+  "recognition_status": "eligible",
+  "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+  "take_name": "sfu_cooking_010_3",
+  "camera": "cam04",
+  "frame": 6630,
+  "object_id": "knife_0",
+  "query": "Where is knife relative to the person?",
+  "object_xyz_world_m": [
+    0.183261,
+    -0.26109,
+    -0.681759
+  ],
+  "human_frame": {
+    "origin": [
+      -0.6267489388367411,
+      -0.6666215406210363,
+      -0.5547365065328518
+    ],
+    "right": [
+      -0.4853345323434764,
+      0.8536272042755174,
+      -0.1891321967188641
+    ],
+    "up": [
+      -0.03380315991020506,
+      0.19783569035803913,
+      0.9796521760301681
+    ],
+    "forward": [
+      -0.8736748468938682,
+      -0.48185229660272666,
+      0.0671611953709411
+    ]
+  },
+  "human_xyz_m": {
+    "right": -0.02292899637086969,
+    "up": -0.07159014532050144,
+    "forward": -0.9116225959890407
+  },
+  "distance_m": 0.9147167022086039,
+  "horizontal_distance_m": 0.9119109037578031,
+  "lateral_relation": "same_lateral_position",
+  "longitudinal_relation": "behind",
+  "vertical_relation": "slightly_below",
+  "text_zh": "物体在人的左右中线附近、后方、略偏下，前向分量 -0.91 m，右向分量 -0.02 m，高度差 -0.07 m，直线距离 0.91 m",
+  "raw_relation_before_filter": {
+    "human_xyz_m": {
+      "right": -0.02292899637086969,
+      "up": -0.07159014532050144,
+      "forward": -0.9116225959890407
+    },
+    "distance_m": 0.9147167022086039,
+    "horizontal_distance_m": 0.9119109037578031,
+    "lateral_relation": "same_lateral_position",
+    "longitudinal_relation": "behind",
+    "vertical_relation": "slightly_below",
+    "text_zh": "物体在人的左右中线附近、后方、略偏下，前向分量 -0.91 m，右向分量 -0.02 m，高度差 -0.07 m，直线距离 0.91 m"
+  },
+  "distance_validation": {
+    "world_direct_m": 0.914716702208604,
+    "human_components_m": 0.9147167022086039,
+    "agreement_residual_m": 1.1102230246251565e-16,
+    "agreement_pass": true,
+    "skeleton_scale": {
+      "shoulder_width_m": 0.3475823763637165,
+      "hip_width_m": 0.18128626752230362,
+      "torso_length_m": 0.5548871827586783,
+      "plausible": true
+    },
+    "validated": true
+  },
+  "quality": {
+    "mask_pixels": 6484,
+    "mask_source": "mask",
+    "points_in_mask": 45819,
+    "robust_inliers": 41235
+  },
+  "inputs": {
+    "point_cloud": "data/egoexo4d/takes/sfu_cooking_010_3/trajectory/semidense_points.csv.gz",
+    "camera_pose": "outputs/calibration/val_12/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json",
+    "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json"
+  }
+}

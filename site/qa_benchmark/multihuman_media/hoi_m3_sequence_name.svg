@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="480" viewBox="0 0 820 480">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#334155"/></marker></defs>
+<rect width="820" height="480" fill="#f8fafc"/>
+<circle cx="463.3" cy="240.0" r="73.9" fill="#94a3b8" opacity="0.45"/><text x="471.3" y="240.0" font-size="14">partition</text>
+<polyline points="188.9,280.0 315.6,260.0 400.0,240.0" fill="none" stroke="#2563eb" stroke-width="4"/>
+<circle cx="188.9" cy="280.0" r="10" fill="#2563eb"/><text x="200.9" y="272.0" font-size="16" font-weight="700">A t0</text>
+<line x1="188.9" y1="280.0" x2="262.8" y2="280.0" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="315.6" cy="260.0" r="10" fill="#2563eb"/><text x="327.6" y="252.0" font-size="16" font-weight="700">A t1</text>
+<line x1="315.6" y1="260.0" x2="389.4" y2="260.0" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="400.0" cy="240.0" r="10" fill="#2563eb"/><text x="412.0" y="232.0" font-size="16" font-weight="700">A t2</text>
+<line x1="400.0" y1="240.0" x2="400.0" y2="170.0" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<polyline points="611.1,180.0 505.6,220.0 568.9,180.0" fill="none" stroke="#dc2626" stroke-width="4"/>
+<circle cx="611.1" cy="180.0" r="10" fill="#dc2626"/><text x="623.1" y="172.0" font-size="16" font-weight="700">B t0</text>
+<line x1="611.1" y1="180.0" x2="537.2" y2="180.0" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="505.6" cy="220.0" r="10" fill="#dc2626"/><text x="517.6" y="212.0" font-size="16" font-weight="700">B t1</text>
+<line x1="505.6" y1="220.0" x2="431.7" y2="220.0" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="568.9" cy="180.0" r="10" fill="#dc2626"/><text x="580.9" y="172.0" font-size="16" font-weight="700">B t2</text>
+<line x1="568.9" y1="180.0" x2="495.0" y2="180.0" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="20" y="465" font-size="16" fill="#334155">HOI-M3 · sequence name · 15s window</text></svg>

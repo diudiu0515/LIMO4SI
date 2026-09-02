@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="480" viewBox="0 0 820 480">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#334155"/></marker></defs>
+<rect width="820" height="480" fill="#f8fafc"/>
+<polyline points="498.5,185.1 505.7,188.8 501.9,192.3" fill="none" stroke="#2563eb" stroke-width="4"/>
+<circle cx="498.5" cy="185.1" r="10" fill="#2563eb"/><text x="510.5" y="177.1" font-size="16" font-weight="700">A t0</text>
+<line x1="498.5" y1="185.1" x2="524.8" y2="224.7" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="505.7" cy="188.8" r="10" fill="#2563eb"/><text x="517.7" y="180.8" font-size="16" font-weight="700">A t1</text>
+<line x1="505.7" y1="188.8" x2="534.0" y2="234.0" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="501.9" cy="192.3" r="10" fill="#2563eb"/><text x="513.9" y="184.3" font-size="16" font-weight="700">A t2</text>
+<line x1="501.9" y1="192.3" x2="515.4" y2="233.7" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<polyline points="297.5,274.9 296.8,274.5 294.3,274.1" fill="none" stroke="#dc2626" stroke-width="4"/>
+<circle cx="297.5" cy="274.9" r="10" fill="#dc2626"/><text x="309.5" y="266.9" font-size="16" font-weight="700">B t0</text>
+<line x1="297.5" y1="274.9" x2="370.6" y2="303.4" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="296.8" cy="274.5" r="10" fill="#dc2626"/><text x="308.8" y="266.5" font-size="16" font-weight="700">B t1</text>
+<line x1="296.8" y1="274.5" x2="369.7" y2="303.5" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="294.3" cy="274.1" r="10" fill="#dc2626"/><text x="306.3" y="266.1" font-size="16" font-weight="700">B t2</text>
+<line x1="294.3" y1="274.1" x2="358.0" y2="309.7" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="20" y="465" font-size="16" fill="#334155">HOI-M3 · bedroom_data03 · window 02 · 2 metric 3D tracks</text></svg>

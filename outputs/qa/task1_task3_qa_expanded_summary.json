@@ -1,0 +1,59 @@
+{
+  "record_count": 230,
+  "task_counts": {
+    "task1": 115,
+    "task3": 115
+  },
+  "question_type_counts": {
+    "task1::current_interaction_object": 23,
+    "task1::nearest_referring_object": 23,
+    "task1::quantitative_distance_and_direction": 23,
+    "task1::reachability": 23,
+    "task1::visibility": 23,
+    "task3::level2_perspective_taking": 23,
+    "task3::person_perspective_left_right_front_back": 23,
+    "task3::perspective_reachable_nearest": 23,
+    "task3::perspective_visibility_occlusion": 23,
+    "task3::reference_frame_switching": 23
+  },
+  "confidence_counts": {
+    "high": 46,
+    "medium": 184
+  },
+  "status_counts": {
+    "ok": 230
+  },
+  "quality_by_type": {
+    "task1::current_interaction_object": {
+      "medium": 23
+    },
+    "task1::nearest_referring_object": {
+      "medium": 23
+    },
+    "task1::quantitative_distance_and_direction": {
+      "high": 23
+    },
+    "task1::reachability": {
+      "medium": 23
+    },
+    "task1::visibility": {
+      "medium": 23
+    },
+    "task3::level2_perspective_taking": {
+      "medium": 23
+    },
+    "task3::person_perspective_left_right_front_back": {
+      "high": 23
+    },
+    "task3::perspective_reachable_nearest": {
+      "medium": 23
+    },
+    "task3::perspective_visibility_occlusion": {
+      "medium": 23
+    },
+    "task3::reference_frame_switching": {
+      "medium": 23
+    }
+  },
+  "note": "Website export is downstream; these JSONL records are the reusable benchmark artifact."
+}

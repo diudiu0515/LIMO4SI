@@ -1,0 +1,20 @@
+[
+  {
+    "name": "diverse_iiith_29_3_frame3120",
+    "take_uid": "c785b2ec-1efd-4135-9707-d54386109075",
+    "camera": "cam01",
+    "frame": 3120,
+    "camera_pose_path": "outputs/calibration/val_12/c785b2ec-1efd-4135-9707-d54386109075.json",
+    "objects": [
+      "steel plate_0",
+      "chopped cucumber_0",
+      "steel bowl_0"
+    ],
+    "queries": [
+      "Where is steel plate relative to the person?",
+      "Where is chopped cucumber relative to the person?",
+      "Where is steel bowl relative to the person?"
+    ],
+    "selection_note": "diverse_take_bbox_ranked; prefer one frame per take"
+  }
+]

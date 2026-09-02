@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="480" viewBox="0 0 820 480">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#334155"/></marker></defs>
+<rect width="820" height="480" fill="#f8fafc"/>
+<polyline points="177.4,367.6 177.7,367.7 177.3,367.3" fill="none" stroke="#2563eb" stroke-width="4"/>
+<circle cx="177.4" cy="367.6" r="10" fill="#2563eb"/><text x="189.4" y="359.6" font-size="16" font-weight="700">A t0</text>
+<line x1="177.4" y1="367.6" x2="197.1" y2="341.0" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="177.7" cy="367.7" r="10" fill="#2563eb"/><text x="189.7" y="359.7" font-size="16" font-weight="700">A t1</text>
+<line x1="177.7" y1="367.7" x2="196.7" y2="341.1" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="177.3" cy="367.3" r="10" fill="#2563eb"/><text x="189.3" y="359.3" font-size="16" font-weight="700">A t2</text>
+<line x1="177.3" y1="367.3" x2="194.4" y2="339.5" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<polyline points="550.4,148.6 622.7,149.1 365.6,92.3" fill="none" stroke="#dc2626" stroke-width="4"/>
+<circle cx="550.4" cy="148.6" r="10" fill="#dc2626"/><text x="562.4" y="140.6" font-size="16" font-weight="700">B t0</text>
+<line x1="550.4" y1="148.6" x2="490.1" y2="163.7" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="622.7" cy="149.1" r="10" fill="#dc2626"/><text x="634.7" y="141.1" font-size="16" font-weight="700">B t1</text>
+<line x1="622.7" y1="149.1" x2="584.8" y2="174.4" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="365.6" cy="92.3" r="10" fill="#dc2626"/><text x="377.6" y="84.3" font-size="16" font-weight="700">B t2</text>
+<line x1="365.6" y1="92.3" x2="312.3" y2="110.3" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="20" y="465" font-size="16" fill="#334155">HOI-M3 · bedroom_data01 · window 09 · SMPL-X 2 tracked people 15s</text></svg>
