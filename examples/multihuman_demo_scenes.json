@@ -1,0 +1,426 @@
+[
+  {
+    "scene_id": "mh_demo_approach_turn",
+    "title": "Multi-human demo · approach and turn",
+    "duration_sec": 15,
+    "frames": [
+      {
+        "t": 0,
+        "people": [
+          {
+            "id": "A",
+            "pelvis": [
+              0,
+              0,
+              0
+            ],
+            "head": [
+              0,
+              1.6,
+              0
+            ],
+            "forward": [
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "B",
+            "pelvis": [
+              3,
+              0,
+              0.8
+            ],
+            "head": [
+              3,
+              1.6,
+              0.8
+            ],
+            "forward": [
+              -1,
+              0,
+              -0.2
+            ]
+          }
+        ]
+      },
+      {
+        "t": 7.5,
+        "people": [
+          {
+            "id": "A",
+            "pelvis": [
+              0.8,
+              0,
+              0.1
+            ],
+            "head": [
+              0.8,
+              1.6,
+              0.1
+            ],
+            "forward": [
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "B",
+            "pelvis": [
+              2.0,
+              0,
+              0.4
+            ],
+            "head": [
+              2.0,
+              1.6,
+              0.4
+            ],
+            "forward": [
+              -1,
+              0,
+              -0.1
+            ]
+          }
+        ]
+      },
+      {
+        "t": 15,
+        "people": [
+          {
+            "id": "A",
+            "pelvis": [
+              1.2,
+              0,
+              0.2
+            ],
+            "head": [
+              1.2,
+              1.6,
+              0.2
+            ],
+            "forward": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "B",
+            "pelvis": [
+              1.7,
+              0,
+              0.5
+            ],
+            "head": [
+              1.7,
+              1.6,
+              0.5
+            ],
+            "forward": [
+              -1,
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "blockers": [],
+    "landmarks": [
+      {
+        "id": "table",
+        "center": [
+          1.5,
+          0,
+          1.2
+        ]
+      }
+    ]
+  },
+  {
+    "scene_id": "mh_demo_partition_los",
+    "title": "Multi-human demo · partition line-of-sight change",
+    "duration_sec": 15,
+    "frames": [
+      {
+        "t": 0,
+        "people": [
+          {
+            "id": "A",
+            "pelvis": [
+              0,
+              0,
+              0
+            ],
+            "head": [
+              0,
+              1.6,
+              0
+            ],
+            "forward": [
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "B",
+            "pelvis": [
+              3,
+              0,
+              0
+            ],
+            "head": [
+              3,
+              1.6,
+              0
+            ],
+            "forward": [
+              -1,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "t": 7.5,
+        "people": [
+          {
+            "id": "A",
+            "pelvis": [
+              0.6,
+              0,
+              0.0
+            ],
+            "head": [
+              0.6,
+              1.6,
+              0
+            ],
+            "forward": [
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "B",
+            "pelvis": [
+              2.6,
+              0,
+              0.0
+            ],
+            "head": [
+              2.6,
+              1.6,
+              0
+            ],
+            "forward": [
+              -1,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      {
+        "t": 15,
+        "people": [
+          {
+            "id": "A",
+            "pelvis": [
+              1.0,
+              0,
+              1.0
+            ],
+            "head": [
+              1.0,
+              1.6,
+              1.0
+            ],
+            "forward": [
+              1,
+              0,
+              -0.2
+            ]
+          },
+          {
+            "id": "B",
+            "pelvis": [
+              2.4,
+              0,
+              1.1
+            ],
+            "head": [
+              2.4,
+              1.6,
+              1.1
+            ],
+            "forward": [
+              -1,
+              0,
+              -0.1
+            ]
+          }
+        ]
+      }
+    ],
+    "blockers": [
+      {
+        "id": "partition",
+        "center": [
+          1.5,
+          1.6,
+          0.0
+        ],
+        "radius": 0.45
+      }
+    ],
+    "landmarks": []
+  },
+  {
+    "scene_id": "mh_demo_side_by_side",
+    "title": "Multi-human demo · side-by-side around table",
+    "duration_sec": 15,
+    "frames": [
+      {
+        "t": 0,
+        "people": [
+          {
+            "id": "A",
+            "pelvis": [
+              0,
+              0,
+              0
+            ],
+            "head": [
+              0,
+              1.6,
+              0
+            ],
+            "forward": [
+              0,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "B",
+            "pelvis": [
+              0.7,
+              0,
+              0.1
+            ],
+            "head": [
+              0.7,
+              1.6,
+              0.1
+            ],
+            "forward": [
+              0,
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "t": 7.5,
+        "people": [
+          {
+            "id": "A",
+            "pelvis": [
+              0.2,
+              0,
+              1.0
+            ],
+            "head": [
+              0.2,
+              1.6,
+              1.0
+            ],
+            "forward": [
+              0.4,
+              0,
+              1
+            ]
+          },
+          {
+            "id": "B",
+            "pelvis": [
+              0.9,
+              0,
+              1.2
+            ],
+            "head": [
+              0.9,
+              1.6,
+              1.2
+            ],
+            "forward": [
+              0.4,
+              0,
+              1
+            ]
+          }
+        ]
+      },
+      {
+        "t": 15,
+        "people": [
+          {
+            "id": "A",
+            "pelvis": [
+              0.9,
+              0,
+              2.0
+            ],
+            "head": [
+              0.9,
+              1.6,
+              2.0
+            ],
+            "forward": [
+              1,
+              0,
+              0
+            ]
+          },
+          {
+            "id": "B",
+            "pelvis": [
+              1.5,
+              0,
+              2.2
+            ],
+            "head": [
+              1.5,
+              1.6,
+              2.2
+            ],
+            "forward": [
+              1,
+              0,
+              0
+            ]
+          }
+        ]
+      }
+    ],
+    "blockers": [],
+    "landmarks": [
+      {
+        "id": "table",
+        "center": [
+          1.2,
+          0,
+          1.2
+        ]
+      }
+    ]
+  }
+]

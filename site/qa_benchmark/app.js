@@ -1,6 +1,6 @@
 const data = window.QA_DATA;
 let activeGroup = 0;
-let activeView = 'video';
+let activeView = 'original';
 
 const groupTabs = document.getElementById('groupTabs');
 const caseTitle = document.getElementById('caseTitle');
@@ -59,24 +59,40 @@ function renderQA(group) {
     const card = document.createElement('article');
     card.className = `card ${item.task_id || ''}`;
     const statusClass = item.status === 'ok' ? 'ok' : 'skip';
+    const options = Array.isArray(item.options) ? item.options : [];
+    const optionsHtml = options.length ? `
+      <div class="optionsGrid">
+        ${options.map(opt => `
+          <div class="option ${opt.label === item.correct_option ? 'correct' : ''}">
+            <span class="optionLabel">${escapeHtml(opt.label)}</span>
+            <span class="optionText">${escapeHtml(opt.text)}</span>
+          </div>
+        `).join('')}
+      </div>
+    ` : '';
     card.innerHTML = `
       <div class="cardHead">
         <div>
           <div class="taskName">${escapeHtml(item.task_name || item.task_id || 'Task')}</div>
           <div class="questionType">${escapeHtml(item.question_type || 'general')}</div>
           <div class="question">Q${index + 1}. ${escapeHtml(item.question || item.query || 'Untitled question')}</div>
-          <div class="answer">${formatAnswer(item.answer)}</div>
         </div>
         <span class="pill ${statusClass}">${escapeHtml(item.status || 'unknown')}</span>
       </div>
+      ${optionsHtml}
+      <div class="answerBox">
+        <div class="answerLabel">Correct answer: ${escapeHtml(item.correct_option || '')}</div>
+        <div class="answer">${escapeHtml(item.correct_answer || item.answer || '')}</div>
+        <div class="explanation">${formatAnswer(item.explanation || item.answer)}</div>
+      </div>
       <div class="methodBox">${escapeHtml(item.method || '')}</div>
-      <details>
+      <details class="lazyJson" data-json-kind="result" data-group-index="${activeGroup}" data-qa-index="${index}">
         <summary>Show computed result JSON</summary>
-        <pre class="jsonBlock">${escapeHtml(JSON.stringify(item.result_json || item.raw_json, null, 2))}</pre>
+        <pre class="jsonBlock">Click to load JSON.</pre>
       </details>
-      <details>
+      <details class="lazyJson" data-json-kind="raw" data-group-index="${activeGroup}" data-qa-index="${index}">
         <summary>Show raw input JSON</summary>
-        <pre class="jsonBlock">${escapeHtml(JSON.stringify(item.raw_json, null, 2))}</pre>
+        <pre class="jsonBlock">Click to load JSON.</pre>
       </details>
     `;
     qaList.appendChild(card);
@@ -129,7 +145,8 @@ function render() {
   originalBtn.classList.toggle('active', activeView === 'original');
   topdownBtn.classList.toggle('active', activeView === 'topdown');
   renderQA(group);
-  groupJson.textContent = JSON.stringify(group.raw_summary, null, 2);
+  groupJson.textContent = 'Click Show group JSON to load.';
+  groupJson.dataset.loaded = '';
   groupJson.classList.add('hidden');
   toggleGroupJson.textContent = 'Show group JSON';
 }
@@ -151,7 +168,25 @@ topdownBtn.addEventListener('click', () => {
 
 toggleGroupJson.addEventListener('click', () => {
   const isHidden = groupJson.classList.toggle('hidden');
+  if (!isHidden && groupJson.dataset.loaded !== '1') {
+    const group = data.groups[activeGroup];
+    groupJson.textContent = JSON.stringify(group.raw_summary || group.dynamic_timeline || group, null, 2);
+    groupJson.dataset.loaded = '1';
+  }
   toggleGroupJson.textContent = isHidden ? 'Show group JSON' : 'Hide group JSON';
 });
+
+qaList.addEventListener('toggle', (event) => {
+  const node = event.target;
+  if (!node.classList || !node.classList.contains('lazyJson') || !node.open || node.dataset.loaded === '1') return;
+  const group = data.groups[Number(node.dataset.groupIndex)];
+  const item = group.qa[Number(node.dataset.qaIndex)];
+  if (node.dataset.jsonKind === 'raw') {
+    node.querySelector('pre').textContent = item.raw_json ? JSON.stringify(item.raw_json, null, 2) : `Raw source JSON is stored on disk at: ${item.raw_json_path || group.summary_path || 'unknown'}`;
+  } else {
+    node.querySelector('pre').textContent = JSON.stringify(item.result_json || {}, null, 2);
+  }
+  node.dataset.loaded = '1';
+}, true);
 
 render();

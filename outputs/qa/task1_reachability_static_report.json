@@ -1,0 +1,529 @@
+{
+  "record_count": 17,
+  "answer_type_counts": {
+    "static_reachability": 17
+  },
+  "reachable_counts": {
+    "False": 16,
+    "True": 1
+  },
+  "hand_already_close_counts": {
+    "False": 16,
+    "True": 1
+  },
+  "missing_evidence_counts": {
+    "none": 17
+  },
+  "examples": [
+    {
+      "qa_uid": "sfu0083_cam04_3450::02::reachability",
+      "question": "Can the person reach the knife from the current pose?",
+      "answer": "The knife_0 is likely not reachable from the current pose; even the best arm is short by 0.12 m.",
+      "target": "knife_0",
+      "reachable": false,
+      "best_arm_side": "right",
+      "arm_length_m": 0.6450788011468188,
+      "shoulder_to_target_m": 0.7637480574028739,
+      "wrist_to_target_m": 0.5380261284418648,
+      "reach_margin_m": -0.11866925625605507,
+      "evidence": {
+        "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+        "take_name": "sfu_cooking_008_3",
+        "camera": "cam04",
+        "frame": 3450,
+        "video_clip": "outputs/spatial/showcase_multi/sfu0083_cam04_3450/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 3450,
+          "fps": 30.0,
+          "start_sec": 113.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/sfu_cooking_008_3/frame_aligned_videos/downscaled/448/cam04.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_multi/sfu0083_cam04_3450/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_multi/sfu0083_cam04_3450/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_multi/sfu0083_cam04_3450/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "sfu0101_cam05_5460::02::reachability",
+      "question": "Can the person reach the cooking oil bottle from the current pose?",
+      "answer": "The cooking oil bottle_0 is likely not reachable from the current pose; even the best arm is short by 2.00 m.",
+      "target": "cooking oil bottle_0",
+      "reachable": false,
+      "best_arm_side": "left",
+      "arm_length_m": 0.6850248327698588,
+      "shoulder_to_target_m": 2.6820784103277275,
+      "wrist_to_target_m": 2.5750464235088497,
+      "reach_margin_m": -1.9970535775578688,
+      "evidence": {
+        "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+        "take_name": "sfu_cooking_010_1",
+        "camera": "cam05",
+        "frame": 5460,
+        "video_clip": "outputs/spatial/showcase_multi/sfu0101_cam05_5460/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 5460,
+          "fps": 30.0,
+          "start_sec": 180.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/cam05.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_multi/sfu0101_cam05_5460/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_multi/sfu0101_cam05_5460/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_multi/sfu0101_cam05_5460/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "extra_sfu0083_3510::02::reachability",
+      "question": "Can the person reach the stainless bowl from the current pose?",
+      "answer": "The stainless bowl_0 is likely not reachable from the current pose; even the best arm is short by 0.06 m.",
+      "target": "stainless bowl_0",
+      "reachable": false,
+      "best_arm_side": "left",
+      "arm_length_m": 0.6373947220535695,
+      "shoulder_to_target_m": 0.6965606387918317,
+      "wrist_to_target_m": 0.3718421618340993,
+      "reach_margin_m": -0.059165916738262214,
+      "evidence": {
+        "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+        "take_name": "sfu_cooking_008_3",
+        "camera": "cam04",
+        "frame": 3510,
+        "video_clip": "outputs/spatial/showcase_multi_extra/extra_sfu0083_3510/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 3510,
+          "fps": 30.0,
+          "start_sec": 115.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/sfu_cooking_008_3/frame_aligned_videos/downscaled/448/cam04.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_multi_extra/extra_sfu0083_3510/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_multi_extra/extra_sfu0083_3510/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_multi_extra/extra_sfu0083_3510/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "extra_sfu0083_4200::02::reachability",
+      "question": "Can the person reach the stainless bowl from the current pose?",
+      "answer": "The stainless bowl_0 is likely not reachable from the current pose; even the best arm is short by 0.03 m.",
+      "target": "stainless bowl_0",
+      "reachable": false,
+      "best_arm_side": "left",
+      "arm_length_m": 0.64893941498296,
+      "shoulder_to_target_m": 0.6759496082568875,
+      "wrist_to_target_m": 0.33801982327742214,
+      "reach_margin_m": -0.027010193273927507,
+      "evidence": {
+        "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+        "take_name": "sfu_cooking_008_3",
+        "camera": "cam04",
+        "frame": 4200,
+        "video_clip": "outputs/spatial/showcase_multi_extra/extra_sfu0083_4200/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 4200,
+          "fps": 30.0,
+          "start_sec": 138.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/sfu_cooking_008_3/frame_aligned_videos/downscaled/448/cam04.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_multi_extra/extra_sfu0083_4200/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_multi_extra/extra_sfu0083_4200/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_multi_extra/extra_sfu0083_4200/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "extra_sfu0101_13920::02::reachability",
+      "question": "Can the person reach the cooking oil bottle from the current pose?",
+      "answer": "The cooking oil bottle_0 is likely not reachable from the current pose; even the best arm is short by 0.17 m.",
+      "target": "cooking oil bottle_0",
+      "reachable": false,
+      "best_arm_side": "right",
+      "arm_length_m": 0.6831419365476791,
+      "shoulder_to_target_m": 0.850056393239944,
+      "wrist_to_target_m": 0.6689178100865787,
+      "reach_margin_m": -0.1669144566922649,
+      "evidence": {
+        "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+        "take_name": "sfu_cooking_010_1",
+        "camera": "cam05",
+        "frame": 13920,
+        "video_clip": "outputs/spatial/showcase_multi_extra/extra_sfu0101_13920/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 13920,
+          "fps": 30.0,
+          "start_sec": 462.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/cam05.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_multi_extra/extra_sfu0101_13920/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_multi_extra/extra_sfu0101_13920/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_multi_extra/extra_sfu0101_13920/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "extra_sfu0101_18510::02::reachability",
+      "question": "Can the person reach the red fork from the current pose?",
+      "answer": "The red fork_0 is likely not reachable from the current pose; even the best arm is short by 0.15 m.",
+      "target": "red fork_0",
+      "reachable": false,
+      "best_arm_side": "left",
+      "arm_length_m": 0.7105761594721908,
+      "shoulder_to_target_m": 0.8634984045436876,
+      "wrist_to_target_m": 0.7289621437104702,
+      "reach_margin_m": -0.15292224507149688,
+      "evidence": {
+        "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+        "take_name": "sfu_cooking_010_1",
+        "camera": "cam05",
+        "frame": 18510,
+        "video_clip": "outputs/spatial/showcase_multi_extra/extra_sfu0101_18510/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 18510,
+          "fps": 30.0,
+          "start_sec": 615.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/cam05.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_multi_extra/extra_sfu0101_18510/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_multi_extra/extra_sfu0101_18510/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_multi_extra/extra_sfu0101_18510/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "final_sfu0101_13920::02::reachability",
+      "question": "Can the person reach the cooking oil bottle from the current pose?",
+      "answer": "The cooking oil bottle_0 is likely not reachable from the current pose; even the best arm is short by 0.17 m.",
+      "target": "cooking oil bottle_0",
+      "reachable": false,
+      "best_arm_side": "right",
+      "arm_length_m": 0.6831419365476791,
+      "shoulder_to_target_m": 0.850056393239944,
+      "wrist_to_target_m": 0.6689178100865787,
+      "reach_margin_m": -0.1669144566922649,
+      "evidence": {
+        "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+        "take_name": "sfu_cooking_010_1",
+        "camera": "cam05",
+        "frame": 13920,
+        "video_clip": "outputs/spatial/showcase_multi_extra/final_sfu0101_13920/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 13920,
+          "fps": 30.0,
+          "start_sec": 462.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/cam05.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_multi_extra/final_sfu0101_13920/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_multi_extra/final_sfu0101_13920/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_multi_extra/final_sfu0101_13920/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "final_sfu0101_14910::02::reachability",
+      "question": "Can the person reach the cooking oil bottle from the current pose?",
+      "answer": "The cooking oil bottle_0 is likely not reachable from the current pose; even the best arm is short by 0.11 m.",
+      "target": "cooking oil bottle_0",
+      "reachable": false,
+      "best_arm_side": "right",
+      "arm_length_m": 0.7144381444274447,
+      "shoulder_to_target_m": 0.8260939953341256,
+      "wrist_to_target_m": 0.6065107307101762,
+      "reach_margin_m": -0.11165585090668095,
+      "evidence": {
+        "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+        "take_name": "sfu_cooking_010_1",
+        "camera": "cam05",
+        "frame": 14910,
+        "video_clip": "outputs/spatial/showcase_multi_extra/final_sfu0101_14910/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 14910,
+          "fps": 30.0,
+          "start_sec": 495.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/cam05.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_multi_extra/final_sfu0101_14910/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_multi_extra/final_sfu0101_14910/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_multi_extra/final_sfu0101_14910/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "final_sfu0101_15600::02::reachability",
+      "question": "Can the person reach the cooking oil bottle from the current pose?",
+      "answer": "The cooking oil bottle_0 is likely not reachable from the current pose; even the best arm is short by 0.11 m.",
+      "target": "cooking oil bottle_0",
+      "reachable": false,
+      "best_arm_side": "right",
+      "arm_length_m": 0.6801526737512259,
+      "shoulder_to_target_m": 0.7940364955682065,
+      "wrist_to_target_m": 0.5395860185079345,
+      "reach_margin_m": -0.11388382181698065,
+      "evidence": {
+        "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+        "take_name": "sfu_cooking_010_1",
+        "camera": "cam05",
+        "frame": 15600,
+        "video_clip": "outputs/spatial/showcase_multi_extra/final_sfu0101_15600/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 15600,
+          "fps": 30.0,
+          "start_sec": 518.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/cam05.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_multi_extra/final_sfu0101_15600/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_multi_extra/final_sfu0101_15600/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_multi_extra/final_sfu0101_15600/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "final_sfu0101_18510::02::reachability",
+      "question": "Can the person reach the red fork from the current pose?",
+      "answer": "The red fork_0 is likely not reachable from the current pose; even the best arm is short by 0.15 m.",
+      "target": "red fork_0",
+      "reachable": false,
+      "best_arm_side": "left",
+      "arm_length_m": 0.7105761594721908,
+      "shoulder_to_target_m": 0.8634984045436876,
+      "wrist_to_target_m": 0.7289621437104702,
+      "reach_margin_m": -0.15292224507149688,
+      "evidence": {
+        "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+        "take_name": "sfu_cooking_010_1",
+        "camera": "cam05",
+        "frame": 18510,
+        "video_clip": "outputs/spatial/showcase_multi_extra/final_sfu0101_18510/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 18510,
+          "fps": 30.0,
+          "start_sec": 615.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/cam05.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_multi_extra/final_sfu0101_18510/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_multi_extra/final_sfu0101_18510/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_multi_extra/final_sfu0101_18510/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "final_sfu0101_5460::02::reachability",
+      "question": "Can the person reach the cooking oil bottle from the current pose?",
+      "answer": "The cooking oil bottle_0 is likely not reachable from the current pose; even the best arm is short by 2.00 m.",
+      "target": "cooking oil bottle_0",
+      "reachable": false,
+      "best_arm_side": "left",
+      "arm_length_m": 0.6850248327698588,
+      "shoulder_to_target_m": 2.6820784103277275,
+      "wrist_to_target_m": 2.5750464235088497,
+      "reach_margin_m": -1.9970535775578688,
+      "evidence": {
+        "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+        "take_name": "sfu_cooking_010_1",
+        "camera": "cam05",
+        "frame": 5460,
+        "video_clip": "outputs/spatial/showcase_multi_extra/final_sfu0101_5460/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 5460,
+          "fps": 30.0,
+          "start_sec": 180.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/cam05.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_multi_extra/final_sfu0101_5460/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_multi_extra/final_sfu0101_5460/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_multi_extra/final_sfu0101_5460/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "query_01_iiith32_frame5280::02::reachability",
+      "question": "Can the person reach the stainless bowl from the current pose?",
+      "answer": "The stainless bowl_0 is likely not reachable from the current pose; even the best arm is short by 0.06 m.",
+      "target": "stainless bowl_0",
+      "reachable": false,
+      "best_arm_side": "right",
+      "arm_length_m": 0.6510832963231948,
+      "shoulder_to_target_m": 0.7126966444843658,
+      "wrist_to_target_m": 0.2479390713456542,
+      "reach_margin_m": -0.06161334816117092,
+      "evidence": {
+        "take_uid": "35bfade9-8ead-46a4-b2f0-cdcfb86df1d6",
+        "take_name": "iiith_cooking_32_1",
+        "camera": "cam02",
+        "frame": 5280,
+        "video_clip": "outputs/spatial/showcase_queries/query_01_iiith32_frame5280/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 5280,
+          "fps": 30.0,
+          "start_sec": 174.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/iiith_cooking_32_1/frame_aligned_videos/downscaled/448/cam02.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_queries/query_01_iiith32_frame5280/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_queries/query_01_iiith32_frame5280/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_queries/query_01_iiith32_frame5280/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "query_02_iiith30_frame4440::02::reachability",
+      "question": "Can the person reach the stainless paprika container from the current pose?",
+      "answer": "The stainless paprika container_0 is likely not reachable from the current pose; even the best arm is short by 0.62 m.",
+      "target": "stainless paprika container_0",
+      "reachable": false,
+      "best_arm_side": "right",
+      "arm_length_m": 0.6630071494756243,
+      "shoulder_to_target_m": 1.2855848478842165,
+      "wrist_to_target_m": 1.526149789406106,
+      "reach_margin_m": -0.6225776984085921,
+      "evidence": {
+        "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+        "take_name": "iiith_cooking_30_1",
+        "camera": "cam03",
+        "frame": 4440,
+        "video_clip": "outputs/spatial/showcase_queries/query_02_iiith30_frame4440/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 4440,
+          "fps": 30.0,
+          "start_sec": 146.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/iiith_cooking_30_1/frame_aligned_videos/downscaled/448/cam03.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_queries/query_02_iiith30_frame4440/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_queries/query_02_iiith30_frame4440/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_queries/query_02_iiith30_frame4440/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "query_03_iiith30_frame4440_better::02::reachability",
+      "question": "Can the person reach the mixed vegetables from the current pose?",
+      "answer": "The mixed vegetables_0 is likely not reachable from the current pose; even the best arm is short by 0.65 m.",
+      "target": "mixed vegetables_0",
+      "reachable": false,
+      "best_arm_side": "left",
+      "arm_length_m": 0.637630212252693,
+      "shoulder_to_target_m": 1.2830883111039082,
+      "wrist_to_target_m": 0.9523851591803371,
+      "reach_margin_m": -0.6454580988512152,
+      "evidence": {
+        "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+        "take_name": "iiith_cooking_30_1",
+        "camera": "cam03",
+        "frame": 4440,
+        "video_clip": "outputs/spatial/showcase_queries/query_03_iiith30_frame4440_better/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 4440,
+          "fps": 30.0,
+          "start_sec": 146.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/iiith_cooking_30_1/frame_aligned_videos/downscaled/448/cam03.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_queries/query_03_iiith30_frame4440_better/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_queries/query_03_iiith30_frame4440_better/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_queries/query_03_iiith30_frame4440_better/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "query_03_replacement_iiith30_frame4440_all::02::reachability",
+      "question": "Can the person reach the mixed vegetables from the current pose?",
+      "answer": "The mixed vegetables_0 is likely not reachable from the current pose; even the best arm is short by 0.65 m.",
+      "target": "mixed vegetables_0",
+      "reachable": false,
+      "best_arm_side": "left",
+      "arm_length_m": 0.637630212252693,
+      "shoulder_to_target_m": 1.2830883111039082,
+      "wrist_to_target_m": 0.9523851591803371,
+      "reach_margin_m": -0.6454580988512152,
+      "evidence": {
+        "take_uid": "360be2ce-99dd-424e-a7c6-a5908c7aa2f3",
+        "take_name": "iiith_cooking_30_1",
+        "camera": "cam03",
+        "frame": 4440,
+        "video_clip": "outputs/spatial/showcase_queries/query_03_replacement_iiith30_frame4440_all/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 4440,
+          "fps": 30.0,
+          "start_sec": 146.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/iiith_cooking_30_1/frame_aligned_videos/downscaled/448/cam03.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_queries/query_03_replacement_iiith30_frame4440_all/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_queries/query_03_replacement_iiith30_frame4440_all/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_queries/query_03_replacement_iiith30_frame4440_all/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "query_04_iiith145_frame11250::02::reachability",
+      "question": "Can the person reach the Salt container from the current pose?",
+      "answer": "The Salt container_0 is within arm span from the right shoulder, but the hand is not yet very close (0.91 m away).",
+      "target": "Salt container_0",
+      "reachable": true,
+      "best_arm_side": "right",
+      "arm_length_m": 0.6268000782925033,
+      "shoulder_to_target_m": 0.6024651081570266,
+      "wrist_to_target_m": 0.9115653620019989,
+      "reach_margin_m": 0.024334970135476697,
+      "evidence": {
+        "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+        "take_name": "iiith_cooking_145_2",
+        "camera": "cam01",
+        "frame": 11250,
+        "video_clip": "outputs/spatial/showcase_queries/query_04_iiith145_frame11250/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 11250,
+          "fps": 30.0,
+          "start_sec": 373.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/iiith_cooking_145_2/frame_aligned_videos/downscaled/448/cam01.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_queries/query_04_iiith145_frame11250/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_queries/query_04_iiith145_frame11250/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_queries/query_04_iiith145_frame11250/summary.json",
+        "raw_object_json_available": true
+      }
+    },
+    {
+      "qa_uid": "query_05_iiith31_frame4170::02::reachability",
+      "question": "Can the person reach the Knife from the current pose?",
+      "answer": "The Knife_0 is likely not reachable from the current pose; even the best arm is short by 0.05 m.",
+      "target": "Knife_0",
+      "reachable": false,
+      "best_arm_side": "right",
+      "arm_length_m": 0.6456161425993943,
+      "shoulder_to_target_m": 0.6987767988288295,
+      "wrist_to_target_m": 0.46208326416879353,
+      "reach_margin_m": -0.05316065622943522,
+      "evidence": {
+        "take_uid": "fcf26143-bd53-49f7-a876-78829e4faf71",
+        "take_name": "iiith_cooking_31_3",
+        "camera": "cam03",
+        "frame": 4170,
+        "video_clip": "outputs/spatial/showcase_queries/query_05_iiith31_frame4170/showcase_clip_3s.mp4",
+        "video_window": {
+          "center_frame": 4170,
+          "fps": 30.0,
+          "start_sec": 137.5,
+          "duration_sec": 3.0,
+          "source_video": "data/egoexo4d/takes/iiith_cooking_31_3/frame_aligned_videos/downscaled/448/cam03.mp4"
+        },
+        "image_with_skeleton_and_objects": "outputs/spatial/showcase_queries/query_05_iiith31_frame4170/showcase_original_multi.jpg",
+        "topdown_human_frame": "outputs/spatial/showcase_queries/query_05_iiith31_frame4170/showcase_topdown_multi.jpg",
+        "summary_json": "outputs/spatial/showcase_queries/query_05_iiith31_frame4170/summary.json",
+        "raw_object_json_available": true
+      }
+    }
+  ]
+}

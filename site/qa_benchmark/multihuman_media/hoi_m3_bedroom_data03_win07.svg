@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="480" viewBox="0 0 820 480">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#334155"/></marker></defs>
+<rect width="820" height="480" fill="#f8fafc"/>
+<polyline points="388.1,223.0 392.0,230.5 378.8,237.8" fill="none" stroke="#2563eb" stroke-width="4"/>
+<circle cx="388.1" cy="223.0" r="10" fill="#2563eb"/><text x="400.1" y="215.0" font-size="16" font-weight="700">A t0</text>
+<line x1="388.1" y1="223.0" x2="398.2" y2="195.9" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="392.0" cy="230.5" r="10" fill="#2563eb"/><text x="404.0" y="222.5" font-size="16" font-weight="700">A t1</text>
+<line x1="392.0" y1="230.5" x2="418.5" y2="196.5" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="378.8" cy="237.8" r="10" fill="#2563eb"/><text x="390.8" y="229.8" font-size="16" font-weight="700">A t2</text>
+<line x1="378.8" y1="237.8" x2="400.6" y2="201.2" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<polyline points="206.8,194.1 593.2,188.6 241.8,271.4" fill="none" stroke="#dc2626" stroke-width="4"/>
+<circle cx="206.8" cy="194.1" r="10" fill="#dc2626"/><text x="218.8" y="186.1" font-size="16" font-weight="700">B t0</text>
+<line x1="206.8" y1="194.1" x2="241.6" y2="128.3" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="593.2" cy="188.6" r="10" fill="#dc2626"/><text x="605.2" y="180.6" font-size="16" font-weight="700">B t1</text>
+<line x1="593.2" y1="188.6" x2="619.8" y2="258.3" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="241.8" cy="271.4" r="10" fill="#dc2626"/><text x="253.8" y="263.4" font-size="16" font-weight="700">B t2</text>
+<line x1="241.8" y1="271.4" x2="223.7" y2="199.9" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="20" y="465" font-size="16" fill="#334155">HOI-M3 · bedroom_data03 · window 07 · SMPL-X 2 tracked people 15s</text></svg>

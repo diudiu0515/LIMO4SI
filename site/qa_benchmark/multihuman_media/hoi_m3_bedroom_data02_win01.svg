@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="480" viewBox="0 0 820 480">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#334155"/></marker></defs>
+<rect width="820" height="480" fill="#f8fafc"/>
+<polyline points="666.7,359.4 447.5,306.8 505.6,367.3" fill="none" stroke="#2563eb" stroke-width="4"/>
+<circle cx="666.7" cy="359.4" r="10" fill="#2563eb"/><text x="678.7" y="351.4" font-size="16" font-weight="700">A t0</text>
+<line x1="666.7" y1="359.4" x2="695.7" y2="333.7" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="447.5" cy="306.8" r="10" fill="#2563eb"/><text x="459.5" y="298.8" font-size="16" font-weight="700">A t1</text>
+<line x1="447.5" y1="306.8" x2="399.2" y2="299.7" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="505.6" cy="367.3" r="10" fill="#2563eb"/><text x="517.6" y="359.3" font-size="16" font-weight="700">A t2</text>
+<line x1="505.6" y1="367.3" x2="493.4" y2="340.6" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<polyline points="449.5,181.2 377.5,92.7 133.3,336.7" fill="none" stroke="#dc2626" stroke-width="4"/>
+<circle cx="449.5" cy="181.2" r="10" fill="#dc2626"/><text x="461.5" y="173.2" font-size="16" font-weight="700">B t0</text>
+<line x1="449.5" y1="181.2" x2="498.0" y2="187.6" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="377.5" cy="92.7" r="10" fill="#dc2626"/><text x="389.5" y="84.7" font-size="16" font-weight="700">B t1</text>
+<line x1="377.5" y1="92.7" x2="328.8" y2="98.4" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="133.3" cy="336.7" r="10" fill="#dc2626"/><text x="145.3" y="328.7" font-size="16" font-weight="700">B t2</text>
+<line x1="133.3" y1="336.7" x2="174.1" y2="318.8" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="20" y="465" font-size="16" fill="#334155">HOI-M3 · bedroom_data02 · window 01 · 2 metric 3D tracks</text></svg>

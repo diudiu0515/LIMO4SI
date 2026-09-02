@@ -170,6 +170,7 @@ summary { cursor: pointer; color: var(--accent); font-weight: 750; }
   .sidebar { position: static; height: auto; }
   .topbar, .sectionHead { align-items: stretch; flex-direction: column; }
   .viewSwitch { align-self: flex-start; }
+  .optionsGrid { grid-template-columns: 1fr; }
 }
 
 
@@ -214,6 +215,70 @@ summary { cursor: pointer; color: var(--accent); font-weight: 750; }
   font-size: 13px;
   line-height: 1.45;
 }
+
+.optionsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.option {
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  gap: 10px;
+  align-items: start;
+  min-height: 46px;
+  padding: 11px 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f8fafc;
+  color: #1e293b;
+}
+.option.correct {
+  border-color: #86efac;
+  background: #ecfdf3;
+}
+.optionLabel {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border-radius: 999px;
+  background: #e2e8f0;
+  color: #334155;
+  font-weight: 850;
+  font-size: 13px;
+}
+.option.correct .optionLabel {
+  background: #16a34a;
+  color: #fff;
+}
+.optionText {
+  font-size: 14px;
+  line-height: 1.45;
+}
+.answerBox {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #f0f9ff;
+  border: 1px solid #bae6fd;
+}
+.answerLabel {
+  color: #0369a1;
+  font-size: 12px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 6px;
+}
+.explanation {
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.45;
+  margin-top: 7px;
+}
+
 .inlineJson {
   margin: 8px 0 0;
   white-space: pre-wrap;

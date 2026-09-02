@@ -1,0 +1,20 @@
+[
+  {
+    "name": "diverse_sfu_007_3_frame1440",
+    "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
+    "camera": "cam01",
+    "frame": 1440,
+    "camera_pose_path": "data/egoexo4d/annotations/ego_pose/val/camera_pose/f76f2040-989c-42df-b2fb-e0903165443d.json",
+    "objects": [
+      "oyster sauce bottle_0",
+      "lanzhou noodles pack_0",
+      "pink frying pan_0"
+    ],
+    "queries": [
+      "Where is oyster sauce bottle relative to the person?",
+      "Where is lanzhou noodles pack relative to the person?",
+      "Where is pink frying pan relative to the person?"
+    ],
+    "selection_note": "diverse_take_bbox_ranked; prefer one frame per take"
+  }
+]

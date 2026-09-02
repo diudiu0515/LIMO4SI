@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="480" viewBox="0 0 820 480">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#334155"/></marker></defs>
+<rect width="820" height="480" fill="#f8fafc"/>
+<polyline points="564.7,311.2 575.5,307.5 549.4,314.3" fill="none" stroke="#2563eb" stroke-width="4"/>
+<circle cx="564.7" cy="311.2" r="10" fill="#2563eb"/><text x="576.7" y="303.2" font-size="16" font-weight="700">A t0</text>
+<line x1="564.7" y1="311.2" x2="551.2" y2="300.3" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="575.5" cy="307.5" r="10" fill="#2563eb"/><text x="587.5" y="299.5" font-size="16" font-weight="700">A t1</text>
+<line x1="575.5" y1="307.5" x2="556.3" y2="299.1" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="549.4" cy="314.3" r="10" fill="#2563eb"/><text x="561.4" y="306.3" font-size="16" font-weight="700">A t2</text>
+<line x1="549.4" y1="314.3" x2="561.1" y2="299.4" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<polyline points="224.5,289.1 508.2,94.9 552.4,365.1" fill="none" stroke="#dc2626" stroke-width="4"/>
+<circle cx="224.5" cy="289.1" r="10" fill="#dc2626"/><text x="236.5" y="281.1" font-size="16" font-weight="700">B t0</text>
+<line x1="224.5" y1="289.1" x2="312.9" y2="293.7" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="508.2" cy="94.9" r="10" fill="#dc2626"/><text x="520.2" y="86.9" font-size="16" font-weight="700">B t1</text>
+<line x1="508.2" y1="94.9" x2="590.1" y2="82.2" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="552.4" cy="365.1" r="10" fill="#dc2626"/><text x="564.4" y="357.1" font-size="16" font-weight="700">B t2</text>
+<line x1="552.4" y1="365.1" x2="519.5" y2="334.7" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="20" y="465" font-size="16" fill="#334155">hoi_m3_bedroom_data03_win08 · start / middle / end metric tracks</text></svg>

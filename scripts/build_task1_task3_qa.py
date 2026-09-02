@@ -78,7 +78,7 @@ def collect_missing(result: Any) -> list[str]:
 def confidence_for(question_type: str, result: dict, approximations: list[str], missing: list[str]) -> str:
     if result.get("status") == "missing_evidence":
         return "reject"
-    nonfatal_missing = {"semantic world_axes for room-level allocentric labels"}
+    nonfatal_missing = {"semantic world_axes for room-level allocentric labels", "left_fingertips", "right_fingertips"}
     fatal_missing = [item for item in missing if item not in nonfatal_missing]
     if fatal_missing:
         return "reject"

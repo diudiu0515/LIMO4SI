@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="480" viewBox="0 0 820 480">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L6,3 z" fill="#334155"/></marker></defs>
+<rect width="820" height="480" fill="#f8fafc"/>
+<polyline points="188.2,139.9 186.0,142.1 185.2,141.2" fill="none" stroke="#2563eb" stroke-width="4"/>
+<circle cx="188.2" cy="139.9" r="10" fill="#2563eb"/><text x="200.2" y="131.9" font-size="16" font-weight="700">A t0</text>
+<line x1="188.2" y1="139.9" x2="236.7" y2="145.7" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="186.0" cy="142.1" r="10" fill="#2563eb"/><text x="198.0" y="134.1" font-size="16" font-weight="700">A t1</text>
+<line x1="186.0" y1="142.1" x2="234.7" y2="152.5" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="185.2" cy="141.2" r="10" fill="#2563eb"/><text x="197.2" y="133.2" font-size="16" font-weight="700">A t2</text>
+<line x1="185.2" y1="141.2" x2="231.4" y2="148.2" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow)"/>
+<polyline points="614.8,345.2 542.4,192.6 399.6,114.8" fill="none" stroke="#dc2626" stroke-width="4"/>
+<circle cx="614.8" cy="345.2" r="10" fill="#dc2626"/><text x="626.8" y="337.2" font-size="16" font-weight="700">B t0</text>
+<line x1="614.8" y1="345.2" x2="611.6" y2="303.9" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="542.4" cy="192.6" r="10" fill="#dc2626"/><text x="554.4" y="184.6" font-size="16" font-weight="700">B t1</text>
+<line x1="542.4" y1="192.6" x2="472.8" y2="183.2" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<circle cx="399.6" cy="114.8" r="10" fill="#dc2626"/><text x="411.6" y="106.8" font-size="16" font-weight="700">B t2</text>
+<line x1="399.6" y1="114.8" x2="364.0" y2="79.7" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow)"/>
+<text x="20" y="465" font-size="16" fill="#334155">hoi_m3_bedroom_data03_win09 · start / middle / end metric tracks</text></svg>

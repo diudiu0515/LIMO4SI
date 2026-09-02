@@ -1,0 +1,41 @@
+{
+  "status": "ok",
+  "input": "site/qa_benchmark/data.js",
+  "output": "site/qa_benchmark/data.js",
+  "kept_groups": 19,
+  "kept_qas": 36,
+  "quality_counts": {
+    "high": 27,
+    "audited_proxy": 9
+  },
+  "question_type_counts": {
+    "task1_dynamic_human_referenced_relations::hand_approach_over_video": 2,
+    "task1_dynamic_human_referenced_relations::reachability_change_over_video": 4,
+    "task1_dynamic_human_referenced_relations::relation_change_over_video": 5,
+    "task1_dynamic_human_referenced_relations::relation_consistency_over_video": 1,
+    "task3_human_scene_topological_reasoning::objects_along_human_path_sides": 10,
+    "task4_multi_human_relational_dynamics::closest_visible_pair_change_2d": 2,
+    "task4_multi_human_relational_dynamics::distance_change_between_people": 2,
+    "task4_multi_human_relational_dynamics::facing_relation_change": 1,
+    "task4_multi_human_relational_dynamics::mid_clip_social_spacing": 2,
+    "task4_multi_human_relational_dynamics::relative_position_from_a": 4,
+    "task4_multi_human_relational_dynamics::visible_human_motion_ranking_2d": 3
+  },
+  "rejected_groups": [],
+  "rejected_qas": [],
+  "nonfatal_missing": [
+    "left_fingertips",
+    "right_fingertips",
+    "semantic world_axes for room-level allocentric labels"
+  ],
+  "acceptable_approx_prefixes": [
+    "visibility uses geometric FOV",
+    "occlusion only checks listed candidate object centers",
+    "eye origin approximated by nose joint",
+    "head origin approximated from shoulder center",
+    "view direction approximated by body forward axis",
+    "easiest-to-reach is a geometric proxy",
+    "object centers are held fixed at the key frame",
+    "2D image-plane person tracking; not metric 3D identity"
+  ]
+}

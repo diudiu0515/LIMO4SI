@@ -1,0 +1,14 @@
+{
+  "status": "complete",
+  "message": "Generated 10 high-quality real HOI-M3 multihuman groups from 5 different long videos, with pose/orientation evidence retained.",
+  "hoim3_groups": 10,
+  "hoim3_qa": 50,
+  "hoim3_sequences": [
+    "bedroom_data01",
+    "bedroom_data02",
+    "bedroom_data03",
+    "bedroom_data04",
+    "bedroom_data05"
+  ],
+  "windows_per_sequence": 2
+}

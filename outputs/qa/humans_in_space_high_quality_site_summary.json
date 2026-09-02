@@ -1,0 +1,17 @@
+{
+  "site_groups": 25,
+  "site_qa": 137,
+  "hoim3_groups": 10,
+  "hoim3_qa": 50,
+  "hoim3_sequences": {
+    "hoi_m3_bedroom_data01": 2,
+    "hoi_m3_bedroom_data02": 2,
+    "hoi_m3_bedroom_data03": 2,
+    "hoi_m3_bedroom_data04": 2,
+    "hoi_m3_bedroom_data05": 2
+  },
+  "status": {
+    "ok": 137
+  },
+  "errors": []
+}

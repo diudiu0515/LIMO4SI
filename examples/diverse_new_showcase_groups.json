@@ -1,0 +1,126 @@
+[
+  {
+    "name": "diverse_sfu_010_3_frame6750",
+    "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+    "camera": "cam04",
+    "frame": 6750,
+    "camera_pose_path": "outputs/calibration/val_12/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json",
+    "objects": [
+      "salt package_0",
+      "chopping board_0"
+    ],
+    "queries": [
+      "Where is salt package relative to the person?",
+      "Where is chopping board relative to the person?"
+    ],
+    "selection_note": "diverse_take_bbox_ranked; prefer one frame per take"
+  },
+  {
+    "name": "diverse_uniandes_001_5_frame3150",
+    "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+    "camera": "cam04",
+    "frame": 3150,
+    "camera_pose_path": "outputs/calibration/val_12/3528e260-6a6d-46d7-b97d-b6c029ec7304.json",
+    "objects": [
+      "kitchen napkin_0",
+      "heat extractor range hood_0",
+      "onion pack_0"
+    ],
+    "queries": [
+      "Where is kitchen napkin relative to the person?",
+      "Where is heat extractor range hood relative to the person?",
+      "Where is onion pack relative to the person?"
+    ],
+    "selection_note": "diverse_take_bbox_ranked; prefer one frame per take"
+  },
+  {
+    "name": "diverse_sfu_007_3_frame1440",
+    "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
+    "camera": "cam01",
+    "frame": 1440,
+    "camera_pose_path": "data/egoexo4d/annotations/ego_pose/val/camera_pose/f76f2040-989c-42df-b2fb-e0903165443d.json",
+    "objects": [
+      "oyster sauce bottle_0",
+      "lanzhou noodles pack_0",
+      "pink frying pan_0"
+    ],
+    "queries": [
+      "Where is oyster sauce bottle relative to the person?",
+      "Where is lanzhou noodles pack relative to the person?",
+      "Where is pink frying pan relative to the person?"
+    ],
+    "selection_note": "diverse_take_bbox_ranked; prefer one frame per take"
+  },
+  {
+    "name": "diverse_sfu_008_3_frame6960",
+    "take_uid": "44d647ce-72d2-4312-b80c-99faea2d017d",
+    "camera": "cam04",
+    "frame": 6960,
+    "camera_pose_path": "outputs/calibration/val_12/44d647ce-72d2-4312-b80c-99faea2d017d.json",
+    "objects": [
+      "wooden chopping board_0",
+      "stainless bowl_0",
+      "cucumber peel_0"
+    ],
+    "queries": [
+      "Where is wooden chopping board relative to the person?",
+      "Where is stainless bowl relative to the person?",
+      "Where is cucumber peel relative to the person?"
+    ],
+    "selection_note": "diverse_take_bbox_ranked; prefer one frame per take"
+  },
+  {
+    "name": "diverse_iiith_145_2_frame7380",
+    "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+    "camera": "cam01",
+    "frame": 7380,
+    "camera_pose_path": "outputs/calibration/val_12/fac6316e-d141-4bbd-b88b-a624491acb30.json",
+    "objects": [
+      "White chopping board_0",
+      "Steel tomato bowl_0",
+      "small steel bowl_0"
+    ],
+    "queries": [
+      "Where is White chopping board relative to the person?",
+      "Where is Steel tomato bowl relative to the person?",
+      "Where is small steel bowl relative to the person?"
+    ],
+    "selection_note": "diverse_take_bbox_ranked; prefer one frame per take"
+  },
+  {
+    "name": "diverse_iiith_31_3_frame1620",
+    "take_uid": "fcf26143-bd53-49f7-a876-78829e4faf71",
+    "camera": "cam03",
+    "frame": 1620,
+    "camera_pose_path": "outputs/calibration/val_12/fcf26143-bd53-49f7-a876-78829e4faf71.json",
+    "objects": [
+      "Chopped tomato_0",
+      "Chopping board_0",
+      "Knife_0"
+    ],
+    "queries": [
+      "Where is Chopped tomato relative to the person?",
+      "Where is Chopping board relative to the person?",
+      "Where is Knife relative to the person?"
+    ],
+    "selection_note": "diverse_take_bbox_ranked; prefer one frame per take"
+  },
+  {
+    "name": "diverse_iiith_29_3_frame3120",
+    "take_uid": "c785b2ec-1efd-4135-9707-d54386109075",
+    "camera": "cam01",
+    "frame": 3120,
+    "camera_pose_path": "outputs/calibration/val_12/c785b2ec-1efd-4135-9707-d54386109075.json",
+    "objects": [
+      "steel plate_0",
+      "chopped cucumber_0",
+      "steel bowl_0"
+    ],
+    "queries": [
+      "Where is steel plate relative to the person?",
+      "Where is chopped cucumber relative to the person?",
+      "Where is steel bowl relative to the person?"
+    ],
+    "selection_note": "diverse_take_bbox_ranked; prefer one frame per take"
+  }
+]

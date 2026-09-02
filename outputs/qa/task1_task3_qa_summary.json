@@ -17,8 +17,8 @@
     "task3::reference_frame_switching": 12
   },
   "confidence_counts": {
-    "high": 36,
-    "medium": 84
+    "high": 24,
+    "medium": 96
   },
   "status_counts": {
     "ok": 120
@@ -28,7 +28,7 @@
       "medium": 12
     },
     "task1::nearest_referring_object": {
-      "high": 12
+      "medium": 12
     },
     "task1::quantitative_distance_and_direction": {
       "high": 12

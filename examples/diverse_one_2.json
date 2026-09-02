@@ -1,0 +1,20 @@
+[
+  {
+    "name": "diverse_uniandes_001_5_frame3150",
+    "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+    "camera": "cam04",
+    "frame": 3150,
+    "camera_pose_path": "outputs/calibration/val_12/3528e260-6a6d-46d7-b97d-b6c029ec7304.json",
+    "objects": [
+      "kitchen napkin_0",
+      "heat extractor range hood_0",
+      "onion pack_0"
+    ],
+    "queries": [
+      "Where is kitchen napkin relative to the person?",
+      "Where is heat extractor range hood relative to the person?",
+      "Where is onion pack relative to the person?"
+    ],
+    "selection_note": "diverse_take_bbox_ranked; prefer one frame per take"
+  }
+]

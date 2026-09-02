@@ -1,0 +1,1546 @@
+{
+  "dataset": "HOI-M3",
+  "status": "ok",
+  "scenes": [
+    {
+      "scene_id": "hoi_m3_bedroom_data01_win01",
+      "title": "HOI-M3 · bedroom_data01 · window 01 · SMPL-X two-person 15s",
+      "dataset": "HOI-M3",
+      "duration_sec": 15.0,
+      "start_frame": 0,
+      "source_start_index": 0,
+      "source_end_index": 450,
+      "source_smplx_files": [
+        "smplx_with_distortion/bedroom_data01_person0.npz",
+        "smplx_with_distortion/bedroom_data01_person1.npz"
+      ],
+      "video_clip": "./outputs/hoim3/bedroom_data01/win01_view0_15s.mp4",
+      "source_video": "data/HOI-M3/videos/bedroom_data01/0.mp4",
+      "frames": [
+        {
+          "t": 0.0,
+          "frame_id": 0,
+          "source_index": 0,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data01_person0.npz",
+              "pelvis": [
+                4.6332173347473145,
+                1.263270616531372,
+                2.0060348510742188
+              ],
+              "head": [
+                4.6332173347473145,
+                2.863270616531372,
+                2.0060348510742188
+              ],
+              "forward": [
+                0.9752531044073074,
+                0.043675133141169824,
+                -0.2167345498276884
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data01_person1.npz",
+              "pelvis": [
+                2.9033994674682617,
+                1.238986611366272,
+                0.7016652226448059
+              ],
+              "head": [
+                2.9033994674682617,
+                2.838986611366272,
+                0.7016652226448059
+              ],
+              "forward": [
+                0.8666389861598802,
+                0.04887178192734765,
+                0.49653642021408734
+              ]
+            }
+          ]
+        },
+        {
+          "t": 7.5,
+          "frame_id": 225,
+          "source_index": 225,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data01_person0.npz",
+              "pelvis": [
+                4.650942325592041,
+                1.4155055284500122,
+                1.9810047149658203
+              ],
+              "head": [
+                4.650942325592041,
+                3.0155055284500123,
+                1.9810047149658203
+              ],
+              "forward": [
+                0.916947016272275,
+                -0.04566687993003074,
+                -0.39638706516084554
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data01_person1.npz",
+              "pelvis": [
+                2.9228157997131348,
+                1.237855315208435,
+                0.6785075664520264
+              ],
+              "head": [
+                2.9228157997131348,
+                2.837855315208435,
+                0.6785075664520264
+              ],
+              "forward": [
+                0.8046787261654295,
+                0.13002398251073083,
+                0.5792977745761078
+              ]
+            }
+          ]
+        },
+        {
+          "t": 15.0,
+          "frame_id": 450,
+          "source_index": 450,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data01_person0.npz",
+              "pelvis": [
+                3.9517951011657715,
+                1.142576813697815,
+                0.8200164437294006
+              ],
+              "head": [
+                3.9517951011657715,
+                2.742576813697815,
+                0.8200164437294006
+              ],
+              "forward": [
+                -0.08452983074617929,
+                -0.010578323402089139,
+                0.9963647960400965
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data01_person1.npz",
+              "pelvis": [
+                3.1414453983306885,
+                1.221960186958313,
+                1.4576942920684814
+              ],
+              "head": [
+                3.1414453983306885,
+                2.821960186958313,
+                1.4576942920684814
+              ],
+              "forward": [
+                0.46881191372642994,
+                0.08222309206789788,
+                0.8794627636682274
+              ]
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "objects": []
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data01_win02",
+      "title": "HOI-M3 · bedroom_data01 · window 02 · SMPL-X two-person 15s",
+      "dataset": "HOI-M3",
+      "duration_sec": 15.0,
+      "start_frame": 21336,
+      "source_start_index": 21336,
+      "source_end_index": 21786,
+      "source_smplx_files": [
+        "smplx_with_distortion/bedroom_data01_person0.npz",
+        "smplx_with_distortion/bedroom_data01_person1.npz"
+      ],
+      "video_clip": "./outputs/hoim3/bedroom_data01/win02_view0_15s.mp4",
+      "source_video": "data/HOI-M3/videos/bedroom_data01/0.mp4",
+      "frames": [
+        {
+          "t": 0.0,
+          "frame_id": 21336,
+          "source_index": 21336,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data01_person0.npz",
+              "pelvis": [
+                3.872144937515259,
+                0.7435483336448669,
+                0.608028769493103
+              ],
+              "head": [
+                3.872144937515259,
+                2.343548333644867,
+                0.608028769493103
+              ],
+              "forward": [
+                0.3055943677940293,
+                0.895470071679114,
+                0.32364399129223764
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data01_person1.npz",
+              "pelvis": [
+                2.681805372238159,
+                0.7945185899734497,
+                2.419032573699951
+              ],
+              "head": [
+                2.681805372238159,
+                2.39451858997345,
+                2.419032573699951
+              ],
+              "forward": [
+                0.7857533805729977,
+                0.5736436566977194,
+                -0.23135379843126613
+              ]
+            }
+          ]
+        },
+        {
+          "t": 7.5,
+          "frame_id": 21561,
+          "source_index": 21561,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data01_person0.npz",
+              "pelvis": [
+                3.867985248565674,
+                0.750228226184845,
+                0.6118091940879822
+              ],
+              "head": [
+                3.867985248565674,
+                2.350228226184845,
+                0.6118091940879822
+              ],
+              "forward": [
+                0.2823082202058715,
+                0.8932695093657069,
+                0.3498165982936524
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data01_person1.npz",
+              "pelvis": [
+                2.678697109222412,
+                0.7906287908554077,
+                2.4173929691314697
+              ],
+              "head": [
+                2.678697109222412,
+                2.390628790855408,
+                2.4173929691314697
+              ],
+              "forward": [
+                0.7764571618258362,
+                0.5922612982410875,
+                -0.2152692046140105
+              ]
+            }
+          ]
+        },
+        {
+          "t": 15.0,
+          "frame_id": 21786,
+          "source_index": 21786,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data01_person0.npz",
+              "pelvis": [
+                3.8597729206085205,
+                0.7472272515296936,
+                0.5985260009765625
+              ],
+              "head": [
+                3.8597729206085205,
+                2.3472272515296937,
+                0.5985260009765625
+              ],
+              "forward": [
+                0.2962610789828341,
+                0.9008302109865302,
+                0.317386679074423
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data01_person1.npz",
+              "pelvis": [
+                2.671699285507202,
+                0.7814016342163086,
+                2.425128221511841
+              ],
+              "head": [
+                2.671699285507202,
+                2.3814016342163087,
+                2.425128221511841
+              ],
+              "forward": [
+                0.8270036023975822,
+                0.5300962947634399,
+                -0.18725106114383983
+              ]
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "objects": []
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data02_win01",
+      "title": "HOI-M3 · bedroom_data02 · window 01 · SMPL-X two-person 15s",
+      "dataset": "HOI-M3",
+      "duration_sec": 15.0,
+      "start_frame": 0,
+      "source_start_index": 0,
+      "source_end_index": 450,
+      "source_smplx_files": [
+        "smplx_with_distortion/bedroom_data02_person0.npz",
+        "smplx_with_distortion/bedroom_data02_person1.npz"
+      ],
+      "video_clip": "./outputs/hoim3/bedroom_data02/win01_view0_15s.mp4",
+      "source_video": "data/HOI-M3/videos/bedroom_data02/0.mp4",
+      "frames": [
+        {
+          "t": 0.0,
+          "frame_id": 0,
+          "source_index": 0,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data02_person0.npz",
+              "pelvis": [
+                5.036898136138916,
+                1.2446917295455933,
+                0.7246103286743164
+              ],
+              "head": [
+                5.036898136138916,
+                2.8446917295455934,
+                0.7246103286743164
+              ],
+              "forward": [
+                0.5853408185425731,
+                0.026313108219348413,
+                0.8103602572212851
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data02_person1.npz",
+              "pelvis": [
+                3.5041275024414062,
+                1.268896460533142,
+                2.6865646839141846
+              ],
+              "head": [
+                3.5041275024414062,
+                2.868896460533142,
+                2.6865646839141846
+              ],
+              "forward": [
+                0.9772238931169418,
+                0.06473178147261029,
+                -0.20209715284671922
+              ]
+            }
+          ]
+        },
+        {
+          "t": 7.5,
+          "frame_id": 225,
+          "source_index": 225,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data02_person0.npz",
+              "pelvis": [
+                5.212213516235352,
+                1.2426377534866333,
+                0.5750879049301147
+              ],
+              "head": [
+                5.212213516235352,
+                2.8426377534866334,
+                0.5750879049301147
+              ],
+              "forward": [
+                -0.26792443961371165,
+                0.0721986855317259,
+                0.9607308907624287
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data02_person1.npz",
+              "pelvis": [
+                3.370271921157837,
+                1.258795976638794,
+                2.965355396270752
+              ],
+              "head": [
+                3.370271921157837,
+                2.858795976638794,
+                2.965355396270752
+              ],
+              "forward": [
+                -0.26763848185036654,
+                0.0330466997991854,
+                -0.9629525215010414
+              ]
+            }
+          ]
+        },
+        {
+          "t": 15.0,
+          "frame_id": 450,
+          "source_index": 450,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data02_person0.npz",
+              "pelvis": [
+                3.478238582611084,
+                1.240160346031189,
+                1.3087003231048584
+              ],
+              "head": [
+                3.478238582611084,
+                2.840160346031189,
+                1.3087003231048584
+              ],
+              "forward": [
+                -0.973945538748493,
+                -0.001773226004242772,
+                0.22677509391784112
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data02_person1.npz",
+              "pelvis": [
+                2.9837963581085205,
+                1.2401480674743652,
+                3.6585025787353516
+              ],
+              "head": [
+                2.9837963581085205,
+                2.8401480674743653,
+                3.6585025787353516
+              ],
+              "forward": [
+                -0.985153618081716,
+                0.034295466883361776,
+                -0.16821465373669695
+              ]
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "objects": []
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data02_win02",
+      "title": "HOI-M3 · bedroom_data02 · window 02 · SMPL-X two-person 15s",
+      "dataset": "HOI-M3",
+      "duration_sec": 15.0,
+      "start_frame": 21280,
+      "source_start_index": 21280,
+      "source_end_index": 21730,
+      "source_smplx_files": [
+        "smplx_with_distortion/bedroom_data02_person0.npz",
+        "smplx_with_distortion/bedroom_data02_person1.npz"
+      ],
+      "video_clip": "./outputs/hoim3/bedroom_data02/win02_view0_15s.mp4",
+      "source_video": "data/HOI-M3/videos/bedroom_data02/0.mp4",
+      "frames": [
+        {
+          "t": 0.0,
+          "frame_id": 21280,
+          "source_index": 21280,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data02_person0.npz",
+              "pelvis": [
+                3.9416065216064453,
+                0.8266478776931763,
+                0.6839853525161743
+              ],
+              "head": [
+                3.9416065216064453,
+                2.4266478776931764,
+                0.6839853525161743
+              ],
+              "forward": [
+                -0.2813796157983708,
+                0.41991433380529153,
+                0.8628426647297985
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data02_person1.npz",
+              "pelvis": [
+                1.644273042678833,
+                1.2664390802383423,
+                0.9773935079574585
+              ],
+              "head": [
+                1.644273042678833,
+                2.8664390802383424,
+                0.9773935079574585
+              ],
+              "forward": [
+                0.9078736359336,
+                0.09313731832539805,
+                0.408767539210073
+              ]
+            }
+          ]
+        },
+        {
+          "t": 7.5,
+          "frame_id": 21505,
+          "source_index": 21505,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data02_person0.npz",
+              "pelvis": [
+                3.9506967067718506,
+                0.820364236831665,
+                0.6841999888420105
+              ],
+              "head": [
+                3.9506967067718506,
+                2.420364236831665,
+                0.6841999888420105
+              ],
+              "forward": [
+                -0.20985819212475365,
+                0.4760190894262312,
+                0.8540289021455607
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data02_person1.npz",
+              "pelvis": [
+                1.8256065845489502,
+                1.2524187564849854,
+                0.8326201438903809
+              ],
+              "head": [
+                1.8256065845489502,
+                2.8524187564849854,
+                0.8326201438903809
+              ],
+              "forward": [
+                0.8933514531210197,
+                0.18768274433714502,
+                0.4082871155016289
+              ]
+            }
+          ]
+        },
+        {
+          "t": 15.0,
+          "frame_id": 21730,
+          "source_index": 21730,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data02_person0.npz",
+              "pelvis": [
+                3.946399450302124,
+                0.816849946975708,
+                0.6818796992301941
+              ],
+              "head": [
+                3.946399450302124,
+                2.416849946975708,
+                0.6818796992301941
+              ],
+              "forward": [
+                -0.22560478481320334,
+                0.48991025089146756,
+                0.8420750721526244
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data02_person1.npz",
+              "pelvis": [
+                1.8612977266311646,
+                1.262072205543518,
+                0.9791246652603149
+              ],
+              "head": [
+                1.8612977266311646,
+                2.862072205543518,
+                0.9791246652603149
+              ],
+              "forward": [
+                0.7305611257841089,
+                0.13182772756044744,
+                0.6700014117442619
+              ]
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "objects": []
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data03_win01",
+      "title": "HOI-M3 · bedroom_data03 · window 01 · SMPL-X two-person 15s",
+      "dataset": "HOI-M3",
+      "duration_sec": 15.0,
+      "start_frame": 0,
+      "source_start_index": 0,
+      "source_end_index": 450,
+      "source_smplx_files": [
+        "smplx_with_distortion/bedroom_data03_person0.npz",
+        "smplx_with_distortion/bedroom_data03_person1.npz"
+      ],
+      "video_clip": "./outputs/hoim3/bedroom_data03/win01_view0_15s.mp4",
+      "source_video": "data/HOI-M3/videos/bedroom_data03/0.mp4",
+      "frames": [
+        {
+          "t": 0.0,
+          "frame_id": 0,
+          "source_index": 0,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data03_person0.npz",
+              "pelvis": [
+                4.469560623168945,
+                1.2713698148727417,
+                1.5824153423309326
+              ],
+              "head": [
+                4.469560623168945,
+                2.871369814872742,
+                1.5824153423309326
+              ],
+              "forward": [
+                0.9825725104448587,
+                0.13148765705233123,
+                -0.131385911577218
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data03_person1.npz",
+              "pelvis": [
+                4.615706920623779,
+                1.1957165002822876,
+                -0.32867366075515747
+              ],
+              "head": [
+                4.615706920623779,
+                2.7957165002822877,
+                -0.32867366075515747
+              ],
+              "forward": [
+                0.9806969164591357,
+                0.03719460877494495,
+                -0.19196384848617198
+              ]
+            }
+          ]
+        },
+        {
+          "t": 7.5,
+          "frame_id": 225,
+          "source_index": 225,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data03_person0.npz",
+              "pelvis": [
+                4.471976280212402,
+                1.300879716873169,
+                1.594936490058899
+              ],
+              "head": [
+                4.471976280212402,
+                2.900879716873169,
+                1.594936490058899
+              ],
+              "forward": [
+                0.9894239322406125,
+                0.10566486445555827,
+                -0.09937413511126736
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data03_person1.npz",
+              "pelvis": [
+                4.629379749298096,
+                1.2070800065994263,
+                -0.2803591787815094
+              ],
+              "head": [
+                4.629379749298096,
+                2.8070800065994264,
+                -0.2803591787815094
+              ],
+              "forward": [
+                0.991048140143201,
+                -0.040343297238701316,
+                -0.12726351514323422
+              ]
+            }
+          ]
+        },
+        {
+          "t": 15.0,
+          "frame_id": 450,
+          "source_index": 450,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data03_person0.npz",
+              "pelvis": [
+                4.424546718597412,
+                1.2713022232055664,
+                1.5789414644241333
+              ],
+              "head": [
+                4.424546718597412,
+                2.8713022232055665,
+                1.5789414644241333
+              ],
+              "forward": [
+                0.9827900614453163,
+                0.11310469072908187,
+                0.14605144319516403
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data03_person1.npz",
+              "pelvis": [
+                4.799834728240967,
+                1.196631908416748,
+                0.01565629243850708
+              ],
+              "head": [
+                4.799834728240967,
+                2.796631908416748,
+                0.01565629243850708
+              ],
+              "forward": [
+                0.3725737034231042,
+                0.077628925757867,
+                0.9247500123834941
+              ]
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "objects": []
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data03_win02",
+      "title": "HOI-M3 · bedroom_data03 · window 02 · SMPL-X two-person 15s",
+      "dataset": "HOI-M3",
+      "duration_sec": 15.0,
+      "start_frame": 21312,
+      "source_start_index": 21312,
+      "source_end_index": 21762,
+      "source_smplx_files": [
+        "smplx_with_distortion/bedroom_data03_person0.npz",
+        "smplx_with_distortion/bedroom_data03_person1.npz"
+      ],
+      "video_clip": "./outputs/hoim3/bedroom_data03/win02_view0_15s.mp4",
+      "source_video": "data/HOI-M3/videos/bedroom_data03/0.mp4",
+      "frames": [
+        {
+          "t": 0.0,
+          "frame_id": 21312,
+          "source_index": 21312,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data03_person0.npz",
+              "pelvis": [
+                2.623594284057617,
+                0.785731315612793,
+                1.9106602668762207
+              ],
+              "head": [
+                2.623594284057617,
+                2.385731315612793,
+                1.9106602668762207
+              ],
+              "forward": [
+                0.2363999279149475,
+                0.7437176367039899,
+                -0.6252992491097681
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data03_person1.npz",
+              "pelvis": [
+                2.0146872997283936,
+                0.791683554649353,
+                1.4955404996871948
+              ],
+              "head": [
+                2.0146872997283936,
+                2.391683554649353,
+                1.4955404996871948
+              ],
+              "forward": [
+                0.6066579351379395,
+                0.6858776538341751,
+                -0.40191789423351015
+              ]
+            }
+          ]
+        },
+        {
+          "t": 7.5,
+          "frame_id": 21537,
+          "source_index": 21537,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data03_person0.npz",
+              "pelvis": [
+                2.615596055984497,
+                0.7827863097190857,
+                1.911819577217102
+              ],
+              "head": [
+                2.615596055984497,
+                2.382786309719086,
+                1.911819577217102
+              ],
+              "forward": [
+                0.1935105123742304,
+                0.7814437642337598,
+                -0.5932110290114596
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data03_person1.npz",
+              "pelvis": [
+                2.012054681777954,
+                0.7906019687652588,
+                1.5001909732818604
+              ],
+              "head": [
+                2.012054681777954,
+                2.390601968765259,
+                1.5001909732818604
+              ],
+              "forward": [
+                0.5846958100282048,
+                0.715557443229426,
+                -0.3822412264191661
+              ]
+            }
+          ]
+        },
+        {
+          "t": 15.0,
+          "frame_id": 21762,
+          "source_index": 21762,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data03_person0.npz",
+              "pelvis": [
+                2.612744092941284,
+                0.7892112135887146,
+                1.8936322927474976
+              ],
+              "head": [
+                2.612744092941284,
+                2.3892112135887147,
+                1.8936322927474976
+              ],
+              "forward": [
+                0.11208654866257943,
+                0.8124196800317839,
+                -0.5721982777901077
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data03_person1.npz",
+              "pelvis": [
+                2.0073747634887695,
+                0.7872265577316284,
+                1.4973939657211304
+              ],
+              "head": [
+                2.0073747634887695,
+                2.3872265577316285,
+                1.4973939657211304
+              ],
+              "forward": [
+                0.530518337824926,
+                0.6898165339115816,
+                -0.49264941162421955
+              ]
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "objects": []
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data04_win01",
+      "title": "HOI-M3 · bedroom_data04 · window 01 · SMPL-X two-person 15s",
+      "dataset": "HOI-M3",
+      "duration_sec": 15.0,
+      "start_frame": 0,
+      "source_start_index": 0,
+      "source_end_index": 450,
+      "source_smplx_files": [
+        "smplx_with_distortion/bedroom_data04_person0.npz",
+        "smplx_with_distortion/bedroom_data04_person1.npz"
+      ],
+      "video_clip": "./outputs/hoim3/bedroom_data04/win01_view0_15s.mp4",
+      "source_video": "data/HOI-M3/videos/bedroom_data04/0.mp4",
+      "frames": [
+        {
+          "t": 0.0,
+          "frame_id": 0,
+          "source_index": 0,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data04_person0.npz",
+              "pelvis": [
+                3.4145822525024414,
+                1.24318265914917,
+                1.6857157945632935
+              ],
+              "head": [
+                3.4145822525024414,
+                2.84318265914917,
+                1.6857157945632935
+              ],
+              "forward": [
+                0.9931580410262483,
+                0.0367420519523034,
+                -0.1108473146415347
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data04_person1.npz",
+              "pelvis": [
+                1.8495427370071411,
+                1.2384198904037476,
+                -0.05865701287984848
+              ],
+              "head": [
+                1.8495427370071411,
+                2.8384198904037476,
+                -0.05865701287984848
+              ],
+              "forward": [
+                -0.9883170393059437,
+                0.028707784548420563,
+                0.14968397684406715
+              ]
+            }
+          ]
+        },
+        {
+          "t": 7.5,
+          "frame_id": 225,
+          "source_index": 225,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data04_person0.npz",
+              "pelvis": [
+                3.5668716430664062,
+                1.2417716979980469,
+                1.379601240158081
+              ],
+              "head": [
+                3.5668716430664062,
+                2.841771697998047,
+                1.379601240158081
+              ],
+              "forward": [
+                -0.44874503359460927,
+                0.0101671959030062,
+                -0.8936019935920259
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data04_person1.npz",
+              "pelvis": [
+                2.4083797931671143,
+                1.2425651550292969,
+                -0.3113357126712799
+              ],
+              "head": [
+                2.4083797931671143,
+                2.842565155029297,
+                -0.3113357126712799
+              ],
+              "forward": [
+                -0.8877320606815903,
+                0.024860075759595725,
+                0.45968876979021833
+              ]
+            }
+          ]
+        },
+        {
+          "t": 15.0,
+          "frame_id": 450,
+          "source_index": 450,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data04_person0.npz",
+              "pelvis": [
+                3.4575135707855225,
+                1.213112473487854,
+                1.884256362915039
+              ],
+              "head": [
+                3.4575135707855225,
+                2.813112473487854,
+                1.884256362915039
+              ],
+              "forward": [
+                0.9615816960782593,
+                0.01121582148122608,
+                -0.2742897138351336
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data04_person1.npz",
+              "pelvis": [
+                3.3328754901885986,
+                1.2334426641464233,
+                -0.13095557689666748
+              ],
+              "head": [
+                3.3328754901885986,
+                2.8334426641464234,
+                -0.13095557689666748
+              ],
+              "forward": [
+                -0.7011482261790316,
+                -0.006740717398354465,
+                0.7129836797956549
+              ]
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "objects": []
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data04_win02",
+      "title": "HOI-M3 · bedroom_data04 · window 02 · SMPL-X two-person 15s",
+      "dataset": "HOI-M3",
+      "duration_sec": 15.0,
+      "start_frame": 21300,
+      "source_start_index": 21300,
+      "source_end_index": 21750,
+      "source_smplx_files": [
+        "smplx_with_distortion/bedroom_data04_person0.npz",
+        "smplx_with_distortion/bedroom_data04_person1.npz"
+      ],
+      "video_clip": "./outputs/hoim3/bedroom_data04/win02_view0_15s.mp4",
+      "source_video": "data/HOI-M3/videos/bedroom_data04/0.mp4",
+      "frames": [
+        {
+          "t": 0.0,
+          "frame_id": 21300,
+          "source_index": 21300,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data04_person0.npz",
+              "pelvis": [
+                2.48744535446167,
+                0.7699902653694153,
+                1.6283042430877686
+              ],
+              "head": [
+                2.48744535446167,
+                2.3699902653694154,
+                1.6283042430877686
+              ],
+              "forward": [
+                0.8903854282501974,
+                0.4318848360976979,
+                -0.14383767763898708
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data04_person1.npz",
+              "pelvis": [
+                3.6329352855682373,
+                1.2303228378295898,
+                -0.733922004699707
+              ],
+              "head": [
+                3.6329352855682373,
+                2.83032283782959,
+                -0.733922004699707
+              ],
+              "forward": [
+                0.27196513387912985,
+                0.07898025984444079,
+                0.9590605218175814
+              ]
+            }
+          ]
+        },
+        {
+          "t": 7.5,
+          "frame_id": 21525,
+          "source_index": 21525,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data04_person0.npz",
+              "pelvis": [
+                2.4856085777282715,
+                0.7718887329101562,
+                1.6261870861053467
+              ],
+              "head": [
+                2.4856085777282715,
+                2.3718887329101563,
+                1.6261870861053467
+              ],
+              "forward": [
+                0.8957056620118772,
+                0.42173587713630656,
+                -0.1408907980527302
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data04_person1.npz",
+              "pelvis": [
+                4.825430870056152,
+                1.230313777923584,
+                -0.2702520191669464
+              ],
+              "head": [
+                4.825430870056152,
+                2.830313777923584,
+                -0.2702520191669464
+              ],
+              "forward": [
+                -0.9169716574005494,
+                0.005779017690983306,
+                -0.39891049431998765
+              ]
+            }
+          ]
+        },
+        {
+          "t": 15.0,
+          "frame_id": 21750,
+          "source_index": 21750,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data04_person0.npz",
+              "pelvis": [
+                2.486157178878784,
+                0.7687885761260986,
+                1.6310393810272217
+              ],
+              "head": [
+                2.486157178878784,
+                2.3687885761260987,
+                1.6310393810272217
+              ],
+              "forward": [
+                0.8888164588028409,
+                0.4342794695940693,
+                -0.1463100982511862
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data04_person1.npz",
+              "pelvis": [
+                1.7465935945510864,
+                1.2477915287017822,
+                0.5011149644851685
+              ],
+              "head": [
+                1.7465935945510864,
+                2.8477915287017823,
+                0.5011149644851685
+              ],
+              "forward": [
+                -0.6719584243874926,
+                0.097828875996504,
+                0.7340990307281022
+              ]
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "objects": []
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data05_win01",
+      "title": "HOI-M3 · bedroom_data05 · window 01 · SMPL-X two-person 15s",
+      "dataset": "HOI-M3",
+      "duration_sec": 15.0,
+      "start_frame": 0,
+      "source_start_index": 0,
+      "source_end_index": 450,
+      "source_smplx_files": [
+        "smplx_with_distortion/bedroom_data05_person0.npz",
+        "smplx_with_distortion/bedroom_data05_person1.npz"
+      ],
+      "video_clip": "./outputs/hoim3/bedroom_data05/win01_view0_15s.mp4",
+      "source_video": "data/HOI-M3/videos/bedroom_data05/0.mp4",
+      "frames": [
+        {
+          "t": 0.0,
+          "frame_id": 0,
+          "source_index": 0,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data05_person0.npz",
+              "pelvis": [
+                3.2274043560028076,
+                1.2370083332061768,
+                2.0019099712371826
+              ],
+              "head": [
+                3.2274043560028076,
+                2.837008333206177,
+                2.0019099712371826
+              ],
+              "forward": [
+                0.9101426134204644,
+                0.1022485350231733,
+                -0.40147933984425915
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data05_person1.npz",
+              "pelvis": [
+                4.894687175750732,
+                1.2575733661651611,
+                1.671617031097412
+              ],
+              "head": [
+                4.894687175750732,
+                2.857573366165161,
+                1.671617031097412
+              ],
+              "forward": [
+                0.7499877067188507,
+                0.12175268749031405,
+                -0.6501497695604338
+              ]
+            }
+          ]
+        },
+        {
+          "t": 7.5,
+          "frame_id": 225,
+          "source_index": 225,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data05_person0.npz",
+              "pelvis": [
+                3.2269582748413086,
+                1.241395115852356,
+                2.028029203414917
+              ],
+              "head": [
+                3.2269582748413086,
+                2.841395115852356,
+                2.028029203414917
+              ],
+              "forward": [
+                0.896815030012141,
+                0.11999239795861871,
+                -0.4258222943628753
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data05_person1.npz",
+              "pelvis": [
+                4.990561485290527,
+                1.2486002445220947,
+                1.413833498954773
+              ],
+              "head": [
+                4.990561485290527,
+                2.848600244522095,
+                1.413833498954773
+              ],
+              "forward": [
+                0.34293423834360875,
+                0.07936820024446677,
+                -0.9360004257272767
+              ]
+            }
+          ]
+        },
+        {
+          "t": 15.0,
+          "frame_id": 450,
+          "source_index": 450,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data05_person0.npz",
+              "pelvis": [
+                3.82159423828125,
+                1.2286226749420166,
+                1.308343768119812
+              ],
+              "head": [
+                3.82159423828125,
+                2.8286226749420167,
+                1.308343768119812
+              ],
+              "forward": [
+                0.8314509609861873,
+                0.11851222997717437,
+                -0.5428113399893033
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data05_person1.npz",
+              "pelvis": [
+                2.637281894683838,
+                1.249295711517334,
+                -0.04829815775156021
+              ],
+              "head": [
+                2.637281894683838,
+                2.849295711517334,
+                -0.04829815775156021
+              ],
+              "forward": [
+                -0.913203317494666,
+                0.12187537694292691,
+                0.38885227710758713
+              ]
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "objects": []
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data05_win02",
+      "title": "HOI-M3 · bedroom_data05 · window 02 · SMPL-X two-person 15s",
+      "dataset": "HOI-M3",
+      "duration_sec": 15.0,
+      "start_frame": 21324,
+      "source_start_index": 21324,
+      "source_end_index": 21774,
+      "source_smplx_files": [
+        "smplx_with_distortion/bedroom_data05_person0.npz",
+        "smplx_with_distortion/bedroom_data05_person1.npz"
+      ],
+      "video_clip": "./outputs/hoim3/bedroom_data05/win02_view0_15s.mp4",
+      "source_video": "data/HOI-M3/videos/bedroom_data05/0.mp4",
+      "frames": [
+        {
+          "t": 0.0,
+          "frame_id": 21324,
+          "source_index": 21324,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data05_person0.npz",
+              "pelvis": [
+                2.419344902038574,
+                1.1538165807724,
+                3.617382049560547
+              ],
+              "head": [
+                2.419344902038574,
+                2.7538165807724,
+                3.617382049560547
+              ],
+              "forward": [
+                -0.9860007537556887,
+                0.1362231007606521,
+                0.09615498121453224
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data05_person1.npz",
+              "pelvis": [
+                2.7446677684783936,
+                0.8089727163314819,
+                2.5844297409057617
+              ],
+              "head": [
+                2.7446677684783936,
+                2.408972716331482,
+                2.5844297409057617
+              ],
+              "forward": [
+                0.5665460769252981,
+                0.6477053205526467,
+                -0.5094147234310639
+              ]
+            }
+          ]
+        },
+        {
+          "t": 7.5,
+          "frame_id": 21549,
+          "source_index": 21549,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data05_person0.npz",
+              "pelvis": [
+                1.3016953468322754,
+                1.1812587976455688,
+                2.567589044570923
+              ],
+              "head": [
+                1.3016953468322754,
+                2.781258797645569,
+                2.567589044570923
+              ],
+              "forward": [
+                0.18338572295625885,
+                0.1924905709480153,
+                -0.9640109214692111
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data05_person1.npz",
+              "pelvis": [
+                2.7541840076446533,
+                0.8013370037078857,
+                2.5764834880828857
+              ],
+              "head": [
+                2.7541840076446533,
+                2.401337003707886,
+                2.5764834880828857
+              ],
+              "forward": [
+                0.5714139391614641,
+                0.6731225570815091,
+                -0.4694594053590036
+              ]
+            }
+          ]
+        },
+        {
+          "t": 15.0,
+          "frame_id": 21774,
+          "source_index": 21774,
+          "people": [
+            {
+              "id": "A",
+              "source_person_file": "bedroom_data05_person0.npz",
+              "pelvis": [
+                1.446912407875061,
+                1.1206161975860596,
+                1.5173152685165405
+              ],
+              "head": [
+                1.446912407875061,
+                2.7206161975860597,
+                1.5173152685165405
+              ],
+              "forward": [
+                0.6004074321168509,
+                0.13510181672245267,
+                -0.7881994763872544
+              ]
+            },
+            {
+              "id": "B",
+              "source_person_file": "bedroom_data05_person1.npz",
+              "pelvis": [
+                2.7541680335998535,
+                0.785011887550354,
+                2.5497875213623047
+              ],
+              "head": [
+                2.7541680335998535,
+                2.385011887550354,
+                2.5497875213623047
+              ],
+              "forward": [
+                0.5442690303368685,
+                0.5833877875183432,
+                -0.6028514841904411
+              ]
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "objects": []
+    }
+  ]
+}

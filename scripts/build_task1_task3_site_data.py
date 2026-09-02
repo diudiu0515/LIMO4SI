@@ -17,25 +17,24 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 
 from build_perspective_qa import find_body_pose, find_camera_calibration  # noqa: E402
 from limo4si.perspective_qa import (  # noqa: E402
-    human_centric_answer, visibility_answer, nearest_reachable_object,
+    human_centric_answer, spatial_relation_quality_answer, visibility_answer, nearest_reachable_object, nearest_object_analysis, static_reachability_answer, reach_for_intent, unified_reach_analysis,
     level2_occlusion_answer, reference_frame_switching_answer,
 )
 
 DEFAULT_SUMMARIES = [
  'outputs/spatial/showcase_multi/sfu0083_cam04_3450/summary.json',
- 'outputs/spatial/showcase_multi/sfu0101_cam05_5460/summary.json',
- 'outputs/spatial/showcase_multi_extra/final_sfu0101_13920/summary.json',
- 'outputs/spatial/showcase_multi_extra/final_sfu0101_14910/summary.json',
- 'outputs/spatial/showcase_multi_extra/final_sfu0101_15600/summary.json',
- 'outputs/spatial/showcase_multi_extra/final_sfu0101_18510/summary.json',
- 'outputs/spatial/showcase_multi_extra/final_sfu0101_5460/summary.json',
  'outputs/spatial/showcase_queries/query_01_iiith32_frame5280/summary.json',
  'outputs/spatial/showcase_queries/query_02_iiith30_frame4440/summary.json',
- 'outputs/spatial/showcase_queries/query_03_iiith30_frame4440_better/summary.json',
+ 'outputs/spatial/showcase_queries/query_03_replacement_iiith30_frame4440_all/summary.json',
  'outputs/spatial/showcase_queries/query_04_iiith145_frame11250/summary.json',
  'outputs/spatial/showcase_queries/query_05_iiith31_frame4170/summary.json',
+ 'outputs/spatial/showcase_diverse_new/diverse_sfu_010_3_frame6750/summary.json',
+ 'outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame2730/summary.json',
+ 'outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame3390/summary.json',
+ 'outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame4410/summary.json',
+ 'outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame6630/summary.json',
+ 'outputs/spatial/showcase_diverse_new/diverse_sfu_008_3_frame6960/summary.json',
 ]
-
 def label(sample: dict) -> str:
     return str(sample.get('object_id','object')).replace('_0','').replace('_1','')
 
@@ -67,6 +66,35 @@ def add(qas, task_id, task_name, qtype, question, answer, method, result, raw):
         'raw_json': raw,
     })
 
+
+
+def hand_pose_at_frame(root: Path, sample: dict) -> dict | None:
+    """Load 3D hand/finger pose at the key frame when EgoPose hand data exists."""
+    hand_path = root/'data/egoexo4d/annotations/ego_pose/val/hand/automatic'/f"{sample['take_uid']}.json"
+    if not hand_path.exists():
+        return None
+    hand = json.loads(hand_path.read_text(encoding='utf-8'))
+    row = hand.get(str(sample['frame']))
+    if row and row[0].get('annotation3D'):
+        return row[0]['annotation3D']
+    return None
+
+def temporal_pose_sequence(root: Path, sample: dict, *, half_window_frames: int = 45, stride_frames: int = 5) -> list[dict]:
+    """Load 3D body poses around the key frame for reach-for intent."""
+    body_path = Path(sample.get('inputs', {}).get('body_pose', ''))
+    if not body_path.exists():
+        body_path = root/'data/egoexo4d/annotations/ego_pose/val/body/automatic'/f"{sample['take_uid']}.json"
+    body = json.loads(body_path.read_text(encoding='utf-8'))
+    center = int(sample['frame'])
+    poses = []
+    for frame in range(center - half_window_frames, center + half_window_frames + 1, stride_frames):
+        row = body.get(str(frame))
+        if row and row[0].get('annotation3D'):
+            poses.append(row[0]['annotation3D'])
+    if not poses and body.get(str(center)):
+        poses.append(body[str(center)][0]['annotation3D'])
+    return poses
+
 def build_clip(root: Path, group: dict, seconds: float) -> None:
     first=group['raw_summary']['samples'][0]
     video=root/'data/egoexo4d/takes'/first['take_name']/'frame_aligned_videos/downscaled/448'/f"{first['camera']}.mp4"
@@ -88,21 +116,26 @@ def build_group(root: Path, summary_path: Path, clip_seconds: float) -> dict:
     body=find_body_pose(root, first); joints=body['annotation3D']; cal=find_camera_calibration(root, first)
     nearest=nearest_by_pelvis(samples)
     reach=nearest_reachable_object(samples, joints)
+    pose_seq=temporal_pose_sequence(root, first)
+    hand_joints=hand_pose_at_frame(root, first)
+    target_reach=static_reachability_answer(second, joints, hand_joints=hand_joints, candidates=samples)
+    nearest_analysis=nearest_object_analysis(samples, joints, hand_joints=hand_joints)
+    reach_intent=reach_for_intent(samples, pose_seq, current_joints=joints, hand_joints=hand_joints)
     vis=visibility_answer(second, joints, candidates=samples)
     lvl=level2_occlusion_answer(joints, first, samples)
     ref=reference_frame_switching_answer(first['object_xyz_world_m'], first['human_frame'], camera_intrinsics=cal.get('camera_intrinsics') if cal else None, camera_extrinsics=cal.get('camera_extrinsics') if cal else None)
-    hc_first=human_centric_answer(first['object_xyz_world_m'], first['human_frame']); rel_first=hc_first['relation']
+    hc_first=human_centric_answer(first['object_xyz_world_m'], first['human_frame']); rel_first=hc_first['relation']; spatial_quality=spatial_relation_quality_answer(first)
     hc_second=human_centric_answer(second['object_xyz_world_m'], second['human_frame'])
     hc_near=human_centric_answer(nearest['object_xyz_world_m'], nearest['human_frame'])
     qas=[]
-    add(qas,'task1','Task 1 · Human-Object Spatial Relation','quantitative_distance_and_direction',f"How far is the {label(first)} from the person, and where is it relative to the person?",f"The {label(first)} is {rel_words(rel_first)} relative to the person, about {rel_first['distance_m']:.2f} m from the pelvis center.",'3D object center is expressed in the person body frame; distance is pelvis-to-object Euclidean distance.',hc_first,first)
-    add(qas,'task1','Task 1 · Human-Object Spatial Relation','reachability',f"Can the person reach the {label(second)}?",(f"The {label(second)} is likely reachable." if any((c.get('object_id')==second.get('object_id') and c.get('reachable')) for c in reach.get('candidates',[])) else f"The {label(second)} is not the nearest reachable object among the listed candidates."),'Reachability uses nearest wrist-to-object distance and an estimated reach radius from shoulder width.',{'status':'ok','target_object_id':second.get('object_id'),'reachability_result':reach},{'target':second,'candidates':samples})
+    add(qas,'task1','Task 1 · Human-Object Spatial Relation','quantitative_distance_and_direction',f"How far is the {label(first)} from the person, and where is it relative to the person?",f"The {label(first)} is {rel_words(rel_first)} relative to the person, about {rel_first['distance_m']:.2f} m from the pelvis center. Direction confidence: {spatial_quality['direction_confidence']}.",'3D object center is expressed in the person body frame; distance is pelvis-to-object Euclidean distance; relation quality audits near-distance and point-cloud validation.',spatial_quality,first)
+    add(qas,'task1','Task 1 · Human-Object Spatial Relation','reachability',f"Can the person reach the {label(second)} from the current pose?",target_reach['answer'],'Static reachability uses the current 3D shoulder-elbow-wrist arm span and wrist-to-object distance. It answers can reach, not is reaching.',target_reach,{'target':second,'candidates':samples})
     add(qas,'task1','Task 1 · Human-Object Spatial Relation','visibility',f"Can the person see the {label(second)}?",vis['answer'],'Visibility uses head/face direction when available and checks listed-object sightline blockers.',vis,{'target':second,'candidates':samples})
-    add(qas,'task1','Task 1 · Human-Object Spatial Relation','nearest_referring_object','Among the listed objects, which one is nearest to the person?',f"The nearest listed object is the {label(nearest)}, about {nearest.get('distance_m', hc_near['relation']['distance_m']):.2f} m from the person.",'Nearest object is ranked by pelvis-to-object 3D Euclidean distance.',{'status':'ok','chosen_object_id':nearest.get('object_id'),'distance_m':nearest.get('distance_m'),'relation':hc_near['relation'],'candidates':[{'object_id':s.get('object_id'),'distance_m':s.get('distance_m')} for s in samples]},{'candidates':samples})
-    add(qas,'task1','Task 1 · Human-Object Spatial Relation','current_interaction_object','Which listed object is the person most likely interacting with right now?',f"The most likely current interaction target is the {str((reach.get('chosen') or {}).get('object_id','object')).replace('_0','').replace('_1','')}, because it is closest to the person's hand among the listed objects.",'Interaction proxy uses the closest object to either wrist among the listed candidates.',{'status':'ok','interaction_proxy':'nearest_hand_object','reachability_result':reach},{'candidates':samples})
+    add(qas,'task1','Task 1 · Human-Object Spatial Relation','nearest_referring_object','Among the listed objects, which one is nearest to the person? Is it also easiest to reach?',nearest_analysis['answer'],'Nearest object is ranked by pelvis-to-object 3D Euclidean distance; easiest-to-reach is separately ranked by current arm/hand geometry.',nearest_analysis,{'candidates':samples})
+    add(qas,'task1','Task 1 · Human-Object Spatial Relation','current_interaction_object','Which listed object is the person most likely reaching for right now?',reach_intent['answer'],'Reach-for intent uses short wrist trajectory plus current static reachability, hand/fingertip cue when available, and visibility gating.',reach_intent,{'candidates':samples})
     add(qas,'task3','Task 3 · Perspective-Grounded QA','person_perspective_left_right_front_back',f"From the person's own perspective, where is the {label(first)}?",hc_first['answer'],'Answer is in the human-centric frame, not image left/right.',hc_first,first)
     add(qas,'task3','Task 3 · Perspective-Grounded QA','perspective_visibility_occlusion',f"From the person's viewpoint, is the {label(second)} visible or blocked?",vis['answer'],'Uses observer head/body direction plus sightline blocker detection.',vis,{'target':second,'candidates':samples})
-    add(qas,'task3','Task 3 · Perspective-Grounded QA','perspective_reachable_nearest',"From the person's position, which listed object is easiest to reach?",reach['answer'],'Uses person-centered reachability from wrist pose and object centers.',reach,{'candidates':samples})
+    add(qas,'task3','Task 3 · Perspective-Grounded QA','perspective_reachable_nearest',"From the person's recent hand motion, which listed object are they most likely reaching for?",reach_intent['answer'],'Uses temporal reach-for intent plus static reachability, hand/fingertip cue when available, and visibility gating.',reach_intent,{'candidates':samples})
     add(qas,'task3','Task 3 · Perspective-Grounded QA','level2_perspective_taking',f"From the observer's perspective, which listed object blocks the {label(first)}?",lvl['answer'],'Checks which candidate lies between observer and target along the sightline.',lvl,{'target':first,'candidates':samples})
     ans=ref['answer']; cam=ans.get('egocentric'); cam_txt='camera coordinates are available'
     if isinstance(cam,dict): cam_txt=f"in the camera frame its depth is {cam.get('forward_depth_m',0):.2f} m"
