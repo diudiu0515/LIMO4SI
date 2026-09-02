@@ -1,4 +1,8 @@
 window.QA_DATA = {
+  "title": "Humans in Space",
+  "subtitle": "Dynamic human-referenced spatial reasoning in exocentric videos",
+  "source": "15-second video windows built from selected outputs/spatial summary.json files",
+  "benchmark_rule": "A valid QA should satisfy T(Q) ∧ H(Q) ∧ S(Q) = 1.",
   "tasks": [
     {
       "id": "task1_dynamic_human_referenced_relations",
@@ -390,6 +394,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.21 m，右向分量 0.10 m，高度差 0.03 m，直线距离 0.24 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -408,6 +416,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.17 m，右向分量 0.18 m，高度差 0.04 m，直线距离 0.25 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -426,6 +438,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.15 m，右向分量 0.20 m，高度差 0.05 m，直线距离 0.26 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -444,6 +460,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.19 m，右向分量 0.17 m，高度差 0.05 m，直线距离 0.26 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -462,6 +482,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.22 m，右向分量 0.11 m，高度差 0.05 m，直线距离 0.25 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -480,6 +504,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.20 m，右向分量 0.12 m，高度差 0.04 m，直线距离 0.24 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -498,6 +526,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.17 m，右向分量 0.18 m，高度差 0.03 m，直线距离 0.25 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -516,6 +548,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前后原点附近、近似同高，前向分量 0.15 m，右向分量 0.19 m，高度差 0.04 m，直线距离 0.24 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -534,6 +570,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.22 m，右向分量 0.16 m，高度差 0.05 m，直线距离 0.28 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -552,6 +592,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.20 m，右向分量 0.17 m，高度差 0.04 m，直线距离 0.26 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -570,6 +614,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.26 m，右向分量 0.13 m，高度差 0.06 m，直线距离 0.29 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -588,6 +636,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.24 m，右向分量 0.12 m，高度差 0.05 m，直线距离 0.28 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -606,6 +658,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.17 m，右向分量 0.19 m，高度差 0.04 m，直线距离 0.25 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -624,6 +680,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.15 m，右向分量 0.19 m，高度差 0.03 m，直线距离 0.24 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -642,6 +702,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、后方、近似同高，前向分量 -0.23 m，右向分量 0.12 m，高度差 0.03 m，直线距离 0.27 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -660,6 +724,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.23 m，右向分量 0.09 m，高度差 0.04 m，直线距离 0.25 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -678,6 +746,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、后方、略偏上，前向分量 -0.26 m，右向分量 0.03 m，高度差 0.09 m，直线距离 0.28 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -696,6 +768,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.22 m，右向分量 0.11 m，高度差 0.08 m，直线距离 0.26 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -714,6 +790,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.19 m，右向分量 0.18 m，高度差 0.05 m，直线距离 0.27 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -732,6 +812,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.18 m，右向分量 0.15 m，高度差 0.05 m，直线距离 0.24 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -750,6 +834,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.18 m，右向分量 0.14 m，高度差 0.05 m，直线距离 0.24 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -768,6 +856,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 0.13 m，右向分量 0.16 m，高度差 0.05 m，直线距离 0.21 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -786,6 +878,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前后原点附近、近似同高，前向分量 0.14 m，右向分量 0.17 m，高度差 0.04 m，直线距离 0.22 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -804,6 +900,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.15 m，右向分量 0.17 m，高度差 0.05 m，直线距离 0.23 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -822,6 +922,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前后原点附近、近似同高，前向分量 0.14 m，右向分量 0.17 m，高度差 0.04 m，直线距离 0.22 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -840,6 +944,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.15 m，右向分量 0.18 m，高度差 0.05 m，直线距离 0.24 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -858,6 +966,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.22 m，右向分量 0.09 m，高度差 0.04 m，直线距离 0.24 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -876,6 +988,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.28 m，右向分量 0.02 m，高度差 0.06 m，直线距离 0.29 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -894,6 +1010,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.26 m，右向分量 -0.00 m，高度差 0.08 m，直线距离 0.27 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -912,6 +1032,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.29 m，右向分量 -0.01 m，高度差 0.08 m，直线距离 0.30 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -930,6 +1054,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.28 m，右向分量 -0.03 m，高度差 0.09 m，直线距离 0.30 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 }
               ],
@@ -949,6 +1077,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "front",
                   "vertical_relation": "same_height",
                   "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.21 m，右向分量 0.10 m，高度差 0.03 m，直线距离 0.24 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "middle": {
@@ -967,6 +1099,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "front",
                   "vertical_relation": "same_height",
                   "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.23 m，右向分量 0.09 m，高度差 0.04 m，直线距离 0.25 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "end": {
@@ -985,6 +1121,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "front",
                   "vertical_relation": "slightly_above",
                   "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.28 m，右向分量 -0.03 m，高度差 0.09 m，直线距离 0.30 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "changed": true,
@@ -1195,6 +1335,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.21 m，右向分量 0.10 m，高度差 0.03 m，直线距离 0.24 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1213,6 +1357,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.17 m，右向分量 0.18 m，高度差 0.04 m，直线距离 0.25 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1231,6 +1379,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.15 m，右向分量 0.20 m，高度差 0.05 m，直线距离 0.26 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1249,6 +1401,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.19 m，右向分量 0.17 m，高度差 0.05 m，直线距离 0.26 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1267,6 +1423,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.22 m，右向分量 0.11 m，高度差 0.05 m，直线距离 0.25 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1285,6 +1445,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.20 m，右向分量 0.12 m，高度差 0.04 m，直线距离 0.24 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1303,6 +1467,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.17 m，右向分量 0.18 m，高度差 0.03 m，直线距离 0.25 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1321,6 +1489,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前后原点附近、近似同高，前向分量 0.15 m，右向分量 0.19 m，高度差 0.04 m，直线距离 0.24 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1339,6 +1511,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.22 m，右向分量 0.16 m，高度差 0.05 m，直线距离 0.28 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1357,6 +1533,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.20 m，右向分量 0.17 m，高度差 0.04 m，直线距离 0.26 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1375,6 +1555,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.26 m，右向分量 0.13 m，高度差 0.06 m，直线距离 0.29 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1393,6 +1577,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.24 m，右向分量 0.12 m，高度差 0.05 m，直线距离 0.28 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1411,6 +1599,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.17 m，右向分量 0.19 m，高度差 0.04 m，直线距离 0.25 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1429,6 +1621,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.15 m，右向分量 0.19 m，高度差 0.03 m，直线距离 0.24 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1447,6 +1643,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、后方、近似同高，前向分量 -0.23 m，右向分量 0.12 m，高度差 0.03 m，直线距离 0.27 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1465,6 +1665,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.23 m，右向分量 0.09 m，高度差 0.04 m，直线距离 0.25 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1483,6 +1687,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、后方、略偏上，前向分量 -0.26 m，右向分量 0.03 m，高度差 0.09 m，直线距离 0.28 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1501,6 +1709,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.22 m，右向分量 0.11 m，高度差 0.08 m，直线距离 0.26 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1519,6 +1731,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.19 m，右向分量 0.18 m，高度差 0.05 m，直线距离 0.27 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1537,6 +1753,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.18 m，右向分量 0.15 m，高度差 0.05 m，直线距离 0.24 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1555,6 +1775,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.18 m，右向分量 0.14 m，高度差 0.05 m，直线距离 0.24 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1573,6 +1797,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 0.13 m，右向分量 0.16 m，高度差 0.05 m，直线距离 0.21 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1591,6 +1819,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前后原点附近、近似同高，前向分量 0.14 m，右向分量 0.17 m，高度差 0.04 m，直线距离 0.22 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1609,6 +1841,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.15 m，右向分量 0.17 m，高度差 0.05 m，直线距离 0.23 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1627,6 +1863,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前后原点附近、近似同高，前向分量 0.14 m，右向分量 0.17 m，高度差 0.04 m，直线距离 0.22 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1645,6 +1885,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.15 m，右向分量 0.18 m，高度差 0.05 m，直线距离 0.24 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1663,6 +1907,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.22 m，右向分量 0.09 m，高度差 0.04 m，直线距离 0.24 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1681,6 +1929,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.28 m，右向分量 0.02 m，高度差 0.06 m，直线距离 0.29 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1699,6 +1951,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.26 m，右向分量 -0.00 m，高度差 0.08 m，直线距离 0.27 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1717,6 +1973,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.29 m，右向分量 -0.01 m，高度差 0.08 m，直线距离 0.30 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1735,6 +1995,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.28 m，右向分量 -0.03 m，高度差 0.09 m，直线距离 0.30 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   }
                 ],
@@ -1754,6 +2018,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.21 m，右向分量 0.10 m，高度差 0.03 m，直线距离 0.24 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "middle": {
@@ -1772,6 +2040,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.23 m，右向分量 0.09 m，高度差 0.04 m，直线距离 0.25 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "end": {
@@ -1790,6 +2062,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.28 m，右向分量 -0.03 m，高度差 0.09 m，直线距离 0.30 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "changed": true,
@@ -1831,6 +2107,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.47 m，右向分量 0.02 m，高度差 0.27 m，直线距离 0.54 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1849,6 +2129,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.46 m，右向分量 -0.14 m，高度差 0.20 m，直线距离 0.52 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1867,6 +2151,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.45 m，右向分量 -0.17 m，高度差 0.21 m，直线距离 0.53 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1885,6 +2173,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.46 m，右向分量 -0.10 m，高度差 0.22 m，直线距离 0.52 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1903,6 +2195,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.47 m，右向分量 0.01 m，高度差 0.26 m，直线距离 0.53 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1921,6 +2217,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.47 m，右向分量 -0.03 m，高度差 0.26 m，直线距离 0.54 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1939,6 +2239,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.45 m，右向分量 -0.13 m，高度差 0.24 m，直线距离 0.52 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1957,6 +2261,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.44 m，右向分量 -0.17 m，高度差 0.25 m，直线距离 0.54 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1975,6 +2283,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.44 m，右向分量 -0.05 m，高度差 0.23 m，直线距离 0.50 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -1993,6 +2305,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.43 m，右向分量 -0.13 m，高度差 0.25 m，直线距离 0.51 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2011,6 +2327,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.43 m，右向分量 0.02 m，高度差 0.24 m，直线距离 0.50 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2029,6 +2349,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.44 m，右向分量 0.02 m，高度差 0.25 m，直线距离 0.51 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2047,6 +2371,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.43 m，右向分量 -0.16 m，高度差 0.24 m，直线距离 0.52 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2065,6 +2393,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.44 m，右向分量 -0.18 m，高度差 0.23 m，直线距离 0.53 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2083,6 +2415,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.46 m，右向分量 0.02 m，高度差 0.23 m，直线距离 0.51 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2101,6 +2437,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.46 m，右向分量 0.05 m，高度差 0.24 m，直线距离 0.53 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2119,6 +2459,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、前方、上方，前向分量 0.44 m，右向分量 0.15 m，高度差 0.24 m，直线距离 0.52 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2137,6 +2481,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.47 m，右向分量 -0.01 m，高度差 0.24 m，直线距离 0.53 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2155,6 +2503,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.47 m，右向分量 -0.10 m，高度差 0.17 m，直线距离 0.51 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2173,6 +2525,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.50 m，右向分量 -0.06 m，高度差 0.21 m，直线距离 0.54 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2191,6 +2547,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.51 m，右向分量 -0.06 m，高度差 0.18 m，直线距离 0.54 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2209,6 +2569,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.49 m，右向分量 -0.19 m，高度差 0.21 m，直线距离 0.56 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2227,6 +2591,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.47 m，右向分量 -0.18 m，高度差 0.19 m，直线距离 0.54 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2245,6 +2613,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.47 m，右向分量 -0.17 m，高度差 0.19 m，直线距离 0.53 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2263,6 +2635,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.47 m，右向分量 -0.17 m，高度差 0.23 m，直线距离 0.55 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2281,6 +2657,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.46 m，右向分量 -0.17 m，高度差 0.23 m，直线距离 0.54 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2299,6 +2679,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.46 m，右向分量 0.02 m，高度差 0.26 m，直线距离 0.53 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2317,6 +2701,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.42 m，右向分量 0.13 m，高度差 0.20 m，直线距离 0.48 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2335,6 +2723,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.43 m，右向分量 0.05 m，高度差 0.29 m，直线距离 0.52 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2353,6 +2745,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.41 m，右向分量 0.08 m，高度差 0.23 m，直线距离 0.48 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2371,6 +2767,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.41 m，右向分量 0.10 m，高度差 0.24 m，直线距离 0.49 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   }
                 ],
@@ -2390,6 +2790,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.47 m，右向分量 0.02 m，高度差 0.27 m，直线距离 0.54 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "middle": {
@@ -2408,6 +2812,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.46 m，右向分量 0.05 m，高度差 0.24 m，直线距离 0.53 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "end": {
@@ -2426,6 +2834,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.41 m，右向分量 0.10 m，高度差 0.24 m，直线距离 0.49 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "changed": false,
@@ -2457,6 +2869,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.24 m，右向分量 0.21 m，高度差 0.10 m，直线距离 0.33 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2475,6 +2891,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.15 m，右向分量 0.29 m，高度差 0.10 m，直线距离 0.35 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2493,6 +2913,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 0.12 m，右向分量 0.31 m，高度差 0.12 m，直线距离 0.35 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2511,6 +2935,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.18 m，右向分量 0.29 m，高度差 0.11 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2529,6 +2957,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.24 m，右向分量 0.22 m，高度差 0.11 m，直线距离 0.35 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2547,6 +2979,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.22 m，右向分量 0.23 m，高度差 0.10 m，直线距离 0.34 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2565,6 +3001,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.16 m，右向分量 0.30 m，高度差 0.10 m，直线距离 0.35 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2583,6 +3023,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 0.13 m，右向分量 0.30 m，高度差 0.11 m，直线距离 0.34 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2601,6 +3045,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.23 m，右向分量 0.28 m，高度差 0.12 m，直线距离 0.38 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2619,6 +3067,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.19 m，右向分量 0.28 m，高度差 0.11 m，直线距离 0.35 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2637,6 +3089,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.28 m，右向分量 0.24 m，高度差 0.13 m，直线距离 0.39 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2655,6 +3111,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.27 m，右向分量 0.23 m，高度差 0.11 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2673,6 +3133,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.15 m，右向分量 0.30 m，高度差 0.10 m，直线距离 0.35 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2691,6 +3155,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 0.13 m，右向分量 0.30 m，高度差 0.10 m，直线距离 0.34 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2709,6 +3177,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.26 m，右向分量 0.23 m，高度差 0.10 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2727,6 +3199,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.26 m，右向分量 0.20 m，高度差 0.10 m，直线距离 0.35 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2745,6 +3221,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -0.31 m，右向分量 0.12 m，高度差 0.16 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2763,6 +3243,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.24 m，右向分量 0.22 m，高度差 0.15 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2781,6 +3265,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.17 m，右向分量 0.30 m，高度差 0.11 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2799,6 +3287,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.18 m，右向分量 0.26 m，高度差 0.12 m，直线距离 0.34 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2817,6 +3309,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.18 m，右向分量 0.26 m，高度差 0.12 m，直线距离 0.34 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2835,6 +3331,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 0.11 m，右向分量 0.27 m，高度差 0.12 m，直线距离 0.31 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2853,6 +3353,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 0.12 m，右向分量 0.28 m，高度差 0.11 m，直线距离 0.32 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2871,6 +3375,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 0.13 m，右向分量 0.28 m，高度差 0.11 m，直线距离 0.33 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2889,6 +3397,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 0.12 m，右向分量 0.28 m，高度差 0.11 m，直线距离 0.32 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2907,6 +3419,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 0.13 m，右向分量 0.29 m，高度差 0.11 m，直线距离 0.34 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2925,6 +3441,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.25 m，右向分量 0.20 m，高度差 0.11 m，直线距离 0.34 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2943,6 +3463,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.33 m，右向分量 0.12 m，高度差 0.14 m，直线距离 0.38 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2961,6 +3485,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.31 m，右向分量 0.10 m，高度差 0.15 m，直线距离 0.35 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2979,6 +3507,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.34 m，右向分量 0.08 m，高度差 0.16 m，直线距离 0.39 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -2997,6 +3529,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.34 m，右向分量 0.06 m，高度差 0.16 m，直线距离 0.38 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   }
                 ],
@@ -3016,6 +3552,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.24 m，右向分量 0.21 m，高度差 0.10 m，直线距离 0.33 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "middle": {
@@ -3034,6 +3574,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.26 m，右向分量 0.20 m，高度差 0.10 m，直线距离 0.35 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "end": {
@@ -3052,6 +3596,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.34 m，右向分量 0.06 m，高度差 0.16 m，直线距离 0.38 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "changed": true,
@@ -8706,6 +9254,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.06 m，高度差 0.07 m，直线距离 0.36 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8724,6 +9276,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.34 m，右向分量 -0.04 m，高度差 0.13 m，直线距离 0.36 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8742,6 +9298,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.33 m，右向分量 -0.05 m，高度差 0.13 m，直线距离 0.36 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8760,6 +9320,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.34 m，右向分量 0.01 m，高度差 0.11 m，直线距离 0.36 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8778,6 +9342,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.02 m，高度差 0.08 m，直线距离 0.37 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8796,6 +9364,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.03 m，高度差 0.07 m，直线距离 0.37 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8814,6 +9386,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.32 m，右向分量 0.00 m，高度差 0.08 m，直线距离 0.33 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8832,6 +9408,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 0.00 m，高度差 0.10 m，直线距离 0.37 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8850,6 +9430,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.36 m，右向分量 -0.02 m，高度差 0.05 m，直线距离 0.36 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8868,6 +9452,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.35 m，右向分量 -0.04 m，高度差 0.04 m，直线距离 0.35 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8886,6 +9474,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.36 m，右向分量 -0.07 m，高度差 0.04 m，直线距离 0.37 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8904,6 +9496,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.02 m，高度差 0.08 m，直线距离 0.36 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8922,6 +9518,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.36 m，右向分量 -0.06 m，高度差 0.05 m，直线距离 0.37 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8940,6 +9540,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.02 m，高度差 0.10 m，直线距离 0.37 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8958,6 +9562,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 -0.06 m，高度差 0.15 m，直线距离 0.44 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8976,6 +9584,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.39 m，右向分量 0.24 m，高度差 0.05 m，直线距离 0.46 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -8994,6 +9606,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.03 m，高度差 0.08 m，直线距离 0.36 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -9012,6 +9628,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.04 m，高度差 0.09 m，直线距离 0.36 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -9030,6 +9650,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.05 m，高度差 0.10 m，直线距离 0.37 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -9048,6 +9672,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.34 m，右向分量 -0.02 m，高度差 0.09 m，直线距离 0.36 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -9066,6 +9694,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.00 m，高度差 0.09 m，直线距离 0.36 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -9084,6 +9716,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.03 m，高度差 0.10 m，直线距离 0.36 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -9102,6 +9738,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.04 m，高度差 0.10 m，直线距离 0.37 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -9120,6 +9760,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.01 m，高度差 0.09 m，直线距离 0.37 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -9138,6 +9782,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.34 m，右向分量 -0.04 m，高度差 0.08 m，直线距离 0.35 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -9156,6 +9804,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.03 m，高度差 0.11 m，直线距离 0.37 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 }
               ],
@@ -9175,6 +9827,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "front",
                   "vertical_relation": "slightly_above",
                   "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.06 m，高度差 0.07 m，直线距离 0.36 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "middle": {
@@ -9193,6 +9849,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "front",
                   "vertical_relation": "slightly_above",
                   "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 -0.06 m，高度差 0.15 m，直线距离 0.44 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "end": {
@@ -9211,6 +9871,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "front",
                   "vertical_relation": "slightly_above",
                   "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.03 m，高度差 0.11 m，直线距离 0.37 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "changed": false,
@@ -9404,6 +10068,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.06 m，高度差 0.07 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9422,6 +10090,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.34 m，右向分量 -0.04 m，高度差 0.13 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9440,6 +10112,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.33 m，右向分量 -0.05 m，高度差 0.13 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9458,6 +10134,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.34 m，右向分量 0.01 m，高度差 0.11 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9476,6 +10156,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.02 m，高度差 0.08 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9494,6 +10178,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.03 m，高度差 0.07 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9512,6 +10200,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.32 m，右向分量 0.00 m，高度差 0.08 m，直线距离 0.33 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9530,6 +10222,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 0.00 m，高度差 0.10 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9548,6 +10244,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.36 m，右向分量 -0.02 m，高度差 0.05 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9566,6 +10266,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.35 m，右向分量 -0.04 m，高度差 0.04 m，直线距离 0.35 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9584,6 +10288,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.36 m，右向分量 -0.07 m，高度差 0.04 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9602,6 +10310,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.02 m，高度差 0.08 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9620,6 +10332,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.36 m，右向分量 -0.06 m，高度差 0.05 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9638,6 +10354,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.02 m，高度差 0.10 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9656,6 +10376,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 -0.06 m，高度差 0.15 m，直线距离 0.44 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9674,6 +10398,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.39 m，右向分量 0.24 m，高度差 0.05 m，直线距离 0.46 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9692,6 +10420,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.03 m，高度差 0.08 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9710,6 +10442,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.04 m，高度差 0.09 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9728,6 +10464,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.05 m，高度差 0.10 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9746,6 +10486,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.34 m，右向分量 -0.02 m，高度差 0.09 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9764,6 +10508,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.00 m，高度差 0.09 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9782,6 +10530,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.03 m，高度差 0.10 m，直线距离 0.36 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9800,6 +10552,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.04 m，高度差 0.10 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9818,6 +10574,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.01 m，高度差 0.09 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9836,6 +10596,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.34 m，右向分量 -0.04 m，高度差 0.08 m，直线距离 0.35 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9854,6 +10618,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.03 m，高度差 0.11 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   }
                 ],
@@ -9873,6 +10641,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.35 m，右向分量 -0.06 m，高度差 0.07 m，直线距离 0.36 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "middle": {
@@ -9891,6 +10663,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 -0.06 m，高度差 0.15 m，直线距离 0.44 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "end": {
@@ -9909,6 +10685,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 -0.03 m，高度差 0.11 m，直线距离 0.37 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "changed": false,
@@ -9939,6 +10719,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 0.02 m，高度差 0.08 m，直线距离 0.42 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9957,6 +10741,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 0.03 m，高度差 0.13 m，直线距离 0.43 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9975,6 +10763,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 0.02 m，高度差 0.14 m，直线距离 0.43 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -9993,6 +10785,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.40 m，右向分量 0.10 m，高度差 0.11 m，直线距离 0.43 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10011,6 +10807,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.42 m，右向分量 0.06 m，高度差 0.09 m，直线距离 0.43 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10029,6 +10829,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.42 m，右向分量 0.06 m，高度差 0.08 m，直线距离 0.44 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10047,6 +10851,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.38 m，右向分量 0.08 m，高度差 0.09 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10065,6 +10873,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 0.08 m，高度差 0.11 m，直线距离 0.44 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10083,6 +10895,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.42 m，右向分量 0.06 m，高度差 0.05 m，直线距离 0.43 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10101,6 +10917,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.41 m，右向分量 0.04 m，高度差 0.05 m，直线距离 0.42 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10119,6 +10939,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.43 m，右向分量 0.01 m，高度差 0.05 m，直线距离 0.43 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10137,6 +10961,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.42 m，右向分量 0.05 m，高度差 0.09 m，直线距离 0.43 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10155,6 +10983,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.43 m，右向分量 0.01 m，高度差 0.06 m，直线距离 0.43 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10173,6 +11005,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.42 m，右向分量 0.06 m，高度差 0.11 m，直线距离 0.44 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10191,6 +11027,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.48 m，右向分量 0.01 m，高度差 0.16 m，直线距离 0.51 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10209,6 +11049,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.42 m，右向分量 0.33 m，高度差 0.06 m，直线距离 0.54 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10227,6 +11071,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 0.05 m，高度差 0.09 m，直线距离 0.42 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10245,6 +11093,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.40 m，右向分量 0.04 m，高度差 0.11 m，直线距离 0.42 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10263,6 +11115,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 0.04 m，高度差 0.11 m，直线距离 0.43 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10281,6 +11137,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.39 m，右向分量 0.07 m，高度差 0.10 m，直线距离 0.41 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10299,6 +11159,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.40 m，右向分量 0.09 m，高度差 0.11 m，直线距离 0.42 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10317,6 +11181,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.40 m，右向分量 0.06 m，高度差 0.11 m，直线距离 0.42 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10335,6 +11203,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 0.05 m，高度差 0.11 m，直线距离 0.42 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10353,6 +11225,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 0.08 m，高度差 0.10 m，直线距离 0.43 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10371,6 +11247,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.39 m，右向分量 0.04 m，高度差 0.09 m，直线距离 0.41 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10389,6 +11269,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 0.05 m，高度差 0.12 m，直线距离 0.43 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   }
                 ],
@@ -10408,6 +11292,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 0.02 m，高度差 0.08 m，直线距离 0.42 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "middle": {
@@ -10426,6 +11314,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.48 m，右向分量 0.01 m，高度差 0.16 m，直线距离 0.51 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "end": {
@@ -10444,6 +11336,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.41 m，右向分量 0.05 m，高度差 0.12 m，直线距离 0.43 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "changed": false,
@@ -10475,6 +11371,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.38 m，右向分量 0.04 m，高度差 0.07 m，直线距离 0.39 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10493,6 +11393,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.38 m，右向分量 0.05 m，高度差 0.12 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10511,6 +11415,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.38 m，右向分量 0.04 m，高度差 0.13 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10529,6 +11437,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.37 m，右向分量 0.11 m，高度差 0.10 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10547,6 +11459,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.39 m，右向分量 0.07 m，高度差 0.07 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10565,6 +11481,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.40 m，右向分量 0.07 m，高度差 0.07 m，直线距离 0.41 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10583,6 +11503,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 0.09 m，高度差 0.08 m，直线距离 0.38 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10601,6 +11525,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.39 m，右向分量 0.10 m，高度差 0.10 m，直线距离 0.41 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10619,6 +11547,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.39 m，右向分量 0.07 m，高度差 0.04 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10637,6 +11569,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.38 m，右向分量 0.06 m，高度差 0.04 m，直线距离 0.39 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10655,6 +11591,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.40 m，右向分量 0.03 m，高度差 0.04 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10673,6 +11613,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.39 m，右向分量 0.07 m，高度差 0.08 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10691,6 +11635,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.40 m，右向分量 0.03 m，高度差 0.05 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10709,6 +11657,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.39 m，右向分量 0.07 m，高度差 0.10 m，直线距离 0.41 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10727,6 +11679,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.46 m，右向分量 0.02 m，高度差 0.14 m，直线距离 0.48 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10745,6 +11701,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.39 m，右向分量 0.34 m，高度差 0.05 m，直线距离 0.52 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10763,6 +11723,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.38 m，右向分量 0.06 m，高度差 0.08 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10781,6 +11745,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.38 m，右向分量 0.05 m，高度差 0.10 m，直线距离 0.39 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10799,6 +11767,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.38 m，右向分量 0.05 m，高度差 0.10 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10817,6 +11789,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.36 m，右向分量 0.08 m，高度差 0.09 m，直线距离 0.38 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10835,6 +11811,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.37 m，右向分量 0.09 m，高度差 0.09 m，直线距离 0.39 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10853,6 +11833,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.37 m，右向分量 0.07 m，高度差 0.10 m，直线距离 0.39 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10871,6 +11855,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.38 m，右向分量 0.06 m，高度差 0.10 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10889,6 +11877,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.38 m，右向分量 0.09 m，高度差 0.09 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10907,6 +11899,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.37 m，右向分量 0.05 m，高度差 0.08 m，直线距离 0.38 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -10925,6 +11921,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.38 m，右向分量 0.06 m，高度差 0.11 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   }
                 ],
@@ -10944,6 +11944,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.38 m，右向分量 0.04 m，高度差 0.07 m，直线距离 0.39 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "middle": {
@@ -10962,6 +11966,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.46 m，右向分量 0.02 m，高度差 0.14 m，直线距离 0.48 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "end": {
@@ -10980,6 +11988,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.38 m，右向分量 0.06 m，高度差 0.11 m，直线距离 0.40 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "changed": false,
@@ -15982,6 +16994,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.24 m，右向分量 0.02 m，高度差 -0.35 m，直线距离 0.42 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16000,6 +17016,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.18 m，右向分量 0.05 m，高度差 -0.32 m，直线距离 0.37 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16018,6 +17038,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.19 m，右向分量 0.03 m，高度差 -0.34 m，直线距离 0.39 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16036,6 +17060,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.22 m，右向分量 0.11 m，高度差 -0.31 m，直线距离 0.40 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16054,6 +17082,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.20 m，右向分量 0.13 m，高度差 -0.31 m，直线距离 0.39 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16072,6 +17104,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.22 m，右向分量 0.12 m，高度差 -0.31 m，直线距离 0.39 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16090,6 +17126,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.17 m，右向分量 0.12 m，高度差 -0.24 m，直线距离 0.32 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16108,6 +17148,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.18 m，右向分量 0.10 m，高度差 -0.24 m，直线距离 0.32 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16126,6 +17170,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前后原点附近、下方，前向分量 0.13 m，右向分量 -0.04 m，高度差 -0.34 m，直线距离 0.37 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16144,6 +17192,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.19 m，右向分量 0.06 m，高度差 -0.34 m，直线距离 0.40 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16162,6 +17214,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.26 m，右向分量 0.03 m，高度差 -0.34 m，直线距离 0.44 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16180,6 +17236,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.20 m，右向分量 0.12 m，高度差 -0.25 m，直线距离 0.34 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16198,6 +17258,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.18 m，右向分量 0.05 m，高度差 -0.34 m，直线距离 0.39 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16216,6 +17280,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.21 m，右向分量 0.07 m，高度差 -0.33 m，直线距离 0.40 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16234,6 +17302,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.23 m，右向分量 0.07 m，高度差 -0.31 m，直线距离 0.39 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16252,6 +17324,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.19 m，右向分量 0.05 m，高度差 -0.35 m，直线距离 0.40 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16270,6 +17346,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.21 m，右向分量 0.13 m，高度差 -0.25 m，直线距离 0.35 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16288,6 +17368,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.24 m，右向分量 0.08 m，高度差 -0.30 m，直线距离 0.39 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -16306,6 +17390,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.27 m，右向分量 0.05 m，高度差 -0.30 m，直线距离 0.41 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 }
               ],
@@ -16325,6 +17413,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "front",
                   "vertical_relation": "below",
                   "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.24 m，右向分量 0.02 m，高度差 -0.35 m，直线距离 0.42 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "middle": {
@@ -16343,6 +17435,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "front",
                   "vertical_relation": "below",
                   "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.18 m，右向分量 0.10 m，高度差 -0.24 m，直线距离 0.32 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "end": {
@@ -16361,6 +17457,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "front",
                   "vertical_relation": "below",
                   "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.27 m，右向分量 0.05 m，高度差 -0.30 m，直线距离 0.41 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "changed": false,
@@ -16547,6 +17647,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.24 m，右向分量 0.02 m，高度差 -0.35 m，直线距离 0.42 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16565,6 +17669,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.18 m，右向分量 0.05 m，高度差 -0.32 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16583,6 +17691,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.19 m，右向分量 0.03 m，高度差 -0.34 m，直线距离 0.39 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16601,6 +17713,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.22 m，右向分量 0.11 m，高度差 -0.31 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16619,6 +17735,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.20 m，右向分量 0.13 m，高度差 -0.31 m，直线距离 0.39 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16637,6 +17757,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.22 m，右向分量 0.12 m，高度差 -0.31 m，直线距离 0.39 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16655,6 +17779,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.17 m，右向分量 0.12 m，高度差 -0.24 m，直线距离 0.32 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16673,6 +17801,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.18 m，右向分量 0.10 m，高度差 -0.24 m，直线距离 0.32 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16691,6 +17823,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前后原点附近、下方，前向分量 0.13 m，右向分量 -0.04 m，高度差 -0.34 m，直线距离 0.37 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16709,6 +17845,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.19 m，右向分量 0.06 m，高度差 -0.34 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16727,6 +17867,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.26 m，右向分量 0.03 m，高度差 -0.34 m，直线距离 0.44 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16745,6 +17889,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.20 m，右向分量 0.12 m，高度差 -0.25 m，直线距离 0.34 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16763,6 +17911,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.18 m，右向分量 0.05 m，高度差 -0.34 m，直线距离 0.39 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16781,6 +17933,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.21 m，右向分量 0.07 m，高度差 -0.33 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16799,6 +17955,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.23 m，右向分量 0.07 m，高度差 -0.31 m，直线距离 0.39 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16817,6 +17977,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.19 m，右向分量 0.05 m，高度差 -0.35 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16835,6 +17999,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.21 m，右向分量 0.13 m，高度差 -0.25 m，直线距离 0.35 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16853,6 +18021,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.24 m，右向分量 0.08 m，高度差 -0.30 m，直线距离 0.39 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16871,6 +18043,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.27 m，右向分量 0.05 m，高度差 -0.30 m，直线距离 0.41 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   }
                 ],
@@ -16890,6 +18066,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.24 m，右向分量 0.02 m，高度差 -0.35 m，直线距离 0.42 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "middle": {
@@ -16908,6 +18088,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.18 m，右向分量 0.10 m，高度差 -0.24 m，直线距离 0.32 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "end": {
@@ -16926,6 +18110,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左右中线附近、前方、下方，前向分量 0.27 m，右向分量 0.05 m，高度差 -0.30 m，直线距离 0.41 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "changed": false,
@@ -16955,6 +18143,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.47 m，右向分量 0.00 m，高度差 0.06 m，直线距离 0.47 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16973,6 +18165,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.43 m，右向分量 0.04 m，高度差 0.08 m，直线距离 0.44 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -16991,6 +18187,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.44 m，右向分量 0.01 m，高度差 0.06 m，直线距离 0.44 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17009,6 +18209,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.45 m，右向分量 0.07 m，高度差 0.09 m，直线距离 0.47 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17027,6 +18231,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.43 m，右向分量 0.13 m，高度差 0.11 m，直线距离 0.46 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17045,6 +18253,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.44 m，右向分量 0.09 m，高度差 0.11 m，直线距离 0.46 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17063,6 +18275,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.43 m，右向分量 0.08 m，高度差 0.15 m，直线距离 0.46 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17081,6 +18297,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.44 m，右向分量 0.04 m，高度差 0.15 m，直线距离 0.46 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17099,6 +18319,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.39 m，右向分量 -0.14 m，高度差 0.03 m，直线距离 0.42 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17117,6 +18341,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.44 m，右向分量 0.04 m，高度差 0.05 m，直线距离 0.45 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17135,6 +18363,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.47 m，右向分量 0.05 m，高度差 0.08 m，直线距离 0.48 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17153,6 +18385,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.43 m，右向分量 0.12 m，高度差 0.16 m，直线距离 0.47 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17171,6 +18407,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.42 m，右向分量 0.05 m，高度差 0.06 m，直线距离 0.43 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17189,6 +18429,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.44 m，右向分量 0.08 m，高度差 0.08 m，直线距离 0.45 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17207,6 +18451,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.45 m，右向分量 0.08 m，高度差 0.11 m，直线距离 0.47 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17225,6 +18473,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.43 m，右向分量 0.07 m，高度差 0.06 m，直线距离 0.44 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17243,6 +18495,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.44 m，右向分量 0.14 m，高度差 0.16 m，直线距离 0.49 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17261,6 +18517,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.45 m，右向分量 0.09 m，高度差 0.12 m，直线距离 0.48 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17279,6 +18539,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.47 m，右向分量 0.07 m，高度差 0.12 m，直线距离 0.49 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   }
                 ],
@@ -17298,6 +18562,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.47 m，右向分量 0.00 m，高度差 0.06 m，直线距离 0.47 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "middle": {
@@ -17316,6 +18584,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.44 m，右向分量 0.04 m，高度差 0.15 m，直线距离 0.46 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "end": {
@@ -17334,6 +18606,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.47 m，右向分量 0.07 m，高度差 0.12 m，直线距离 0.49 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "changed": false,
@@ -17364,6 +18640,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.49 m，右向分量 0.04 m，高度差 0.07 m，直线距离 0.50 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17382,6 +18662,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.46 m，右向分量 0.08 m，高度差 0.08 m，直线距离 0.47 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17400,6 +18684,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.47 m，右向分量 0.05 m，高度差 0.06 m，直线距离 0.47 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17418,6 +18706,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.48 m，右向分量 0.11 m，高度差 0.10 m，直线距离 0.50 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17436,6 +18728,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.45 m，右向分量 0.17 m，高度差 0.11 m，直线距离 0.49 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17454,6 +18750,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.46 m，右向分量 0.13 m，高度差 0.11 m，直线距离 0.49 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17472,6 +18772,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 0.45 m，右向分量 0.12 m，高度差 0.16 m，直线距离 0.49 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17490,6 +18794,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.46 m，右向分量 0.08 m，高度差 0.15 m，直线距离 0.49 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17508,6 +18816,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.43 m，右向分量 -0.11 m，高度差 0.03 m，直线距离 0.44 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17526,6 +18838,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.46 m，右向分量 0.09 m，高度差 0.05 m，直线距离 0.48 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17544,6 +18860,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.49 m，右向分量 0.09 m，高度差 0.08 m，直线距离 0.51 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17562,6 +18882,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、前方、上方，前向分量 0.45 m，右向分量 0.16 m，高度差 0.16 m，直线距离 0.51 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17580,6 +18904,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.44 m，右向分量 0.09 m，高度差 0.07 m，直线距离 0.46 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17598,6 +18926,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.46 m，右向分量 0.12 m，高度差 0.08 m，直线距离 0.49 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17616,6 +18948,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.47 m，右向分量 0.12 m，高度差 0.11 m，直线距离 0.50 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17634,6 +18970,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.45 m，右向分量 0.11 m，高度差 0.06 m，直线距离 0.47 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17652,6 +18992,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、前方、上方，前向分量 0.46 m，右向分量 0.18 m，高度差 0.16 m，直线距离 0.52 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17670,6 +19014,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.48 m，右向分量 0.13 m，高度差 0.12 m，直线距离 0.51 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -17688,6 +19036,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.49 m，右向分量 0.11 m，高度差 0.13 m，直线距离 0.52 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   }
                 ],
@@ -17707,6 +19059,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.49 m，右向分量 0.04 m，高度差 0.07 m，直线距离 0.50 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "middle": {
@@ -17725,6 +19081,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.46 m，右向分量 0.08 m，高度差 0.15 m，直线距离 0.49 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "end": {
@@ -17743,6 +19103,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左右中线附近、前方、略偏上，前向分量 0.49 m，右向分量 0.11 m，高度差 0.13 m，直线距离 0.52 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "changed": false,
@@ -22179,6 +23543,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左侧、前方、上方，前向分量 1.32 m，右向分量 -2.68 m，高度差 0.62 m，直线距离 3.05 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22197,6 +23565,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左侧、前方、下方，前向分量 1.81 m，右向分量 -2.41 m，高度差 -0.34 m，直线距离 3.04 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22215,6 +23587,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左侧、前方、下方，前向分量 1.59 m，右向分量 -2.50 m，高度差 -0.57 m，直线距离 3.02 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22233,6 +23609,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左侧、前方、下方，前向分量 1.61 m，右向分量 -2.52 m，高度差 -0.49 m，直线距离 3.03 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22251,6 +23631,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左侧、前方、下方，前向分量 1.53 m，右向分量 -2.57 m，高度差 -0.48 m，直线距离 3.03 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22269,6 +23653,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的左侧、前方、近似同高，前向分量 1.58 m，右向分量 -2.58 m，高度差 0.03 m，直线距离 3.03 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22287,6 +23675,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左侧、前方、下方，前向分量 2.08 m，右向分量 -2.00 m，高度差 -0.41 m，直线距离 2.91 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22305,6 +23697,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左侧、前方、上方，前向分量 2.17 m，右向分量 -1.88 m，高度差 0.17 m，直线距离 2.87 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22323,6 +23719,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.55 m，右向分量 -2.77 m，高度差 0.65 m，直线距离 2.89 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22341,6 +23741,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左侧、前方、上方，前向分量 1.22 m，右向分量 -2.36 m，高度差 0.70 m，直线距离 2.75 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22359,6 +23763,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左侧、前方、上方，前向分量 2.06 m，右向分量 -1.39 m，高度差 0.23 m，直线距离 2.49 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22377,6 +23785,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左侧、前方、上方，前向分量 2.20 m，右向分量 -0.54 m，高度差 0.16 m，直线距离 2.27 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22395,6 +23807,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.72 m，右向分量 1.02 m，高度差 0.11 m，直线距离 2.01 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22413,6 +23829,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的右侧、前方、上方，前向分量 0.49 m，右向分量 1.64 m，高度差 0.30 m，直线距离 1.73 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22431,6 +23851,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的右侧、前方、上方，前向分量 0.31 m，右向分量 1.66 m，高度差 0.51 m，直线距离 1.76 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22449,6 +23873,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的右侧、前后原点附近、上方，前向分量 0.05 m，右向分量 1.76 m，高度差 0.52 m，直线距离 1.83 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22467,6 +23895,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的右侧、前后原点附近、上方，前向分量 0.03 m，右向分量 1.74 m，高度差 0.44 m，直线距离 1.80 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22485,6 +23917,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的右侧、前后原点附近、上方，前向分量 -0.07 m，右向分量 1.78 m，高度差 0.42 m，直线距离 1.83 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22503,6 +23939,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的右侧、前后原点附近、上方，前向分量 -0.13 m，右向分量 1.79 m，高度差 0.36 m，直线距离 1.83 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22521,6 +23961,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的右侧、后方、上方，前向分量 -0.18 m，右向分量 1.78 m，高度差 0.36 m，直线距离 1.83 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22539,6 +23983,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的右侧、后方、上方，前向分量 -0.18 m，右向分量 1.81 m，高度差 0.35 m，直线距离 1.85 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22557,6 +24005,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的右侧、前后原点附近、上方，前向分量 -0.12 m，右向分量 1.79 m，高度差 0.34 m，直线距离 1.83 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22575,6 +24027,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的右侧、前方、上方，前向分量 0.35 m，右向分量 1.75 m，高度差 0.54 m，直线距离 1.87 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -22593,6 +24049,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的右侧、前方、上方，前向分量 0.53 m，右向分量 1.65 m，高度差 0.67 m，直线距离 1.86 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 }
               ],
@@ -22612,6 +24072,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "front",
                   "vertical_relation": "above",
                   "text_zh": "物体在人的左侧、前方、上方，前向分量 1.32 m，右向分量 -2.68 m，高度差 0.62 m，直线距离 3.05 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "middle": {
@@ -22630,6 +24094,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "behind",
                   "vertical_relation": "above",
                   "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.55 m，右向分量 -2.77 m，高度差 0.65 m，直线距离 2.89 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "end": {
@@ -22648,6 +24116,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "front",
                   "vertical_relation": "above",
                   "text_zh": "物体在人的右侧、前方、上方，前向分量 0.53 m，右向分量 1.65 m，高度差 0.67 m，直线距离 1.86 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "changed": true,
@@ -22855,6 +24327,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 1.32 m，右向分量 -2.68 m，高度差 0.62 m，直线距离 3.05 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -22873,6 +24349,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左侧、前方、下方，前向分量 1.81 m，右向分量 -2.41 m，高度差 -0.34 m，直线距离 3.04 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -22891,6 +24371,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左侧、前方、下方，前向分量 1.59 m，右向分量 -2.50 m，高度差 -0.57 m，直线距离 3.02 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -22909,6 +24393,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左侧、前方、下方，前向分量 1.61 m，右向分量 -2.52 m，高度差 -0.49 m，直线距离 3.03 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -22927,6 +24415,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左侧、前方、下方，前向分量 1.53 m，右向分量 -2.57 m，高度差 -0.48 m，直线距离 3.03 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -22945,6 +24437,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左侧、前方、近似同高，前向分量 1.58 m，右向分量 -2.58 m，高度差 0.03 m，直线距离 3.03 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -22963,6 +24459,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左侧、前方、下方，前向分量 2.08 m，右向分量 -2.00 m，高度差 -0.41 m，直线距离 2.91 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -22981,6 +24481,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 2.17 m，右向分量 -1.88 m，高度差 0.17 m，直线距离 2.87 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -22999,6 +24503,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.55 m，右向分量 -2.77 m，高度差 0.65 m，直线距离 2.89 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23017,6 +24525,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 1.22 m，右向分量 -2.36 m，高度差 0.70 m，直线距离 2.75 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23035,6 +24547,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 2.06 m，右向分量 -1.39 m，高度差 0.23 m，直线距离 2.49 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23053,6 +24569,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 2.20 m，右向分量 -0.54 m，高度差 0.16 m，直线距离 2.27 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23071,6 +24591,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.72 m，右向分量 1.02 m，高度差 0.11 m，直线距离 2.01 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23089,6 +24613,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、前方、上方，前向分量 0.49 m，右向分量 1.64 m，高度差 0.30 m，直线距离 1.73 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23107,6 +24635,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、前方、上方，前向分量 0.31 m，右向分量 1.66 m，高度差 0.51 m，直线距离 1.76 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23125,6 +24657,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、前后原点附近、上方，前向分量 0.05 m，右向分量 1.76 m，高度差 0.52 m，直线距离 1.83 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23143,6 +24679,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、前后原点附近、上方，前向分量 0.03 m，右向分量 1.74 m，高度差 0.44 m，直线距离 1.80 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23161,6 +24701,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、前后原点附近、上方，前向分量 -0.07 m，右向分量 1.78 m，高度差 0.42 m，直线距离 1.83 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23179,6 +24723,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、前后原点附近、上方，前向分量 -0.13 m，右向分量 1.79 m，高度差 0.36 m，直线距离 1.83 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23197,6 +24745,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、后方、上方，前向分量 -0.18 m，右向分量 1.78 m，高度差 0.36 m，直线距离 1.83 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23215,6 +24767,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、后方、上方，前向分量 -0.18 m，右向分量 1.81 m，高度差 0.35 m，直线距离 1.85 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23233,6 +24789,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、前后原点附近、上方，前向分量 -0.12 m，右向分量 1.79 m，高度差 0.34 m，直线距离 1.83 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23251,6 +24811,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、前方、上方，前向分量 0.35 m，右向分量 1.75 m，高度差 0.54 m，直线距离 1.87 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23269,6 +24833,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、前方、上方，前向分量 0.53 m，右向分量 1.65 m，高度差 0.67 m，直线距离 1.86 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   }
                 ],
@@ -23288,6 +24856,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左侧、前方、上方，前向分量 1.32 m，右向分量 -2.68 m，高度差 0.62 m，直线距离 3.05 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "middle": {
@@ -23306,6 +24878,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.55 m，右向分量 -2.77 m，高度差 0.65 m，直线距离 2.89 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "end": {
@@ -23324,6 +24900,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的右侧、前方、上方，前向分量 0.53 m，右向分量 1.65 m，高度差 0.67 m，直线距离 1.86 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "changed": true,
@@ -23365,6 +24945,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.27 m，右向分量 -2.71 m，高度差 1.16 m，直线距离 2.97 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23383,6 +24967,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.82 m，右向分量 -2.83 m，高度差 0.16 m，直线距离 2.95 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23401,6 +24989,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左侧、前方、近似同高，前向分量 0.61 m，右向分量 -2.87 m，高度差 -0.01 m，直线距离 2.94 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23419,6 +25011,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左侧、前方、近似同高，前向分量 0.61 m，右向分量 -2.88 m，高度差 0.05 m，直线距离 2.94 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23437,6 +25033,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左侧、前方、略偏上，前向分量 0.52 m，右向分量 -2.89 m，高度差 0.07 m，直线距离 2.94 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23455,6 +25055,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.50 m，右向分量 -2.87 m，高度差 0.42 m，直线距离 2.94 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23473,6 +25077,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左侧、前方、近似同高，前向分量 1.14 m，右向分量 -2.62 m，高度差 -0.04 m，直线距离 2.86 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23491,6 +25099,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 1.20 m，右向分量 -2.56 m，高度差 0.25 m，直线距离 2.84 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23509,6 +25121,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.63 m，右向分量 -2.75 m，高度差 0.52 m，直线距离 2.87 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23527,6 +25143,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 2.14 m，右向分量 -1.63 m，高度差 0.53 m，直线距离 2.74 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23545,6 +25165,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 2.44 m，右向分量 -0.27 m，高度差 0.17 m，直线距离 2.46 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23563,6 +25187,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、前方、略偏上，前向分量 2.20 m，右向分量 0.65 m，高度差 0.12 m，直线距离 2.29 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23581,6 +25209,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_below",
                       "text_zh": "物体在人的右侧、前方、略偏下，前向分量 0.92 m，右向分量 1.87 m，高度差 -0.08 m，直线距离 2.09 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23599,6 +25231,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、后方、上方，前向分量 -0.70 m，右向分量 1.68 m，高度差 0.17 m，直线距离 1.83 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23617,6 +25253,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_below",
                       "text_zh": "物体在人的右侧、后方、略偏下，前向分量 -0.73 m，右向分量 1.62 m，高度差 -0.06 m，直线距离 1.78 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23635,6 +25275,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -1.00 m，右向分量 1.46 m，高度差 0.04 m，直线距离 1.77 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23653,6 +25297,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.10 m，右向分量 1.38 m，高度差 0.47 m，直线距离 1.82 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23671,6 +25319,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.18 m，右向分量 1.36 m，高度差 0.31 m，直线距离 1.82 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23689,6 +25341,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.21 m，右向分量 1.32 m，高度差 0.16 m，直线距离 1.80 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23707,6 +25363,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.26 m，右向分量 1.30 m，高度差 0.24 m，直线距离 1.83 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23725,6 +25385,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.22 m，右向分量 1.31 m，高度差 0.06 m，直线距离 1.79 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23743,6 +25407,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.20 m，右向分量 1.34 m，高度差 0.15 m，直线距离 1.80 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23761,6 +25429,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、后方、上方，前向分量 -0.80 m，右向分量 1.61 m，高度差 0.28 m，直线距离 1.82 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23779,6 +25451,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的右侧、后方、上方，前向分量 -0.61 m，右向分量 1.67 m，高度差 0.34 m，直线距离 1.81 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   }
                 ],
@@ -23798,6 +25474,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左侧、前方、上方，前向分量 0.27 m，右向分量 -2.71 m，高度差 1.16 m，直线距离 2.97 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "middle": {
@@ -23816,6 +25496,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左侧、前方、上方，前向分量 0.63 m，右向分量 -2.75 m，高度差 0.52 m，直线距离 2.87 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "end": {
@@ -23834,6 +25518,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的右侧、后方、上方，前向分量 -0.61 m，右向分量 1.67 m，高度差 0.34 m，直线距离 1.81 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "changed": true,
@@ -23881,6 +25569,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.82 m，右向分量 -0.46 m，高度差 0.16 m，直线距离 0.95 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23899,6 +25591,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左侧、前方、近似同高，前向分量 0.91 m，右向分量 -0.30 m，高度差 0.02 m，直线距离 0.96 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23917,6 +25613,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左侧、前方、近似同高，前向分量 0.88 m，右向分量 -0.36 m，高度差 -0.03 m，直线距离 0.95 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23935,6 +25635,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左侧、前方、近似同高，前向分量 0.89 m，右向分量 -0.36 m，高度差 0.00 m，直线距离 0.97 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23953,6 +25657,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左侧、前方、近似同高，前向分量 0.88 m，右向分量 -0.39 m，高度差 0.01 m，直线距离 0.96 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23971,6 +25679,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.88 m，右向分量 -0.37 m，高度差 0.22 m，直线距离 0.98 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -23989,6 +25701,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.78 m，右向分量 -0.11 m，高度差 -0.02 m，直线距离 0.79 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24007,6 +25723,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.69 m，右向分量 -0.10 m，高度差 -0.04 m，直线距离 0.69 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24025,6 +25745,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左侧、后方、略偏上，前向分量 -0.46 m，右向分量 -0.51 m，高度差 0.10 m，直线距离 0.70 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24043,6 +25767,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左侧、前后原点附近、略偏上，前向分量 -0.11 m，右向分量 -0.55 m，高度差 0.11 m，直线距离 0.57 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24061,6 +25789,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左侧、前后原点附近、近似同高，前向分量 -0.07 m，右向分量 -0.49 m，高度差 0.00 m，直线距离 0.49 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24079,6 +25811,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左侧、前后原点附近、近似同高，前向分量 -0.11 m，右向分量 -0.38 m，高度差 -0.01 m，直线距离 0.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24097,6 +25833,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "slightly_above",
                       "text_zh": "物体在人的左侧、前后原点附近、略偏上，前向分量 -0.07 m，右向分量 -0.45 m，高度差 0.06 m，直线距离 0.46 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24115,6 +25855,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的左侧、前方、近似同高，前向分量 0.25 m，右向分量 -0.66 m，高度差 0.01 m，直线距离 0.70 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24133,6 +25877,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.27 m，右向分量 -0.66 m，高度差 0.39 m，直线距离 0.82 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24151,6 +25899,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.48 m，右向分量 -0.52 m，高度差 0.57 m，直线距离 0.91 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24169,6 +25921,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.58 m，右向分量 -0.51 m，高度差 0.30 m，直线距离 0.83 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24187,6 +25943,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.59 m，右向分量 -0.45 m，高度差 0.43 m，直线距离 0.85 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24205,6 +25965,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.60 m，右向分量 -0.42 m，高度差 0.49 m，直线距离 0.88 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24223,6 +25987,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.60 m，右向分量 -0.40 m，高度差 0.44 m，直线距离 0.85 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24241,6 +26009,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.60 m，右向分量 -0.37 m，高度差 0.56 m，直线距离 0.90 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24259,6 +26031,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.59 m，右向分量 -0.41 m，高度差 0.49 m，直线距离 0.87 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24277,6 +26053,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.48 m，右向分量 -0.57 m，高度差 0.49 m，直线距离 0.89 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -24295,6 +26075,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "above",
                       "text_zh": "物体在人的左侧、前方、上方，前向分量 0.38 m，右向分量 -0.66 m，高度差 0.44 m，直线距离 0.88 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   }
                 ],
@@ -24314,6 +26098,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左侧、前方、上方，前向分量 0.82 m，右向分量 -0.46 m，高度差 0.16 m，直线距离 0.95 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "middle": {
@@ -24332,6 +26120,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_above",
                     "text_zh": "物体在人的左侧、后方、略偏上，前向分量 -0.46 m，右向分量 -0.51 m，高度差 0.10 m，直线距离 0.70 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "end": {
@@ -24350,6 +26142,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "above",
                     "text_zh": "物体在人的左侧、前方、上方，前向分量 0.38 m，右向分量 -0.66 m，高度差 0.44 m，直线距离 0.88 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "changed": false,
@@ -29009,15 +30805,15 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "It changes from right and front and slightly above to right and behind and slightly above."
+              "text": "It changes from right and behind and slightly above to right and front and slightly above."
             },
             {
               "label": "B",
-              "text": "It stays right and behind and slightly above throughout the whole clip."
+              "text": "It stays right and front and slightly above throughout the whole clip."
             },
             {
               "label": "C",
-              "text": "It changes from right and behind and slightly above to right and front and slightly above."
+              "text": "It changes from right and front and slightly above to right and behind and slightly above."
             },
             {
               "label": "D",
@@ -29025,9 +30821,9 @@ window.QA_DATA = {
             }
           ],
           "correct_option": "A",
-          "correct_answer": "It changes from right and front and slightly above to right and behind and slightly above.",
-          "answer": "It changed: at the beginning it is right and front and slightly above; by the end it is right and behind and slightly above. The person moves 1.07 m and turns about 123.5°.",
-          "explanation": "It changed: at the beginning it is right and front and slightly above; by the end it is right and behind and slightly above. The person moves 1.07 m and turns about 123.5°.",
+          "correct_answer": "It changes from right and behind and slightly above to right and front and slightly above.",
+          "answer": "It changed: at the beginning it is right and behind and slightly above; by the end it is right and front and slightly above. The person moves 1.07 m and turns about 123.5°.",
+          "explanation": "It changed: at the beginning it is right and behind and slightly above; by the end it is right and front and slightly above. The person moves 1.07 m and turns about 123.5°.",
           "status": "ok",
           "method": "Samples body-centric human frames across the full clip and compares object relation at start/middle/end.",
           "result_json": {
@@ -29040,289 +30836,353 @@ window.QA_DATA = {
                 {
                   "frame": 10665,
                   "t_sec_from_center": -7.5,
-                  "relation_label": "right and front and slightly above",
+                  "relation_label": "right and behind and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.7538534694573602,
                       "up": 0.12651879454385248,
-                      "forward": 1.4161318475180902
+                      "forward": -1.4161318475180902
                     },
                     "distance_m": 1.6092642630533769,
                     "horizontal_distance_m": 1.6042831617167521,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.42 m，右向分量 0.75 m，高度差 0.13 m，直线距离 1.61 m"
+                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.42 m，右向分量 0.75 m，高度差 0.13 m，直线距离 1.61 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10680,
                   "t_sec_from_center": -7.0,
-                  "relation_label": "front and above",
+                  "relation_label": "behind and above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.09983311209917695,
                       "up": 0.40059847346633587,
-                      "forward": 1.5581971734621305
+                      "forward": -1.5581971734621305
                     },
                     "distance_m": 1.611962846532245,
                     "horizontal_distance_m": 1.5613920333013038,
                     "lateral_relation": "same_lateral_position",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "above",
-                    "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 1.56 m，右向分量 0.10 m，高度差 0.40 m，直线距离 1.61 m"
+                    "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -1.56 m，右向分量 0.10 m，高度差 0.40 m，直线距离 1.61 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10695,
                   "t_sec_from_center": -6.5,
-                  "relation_label": "right and front and slightly above",
+                  "relation_label": "right and behind and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.7421821360370698,
                       "up": 0.11031731791064728,
-                      "forward": 1.4118974818330028
+                      "forward": -1.4118974818330028
                     },
                     "distance_m": 1.5988929710552613,
                     "horizontal_distance_m": 1.595082700758466,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.41 m，右向分量 0.74 m，高度差 0.11 m，直线距离 1.60 m"
+                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.41 m，右向分量 0.74 m，高度差 0.11 m，直线距离 1.60 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10710,
                   "t_sec_from_center": -6.0,
-                  "relation_label": "right and front and slightly above",
+                  "relation_label": "right and behind and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.6870845922768087,
                       "up": 0.13598534730658363,
-                      "forward": 1.436982789470326
+                      "forward": -1.436982789470326
                     },
                     "distance_m": 1.598592127110665,
                     "horizontal_distance_m": 1.5927977819478867,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.44 m，右向分量 0.69 m，高度差 0.14 m，直线距离 1.60 m"
+                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.44 m，右向分量 0.69 m，高度差 0.14 m，直线距离 1.60 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10725,
                   "t_sec_from_center": -5.5,
-                  "relation_label": "right and front and slightly above",
+                  "relation_label": "right and behind and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.9373924530937483,
                       "up": 0.11308619909298559,
-                      "forward": 1.2824117272872857
+                      "forward": -1.2824117272872857
                     },
                     "distance_m": 1.5925052394973063,
                     "horizontal_distance_m": 1.588484954099684,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.28 m，右向分量 0.94 m，高度差 0.11 m，直线距离 1.59 m"
+                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.28 m，右向分量 0.94 m，高度差 0.11 m，直线距离 1.59 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10740,
                   "t_sec_from_center": -5.0,
-                  "relation_label": "front and above",
+                  "relation_label": "behind and above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.1079713342596736,
                       "up": 0.35499883346541,
-                      "forward": 1.5489643986517918
+                      "forward": -1.5489643986517918
                     },
                     "distance_m": 1.5927877099834502,
                     "horizontal_distance_m": 1.5527229364289437,
                     "lateral_relation": "same_lateral_position",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "above",
-                    "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 1.55 m，右向分量 0.11 m，高度差 0.35 m，直线距离 1.59 m"
+                    "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -1.55 m，右向分量 0.11 m，高度差 0.35 m，直线距离 1.59 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10755,
                   "t_sec_from_center": -4.5,
-                  "relation_label": "front and above",
+                  "relation_label": "behind and above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.1122087495090396,
                       "up": 0.3297425741119256,
-                      "forward": 1.550206027091465
+                      "forward": -1.550206027091465
                     },
                     "distance_m": 1.5888548376359135,
                     "horizontal_distance_m": 1.554261731465163,
                     "lateral_relation": "same_lateral_position",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "above",
-                    "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 1.55 m，右向分量 0.11 m，高度差 0.33 m，直线距离 1.59 m"
+                    "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -1.55 m，右向分量 0.11 m，高度差 0.33 m，直线距离 1.59 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10770,
                   "t_sec_from_center": -4.0,
-                  "relation_label": "front and above",
+                  "relation_label": "behind and above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.10004006680161387,
                       "up": 0.3984225310702532,
-                      "forward": 1.5589592958776135
+                      "forward": -1.5589592958776135
                     },
                     "distance_m": 1.6121732581932138,
                     "horizontal_distance_m": 1.5621658366411986,
                     "lateral_relation": "same_lateral_position",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "above",
-                    "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 1.56 m，右向分量 0.10 m，高度差 0.40 m，直线距离 1.61 m"
+                    "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -1.56 m，右向分量 0.10 m，高度差 0.40 m，直线距离 1.61 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10785,
                   "t_sec_from_center": -3.5,
-                  "relation_label": "front and above",
+                  "relation_label": "behind and above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.10525380026176774,
                       "up": 0.32531242492743373,
-                      "forward": 1.5523213589914469
+                      "forward": -1.5523213589914469
                     },
                     "distance_m": 1.5895307917315613,
                     "horizontal_distance_m": 1.5558855883549396,
                     "lateral_relation": "same_lateral_position",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "above",
-                    "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 1.55 m，右向分量 0.11 m，高度差 0.33 m，直线距离 1.59 m"
+                    "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -1.55 m，右向分量 0.11 m，高度差 0.33 m，直线距离 1.59 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10800,
                   "t_sec_from_center": -3.0,
-                  "relation_label": "behind and above",
+                  "relation_label": "front and above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.09860553796952992,
                       "up": 0.35241205576347145,
-                      "forward": -1.5576799390559066
+                      "forward": 1.5576799390559066
                     },
                     "distance_m": 1.6000887793191068,
                     "horizontal_distance_m": 1.5607978231197894,
                     "lateral_relation": "same_lateral_position",
-                    "longitudinal_relation": "behind",
+                    "longitudinal_relation": "front",
                     "vertical_relation": "above",
-                    "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -1.56 m，右向分量 0.10 m，高度差 0.35 m，直线距离 1.60 m"
+                    "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 1.56 m，右向分量 0.10 m，高度差 0.35 m，直线距离 1.60 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10890,
                   "t_sec_from_center": 0.0,
-                  "relation_label": "right and front and slightly above",
+                  "relation_label": "right and behind and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.823572840140773,
                       "up": 0.05599534298370947,
-                      "forward": 1.2780163194295886
+                      "forward": -1.2780163194295886
                     },
                     "distance_m": 1.521424797412529,
                     "horizontal_distance_m": 1.5203940067449264,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.28 m，右向分量 0.82 m，高度差 0.06 m，直线距离 1.52 m"
+                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.28 m，右向分量 0.82 m，高度差 0.06 m，直线距离 1.52 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10905,
                   "t_sec_from_center": 0.5,
-                  "relation_label": "right and front",
+                  "relation_label": "right and behind",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.8772513948720614,
                       "up": -0.005682229075781475,
-                      "forward": 1.2198313619454828
+                      "forward": -1.2198313619454828
                     },
                     "distance_m": 1.5025281525209497,
                     "horizontal_distance_m": 1.5025174080158767,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "same_height",
-                    "text_zh": "物体在人的右侧、前方、近似同高，前向分量 1.22 m，右向分量 0.88 m，高度差 -0.01 m，直线距离 1.50 m"
+                    "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -1.22 m，右向分量 0.88 m，高度差 -0.01 m，直线距离 1.50 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10920,
                   "t_sec_from_center": 1.0,
-                  "relation_label": "right and behind",
+                  "relation_label": "right and front",
                   "relation": {
                     "human_xyz_m": {
                       "right": 1.061373654311762,
                       "up": 0.04515046229865972,
-                      "forward": -0.9332329362819645
+                      "forward": 0.9332329362819645
                     },
                     "distance_m": 1.4140283984681297,
                     "horizontal_distance_m": 1.4133073789620434,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "behind",
+                    "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
-                    "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -0.93 m，右向分量 1.06 m，高度差 0.05 m，直线距离 1.41 m"
+                    "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.93 m，右向分量 1.06 m，高度差 0.05 m，直线距离 1.41 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10935,
                   "t_sec_from_center": 1.5,
-                  "relation_label": "right and behind and slightly above",
+                  "relation_label": "right and front and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 1.2086471355686141,
                       "up": 0.05859956064984234,
-                      "forward": -0.2587043687493778
+                      "forward": 0.2587043687493778
                     },
                     "distance_m": 1.2374125250847368,
                     "horizontal_distance_m": 1.236024210413465,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "behind",
+                    "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.26 m，右向分量 1.21 m，高度差 0.06 m，直线距离 1.24 m"
+                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.26 m，右向分量 1.21 m，高度差 0.06 m，直线距离 1.24 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10950,
                   "t_sec_from_center": 2.0,
-                  "relation_label": "right and front and slightly above",
+                  "relation_label": "right and behind and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 1.1024509384395424,
                       "up": 0.08519813756356845,
-                      "forward": 0.22855447555730823
+                      "forward": -0.22855447555730823
                     },
                     "distance_m": 1.1291120150843337,
                     "horizontal_distance_m": 1.1258930766122972,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.23 m，右向分量 1.10 m，高度差 0.09 m，直线距离 1.13 m"
+                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.23 m，右向分量 1.10 m，高度差 0.09 m，直线距离 1.13 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10965,
                   "t_sec_from_center": 2.5,
-                  "relation_label": "right and front and slightly above",
+                  "relation_label": "right and behind and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 1.0160762777727512,
                       "up": 0.06646302218773696,
-                      "forward": 0.5244621646630344
+                      "forward": -0.5244621646630344
                     },
                     "distance_m": 1.1453771857924762,
                     "horizontal_distance_m": 1.143447228522403,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.52 m，右向分量 1.02 m，高度差 0.07 m，直线距离 1.15 m"
+                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.52 m，右向分量 1.02 m，高度差 0.07 m，直线距离 1.15 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
@@ -29333,250 +31193,302 @@ window.QA_DATA = {
                     "human_xyz_m": {
                       "right": 1.0906299921237093,
                       "up": 0.10198049064744441,
-                      "forward": 0.09967734273752821
+                      "forward": -0.09967734273752821
                     },
                     "distance_m": 1.0999133478814003,
                     "horizontal_distance_m": 1.0951754893052421,
                     "lateral_relation": "right",
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 0.10 m，右向分量 1.09 m，高度差 0.10 m，直线距离 1.10 m"
+                    "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 -0.10 m，右向分量 1.09 m，高度差 0.10 m，直线距离 1.10 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 10995,
                   "t_sec_from_center": 3.5,
-                  "relation_label": "right and behind and slightly above",
+                  "relation_label": "right and front and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.8522066209003475,
                       "up": 0.10127129794633313,
-                      "forward": -0.3443237253542359
+                      "forward": 0.3443237253542359
                     },
                     "distance_m": 0.9247003992299034,
                     "horizontal_distance_m": 0.9191381574867882,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "behind",
+                    "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.34 m，右向分量 0.85 m，高度差 0.10 m，直线距离 0.92 m"
+                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.34 m，右向分量 0.85 m，高度差 0.10 m，直线距离 0.92 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 11010,
                   "t_sec_from_center": 4.0,
-                  "relation_label": "right and behind and slightly above",
+                  "relation_label": "right and front and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.8089004091956721,
                       "up": 0.12542258069763756,
-                      "forward": -0.335716439661335
+                      "forward": 0.335716439661335
                     },
                     "distance_m": 0.8847351149381739,
                     "horizontal_distance_m": 0.8757998629000855,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "behind",
+                    "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.34 m，右向分量 0.81 m，高度差 0.13 m，直线距离 0.88 m"
+                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.34 m，右向分量 0.81 m，高度差 0.13 m，直线距离 0.88 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 11025,
                   "t_sec_from_center": 4.5,
-                  "relation_label": "right and behind and slightly above",
+                  "relation_label": "right and front and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.860095733159786,
                       "up": 0.08111429002130652,
-                      "forward": -0.15487745432856093
+                      "forward": 0.15487745432856093
                     },
                     "distance_m": 0.8776851508967358,
                     "horizontal_distance_m": 0.8739288850123706,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "behind",
+                    "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.15 m，右向分量 0.86 m，高度差 0.08 m，直线距离 0.88 m"
+                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.15 m，右向分量 0.86 m，高度差 0.08 m，直线距离 0.88 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 11040,
                   "t_sec_from_center": 5.0,
-                  "relation_label": "right and behind",
+                  "relation_label": "right and front",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.6980541543890078,
                       "up": 0.04798546854586988,
-                      "forward": -0.21210974582606648
+                      "forward": 0.21210974582606648
                     },
                     "distance_m": 0.7311448228126339,
                     "horizontal_distance_m": 0.7295684661045536,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "behind",
+                    "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
-                    "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -0.21 m，右向分量 0.70 m，高度差 0.05 m，直线距离 0.73 m"
+                    "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.21 m，右向分量 0.70 m，高度差 0.05 m，直线距离 0.73 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 11055,
                   "t_sec_from_center": 5.5,
-                  "relation_label": "right and behind and slightly above",
+                  "relation_label": "right and front and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.5128123855742621,
                       "up": 0.10833583523084817,
-                      "forward": -0.414073579130006
+                      "forward": 0.414073579130006
                     },
                     "distance_m": 0.6679596731293473,
                     "horizontal_distance_m": 0.6591156740147355,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "behind",
+                    "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.41 m，右向分量 0.51 m，高度差 0.11 m，直线距离 0.67 m"
+                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.41 m，右向分量 0.51 m，高度差 0.11 m，直线距离 0.67 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 11070,
                   "t_sec_from_center": 6.0,
-                  "relation_label": "right and behind and slightly above",
+                  "relation_label": "right and front and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.6080371026112507,
                       "up": 0.10174011571785092,
-                      "forward": -0.44350939214523255
+                      "forward": 0.44350939214523255
                     },
                     "distance_m": 0.7594476612770625,
                     "horizontal_distance_m": 0.7526019526103545,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "behind",
+                    "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.44 m，右向分量 0.61 m，高度差 0.10 m，直线距离 0.76 m"
+                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.44 m，右向分量 0.61 m，高度差 0.10 m，直线距离 0.76 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 11085,
                   "t_sec_from_center": 6.5,
-                  "relation_label": "right and behind",
+                  "relation_label": "right and front",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.6364177415277579,
                       "up": -0.04806611264688515,
-                      "forward": -0.5498529337578342
+                      "forward": 0.5498529337578342
                     },
                     "distance_m": 0.842422780840103,
                     "horizontal_distance_m": 0.8410504090085144,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "behind",
+                    "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
-                    "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -0.55 m，右向分量 0.64 m，高度差 -0.05 m，直线距离 0.84 m"
+                    "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.55 m，右向分量 0.64 m，高度差 -0.05 m，直线距离 0.84 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 11100,
                   "t_sec_from_center": 7.0,
-                  "relation_label": "right and behind and slightly below",
+                  "relation_label": "right and front and slightly below",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.6654535983917947,
                       "up": -0.05524412260936626,
-                      "forward": -0.5027570339068785
+                      "forward": 0.5027570339068785
                     },
                     "distance_m": 0.8358498907329646,
                     "horizontal_distance_m": 0.8340222579496487,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "behind",
+                    "longitudinal_relation": "front",
                     "vertical_relation": "slightly_below",
-                    "text_zh": "物体在人的右侧、后方、略偏下，前向分量 -0.50 m，右向分量 0.67 m，高度差 -0.06 m，直线距离 0.84 m"
+                    "text_zh": "物体在人的右侧、前方、略偏下，前向分量 0.50 m，右向分量 0.67 m，高度差 -0.06 m，直线距离 0.84 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 {
                   "frame": 11115,
                   "t_sec_from_center": 7.5,
-                  "relation_label": "right and behind and slightly above",
+                  "relation_label": "right and front and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.5720950381267528,
                       "up": 0.05139369609302474,
-                      "forward": -0.45648716240625997
+                      "forward": 0.45648716240625997
                     },
                     "distance_m": 0.73369923953148,
                     "horizontal_distance_m": 0.7318970297049783,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "behind",
+                    "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.46 m，右向分量 0.57 m，高度差 0.05 m，直线距离 0.73 m"
+                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.46 m，右向分量 0.57 m，高度差 0.05 m，直线距离 0.73 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 }
               ],
               "start": {
                 "frame": 10665,
                 "t_sec_from_center": -7.5,
-                "relation_label": "right and front and slightly above",
+                "relation_label": "right and behind and slightly above",
                 "relation": {
                   "human_xyz_m": {
                     "right": 0.7538534694573602,
                     "up": 0.12651879454385248,
-                    "forward": 1.4161318475180902
+                    "forward": -1.4161318475180902
                   },
                   "distance_m": 1.6092642630533769,
                   "horizontal_distance_m": 1.6042831617167521,
                   "lateral_relation": "right",
-                  "longitudinal_relation": "front",
+                  "longitudinal_relation": "behind",
                   "vertical_relation": "slightly_above",
-                  "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.42 m，右向分量 0.75 m，高度差 0.13 m，直线距离 1.61 m"
+                  "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.42 m，右向分量 0.75 m，高度差 0.13 m，直线距离 1.61 m"
+                },
+                "orientation": {
+                  "forward_sign": -1,
+                  "source": "visual_review_no_nose"
                 }
               },
               "middle": {
                 "frame": 10890,
                 "t_sec_from_center": 0.0,
-                "relation_label": "right and front and slightly above",
+                "relation_label": "right and behind and slightly above",
                 "relation": {
                   "human_xyz_m": {
                     "right": 0.823572840140773,
                     "up": 0.05599534298370947,
-                    "forward": 1.2780163194295886
+                    "forward": -1.2780163194295886
                   },
                   "distance_m": 1.521424797412529,
                   "horizontal_distance_m": 1.5203940067449264,
                   "lateral_relation": "right",
-                  "longitudinal_relation": "front",
+                  "longitudinal_relation": "behind",
                   "vertical_relation": "slightly_above",
-                  "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.28 m，右向分量 0.82 m，高度差 0.06 m，直线距离 1.52 m"
+                  "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.28 m，右向分量 0.82 m，高度差 0.06 m，直线距离 1.52 m"
+                },
+                "orientation": {
+                  "forward_sign": -1,
+                  "source": "visual_review_no_nose"
                 }
               },
               "end": {
                 "frame": 11115,
                 "t_sec_from_center": 7.5,
-                "relation_label": "right and behind and slightly above",
+                "relation_label": "right and front and slightly above",
                 "relation": {
                   "human_xyz_m": {
                     "right": 0.5720950381267528,
                     "up": 0.05139369609302474,
-                    "forward": -0.45648716240625997
+                    "forward": 0.45648716240625997
                   },
                   "distance_m": 0.73369923953148,
                   "horizontal_distance_m": 0.7318970297049783,
                   "lateral_relation": "right",
-                  "longitudinal_relation": "behind",
+                  "longitudinal_relation": "front",
                   "vertical_relation": "slightly_above",
-                  "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.46 m，右向分量 0.57 m，高度差 0.05 m，直线距离 0.73 m"
+                  "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.46 m，右向分量 0.57 m，高度差 0.05 m，直线距离 0.73 m"
+                },
+                "orientation": {
+                  "forward_sign": -1,
+                  "source": "visual_review_no_nose"
                 }
               },
               "changed": true,
               "changes": [
                 {
                   "axis": "longitudinal_relation",
-                  "from": "front",
-                  "to": "behind"
+                  "from": "behind",
+                  "to": "front"
                 }
               ],
               "dominant_relations": {
-                "right and front and slightly above": 7,
                 "right and behind and slightly above": 7,
-                "front and above": 5,
-                "right and behind": 3,
-                "behind and above": 1,
-                "right and front": 1,
+                "right and front and slightly above": 7,
+                "behind and above": 5,
+                "right and front": 3,
+                "front and above": 1,
+                "right and behind": 1,
                 "right and slightly above": 1,
-                "right and behind and slightly below": 1
+                "right and front and slightly below": 1
               }
             },
             "human_motion": {
@@ -29737,289 +31649,353 @@ window.QA_DATA = {
                   {
                     "frame": 10665,
                     "t_sec_from_center": -7.5,
-                    "relation_label": "right and front and slightly above",
+                    "relation_label": "right and behind and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.7538534694573602,
                         "up": 0.12651879454385248,
-                        "forward": 1.4161318475180902
+                        "forward": -1.4161318475180902
                       },
                       "distance_m": 1.6092642630533769,
                       "horizontal_distance_m": 1.6042831617167521,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.42 m，右向分量 0.75 m，高度差 0.13 m，直线距离 1.61 m"
+                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.42 m，右向分量 0.75 m，高度差 0.13 m，直线距离 1.61 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10680,
                     "t_sec_from_center": -7.0,
-                    "relation_label": "front and above",
+                    "relation_label": "behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.09983311209917695,
                         "up": 0.40059847346633587,
-                        "forward": 1.5581971734621305
+                        "forward": -1.5581971734621305
                       },
                       "distance_m": 1.611962846532245,
                       "horizontal_distance_m": 1.5613920333013038,
                       "lateral_relation": "same_lateral_position",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 1.56 m，右向分量 0.10 m，高度差 0.40 m，直线距离 1.61 m"
+                      "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -1.56 m，右向分量 0.10 m，高度差 0.40 m，直线距离 1.61 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10695,
                     "t_sec_from_center": -6.5,
-                    "relation_label": "right and front and slightly above",
+                    "relation_label": "right and behind and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.7421821360370698,
                         "up": 0.11031731791064728,
-                        "forward": 1.4118974818330028
+                        "forward": -1.4118974818330028
                       },
                       "distance_m": 1.5988929710552613,
                       "horizontal_distance_m": 1.595082700758466,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.41 m，右向分量 0.74 m，高度差 0.11 m，直线距离 1.60 m"
+                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.41 m，右向分量 0.74 m，高度差 0.11 m，直线距离 1.60 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10710,
                     "t_sec_from_center": -6.0,
-                    "relation_label": "right and front and slightly above",
+                    "relation_label": "right and behind and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.6870845922768087,
                         "up": 0.13598534730658363,
-                        "forward": 1.436982789470326
+                        "forward": -1.436982789470326
                       },
                       "distance_m": 1.598592127110665,
                       "horizontal_distance_m": 1.5927977819478867,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.44 m，右向分量 0.69 m，高度差 0.14 m，直线距离 1.60 m"
+                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.44 m，右向分量 0.69 m，高度差 0.14 m，直线距离 1.60 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10725,
                     "t_sec_from_center": -5.5,
-                    "relation_label": "right and front and slightly above",
+                    "relation_label": "right and behind and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.9373924530937483,
                         "up": 0.11308619909298559,
-                        "forward": 1.2824117272872857
+                        "forward": -1.2824117272872857
                       },
                       "distance_m": 1.5925052394973063,
                       "horizontal_distance_m": 1.588484954099684,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.28 m，右向分量 0.94 m，高度差 0.11 m，直线距离 1.59 m"
+                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.28 m，右向分量 0.94 m，高度差 0.11 m，直线距离 1.59 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10740,
                     "t_sec_from_center": -5.0,
-                    "relation_label": "front and above",
+                    "relation_label": "behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.1079713342596736,
                         "up": 0.35499883346541,
-                        "forward": 1.5489643986517918
+                        "forward": -1.5489643986517918
                       },
                       "distance_m": 1.5927877099834502,
                       "horizontal_distance_m": 1.5527229364289437,
                       "lateral_relation": "same_lateral_position",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 1.55 m，右向分量 0.11 m，高度差 0.35 m，直线距离 1.59 m"
+                      "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -1.55 m，右向分量 0.11 m，高度差 0.35 m，直线距离 1.59 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10755,
                     "t_sec_from_center": -4.5,
-                    "relation_label": "front and above",
+                    "relation_label": "behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.1122087495090396,
                         "up": 0.3297425741119256,
-                        "forward": 1.550206027091465
+                        "forward": -1.550206027091465
                       },
                       "distance_m": 1.5888548376359135,
                       "horizontal_distance_m": 1.554261731465163,
                       "lateral_relation": "same_lateral_position",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 1.55 m，右向分量 0.11 m，高度差 0.33 m，直线距离 1.59 m"
+                      "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -1.55 m，右向分量 0.11 m，高度差 0.33 m，直线距离 1.59 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10770,
                     "t_sec_from_center": -4.0,
-                    "relation_label": "front and above",
+                    "relation_label": "behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.10004006680161387,
                         "up": 0.3984225310702532,
-                        "forward": 1.5589592958776135
+                        "forward": -1.5589592958776135
                       },
                       "distance_m": 1.6121732581932138,
                       "horizontal_distance_m": 1.5621658366411986,
                       "lateral_relation": "same_lateral_position",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 1.56 m，右向分量 0.10 m，高度差 0.40 m，直线距离 1.61 m"
+                      "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -1.56 m，右向分量 0.10 m，高度差 0.40 m，直线距离 1.61 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10785,
                     "t_sec_from_center": -3.5,
-                    "relation_label": "front and above",
+                    "relation_label": "behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.10525380026176774,
                         "up": 0.32531242492743373,
-                        "forward": 1.5523213589914469
+                        "forward": -1.5523213589914469
                       },
                       "distance_m": 1.5895307917315613,
                       "horizontal_distance_m": 1.5558855883549396,
                       "lateral_relation": "same_lateral_position",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 1.55 m，右向分量 0.11 m，高度差 0.33 m，直线距离 1.59 m"
+                      "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -1.55 m，右向分量 0.11 m，高度差 0.33 m，直线距离 1.59 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10800,
                     "t_sec_from_center": -3.0,
-                    "relation_label": "behind and above",
+                    "relation_label": "front and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.09860553796952992,
                         "up": 0.35241205576347145,
-                        "forward": -1.5576799390559066
+                        "forward": 1.5576799390559066
                       },
                       "distance_m": 1.6000887793191068,
                       "horizontal_distance_m": 1.5607978231197894,
                       "lateral_relation": "same_lateral_position",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的左右中线附近、后方、上方，前向分量 -1.56 m，右向分量 0.10 m，高度差 0.35 m，直线距离 1.60 m"
+                      "text_zh": "物体在人的左右中线附近、前方、上方，前向分量 1.56 m，右向分量 0.10 m，高度差 0.35 m，直线距离 1.60 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10890,
                     "t_sec_from_center": 0.0,
-                    "relation_label": "right and front and slightly above",
+                    "relation_label": "right and behind and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.823572840140773,
                         "up": 0.05599534298370947,
-                        "forward": 1.2780163194295886
+                        "forward": -1.2780163194295886
                       },
                       "distance_m": 1.521424797412529,
                       "horizontal_distance_m": 1.5203940067449264,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.28 m，右向分量 0.82 m，高度差 0.06 m，直线距离 1.52 m"
+                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.28 m，右向分量 0.82 m，高度差 0.06 m，直线距离 1.52 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10905,
                     "t_sec_from_center": 0.5,
-                    "relation_label": "right and front",
+                    "relation_label": "right and behind",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.8772513948720614,
                         "up": -0.005682229075781475,
-                        "forward": 1.2198313619454828
+                        "forward": -1.2198313619454828
                       },
                       "distance_m": 1.5025281525209497,
                       "horizontal_distance_m": 1.5025174080158767,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "same_height",
-                      "text_zh": "物体在人的右侧、前方、近似同高，前向分量 1.22 m，右向分量 0.88 m，高度差 -0.01 m，直线距离 1.50 m"
+                      "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -1.22 m，右向分量 0.88 m，高度差 -0.01 m，直线距离 1.50 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10920,
                     "t_sec_from_center": 1.0,
-                    "relation_label": "right and behind",
+                    "relation_label": "right and front",
                     "relation": {
                       "human_xyz_m": {
                         "right": 1.061373654311762,
                         "up": 0.04515046229865972,
-                        "forward": -0.9332329362819645
+                        "forward": 0.9332329362819645
                       },
                       "distance_m": 1.4140283984681297,
                       "horizontal_distance_m": 1.4133073789620434,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
-                      "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -0.93 m，右向分量 1.06 m，高度差 0.05 m，直线距离 1.41 m"
+                      "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.93 m，右向分量 1.06 m，高度差 0.05 m，直线距离 1.41 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10935,
                     "t_sec_from_center": 1.5,
-                    "relation_label": "right and behind and slightly above",
+                    "relation_label": "right and front and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 1.2086471355686141,
                         "up": 0.05859956064984234,
-                        "forward": -0.2587043687493778
+                        "forward": 0.2587043687493778
                       },
                       "distance_m": 1.2374125250847368,
                       "horizontal_distance_m": 1.236024210413465,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.26 m，右向分量 1.21 m，高度差 0.06 m，直线距离 1.24 m"
+                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.26 m，右向分量 1.21 m，高度差 0.06 m，直线距离 1.24 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10950,
                     "t_sec_from_center": 2.0,
-                    "relation_label": "right and front and slightly above",
+                    "relation_label": "right and behind and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 1.1024509384395424,
                         "up": 0.08519813756356845,
-                        "forward": 0.22855447555730823
+                        "forward": -0.22855447555730823
                       },
                       "distance_m": 1.1291120150843337,
                       "horizontal_distance_m": 1.1258930766122972,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.23 m，右向分量 1.10 m，高度差 0.09 m，直线距离 1.13 m"
+                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.23 m，右向分量 1.10 m，高度差 0.09 m，直线距离 1.13 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10965,
                     "t_sec_from_center": 2.5,
-                    "relation_label": "right and front and slightly above",
+                    "relation_label": "right and behind and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 1.0160762777727512,
                         "up": 0.06646302218773696,
-                        "forward": 0.5244621646630344
+                        "forward": -0.5244621646630344
                       },
                       "distance_m": 1.1453771857924762,
                       "horizontal_distance_m": 1.143447228522403,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.52 m，右向分量 1.02 m，高度差 0.07 m，直线距离 1.15 m"
+                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.52 m，右向分量 1.02 m，高度差 0.07 m，直线距离 1.15 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
@@ -30030,250 +32006,302 @@ window.QA_DATA = {
                       "human_xyz_m": {
                         "right": 1.0906299921237093,
                         "up": 0.10198049064744441,
-                        "forward": 0.09967734273752821
+                        "forward": -0.09967734273752821
                       },
                       "distance_m": 1.0999133478814003,
                       "horizontal_distance_m": 1.0951754893052421,
                       "lateral_relation": "right",
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 0.10 m，右向分量 1.09 m，高度差 0.10 m，直线距离 1.10 m"
+                      "text_zh": "物体在人的右侧、前后原点附近、略偏上，前向分量 -0.10 m，右向分量 1.09 m，高度差 0.10 m，直线距离 1.10 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10995,
                     "t_sec_from_center": 3.5,
-                    "relation_label": "right and behind and slightly above",
+                    "relation_label": "right and front and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.8522066209003475,
                         "up": 0.10127129794633313,
-                        "forward": -0.3443237253542359
+                        "forward": 0.3443237253542359
                       },
                       "distance_m": 0.9247003992299034,
                       "horizontal_distance_m": 0.9191381574867882,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.34 m，右向分量 0.85 m，高度差 0.10 m，直线距离 0.92 m"
+                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.34 m，右向分量 0.85 m，高度差 0.10 m，直线距离 0.92 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11010,
                     "t_sec_from_center": 4.0,
-                    "relation_label": "right and behind and slightly above",
+                    "relation_label": "right and front and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.8089004091956721,
                         "up": 0.12542258069763756,
-                        "forward": -0.335716439661335
+                        "forward": 0.335716439661335
                       },
                       "distance_m": 0.8847351149381739,
                       "horizontal_distance_m": 0.8757998629000855,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.34 m，右向分量 0.81 m，高度差 0.13 m，直线距离 0.88 m"
+                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.34 m，右向分量 0.81 m，高度差 0.13 m，直线距离 0.88 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11025,
                     "t_sec_from_center": 4.5,
-                    "relation_label": "right and behind and slightly above",
+                    "relation_label": "right and front and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.860095733159786,
                         "up": 0.08111429002130652,
-                        "forward": -0.15487745432856093
+                        "forward": 0.15487745432856093
                       },
                       "distance_m": 0.8776851508967358,
                       "horizontal_distance_m": 0.8739288850123706,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.15 m，右向分量 0.86 m，高度差 0.08 m，直线距离 0.88 m"
+                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.15 m，右向分量 0.86 m，高度差 0.08 m，直线距离 0.88 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11040,
                     "t_sec_from_center": 5.0,
-                    "relation_label": "right and behind",
+                    "relation_label": "right and front",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.6980541543890078,
                         "up": 0.04798546854586988,
-                        "forward": -0.21210974582606648
+                        "forward": 0.21210974582606648
                       },
                       "distance_m": 0.7311448228126339,
                       "horizontal_distance_m": 0.7295684661045536,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
-                      "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -0.21 m，右向分量 0.70 m，高度差 0.05 m，直线距离 0.73 m"
+                      "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.21 m，右向分量 0.70 m，高度差 0.05 m，直线距离 0.73 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11055,
                     "t_sec_from_center": 5.5,
-                    "relation_label": "right and behind and slightly above",
+                    "relation_label": "right and front and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.5128123855742621,
                         "up": 0.10833583523084817,
-                        "forward": -0.414073579130006
+                        "forward": 0.414073579130006
                       },
                       "distance_m": 0.6679596731293473,
                       "horizontal_distance_m": 0.6591156740147355,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.41 m，右向分量 0.51 m，高度差 0.11 m，直线距离 0.67 m"
+                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.41 m，右向分量 0.51 m，高度差 0.11 m，直线距离 0.67 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11070,
                     "t_sec_from_center": 6.0,
-                    "relation_label": "right and behind and slightly above",
+                    "relation_label": "right and front and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.6080371026112507,
                         "up": 0.10174011571785092,
-                        "forward": -0.44350939214523255
+                        "forward": 0.44350939214523255
                       },
                       "distance_m": 0.7594476612770625,
                       "horizontal_distance_m": 0.7526019526103545,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.44 m，右向分量 0.61 m，高度差 0.10 m，直线距离 0.76 m"
+                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.44 m，右向分量 0.61 m，高度差 0.10 m，直线距离 0.76 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11085,
                     "t_sec_from_center": 6.5,
-                    "relation_label": "right and behind",
+                    "relation_label": "right and front",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.6364177415277579,
                         "up": -0.04806611264688515,
-                        "forward": -0.5498529337578342
+                        "forward": 0.5498529337578342
                       },
                       "distance_m": 0.842422780840103,
                       "horizontal_distance_m": 0.8410504090085144,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
-                      "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -0.55 m，右向分量 0.64 m，高度差 -0.05 m，直线距离 0.84 m"
+                      "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.55 m，右向分量 0.64 m，高度差 -0.05 m，直线距离 0.84 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11100,
                     "t_sec_from_center": 7.0,
-                    "relation_label": "right and behind and slightly below",
+                    "relation_label": "right and front and slightly below",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.6654535983917947,
                         "up": -0.05524412260936626,
-                        "forward": -0.5027570339068785
+                        "forward": 0.5027570339068785
                       },
                       "distance_m": 0.8358498907329646,
                       "horizontal_distance_m": 0.8340222579496487,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "slightly_below",
-                      "text_zh": "物体在人的右侧、后方、略偏下，前向分量 -0.50 m，右向分量 0.67 m，高度差 -0.06 m，直线距离 0.84 m"
+                      "text_zh": "物体在人的右侧、前方、略偏下，前向分量 0.50 m，右向分量 0.67 m，高度差 -0.06 m，直线距离 0.84 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11115,
                     "t_sec_from_center": 7.5,
-                    "relation_label": "right and behind and slightly above",
+                    "relation_label": "right and front and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 0.5720950381267528,
                         "up": 0.05139369609302474,
-                        "forward": -0.45648716240625997
+                        "forward": 0.45648716240625997
                       },
                       "distance_m": 0.73369923953148,
                       "horizontal_distance_m": 0.7318970297049783,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.46 m，右向分量 0.57 m，高度差 0.05 m，直线距离 0.73 m"
+                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.46 m，右向分量 0.57 m，高度差 0.05 m，直线距离 0.73 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   }
                 ],
                 "start": {
                   "frame": 10665,
                   "t_sec_from_center": -7.5,
-                  "relation_label": "right and front and slightly above",
+                  "relation_label": "right and behind and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.7538534694573602,
                       "up": 0.12651879454385248,
-                      "forward": 1.4161318475180902
+                      "forward": -1.4161318475180902
                     },
                     "distance_m": 1.6092642630533769,
                     "horizontal_distance_m": 1.6042831617167521,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.42 m，右向分量 0.75 m，高度差 0.13 m，直线距离 1.61 m"
+                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.42 m，右向分量 0.75 m，高度差 0.13 m，直线距离 1.61 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 "middle": {
                   "frame": 10890,
                   "t_sec_from_center": 0.0,
-                  "relation_label": "right and front and slightly above",
+                  "relation_label": "right and behind and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.823572840140773,
                       "up": 0.05599534298370947,
-                      "forward": 1.2780163194295886
+                      "forward": -1.2780163194295886
                     },
                     "distance_m": 1.521424797412529,
                     "horizontal_distance_m": 1.5203940067449264,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.28 m，右向分量 0.82 m，高度差 0.06 m，直线距离 1.52 m"
+                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.28 m，右向分量 0.82 m，高度差 0.06 m，直线距离 1.52 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 "end": {
                   "frame": 11115,
                   "t_sec_from_center": 7.5,
-                  "relation_label": "right and behind and slightly above",
+                  "relation_label": "right and front and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 0.5720950381267528,
                       "up": 0.05139369609302474,
-                      "forward": -0.45648716240625997
+                      "forward": 0.45648716240625997
                     },
                     "distance_m": 0.73369923953148,
                     "horizontal_distance_m": 0.7318970297049783,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "behind",
+                    "longitudinal_relation": "front",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -0.46 m，右向分量 0.57 m，高度差 0.05 m，直线距离 0.73 m"
+                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 0.46 m，右向分量 0.57 m，高度差 0.05 m，直线距离 0.73 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 "changed": true,
                 "changes": [
                   {
                     "axis": "longitudinal_relation",
-                    "from": "front",
-                    "to": "behind"
+                    "from": "behind",
+                    "to": "front"
                   }
                 ],
                 "dominant_relations": {
-                  "right and front and slightly above": 7,
                   "right and behind and slightly above": 7,
-                  "front and above": 5,
-                  "right and behind": 3,
-                  "behind and above": 1,
-                  "right and front": 1,
+                  "right and front and slightly above": 7,
+                  "behind and above": 5,
+                  "right and front": 3,
+                  "front and above": 1,
+                  "right and behind": 1,
                   "right and slightly above": 1,
-                  "right and behind and slightly below": 1
+                  "right and front and slightly below": 1
                 }
               },
               {
@@ -30283,531 +32311,647 @@ window.QA_DATA = {
                   {
                     "frame": 10665,
                     "t_sec_from_center": -7.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.2495582486756973,
                         "up": 0.6438357835348263,
-                        "forward": 2.295274414229864
+                        "forward": -2.295274414229864
                       },
                       "distance_m": 4.030190809913894,
                       "horizontal_distance_m": 3.9784310284526123,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 2.30 m，右向分量 3.25 m，高度差 0.64 m，直线距离 4.03 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -2.30 m，右向分量 3.25 m，高度差 0.64 m，直线距离 4.03 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10680,
                     "t_sec_from_center": -7.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 1.97446348349202,
                         "up": 1.3503047283724858,
-                        "forward": 3.247241241791955
+                        "forward": -3.247241241791955
                       },
                       "distance_m": 4.033163099789431,
                       "horizontal_distance_m": 3.800405469162205,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 3.25 m，右向分量 1.97 m，高度差 1.35 m，直线距离 4.03 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -3.25 m，右向分量 1.97 m，高度差 1.35 m，直线距离 4.03 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10695,
                     "t_sec_from_center": -6.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.2378117856465836,
                         "up": 0.5928046925943509,
-                        "forward": 2.3108354385225756
+                        "forward": -2.3108354385225756
                       },
                       "distance_m": 4.021791017291379,
                       "horizontal_distance_m": 3.977861936166682,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 2.31 m，右向分量 3.24 m，高度差 0.59 m，直线距离 4.02 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -2.31 m，右向分量 3.24 m，高度差 0.59 m，直线距离 4.02 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10710,
                     "t_sec_from_center": -6.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.133470258926813,
                         "up": 0.7039502832681619,
-                        "forward": 2.4176274071805737
+                        "forward": -2.4176274071805737
                       },
                       "distance_m": 4.019838820754242,
                       "horizontal_distance_m": 3.957721332222562,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 2.42 m，右向分量 3.13 m，高度差 0.70 m，直线距离 4.02 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -2.42 m，右向分量 3.13 m，高度差 0.70 m，直线距离 4.02 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10725,
                     "t_sec_from_center": -5.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.5592957004126067,
                         "up": 0.5001636947313223,
-                        "forward": 1.7772301169876683
+                        "forward": -1.7772301169876683
                       },
                       "distance_m": 4.009650420327308,
                       "horizontal_distance_m": 3.9783329136340098,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.78 m，右向分量 3.56 m，高度差 0.50 m，直线距离 4.01 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.78 m，右向分量 3.56 m，高度差 0.50 m，直线距离 4.01 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10740,
                     "t_sec_from_center": -5.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.001270577701794,
                         "up": 1.2465061303321643,
-                        "forward": 3.2488713311429
+                        "forward": -3.2488713311429
                       },
                       "distance_m": 4.014227993581428,
                       "horizontal_distance_m": 3.8157894139348296,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 3.25 m，右向分量 2.00 m，高度差 1.25 m，直线距离 4.01 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -3.25 m，右向分量 2.00 m，高度差 1.25 m，直线距离 4.01 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10755,
                     "t_sec_from_center": -4.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.002342307142311,
                         "up": 1.224401349936021,
-                        "forward": 3.251979124148186
+                        "forward": -3.251979124148186
                       },
                       "distance_m": 4.010473987522266,
                       "horizontal_distance_m": 3.818997635357686,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 3.25 m，右向分量 2.00 m，高度差 1.22 m，直线距离 4.01 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -3.25 m，右向分量 2.00 m，高度差 1.22 m，直线距离 4.01 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10770,
                     "t_sec_from_center": -4.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 1.9848546116196653,
                         "up": 1.3226247132475626,
-                        "forward": 3.2508148815637914
+                        "forward": -3.2508148815637914
                       },
                       "distance_m": 4.031969910051123,
                       "horizontal_distance_m": 3.8088640332078616,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 3.25 m，右向分量 1.98 m，高度差 1.32 m，直线距离 4.03 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -3.25 m，右向分量 1.98 m，高度差 1.32 m，直线距离 4.03 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10785,
                     "t_sec_from_center": -3.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 1.9964922346283207,
                         "up": 1.213983444918636,
-                        "forward": 3.256003215242503
+                        "forward": -3.256003215242503
                       },
                       "distance_m": 4.007654424365607,
                       "horizontal_distance_m": 3.8193635831903596,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 3.26 m，右向分量 2.00 m，高度差 1.21 m，直线距离 4.01 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -3.26 m，右向分量 2.00 m，高度差 1.21 m，直线距离 4.01 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10800,
                     "t_sec_from_center": -3.0,
-                    "relation_label": "right and behind and above",
+                    "relation_label": "right and front and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 1.9899575341402873,
                         "up": 1.2423967544775532,
-                        "forward": -3.2605497894414834
+                        "forward": 3.2605497894414834
                       },
                       "distance_m": 4.016797930272937,
                       "horizontal_distance_m": 3.81983192262547,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -3.26 m，右向分量 1.99 m，高度差 1.24 m，直线距离 4.02 m"
+                      "text_zh": "物体在人的右侧、前方、上方，前向分量 3.26 m，右向分量 1.99 m，高度差 1.24 m，直线距离 4.02 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10890,
                     "t_sec_from_center": 0.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.385000685337468,
                         "up": 0.5406389784766774,
-                        "forward": 1.9659544017768855
+                        "forward": -1.9659544017768855
                       },
                       "distance_m": 3.9516448290109962,
                       "horizontal_distance_m": 3.914486728755258,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.97 m，右向分量 3.39 m，高度差 0.54 m，直线距离 3.95 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.97 m，右向分量 3.39 m，高度差 0.54 m，直线距离 3.95 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10905,
                     "t_sec_from_center": 0.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.4698854547329785,
                         "up": 0.43922556349287384,
-                        "forward": 1.8108952776748086
+                        "forward": -1.8108952776748086
                       },
                       "distance_m": 3.9385740911271485,
                       "horizontal_distance_m": 3.9140064864116426,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.81 m，右向分量 3.47 m，高度差 0.44 m，直线距离 3.94 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.81 m，右向分量 3.47 m，高度差 0.44 m，直线距离 3.94 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10920,
                     "t_sec_from_center": 1.0,
-                    "relation_label": "right and behind and above",
+                    "relation_label": "right and front and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.68735009899414,
                         "up": 0.6558182398482211,
-                        "forward": -0.952814615282428
+                        "forward": 0.952814615282428
                       },
                       "distance_m": 3.8645185996920124,
                       "horizontal_distance_m": 3.808465103377986,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -0.95 m，右向分量 3.69 m，高度差 0.66 m，直线距离 3.86 m"
+                      "text_zh": "物体在人的右侧、前方、上方，前向分量 0.95 m，右向分量 3.69 m，高度差 0.66 m，直线距离 3.86 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10935,
                     "t_sec_from_center": 1.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.465225879776386,
                         "up": 0.6855910270595064,
-                        "forward": 1.0768797495133515
+                        "forward": -1.0768797495133515
                       },
                       "distance_m": 3.6928979743784525,
                       "horizontal_distance_m": 3.628699545675278,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.08 m，右向分量 3.47 m，高度差 0.69 m，直线距离 3.69 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.08 m，右向分量 3.47 m，高度差 0.69 m，直线距离 3.69 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10950,
                     "t_sec_from_center": 2.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.2998357916522347,
                         "up": 0.6494449481900461,
-                        "forward": 2.577372458013839
+                        "forward": -2.577372458013839
                       },
                       "distance_m": 3.5148075618193566,
                       "horizontal_distance_m": 3.454286244058671,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 2.58 m，右向分量 2.30 m，高度差 0.65 m，直线距离 3.51 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -2.58 m，右向分量 2.30 m，高度差 0.65 m，直线距离 3.51 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10965,
                     "t_sec_from_center": 2.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 1.0930020244772372,
                         "up": 0.6530668847690421,
-                        "forward": 3.1548669248881893
+                        "forward": -3.1548669248881893
                       },
                       "distance_m": 3.4021074491036787,
                       "horizontal_distance_m": 3.338837932464647,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 3.15 m，右向分量 1.09 m，高度差 0.65 m，直线距离 3.40 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -3.15 m，右向分量 1.09 m，高度差 0.65 m，直线距离 3.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10980,
                     "t_sec_from_center": 3.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 1.8558393383626108,
                         "up": 0.7260747264400997,
-                        "forward": 2.608464281876744
+                        "forward": -2.608464281876744
                       },
                       "distance_m": 3.282591974037589,
                       "horizontal_distance_m": 3.201284985695733,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 2.61 m，右向分量 1.86 m，高度差 0.73 m，直线距离 3.28 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -2.61 m，右向分量 1.86 m，高度差 0.73 m，直线距离 3.28 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10995,
                     "t_sec_from_center": 3.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.4849725074854003,
                         "up": 0.9100216160166025,
-                        "forward": 1.6428977890577494
+                        "forward": -1.6428977890577494
                       },
                       "distance_m": 3.114858078607529,
                       "horizontal_distance_m": 2.9789598030603095,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.64 m，右向分量 2.48 m，高度差 0.91 m，直线距离 3.11 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.64 m，右向分量 2.48 m，高度差 0.91 m，直线距离 3.11 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11010,
                     "t_sec_from_center": 4.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.346362486800122,
                         "up": 0.7953467328050655,
-                        "forward": 1.775317159092567
+                        "forward": -1.775317159092567
                       },
                       "distance_m": 3.047908194190738,
                       "horizontal_distance_m": 2.9423065671053643,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.78 m，右向分量 2.35 m，高度差 0.80 m，直线距离 3.05 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.78 m，右向分量 2.35 m，高度差 0.80 m，直线距离 3.05 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11025,
                     "t_sec_from_center": 4.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 1.9014129835999867,
                         "up": 0.5965282488836393,
-                        "forward": 2.2780339085578922
+                        "forward": -2.2780339085578922
                       },
                       "distance_m": 3.026657525135332,
                       "horizontal_distance_m": 2.9672899795507264,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 2.28 m，右向分量 1.90 m，高度差 0.60 m，直线距离 3.03 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -2.28 m，右向分量 1.90 m，高度差 0.60 m，直线距离 3.03 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11040,
                     "t_sec_from_center": 5.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 1.9991521309009,
                         "up": 0.580764853809045,
-                        "forward": 2.0883991211144095
+                        "forward": -2.0883991211144095
                       },
                       "distance_m": 2.9487807560035537,
                       "horizontal_distance_m": 2.891024062777245,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 2.09 m，右向分量 2.00 m，高度差 0.58 m，直线距离 2.95 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -2.09 m，右向分量 2.00 m，高度差 0.58 m，直线距离 2.95 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11055,
                     "t_sec_from_center": 5.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.5156373433930543,
                         "up": 0.7523813227857112,
-                        "forward": 1.2720309440282918
+                        "forward": -1.2720309440282918
                       },
                       "distance_m": 2.9176311660173817,
                       "horizontal_distance_m": 2.8189526363596764,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.27 m，右向分量 2.52 m，高度差 0.75 m，直线距离 2.92 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.27 m，右向分量 2.52 m，高度差 0.75 m，直线距离 2.92 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11070,
                     "t_sec_from_center": 6.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.5952513578511396,
                         "up": 0.7696285465154316,
-                        "forward": 1.251765043600974
+                        "forward": -1.251765043600974
                       },
                       "distance_m": 2.9823771448998513,
                       "horizontal_distance_m": 2.881361715371663,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.25 m，右向分量 2.60 m，高度差 0.77 m，直线距离 2.98 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.25 m，右向分量 2.60 m，高度差 0.77 m，直线距离 2.98 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11085,
                     "t_sec_from_center": 6.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.8914324474649993,
                         "up": 0.32530446700997073,
-                        "forward": 0.8800260649584835
+                        "forward": -0.8800260649584835
                       },
                       "distance_m": 3.039843823211382,
                       "horizontal_distance_m": 3.0223877106122155,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 0.88 m，右向分量 2.89 m，高度差 0.33 m，直线距离 3.04 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -0.88 m，右向分量 2.89 m，高度差 0.33 m，直线距离 3.04 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11100,
                     "t_sec_from_center": 7.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.844329819511509,
                         "up": 0.29977233324939884,
-                        "forward": 1.044987322834588
+                        "forward": -1.044987322834588
                       },
                       "distance_m": 3.0450080589103803,
                       "horizontal_distance_m": 3.0302162673722437,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.04 m，右向分量 2.84 m，高度差 0.30 m，直线距离 3.05 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.04 m，右向分量 2.84 m，高度差 0.30 m，直线距离 3.05 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11115,
                     "t_sec_from_center": 7.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.6897790129536534,
                         "up": 0.6310455609850694,
-                        "forward": 1.1082713374923714
+                        "forward": -1.1082713374923714
                       },
                       "distance_m": 2.9768095330524624,
                       "horizontal_distance_m": 2.9091539141188556,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.11 m，右向分量 2.69 m，高度差 0.63 m，直线距离 2.98 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.11 m，右向分量 2.69 m，高度差 0.63 m，直线距离 2.98 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   }
                 ],
                 "start": {
                   "frame": 10665,
                   "t_sec_from_center": -7.5,
-                  "relation_label": "right and front and above",
+                  "relation_label": "right and behind and above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 3.2495582486756973,
                       "up": 0.6438357835348263,
-                      "forward": 2.295274414229864
+                      "forward": -2.295274414229864
                     },
                     "distance_m": 4.030190809913894,
                     "horizontal_distance_m": 3.9784310284526123,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "above",
-                    "text_zh": "物体在人的右侧、前方、上方，前向分量 2.30 m，右向分量 3.25 m，高度差 0.64 m，直线距离 4.03 m"
+                    "text_zh": "物体在人的右侧、后方、上方，前向分量 -2.30 m，右向分量 3.25 m，高度差 0.64 m，直线距离 4.03 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 "middle": {
                   "frame": 10890,
                   "t_sec_from_center": 0.0,
-                  "relation_label": "right and front and above",
+                  "relation_label": "right and behind and above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 3.385000685337468,
                       "up": 0.5406389784766774,
-                      "forward": 1.9659544017768855
+                      "forward": -1.9659544017768855
                     },
                     "distance_m": 3.9516448290109962,
                     "horizontal_distance_m": 3.914486728755258,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "above",
-                    "text_zh": "物体在人的右侧、前方、上方，前向分量 1.97 m，右向分量 3.39 m，高度差 0.54 m，直线距离 3.95 m"
+                    "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.97 m，右向分量 3.39 m，高度差 0.54 m，直线距离 3.95 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 "end": {
                   "frame": 11115,
                   "t_sec_from_center": 7.5,
-                  "relation_label": "right and front and above",
+                  "relation_label": "right and behind and above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 2.6897790129536534,
                       "up": 0.6310455609850694,
-                      "forward": 1.1082713374923714
+                      "forward": -1.1082713374923714
                     },
                     "distance_m": 2.9768095330524624,
                     "horizontal_distance_m": 2.9091539141188556,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "above",
-                    "text_zh": "物体在人的右侧、前方、上方，前向分量 1.11 m，右向分量 2.69 m，高度差 0.63 m，直线距离 2.98 m"
+                    "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.11 m，右向分量 2.69 m，高度差 0.63 m，直线距离 2.98 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 "changed": false,
                 "changes": [],
                 "dominant_relations": {
-                  "right and front and above": 24,
-                  "right and behind and above": 2
+                  "right and behind and above": 24,
+                  "right and front and above": 2
                 }
               },
               {
@@ -30817,535 +32961,651 @@ window.QA_DATA = {
                   {
                     "frame": 10665,
                     "t_sec_from_center": -7.5,
-                    "relation_label": "right and front and slightly above",
+                    "relation_label": "right and behind and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 4.20700247323378,
                         "up": 0.14813424894833485,
-                        "forward": 2.9727494778982386
+                        "forward": -2.9727494778982386
                       },
                       "distance_m": 5.1534505939080155,
                       "horizontal_distance_m": 5.1513211187169645,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 2.97 m，右向分量 4.21 m，高度差 0.15 m，直线距离 5.15 m"
+                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -2.97 m，右向分量 4.21 m，高度差 0.15 m，直线距离 5.15 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10680,
                     "t_sec_from_center": -7.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.605607056173908,
                         "up": 1.073427374324621,
-                        "forward": 4.317936641007482
+                        "forward": -4.317936641007482
                       },
                       "distance_m": 5.156162458155066,
                       "horizontal_distance_m": 5.043189959434231,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 4.32 m，右向分量 2.61 m，高度差 1.07 m，直线距离 5.16 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -4.32 m，右向分量 2.61 m，高度差 1.07 m，直线距离 5.16 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10695,
                     "t_sec_from_center": -6.5,
-                    "relation_label": "right and front and slightly above",
+                    "relation_label": "right and behind and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 4.183257876695655,
                         "up": 0.083374223104621,
-                        "forward": 2.994943764812356
+                        "forward": -2.994943764812356
                       },
                       "distance_m": 5.145511235864027,
                       "horizontal_distance_m": 5.144835723064892,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 2.99 m，右向分量 4.18 m，高度差 0.08 m，直线距离 5.15 m"
+                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -2.99 m，右向分量 4.18 m，高度差 0.08 m，直线距离 5.15 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10710,
                     "t_sec_from_center": -6.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 4.073046299319557,
                         "up": 0.22692311666316836,
-                        "forward": 3.1324937324919584
+                        "forward": -3.1324937324919584
                       },
                       "distance_m": 5.143317727049173,
                       "horizontal_distance_m": 5.138309365978477,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 3.13 m，右向分量 4.07 m，高度差 0.23 m，直线距离 5.14 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -3.13 m，右向分量 4.07 m，高度差 0.23 m，直线距离 5.14 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10725,
                     "t_sec_from_center": -5.5,
-                    "relation_label": "right and front",
+                    "relation_label": "right and behind",
                     "relation": {
                       "human_xyz_m": {
                         "right": 4.573279239313605,
                         "up": -0.03134226275393287,
-                        "forward": 2.334662369749374
+                        "forward": -2.334662369749374
                       },
                       "distance_m": 5.134833368172245,
                       "horizontal_distance_m": 5.134737713015202,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "same_height",
-                      "text_zh": "物体在人的右侧、前方、近似同高，前向分量 2.33 m，右向分量 4.57 m，高度差 -0.03 m，直线距离 5.13 m"
+                      "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -2.33 m，右向分量 4.57 m，高度差 -0.03 m，直线距离 5.13 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10740,
                     "t_sec_from_center": -5.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.6362148648892147,
                         "up": 0.9380625991785938,
-                        "forward": 4.308635576945274
+                        "forward": -4.308635576945274
                       },
                       "distance_m": 5.137502388199844,
                       "horizontal_distance_m": 5.051135451438755,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 4.31 m，右向分量 2.64 m，高度差 0.94 m，直线距离 5.14 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -4.31 m，右向分量 2.64 m，高度差 0.94 m，直线距离 5.14 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10755,
                     "t_sec_from_center": -4.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.6371056912214472,
                         "up": 0.9167942200648427,
-                        "forward": 4.312094785907939
+                        "forward": -4.312094785907939
                       },
                       "distance_m": 5.137022436321578,
                       "horizontal_distance_m": 5.054551203551803,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 4.31 m，右向分量 2.64 m，高度差 0.92 m，直线距离 5.14 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -4.31 m，右向分量 2.64 m，高度差 0.92 m，直线距离 5.14 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10770,
                     "t_sec_from_center": -4.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.6084122993084518,
                         "up": 1.0386414024233372,
-                        "forward": 4.3240908040185095
+                        "forward": -4.3240908040185095
                       },
                       "distance_m": 5.155613636358814,
                       "horizontal_distance_m": 5.04990851447638,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 4.32 m，右向分量 2.61 m，高度差 1.04 m，直线距离 5.16 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -4.32 m，右向分量 2.61 m，高度差 1.04 m，直线距离 5.16 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10785,
                     "t_sec_from_center": -3.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.6308606050751644,
                         "up": 0.9033288632148389,
-                        "forward": 4.3154664840095505
+                        "forward": -4.3154664840095505
                       },
                       "distance_m": 5.134265432665439,
                       "horizontal_distance_m": 5.0541743636271805,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 4.32 m，右向分量 2.63 m，高度差 0.90 m，直线距离 5.13 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -4.32 m，右向分量 2.63 m，高度差 0.90 m，直线距离 5.13 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10800,
                     "t_sec_from_center": -3.0,
-                    "relation_label": "right and behind and above",
+                    "relation_label": "right and front and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.6124226204014245,
                         "up": 0.9402479506631019,
-                        "forward": -4.329490963296673
+                        "forward": 4.329490963296673
                       },
                       "distance_m": 5.14327815284948,
                       "horizontal_distance_m": 5.056603993675261,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -4.33 m，右向分量 2.61 m，高度差 0.94 m，直线距离 5.14 m"
+                      "text_zh": "物体在人的右侧、前方、上方，前向分量 4.33 m，右向分量 2.61 m，高度差 0.94 m，直线距离 5.14 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10890,
                     "t_sec_from_center": 0.0,
-                    "relation_label": "right and front",
+                    "relation_label": "right and behind",
                     "relation": {
                       "human_xyz_m": {
                         "right": 4.388576301196521,
                         "up": 0.026798443800219007,
-                        "forward": 2.5577278420393177
+                        "forward": -2.5577278420393177
                       },
                       "distance_m": 5.079595635673862,
                       "horizontal_distance_m": 5.0795249448513236,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "same_height",
-                      "text_zh": "物体在人的右侧、前方、近似同高，前向分量 2.56 m，右向分量 4.39 m，高度差 0.03 m，直线距离 5.08 m"
+                      "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -2.56 m，右向分量 4.39 m，高度差 0.03 m，直线距离 5.08 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10905,
                     "t_sec_from_center": 0.5,
-                    "relation_label": "right and front and slightly below",
+                    "relation_label": "right and behind and slightly below",
                     "relation": {
                       "human_xyz_m": {
                         "right": 4.496475125297667,
                         "up": -0.10373573233077443,
-                        "forward": 2.3331007888970565
+                        "forward": -2.3331007888970565
                       },
                       "distance_m": 5.066794740833196,
                       "horizontal_distance_m": 5.065732705500038,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_below",
-                      "text_zh": "物体在人的右侧、前方、略偏下，前向分量 2.33 m，右向分量 4.50 m，高度差 -0.10 m，直线距离 5.07 m"
+                      "text_zh": "物体在人的右侧、后方、略偏下，前向分量 -2.33 m，右向分量 4.50 m，高度差 -0.10 m，直线距离 5.07 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10920,
                     "t_sec_from_center": 1.0,
-                    "relation_label": "right and behind and above",
+                    "relation_label": "right and front and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 4.836030971796359,
                         "up": 0.17602754020892164,
-                        "forward": -1.220629949834922
+                        "forward": 1.220629949834922
                       },
                       "distance_m": 4.99080341523483,
                       "horizontal_distance_m": 4.987698169958527,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "behind",
+                      "longitudinal_relation": "front",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.22 m，右向分量 4.84 m，高度差 0.18 m，直线距离 4.99 m"
+                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.22 m，右向分量 4.84 m，高度差 0.18 m，直线距离 4.99 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10935,
                     "t_sec_from_center": 1.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 4.603003262534479,
                         "up": 0.2240259576339501,
-                        "forward": 1.4142404324534725
+                        "forward": -1.4142404324534725
                       },
                       "distance_m": 4.820570782115231,
                       "horizontal_distance_m": 4.815362399206236,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.41 m，右向分量 4.60 m，高度差 0.22 m，直线距离 4.82 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.41 m，右向分量 4.60 m，高度差 0.22 m，直线距离 4.82 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10950,
                     "t_sec_from_center": 2.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.11006965080854,
                         "up": 0.17819587894048047,
-                        "forward": 3.439252568372349
+                        "forward": -3.439252568372349
                       },
                       "distance_m": 4.640338913614772,
                       "horizontal_distance_m": 4.636916158605431,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 3.44 m，右向分量 3.11 m，高度差 0.18 m，直线距离 4.64 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -3.44 m，右向分量 3.11 m，高度差 0.18 m，直线距离 4.64 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10965,
                     "t_sec_from_center": 2.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 1.4237842047657268,
                         "up": 0.1771882709555757,
-                        "forward": 4.288672292022278
+                        "forward": -4.288672292022278
                       },
                       "distance_m": 4.522307726533459,
                       "horizontal_distance_m": 4.518835191739128,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 4.29 m，右向分量 1.42 m，高度差 0.18 m，直线距离 4.52 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -4.29 m，右向分量 1.42 m，高度差 0.18 m，直线距离 4.52 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10980,
                     "t_sec_from_center": 3.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.4779257579628013,
                         "up": 0.26748761906536517,
-                        "forward": 3.620441686724397
+                        "forward": -3.620441686724397
                       },
                       "distance_m": 4.395368436809431,
                       "horizontal_distance_m": 4.387221679941341,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 3.62 m，右向分量 2.48 m，高度差 0.27 m，直线距离 4.40 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -3.62 m，右向分量 2.48 m，高度差 0.27 m，直线距离 4.40 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 10995,
                     "t_sec_from_center": 3.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.4565445960734826,
                         "up": 0.5293569038039089,
-                        "forward": 2.37264704049698
+                        "forward": -2.37264704049698
                       },
                       "distance_m": 4.225798534600145,
                       "horizontal_distance_m": 4.192511720129578,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 2.37 m，右向分量 3.46 m，高度差 0.53 m，直线距离 4.23 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -2.37 m，右向分量 3.46 m，高度差 0.53 m，直线距离 4.23 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11010,
                     "t_sec_from_center": 4.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.2986419428145073,
                         "up": 0.3739114494199436,
-                        "forward": 2.508084554651723
+                        "forward": -2.508084554651723
                       },
                       "distance_m": 4.1606894347193135,
                       "horizontal_distance_m": 4.143854099769634,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 2.51 m，右向分量 3.30 m，高度差 0.37 m，直线距离 4.16 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -2.51 m，右向分量 3.30 m，高度差 0.37 m，直线距离 4.16 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11025,
                     "t_sec_from_center": 4.5,
-                    "relation_label": "right and front and slightly above",
+                    "relation_label": "right and behind and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.640361116402343,
                         "up": 0.10011075543867119,
-                        "forward": 3.1884828338981475
+                        "forward": -3.1884828338981475
                       },
                       "distance_m": 4.141008545080182,
                       "horizontal_distance_m": 4.139798256808246,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 3.19 m，右向分量 2.64 m，高度差 0.10 m，直线距离 4.14 m"
+                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -3.19 m，右向分量 2.64 m，高度差 0.10 m，直线距离 4.14 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11040,
                     "t_sec_from_center": 5.0,
-                    "relation_label": "right and front and slightly above",
+                    "relation_label": "right and behind and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 2.8264410273565628,
                         "up": 0.08699891171986124,
-                        "forward": 2.9209735578210942
+                        "forward": -2.9209735578210942
                       },
                       "distance_m": 4.065516476077164,
                       "horizontal_distance_m": 4.064585514737566,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 2.92 m，右向分量 2.83 m，高度差 0.09 m，直线距离 4.07 m"
+                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -2.92 m，右向分量 2.83 m，高度差 0.09 m，直线距离 4.07 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11055,
                     "t_sec_from_center": 5.5,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.6158040693379854,
                         "up": 0.3225528534888258,
-                        "forward": 1.7477121172199668
+                        "forward": -1.7477121172199668
                       },
                       "distance_m": 4.028967244321107,
                       "horizontal_distance_m": 4.016034949115687,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.75 m，右向分量 3.62 m，高度差 0.32 m，直线距离 4.03 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.75 m，右向分量 3.62 m，高度差 0.32 m，直线距离 4.03 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11070,
                     "t_sec_from_center": 6.0,
-                    "relation_label": "right and front and above",
+                    "relation_label": "right and behind and above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.6894503431559027,
                         "up": 0.34536596840646966,
-                        "forward": 1.7458518394150944
+                        "forward": -1.7458518394150944
                       },
                       "distance_m": 4.096256843990085,
                       "horizontal_distance_m": 4.081671530121242,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "above",
-                      "text_zh": "物体在人的右侧、前方、上方，前向分量 1.75 m，右向分量 3.69 m，高度差 0.35 m，直线距离 4.10 m"
+                      "text_zh": "物体在人的右侧、后方、上方，前向分量 -1.75 m，右向分量 3.69 m，高度差 0.35 m，直线距离 4.10 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11085,
                     "t_sec_from_center": 6.5,
-                    "relation_label": "right and front and below",
+                    "relation_label": "right and behind and below",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.9233357085733642,
                         "up": -0.27823333176375065,
-                        "forward": 1.3185573655389464
+                        "forward": -1.3185573655389464
                       },
                       "distance_m": 4.148321394888326,
                       "horizontal_distance_m": 4.1389801410956135,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "below",
-                      "text_zh": "物体在人的右侧、前方、下方，前向分量 1.32 m，右向分量 3.92 m，高度差 -0.28 m，直线距离 4.15 m"
+                      "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.32 m，右向分量 3.92 m，高度差 -0.28 m，直线距离 4.15 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11100,
                     "t_sec_from_center": 7.0,
-                    "relation_label": "right and front and below",
+                    "relation_label": "right and behind and below",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.8501380454462177,
                         "up": -0.3105823884000455,
-                        "forward": 1.5320282275087274
+                        "forward": -1.5320282275087274
                       },
                       "distance_m": 4.155374216464773,
                       "horizontal_distance_m": 4.143751133800865,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "below",
-                      "text_zh": "物体在人的右侧、前方、下方，前向分量 1.53 m，右向分量 3.85 m，高度差 -0.31 m，直线距离 4.16 m"
+                      "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.53 m，右向分量 3.85 m，高度差 -0.31 m，直线距离 4.16 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   },
                   {
                     "frame": 11115,
                     "t_sec_from_center": 7.5,
-                    "relation_label": "right and front and slightly above",
+                    "relation_label": "right and behind and slightly above",
                     "relation": {
                       "human_xyz_m": {
                         "right": 3.7789221797538937,
                         "up": 0.14765939165757327,
-                        "forward": 1.5571553870405077
+                        "forward": -1.5571553870405077
                       },
                       "distance_m": 4.089839732308575,
                       "horizontal_distance_m": 4.087173319058686,
                       "lateral_relation": "right",
-                      "longitudinal_relation": "front",
+                      "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_above",
-                      "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.56 m，右向分量 3.78 m，高度差 0.15 m，直线距离 4.09 m"
+                      "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.56 m，右向分量 3.78 m，高度差 0.15 m，直线距离 4.09 m"
+                    },
+                    "orientation": {
+                      "forward_sign": -1,
+                      "source": "visual_review_no_nose"
                     }
                   }
                 ],
                 "start": {
                   "frame": 10665,
                   "t_sec_from_center": -7.5,
-                  "relation_label": "right and front and slightly above",
+                  "relation_label": "right and behind and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 4.20700247323378,
                       "up": 0.14813424894833485,
-                      "forward": 2.9727494778982386
+                      "forward": -2.9727494778982386
                     },
                     "distance_m": 5.1534505939080155,
                     "horizontal_distance_m": 5.1513211187169645,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 2.97 m，右向分量 4.21 m，高度差 0.15 m，直线距离 5.15 m"
+                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -2.97 m，右向分量 4.21 m，高度差 0.15 m，直线距离 5.15 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 "middle": {
                   "frame": 10890,
                   "t_sec_from_center": 0.0,
-                  "relation_label": "right and front",
+                  "relation_label": "right and behind",
                   "relation": {
                     "human_xyz_m": {
                       "right": 4.388576301196521,
                       "up": 0.026798443800219007,
-                      "forward": 2.5577278420393177
+                      "forward": -2.5577278420393177
                     },
                     "distance_m": 5.079595635673862,
                     "horizontal_distance_m": 5.0795249448513236,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "same_height",
-                    "text_zh": "物体在人的右侧、前方、近似同高，前向分量 2.56 m，右向分量 4.39 m，高度差 0.03 m，直线距离 5.08 m"
+                    "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -2.56 m，右向分量 4.39 m，高度差 0.03 m，直线距离 5.08 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 "end": {
                   "frame": 11115,
                   "t_sec_from_center": 7.5,
-                  "relation_label": "right and front and slightly above",
+                  "relation_label": "right and behind and slightly above",
                   "relation": {
                     "human_xyz_m": {
                       "right": 3.7789221797538937,
                       "up": 0.14765939165757327,
-                      "forward": 1.5571553870405077
+                      "forward": -1.5571553870405077
                     },
                     "distance_m": 4.089839732308575,
                     "horizontal_distance_m": 4.087173319058686,
                     "lateral_relation": "right",
-                    "longitudinal_relation": "front",
+                    "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_above",
-                    "text_zh": "物体在人的右侧、前方、略偏上，前向分量 1.56 m，右向分量 3.78 m，高度差 0.15 m，直线距离 4.09 m"
+                    "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.56 m，右向分量 3.78 m，高度差 0.15 m，直线距离 4.09 m"
+                  },
+                  "orientation": {
+                    "forward_sign": -1,
+                    "source": "visual_review_no_nose"
                   }
                 },
                 "changed": false,
                 "changes": [],
                 "dominant_relations": {
-                  "right and front and above": 14,
-                  "right and front and slightly above": 5,
-                  "right and front": 2,
-                  "right and behind and above": 2,
-                  "right and front and below": 2,
-                  "right and front and slightly below": 1
+                  "right and behind and above": 14,
+                  "right and behind and slightly above": 5,
+                  "right and behind": 2,
+                  "right and front and above": 2,
+                  "right and behind and below": 2,
+                  "right and behind and slightly below": 1
                 }
               }
             ],
@@ -35920,6 +38180,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的右侧、前后原点附近、下方，前向分量 0.11 m，右向分量 0.48 m，高度差 -0.25 m，直线距离 0.55 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -35938,6 +38202,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "slightly_below",
                     "text_zh": "物体在人的右侧、前后原点附近、略偏下，前向分量 -0.14 m，右向分量 0.54 m，高度差 -0.13 m，直线距离 0.57 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -35956,6 +38224,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.17 m，右向分量 0.53 m，高度差 -0.02 m，直线距离 0.56 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -35974,6 +38246,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.19 m，右向分量 0.56 m，高度差 -0.04 m，直线距离 0.60 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -35992,6 +38268,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_below",
                     "text_zh": "物体在人的右侧、前方、略偏下，前向分量 0.23 m，右向分量 0.59 m，高度差 -0.08 m，直线距离 0.64 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36010,6 +38290,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.38 m，右向分量 0.63 m，高度差 -0.03 m，直线距离 0.73 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36028,6 +38312,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的右侧、前方、下方，前向分量 0.56 m，右向分量 0.38 m，高度差 -0.15 m，直线距离 0.70 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36046,6 +38334,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左侧、前方、下方，前向分量 0.34 m，右向分量 -0.33 m，高度差 -0.17 m，直线距离 0.50 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36064,6 +38356,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左侧、前后原点附近、下方，前向分量 -0.13 m，右向分量 -0.47 m，高度差 -0.15 m，直线距离 0.51 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36082,6 +38378,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "slightly_below",
                     "text_zh": "物体在人的左侧、前方、略偏下，前向分量 0.15 m，右向分量 -0.72 m，高度差 -0.14 m，直线距离 0.75 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36100,6 +38400,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左侧、前方、下方，前向分量 0.19 m，右向分量 -0.78 m，高度差 -0.18 m，直线距离 0.82 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36118,6 +38422,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的左侧、后方、下方，前向分量 -0.54 m，右向分量 -0.50 m，高度差 -0.21 m，直线距离 0.77 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36136,6 +38444,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_below",
                     "text_zh": "物体在人的右侧、后方、略偏下，前向分量 -0.98 m，右向分量 0.31 m，高度差 -0.13 m，直线距离 1.04 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36154,6 +38466,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "same_height",
                     "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -0.97 m，右向分量 1.10 m，高度差 -0.03 m，直线距离 1.47 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36172,6 +38488,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.36 m，右向分量 1.04 m，高度差 -0.45 m，直线距离 1.77 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36190,6 +38510,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.08 m，右向分量 1.47 m，高度差 -0.27 m，直线距离 1.85 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36208,6 +38532,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_below",
                     "text_zh": "物体在人的右侧、后方、略偏下，前向分量 -0.96 m，右向分量 1.57 m，高度差 -0.09 m，直线距离 1.85 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36226,6 +38554,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.06 m，右向分量 1.50 m，高度差 -0.19 m，直线距离 1.84 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36244,6 +38576,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.42 m，右向分量 1.07 m，高度差 -0.41 m，直线距离 1.82 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36262,6 +38598,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.38 m，右向分量 1.22 m，高度差 -0.25 m，直线距离 1.85 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36280,6 +38620,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.06 m，右向分量 1.49 m，高度差 -0.25 m，直线距离 1.84 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 {
@@ -36298,6 +38642,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_below",
                     "text_zh": "物体在人的右侧、后方、略偏下，前向分量 -1.06 m，右向分量 1.52 m，高度差 -0.09 m，直线距离 1.86 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 }
               ],
@@ -36317,6 +38665,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "same_longitudinal_position",
                   "vertical_relation": "below",
                   "text_zh": "物体在人的右侧、前后原点附近、下方，前向分量 0.11 m，右向分量 0.48 m，高度差 -0.25 m，直线距离 0.55 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "middle": {
@@ -36335,6 +38687,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "front",
                   "vertical_relation": "below",
                   "text_zh": "物体在人的右侧、前方、下方，前向分量 0.56 m，右向分量 0.38 m，高度差 -0.15 m，直线距离 0.70 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "end": {
@@ -36353,6 +38709,10 @@ window.QA_DATA = {
                   "longitudinal_relation": "behind",
                   "vertical_relation": "slightly_below",
                   "text_zh": "物体在人的右侧、后方、略偏下，前向分量 -1.06 m，右向分量 1.52 m，高度差 -0.09 m，直线距离 1.86 m"
+                },
+                "orientation": {
+                  "forward_sign": 1,
+                  "source": "nose_or_body_cross_product"
                 }
               },
               "changed": true,
@@ -36550,6 +38910,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的右侧、前后原点附近、下方，前向分量 0.11 m，右向分量 0.48 m，高度差 -0.25 m，直线距离 0.55 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36568,6 +38932,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "slightly_below",
                       "text_zh": "物体在人的右侧、前后原点附近、略偏下，前向分量 -0.14 m，右向分量 0.54 m，高度差 -0.13 m，直线距离 0.57 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36586,6 +38954,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.17 m，右向分量 0.53 m，高度差 -0.02 m，直线距离 0.56 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36604,6 +38976,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.19 m，右向分量 0.56 m，高度差 -0.04 m，直线距离 0.60 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36622,6 +38998,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_below",
                       "text_zh": "物体在人的右侧、前方、略偏下，前向分量 0.23 m，右向分量 0.59 m，高度差 -0.08 m，直线距离 0.64 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36640,6 +39020,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、前方、近似同高，前向分量 0.38 m，右向分量 0.63 m，高度差 -0.03 m，直线距离 0.73 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36658,6 +39042,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的右侧、前方、下方，前向分量 0.56 m，右向分量 0.38 m，高度差 -0.15 m，直线距离 0.70 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36676,6 +39064,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左侧、前方、下方，前向分量 0.34 m，右向分量 -0.33 m，高度差 -0.17 m，直线距离 0.50 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36694,6 +39086,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "same_longitudinal_position",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左侧、前后原点附近、下方，前向分量 -0.13 m，右向分量 -0.47 m，高度差 -0.15 m，直线距离 0.51 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36712,6 +39108,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "slightly_below",
                       "text_zh": "物体在人的左侧、前方、略偏下，前向分量 0.15 m，右向分量 -0.72 m，高度差 -0.14 m，直线距离 0.75 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36730,6 +39130,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "front",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左侧、前方、下方，前向分量 0.19 m，右向分量 -0.78 m，高度差 -0.18 m，直线距离 0.82 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36748,6 +39152,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的左侧、后方、下方，前向分量 -0.54 m，右向分量 -0.50 m，高度差 -0.21 m，直线距离 0.77 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36766,6 +39174,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_below",
                       "text_zh": "物体在人的右侧、后方、略偏下，前向分量 -0.98 m，右向分量 0.31 m，高度差 -0.13 m，直线距离 1.04 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36784,6 +39196,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "same_height",
                       "text_zh": "物体在人的右侧、后方、近似同高，前向分量 -0.97 m，右向分量 1.10 m，高度差 -0.03 m，直线距离 1.47 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36802,6 +39218,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.36 m，右向分量 1.04 m，高度差 -0.45 m，直线距离 1.77 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36820,6 +39240,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.08 m，右向分量 1.47 m，高度差 -0.27 m，直线距离 1.85 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36838,6 +39262,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_below",
                       "text_zh": "物体在人的右侧、后方、略偏下，前向分量 -0.96 m，右向分量 1.57 m，高度差 -0.09 m，直线距离 1.85 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36856,6 +39284,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.06 m，右向分量 1.50 m，高度差 -0.19 m，直线距离 1.84 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36874,6 +39306,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.42 m，右向分量 1.07 m，高度差 -0.41 m，直线距离 1.82 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36892,6 +39328,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.38 m，右向分量 1.22 m，高度差 -0.25 m，直线距离 1.85 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36910,6 +39350,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "below",
                       "text_zh": "物体在人的右侧、后方、下方，前向分量 -1.06 m，右向分量 1.49 m，高度差 -0.25 m，直线距离 1.84 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   },
                   {
@@ -36928,6 +39372,10 @@ window.QA_DATA = {
                       "longitudinal_relation": "behind",
                       "vertical_relation": "slightly_below",
                       "text_zh": "物体在人的右侧、后方、略偏下，前向分量 -1.06 m，右向分量 1.52 m，高度差 -0.09 m，直线距离 1.86 m"
+                    },
+                    "orientation": {
+                      "forward_sign": 1,
+                      "source": "nose_or_body_cross_product"
                     }
                   }
                 ],
@@ -36947,6 +39395,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "same_longitudinal_position",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的右侧、前后原点附近、下方，前向分量 0.11 m，右向分量 0.48 m，高度差 -0.25 m，直线距离 0.55 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "middle": {
@@ -36965,6 +39417,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "front",
                     "vertical_relation": "below",
                     "text_zh": "物体在人的右侧、前方、下方，前向分量 0.56 m，右向分量 0.38 m，高度差 -0.15 m，直线距离 0.70 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "end": {
@@ -36983,6 +39439,10 @@ window.QA_DATA = {
                     "longitudinal_relation": "behind",
                     "vertical_relation": "slightly_below",
                     "text_zh": "物体在人的右侧、后方、略偏下，前向分量 -1.06 m，右向分量 1.52 m，高度差 -0.09 m，直线距离 1.86 m"
+                  },
+                  "orientation": {
+                    "forward_sign": 1,
+                    "source": "nose_or_body_cross_product"
                   }
                 },
                 "changed": true,
@@ -40048,6 +42508,5 @@ window.QA_DATA = {
         "source_video": "data/egoexo4d/takes/uniandes_cooking_001_5/frame_aligned_videos/downscaled/448/cam04.mp4"
       }
     }
-  ],
-  "rejected": []
+  ]
 };

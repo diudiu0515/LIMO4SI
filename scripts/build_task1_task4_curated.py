@@ -529,15 +529,15 @@ def task1_expansion_groups(expansion: dict[str, Any]) -> list[dict[str, Any]]:
     question = qa(
         task_id=TASK1_ID, task_name=TASK1_NAME,
         qtype="relation_change_over_video",
-        question="What front/behind change does the oyster-sauce bottle undergo relative to the moving person?",
-        correct="It begins in front of the person and ends behind the person.",
+        question="How does the oyster-sauce bottle change relative to the moving person from the beginning to the end?",
+        correct="It begins behind the person and ends on the person's right-and-front side.",
         distractors=[
-            "It begins behind the person and ends in front.",
-            "It remains in front throughout.",
-            "It remains behind throughout.",
+            "It begins on the person's left and ends behind the person.",
+            "It remains behind the person throughout.",
+            "It remains on the person's left throughout.",
         ],
-        explanation=f"Across {n} valid poses, the longitudinal body-centric label changes from front at the first sample to behind at the final sample.",
-        method="Uses the person's full body-frame timeline and the validated scene-fixed bottle center; the answer is not based on camera left/right.",
+        explanation=f"Across {n} valid poses, the corrected body-centric labels change from right-behind at the first sample to right-front at the final sample.",
+        method="Uses the full body-frame timeline, the validated scene-fixed bottle center, and the take-level audited forward-sign calibration at every sample.",
         result=result,
     )
     finish(group, question, "Task 1 · longitudinal relation change")

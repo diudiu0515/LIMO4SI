@@ -24,7 +24,7 @@ sys.path.insert(0, str(ROOT / 'scripts'))
 
 from build_task1_task3_site_data import DEFAULT_SUMMARIES, ok_samples, label  # noqa: E402
 from build_perspective_qa import find_camera_calibration  # noqa: E402
-from limo4si.human_frame import build_human_frame, describe_relation  # noqa: E402
+from limo4si.human_frame import apply_forward_sign, build_human_frame, describe_relation  # noqa: E402
 from limo4si.perspective_qa import (  # noqa: E402
     _joint_xyz,
     human_centric_answer,
@@ -107,6 +107,12 @@ def body_timeline(root: Path, sample: dict, seconds: float, stride_frames: int =
     if not body_path.exists():
         body_path = root / 'data/egoexo4d/annotations/ego_pose/val/body/automatic' / f"{sample['take_uid']}.json"
     body = load_json(body_path)
+    override_path = root / "configs" / "spatial_orientation_overrides.json"
+    overrides = load_json(override_path) if override_path.exists() else {}
+    orientation = overrides.get(str(sample.get("take_uid")), {})
+    forward_sign = int(orientation.get("forward_sign", 1))
+    if forward_sign not in (-1, 1):
+        raise ValueError(f"Invalid temporal forward_sign for {sample.get('take_uid')}: {forward_sign}")
     take_video = root / 'data/egoexo4d/takes' / sample['take_name'] / 'frame_aligned_videos/downscaled/448' / f"{sample['camera']}.mp4"
     fps = fps_for_video(take_video)
     center = int(sample['frame'])
@@ -123,9 +129,10 @@ def body_timeline(root: Path, sample: dict, seconds: float, stride_frames: int =
             joints = xyz_dict(rec[0]['annotation3D'])
             try:
                 frame = build_human_frame(joints)
+                frame = apply_forward_sign(frame, forward_sign)
             except Exception:
                 continue
-            rows.append({'frame': fr, 't_sec_from_center': (fr-center)/fps, 'joints': rec[0]['annotation3D'], 'joints_xyz': joints, 'human_frame': frame})
+            rows.append({'frame': fr, 't_sec_from_center': (fr-center)/fps, 'joints': rec[0]['annotation3D'], 'joints_xyz': joints, 'human_frame': frame, 'orientation': {'forward_sign': forward_sign, 'source': orientation.get('source', 'nose_or_body_cross_product')}})
     return rows
 
 
@@ -150,6 +157,7 @@ def object_relation_track(obj: Mapping, timeline: Sequence[Mapping]) -> dict:
         states.append({
             'frame': row['frame'], 't_sec_from_center': row['t_sec_from_center'],
             'relation_label': relation_label(rel), 'relation': rel,
+            'orientation': row.get('orientation'),
         })
     if not states:
         return {'object_id': obj.get('object_id'), 'states': [], 'status': 'missing_evidence'}
