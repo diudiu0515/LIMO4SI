@@ -112,8 +112,9 @@ h3 { font-size: 22px; }
 }
 .visualPanel { padding: 14px; }
 .visualPanel img, .visualPanel video {
-  width: 100%;
-  max-height: 68vh;
+  width: min(100%, 860px);
+  max-height: 56vh;
+  margin: 0 auto;
   object-fit: contain;
   display: block;
   border-radius: 6px;
