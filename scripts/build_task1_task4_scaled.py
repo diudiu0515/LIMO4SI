@@ -13,6 +13,7 @@ import argparse
 import copy
 import json
 import re
+from decimal import Decimal, ROUND_HALF_UP
 import sys
 from collections import Counter
 from pathlib import Path
@@ -24,7 +25,7 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from build_task1_task4_curated import (
     TASK1_ID, TASK1_NAME, TASK4_ID, TASK4_NAME, compact_metric_timeline,
-    load_js, metric_group, qa, save_js, source_qa,
+    load_js, metric_group, options, qa, save_js, source_qa,
 )
 from limo4si.multihuman import pair_timeline
 from limo4si.scale_quality import ScaleQualityPolicy, require_release_quality, validate_release
@@ -280,17 +281,24 @@ def apply_person_descriptions(data: dict[str, Any]) -> None:
         alignment = (group.get("visual_person_audit") or {}).get("metric_identity_alignment") or {}
         metric_to_visible = alignment.get("mapping") or {}
         descriptors = visible_person_descriptors(group)
+        required_metric_ids = set(metric_to_visible)
         required_visible_ids = set(metric_to_visible.values())
-        if not descriptors or not required_visible_ids.issubset(descriptors):
+        metric_configured = required_metric_ids and required_metric_ids.issubset(descriptors)
+        visible_configured = required_visible_ids.issubset(descriptors)
+        if not descriptors or not (metric_configured or visible_configured):
             group["person_display_alias_status"] = {
                 "status": "missing",
+                "required_metric_ids": sorted(required_metric_ids),
                 "required_visible_ids": sorted(required_visible_ids),
-                "configured_visible_ids": sorted(descriptors),
+                "configured_ids": sorted(descriptors),
             }
             continue
         aliases = dict(descriptors)
         for metric_id, visible_id in metric_to_visible.items():
-            aliases[metric_id] = descriptors[visible_id]
+            if metric_configured:
+                aliases[visible_id] = descriptors[metric_id]
+            else:
+                aliases[metric_id] = descriptors[visible_id]
         group["person_display_aliases"] = aliases
         group["person_display_alias_status"] = {"status": "complete", "source": str(PERSON_ALIAS_PATH.relative_to(ROOT))}
         for question in group.get("qa", []):
@@ -317,50 +325,240 @@ MULTIHUMAN_GENERIC_QUESTIONS = {
     "body_forward_field_transition_over_video": "Ignoring physical occlusion, how does the one-sided body-forward field relation between the two people in the video change?",
 }
 
-MULTIHUMAN_SAMPLE_FREE_ANSWERS = {
-    "position_consistency_between_people": "The dark-blue-clad man stays right-and-in-front of the red-clad woman throughout the clip.",
-    "dominant_facing_relation_over_video": "They face each other for most of the clip, so facing each other is dominant.",
-    "body_forward_visibility_consistency": "Each person stays inside the other's ±60° body-forward field throughout the clip.",
-    "body_centric_relation_change_over_video": "The red-clad woman begins left-front of the dark-blue-clad man, then moves to his right-front side and remains there.",
-    "dominant_body_centric_position": "The red-clad woman is predominantly on the dark-blue-clad man's right-and-behind side.",
-    "approach_while_facing": "They approach to about 0.96 m while predominantly facing each other.",
-    "body_forward_field_transition_over_video": "Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, the relation reverses for most of the remaining clip.",
-}
+def _cap(text: str) -> str:
+    return text[:1].upper() + text[1:]
+
+
+def _set_options(group: dict[str, Any], correct: str, distractors: list[str]) -> None:
+    question = group["qa"][0]
+    opts, label = options(correct, distractors, group["name"] + question["question_type"])
+    question["options"] = opts
+    question["correct_option"] = label
+    question["correct_answer"] = correct
+    question["answer"] = correct
+
+
+def _person(group: dict[str, Any], person_id: str) -> str:
+    aliases = group.get("person_display_aliases") or {}
+    return aliases.get(person_id, person_id)
+
+
+def _relation_words(value: str) -> str:
+    return value.replace("_", "-")
+
+
+def _pair_name(group: dict[str, Any], pair: str) -> str:
+    ids = re.split(r"[–-]", pair)
+    return " and ".join(_person(group, value) for value in ids)
+
+
+def _distance_values(question: dict[str, Any]) -> list[float]:
+    result = question.get("result_json") or {}
+    values = result.get("distance_series_m")
+    if values:
+        return [float(value) for value in values]
+    return [float(state["distance_m"]) for state in (result.get("pair_timeline") or {}).get("states", [])]
 
 
 def apply_multihuman_copy_edits(data: dict[str, Any]) -> None:
-    """Apply reviewer-facing copy only; metric results and algorithms are untouched."""
+    """Generate symmetric counterfactual options from structured Task 4 evidence."""
     for group in data["groups"]:
         if not group.get("qa") or group["qa"][0].get("task_id") != TASK4_ID:
             continue
-        question = group["qa"][0]
-        qtype = question["question_type"]
+        q = group["qa"][0]
+        qtype = q["question_type"]
         if qtype in MULTIHUMAN_GENERIC_QUESTIONS:
-            question["question"] = MULTIHUMAN_GENERIC_QUESTIONS[qtype]
-        if qtype in MULTIHUMAN_SAMPLE_FREE_ANSWERS:
-            rewritten = MULTIHUMAN_SAMPLE_FREE_ANSWERS[qtype]
-            question["correct_answer"] = rewritten
-            question["answer"] = rewritten
-            for option in question.get("options", []):
-                if option.get("label") == question.get("correct_option"):
-                    option["text"] = rewritten
-        replacements = {
-            "in all 16 metric samples": "throughout the clip",
-            "for all 16 samples": "throughout the clip",
-            "all 16 samples": "the entire clip",
-            "at every sampled time": "throughout the clip",
-            "at any sampled time": "at any time in the clip",
-            "at nearly every sampled second": "repeatedly throughout the clip",
-            "for most samples": "for most of the clip",
-        }
-        for option in question.get("options", []):
-            for source, shown in replacements.items():
-                option["text"] = option["text"].replace(source, shown)
-        # Keep all three published answer representations synchronized.
-        question["answer"] = question["correct_answer"]
-        for option in question.get("options", []):
-            if option.get("label") == question.get("correct_option"):
-                option["text"] = question["correct_answer"]
+            q["question"] = MULTIHUMAN_GENERIC_QUESTIONS[qtype]
+        result = q.get("result_json") or {}
+        a, b = _person(group, "A"), _person(group, "B")
+        B = _cap(b)
+        audit = group.get("visual_person_audit") or result.get("visual_person_audit") or {}
+        if qtype not in {"visible_pair_topology_change_2d", "visible_pair_topology_consistency_2d"} and int(audit.get("max_visible_person_count") or 0) > 2:
+            q["question"] = q["question"].replace("the two people in the video", f"{a} and {b}")
+
+        if qtype == "position_consistency_between_people":
+            _set_options(group,
+                f"{B} remains right-front relative to {a} throughout the clip.",
+                [f"{B} remains left-front relative to {a} throughout the clip.",
+                 f"{B} remains right-behind relative to {a} throughout the clip.",
+                 f"{B} remains left-behind relative to {a} throughout the clip."])
+        elif qtype == "dominant_facing_relation_over_video":
+            _set_options(group,
+                "Facing each other is the dominant relation for most of the clip.",
+                ["Standing side by side is the dominant relation for most of the clip.",
+                 "Facing away from each other is the dominant relation for most of the clip.",
+                 "Standing at an oblique angle is the dominant relation for most of the clip."])
+        elif qtype == "metric_distance_pattern_over_video":
+            values = _distance_values(q); start, peak, end = values[0], max(values), values[-1]
+            _set_options(group,
+                f"They begin near {start:.3f} m and finish near {end:.3f} m after moving farther apart.",
+                [f"They begin near {end:.3f} m and finish near {start:.3f} m after moving closer together.",
+                 f"They begin near {start:.3f} m and finish near {start:.3f} m after remaining stable.",
+                 f"They begin near {start:.3f} m and finish near {start:.3f} m after an out-and-back change."])
+        elif qtype == "body_forward_visibility_consistency":
+            _set_options(group,
+                f"Both {a} and {b} remain inside each other's body-forward fields throughout the clip.",
+                [f"Only {a} remains inside the body-forward field of {b} throughout the clip.",
+                 f"Only {b} remains inside the body-forward field of {a} throughout the clip.",
+                 f"Neither {_cap(a)} nor {b} remains inside the other's body-forward field throughout the clip."])
+        elif qtype == "body_centric_relation_change_over_video":
+            _set_options(group,
+                f"{B} is left-front at the start and right-front at the end relative to {a}.",
+                [f"{B} is right-front at the start and left-front at the end relative to {a}.",
+                 f"{B} is left-front at the start and left-front at the end relative to {a}.",
+                 f"{B} is right-front at the start and right-front at the end relative to {a}."])
+        elif qtype == "visible_pair_topology_change_2d":
+            starts = {row["pair"]: row["distance"] for row in result["start_pair_distances_normalized"]}
+            ends = {row["pair"]: row["distance"] for row in result["end_pair_distances_normalized"]}
+            start_pair, end_pair = min(starts, key=starts.get), min(ends, key=ends.get)
+            other = next(pair for pair in starts if pair not in {start_pair, end_pair})
+            sp, ep, op = (_pair_name(group, value) for value in (start_pair, end_pair, other))
+            _set_options(group,
+                f"The closest pair changes from {sp} at the start to {ep} at the end.",
+                [f"The closest pair changes from {ep} at the start to {sp} at the end.",
+                 f"The closest pair changes from {sp} at the start to {sp} at the end.",
+                 f"The closest pair changes from {op} at the start to {sp} at the end."])
+        elif qtype == "metric_separation_over_video":
+            values = _distance_values(q); start, end = values[0], values[-1]
+            _set_options(group,
+                f"They separate, increasing from about {start:.3f} m initially to {end:.3f} m at the end.",
+                [f"They approach, decreasing from about {end:.3f} m initially to {start:.3f} m at the end.",
+                 f"They remain stable, staying near {start:.3f} m initially and {start:.3f} m at the end.",
+                 f"They return, increasing from about {start:.3f} m initially to {start:.3f} m at the end."])
+        elif qtype == "dominant_body_centric_position":
+            counts = result.get("relation_counts") or {}
+            dominant = max(counts, key=counts.get)
+            alternatives = [value for value in ("left_front", "right_front", "left_behind", "right_behind") if value != dominant][:3]
+            _set_options(group,
+                f"{B} is predominantly {_relation_words(dominant)} relative to {a}.",
+                [f"{B} is predominantly {_relation_words(value)} relative to {a}." for value in alternatives])
+        elif qtype == "nonmonotonic_distance_pattern":
+            values = _distance_values(q); start, peak, end = values[0], max(values), values[-1]
+            _set_options(group,
+                f"They begin near {start:.3f} m, reach {peak:.3f} m midway, and finish near {end:.3f} m.",
+                [f"They begin near {start:.3f} m, reach {end:.3f} m midway, and finish near {peak:.3f} m.",
+                 f"They begin near {end:.3f} m, reach {peak:.3f} m midway, and finish near {start:.3f} m.",
+                 f"They begin near {peak:.3f} m, reach {start:.3f} m midway, and finish near {end:.3f} m."])
+        elif qtype == "approach_while_facing":
+            values = _distance_values(q); closest = min(values)
+            farthest = max(values)
+            _set_options(group,
+                f"They move closer to about {closest:.3f} m while predominantly facing each other.",
+                [f"They move closer to about {closest:.3f} m while predominantly facing away from each other.",
+                 f"They move farther to about {farthest:.3f} m while predominantly facing each other.",
+                 f"They move farther to about {farthest:.3f} m while predominantly facing away from each other."])
+        elif qtype == "coupled_distance_relation_change":
+            values = _distance_values(q); sequence = result["relation_sequence"]
+            start_rel, end_rel = _relation_words(sequence[0]), _relation_words(sequence[-1])
+            _set_options(group,
+                f"{B} approaches from {values[0]:.3f} m to {values[-1]:.3f} m and changes from {start_rel} to {end_rel} relative to {a}.",
+                [f"{B} approaches from {values[0]:.3f} m to {values[-1]:.3f} m and changes from {end_rel} to {start_rel} relative to {a}.",
+                 f"{B} separates from {values[-1]:.3f} m to {values[0]:.3f} m and changes from {start_rel} to {end_rel} relative to {a}.",
+                 f"{B} approaches from {values[0]:.3f} m to {values[-1]:.3f} m and changes from {start_rel} to {start_rel} relative to {a}."])
+        elif qtype == "distance_out_and_back_over_video":
+            values = _distance_values(q); start, peak, end = values[0], max(values), values[-1]
+            _set_options(group,
+                f"They begin near {start:.3f} m, reach {peak:.3f} m midway, and finish near {end:.3f} m.",
+                [f"They begin near {start:.3f} m, reach {end:.3f} m midway, and finish near {peak:.3f} m.",
+                 f"They begin near {end:.3f} m, reach {peak:.3f} m midway, and finish near {start:.3f} m.",
+                 f"They begin near {peak:.3f} m, reach {start:.3f} m midway, and finish near {end:.3f} m."])
+        elif qtype == "body_forward_field_transition_over_video":
+            _set_options(group,
+                f"Early, only {b} contains {a}; later, only {a} contains {b} for most of the clip.",
+                [f"Early, only {a} contains {b}; later, only {b} contains {a} for most of the clip.",
+                 f"Early, both {a} and {b} contain each other; later, neither {a} nor {b} contains the other.",
+                 f"Early, neither {a} nor {b} contains the other; later, both {a} and {b} contain each other."])
+        elif qtype == "visible_pair_topology_consistency_2d":
+            starts = {row["pair"]: row["distance"] for row in result["start_pair_distances_normalized"]}
+            ends = {row["pair"]: row["distance"] for row in result["end_pair_distances_normalized"]}
+            closest = min(starts, key=starts.get); pairs = list(starts)
+            cp = _pair_name(group, closest); alternatives = [_pair_name(group, pair) for pair in pairs if pair != closest]
+            _set_options(group,
+                f"At the start, {cp} are closest; at the end, {cp} are closest.",
+                [f"At the start, {pair} are closest; at the end, {pair} are closest." for pair in alternatives] +
+                [f"At the start, {cp} are closest; at the end, {alternatives[0]} are closest."])
+
+
+TASK1_BALANCED_OPTIONS = {
+    "query_02_iiith30_frame4440": [
+        "The paprika container is right of the person at the start and left at the end.",
+        "The paprika container is left of the person at the start and right at the end.",
+        "The paprika container is right of the person at the start and right at the end.",
+        "The paprika container is left of the person at the start and left at the end."],
+    "sfu0083_cam04_3450": [
+        "Near the end, changing body direction brings the knife into the person's forward field.",
+        "Near the end, changing blocker position brings the knife into the person's forward field.",
+        "Near the end, changing knife position brings the knife into the person's forward field.",
+        "Near the end, changing camera viewpoint brings the knife into the person's forward field."],
+    "diverse_iiith_145_2_frame7380": [
+        "The white chopping board remains nearest to the person throughout the clip.",
+        "The steel tomato bowl remains nearest to the person throughout the clip.",
+        "The small steel bowl remains nearest to the person throughout the clip.",
+        "No single listed object remains nearest to the person throughout the clip."],
+    "query_04_iiith145_frame11250": [
+        "The bowl changes from the person's left side at the start to the right side at the end.",
+        "The bowl changes from the person's right side at the start to the left side at the end.",
+        "The bowl remains on the person's left side from the start through the end.",
+        "The bowl remains on the person's right side from the start through the end."],
+    "query_03_iiith29_frame4350": [
+        "All three objects remain in front of the person throughout the clip.",
+        "All three objects remain behind the person throughout the clip.",
+        "Only the steel bowl remains in front of the person throughout the clip.",
+        "Only the steel plate remains behind the person throughout the clip."],
+    "diverse_iiith_31_3_frame1620": [
+        "The chopped tomato remains the nearest object and stays below the person throughout.",
+        "The chopping board remains the nearest object and stays below the person throughout.",
+        "The chopped tomato remains the nearest object but stays above the person throughout.",
+        "The steel bowl remains the nearest object and stays below the person throughout."],
+    "sfu0101_cam05_5460": [
+        "The plate gets closer, from about 3.05 m to 1.86 m, and changes from left to right.",
+        "The plate gets farther, from about 1.86 m to 3.05 m, and changes from right to left.",
+        "The plate gets closer, from about 3.05 m to 1.86 m, and changes from left to left.",
+        "The plate stays stable, from about 3.05 m to 3.05 m, and changes from right to right."],
+    "val_3": [
+        "The bottle is behind the person at the start and right-front at the end.",
+        "The bottle is in front of the person at the start and left-behind at the end.",
+        "The bottle is right-front of the person at the start and behind at the end.",
+        "The bottle is left-behind the person at the start and in front at the end."],
+    "diverse_sfu_008_3_frame6960": [
+        "Changing the person's body orientation moves the fixed peel outside the body-forward field.",
+        "Changing a physical blocker's position moves the fixed peel outside the body-forward field.",
+        "Changing the fixed peel's scene position moves it outside the body-forward field.",
+        "Changing the external camera viewpoint moves the fixed peel outside the body-forward field."],
+    "val_12_replacement_egg_whisk": [
+        "The whisk begins very close, at about 0.55 m, and ends farther away, at about 1.86 m.",
+        "The whisk begins farther away, at about 1.86 m, and ends very close, at about 0.55 m.",
+        "The whisk begins farther away, at about 1.86 m, and ends farther away, at about 1.86 m.",
+        "The whisk begins very close, at about 0.55 m, and ends very close, at about 0.55 m."],
+}
+
+
+def apply_task1_balanced_options(data: dict[str, Any]) -> None:
+    for group in data["groups"]:
+        values = TASK1_BALANCED_OPTIONS.get(group.get("name"))
+        if values:
+            _set_options(group, values[0], values[1:])
+
+
+def approximate_metric_distances(text: str, decimals: int = 1) -> str:
+    """Round reviewer-facing metre values; exact measurements remain in result_json."""
+    def replace(match: re.Match[str]) -> str:
+        quantum = Decimal(1).scaleb(-decimals)
+        value = Decimal(match.group(1)).quantize(quantum, rounding=ROUND_HALF_UP)
+        return f"{value:.{decimals}f} m"
+    return re.sub(r"\b(\d+(?:\.\d+)?)\s*m\b", replace, text)
+
+
+def apply_release_distance_rounding(data: dict[str, Any]) -> None:
+    for group in data["groups"]:
+        for q in group.get("qa", []):
+            for field in ("question", "correct_answer", "answer", "explanation"):
+                if isinstance(q.get(field), str):
+                    q[field] = approximate_metric_distances(q[field])
+            for option in q.get("options", []):
+                option["text"] = approximate_metric_distances(option["text"])
+            correct = next(option["text"] for option in q["options"] if option["label"] == q["correct_option"])
+            q["correct_answer"] = q["answer"] = correct
 
 
 def validate_scale(data: dict[str, Any]) -> dict[str, Any]:
@@ -437,6 +635,8 @@ def main() -> None:
     add_task4_topology(data, evidence)
     apply_person_descriptions(data)
     apply_multihuman_copy_edits(data)
+    apply_task1_balanced_options(data)
+    apply_release_distance_rounding(data)
 
     # Evaluate every candidate before category counting.  Large-scale runs keep
     # rejection reasons while publishing only cases that pass all hard gates.

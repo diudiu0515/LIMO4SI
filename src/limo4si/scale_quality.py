@@ -50,6 +50,15 @@ class ScaleQualityPolicy:
     min_topology_margin_normalized: float = 0.03
     endpoint_tolerance_sec: float = 0.60
     forbid_sample_count_in_answers: bool = True
+    # Options are released only when they have comparable semantic payload.
+    # Length is a proxy; the numeric and temporal/relation slot checks below
+    # catch more direct answer cues.
+    max_option_information_ratio: float = 1.25
+    max_option_word_count_ratio: float = 1.30
+    max_option_numeric_count_gap: int = 0
+    max_option_temporal_marker_gap: int = 1
+    max_option_relation_marker_gap: int = 2
+    max_published_distance_decimals: int = 1
 
 
 def _finite(value: Any) -> bool:
@@ -123,7 +132,34 @@ def _validate_time_series(
         errors.append("temporal evidence contains duplicate frame identifiers")
 
 
-def _validate_common(case_id: str, question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str]) -> None:
+
+def option_information_profile(text: str) -> dict[str, int]:
+    """Approximate answer-choice information density, not just character length."""
+    words = re.findall(r"[A-Za-z]+(?:-[A-Za-z]+)*|\d+(?:\.\d+)?", text)
+    numbers = re.findall(r"(?<![A-Za-z])\d+(?:\.\d+)?", text)
+    lowered = text.lower()
+    temporal_markers = sum(lowered.count(token) for token in (
+        "start", "begin", "early", "middle", "then", "later", "end",
+        "throughout", "entire clip", "most of", "remain", "while",
+    ))
+    relation_markers = sum(lowered.count(token) for token in (
+        "left", "right", "front", "behind", "closer", "farther", "approach",
+        "separate", "facing", "back-to-back", "side-by-side", "inside", "outside",
+    ))
+    information_units = len(words) + 2 * len(numbers) + temporal_markers + relation_markers
+    return {
+        "words": len(words),
+        "numbers": len(numbers),
+        "temporal_markers": temporal_markers,
+        "relation_markers": relation_markers,
+        "information_units": information_units,
+    }
+
+
+def _distance_decimal_places(text: str) -> list[int]:
+    return [len(match.group(1) or "") for match in re.finditer(r"\b\d+(?:\.(\d+))?\s*m\b", text)]
+
+def _validate_common(case_id: str, question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], metrics: dict[str, Any]) -> None:
     options = question.get("options") or []
     if len(options) != 4:
         errors.append("question must have exactly four options")
@@ -132,6 +168,27 @@ def _validate_common(case_id: str, question: Mapping[str, Any], policy: ScaleQua
     texts = [option.get("text") for option in options]
     if len(set(labels)) != 4 or len(set(texts)) != 4:
         errors.append("option labels and texts must be unique")
+    profiles = [option_information_profile(str(text)) for text in texts]
+    units = [profile["information_units"] for profile in profiles]
+    word_counts = [profile["words"] for profile in profiles]
+    numeric_counts = [profile["numbers"] for profile in profiles]
+    temporal_counts = [profile["temporal_markers"] for profile in profiles]
+    relation_counts = [profile["relation_markers"] for profile in profiles]
+    metrics["option_information_profiles"] = profiles
+    if units and min(units) > 0 and max(units) / min(units) > policy.max_option_information_ratio:
+        errors.append(f"option information ratio {max(units) / min(units):.2f} exceeds {policy.max_option_information_ratio:.2f}")
+    if word_counts and min(word_counts) > 0 and max(word_counts) / min(word_counts) > policy.max_option_word_count_ratio:
+        errors.append(f"option word-count ratio {max(word_counts) / min(word_counts):.2f} exceeds {policy.max_option_word_count_ratio:.2f}")
+    if numeric_counts and max(numeric_counts) - min(numeric_counts) > policy.max_option_numeric_count_gap:
+        errors.append("answer choices expose unequal numeric detail")
+    if temporal_counts and max(temporal_counts) - min(temporal_counts) > policy.max_option_temporal_marker_gap:
+        errors.append("answer choices expose unequal temporal detail")
+    if relation_counts and max(relation_counts) - min(relation_counts) > policy.max_option_relation_marker_gap:
+        errors.append("answer choices expose unequal relation detail")
+    decimals = [places for text in texts for places in _distance_decimal_places(str(text))]
+    decimals.extend(_distance_decimal_places(str(question.get("correct_answer", ""))))
+    if decimals and max(decimals) > policy.max_published_distance_decimals:
+        errors.append("published distance uses more precision than the release policy allows")
     correct_label = question.get("correct_option")
     matches = [option for option in options if option.get("label") == correct_label]
     if len(matches) != 1:
@@ -201,6 +258,25 @@ def _validate_task1(group: Mapping[str, Any], question: Mapping[str, Any], polic
         warnings.append("orientation audit metadata is absent but this QA is not front/behind-sensitive")
 
 
+def _validate_person_descriptions(aliases: Mapping[str, Any], person_ids: Sequence[str], errors: list[str]) -> list[str]:
+    descriptions = [str(aliases.get(person_id, "")).strip() for person_id in person_ids]
+    if any(not value for value in descriptions) or len(set(value.lower() for value in descriptions)) != len(descriptions):
+        errors.append("public person descriptions must be present and pairwise distinct")
+        return descriptions
+    gender_words = [re.findall(r"\b(?:man|woman)\b", value.lower()) for value in descriptions]
+    if any(not words for words in gender_words):
+        errors.append("each public person description must include an unambiguous man/woman noun")
+        return descriptions
+    genders = [words[-1] for words in gender_words]
+    if len(set(genders)) < len(genders):
+        # Same-gender people need an additional visible cue.  Clothing is the
+        # current release convention; future extractors may emit another cue
+        # after "with" or "wearing".
+        if any(not re.search(r"\b(?:in|wearing|with)\b", value.lower()) for value in descriptions):
+            errors.append("same-gender people require distinct visible appearance cues")
+    return descriptions
+
+
 def _validate_identity_audit(group: Mapping[str, Any], errors: list[str], metrics: dict[str, Any], policy: ScaleQualityPolicy) -> None:
     audit = group.get("visual_person_audit") or {}
     if audit.get("status") != "complete_and_identity_aligned":
@@ -228,8 +304,25 @@ def _validate_identity_audit(group: Mapping[str, Any], errors: list[str], metric
     metrics["identity_mapping"] = mapping
 
 
-def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], metrics: dict[str, Any]) -> None:
+def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], warnings: list[str], metrics: dict[str, Any]) -> None:
     _validate_identity_audit(group, errors, metrics, policy)
+    audit = group.get("visual_person_audit") or {}
+    aliases = group.get("person_display_aliases") or {}
+    pair_descriptions = _validate_person_descriptions(aliases, ("A", "B"), errors)
+    persistent_count = int(audit.get("persistent_visible_person_count") or 0)
+    metric_count = int(audit.get("metric_3d_track_count") or 0)
+    max_visible_count = int(audit.get("max_visible_person_count") or persistent_count)
+    metrics["visible_person_counts"] = {
+        "persistent": persistent_count, "maximum": max_visible_count, "metric_3d": metric_count,
+    }
+    if persistent_count > metric_count:
+        errors.append("persistent visible people outnumber metric 3D annotations")
+    if max_visible_count > metric_count:
+        public_question = str(question.get("question", "")).lower()
+        if not all(description.lower() in public_question for description in pair_descriptions):
+            errors.append("an intermittent unannotated person makes the unnamed metric pair ambiguous")
+        else:
+            warnings.append("an intermittent extra person is excluded; the question explicitly names the annotated pair")
     result = question["result_json"]
     timeline = result.get("pair_timeline") or {}
     if timeline.get("status") != "ok":
@@ -340,6 +433,8 @@ def _validate_topology(group: Mapping[str, Any], question: Mapping[str, Any], po
     start_map, end_map = parsed(start), parsed(end)
     if len(start_map) < 3 or set(start_map) != set(end_map):
         errors.append("topology start/end evidence must contain the same three or more pairs")
+    topology_ids = sorted({person_id for pair in start_map for person_id in re.split(r"[–-]", pair)})
+    _validate_person_descriptions(group.get("person_display_aliases") or {}, topology_ids, errors)
     for label, values in (("start", start_map), ("end", end_map)):
         ordered = sorted(values.values())
         if len(ordered) >= 2:
@@ -387,7 +482,7 @@ def validate_release(data: Mapping[str, Any], policy: ScaleQualityPolicy | None 
             question: Mapping[str, Any] = {}
         else:
             question = questions[0]
-            _validate_common(case_id, question, policy, errors)
+            _validate_common(case_id, question, policy, errors, metrics)
             task_id = question.get("task_id")
             if isinstance(question.get("result_json"), Mapping):
                 if task_id == TASK1_ID:
@@ -396,7 +491,7 @@ def validate_release(data: Mapping[str, Any], policy: ScaleQualityPolicy | None 
                     if question.get("question_type") in TOPOLOGY_TYPES:
                         _validate_topology(group, question, policy, errors, metrics)
                     else:
-                        _validate_metric_task4(group, question, policy, errors, metrics)
+                        _validate_metric_task4(group, question, policy, errors, warnings, metrics)
                 else:
                     errors.append(f"unsupported task_id {task_id!r}")
         reports.append({
