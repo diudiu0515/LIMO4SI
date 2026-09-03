@@ -60,14 +60,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="question">Q1. The large steel bowl stays fixed in the scene while the person moves and turns. How does the bowl's left/right relation in the person's changing body frame differ between the start and end?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="A">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The bowl itself moves from the person's right side to the left side.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">It remains on the person's left in the body frame for the entire clip.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">It remains centered in the person's body frame at both endpoints.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The bowl changes from the person's left side at the start to the right side at the end.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The bowl changes from the person's right side at the start to the left side at the end.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The bowl remains on the person's left side from the start through the end.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The bowl remains on the person's right side from the start through the end.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.</div><div class="explanation">Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The bowl changes from the person's left side at the start to the right side at the end.</div><div class="explanation">Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Rebuilds the person's body-centric frame at every valid pose sample and transforms the fixed 3D object center into that changing frame.</div>
 <pre class="jsonBlock">{
@@ -128,15 +128,15 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="questionType">turn_induced_relation_change_over_video</div>
 <div class="question">Q1. The person turns substantially during the clip while moving little overall. How does the paprika container's lateral position relative to the person change?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="D">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">It changes from the person's left side to the person's right side.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">It remains on the person's right side throughout.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">It remains on the person's left side throughout.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">It changes from the person's right side to the person's left side.</span></button>
+<div class="optionsGrid answerOptions" data-correct="B">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The paprika container is left of the person at the start and right at the end.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The paprika container is right of the person at the start and left at the end.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The paprika container is right of the person at the start and right at the end.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The paprika container is left of the person at the start and left at the end.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">It changes from the person's right side to the person's left side.</div><div class="explanation">The body-centric relation changes right → left while the measured body turn is 56.7° and net displacement is 0.20 m.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The paprika container is right of the person at the start and left at the end.</div><div class="explanation">The body-centric relation changes right → left while the measured body turn is 56.7° and net displacement is 0.2 m.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses all valid poses in the clip; the rotation-dominant label requires body turn ≥45° and net displacement <0.35 m.</div>
 <pre class="jsonBlock">{
@@ -241,15 +241,15 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="questionType">body_forward_visibility_change_cause_over_video</div>
 <div class="question">Q1. Near the end of the clip, the knife enters the person's central body/head-forward field. Which measured change best explains this?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="A">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The person's body/head direction changes; no listed blocker is detected on the final sightline.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">A listed object moves into the sightline and blocks the knife.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The knife remains outside the person's forward field for the whole clip.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The camera viewpoint alone determines the person's visibility state.</span></button>
+<div class="optionsGrid answerOptions" data-correct="D">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">Near the end, changing blocker position brings the knife into the person's forward field.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Near the end, changing knife position brings the knife into the person's forward field.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Near the end, changing camera viewpoint brings the knife into the person's forward field.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Near the end, changing body direction brings the knife into the person's forward field.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The person's body/head direction changes; no listed blocker is detected on the final sightline.</div><div class="explanation">The first samples place the knife outside the forward field, the final four samples place it in the central zone, body turn is about 74.6°, and the listed-object blocker field remains empty.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">Near the end, changing body direction brings the knife into the person's forward field.</div><div class="explanation">The first samples place the knife outside the forward field, the final four samples place it in the central zone, body turn is about 74.6°, and the listed-object blocker field remains empty.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Compares the target direction with the person's body/head-forward direction over the full pose timeline and checks only explicitly listed blocker geometry.</div>
 <pre class="jsonBlock">{
@@ -301,14 +301,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="question">Q1. Which listed object remains nearest to the person at every valid sampled time in this clip?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="A">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The white chopping board remains nearest in all 31 samples.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The steel tomato bowl remains nearest throughout.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The small steel bowl remains nearest throughout.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The nearest listed object changes during the clip.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The white chopping board remains nearest to the person throughout the clip.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The steel tomato bowl remains nearest to the person throughout the clip.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The small steel bowl remains nearest to the person throughout the clip.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">No single listed object remains nearest to the person throughout the clip.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The white chopping board remains nearest in all 31 samples.</div><div class="explanation">Per-sample pelvis-to-object 3D distances select the white chopping board 31/31 times.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The white chopping board remains nearest to the person throughout the clip.</div><div class="explanation">Per-sample pelvis-to-object 3D distances select the white chopping board 31/31 times.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Ranks every listed scene-fixed 3D object by distance from the changing human pelvis at every valid pose sample; all-samples agreement is required.</div>
 <pre class="jsonBlock">{
@@ -343,15 +343,15 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="questionType">multi_object_front_consistency_over_video</div>
 <div class="question">Q1. Which statement about the three listed objects remains true across every valid time sample?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="D">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">All three objects remain behind the person throughout.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Only the oil container remains in front throughout.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At least one listed object crosses from front to behind during the clip.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The steel bowl, oil container and steel plate all remain in front of the person in all 26 samples.</span></button>
+<div class="optionsGrid answerOptions" data-correct="C">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">All three objects remain behind the person throughout the clip.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Only the steel bowl remains in front of the person throughout the clip.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">All three objects remain in front of the person throughout the clip.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Only the steel plate remains behind the person throughout the clip.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The steel bowl, oil container and steel plate all remain in front of the person in all 26 samples.</div><div class="explanation">The front counts are {'steel bowl_0': 26, 'oil container_0': 26, 'steel plate_0': 26}; each equals the 26-sample timeline length.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">All three objects remain in front of the person throughout the clip.</div><div class="explanation">The front counts are {'steel bowl_0': 26, 'oil container_0': 26, 'steel plate_0': 26}; each equals the 26-sample timeline length.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Checks the longitudinal body-centric relation of every listed object at every valid human pose, not only the endpoints.</div>
 <pre class="jsonBlock">{
@@ -388,15 +388,15 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="questionType">nearest_and_vertical_consistency_over_video</div>
 <div class="question">Q1. Which object stays both nearest to the person and below the person's body origin throughout the clip?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="A">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The chopped tomato is nearest and below the body origin in all 19 samples.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The chopping board is nearest and below throughout.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The knife is nearest and below throughout.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">No object satisfies both conditions for the whole clip.</span></button>
+<div class="optionsGrid answerOptions" data-correct="D">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The chopping board remains the nearest object and stays below the person throughout.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The chopped tomato remains the nearest object but stays above the person throughout.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The steel bowl remains the nearest object and stays below the person throughout.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The chopped tomato remains the nearest object and stays below the person throughout.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The chopped tomato is nearest and below the body origin in all 19 samples.</div><div class="explanation">The chopped tomato wins all 19 distance rankings and has below in 19/19 vertical-relation samples.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The chopped tomato remains the nearest object and stays below the person throughout.</div><div class="explanation">The chopped tomato wins all 19 distance rankings and has below in 19/19 vertical-relation samples.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Combines the all-samples nearest-distance ranking with the all-samples vertical body-centric relation.</div>
 <pre class="jsonBlock">{
@@ -432,15 +432,15 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="questionType">relation_change_over_video</div>
 <div class="question">Q1. As the person approaches the scene-fixed white plate, what combined distance and left/right change occurs?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="A">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The pelvis-to-plate distance decreases from about 3.05 m to 1.86 m, while the plate changes from the person's left to the person's right.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The distance increases while the plate changes from right to left.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The distance decreases, but the plate stays on the person's left throughout.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The distance stays nearly constant and the plate remains centered.</span></button>
+<div class="optionsGrid answerOptions" data-correct="D">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The plate gets farther, from about 1.9 m to 3.1 m, and changes from right to left.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The plate gets closer, from about 3.1 m to 1.9 m, and changes from left to left.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The plate stays stable, from about 3.1 m to 3.1 m, and changes from right to right.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The plate gets closer, from about 3.1 m to 1.9 m, and changes from left to right.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The pelvis-to-plate distance decreases from about 3.05 m to 1.86 m, while the plate changes from the person's left to the person's right.</div><div class="explanation">Across 24 valid body poses, distance changes by -1.19 m and the endpoint lateral labels are left then right.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The plate gets closer, from about 3.1 m to 1.9 m, and changes from left to right.</div><div class="explanation">Across 24 valid body poses, distance changes by -1.2 m and the endpoint lateral labels are left then right.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses the same fixed 3D plate center with every human pelvis/body-frame sample; jointly checks Euclidean distance and body-centric lateral relation.</div>
 <pre class="jsonBlock">{
@@ -502,14 +502,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="question">Q1. How does the oyster-sauce bottle change relative to the moving person from the beginning to the end?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="B">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">It begins on the person's left and ends behind the person.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">It begins behind the person and ends on the person's right-and-front side.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">It remains behind the person throughout.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">It remains on the person's left throughout.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The bottle is in front of the person at the start and left-behind at the end.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The bottle is behind the person at the start and right-front at the end.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The bottle is right-front of the person at the start and behind at the end.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The bottle is left-behind the person at the start and in front at the end.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">It begins behind the person and ends on the person's right-and-front side.</div><div class="explanation">Across 26 valid poses, the corrected body-centric labels change from right-behind at the first sample to right-front at the final sample.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The bottle is behind the person at the start and right-front at the end.</div><div class="explanation">Across 26 valid poses, the corrected body-centric labels change from right-behind at the first sample to right-front at the final sample.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses the full body-frame timeline, the validated scene-fixed bottle center, and the take-level audited forward-sign calibration at every sample.</div>
 <pre class="jsonBlock">{
@@ -571,14 +571,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="question">Q1. How does the person's 3D distance to the egg whisk change over this clip?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="C">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The distance stays nearly constant throughout.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The person moves steadily closer and ends within 0.3 m.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The egg whisk is very close to the person at the beginning and about 1.86 m away at the end.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The distance increases briefly but returns to its starting value by the end.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The whisk begins farther away, at about 1.9 m, and ends very close, at about 0.6 m.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The whisk begins farther away, at about 1.9 m, and ends farther away, at about 1.9 m.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The whisk begins very close, at about 0.6 m, and ends farther away, at about 1.9 m.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The whisk begins very close, at about 0.6 m, and ends very close, at about 0.6 m.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The egg whisk is very close to the person at the beginning and about 1.86 m away at the end.</div><div class="explanation">The pelvis-to-object Euclidean distance changes by +1.30 m across 22 valid pose samples.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The whisk begins very close, at about 0.6 m, and ends farther away, at about 1.9 m.</div><div class="explanation">The pelvis-to-object Euclidean distance changes by +1.3 m across 22 valid pose samples.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Computes Euclidean distance from the human pelvis origin to the fixed 3D object center at every valid pose sample.</div>
 <pre class="jsonBlock">{
@@ -644,15 +644,15 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="questionType">body_forward_visibility_change_cause_over_video</div>
 <div class="question">Q1. The scene-fixed cucumber peel begins inside the person's peripheral body-forward field and ends outside it. Which measured human change explains this transition?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="A">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The person's body orientation changes substantially, rotating the body-forward field away from the scene-fixed peel.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The cucumber peel moves behind a measured physical blocker.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The peel stays in the central body-forward field throughout.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Only the external camera viewpoint changes the human-relative field label.</span></button>
+<div class="optionsGrid answerOptions" data-correct="C">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">Changing a physical blocker's position moves the fixed peel outside the body-forward field.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Changing the fixed peel's scene position moves it outside the body-forward field.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Changing the person's body orientation moves the fixed peel outside the body-forward field.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Changing the external camera viewpoint moves the fixed peel outside the body-forward field.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The person's body orientation changes substantially, rotating the body-forward field away from the scene-fixed peel.</div><div class="explanation">The endpoint forward angles are 42.1° and 110.5°, while the human body-turn estimate is about 152.7°.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">Changing the person's body orientation moves the fixed peel outside the body-forward field.</div><div class="explanation">The endpoint forward angles are 42.1° and 110.5°, while the human body-turn estimate is about 152.7°.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Transforms the fixed 3D target direction into each valid human body frame. This is a body-forward directional proxy, not gaze or physical-occlusion truth.</div>
 <pre class="jsonBlock">{
@@ -710,16 +710,16 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="question">Q1. Which body-centered position relation remains true between the two people in the video throughout the clip?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="B">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The dark-blue-clad man stays left-and-in-front of the red-clad woman throughout.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The dark-blue-clad man stays right-and-in-front of the red-clad woman throughout the clip.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The dark-blue-clad man crosses from the red-clad woman's right side to the red-clad woman's left side.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The dark-blue-clad man remains behind the red-clad woman throughout.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The man in a gray T-shirt and black shorts remains left-front relative to the man in a dark top and long trousers throughout the clip.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The man in a gray T-shirt and black shorts remains right-front relative to the man in a dark top and long trousers throughout the clip.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The man in a gray T-shirt and black shorts remains right-behind relative to the man in a dark top and long trousers throughout the clip.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The man in a gray T-shirt and black shorts remains left-behind relative to the man in a dark top and long trousers throughout the clip.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The dark-blue-clad man stays right-and-in-front of the red-clad woman throughout the clip.</div><div class="explanation">The dense metric timeline contains 16 samples and every sample is right_front relative to the red-clad woman.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The man in a gray T-shirt and black shorts remains right-front relative to the man in a dark top and long trousers throughout the clip.</div><div class="explanation">The dense metric timeline contains 16 samples and every sample is right_front relative to the man in a dark top and long trousers.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Uses the red-clad woman's ground-plane body-forward axis and right axis at every sampled time; all-samples consistency is required.</div>
+<div class="methodBox">Uses the man in a dark top and long trousers's ground-plane body-forward axis and right axis at every sampled time; all-samples consistency is required.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
     &quot;T&quot;: true,
@@ -727,8 +727,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;S&quot;: true
   },
   &quot;pair&quot;: [
-    &quot;the red-clad woman&quot;,
-    &quot;the dark-blue-clad man&quot;
+    &quot;the man in a dark top and long trousers&quot;,
+    &quot;the man in a gray T-shirt and black shorts&quot;
   ],
   &quot;timeline&quot;: [
     {
@@ -1105,14 +1105,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;metric_identity_alignment&quot;: {
       &quot;status&quot;: &quot;aligned&quot;,
       &quot;mapping&quot;: {
-        &quot;the red-clad woman&quot;: &quot;the red-clad woman&quot;,
-        &quot;the dark-blue-clad man&quot;: &quot;the dark-blue-clad man&quot;
+        &quot;the man in a dark top and long trousers&quot;: &quot;the man in a dark top and long trousers&quot;,
+        &quot;the man in a gray T-shirt and black shorts&quot;: &quot;the man in a gray T-shirt and black shorts&quot;
       },
       &quot;best_cost&quot;: 1.3461,
       &quot;alternative_cost&quot;: 1.5592,
       &quot;margin&quot;: 0.2131,
       &quot;metric_motion_profiles&quot;: {
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.10391588637329213,
           0.0848576037612962,
           0.11905535417765443,
@@ -1130,7 +1130,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.13770060993830127,
           0.13422349514439702
         ],
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.10304294020801966,
           0.15309887371342507,
           0.12903527263556538,
@@ -1150,7 +1150,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         ]
       },
       &quot;visual_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.12403408886285965,
           0.12244650395219259,
           0.15123394376210977,
@@ -1168,7 +1168,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.03277346088853059,
           0.32349425312966923
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.09330518920445087,
           0.01621520748145693,
           0.1815719912199248,
@@ -1191,7 +1191,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     },
     &quot;visible_2d_tracks&quot;: [
       {
-        &quot;id&quot;: &quot;the dark-blue-clad man&quot;,
+        &quot;id&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.918,
         &quot;coverage&quot;: 1.0,
@@ -1201,7 +1201,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         &quot;normalized_displacement&quot;: 0.0429
       },
       {
-        &quot;id&quot;: &quot;the red-clad woman&quot;,
+        &quot;id&quot;: &quot;the man in a dark top and long trousers&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.918,
         &quot;coverage&quot;: 1.0,
@@ -1244,16 +1244,16 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="question">Q1. What is the dominant body-facing relation between the two people in the video?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="C">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They are side-by-side or oblique throughout the clip.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">They remain back-to-back for most of the clip.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They face each other for most of the clip, so facing each other is dominant.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">No dominant orientation can be determined because only one frame is used.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">Standing side by side is the dominant relation for most of the clip.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Facing away from each other is the dominant relation for most of the clip.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Facing each other is the dominant relation for most of the clip.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Standing at an oblique angle is the dominant relation for most of the clip.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">They face each other for most of the clip, so facing each other is dominant.</div><div class="explanation">Facing-score classification gives {'facing_each_other': 14, 'side_by_side_or_oblique': 2} across the 16-sample timeline.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">Facing each other is the dominant relation for most of the clip.</div><div class="explanation">Facing-score classification gives {'facing_each_other': 14, 'side_by_side_or_oblique': 2} across the 16-sample timeline.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Projects both SMPL-X root-forward vectors and the the red-clad woman↔the dark-blue-clad man direction onto the ground plane, then aggregates the facing state over all samples.</div>
+<div class="methodBox">Projects both SMPL-X root-forward vectors and the the man in a dark top and long trousers↔the man in a gray T-shirt and black shorts direction onto the ground plane, then aggregates the facing state over all samples.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
     &quot;T&quot;: true,
@@ -1261,8 +1261,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;S&quot;: true
   },
   &quot;pair&quot;: [
-    &quot;the red-clad woman&quot;,
-    &quot;the dark-blue-clad man&quot;
+    &quot;the man in a dark top and long trousers&quot;,
+    &quot;the man in a gray T-shirt and black shorts&quot;
   ],
   &quot;timeline&quot;: [
     {
@@ -1639,14 +1639,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;metric_identity_alignment&quot;: {
       &quot;status&quot;: &quot;aligned&quot;,
       &quot;mapping&quot;: {
-        &quot;the red-clad woman&quot;: &quot;the red-clad woman&quot;,
-        &quot;the dark-blue-clad man&quot;: &quot;the dark-blue-clad man&quot;
+        &quot;the man in a dark top and long trousers&quot;: &quot;the man in a dark top and long trousers&quot;,
+        &quot;the man in a gray T-shirt and black shorts&quot;: &quot;the man in a gray T-shirt and black shorts&quot;
       },
       &quot;best_cost&quot;: 1.9528,
       &quot;alternative_cost&quot;: 2.1589,
       &quot;margin&quot;: 0.2061,
       &quot;metric_motion_profiles&quot;: {
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.04379212072484678,
           0.038377917797664175,
           0.0032737674806157155,
@@ -1664,7 +1664,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.07042076372715625,
           0.12482712249038741
         ],
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.01406694751255348,
           0.06506339520676284,
           0.014707035230313862,
@@ -1684,7 +1684,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         ]
       },
       &quot;visual_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.08904721116446798,
           0.01563223003557628,
           0.010228417686255433,
@@ -1702,7 +1702,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.05535895356649116,
           0.19480883890105774
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.005424289241877555,
           0.04444835674968861,
           0.03659589802876048,
@@ -1725,7 +1725,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     },
     &quot;visible_2d_tracks&quot;: [
       {
-        &quot;id&quot;: &quot;the dark-blue-clad man&quot;,
+        &quot;id&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.918,
         &quot;coverage&quot;: 1.0,
@@ -1735,7 +1735,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         &quot;normalized_displacement&quot;: 0.0248
       },
       {
-        &quot;id&quot;: &quot;the red-clad woman&quot;,
+        &quot;id&quot;: &quot;the man in a dark top and long trousers&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.918,
         &quot;coverage&quot;: 1.0,
@@ -1778,15 +1778,15 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="questionType">body_forward_visibility_consistency</div>
 <div class="question">Q1. Ignoring physical occlusion, what body-forward visibility relation holds between the two people in the video throughout the clip?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="A">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">Each person stays inside the other's ±60° body-forward field throughout the clip.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Only the red-clad woman keeps the dark-blue-clad man inside the body-forward field throughout.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Only the dark-blue-clad man keeps the red-clad woman inside the body-forward field throughout.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Neither person contains the other in the body-forward field at any time in the clip.</span></button>
+<div class="optionsGrid answerOptions" data-correct="B">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">Only the man in a dark top and long trousers remains inside the body-forward field of the man in a gray T-shirt and black shorts throughout the clip.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Both the man in a dark top and long trousers and the man in a gray T-shirt and black shorts remain inside each other's body-forward fields throughout the clip.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Only the man in a gray T-shirt and black shorts remains inside the body-forward field of the man in a dark top and long trousers throughout the clip.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Neither The man in a dark top and long trousers nor the man in a gray T-shirt and black shorts remains inside the other's body-forward field throughout the clip.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">Each person stays inside the other's ±60° body-forward field throughout the clip.</div><div class="explanation">The directional field state is mutual_body_forward_field in all 16 samples. This does not claim gaze contact or an unoccluded sightline.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">Both the man in a dark top and long trousers and the man in a gray T-shirt and black shorts remain inside each other's body-forward fields throughout the clip.</div><div class="explanation">The directional field state is mutual_body_forward_field in all 16 samples. This does not claim gaze contact or an unoccluded sightline.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Measures the ground-plane angle from each SMPL-X body-forward vector to the other person's pelvis; accepts inside-field at ≤60°. Dense occlusion is deliberately not inferred.</div>
 <pre class="jsonBlock">{
@@ -1796,8 +1796,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;S&quot;: true
   },
   &quot;pair&quot;: [
-    &quot;the red-clad woman&quot;,
-    &quot;the dark-blue-clad man&quot;
+    &quot;the man in a dark top and long trousers&quot;,
+    &quot;the man in a gray T-shirt and black shorts&quot;
   ],
   &quot;timeline&quot;: [
     {
@@ -2174,14 +2174,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;metric_identity_alignment&quot;: {
       &quot;status&quot;: &quot;aligned&quot;,
       &quot;mapping&quot;: {
-        &quot;the red-clad woman&quot;: &quot;the red-clad woman&quot;,
-        &quot;the dark-blue-clad man&quot;: &quot;the dark-blue-clad man&quot;
+        &quot;the man in a dark top and long trousers&quot;: &quot;the man in a dark top and long trousers&quot;,
+        &quot;the man in a gray T-shirt and black shorts&quot;: &quot;the man in a gray T-shirt and black shorts&quot;
       },
       &quot;best_cost&quot;: 0.756,
       &quot;alternative_cost&quot;: 1.2845,
       &quot;margin&quot;: 0.5285,
       &quot;metric_motion_profiles&quot;: {
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.029930287644073336,
           0.05670227228569077,
           0.0363198242187709,
@@ -2199,7 +2199,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.11513657300032108,
           0.6093072555959225
         ],
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.0782495961668075,
           0.04552244627873839,
           0.003181229239400558,
@@ -2219,7 +2219,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         ]
       },
       &quot;visual_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.09320555218744789,
           0.03356153992225865,
           0.015520979564131612,
@@ -2237,7 +2237,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.1263755635818611,
           0.36792915266044385
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.11127608640186218,
           0.2195439734826748,
           0.017506993196754857,
@@ -2260,7 +2260,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     },
     &quot;visible_2d_tracks&quot;: [
       {
-        &quot;id&quot;: &quot;the dark-blue-clad man&quot;,
+        &quot;id&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.935,
         &quot;coverage&quot;: 1.0,
@@ -2270,7 +2270,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         &quot;normalized_displacement&quot;: 0.077
       },
       {
-        &quot;id&quot;: &quot;the red-clad woman&quot;,
+        &quot;id&quot;: &quot;the man in a dark top and long trousers&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.935,
         &quot;coverage&quot;: 1.0,
@@ -2312,17 +2312,17 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="questionType">body_centric_relation_change_over_video</div>
 <div class="question">Q1. How does the left/right relation between the two people in the video change in a body-centric frame?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="B">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The red-clad woman starts right-front and then remains left-front for the rest of the clip.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The red-clad woman begins left-front of the dark-blue-clad man, then moves to his right-front side and remains there.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The red-clad woman alternates left and right repeatedly throughout the clip.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The red-clad woman remains directly behind the dark-blue-clad man throughout the clip.</span></button>
+<div class="optionsGrid answerOptions" data-correct="C">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The man in a dark top and long trousers is right-front at the start and left-front at the end relative to the man in a gray T-shirt and black shorts.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The man in a dark top and long trousers is left-front at the start and left-front at the end relative to the man in a gray T-shirt and black shorts.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The man in a dark top and long trousers is left-front at the start and right-front at the end relative to the man in a gray T-shirt and black shorts.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The man in a dark top and long trousers is right-front at the start and right-front at the end relative to the man in a gray T-shirt and black shorts.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The red-clad woman begins left-front of the dark-blue-clad man, then moves to his right-front side and remains there.</div><div class="explanation">The lateral sequence has 4/4 left samples before the transition and 12/12 right samples after it.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The man in a dark top and long trousers is left-front at the start and right-front at the end relative to the man in a gray T-shirt and black shorts.</div><div class="explanation">The lateral sequence has 4/4 left samples before the transition and 12/12 right samples after it.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Transforms the red-clad woman's pelvis into the dark-blue-clad man's ground-plane body frame at each of 16 samples and requires the new side to persist after the crossing.</div>
+<div class="methodBox">Transforms the man in a dark top and long trousers's pelvis into the man in a gray T-shirt and black shorts's ground-plane body frame at each of 16 samples and requires the new side to persist after the crossing.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
     &quot;T&quot;: true,
@@ -2330,8 +2330,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;S&quot;: true
   },
   &quot;pair&quot;: [
-    &quot;the dark-blue-clad man&quot;,
-    &quot;the red-clad woman&quot;
+    &quot;the man in a gray T-shirt and black shorts&quot;,
+    &quot;the man in a dark top and long trousers&quot;
   ],
   &quot;timeline&quot;: [
     {
@@ -2708,14 +2708,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;metric_identity_alignment&quot;: {
       &quot;status&quot;: &quot;aligned&quot;,
       &quot;mapping&quot;: {
-        &quot;the dark-blue-clad man&quot;: &quot;the dark-blue-clad man&quot;,
-        &quot;the red-clad woman&quot;: &quot;the red-clad woman&quot;
+        &quot;the man in a gray T-shirt and black shorts&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
+        &quot;the man in a dark top and long trousers&quot;: &quot;the man in a dark top and long trousers&quot;
       },
       &quot;best_cost&quot;: 1.4393,
       &quot;alternative_cost&quot;: 1.852,
       &quot;margin&quot;: 0.4127,
       &quot;metric_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.02623942520159132,
           0.016815077068373385,
           0.06769162950393055,
@@ -2733,7 +2733,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.028386612700124186,
           0.41737521439790726
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.0013766596061727974,
           0.0077456960945010474,
           0.10392311518473635,
@@ -2753,7 +2753,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         ]
       },
       &quot;visual_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.011464423247988707,
           0.09704514895047232,
           0.44554075020115796,
@@ -2771,7 +2771,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.006668313874764604,
           0.04825092975931254
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.003957901079041927,
           0.0021220195469556676,
           0.09990458865125652,
@@ -2794,7 +2794,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     },
     &quot;visible_2d_tracks&quot;: [
       {
-        &quot;id&quot;: &quot;the dark-blue-clad man&quot;,
+        &quot;id&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.935,
         &quot;coverage&quot;: 1.0,
@@ -2804,7 +2804,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         &quot;normalized_displacement&quot;: 0.0177
       },
       {
-        &quot;id&quot;: &quot;the red-clad woman&quot;,
+        &quot;id&quot;: &quot;the man in a dark top and long trousers&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.935,
         &quot;coverage&quot;: 1.0,
@@ -2860,15 +2860,15 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="questionType">visible_pair_topology_change_2d</div>
 <div class="question">Q1. How does the closest pair among the three persistently tracked people change from the start to the end of the clip?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="D">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The dark-blue-clad man and the red-clad woman is the closest pair at both the start and the end.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The dark-blue-clad man and the green-top woman is the closest pair at the start and the red-clad woman and the green-top woman at the end.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The same pair remains closest at both endpoints.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The closest pair changes from the red-clad woman and the green-top woman at the start to the dark-blue-clad man and the green-top woman at the end.</span></button>
+<div class="optionsGrid answerOptions" data-correct="C">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The closest pair changes from the man in a black top and light-colored trousers and the man in a black top with red trim and dark trousers at the start to the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers at the end.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The closest pair changes from the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers at the start to the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers at the end.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The closest pair changes from the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers at the start to the man in a black top and light-colored trousers and the man in a black top with red trim and dark trousers at the end.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The closest pair changes from the man in a black top and light-colored trousers and the woman in a gray printed T-shirt at the start to the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers at the end.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The closest pair changes from the red-clad woman and the green-top woman at the start to the dark-blue-clad man and the green-top woman at the end.</div><div class="explanation">All three persistent visible tracks are included; normalized image-plane pair distances change the closest pair from the red-clad woman and the green-top woman to the dark-blue-clad man and the green-top woman.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The closest pair changes from the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers at the start to the man in a black top and light-colored trousers and the man in a black top with red trim and dark trousers at the end.</div><div class="explanation">All three persistent visible tracks are included; normalized image-plane pair distances change the closest pair from the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers to the man in a black top and light-colored trousers and the man in a black top with red trim and dark trousers.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses Grounding DINO person detections plus temporal association for all three visible people; compares pairwise box-center separation normalized by frame diagonal. It does not claim metric 3D distance.</div>
 <pre class="jsonBlock">{
@@ -2879,29 +2879,29 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
   },
   &quot;start_pair_distances_normalized&quot;: [
     {
-      &quot;pair&quot;: &quot;the dark-blue-clad man–the red-clad woman&quot;,
+      &quot;pair&quot;: &quot;the man in a black top and light-colored trousers–the woman in a gray printed T-shirt&quot;,
       &quot;distance&quot;: 0.2977
     },
     {
-      &quot;pair&quot;: &quot;the dark-blue-clad man–the green-top woman&quot;,
+      &quot;pair&quot;: &quot;the man in a black top and light-colored trousers–the man in a black top with red trim and dark trousers&quot;,
       &quot;distance&quot;: 0.3278
     },
     {
-      &quot;pair&quot;: &quot;the red-clad woman–the green-top woman&quot;,
+      &quot;pair&quot;: &quot;the woman in a gray printed T-shirt–the man in a black top with red trim and dark trousers&quot;,
       &quot;distance&quot;: 0.1704
     }
   ],
   &quot;end_pair_distances_normalized&quot;: [
     {
-      &quot;pair&quot;: &quot;the dark-blue-clad man–the red-clad woman&quot;,
+      &quot;pair&quot;: &quot;the man in a black top and light-colored trousers–the woman in a gray printed T-shirt&quot;,
       &quot;distance&quot;: 0.4871
     },
     {
-      &quot;pair&quot;: &quot;the dark-blue-clad man–the green-top woman&quot;,
+      &quot;pair&quot;: &quot;the man in a black top and light-colored trousers–the man in a black top with red trim and dark trousers&quot;,
       &quot;distance&quot;: 0.2061
     },
     {
-      &quot;pair&quot;: &quot;the red-clad woman–the green-top woman&quot;,
+      &quot;pair&quot;: &quot;the woman in a gray printed T-shirt–the man in a black top with red trim and dark trousers&quot;,
       &quot;distance&quot;: 0.3648
     }
   ],
@@ -2958,7 +2958,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;geometry_scope&quot;: &quot;all visible people have 2D localization; metric distance/orientation applies only to visually aligned SMPL-X tracks&quot;,
     &quot;visible_2d_tracks&quot;: [
       {
-        &quot;id&quot;: &quot;the dark-blue-clad man&quot;,
+        &quot;id&quot;: &quot;the man in a black top and light-colored trousers&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.918,
         &quot;coverage&quot;: 1.0,
@@ -2968,7 +2968,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         &quot;normalized_displacement&quot;: 0.4499
       },
       {
-        &quot;id&quot;: &quot;the red-clad woman&quot;,
+        &quot;id&quot;: &quot;the woman in a gray printed T-shirt&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.918,
         &quot;coverage&quot;: 1.0,
@@ -2978,7 +2978,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         &quot;normalized_displacement&quot;: 0.3372
       },
       {
-        &quot;id&quot;: &quot;the green-top woman&quot;,
+        &quot;id&quot;: &quot;the man in a black top with red trim and dark trousers&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.918,
         &quot;coverage&quot;: 1.0,
@@ -3019,14 +3019,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="question">Q1. After a short early fluctuation, what sustained distance trend develops between the two people in the video?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="B">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They steadily converge and finish less than 1 m apart.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">They separate and remain far apart: distance grows from 1.49 m to about 3.55 m.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They remain within a narrow 0.1 m distance band.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They separate briefly but return to the starting distance by the end.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They approach, decreasing from about 3.5 m initially to 1.5 m at the end.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">They separate, increasing from about 1.5 m initially to 3.5 m at the end.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They remain stable, staying near 1.5 m initially and 1.5 m at the end.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They return, increasing from about 1.5 m initially to 1.5 m at the end.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">They separate and remain far apart: distance grows from 1.49 m to about 3.55 m.</div><div class="explanation">The 16-sample series rises above 3 m from t≈7 s onward and ends at 3.55 m; net change is +2.06 m.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">They separate, increasing from about 1.5 m initially to 3.5 m at the end.</div><div class="explanation">The 16-sample series rises above 3.0 m from t≈7 s onward and ends at 3.6 m; net change is +2.1 m.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses all 16 aligned SMPL-X pelvis/root samples and checks that the late high-distance state persists rather than relying only on two frames.</div>
 <pre class="jsonBlock">{
@@ -3036,8 +3036,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;S&quot;: true
   },
   &quot;pair&quot;: [
-    &quot;the dark-blue-clad man&quot;,
-    &quot;the red-clad woman&quot;
+    &quot;the man in a dark top and long trousers&quot;,
+    &quot;the man in a gray T-shirt and black shorts&quot;
   ],
   &quot;timeline&quot;: [
     {
@@ -3414,14 +3414,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;metric_identity_alignment&quot;: {
       &quot;status&quot;: &quot;aligned&quot;,
       &quot;mapping&quot;: {
-        &quot;the dark-blue-clad man&quot;: &quot;the dark-blue-clad man&quot;,
-        &quot;the red-clad woman&quot;: &quot;the red-clad woman&quot;
+        &quot;the man in a dark top and long trousers&quot;: &quot;the man in a dark top and long trousers&quot;,
+        &quot;the man in a gray T-shirt and black shorts&quot;: &quot;the man in a gray T-shirt and black shorts&quot;
       },
       &quot;best_cost&quot;: 1.1558,
       &quot;alternative_cost&quot;: 2.9407,
       &quot;margin&quot;: 1.7849,
       &quot;metric_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.4243425598478224,
           0.3383573856535094,
           0.1034387918840097,
@@ -3439,7 +3439,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.006570928237227024,
           1.4034974713576958
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.02649548717798929,
           0.08308259195579137,
           0.10198639372778807,
@@ -3459,7 +3459,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         ]
       },
       &quot;visual_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.24255048159875567,
           0.37573460851662727,
           0.33812682635739905,
@@ -3477,7 +3477,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.002326069589036344,
           0.1906451907666632
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.043145884968245354,
           0.04999597432677815,
           0.05729294959458094,
@@ -3500,7 +3500,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     },
     &quot;visible_2d_tracks&quot;: [
       {
-        &quot;id&quot;: &quot;the dark-blue-clad man&quot;,
+        &quot;id&quot;: &quot;the man in a dark top and long trousers&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.935,
         &quot;coverage&quot;: 1.0,
@@ -3510,7 +3510,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         &quot;normalized_displacement&quot;: 0.0328
       },
       {
-        &quot;id&quot;: &quot;the red-clad woman&quot;,
+        &quot;id&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.935,
         &quot;coverage&quot;: 0.967,
@@ -3565,19 +3565,19 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">dominant_body_centric_position</div>
-<div class="question">Q1. Which body-centric position relation between the two people in the video dominates the clip?</div>
+<div class="question">Q1. Which body-centric position relation between the man in a gray T-shirt and black shorts and the man in a dark top and long trousers dominates the clip?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="C">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">Left-front dominates the clip.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Right-front dominates the clip.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The red-clad woman is predominantly on the dark-blue-clad man's right-and-behind side.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The four position quadrants occur equally often.</span></button>
+<div class="optionsGrid answerOptions" data-correct="D">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The man in a dark top and long trousers is predominantly left-front relative to the man in a gray T-shirt and black shorts.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The man in a dark top and long trousers is predominantly right-front relative to the man in a gray T-shirt and black shorts.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The man in a dark top and long trousers is predominantly left-behind relative to the man in a gray T-shirt and black shorts.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The man in a dark top and long trousers is predominantly right-behind relative to the man in a gray T-shirt and black shorts.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The red-clad woman is predominantly on the dark-blue-clad man's right-and-behind side.</div><div class="explanation">The complete position counts are {'right_behind': 13, 'left_behind': 1, 'left_front': 2}; right_behind is the clear temporal majority.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The man in a dark top and long trousers is predominantly right-behind relative to the man in a gray T-shirt and black shorts.</div><div class="explanation">The complete position counts are {'right_behind': 13, 'left_behind': 1, 'left_front': 2}; right_behind is the clear temporal majority.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Transforms the red-clad woman into the dark-blue-clad man's body-centric frame at each sampled second and aggregates the full position sequence.</div>
+<div class="methodBox">Transforms the man in a dark top and long trousers into the man in a gray T-shirt and black shorts's body-centric frame at each sampled second and aggregates the full position sequence.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
     &quot;T&quot;: true,
@@ -3585,8 +3585,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;S&quot;: true
   },
   &quot;pair&quot;: [
-    &quot;the dark-blue-clad man&quot;,
-    &quot;the red-clad woman&quot;
+    &quot;the man in a gray T-shirt and black shorts&quot;,
+    &quot;the man in a dark top and long trousers&quot;
   ],
   &quot;timeline&quot;: [
     {
@@ -3963,14 +3963,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;metric_identity_alignment&quot;: {
       &quot;status&quot;: &quot;aligned&quot;,
       &quot;mapping&quot;: {
-        &quot;the dark-blue-clad man&quot;: &quot;the dark-blue-clad man&quot;,
-        &quot;the red-clad woman&quot;: &quot;the red-clad woman&quot;
+        &quot;the man in a gray T-shirt and black shorts&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
+        &quot;the man in a dark top and long trousers&quot;: &quot;the man in a dark top and long trousers&quot;
       },
       &quot;best_cost&quot;: 0.9261,
       &quot;alternative_cost&quot;: 3.5386,
       &quot;margin&quot;: 2.6125,
       &quot;metric_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.012237936796085137,
           0.02573588866521519,
           0.025953818783554013,
@@ -3988,7 +3988,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.010166882464997565,
           0.8973392620682716
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.02416147116464641,
           0.18890518168870174,
           0.2484084685925069,
@@ -4008,7 +4008,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         ]
       },
       &quot;visual_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           5.986905328469598e-05,
           0.001132829822163604,
           0.0005499131002339579,
@@ -4026,7 +4026,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.04340739307867223,
           0.14110736003292415
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.016449810026783616,
           0.1797002666412925,
           0.2671027211549771,
@@ -4049,7 +4049,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     },
     &quot;visible_2d_tracks&quot;: [
       {
-        &quot;id&quot;: &quot;the dark-blue-clad man&quot;,
+        &quot;id&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.5,
         &quot;coverage&quot;: 0.967,
@@ -4059,7 +4059,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         &quot;normalized_displacement&quot;: 0.0688
       },
       {
-        &quot;id&quot;: &quot;the red-clad woman&quot;,
+        &quot;id&quot;: &quot;the man in a dark top and long trousers&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.935,
         &quot;coverage&quot;: 1.0,
@@ -4101,17 +4101,17 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">nonmonotonic_distance_pattern</div>
-<div class="question">Q1. Which full-clip distance pattern best describes the two people in the video?</div>
+<div class="question">Q1. Which full-clip distance pattern best describes the man in a dark top and long trousers and the man in a gray T-shirt and black shorts?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="D">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They approach continuously for the entire clip.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">They separate continuously with no later approach.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Their distance is constant throughout.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They first separate from about 1.24 m to 2.68 m, then partially approach and finish near 2.08 m.</span></button>
+<div class="optionsGrid answerOptions" data-correct="C">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They begin near 1.2 m, reach 2.1 m midway, and finish near 2.7 m.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">They begin near 2.1 m, reach 2.7 m midway, and finish near 1.2 m.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They begin near 1.2 m, reach 2.7 m midway, and finish near 2.1 m.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They begin near 2.7 m, reach 1.2 m midway, and finish near 2.1 m.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">They first separate from about 1.24 m to 2.68 m, then partially approach and finish near 2.08 m.</div><div class="explanation">The maximum occurs near t=7.0 s, so start/end alone would miss the out-then-partway-back pattern.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">They begin near 1.2 m, reach 2.7 m midway, and finish near 2.1 m.</div><div class="explanation">The maximum occurs near t=7.0 s, so start/end alone would miss the out-then-partway-back pattern.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Finds the peak and endpoint over all 16 metric pelvis-distance samples; this question requires the middle of the video.</div>
 <pre class="jsonBlock">{
@@ -4121,8 +4121,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;S&quot;: true
   },
   &quot;pair&quot;: [
-    &quot;the red-clad woman&quot;,
-    &quot;the dark-blue-clad man&quot;
+    &quot;the man in a dark top and long trousers&quot;,
+    &quot;the man in a gray T-shirt and black shorts&quot;
   ],
   &quot;timeline&quot;: [
     {
@@ -4499,14 +4499,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;metric_identity_alignment&quot;: {
       &quot;status&quot;: &quot;aligned&quot;,
       &quot;mapping&quot;: {
-        &quot;the red-clad woman&quot;: &quot;the red-clad woman&quot;,
-        &quot;the dark-blue-clad man&quot;: &quot;the dark-blue-clad man&quot;
+        &quot;the man in a dark top and long trousers&quot;: &quot;the man in a dark top and long trousers&quot;,
+        &quot;the man in a gray T-shirt and black shorts&quot;: &quot;the man in a gray T-shirt and black shorts&quot;
       },
       &quot;best_cost&quot;: 0.9526,
       &quot;alternative_cost&quot;: 1.4471,
       &quot;margin&quot;: 0.4945,
       &quot;metric_motion_profiles&quot;: {
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.13268778566884404,
           0.11841739028629204,
           0.09435363623853399,
@@ -4524,7 +4524,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.010865629342904935,
           4.892027407884598
         ],
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.059489105271807625,
           0.08762213216519736,
           0.11281550983019424,
@@ -4544,7 +4544,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         ]
       },
       &quot;visual_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.040459428513729453,
           0.13020894361055832,
           0.13412025452904006,
@@ -4562,7 +4562,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.0918085315442256,
           0.5842406646092984
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.0,
           0.09583588548418386,
           0.06202740509404388,
@@ -4585,7 +4585,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     },
     &quot;visible_2d_tracks&quot;: [
       {
-        &quot;id&quot;: &quot;the dark-blue-clad man&quot;,
+        &quot;id&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.935,
         &quot;coverage&quot;: 1.0,
@@ -4595,7 +4595,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         &quot;normalized_displacement&quot;: 0.1725
       },
       {
-        &quot;id&quot;: &quot;the red-clad woman&quot;,
+        &quot;id&quot;: &quot;the man in a dark top and long trousers&quot;,
         &quot;first_seen_sec&quot;: 1.0,
         &quot;last_seen_sec&quot;: 14.935,
         &quot;coverage&quot;: 0.967,
@@ -4653,15 +4653,15 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="questionType">approach_while_facing</div>
 <div class="question">Q1. What combined distance-and-orientation pattern occurs between the two people in the video?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="C">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They move farther apart while remaining back-to-back throughout.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Their distance stays constant and their facing relation cannot be determined.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They approach to about 0.96 m while predominantly facing each other.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They approach, but side-by-side orientation dominates the entire clip.</span></button>
+<div class="optionsGrid answerOptions" data-correct="B">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They move closer to about 1.0 m while predominantly facing away from each other.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">They move closer to about 1.0 m while predominantly facing each other.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They move farther to about 2.1 m while predominantly facing each other.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They move farther to about 2.1 m while predominantly facing away from each other.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">They approach to about 0.96 m while predominantly facing each other.</div><div class="explanation">The minimum distance occurs near t=9.0 s, and the facing-state aggregate is {'facing_each_other': 14, 'side_by_side_or_oblique': 2}.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">They move closer to about 1.0 m while predominantly facing each other.</div><div class="explanation">The minimum distance occurs near t=9.0 s, and the facing-state aggregate is {'facing_each_other': 14, 'side_by_side_or_oblique': 2}.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Jointly aggregates the 16-sample pelvis-distance series and the ground-plane SMPL-X body-facing score.</div>
 <pre class="jsonBlock">{
@@ -4671,8 +4671,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;S&quot;: true
   },
   &quot;pair&quot;: [
-    &quot;the dark-blue-clad man&quot;,
-    &quot;the red-clad woman&quot;
+    &quot;the man in a dark top and long trousers&quot;,
+    &quot;the man in a gray T-shirt and black shorts&quot;
   ],
   &quot;timeline&quot;: [
     {
@@ -5049,14 +5049,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;metric_identity_alignment&quot;: {
       &quot;status&quot;: &quot;aligned&quot;,
       &quot;mapping&quot;: {
-        &quot;the dark-blue-clad man&quot;: &quot;the dark-blue-clad man&quot;,
-        &quot;the red-clad woman&quot;: &quot;the red-clad woman&quot;
+        &quot;the man in a dark top and long trousers&quot;: &quot;the man in a dark top and long trousers&quot;,
+        &quot;the man in a gray T-shirt and black shorts&quot;: &quot;the man in a gray T-shirt and black shorts&quot;
       },
       &quot;best_cost&quot;: 0.8118,
       &quot;alternative_cost&quot;: 1.341,
       &quot;margin&quot;: 0.5291,
       &quot;metric_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.024961478937407192,
           0.01765614893389552,
           0.06269597642557291,
@@ -5074,7 +5074,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.06577462529744664,
           4.01469224691391
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.08951303917544516,
           0.07550117239431757,
           0.03234620451423943,
@@ -5094,7 +5094,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         ]
       },
       &quot;visual_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.0143370871900755,
           0.0012033153247823574,
           0.05671762978330177,
@@ -5112,7 +5112,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.0841028127951963,
           0.4788235070351004
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.09127819457310087,
           0.06625556928599145,
           0.02881539136025551,
@@ -5135,7 +5135,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     },
     &quot;visible_2d_tracks&quot;: [
       {
-        &quot;id&quot;: &quot;the dark-blue-clad man&quot;,
+        &quot;id&quot;: &quot;the man in a dark top and long trousers&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.918,
         &quot;coverage&quot;: 1.0,
@@ -5145,7 +5145,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         &quot;normalized_displacement&quot;: 0.158
       },
       {
-        &quot;id&quot;: &quot;the red-clad woman&quot;,
+        &quot;id&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.918,
         &quot;coverage&quot;: 1.0,
@@ -5206,17 +5206,17 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="questionType">coupled_distance_relation_change</div>
 <div class="question">Q1. As the two people in the video approach each other, how does their lateral relation change in a body-centric frame?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="B">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The red-clad woman moves farther away while crossing from left to right.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The red-clad woman approaches from about 2.72 m to 1.14 m and crosses from the dark-blue-clad man's right side to the dark-blue-clad man's left side.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The red-clad woman approaches but remains on the dark-blue-clad man's right side throughout.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The red-clad woman stays at the same distance and directly behind the dark-blue-clad man throughout.</span></button>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The man in a dark top and long trousers approaches from 2.7 m to 1.1 m and changes from right-front to left-front relative to the man in a gray T-shirt and black shorts.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The man in a dark top and long trousers approaches from 2.7 m to 1.1 m and changes from left-front to right-front relative to the man in a gray T-shirt and black shorts.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The man in a dark top and long trousers separates from 1.1 m to 2.7 m and changes from right-front to left-front relative to the man in a gray T-shirt and black shorts.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The man in a dark top and long trousers approaches from 2.7 m to 1.1 m and changes from right-front to right-front relative to the man in a gray T-shirt and black shorts.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The red-clad woman approaches from about 2.72 m to 1.14 m and crosses from the dark-blue-clad man's right side to the dark-blue-clad man's left side.</div><div class="explanation">The first seven samples are right-front; later samples become center/left-front while the metric distance drops by more than 1.5 m.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The man in a dark top and long trousers approaches from 2.7 m to 1.1 m and changes from right-front to left-front relative to the man in a gray T-shirt and black shorts.</div><div class="explanation">The first seven samples are right-front; later samples become center/left-front while the metric distance drops by more than 1.5 m.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Combines all-sample metric distance with the red-clad woman's per-sample position in the dark-blue-clad man's body-centric frame.</div>
+<div class="methodBox">Combines all-sample metric distance with the man in a dark top and long trousers's per-sample position in the man in a gray T-shirt and black shorts's body-centric frame.</div>
 <pre class="jsonBlock">{
   &quot;T/H/S&quot;: {
     &quot;T&quot;: true,
@@ -5224,8 +5224,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;S&quot;: true
   },
   &quot;pair&quot;: [
-    &quot;the dark-blue-clad man&quot;,
-    &quot;the red-clad woman&quot;
+    &quot;the man in a gray T-shirt and black shorts&quot;,
+    &quot;the man in a dark top and long trousers&quot;
   ],
   &quot;timeline&quot;: [
     {
@@ -5602,14 +5602,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;metric_identity_alignment&quot;: {
       &quot;status&quot;: &quot;aligned&quot;,
       &quot;mapping&quot;: {
-        &quot;the dark-blue-clad man&quot;: &quot;the dark-blue-clad man&quot;,
-        &quot;the red-clad woman&quot;: &quot;the red-clad woman&quot;
+        &quot;the man in a gray T-shirt and black shorts&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
+        &quot;the man in a dark top and long trousers&quot;: &quot;the man in a dark top and long trousers&quot;
       },
       &quot;best_cost&quot;: 1.5089,
       &quot;alternative_cost&quot;: 2.0195,
       &quot;margin&quot;: 0.5107,
       &quot;metric_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.16090553006033287,
           0.020918079508388393,
           0.009767364085428054,
@@ -5627,7 +5627,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.03612127579606069,
           0.1348427013726905
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.013558864998010744,
           0.012381648296945066,
           0.0022018909944423125,
@@ -5647,7 +5647,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         ]
       },
       &quot;visual_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.002517615072567251,
           0.004968748043610069,
           0.0006987391278036742,
@@ -5665,7 +5665,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.019486841728684652,
           0.052400028895223306
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.02007497787377961,
           0.03363530755689715,
           0.0124464660669702,
@@ -5688,7 +5688,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     },
     &quot;visible_2d_tracks&quot;: [
       {
-        &quot;id&quot;: &quot;the dark-blue-clad man&quot;,
+        &quot;id&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.918,
         &quot;coverage&quot;: 1.0,
@@ -5698,7 +5698,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         &quot;normalized_displacement&quot;: 0.0045
       },
       {
-        &quot;id&quot;: &quot;the red-clad woman&quot;,
+        &quot;id&quot;: &quot;the man in a dark top and long trousers&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.918,
         &quot;coverage&quot;: 1.0,
@@ -5771,17 +5771,17 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">distance_out_and_back_over_video</div>
-<div class="question">Q1. Which temporal distance pattern occurs between the two people in the video?</div>
+<div class="question">Q1. Which temporal distance pattern occurs between the man in a gray T-shirt and black shorts and the man in a dark top and long trousers?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="C">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They move steadily farther apart from start to finish.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">They move steadily closer from start to finish.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They are close early, move apart to about 2.41 m near the middle, then come close again at about 0.68 m.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Their distance remains almost unchanged throughout.</span></button>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They begin near 1.4 m, reach 2.4 m midway, and finish near 0.7 m.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">They begin near 1.4 m, reach 0.7 m midway, and finish near 2.4 m.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They begin near 0.7 m, reach 2.4 m midway, and finish near 1.4 m.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They begin near 2.4 m, reach 1.4 m midway, and finish near 0.7 m.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">They are close early, move apart to about 2.41 m near the middle, then come close again at about 0.68 m.</div><div class="explanation">The 16-sample series has an interior maximum near t=9.0 s and low values at both the early and final phases.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">They begin near 1.4 m, reach 2.4 m midway, and finish near 0.7 m.</div><div class="explanation">The 16-sample series has an interior maximum near t=9.0 s and low values at both the early and final phases.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses the full metric distance curve and requires a middle maximum with lower distances on both sides.</div>
 <pre class="jsonBlock">{
@@ -5791,8 +5791,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;S&quot;: true
   },
   &quot;pair&quot;: [
-    &quot;the red-clad woman&quot;,
-    &quot;the dark-blue-clad man&quot;
+    &quot;the man in a gray T-shirt and black shorts&quot;,
+    &quot;the man in a dark top and long trousers&quot;
   ],
   &quot;timeline&quot;: [
     {
@@ -6169,14 +6169,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;metric_identity_alignment&quot;: {
       &quot;status&quot;: &quot;aligned&quot;,
       &quot;mapping&quot;: {
-        &quot;the red-clad woman&quot;: &quot;the red-clad woman&quot;,
-        &quot;the dark-blue-clad man&quot;: &quot;the dark-blue-clad man&quot;
+        &quot;the man in a gray T-shirt and black shorts&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
+        &quot;the man in a dark top and long trousers&quot;: &quot;the man in a dark top and long trousers&quot;
       },
       &quot;best_cost&quot;: 0.9822,
       &quot;alternative_cost&quot;: 1.2463,
       &quot;margin&quot;: 0.2641,
       &quot;metric_motion_profiles&quot;: {
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.052504340781399206,
           0.05843391815813488,
           0.039895835785411504,
@@ -6194,7 +6194,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.055114333116310234,
           0.7046257425099611
         ],
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.06482120170228702,
           0.0653053154894029,
           0.03540337817115838,
@@ -6214,7 +6214,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         ]
       },
       &quot;visual_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
+        &quot;the man in a dark top and long trousers&quot;: [
           0.041437655148521525,
           0.042658865593942476,
           0.016378650653777818,
@@ -6232,7 +6232,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
           0.023978609739110236,
           0.9778893835599793
         ],
-        &quot;the red-clad woman&quot;: [
+        &quot;the man in a gray T-shirt and black shorts&quot;: [
           0.0067265790427383804,
           0.033926339170084446,
           0.04765624726919136,
@@ -6255,7 +6255,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     },
     &quot;visible_2d_tracks&quot;: [
       {
-        &quot;id&quot;: &quot;the dark-blue-clad man&quot;,
+        &quot;id&quot;: &quot;the man in a dark top and long trousers&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.918,
         &quot;coverage&quot;: 1.0,
@@ -6265,7 +6265,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         &quot;normalized_displacement&quot;: 0.101
       },
       {
-        &quot;id&quot;: &quot;the red-clad woman&quot;,
+        &quot;id&quot;: &quot;the man in a gray T-shirt and black shorts&quot;,
         &quot;first_seen_sec&quot;: 0.0,
         &quot;last_seen_sec&quot;: 14.918,
         &quot;coverage&quot;: 1.0,
@@ -6324,14 +6324,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="question">Q1. Ignoring physical occlusion, how does the one-sided body-forward field relation between the two people in the video change?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="C">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The relation stays mutual throughout the clip.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Neither person enters the other's body-forward field at any time.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, the relation reverses for most of the remaining clip.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Only the dark-blue-clad man contains the red-clad woman early, then only the red-clad woman contains the dark-blue-clad man later.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">Early, only the man in a gray T-shirt and black shorts contains the man in a dark top and long trousers; later, only the man in a dark top and long trousers contains the man in a gray T-shirt and black shorts for most of the clip.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Early, both the man in a gray T-shirt and black shorts and the man in a dark top and long trousers contain each other; later, neither the man in a gray T-shirt and black shorts nor the man in a dark top and long trousers contains the other.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Early, only the man in a dark top and long trousers contains the man in a gray T-shirt and black shorts; later, only the man in a gray T-shirt and black shorts contains the man in a dark top and long trousers for most of the clip.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Early, neither the man in a gray T-shirt and black shorts nor the man in a dark top and long trousers contains the other; later, both the man in a gray T-shirt and black shorts and the man in a dark top and long trousers contain each other.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, the relation reverses for most of the remaining clip.</div><div class="explanation">The 16-sample state sequence is ['b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field']; the first six are the red-clad woman-only and the final segment is predominantly the dark-blue-clad man-only.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">Early, only the man in a dark top and long trousers contains the man in a gray T-shirt and black shorts; later, only the man in a gray T-shirt and black shorts contains the man in a dark top and long trousers for most of the clip.</div><div class="explanation">The 16-sample state sequence is ['b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field']; the first six are the man in a dark top and long trousers-only and the final segment is predominantly the man in a gray T-shirt and black shorts-only.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses ground-plane SMPL-X root-forward directions at all 16 samples. It does not claim eye gaze or an unobstructed physical sightline.</div>
 <pre class="jsonBlock">{
@@ -6367,14 +6367,14 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="question">Q1. Among the three endpoint-valid visible tracks, which pair is closest in the camera plane at both the start and the end?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="C">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The dark-blue-clad man and the red-clad woman is closest at both endpoints.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The dark-blue-clad man and the green-top woman is closest at both endpoints.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The red-clad woman and the green-top woman is the closest visible pair at both endpoints.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The closest pair changes from the dark-blue-clad man and the red-clad woman to the red-clad woman and the green-top woman.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At the start, the man in a gray T-shirt and black shorts and the woman in a gray printed T-shirt are closest; at the end, the man in a gray T-shirt and black shorts and the woman in a gray printed T-shirt are closest.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At the start, the man in a gray T-shirt and black shorts and the man in a dark top and long trousers are closest; at the end, the man in a gray T-shirt and black shorts and the man in a dark top and long trousers are closest.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At the start, the woman in a gray printed T-shirt and the man in a dark top and long trousers are closest; at the end, the woman in a gray printed T-shirt and the man in a dark top and long trousers are closest.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At the start, the woman in a gray printed T-shirt and the man in a dark top and long trousers are closest; at the end, the man in a gray T-shirt and black shorts and the woman in a gray printed T-shirt are closest.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The red-clad woman and the green-top woman is the closest visible pair at both endpoints.</div><div class="explanation">Normalized start distances are [0.2863, 0.431, 0.2105] and end distances are [0.3622, 0.4188, 0.0601] in pair order ['the dark-blue-clad man and the red-clad woman', 'the dark-blue-clad man and the green-top woman', 'the red-clad woman and the green-top woman'].</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">At the start, the woman in a gray printed T-shirt and the man in a dark top and long trousers are closest; at the end, the woman in a gray printed T-shirt and the man in a dark top and long trousers are closest.</div><div class="explanation">Normalized start distances are [0.2863, 0.431, 0.2105] and end distances are [0.3622, 0.4188, 0.0601] in pair order ['the man in a gray T-shirt and black shorts and the woman in a gray printed T-shirt', 'the man in a gray T-shirt and black shorts and the man in a dark top and long trousers', 'the woman in a gray printed T-shirt and the man in a dark top and long trousers'].</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Detects people at 2 Hz, associates all three tracks across the clip, requires a real observation within 0.55 s of both endpoints, then compares box-center separation normalized by frame diagonal.</div>
 <pre class="jsonBlock">{

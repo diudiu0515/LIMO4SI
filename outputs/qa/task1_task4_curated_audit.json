@@ -45,10 +45,45 @@
         ],
         "warnings": [],
         "metrics": {
+          "option_information_profiles": [
+            {
+              "words": 14,
+              "numbers": 2,
+              "temporal_markers": 1,
+              "relation_markers": 1,
+              "information_units": 20
+            },
+            {
+              "words": 13,
+              "numbers": 2,
+              "temporal_markers": 2,
+              "relation_markers": 0,
+              "information_units": 19
+            },
+            {
+              "words": 14,
+              "numbers": 2,
+              "temporal_markers": 1,
+              "relation_markers": 0,
+              "information_units": 19
+            },
+            {
+              "words": 14,
+              "numbers": 2,
+              "temporal_markers": 1,
+              "relation_markers": 1,
+              "information_units": 20
+            }
+          ],
           "identity_assignment_margin": 0.664,
           "identity_mapping": {
             "A": "V2",
             "B": "V1"
+          },
+          "visible_person_counts": {
+            "persistent": 2,
+            "maximum": 2,
+            "metric_3d": 2
           },
           "temporal_state_count": 16,
           "temporal_span_sec": 14.997642,
@@ -59,7 +94,7 @@
         }
       }
     ],
-    "release_warning_count": 5,
+    "release_warning_count": 8,
     "policy": {
       "min_temporal_states": 8,
       "min_task1_span_ratio": 0.6,
@@ -74,7 +109,13 @@
       "min_distance_pattern_range_m": 0.25,
       "min_topology_margin_normalized": 0.03,
       "endpoint_tolerance_sec": 0.6,
-      "forbid_sample_count_in_answers": true
+      "forbid_sample_count_in_answers": true,
+      "max_option_information_ratio": 1.25,
+      "max_option_word_count_ratio": 1.3,
+      "max_option_numeric_count_gap": 0,
+      "max_option_temporal_marker_gap": 1,
+      "max_option_relation_marker_gap": 2,
+      "max_published_distance_decimals": 1
     }
   }
 }

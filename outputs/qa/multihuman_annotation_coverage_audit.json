@@ -1,0 +1,256 @@
+{
+  "status": "ok",
+  "root": "data/HOI-M3",
+  "sequence_count": 6,
+  "two_person_metric_sequence_count": 5,
+  "three_plus_metric_sequence_count": 0,
+  "policy": {
+    "two_person_metric_qa": "requires at least two per-person metric annotation files",
+    "three_plus_metric_qa": "requires at least three per-person metric annotation files; 2D detections never fill missing metric identities",
+    "intermittent_unannotated_people": "pairwise metric questions must explicitly name the annotated pair",
+    "three_person_2d_topology": "allowed only as an explicitly labeled 2D topology scope"
+  },
+  "dataset_decision": {
+    "local_hoim3": "use for audited two-person metric QA and explicitly scoped three-person 2D topology only",
+    "cmu_panoptic": {
+      "role": "primary fallback for true three-plus-person metric 3D QA",
+      "official_source": "https://github.com/CMU-Perceptual-Computing-Lab/panoptic-toolbox",
+      "adapter": "scripts/convert_panoptic_multihuman.py"
+    },
+    "egohumans": {
+      "role": "secondary egocentric multi-human complement when ego-view coverage is required",
+      "official_source": "https://github.com/rawalkhirodkar/egohumans"
+    }
+  },
+  "sequences": [
+    {
+      "sequence": "bedroom_data01",
+      "metric_person_ids": [
+        "0",
+        "1"
+      ],
+      "metric_person_count": 2,
+      "available_video_views": 1,
+      "metric_annotation_files": [
+        "data/HOI-M3/smplx_with_distortion/bedroom_data01_person0.npz",
+        "data/HOI-M3/smplx_with_distortion/bedroom_data01_person1.npz"
+      ],
+      "eligible_for_two_person_metric_qa": true,
+      "eligible_for_three_plus_metric_qa": false
+    },
+    {
+      "sequence": "bedroom_data02",
+      "metric_person_ids": [
+        "0",
+        "1"
+      ],
+      "metric_person_count": 2,
+      "available_video_views": 1,
+      "metric_annotation_files": [
+        "data/HOI-M3/smplx_with_distortion/bedroom_data02_person0.npz",
+        "data/HOI-M3/smplx_with_distortion/bedroom_data02_person1.npz"
+      ],
+      "eligible_for_two_person_metric_qa": true,
+      "eligible_for_three_plus_metric_qa": false
+    },
+    {
+      "sequence": "bedroom_data03",
+      "metric_person_ids": [
+        "0",
+        "1"
+      ],
+      "metric_person_count": 2,
+      "available_video_views": 1,
+      "metric_annotation_files": [
+        "data/HOI-M3/smplx_with_distortion/bedroom_data03_person0.npz",
+        "data/HOI-M3/smplx_with_distortion/bedroom_data03_person1.npz"
+      ],
+      "eligible_for_two_person_metric_qa": true,
+      "eligible_for_three_plus_metric_qa": false
+    },
+    {
+      "sequence": "bedroom_data04",
+      "metric_person_ids": [
+        "0",
+        "1"
+      ],
+      "metric_person_count": 2,
+      "available_video_views": 1,
+      "metric_annotation_files": [
+        "data/HOI-M3/smplx_with_distortion/bedroom_data04_person0.npz",
+        "data/HOI-M3/smplx_with_distortion/bedroom_data04_person1.npz"
+      ],
+      "eligible_for_two_person_metric_qa": true,
+      "eligible_for_three_plus_metric_qa": false
+    },
+    {
+      "sequence": "bedroom_data05",
+      "metric_person_ids": [
+        "0",
+        "1"
+      ],
+      "metric_person_count": 2,
+      "available_video_views": 1,
+      "metric_annotation_files": [
+        "data/HOI-M3/smplx_with_distortion/bedroom_data05_person0.npz",
+        "data/HOI-M3/smplx_with_distortion/bedroom_data05_person1.npz"
+      ],
+      "eligible_for_two_person_metric_qa": true,
+      "eligible_for_three_plus_metric_qa": false
+    },
+    {
+      "sequence": "office_data19",
+      "metric_person_ids": [],
+      "metric_person_count": 0,
+      "available_video_views": 2,
+      "metric_annotation_files": [],
+      "eligible_for_two_person_metric_qa": false,
+      "eligible_for_three_plus_metric_qa": false
+    }
+  ],
+  "release_scene_coverage": [
+    {
+      "scene_id": "hoi_m3_bedroom_data02_win08",
+      "question_type": "position_consistency_between_people",
+      "reasoning_scope": "explicit metric 3D pair",
+      "persistent_visible_person_count": 2,
+      "max_visible_person_count": 2,
+      "metric_3d_track_count": 2,
+      "coverage_status": "complete_and_identity_aligned",
+      "has_persistent_visible_metric_mismatch": false,
+      "has_intermittent_visible_metric_mismatch": false
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data01_win06",
+      "question_type": "dominant_facing_relation_over_video",
+      "reasoning_scope": "explicit metric 3D pair",
+      "persistent_visible_person_count": 2,
+      "max_visible_person_count": 2,
+      "metric_3d_track_count": 2,
+      "coverage_status": "complete_and_identity_aligned",
+      "has_persistent_visible_metric_mismatch": false,
+      "has_intermittent_visible_metric_mismatch": false
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data02_win05",
+      "question_type": "body_forward_visibility_consistency",
+      "reasoning_scope": "explicit metric 3D pair",
+      "persistent_visible_person_count": 2,
+      "max_visible_person_count": 2,
+      "metric_3d_track_count": 2,
+      "coverage_status": "complete_and_identity_aligned",
+      "has_persistent_visible_metric_mismatch": false,
+      "has_intermittent_visible_metric_mismatch": false
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data03_win03",
+      "question_type": "body_centric_relation_change_over_video",
+      "reasoning_scope": "explicit metric 3D pair",
+      "persistent_visible_person_count": 2,
+      "max_visible_person_count": 2,
+      "metric_3d_track_count": 2,
+      "coverage_status": "complete_and_identity_aligned",
+      "has_persistent_visible_metric_mismatch": false,
+      "has_intermittent_visible_metric_mismatch": false
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data05_win02",
+      "question_type": "visible_pair_topology_change_2d",
+      "reasoning_scope": "three-person 2D topology",
+      "persistent_visible_person_count": 3,
+      "max_visible_person_count": 3,
+      "metric_3d_track_count": 2,
+      "coverage_status": "coverage_mismatch",
+      "has_persistent_visible_metric_mismatch": true,
+      "has_intermittent_visible_metric_mismatch": true
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data01_win02",
+      "question_type": "metric_separation_over_video",
+      "reasoning_scope": "explicit metric 3D pair",
+      "persistent_visible_person_count": 2,
+      "max_visible_person_count": 2,
+      "metric_3d_track_count": 2,
+      "coverage_status": "complete_and_identity_aligned",
+      "has_persistent_visible_metric_mismatch": false,
+      "has_intermittent_visible_metric_mismatch": false
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data01_win04",
+      "question_type": "dominant_body_centric_position",
+      "reasoning_scope": "explicit metric 3D pair",
+      "persistent_visible_person_count": 2,
+      "max_visible_person_count": 3,
+      "metric_3d_track_count": 2,
+      "coverage_status": "complete_and_identity_aligned",
+      "has_persistent_visible_metric_mismatch": false,
+      "has_intermittent_visible_metric_mismatch": true
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data02_win04",
+      "question_type": "nonmonotonic_distance_pattern",
+      "reasoning_scope": "explicit metric 3D pair",
+      "persistent_visible_person_count": 2,
+      "max_visible_person_count": 3,
+      "metric_3d_track_count": 2,
+      "coverage_status": "complete_and_identity_aligned",
+      "has_persistent_visible_metric_mismatch": false,
+      "has_intermittent_visible_metric_mismatch": true
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data02_win06",
+      "question_type": "approach_while_facing",
+      "reasoning_scope": "explicit metric 3D pair",
+      "persistent_visible_person_count": 2,
+      "max_visible_person_count": 2,
+      "metric_3d_track_count": 2,
+      "coverage_status": "complete_and_identity_aligned",
+      "has_persistent_visible_metric_mismatch": false,
+      "has_intermittent_visible_metric_mismatch": false
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data03_win09",
+      "question_type": "coupled_distance_relation_change",
+      "reasoning_scope": "explicit metric 3D pair",
+      "persistent_visible_person_count": 2,
+      "max_visible_person_count": 2,
+      "metric_3d_track_count": 2,
+      "coverage_status": "complete_and_identity_aligned",
+      "has_persistent_visible_metric_mismatch": false,
+      "has_intermittent_visible_metric_mismatch": false
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data03_win08",
+      "question_type": "distance_out_and_back_over_video",
+      "reasoning_scope": "explicit metric 3D pair",
+      "persistent_visible_person_count": 2,
+      "max_visible_person_count": 3,
+      "metric_3d_track_count": 2,
+      "coverage_status": "complete_and_identity_aligned",
+      "has_persistent_visible_metric_mismatch": false,
+      "has_intermittent_visible_metric_mismatch": true
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data01_win01",
+      "question_type": "body_forward_field_transition_over_video",
+      "reasoning_scope": "explicit metric 3D pair",
+      "persistent_visible_person_count": 2,
+      "max_visible_person_count": 2,
+      "metric_3d_track_count": 2,
+      "coverage_status": "complete_and_identity_aligned",
+      "has_persistent_visible_metric_mismatch": false,
+      "has_intermittent_visible_metric_mismatch": false
+    },
+    {
+      "scene_id": "hoi_m3_bedroom_data05_win_extra_90s",
+      "question_type": "visible_pair_topology_consistency_2d",
+      "reasoning_scope": "three-person 2D topology",
+      "persistent_visible_person_count": 3,
+      "max_visible_person_count": 3,
+      "metric_3d_track_count": 0,
+      "coverage_status": "complete_visible_2d_tracks",
+      "has_persistent_visible_metric_mismatch": true,
+      "has_intermittent_visible_metric_mismatch": true
+    }
+  ]
+}

@@ -14,12 +14,18 @@
     "min_distance_pattern_range_m": 0.25,
     "min_topology_margin_normalized": 0.03,
     "endpoint_tolerance_sec": 0.6,
-    "forbid_sample_count_in_answers": true
+    "forbid_sample_count_in_answers": true,
+    "max_option_information_ratio": 1.25,
+    "max_option_word_count_ratio": 1.3,
+    "max_option_numeric_count_gap": 0,
+    "max_option_temporal_marker_gap": 1,
+    "max_option_relation_marker_gap": 2,
+    "max_published_distance_decimals": 1
   },
   "case_count": 25,
   "accepted_count": 24,
   "rejected_count": 1,
-  "warning_count": 5,
+  "warning_count": 8,
   "cases": [
     {
       "case_index": 1,
@@ -32,6 +38,36 @@
         "orientation audit metadata is absent but this QA is not front/behind-sensitive"
       ],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 19,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 2,
+            "information_units": 23
+          },
+          {
+            "words": 19,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 2,
+            "information_units": 23
+          },
+          {
+            "words": 15,
+            "numbers": 0,
+            "temporal_markers": 3,
+            "relation_markers": 1,
+            "information_units": 19
+          },
+          {
+            "words": 15,
+            "numbers": 0,
+            "temporal_markers": 3,
+            "relation_markers": 1,
+            "information_units": 19
+          }
+        ],
         "temporal_state_count": 29,
         "temporal_span_sec": 15.0,
         "max_temporal_gap_ratio": 0.066667,
@@ -49,6 +85,36 @@
         "orientation audit metadata is absent but this QA is not front/behind-sensitive"
       ],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 16,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 2,
+            "information_units": 20
+          },
+          {
+            "words": 16,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 2,
+            "information_units": 20
+          },
+          {
+            "words": 16,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 2,
+            "information_units": 20
+          },
+          {
+            "words": 16,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 2,
+            "information_units": 20
+          }
+        ],
         "temporal_state_count": 10,
         "temporal_span_sec": 14.0,
         "max_temporal_gap_ratio": 0.285714,
@@ -66,6 +132,36 @@
         "orientation audit metadata is absent but this QA is not front/behind-sensitive"
       ],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 10,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 1,
+            "information_units": 12
+          },
+          {
+            "words": 11,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 1,
+            "information_units": 13
+          },
+          {
+            "words": 10,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 1,
+            "information_units": 12
+          },
+          {
+            "words": 10,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 1,
+            "information_units": 12
+          }
+        ],
         "temporal_state_count": 21,
         "temporal_span_sec": 15.0,
         "max_temporal_gap_ratio": 0.233333,
@@ -83,6 +179,36 @@
         "orientation audit metadata is absent but this QA is not front/behind-sensitive"
       ],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 15,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 16
+          },
+          {
+            "words": 15,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 16
+          },
+          {
+            "words": 15,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 16
+          },
+          {
+            "words": 15,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 16
+          }
+        ],
         "temporal_state_count": 31,
         "temporal_span_sec": 15.0,
         "max_temporal_gap_ratio": 0.033333,
@@ -98,6 +224,36 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 12,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 14
+          },
+          {
+            "words": 12,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 14
+          },
+          {
+            "words": 12,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 14
+          },
+          {
+            "words": 12,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 14
+          }
+        ],
         "temporal_state_count": 31,
         "temporal_span_sec": 15.0,
         "max_temporal_gap_ratio": 0.033333,
@@ -113,6 +269,36 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 10,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 1,
+            "information_units": 13
+          },
+          {
+            "words": 13,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 1,
+            "information_units": 16
+          },
+          {
+            "words": 12,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 1,
+            "information_units": 15
+          },
+          {
+            "words": 11,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 1,
+            "information_units": 14
+          }
+        ],
         "temporal_state_count": 26,
         "temporal_span_sec": 14.5,
         "max_temporal_gap_ratio": 0.137931,
@@ -129,6 +315,36 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 13,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 15
+          },
+          {
+            "words": 13,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 15
+          },
+          {
+            "words": 13,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 15
+          },
+          {
+            "words": 13,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 15
+          }
+        ],
         "temporal_state_count": 19,
         "temporal_span_sec": 10.0,
         "max_temporal_gap_ratio": 0.1,
@@ -144,6 +360,36 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 17,
+            "numbers": 2,
+            "temporal_markers": 0,
+            "relation_markers": 3,
+            "information_units": 24
+          },
+          {
+            "words": 17,
+            "numbers": 2,
+            "temporal_markers": 0,
+            "relation_markers": 3,
+            "information_units": 24
+          },
+          {
+            "words": 17,
+            "numbers": 2,
+            "temporal_markers": 0,
+            "relation_markers": 2,
+            "information_units": 23
+          },
+          {
+            "words": 17,
+            "numbers": 2,
+            "temporal_markers": 0,
+            "relation_markers": 3,
+            "information_units": 24
+          }
+        ],
         "temporal_state_count": 24,
         "temporal_span_sec": 15.0,
         "max_temporal_gap_ratio": 0.266667,
@@ -159,6 +405,36 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 16,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 3,
+            "information_units": 21
+          },
+          {
+            "words": 14,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 3,
+            "information_units": 19
+          },
+          {
+            "words": 15,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 3,
+            "information_units": 20
+          },
+          {
+            "words": 15,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 3,
+            "information_units": 20
+          }
+        ],
         "temporal_state_count": 26,
         "temporal_span_sec": 15.0,
         "max_temporal_gap_ratio": 0.2,
@@ -175,6 +451,36 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 17,
+            "numbers": 2,
+            "temporal_markers": 2,
+            "relation_markers": 1,
+            "information_units": 24
+          },
+          {
+            "words": 17,
+            "numbers": 2,
+            "temporal_markers": 2,
+            "relation_markers": 2,
+            "information_units": 25
+          },
+          {
+            "words": 17,
+            "numbers": 2,
+            "temporal_markers": 2,
+            "relation_markers": 1,
+            "information_units": 24
+          },
+          {
+            "words": 17,
+            "numbers": 2,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 23
+          }
+        ],
         "temporal_state_count": 22,
         "temporal_span_sec": 15.0,
         "max_temporal_gap_ratio": 0.233333,
@@ -192,6 +498,36 @@
         "orientation audit metadata is absent but this QA is not front/behind-sensitive"
       ],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 14,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 1,
+            "information_units": 15
+          },
+          {
+            "words": 13,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 1,
+            "information_units": 14
+          },
+          {
+            "words": 14,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 1,
+            "information_units": 15
+          },
+          {
+            "words": 13,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 1,
+            "information_units": 14
+          }
+        ],
         "temporal_state_count": 31,
         "temporal_span_sec": 15.0,
         "max_temporal_gap_ratio": 0.033333,
@@ -207,10 +543,45 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 25,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 2,
+            "information_units": 29
+          },
+          {
+            "words": 25,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 2,
+            "information_units": 29
+          },
+          {
+            "words": 25,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 2,
+            "information_units": 29
+          },
+          {
+            "words": 25,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 2,
+            "information_units": 29
+          }
+        ],
         "identity_assignment_margin": 0.2131,
         "identity_mapping": {
           "A": "V2",
           "B": "V1"
+        },
+        "visible_person_counts": {
+          "persistent": 2,
+          "maximum": 2,
+          "metric_3d": 2
         },
         "temporal_state_count": 16,
         "temporal_span_sec": 14.997641,
@@ -228,10 +599,45 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 13,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 14
+          },
+          {
+            "words": 14,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 1,
+            "information_units": 16
+          },
+          {
+            "words": 12,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 1,
+            "information_units": 14
+          },
+          {
+            "words": 14,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 15
+          }
+        ],
         "identity_assignment_margin": 0.2061,
         "identity_mapping": {
           "A": "V2",
           "B": "V1"
+        },
+        "visible_person_counts": {
+          "persistent": 2,
+          "maximum": 2,
+          "metric_3d": 2
         },
         "temporal_state_count": 16,
         "temporal_span_sec": 14.997643,
@@ -253,10 +659,45 @@
       ],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 14,
+            "numbers": 2,
+            "temporal_markers": 1,
+            "relation_markers": 1,
+            "information_units": 20
+          },
+          {
+            "words": 13,
+            "numbers": 2,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 19
+          },
+          {
+            "words": 14,
+            "numbers": 2,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 19
+          },
+          {
+            "words": 14,
+            "numbers": 2,
+            "temporal_markers": 1,
+            "relation_markers": 1,
+            "information_units": 20
+          }
+        ],
         "identity_assignment_margin": 0.664,
         "identity_mapping": {
           "A": "V2",
           "B": "V1"
+        },
+        "visible_person_counts": {
+          "persistent": 2,
+          "maximum": 2,
+          "metric_3d": 2
         },
         "temporal_state_count": 16,
         "temporal_span_sec": 14.997642,
@@ -275,10 +716,45 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 28,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 1,
+            "information_units": 31
+          },
+          {
+            "words": 30,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 1,
+            "information_units": 33
+          },
+          {
+            "words": 28,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 1,
+            "information_units": 31
+          },
+          {
+            "words": 30,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 1,
+            "information_units": 33
+          }
+        ],
         "identity_assignment_margin": 0.5285,
         "identity_mapping": {
           "A": "V2",
           "B": "V1"
+        },
+        "visible_person_counts": {
+          "persistent": 2,
+          "maximum": 2,
+          "metric_3d": 2
         },
         "temporal_state_count": 16,
         "temporal_span_sec": 14.997641,
@@ -296,10 +772,45 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 30,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 4,
+            "information_units": 36
+          },
+          {
+            "words": 30,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 4,
+            "information_units": 36
+          },
+          {
+            "words": 30,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 4,
+            "information_units": 36
+          },
+          {
+            "words": 30,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 4,
+            "information_units": 36
+          }
+        ],
         "identity_assignment_margin": 0.4127,
         "identity_mapping": {
           "A": "V1",
           "B": "V2"
+        },
+        "visible_person_counts": {
+          "persistent": 2,
+          "maximum": 2,
+          "metric_3d": 2
         },
         "temporal_state_count": 16,
         "temporal_span_sec": 14.997642,
@@ -321,6 +832,36 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 54,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 56
+          },
+          {
+            "words": 52,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 54
+          },
+          {
+            "words": 54,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 56
+          },
+          {
+            "words": 49,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 51
+          }
+        ],
         "start_closest_pair_margin": 0.1273,
         "end_closest_pair_margin": 0.1587
       }
@@ -334,10 +875,45 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 14,
+            "numbers": 2,
+            "temporal_markers": 1,
+            "relation_markers": 1,
+            "information_units": 20
+          },
+          {
+            "words": 14,
+            "numbers": 2,
+            "temporal_markers": 1,
+            "relation_markers": 1,
+            "information_units": 20
+          },
+          {
+            "words": 14,
+            "numbers": 2,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 20
+          },
+          {
+            "words": 14,
+            "numbers": 2,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 19
+          }
+        ],
         "identity_assignment_margin": 1.7849,
         "identity_mapping": {
           "A": "V1",
           "B": "V2"
+        },
+        "visible_person_counts": {
+          "persistent": 2,
+          "maximum": 2,
+          "metric_3d": 2
         },
         "temporal_state_count": 16,
         "temporal_span_sec": 14.997643,
@@ -354,12 +930,49 @@
       "question_type": "dominant_body_centric_position",
       "status": "accepted",
       "errors": [],
-      "warnings": [],
+      "warnings": [
+        "an intermittent extra person is excluded; the question explicitly names the annotated pair"
+      ],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 23,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 2,
+            "information_units": 25
+          },
+          {
+            "words": 23,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 2,
+            "information_units": 25
+          },
+          {
+            "words": 23,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 2,
+            "information_units": 25
+          },
+          {
+            "words": 23,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 2,
+            "information_units": 25
+          }
+        ],
         "identity_assignment_margin": 2.6125,
         "identity_mapping": {
           "A": "V1",
           "B": "V2"
+        },
+        "visible_person_counts": {
+          "persistent": 2,
+          "maximum": 3,
+          "metric_3d": 2
         },
         "temporal_state_count": 16,
         "temporal_span_sec": 14.997643,
@@ -377,12 +990,49 @@
       "question_type": "nonmonotonic_distance_pattern",
       "status": "accepted",
       "errors": [],
-      "warnings": [],
+      "warnings": [
+        "an intermittent extra person is excluded; the question explicitly names the annotated pair"
+      ],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 14,
+            "numbers": 3,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 21
+          },
+          {
+            "words": 14,
+            "numbers": 3,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 21
+          },
+          {
+            "words": 14,
+            "numbers": 3,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 21
+          },
+          {
+            "words": 14,
+            "numbers": 3,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 21
+          }
+        ],
         "identity_assignment_margin": 0.4945,
         "identity_mapping": {
           "A": "V2",
           "B": "V1"
+        },
+        "visible_person_counts": {
+          "persistent": 2,
+          "maximum": 3,
+          "metric_3d": 2
         },
         "temporal_state_count": 16,
         "temporal_span_sec": 14.997641,
@@ -401,10 +1051,45 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 14,
+            "numbers": 1,
+            "temporal_markers": 1,
+            "relation_markers": 2,
+            "information_units": 19
+          },
+          {
+            "words": 12,
+            "numbers": 1,
+            "temporal_markers": 1,
+            "relation_markers": 2,
+            "information_units": 17
+          },
+          {
+            "words": 12,
+            "numbers": 1,
+            "temporal_markers": 1,
+            "relation_markers": 2,
+            "information_units": 17
+          },
+          {
+            "words": 14,
+            "numbers": 1,
+            "temporal_markers": 1,
+            "relation_markers": 2,
+            "information_units": 19
+          }
+        ],
         "identity_assignment_margin": 0.5291,
         "identity_mapping": {
           "A": "V1",
           "B": "V2"
+        },
+        "visible_person_counts": {
+          "persistent": 2,
+          "maximum": 2,
+          "metric_3d": 2
         },
         "temporal_state_count": 16,
         "temporal_span_sec": 14.997641,
@@ -425,10 +1110,45 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 33,
+            "numbers": 2,
+            "temporal_markers": 0,
+            "relation_markers": 5,
+            "information_units": 42
+          },
+          {
+            "words": 33,
+            "numbers": 2,
+            "temporal_markers": 0,
+            "relation_markers": 5,
+            "information_units": 42
+          },
+          {
+            "words": 33,
+            "numbers": 2,
+            "temporal_markers": 0,
+            "relation_markers": 5,
+            "information_units": 42
+          },
+          {
+            "words": 33,
+            "numbers": 2,
+            "temporal_markers": 0,
+            "relation_markers": 5,
+            "information_units": 42
+          }
+        ],
         "identity_assignment_margin": 0.5107,
         "identity_mapping": {
           "A": "V1",
           "B": "V2"
+        },
+        "visible_person_counts": {
+          "persistent": 2,
+          "maximum": 2,
+          "metric_3d": 2
         },
         "temporal_state_count": 16,
         "temporal_span_sec": 14.997642,
@@ -449,12 +1169,49 @@
       "question_type": "distance_out_and_back_over_video",
       "status": "accepted",
       "errors": [],
-      "warnings": [],
+      "warnings": [
+        "an intermittent extra person is excluded; the question explicitly names the annotated pair"
+      ],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 14,
+            "numbers": 3,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 21
+          },
+          {
+            "words": 14,
+            "numbers": 3,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 21
+          },
+          {
+            "words": 14,
+            "numbers": 3,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 21
+          },
+          {
+            "words": 14,
+            "numbers": 3,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 21
+          }
+        ],
         "identity_assignment_margin": 0.2641,
         "identity_mapping": {
           "A": "V2",
           "B": "V1"
+        },
+        "visible_person_counts": {
+          "persistent": 2,
+          "maximum": 3,
+          "metric_3d": 2
         },
         "temporal_state_count": 16,
         "temporal_span_sec": 14.997642,
@@ -473,10 +1230,45 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 47,
+            "numbers": 0,
+            "temporal_markers": 3,
+            "relation_markers": 0,
+            "information_units": 50
+          },
+          {
+            "words": 48,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 50
+          },
+          {
+            "words": 47,
+            "numbers": 0,
+            "temporal_markers": 3,
+            "relation_markers": 0,
+            "information_units": 50
+          },
+          {
+            "words": 48,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 50
+          }
+        ],
         "identity_assignment_margin": 1.0665,
         "identity_mapping": {
           "A": "V1",
           "B": "V2"
+        },
+        "visible_person_counts": {
+          "persistent": 2,
+          "maximum": 2,
+          "metric_3d": 2
         },
         "temporal_state_count": 16,
         "temporal_span_sec": 14.997643,
@@ -498,6 +1290,36 @@
       "errors": [],
       "warnings": [],
       "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 44,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 46
+          },
+          {
+            "words": 48,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 50
+          },
+          {
+            "words": 44,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 46
+          },
+          {
+            "words": 44,
+            "numbers": 0,
+            "temporal_markers": 2,
+            "relation_markers": 0,
+            "information_units": 46
+          }
+        ],
         "start_closest_pair_margin": 0.0758,
         "end_closest_pair_margin": 0.3021
       }

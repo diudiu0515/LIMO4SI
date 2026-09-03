@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass
+from itertools import combinations
 from typing import Any, Mapping, Sequence
 
 Vec = Sequence[float]
@@ -171,7 +172,7 @@ def pair_timeline(scene: Mapping[str, Any], a_id: str = 'A', b_id: str = 'B') ->
             'evidence': {
                 'person_a': {'id': a.get('id'), 'pelvis_xyz_m': a.get('pelvis'), 'head_xyz_m': a.get('head'), 'forward_unit': unit(a.get('forward', [0, 0, 1]))},
                 'person_b': {'id': b.get('id'), 'pelvis_xyz_m': b.get('pelvis'), 'head_xyz_m': b.get('head'), 'forward_unit': unit(b.get('forward', [0, 0, 1]))},
-                'computed_from': ['SMPL-X transl as pelvis/root proxy', 'SMPL-X global_orient-derived body forward', 'head = pelvis + 1.6m proxy when fitted head joints are not loaded'],
+                'computed_from': scene.get('evidence_source') or ['SMPL-X transl as pelvis/root proxy', 'SMPL-X global_orient-derived body forward', 'head = pelvis + 1.6m proxy when fitted head joints are not loaded'],
             },
         })
     if not rows:
@@ -185,6 +186,62 @@ def pair_timeline(scene: Mapping[str, Any], a_id: str = 'A', b_id: str = 'B') ->
         'facing_changed': rows[0]['facing_state'] != rows[-1]['facing_state'],
         'los_changed': len(set(evaluated_los)) > 1 if evaluated_los else None,
         'line_of_sight_evidence_status': 'evaluated' if evaluated_los else 'missing_blocker_geometry',
+    }
+
+
+def multi_person_metric_timeline(scene: Mapping[str, Any], min_people: int = 3) -> dict[str, Any]:
+    """Compute all pair distances for a stable, fully annotated multi-person set."""
+    configured = [str(value) for value in scene.get("metric_person_ids", [])]
+    if configured:
+        person_ids = configured
+    else:
+        counts: dict[str, int] = {}
+        frames = scene.get("frames", [])
+        for frame in frames:
+            for value in {str(person.get("id")) for person in frame.get("people", [])}:
+                counts[value] = counts.get(value, 0) + 1
+        person_ids = sorted(
+            (person_id for person_id, count in counts.items() if frames and count / len(frames) >= 0.8),
+            key=str,
+        )
+    if len(person_ids) < min_people:
+        return {
+            "status": "missing_evidence",
+            "missing_evidence": [f"{min_people} stable metric person tracks"],
+            "metric_person_ids": person_ids,
+        }
+
+    states = []
+    for frame in scene.get("frames", []):
+        by_id = {str(value.get("id")): value for value in frame.get("people", [])}
+        if any(person_id not in by_id for person_id in person_ids):
+            continue
+        pair_rows = []
+        for left, right in combinations(person_ids, 2):
+            pair_rows.append({
+                "pair": f"{left}–{right}",
+                "distance_m": dist(by_id[left]["pelvis"], by_id[right]["pelvis"]),
+            })
+        pair_rows.sort(key=lambda row: row["distance_m"])
+        states.append({
+            "t": frame.get("t"),
+            "frame_id": frame.get("frame_id"),
+            "pair_distances_m": pair_rows,
+            "closest_pair": pair_rows[0]["pair"],
+            "closest_pair_margin_m": pair_rows[1]["distance_m"] - pair_rows[0]["distance_m"],
+        })
+    if not states:
+        return {
+            "status": "missing_evidence",
+            "missing_evidence": ["frames containing every stable metric person"],
+            "metric_person_ids": person_ids,
+        }
+    return {
+        "status": "ok",
+        "metric_person_ids": person_ids,
+        "person_count": len(person_ids),
+        "states": states,
+        "scope": "all-pairs metric 3D pelvis geometry; no 2D detections substitute for missing people",
     }
 
 

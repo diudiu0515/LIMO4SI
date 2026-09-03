@@ -54,6 +54,10 @@ def metric_group(qtype="dominant_facing_relation_over_video", counts=None, cover
         "name": "metric_case",
         "video_window": {"duration_sec": 15.0},
         "visual_person_audit": audit,
+        "person_display_aliases": {
+            "A": "the man in a dark shirt",
+            "B": "the man in a light shirt",
+        },
         "qa": [question(TASK4_ID, qtype, result)],
     }
 
@@ -78,6 +82,47 @@ class ScaleQualityTests(unittest.TestCase):
         group = metric_group(counts={"facing_each_other": 4, "side_by_side_or_oblique": 4})
         errors = validate_release({"groups": [group]})["cases"][0]["errors"]
         self.assertTrue(any("ambiguous" in error for error in errors))
+
+    def test_rejects_option_with_uniquely_precise_numeric_detail(self):
+        group = metric_group()
+        group["qa"][0]["options"][0]["text"] = "They approach from 2.73 m to 1.14 m while facing each other."
+        group["qa"][0]["correct_answer"] = group["qa"][0]["options"][0]["text"]
+        group["qa"][0]["answer"] = group["qa"][0]["options"][0]["text"]
+        errors = validate_release({"groups": [group]})["cases"][0]["errors"]
+        self.assertTrue(any("numeric detail" in error or "precision" in error for error in errors))
+
+    def test_rejects_duplicate_public_person_descriptions(self):
+        group = metric_group()
+        group["person_display_aliases"]["B"] = group["person_display_aliases"]["A"]
+        errors = validate_release({"groups": [group]})["cases"][0]["errors"]
+        self.assertTrue(any("pairwise distinct" in error for error in errors))
+
+    def test_unannotated_third_person_requires_explicit_pair_names(self):
+        group = metric_group()
+        group["visual_person_audit"].update({
+            "persistent_visible_person_count": 2,
+            "max_visible_person_count": 3,
+            "metric_3d_track_count": 2,
+        })
+        errors = validate_release({"groups": [group]})["cases"][0]["errors"]
+        self.assertTrue(any("unnamed metric pair" in error for error in errors))
+
+        group["qa"][0]["question"] = (
+            "What happens between the man in a dark shirt and the man in a light shirt over time?"
+        )
+        report = validate_release({"groups": [group]})
+        self.assertEqual(report["status"], "ok")
+        self.assertTrue(any("intermittent extra person" in warning for warning in report["cases"][0]["warnings"]))
+
+    def test_rejects_option_information_outlier_without_numbers(self):
+        group = metric_group()
+        group["qa"][0]["options"][0]["text"] = (
+            "Correct answer with uniquely detailed temporal and relational explanation throughout the entire clip"
+        )
+        group["qa"][0]["correct_answer"] = group["qa"][0]["options"][0]["text"]
+        group["qa"][0]["answer"] = group["qa"][0]["options"][0]["text"]
+        errors = validate_release({"groups": [group]})["cases"][0]["errors"]
+        self.assertTrue(any("information ratio" in error or "word-count ratio" in error for error in errors))
 
     def test_front_behind_task1_requires_consistent_orientation_audit(self):
         states = [

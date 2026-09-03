@@ -1,19 +1,60 @@
 {
-  "bedroom_data01": {
-    "V1": "the dark-blue-clad man",
-    "V2": "the red-clad woman"
+  "hoi_m3_bedroom_data02_win08": {
+    "A": "the man in a dark top and long trousers",
+    "B": "the man in a gray T-shirt and black shorts"
   },
-  "bedroom_data02": {
-    "V1": "the dark-blue-clad man",
-    "V2": "the red-clad woman"
+  "hoi_m3_bedroom_data01_win06": {
+    "A": "the man in a dark top and long trousers",
+    "B": "the man in a gray T-shirt and black shorts"
   },
-  "bedroom_data03": {
-    "V1": "the dark-blue-clad man",
-    "V2": "the red-clad woman"
+  "hoi_m3_bedroom_data03_win04": {
+    "A": "the man in a dark top and long trousers",
+    "B": "the man in a gray T-shirt and black shorts"
   },
-  "bedroom_data05": {
-    "V1": "the dark-blue-clad man",
-    "V2": "the red-clad woman",
-    "V3": "the green-top woman"
+  "hoi_m3_bedroom_data02_win05": {
+    "A": "the man in a dark top and long trousers",
+    "B": "the man in a gray T-shirt and black shorts"
+  },
+  "hoi_m3_bedroom_data03_win03": {
+    "A": "the man in a gray T-shirt and black shorts",
+    "B": "the man in a dark top and long trousers"
+  },
+  "hoi_m3_bedroom_data01_win02": {
+    "A": "the man in a dark top and long trousers",
+    "B": "the man in a gray T-shirt and black shorts"
+  },
+  "hoi_m3_bedroom_data01_win04": {
+    "A": "the man in a gray T-shirt and black shorts",
+    "B": "the man in a dark top and long trousers"
+  },
+  "hoi_m3_bedroom_data02_win04": {
+    "A": "the man in a dark top and long trousers",
+    "B": "the man in a gray T-shirt and black shorts"
+  },
+  "hoi_m3_bedroom_data02_win06": {
+    "A": "the man in a dark top and long trousers",
+    "B": "the man in a gray T-shirt and black shorts"
+  },
+  "hoi_m3_bedroom_data03_win09": {
+    "A": "the man in a gray T-shirt and black shorts",
+    "B": "the man in a dark top and long trousers"
+  },
+  "hoi_m3_bedroom_data03_win08": {
+    "A": "the man in a gray T-shirt and black shorts",
+    "B": "the man in a dark top and long trousers"
+  },
+  "hoi_m3_bedroom_data01_win01": {
+    "A": "the man in a gray T-shirt and black shorts",
+    "B": "the man in a dark top and long trousers"
+  },
+  "hoi_m3_bedroom_data05_win02": {
+    "V1": "the man in a black top and light-colored trousers",
+    "V2": "the woman in a gray printed T-shirt",
+    "V3": "the man in a black top with red trim and dark trousers"
+  },
+  "hoi_m3_bedroom_data05_win_extra_90s": {
+    "V1": "the man in a gray T-shirt and black shorts",
+    "V2": "the woman in a gray printed T-shirt",
+    "V3": "the man in a dark top and long trousers"
   }
 }

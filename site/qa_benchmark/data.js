@@ -333,24 +333,24 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion."
+              "text": "The bowl changes from the person's left side at the start to the right side at the end."
             },
             {
               "label": "B",
-              "text": "The bowl itself moves from the person's right side to the left side."
+              "text": "The bowl changes from the person's right side at the start to the left side at the end."
             },
             {
               "label": "C",
-              "text": "It remains on the person's left in the body frame for the entire clip."
+              "text": "The bowl remains on the person's left side from the start through the end."
             },
             {
               "label": "D",
-              "text": "It remains centered in the person's body frame at both endpoints."
+              "text": "The bowl remains on the person's right side from the start through the end."
             }
           ],
           "correct_option": "A",
-          "correct_answer": "It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.",
-          "answer": "It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.",
+          "correct_answer": "The bowl changes from the person's left side at the start to the right side at the end.",
+          "answer": "The bowl changes from the person's left side at the start to the right side at the end.",
           "explanation": "Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes.",
           "status": "ok",
           "quality": "high",
@@ -1285,25 +1285,25 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "It changes from the person's left side to the person's right side."
+              "text": "The paprika container is left of the person at the start and right at the end."
             },
             {
               "label": "B",
-              "text": "It remains on the person's right side throughout."
+              "text": "The paprika container is right of the person at the start and left at the end."
             },
             {
               "label": "C",
-              "text": "It remains on the person's left side throughout."
+              "text": "The paprika container is right of the person at the start and right at the end."
             },
             {
               "label": "D",
-              "text": "It changes from the person's right side to the person's left side."
+              "text": "The paprika container is left of the person at the start and left at the end."
             }
           ],
-          "correct_option": "D",
-          "correct_answer": "It changes from the person's right side to the person's left side.",
-          "answer": "It changes from the person's right side to the person's left side.",
-          "explanation": "The body-centric relation changes right → left while the measured body turn is 56.7° and net displacement is 0.20 m.",
+          "correct_option": "B",
+          "correct_answer": "The paprika container is right of the person at the start and left at the end.",
+          "answer": "The paprika container is right of the person at the start and left at the end.",
+          "explanation": "The body-centric relation changes right → left while the measured body turn is 56.7° and net displacement is 0.2 m.",
           "status": "ok",
           "quality": "high",
           "method": "Uses all valid poses in the clip; the rotation-dominant label requires body turn ≥45° and net displacement <0.35 m.",
@@ -3734,24 +3734,24 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "The person's body/head direction changes; no listed blocker is detected on the final sightline."
+              "text": "Near the end, changing blocker position brings the knife into the person's forward field."
             },
             {
               "label": "B",
-              "text": "A listed object moves into the sightline and blocks the knife."
+              "text": "Near the end, changing knife position brings the knife into the person's forward field."
             },
             {
               "label": "C",
-              "text": "The knife remains outside the person's forward field for the whole clip."
+              "text": "Near the end, changing camera viewpoint brings the knife into the person's forward field."
             },
             {
               "label": "D",
-              "text": "The camera viewpoint alone determines the person's visibility state."
+              "text": "Near the end, changing body direction brings the knife into the person's forward field."
             }
           ],
-          "correct_option": "A",
-          "correct_answer": "The person's body/head direction changes; no listed blocker is detected on the final sightline.",
-          "answer": "The person's body/head direction changes; no listed blocker is detected on the final sightline.",
+          "correct_option": "D",
+          "correct_answer": "Near the end, changing body direction brings the knife into the person's forward field.",
+          "answer": "Near the end, changing body direction brings the knife into the person's forward field.",
           "explanation": "The first samples place the knife outside the forward field, the final four samples place it in the central zone, body turn is about 74.6°, and the listed-object blocker field remains empty.",
           "status": "ok",
           "quality": "audited_proxy",
@@ -6079,24 +6079,24 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "The white chopping board remains nearest in all 31 samples."
+              "text": "The white chopping board remains nearest to the person throughout the clip."
             },
             {
               "label": "B",
-              "text": "The steel tomato bowl remains nearest throughout."
+              "text": "The steel tomato bowl remains nearest to the person throughout the clip."
             },
             {
               "label": "C",
-              "text": "The small steel bowl remains nearest throughout."
+              "text": "The small steel bowl remains nearest to the person throughout the clip."
             },
             {
               "label": "D",
-              "text": "The nearest listed object changes during the clip."
+              "text": "No single listed object remains nearest to the person throughout the clip."
             }
           ],
           "correct_option": "A",
-          "correct_answer": "The white chopping board remains nearest in all 31 samples.",
-          "answer": "The white chopping board remains nearest in all 31 samples.",
+          "correct_answer": "The white chopping board remains nearest to the person throughout the clip.",
+          "answer": "The white chopping board remains nearest to the person throughout the clip.",
           "explanation": "Per-sample pelvis-to-object 3D distances select the white chopping board 31/31 times.",
           "status": "ok",
           "quality": "high",
@@ -7254,24 +7254,24 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "All three objects remain behind the person throughout."
+              "text": "All three objects remain behind the person throughout the clip."
             },
             {
               "label": "B",
-              "text": "Only the oil container remains in front throughout."
+              "text": "Only the steel bowl remains in front of the person throughout the clip."
             },
             {
               "label": "C",
-              "text": "At least one listed object crosses from front to behind during the clip."
+              "text": "All three objects remain in front of the person throughout the clip."
             },
             {
               "label": "D",
-              "text": "The steel bowl, oil container and steel plate all remain in front of the person in all 26 samples."
+              "text": "Only the steel plate remains behind the person throughout the clip."
             }
           ],
-          "correct_option": "D",
-          "correct_answer": "The steel bowl, oil container and steel plate all remain in front of the person in all 26 samples.",
-          "answer": "The steel bowl, oil container and steel plate all remain in front of the person in all 26 samples.",
+          "correct_option": "C",
+          "correct_answer": "All three objects remain in front of the person throughout the clip.",
+          "answer": "All three objects remain in front of the person throughout the clip.",
           "explanation": "The front counts are {'steel bowl_0': 26, 'oil container_0': 26, 'steel plate_0': 26}; each equals the 26-sample timeline length.",
           "status": "ok",
           "quality": "high",
@@ -10232,24 +10232,24 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "The chopped tomato is nearest and below the body origin in all 19 samples."
+              "text": "The chopping board remains the nearest object and stays below the person throughout."
             },
             {
               "label": "B",
-              "text": "The chopping board is nearest and below throughout."
+              "text": "The chopped tomato remains the nearest object but stays above the person throughout."
             },
             {
               "label": "C",
-              "text": "The knife is nearest and below throughout."
+              "text": "The steel bowl remains the nearest object and stays below the person throughout."
             },
             {
               "label": "D",
-              "text": "No object satisfies both conditions for the whole clip."
+              "text": "The chopped tomato remains the nearest object and stays below the person throughout."
             }
           ],
-          "correct_option": "A",
-          "correct_answer": "The chopped tomato is nearest and below the body origin in all 19 samples.",
-          "answer": "The chopped tomato is nearest and below the body origin in all 19 samples.",
+          "correct_option": "D",
+          "correct_answer": "The chopped tomato remains the nearest object and stays below the person throughout.",
+          "answer": "The chopped tomato remains the nearest object and stays below the person throughout.",
           "explanation": "The chopped tomato wins all 19 distance rankings and has below in 19/19 vertical-relation samples.",
           "status": "ok",
           "quality": "high",
@@ -12626,25 +12626,25 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "The pelvis-to-plate distance decreases from about 3.05 m to 1.86 m, while the plate changes from the person's left to the person's right."
+              "text": "The plate gets farther, from about 1.9 m to 3.1 m, and changes from right to left."
             },
             {
               "label": "B",
-              "text": "The distance increases while the plate changes from right to left."
+              "text": "The plate gets closer, from about 3.1 m to 1.9 m, and changes from left to left."
             },
             {
               "label": "C",
-              "text": "The distance decreases, but the plate stays on the person's left throughout."
+              "text": "The plate stays stable, from about 3.1 m to 3.1 m, and changes from right to right."
             },
             {
               "label": "D",
-              "text": "The distance stays nearly constant and the plate remains centered."
+              "text": "The plate gets closer, from about 3.1 m to 1.9 m, and changes from left to right."
             }
           ],
-          "correct_option": "A",
-          "correct_answer": "The pelvis-to-plate distance decreases from about 3.05 m to 1.86 m, while the plate changes from the person's left to the person's right.",
-          "answer": "The pelvis-to-plate distance decreases from about 3.05 m to 1.86 m, while the plate changes from the person's left to the person's right.",
-          "explanation": "Across 24 valid body poses, distance changes by -1.19 m and the endpoint lateral labels are left then right.",
+          "correct_option": "D",
+          "correct_answer": "The plate gets closer, from about 3.1 m to 1.9 m, and changes from left to right.",
+          "answer": "The plate gets closer, from about 3.1 m to 1.9 m, and changes from left to right.",
+          "explanation": "Across 24 valid body poses, distance changes by -1.2 m and the endpoint lateral labels are left then right.",
           "status": "ok",
           "quality": "high",
           "method": "Uses the same fixed 3D plate center with every human pelvis/body-frame sample; jointly checks Euclidean distance and body-centric lateral relation.",
@@ -13603,24 +13603,24 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "It begins on the person's left and ends behind the person."
+              "text": "The bottle is in front of the person at the start and left-behind at the end."
             },
             {
               "label": "B",
-              "text": "It begins behind the person and ends on the person's right-and-front side."
+              "text": "The bottle is behind the person at the start and right-front at the end."
             },
             {
               "label": "C",
-              "text": "It remains behind the person throughout."
+              "text": "The bottle is right-front of the person at the start and behind at the end."
             },
             {
               "label": "D",
-              "text": "It remains on the person's left throughout."
+              "text": "The bottle is left-behind the person at the start and in front at the end."
             }
           ],
           "correct_option": "B",
-          "correct_answer": "It begins behind the person and ends on the person's right-and-front side.",
-          "answer": "It begins behind the person and ends on the person's right-and-front side.",
+          "correct_answer": "The bottle is behind the person at the start and right-front at the end.",
+          "answer": "The bottle is behind the person at the start and right-front at the end.",
           "explanation": "Across 26 valid poses, the corrected body-centric labels change from right-behind at the first sample to right-front at the final sample.",
           "status": "ok",
           "quality": "high",
@@ -14449,25 +14449,25 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "The distance stays nearly constant throughout."
+              "text": "The whisk begins farther away, at about 1.9 m, and ends very close, at about 0.6 m."
             },
             {
               "label": "B",
-              "text": "The person moves steadily closer and ends within 0.3 m."
+              "text": "The whisk begins farther away, at about 1.9 m, and ends farther away, at about 1.9 m."
             },
             {
               "label": "C",
-              "text": "The egg whisk is very close to the person at the beginning and about 1.86 m away at the end."
+              "text": "The whisk begins very close, at about 0.6 m, and ends farther away, at about 1.9 m."
             },
             {
               "label": "D",
-              "text": "The distance increases briefly but returns to its starting value by the end."
+              "text": "The whisk begins very close, at about 0.6 m, and ends very close, at about 0.6 m."
             }
           ],
           "correct_option": "C",
-          "correct_answer": "The egg whisk is very close to the person at the beginning and about 1.86 m away at the end.",
-          "answer": "The egg whisk is very close to the person at the beginning and about 1.86 m away at the end.",
-          "explanation": "The pelvis-to-object Euclidean distance changes by +1.30 m across 22 valid pose samples.",
+          "correct_answer": "The whisk begins very close, at about 0.6 m, and ends farther away, at about 1.9 m.",
+          "answer": "The whisk begins very close, at about 0.6 m, and ends farther away, at about 1.9 m.",
+          "explanation": "The pelvis-to-object Euclidean distance changes by +1.3 m across 22 valid pose samples.",
           "status": "ok",
           "quality": "high",
           "method": "Computes Euclidean distance from the human pelvis origin to the fixed 3D object center at every valid pose sample.",
@@ -15434,24 +15434,24 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "The person's body orientation changes substantially, rotating the body-forward field away from the scene-fixed peel."
+              "text": "Changing a physical blocker's position moves the fixed peel outside the body-forward field."
             },
             {
               "label": "B",
-              "text": "The cucumber peel moves behind a measured physical blocker."
+              "text": "Changing the fixed peel's scene position moves it outside the body-forward field."
             },
             {
               "label": "C",
-              "text": "The peel stays in the central body-forward field throughout."
+              "text": "Changing the person's body orientation moves the fixed peel outside the body-forward field."
             },
             {
               "label": "D",
-              "text": "Only the external camera viewpoint changes the human-relative field label."
+              "text": "Changing the external camera viewpoint moves the fixed peel outside the body-forward field."
             }
           ],
-          "correct_option": "A",
-          "correct_answer": "The person's body orientation changes substantially, rotating the body-forward field away from the scene-fixed peel.",
-          "answer": "The person's body orientation changes substantially, rotating the body-forward field away from the scene-fixed peel.",
+          "correct_option": "C",
+          "correct_answer": "Changing the person's body orientation moves the fixed peel outside the body-forward field.",
+          "answer": "Changing the person's body orientation moves the fixed peel outside the body-forward field.",
           "explanation": "The endpoint forward angles are 42.1° and 110.5°, while the human body-turn estimate is about 152.7°.",
           "status": "ok",
           "quality": "audited_proxy",
@@ -17598,28 +17598,28 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "The dark-blue-clad man stays left-and-in-front of the red-clad woman throughout."
+              "text": "The man in a gray T-shirt and black shorts remains left-front relative to the man in a dark top and long trousers throughout the clip."
             },
             {
               "label": "B",
-              "text": "The dark-blue-clad man stays right-and-in-front of the red-clad woman throughout the clip."
+              "text": "The man in a gray T-shirt and black shorts remains right-front relative to the man in a dark top and long trousers throughout the clip."
             },
             {
               "label": "C",
-              "text": "The dark-blue-clad man crosses from the red-clad woman's right side to the red-clad woman's left side."
+              "text": "The man in a gray T-shirt and black shorts remains right-behind relative to the man in a dark top and long trousers throughout the clip."
             },
             {
               "label": "D",
-              "text": "The dark-blue-clad man remains behind the red-clad woman throughout."
+              "text": "The man in a gray T-shirt and black shorts remains left-behind relative to the man in a dark top and long trousers throughout the clip."
             }
           ],
           "correct_option": "B",
-          "correct_answer": "The dark-blue-clad man stays right-and-in-front of the red-clad woman throughout the clip.",
-          "answer": "The dark-blue-clad man stays right-and-in-front of the red-clad woman throughout the clip.",
-          "explanation": "The dense metric timeline contains 16 samples and every sample is right_front relative to the red-clad woman.",
+          "correct_answer": "The man in a gray T-shirt and black shorts remains right-front relative to the man in a dark top and long trousers throughout the clip.",
+          "answer": "The man in a gray T-shirt and black shorts remains right-front relative to the man in a dark top and long trousers throughout the clip.",
+          "explanation": "The dense metric timeline contains 16 samples and every sample is right_front relative to the man in a dark top and long trousers.",
           "status": "ok",
           "quality": "high",
-          "method": "Uses the red-clad woman's ground-plane body-forward axis and right axis at every sampled time; all-samples consistency is required.",
+          "method": "Uses the man in a dark top and long trousers's ground-plane body-forward axis and right axis at every sampled time; all-samples consistency is required.",
           "result_json": {
             "scene_id": "hoi_m3_bedroom_data02_win08",
             "pair_timeline": {
@@ -18908,10 +18908,10 @@ window.QA_DATA = {
         }
       ],
       "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "A": "the red-clad woman",
-        "B": "the dark-blue-clad man"
+        "A": "the man in a dark top and long trousers",
+        "B": "the man in a gray T-shirt and black shorts",
+        "V2": "the man in a dark top and long trousers",
+        "V1": "the man in a gray T-shirt and black shorts"
       },
       "person_display_alias_status": {
         "status": "complete",
@@ -19100,28 +19100,28 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "They are side-by-side or oblique throughout the clip."
+              "text": "Standing side by side is the dominant relation for most of the clip."
             },
             {
               "label": "B",
-              "text": "They remain back-to-back for most of the clip."
+              "text": "Facing away from each other is the dominant relation for most of the clip."
             },
             {
               "label": "C",
-              "text": "They face each other for most of the clip, so facing each other is dominant."
+              "text": "Facing each other is the dominant relation for most of the clip."
             },
             {
               "label": "D",
-              "text": "No dominant orientation can be determined because only one frame is used."
+              "text": "Standing at an oblique angle is the dominant relation for most of the clip."
             }
           ],
           "correct_option": "C",
-          "correct_answer": "They face each other for most of the clip, so facing each other is dominant.",
-          "answer": "They face each other for most of the clip, so facing each other is dominant.",
+          "correct_answer": "Facing each other is the dominant relation for most of the clip.",
+          "answer": "Facing each other is the dominant relation for most of the clip.",
           "explanation": "Facing-score classification gives {'facing_each_other': 14, 'side_by_side_or_oblique': 2} across the 16-sample timeline.",
           "status": "ok",
           "quality": "high",
-          "method": "Projects both SMPL-X root-forward vectors and the the red-clad woman↔the dark-blue-clad man direction onto the ground plane, then aggregates the facing state over all samples.",
+          "method": "Projects both SMPL-X root-forward vectors and the the man in a dark top and long trousers↔the man in a gray T-shirt and black shorts direction onto the ground plane, then aggregates the facing state over all samples.",
           "result_json": {
             "scene_id": "hoi_m3_bedroom_data01_win06",
             "pair_timeline": {
@@ -20411,10 +20411,10 @@ window.QA_DATA = {
         }
       ],
       "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "A": "the red-clad woman",
-        "B": "the dark-blue-clad man"
+        "A": "the man in a dark top and long trousers",
+        "B": "the man in a gray T-shirt and black shorts",
+        "V2": "the man in a dark top and long trousers",
+        "V1": "the man in a gray T-shirt and black shorts"
       },
       "person_display_alias_status": {
         "status": "complete",
@@ -20603,24 +20603,24 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "Each person stays inside the other's ±60° body-forward field throughout the clip."
+              "text": "Only the man in a dark top and long trousers remains inside the body-forward field of the man in a gray T-shirt and black shorts throughout the clip."
             },
             {
               "label": "B",
-              "text": "Only the red-clad woman keeps the dark-blue-clad man inside the body-forward field throughout."
+              "text": "Both the man in a dark top and long trousers and the man in a gray T-shirt and black shorts remain inside each other's body-forward fields throughout the clip."
             },
             {
               "label": "C",
-              "text": "Only the dark-blue-clad man keeps the red-clad woman inside the body-forward field throughout."
+              "text": "Only the man in a gray T-shirt and black shorts remains inside the body-forward field of the man in a dark top and long trousers throughout the clip."
             },
             {
               "label": "D",
-              "text": "Neither person contains the other in the body-forward field at any time in the clip."
+              "text": "Neither The man in a dark top and long trousers nor the man in a gray T-shirt and black shorts remains inside the other's body-forward field throughout the clip."
             }
           ],
-          "correct_option": "A",
-          "correct_answer": "Each person stays inside the other's ±60° body-forward field throughout the clip.",
-          "answer": "Each person stays inside the other's ±60° body-forward field throughout the clip.",
+          "correct_option": "B",
+          "correct_answer": "Both the man in a dark top and long trousers and the man in a gray T-shirt and black shorts remain inside each other's body-forward fields throughout the clip.",
+          "answer": "Both the man in a dark top and long trousers and the man in a gray T-shirt and black shorts remain inside each other's body-forward fields throughout the clip.",
           "explanation": "The directional field state is mutual_body_forward_field in all 16 samples. This does not claim gaze contact or an unoccluded sightline.",
           "status": "ok",
           "quality": "audited_proxy",
@@ -21914,10 +21914,10 @@ window.QA_DATA = {
         }
       ],
       "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "A": "the red-clad woman",
-        "B": "the dark-blue-clad man"
+        "A": "the man in a dark top and long trousers",
+        "B": "the man in a gray T-shirt and black shorts",
+        "V2": "the man in a dark top and long trousers",
+        "V1": "the man in a gray T-shirt and black shorts"
       },
       "person_display_alias_status": {
         "status": "complete",
@@ -22106,28 +22106,28 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "The red-clad woman starts right-front and then remains left-front for the rest of the clip."
+              "text": "The man in a dark top and long trousers is right-front at the start and left-front at the end relative to the man in a gray T-shirt and black shorts."
             },
             {
               "label": "B",
-              "text": "The red-clad woman begins left-front of the dark-blue-clad man, then moves to his right-front side and remains there."
+              "text": "The man in a dark top and long trousers is left-front at the start and left-front at the end relative to the man in a gray T-shirt and black shorts."
             },
             {
               "label": "C",
-              "text": "The red-clad woman alternates left and right repeatedly throughout the clip."
+              "text": "The man in a dark top and long trousers is left-front at the start and right-front at the end relative to the man in a gray T-shirt and black shorts."
             },
             {
               "label": "D",
-              "text": "The red-clad woman remains directly behind the dark-blue-clad man throughout the clip."
+              "text": "The man in a dark top and long trousers is right-front at the start and right-front at the end relative to the man in a gray T-shirt and black shorts."
             }
           ],
-          "correct_option": "B",
-          "correct_answer": "The red-clad woman begins left-front of the dark-blue-clad man, then moves to his right-front side and remains there.",
-          "answer": "The red-clad woman begins left-front of the dark-blue-clad man, then moves to his right-front side and remains there.",
+          "correct_option": "C",
+          "correct_answer": "The man in a dark top and long trousers is left-front at the start and right-front at the end relative to the man in a gray T-shirt and black shorts.",
+          "answer": "The man in a dark top and long trousers is left-front at the start and right-front at the end relative to the man in a gray T-shirt and black shorts.",
           "explanation": "The lateral sequence has 4/4 left samples before the transition and 12/12 right samples after it.",
           "status": "ok",
           "quality": "high",
-          "method": "Transforms the red-clad woman's pelvis into the dark-blue-clad man's ground-plane body frame at each of 16 samples and requires the new side to persist after the crossing.",
+          "method": "Transforms the man in a dark top and long trousers's pelvis into the man in a gray T-shirt and black shorts's ground-plane body frame at each of 16 samples and requires the new side to persist after the crossing.",
           "result_json": {
             "scene_id": "hoi_m3_bedroom_data03_win03",
             "pair_timeline": {
@@ -23431,10 +23431,10 @@ window.QA_DATA = {
         }
       ],
       "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "A": "the dark-blue-clad man",
-        "B": "the red-clad woman"
+        "A": "the man in a gray T-shirt and black shorts",
+        "B": "the man in a dark top and long trousers",
+        "V1": "the man in a gray T-shirt and black shorts",
+        "V2": "the man in a dark top and long trousers"
       },
       "person_display_alias_status": {
         "status": "complete",
@@ -23465,25 +23465,25 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "The dark-blue-clad man and the red-clad woman is the closest pair at both the start and the end."
+              "text": "The closest pair changes from the man in a black top and light-colored trousers and the man in a black top with red trim and dark trousers at the start to the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers at the end."
             },
             {
               "label": "B",
-              "text": "The dark-blue-clad man and the green-top woman is the closest pair at the start and the red-clad woman and the green-top woman at the end."
+              "text": "The closest pair changes from the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers at the start to the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers at the end."
             },
             {
               "label": "C",
-              "text": "The same pair remains closest at both endpoints."
+              "text": "The closest pair changes from the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers at the start to the man in a black top and light-colored trousers and the man in a black top with red trim and dark trousers at the end."
             },
             {
               "label": "D",
-              "text": "The closest pair changes from the red-clad woman and the green-top woman at the start to the dark-blue-clad man and the green-top woman at the end."
+              "text": "The closest pair changes from the man in a black top and light-colored trousers and the woman in a gray printed T-shirt at the start to the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers at the end."
             }
           ],
-          "correct_option": "D",
-          "correct_answer": "The closest pair changes from the red-clad woman and the green-top woman at the start to the dark-blue-clad man and the green-top woman at the end.",
-          "answer": "The closest pair changes from the red-clad woman and the green-top woman at the start to the dark-blue-clad man and the green-top woman at the end.",
-          "explanation": "All three persistent visible tracks are included; normalized image-plane pair distances change the closest pair from the red-clad woman and the green-top woman to the dark-blue-clad man and the green-top woman.",
+          "correct_option": "C",
+          "correct_answer": "The closest pair changes from the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers at the start to the man in a black top and light-colored trousers and the man in a black top with red trim and dark trousers at the end.",
+          "answer": "The closest pair changes from the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers at the start to the man in a black top and light-colored trousers and the man in a black top with red trim and dark trousers at the end.",
+          "explanation": "All three persistent visible tracks are included; normalized image-plane pair distances change the closest pair from the woman in a gray printed T-shirt and the man in a black top with red trim and dark trousers to the man in a black top and light-colored trousers and the man in a black top with red trim and dark trousers.",
           "status": "ok",
           "quality": "high_2d_topology",
           "method": "Uses Grounding DINO person detections plus temporal association for all three visible people; compares pairwise box-center separation normalized by frame diagonal. It does not claim metric 3D distance.",
@@ -23714,9 +23714,9 @@ window.QA_DATA = {
       "metric_topdown_image": null,
       "case_policy": "one temporal question per unique video window",
       "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "V3": "the green-top woman"
+        "V1": "the man in a black top and light-colored trousers",
+        "V2": "the woman in a gray printed T-shirt",
+        "V3": "the man in a black top with red trim and dark trousers"
       },
       "person_display_alias_status": {
         "status": "complete",
@@ -23905,25 +23905,25 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "They steadily converge and finish less than 1 m apart."
+              "text": "They approach, decreasing from about 3.5 m initially to 1.5 m at the end."
             },
             {
               "label": "B",
-              "text": "They separate and remain far apart: distance grows from 1.49 m to about 3.55 m."
+              "text": "They separate, increasing from about 1.5 m initially to 3.5 m at the end."
             },
             {
               "label": "C",
-              "text": "They remain within a narrow 0.1 m distance band."
+              "text": "They remain stable, staying near 1.5 m initially and 1.5 m at the end."
             },
             {
               "label": "D",
-              "text": "They separate briefly but return to the starting distance by the end."
+              "text": "They return, increasing from about 1.5 m initially to 1.5 m at the end."
             }
           ],
           "correct_option": "B",
-          "correct_answer": "They separate and remain far apart: distance grows from 1.49 m to about 3.55 m.",
-          "answer": "They separate and remain far apart: distance grows from 1.49 m to about 3.55 m.",
-          "explanation": "The 16-sample series rises above 3 m from t≈7 s onward and ends at 3.55 m; net change is +2.06 m.",
+          "correct_answer": "They separate, increasing from about 1.5 m initially to 3.5 m at the end.",
+          "answer": "They separate, increasing from about 1.5 m initially to 3.5 m at the end.",
+          "explanation": "The 16-sample series rises above 3.0 m from t≈7 s onward and ends at 3.6 m; net change is +2.1 m.",
           "status": "ok",
           "quality": "high",
           "method": "Uses all 16 aligned SMPL-X pelvis/root samples and checks that the late high-distance state persists rather than relying only on two frames.",
@@ -25230,10 +25230,10 @@ window.QA_DATA = {
         }
       ],
       "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "A": "the dark-blue-clad man",
-        "B": "the red-clad woman"
+        "A": "the man in a dark top and long trousers",
+        "B": "the man in a gray T-shirt and black shorts",
+        "V1": "the man in a dark top and long trousers",
+        "V2": "the man in a gray T-shirt and black shorts"
       },
       "person_display_alias_status": {
         "status": "complete",
@@ -25418,32 +25418,32 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "dominant_body_centric_position",
-          "question": "Which body-centric position relation between the two people in the video dominates the clip?",
+          "question": "Which body-centric position relation between the man in a gray T-shirt and black shorts and the man in a dark top and long trousers dominates the clip?",
           "options": [
             {
               "label": "A",
-              "text": "Left-front dominates the clip."
+              "text": "The man in a dark top and long trousers is predominantly left-front relative to the man in a gray T-shirt and black shorts."
             },
             {
               "label": "B",
-              "text": "Right-front dominates the clip."
+              "text": "The man in a dark top and long trousers is predominantly right-front relative to the man in a gray T-shirt and black shorts."
             },
             {
               "label": "C",
-              "text": "The red-clad woman is predominantly on the dark-blue-clad man's right-and-behind side."
+              "text": "The man in a dark top and long trousers is predominantly left-behind relative to the man in a gray T-shirt and black shorts."
             },
             {
               "label": "D",
-              "text": "The four position quadrants occur equally often."
+              "text": "The man in a dark top and long trousers is predominantly right-behind relative to the man in a gray T-shirt and black shorts."
             }
           ],
-          "correct_option": "C",
-          "correct_answer": "The red-clad woman is predominantly on the dark-blue-clad man's right-and-behind side.",
-          "answer": "The red-clad woman is predominantly on the dark-blue-clad man's right-and-behind side.",
+          "correct_option": "D",
+          "correct_answer": "The man in a dark top and long trousers is predominantly right-behind relative to the man in a gray T-shirt and black shorts.",
+          "answer": "The man in a dark top and long trousers is predominantly right-behind relative to the man in a gray T-shirt and black shorts.",
           "explanation": "The complete position counts are {'right_behind': 13, 'left_behind': 1, 'left_front': 2}; right_behind is the clear temporal majority.",
           "status": "ok",
           "quality": "high",
-          "method": "Transforms the red-clad woman into the dark-blue-clad man's body-centric frame at each sampled second and aggregates the full position sequence.",
+          "method": "Transforms the man in a dark top and long trousers into the man in a gray T-shirt and black shorts's body-centric frame at each sampled second and aggregates the full position sequence.",
           "result_json": {
             "scene_id": "hoi_m3_bedroom_data01_win04",
             "pair_timeline": {
@@ -26734,10 +26734,10 @@ window.QA_DATA = {
         }
       ],
       "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "A": "the dark-blue-clad man",
-        "B": "the red-clad woman"
+        "A": "the man in a gray T-shirt and black shorts",
+        "B": "the man in a dark top and long trousers",
+        "V1": "the man in a gray T-shirt and black shorts",
+        "V2": "the man in a dark top and long trousers"
       },
       "person_display_alias_status": {
         "status": "complete",
@@ -26922,28 +26922,28 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "nonmonotonic_distance_pattern",
-          "question": "Which full-clip distance pattern best describes the two people in the video?",
+          "question": "Which full-clip distance pattern best describes the man in a dark top and long trousers and the man in a gray T-shirt and black shorts?",
           "options": [
             {
               "label": "A",
-              "text": "They approach continuously for the entire clip."
+              "text": "They begin near 1.2 m, reach 2.1 m midway, and finish near 2.7 m."
             },
             {
               "label": "B",
-              "text": "They separate continuously with no later approach."
+              "text": "They begin near 2.1 m, reach 2.7 m midway, and finish near 1.2 m."
             },
             {
               "label": "C",
-              "text": "Their distance is constant throughout."
+              "text": "They begin near 1.2 m, reach 2.7 m midway, and finish near 2.1 m."
             },
             {
               "label": "D",
-              "text": "They first separate from about 1.24 m to 2.68 m, then partially approach and finish near 2.08 m."
+              "text": "They begin near 2.7 m, reach 1.2 m midway, and finish near 2.1 m."
             }
           ],
-          "correct_option": "D",
-          "correct_answer": "They first separate from about 1.24 m to 2.68 m, then partially approach and finish near 2.08 m.",
-          "answer": "They first separate from about 1.24 m to 2.68 m, then partially approach and finish near 2.08 m.",
+          "correct_option": "C",
+          "correct_answer": "They begin near 1.2 m, reach 2.7 m midway, and finish near 2.1 m.",
+          "answer": "They begin near 1.2 m, reach 2.7 m midway, and finish near 2.1 m.",
           "explanation": "The maximum occurs near t=7.0 s, so start/end alone would miss the out-then-partway-back pattern.",
           "status": "ok",
           "quality": "high",
@@ -28252,10 +28252,10 @@ window.QA_DATA = {
         }
       ],
       "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "A": "the red-clad woman",
-        "B": "the dark-blue-clad man"
+        "A": "the man in a dark top and long trousers",
+        "B": "the man in a gray T-shirt and black shorts",
+        "V2": "the man in a dark top and long trousers",
+        "V1": "the man in a gray T-shirt and black shorts"
       },
       "person_display_alias_status": {
         "status": "complete",
@@ -28444,24 +28444,24 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "They move farther apart while remaining back-to-back throughout."
+              "text": "They move closer to about 1.0 m while predominantly facing away from each other."
             },
             {
               "label": "B",
-              "text": "Their distance stays constant and their facing relation cannot be determined."
+              "text": "They move closer to about 1.0 m while predominantly facing each other."
             },
             {
               "label": "C",
-              "text": "They approach to about 0.96 m while predominantly facing each other."
+              "text": "They move farther to about 2.1 m while predominantly facing each other."
             },
             {
               "label": "D",
-              "text": "They approach, but side-by-side orientation dominates the entire clip."
+              "text": "They move farther to about 2.1 m while predominantly facing away from each other."
             }
           ],
-          "correct_option": "C",
-          "correct_answer": "They approach to about 0.96 m while predominantly facing each other.",
-          "answer": "They approach to about 0.96 m while predominantly facing each other.",
+          "correct_option": "B",
+          "correct_answer": "They move closer to about 1.0 m while predominantly facing each other.",
+          "answer": "They move closer to about 1.0 m while predominantly facing each other.",
           "explanation": "The minimum distance occurs near t=9.0 s, and the facing-state aggregate is {'facing_each_other': 14, 'side_by_side_or_oblique': 2}.",
           "status": "ok",
           "quality": "high",
@@ -29774,10 +29774,10 @@ window.QA_DATA = {
         }
       ],
       "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "A": "the dark-blue-clad man",
-        "B": "the red-clad woman"
+        "A": "the man in a dark top and long trousers",
+        "B": "the man in a gray T-shirt and black shorts",
+        "V1": "the man in a dark top and long trousers",
+        "V2": "the man in a gray T-shirt and black shorts"
       },
       "person_display_alias_status": {
         "status": "complete",
@@ -29966,28 +29966,28 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "The red-clad woman moves farther away while crossing from left to right."
+              "text": "The man in a dark top and long trousers approaches from 2.7 m to 1.1 m and changes from right-front to left-front relative to the man in a gray T-shirt and black shorts."
             },
             {
               "label": "B",
-              "text": "The red-clad woman approaches from about 2.72 m to 1.14 m and crosses from the dark-blue-clad man's right side to the dark-blue-clad man's left side."
+              "text": "The man in a dark top and long trousers approaches from 2.7 m to 1.1 m and changes from left-front to right-front relative to the man in a gray T-shirt and black shorts."
             },
             {
               "label": "C",
-              "text": "The red-clad woman approaches but remains on the dark-blue-clad man's right side throughout."
+              "text": "The man in a dark top and long trousers separates from 1.1 m to 2.7 m and changes from right-front to left-front relative to the man in a gray T-shirt and black shorts."
             },
             {
               "label": "D",
-              "text": "The red-clad woman stays at the same distance and directly behind the dark-blue-clad man throughout."
+              "text": "The man in a dark top and long trousers approaches from 2.7 m to 1.1 m and changes from right-front to right-front relative to the man in a gray T-shirt and black shorts."
             }
           ],
-          "correct_option": "B",
-          "correct_answer": "The red-clad woman approaches from about 2.72 m to 1.14 m and crosses from the dark-blue-clad man's right side to the dark-blue-clad man's left side.",
-          "answer": "The red-clad woman approaches from about 2.72 m to 1.14 m and crosses from the dark-blue-clad man's right side to the dark-blue-clad man's left side.",
+          "correct_option": "A",
+          "correct_answer": "The man in a dark top and long trousers approaches from 2.7 m to 1.1 m and changes from right-front to left-front relative to the man in a gray T-shirt and black shorts.",
+          "answer": "The man in a dark top and long trousers approaches from 2.7 m to 1.1 m and changes from right-front to left-front relative to the man in a gray T-shirt and black shorts.",
           "explanation": "The first seven samples are right-front; later samples become center/left-front while the metric distance drops by more than 1.5 m.",
           "status": "ok",
           "quality": "high",
-          "method": "Combines all-sample metric distance with the red-clad woman's per-sample position in the dark-blue-clad man's body-centric frame.",
+          "method": "Combines all-sample metric distance with the man in a dark top and long trousers's per-sample position in the man in a gray T-shirt and black shorts's body-centric frame.",
           "result_json": {
             "scene_id": "hoi_m3_bedroom_data03_win09",
             "pair_timeline": {
@@ -31310,10 +31310,10 @@ window.QA_DATA = {
         }
       ],
       "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "A": "the dark-blue-clad man",
-        "B": "the red-clad woman"
+        "A": "the man in a gray T-shirt and black shorts",
+        "B": "the man in a dark top and long trousers",
+        "V1": "the man in a gray T-shirt and black shorts",
+        "V2": "the man in a dark top and long trousers"
       },
       "person_display_alias_status": {
         "status": "complete",
@@ -31498,28 +31498,28 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "distance_out_and_back_over_video",
-          "question": "Which temporal distance pattern occurs between the two people in the video?",
+          "question": "Which temporal distance pattern occurs between the man in a gray T-shirt and black shorts and the man in a dark top and long trousers?",
           "options": [
             {
               "label": "A",
-              "text": "They move steadily farther apart from start to finish."
+              "text": "They begin near 1.4 m, reach 2.4 m midway, and finish near 0.7 m."
             },
             {
               "label": "B",
-              "text": "They move steadily closer from start to finish."
+              "text": "They begin near 1.4 m, reach 0.7 m midway, and finish near 2.4 m."
             },
             {
               "label": "C",
-              "text": "They are close early, move apart to about 2.41 m near the middle, then come close again at about 0.68 m."
+              "text": "They begin near 0.7 m, reach 2.4 m midway, and finish near 1.4 m."
             },
             {
               "label": "D",
-              "text": "Their distance remains almost unchanged throughout."
+              "text": "They begin near 2.4 m, reach 1.4 m midway, and finish near 0.7 m."
             }
           ],
-          "correct_option": "C",
-          "correct_answer": "They are close early, move apart to about 2.41 m near the middle, then come close again at about 0.68 m.",
-          "answer": "They are close early, move apart to about 2.41 m near the middle, then come close again at about 0.68 m.",
+          "correct_option": "A",
+          "correct_answer": "They begin near 1.4 m, reach 2.4 m midway, and finish near 0.7 m.",
+          "answer": "They begin near 1.4 m, reach 2.4 m midway, and finish near 0.7 m.",
           "explanation": "The 16-sample series has an interior maximum near t=9.0 s and low values at both the early and final phases.",
           "status": "ok",
           "quality": "high",
@@ -32828,10 +32828,10 @@ window.QA_DATA = {
         }
       ],
       "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "A": "the red-clad woman",
-        "B": "the dark-blue-clad man"
+        "A": "the man in a gray T-shirt and black shorts",
+        "B": "the man in a dark top and long trousers",
+        "V2": "the man in a gray T-shirt and black shorts",
+        "V1": "the man in a dark top and long trousers"
       },
       "person_display_alias_status": {
         "status": "complete",
@@ -32970,25 +32970,25 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "The relation stays mutual throughout the clip."
+              "text": "Early, only the man in a gray T-shirt and black shorts contains the man in a dark top and long trousers; later, only the man in a dark top and long trousers contains the man in a gray T-shirt and black shorts for most of the clip."
             },
             {
               "label": "B",
-              "text": "Neither person enters the other's body-forward field at any time."
+              "text": "Early, both the man in a gray T-shirt and black shorts and the man in a dark top and long trousers contain each other; later, neither the man in a gray T-shirt and black shorts nor the man in a dark top and long trousers contains the other."
             },
             {
               "label": "C",
-              "text": "Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, the relation reverses for most of the remaining clip."
+              "text": "Early, only the man in a dark top and long trousers contains the man in a gray T-shirt and black shorts; later, only the man in a gray T-shirt and black shorts contains the man in a dark top and long trousers for most of the clip."
             },
             {
               "label": "D",
-              "text": "Only the dark-blue-clad man contains the red-clad woman early, then only the red-clad woman contains the dark-blue-clad man later."
+              "text": "Early, neither the man in a gray T-shirt and black shorts nor the man in a dark top and long trousers contains the other; later, both the man in a gray T-shirt and black shorts and the man in a dark top and long trousers contain each other."
             }
           ],
           "correct_option": "C",
-          "correct_answer": "Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, the relation reverses for most of the remaining clip.",
-          "answer": "Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, the relation reverses for most of the remaining clip.",
-          "explanation": "The 16-sample state sequence is ['b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field']; the first six are the red-clad woman-only and the final segment is predominantly the dark-blue-clad man-only.",
+          "correct_answer": "Early, only the man in a dark top and long trousers contains the man in a gray T-shirt and black shorts; later, only the man in a gray T-shirt and black shorts contains the man in a dark top and long trousers for most of the clip.",
+          "answer": "Early, only the man in a dark top and long trousers contains the man in a gray T-shirt and black shorts; later, only the man in a gray T-shirt and black shorts contains the man in a dark top and long trousers for most of the clip.",
+          "explanation": "The 16-sample state sequence is ['b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field']; the first six are the man in a dark top and long trousers-only and the final segment is predominantly the man in a gray T-shirt and black shorts-only.",
           "status": "ok",
           "quality": "audited_proxy",
           "method": "Uses ground-plane SMPL-X root-forward directions at all 16 samples. It does not claim eye gaze or an unobstructed physical sightline.",
@@ -34245,10 +34245,10 @@ window.QA_DATA = {
         }
       ],
       "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "A": "the dark-blue-clad man",
-        "B": "the red-clad woman"
+        "A": "the man in a gray T-shirt and black shorts",
+        "B": "the man in a dark top and long trousers",
+        "V1": "the man in a gray T-shirt and black shorts",
+        "V2": "the man in a dark top and long trousers"
       },
       "person_display_alias_status": {
         "status": "complete",
@@ -34319,25 +34319,25 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "The dark-blue-clad man and the red-clad woman is closest at both endpoints."
+              "text": "At the start, the man in a gray T-shirt and black shorts and the woman in a gray printed T-shirt are closest; at the end, the man in a gray T-shirt and black shorts and the woman in a gray printed T-shirt are closest."
             },
             {
               "label": "B",
-              "text": "The dark-blue-clad man and the green-top woman is closest at both endpoints."
+              "text": "At the start, the man in a gray T-shirt and black shorts and the man in a dark top and long trousers are closest; at the end, the man in a gray T-shirt and black shorts and the man in a dark top and long trousers are closest."
             },
             {
               "label": "C",
-              "text": "The red-clad woman and the green-top woman is the closest visible pair at both endpoints."
+              "text": "At the start, the woman in a gray printed T-shirt and the man in a dark top and long trousers are closest; at the end, the woman in a gray printed T-shirt and the man in a dark top and long trousers are closest."
             },
             {
               "label": "D",
-              "text": "The closest pair changes from the dark-blue-clad man and the red-clad woman to the red-clad woman and the green-top woman."
+              "text": "At the start, the woman in a gray printed T-shirt and the man in a dark top and long trousers are closest; at the end, the man in a gray T-shirt and black shorts and the woman in a gray printed T-shirt are closest."
             }
           ],
           "correct_option": "C",
-          "correct_answer": "The red-clad woman and the green-top woman is the closest visible pair at both endpoints.",
-          "answer": "The red-clad woman and the green-top woman is the closest visible pair at both endpoints.",
-          "explanation": "Normalized start distances are [0.2863, 0.431, 0.2105] and end distances are [0.3622, 0.4188, 0.0601] in pair order ['the dark-blue-clad man and the red-clad woman', 'the dark-blue-clad man and the green-top woman', 'the red-clad woman and the green-top woman'].",
+          "correct_answer": "At the start, the woman in a gray printed T-shirt and the man in a dark top and long trousers are closest; at the end, the woman in a gray printed T-shirt and the man in a dark top and long trousers are closest.",
+          "answer": "At the start, the woman in a gray printed T-shirt and the man in a dark top and long trousers are closest; at the end, the woman in a gray printed T-shirt and the man in a dark top and long trousers are closest.",
+          "explanation": "Normalized start distances are [0.2863, 0.431, 0.2105] and end distances are [0.3622, 0.4188, 0.0601] in pair order ['the man in a gray T-shirt and black shorts and the woman in a gray printed T-shirt', 'the man in a gray T-shirt and black shorts and the man in a dark top and long trousers', 'the woman in a gray printed T-shirt and the man in a dark top and long trousers'].",
           "status": "ok",
           "quality": "high_2d_topology",
           "method": "Detects people at 2 Hz, associates all three tracks across the clip, requires a real observation within 0.55 s of both endpoints, then compares box-center separation normalized by frame diagonal.",
@@ -34431,9 +34431,9 @@ window.QA_DATA = {
       ],
       "case_policy": "one temporal question per unique video window",
       "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "V3": "the green-top woman"
+        "V1": "the man in a gray T-shirt and black shorts",
+        "V2": "the woman in a gray printed T-shirt",
+        "V3": "the man in a dark top and long trousers"
       },
       "person_display_alias_status": {
         "status": "complete",
