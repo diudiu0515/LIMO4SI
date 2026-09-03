@@ -351,7 +351,7 @@ window.QA_DATA = {
           "correct_option": "A",
           "correct_answer": "It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.",
           "answer": "It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.",
-          "explanation": "Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes.",
+          "explanation": "Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes.",
           "status": "ok",
           "quality": "high",
           "method": "Rebuilds the person's body-centric frame at every valid pose sample and transforms the fixed 3D object center into that changing frame.",
@@ -14457,7 +14457,7 @@ window.QA_DATA = {
             },
             {
               "label": "C",
-              "text": "The person moves substantially farther from it: about 0.55 m at the start and 1.86 m at the end."
+              "text": "The egg whisk is very close to the person at the beginning and about 1.86 m away at the end."
             },
             {
               "label": "D",
@@ -14465,8 +14465,8 @@ window.QA_DATA = {
             }
           ],
           "correct_option": "C",
-          "correct_answer": "The person moves substantially farther from it: about 0.55 m at the start and 1.86 m at the end.",
-          "answer": "The person moves substantially farther from it: about 0.55 m at the start and 1.86 m at the end.",
+          "correct_answer": "The egg whisk is very close to the person at the beginning and about 1.86 m away at the end.",
+          "answer": "The egg whisk is very close to the person at the beginning and about 1.86 m away at the end.",
           "explanation": "The pelvis-to-object Euclidean distance changes by +1.30 m across 22 valid pose samples.",
           "status": "ok",
           "quality": "high",
@@ -17594,7 +17594,7 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "position_consistency_between_people",
-          "question": "Which statement about the dark-blue-clad man, expressed in the red-clad woman's body-centered frame, remains true across the entire 15-second clip?",
+          "question": "Which body-centered position relation remains true between the two people in the video throughout the clip?",
           "options": [
             {
               "label": "A",
@@ -17602,7 +17602,7 @@ window.QA_DATA = {
             },
             {
               "label": "B",
-              "text": "The dark-blue-clad man stays right-and-in-front of the red-clad woman in all 16 metric samples."
+              "text": "The dark-blue-clad man stays right-and-in-front of the red-clad woman throughout the clip."
             },
             {
               "label": "C",
@@ -17614,8 +17614,8 @@ window.QA_DATA = {
             }
           ],
           "correct_option": "B",
-          "correct_answer": "The dark-blue-clad man stays right-and-in-front of the red-clad woman in all 16 metric samples.",
-          "answer": "B stays right-and-in-front of A in all 16 metric samples.",
+          "correct_answer": "The dark-blue-clad man stays right-and-in-front of the red-clad woman throughout the clip.",
+          "answer": "The dark-blue-clad man stays right-and-in-front of the red-clad woman throughout the clip.",
           "explanation": "The dense metric timeline contains 16 samples and every sample is right_front relative to the red-clad woman.",
           "status": "ok",
           "quality": "high",
@@ -19093,11 +19093,11 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "dominant_facing_relation_over_video",
-          "question": "What is the dominant body-facing relation between the red-clad woman and the dark-blue-clad man over the full clip?",
+          "question": "What is the dominant body-facing relation between the two people in the video?",
           "options": [
             {
               "label": "A",
-              "text": "They are side-by-side or oblique at every sampled time."
+              "text": "They are side-by-side or oblique throughout the clip."
             },
             {
               "label": "B",
@@ -19105,7 +19105,7 @@ window.QA_DATA = {
             },
             {
               "label": "C",
-              "text": "They face each other in 14 of 16 metric samples, so facing each other is dominant."
+              "text": "They face each other for most of the clip, so facing each other is dominant."
             },
             {
               "label": "D",
@@ -19113,8 +19113,8 @@ window.QA_DATA = {
             }
           ],
           "correct_option": "C",
-          "correct_answer": "They face each other in 14 of 16 metric samples, so facing each other is dominant.",
-          "answer": "They face each other in 14 of 16 metric samples, so facing each other is dominant.",
+          "correct_answer": "They face each other for most of the clip, so facing each other is dominant.",
+          "answer": "They face each other for most of the clip, so facing each other is dominant.",
           "explanation": "Facing-score classification gives {'facing_each_other': 14, 'side_by_side_or_oblique': 2} across the 16-sample timeline.",
           "status": "ok",
           "quality": "high",
@@ -20593,7 +20593,7 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "metric_distance_pattern_over_video",
-          "question": "Which description best matches how the pelvis-to-pelvis distance between the red-clad woman and the dark-blue-clad man evolves over the clip?",
+          "question": "How does the distance between the two people in the video evolve over the clip?",
           "options": [
             {
               "label": "A",
@@ -22107,11 +22107,11 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "body_forward_visibility_consistency",
-          "question": "Ignoring physical occlusion, what body-forward visibility relation holds between the red-clad woman and the dark-blue-clad man throughout the clip?",
+          "question": "Ignoring physical occlusion, what body-forward visibility relation holds between the two people in the video throughout the clip?",
           "options": [
             {
               "label": "A",
-              "text": "Each person stays inside the other's ±60° body-forward field in all 16 metric samples."
+              "text": "Each person stays inside the other's ±60° body-forward field throughout the clip."
             },
             {
               "label": "B",
@@ -22123,12 +22123,12 @@ window.QA_DATA = {
             },
             {
               "label": "D",
-              "text": "Neither person contains the other in the body-forward field at any sampled time."
+              "text": "Neither person contains the other in the body-forward field at any time in the clip."
             }
           ],
           "correct_option": "A",
-          "correct_answer": "Each person stays inside the other's ±60° body-forward field in all 16 metric samples.",
-          "answer": "Each person stays inside the other's ±60° body-forward field in all 16 metric samples.",
+          "correct_answer": "Each person stays inside the other's ±60° body-forward field throughout the clip.",
+          "answer": "Each person stays inside the other's ±60° body-forward field throughout the clip.",
           "explanation": "The directional field state is mutual_body_forward_field in all 16 samples. This does not claim gaze contact or an unoccluded sightline.",
           "status": "ok",
           "quality": "audited_proxy",
@@ -23607,7 +23607,7 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "body_centric_relation_change_over_video",
-          "question": "How does the red-clad woman's left/right relation in the dark-blue-clad man's body-centric frame change and then persist over the clip?",
+          "question": "How does the left/right relation between the two people in the video change in a body-centric frame?",
           "options": [
             {
               "label": "A",
@@ -23615,11 +23615,11 @@ window.QA_DATA = {
             },
             {
               "label": "B",
-              "text": "The red-clad woman is left-front for the first four samples, then moves to the dark-blue-clad man's right-front side for the remaining twelve samples."
+              "text": "The red-clad woman begins left-front of the dark-blue-clad man, then moves to his right-front side and remains there."
             },
             {
               "label": "C",
-              "text": "The red-clad woman alternates left and right at nearly every sampled second."
+              "text": "The red-clad woman alternates left and right repeatedly throughout the clip."
             },
             {
               "label": "D",
@@ -23627,8 +23627,8 @@ window.QA_DATA = {
             }
           ],
           "correct_option": "B",
-          "correct_answer": "The red-clad woman is left-front for the first four samples, then moves to the dark-blue-clad man's right-front side for the remaining twelve samples.",
-          "answer": "B is left-front for the first four samples, then moves to A's right-front side for the remaining twelve samples.",
+          "correct_answer": "The red-clad woman begins left-front of the dark-blue-clad man, then moves to his right-front side and remains there.",
+          "answer": "The red-clad woman begins left-front of the dark-blue-clad man, then moves to his right-front side and remains there.",
           "explanation": "The lateral sequence has 4/4 left samples before the transition and 12/12 right samples after it.",
           "status": "ok",
           "quality": "high",
@@ -24984,7 +24984,7 @@ window.QA_DATA = {
           ],
           "correct_option": "D",
           "correct_answer": "The closest pair changes from the red-clad woman and the green-top woman at the start to the dark-blue-clad man and the green-top woman at the end.",
-          "answer": "The closest pair changes from the red-clad woman–the green-top woman at the start to the dark-blue-clad man–the green-top woman at the end.",
+          "answer": "The closest pair changes from the red-clad woman and the green-top woman at the start to the dark-blue-clad man and the green-top woman at the end.",
           "explanation": "All three persistent visible tracks are included; normalized image-plane pair distances change the closest pair from the red-clad woman and the green-top woman to the dark-blue-clad man and the green-top woman.",
           "status": "ok",
           "quality": "high_2d_topology",
@@ -25399,7 +25399,7 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "metric_separation_over_video",
-          "question": "After a short early fluctuation, what sustained distance trend develops between the dark-blue-clad man and the red-clad woman?",
+          "question": "After a short early fluctuation, what sustained distance trend develops between the two people in the video?",
           "options": [
             {
               "label": "A",
@@ -26913,7 +26913,7 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "dominant_body_centric_position",
-          "question": "Which body-centric position of the red-clad woman relative to the dark-blue-clad man dominates this clip despite a few brief deviations?",
+          "question": "Which body-centric position relation between the two people in the video dominates the clip?",
           "options": [
             {
               "label": "A",
@@ -26925,7 +26925,7 @@ window.QA_DATA = {
             },
             {
               "label": "C",
-              "text": "The red-clad woman is on the dark-blue-clad man's right-and-behind side in 13 of 16 samples, so right-behind dominates."
+              "text": "The red-clad woman is predominantly on the dark-blue-clad man's right-and-behind side."
             },
             {
               "label": "D",
@@ -26933,8 +26933,8 @@ window.QA_DATA = {
             }
           ],
           "correct_option": "C",
-          "correct_answer": "The red-clad woman is on the dark-blue-clad man's right-and-behind side in 13 of 16 samples, so right-behind dominates.",
-          "answer": "B is on A's right-and-behind side in 13 of 16 samples, so right-behind dominates.",
+          "correct_answer": "The red-clad woman is predominantly on the dark-blue-clad man's right-and-behind side.",
+          "answer": "The red-clad woman is predominantly on the dark-blue-clad man's right-and-behind side.",
           "explanation": "The complete position counts are {'right_behind': 13, 'left_behind': 1, 'left_front': 2}; right_behind is the clear temporal majority.",
           "status": "ok",
           "quality": "high",
@@ -28414,7 +28414,7 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "nonmonotonic_distance_pattern",
-          "question": "Which full-clip distance pattern best describes the red-clad woman and the dark-blue-clad man?",
+          "question": "Which full-clip distance pattern best describes the two people in the video?",
           "options": [
             {
               "label": "A",
@@ -29929,7 +29929,7 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "approach_while_facing",
-          "question": "What combined distance-and-orientation pattern occurs between the dark-blue-clad man and the red-clad woman?",
+          "question": "What combined distance-and-orientation pattern occurs between the two people in the video?",
           "options": [
             {
               "label": "A",
@@ -29941,16 +29941,16 @@ window.QA_DATA = {
             },
             {
               "label": "C",
-              "text": "They approach to about 0.96 m while facing each other is dominant (14/16 samples)."
+              "text": "They approach to about 0.96 m while predominantly facing each other."
             },
             {
               "label": "D",
-              "text": "They approach, but side-by-side orientation dominates all 16 samples."
+              "text": "They approach, but side-by-side orientation dominates the entire clip."
             }
           ],
           "correct_option": "C",
-          "correct_answer": "They approach to about 0.96 m while facing each other is dominant (14/16 samples).",
-          "answer": "They approach to about 0.96 m while facing each other is dominant (14/16 samples).",
+          "correct_answer": "They approach to about 0.96 m while predominantly facing each other.",
+          "answer": "They approach to about 0.96 m while predominantly facing each other.",
           "explanation": "The minimum distance occurs near t=9.0 s, and the facing-state aggregate is {'facing_each_other': 14, 'side_by_side_or_oblique': 2}.",
           "status": "ok",
           "quality": "high",
@@ -31448,7 +31448,7 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "coupled_distance_relation_change",
-          "question": "As the red-clad woman approaches the dark-blue-clad man during the clip, how does the red-clad woman's lateral relation in the dark-blue-clad man's frame change?",
+          "question": "As the two people in the video approach each other, how does their lateral relation change in a body-centric frame?",
           "options": [
             {
               "label": "A",
@@ -31469,7 +31469,7 @@ window.QA_DATA = {
           ],
           "correct_option": "B",
           "correct_answer": "The red-clad woman approaches from about 2.72 m to 1.14 m and crosses from the dark-blue-clad man's right side to the dark-blue-clad man's left side.",
-          "answer": "B approaches from about 2.72 m to 1.14 m and crosses from A's right side to A's left side.",
+          "answer": "The red-clad woman approaches from about 2.72 m to 1.14 m and crosses from the dark-blue-clad man's right side to the dark-blue-clad man's left side.",
           "explanation": "The first seven samples are right-front; later samples become center/left-front while the metric distance drops by more than 1.5 m.",
           "status": "ok",
           "quality": "high",
@@ -32981,7 +32981,7 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "distance_out_and_back_over_video",
-          "question": "Which temporal distance pattern occurs between the red-clad woman and the dark-blue-clad man across this clip?",
+          "question": "Which temporal distance pattern occurs between the two people in the video?",
           "options": [
             {
               "label": "A",
@@ -34446,11 +34446,11 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "body_forward_field_transition_over_video",
-          "question": "Ignoring physical occlusion, how does the one-sided body-forward field relation change over this clip?",
+          "question": "Ignoring physical occlusion, how does the one-sided body-forward field relation between the two people in the video change?",
           "options": [
             {
               "label": "A",
-              "text": "The relation stays mutual for all 16 samples."
+              "text": "The relation stays mutual throughout the clip."
             },
             {
               "label": "B",
@@ -34458,7 +34458,7 @@ window.QA_DATA = {
             },
             {
               "label": "C",
-              "text": "Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, only the dark-blue-clad man keeps the red-clad woman inside the field for most samples."
+              "text": "Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, the relation reverses for most of the remaining clip."
             },
             {
               "label": "D",
@@ -34466,8 +34466,8 @@ window.QA_DATA = {
             }
           ],
           "correct_option": "C",
-          "correct_answer": "Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, only the dark-blue-clad man keeps the red-clad woman inside the field for most samples.",
-          "answer": "Early, only B keeps A inside the ±60° body-forward field; later, only A keeps B inside the field for most samples.",
+          "correct_answer": "Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, the relation reverses for most of the remaining clip.",
+          "answer": "Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, the relation reverses for most of the remaining clip.",
           "explanation": "The 16-sample state sequence is ['b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field']; the first six are the red-clad woman-only and the final segment is predominantly the dark-blue-clad man-only.",
           "status": "ok",
           "quality": "audited_proxy",
@@ -35813,7 +35813,7 @@ window.QA_DATA = {
           ],
           "correct_option": "C",
           "correct_answer": "The red-clad woman and the green-top woman is the closest visible pair at both endpoints.",
-          "answer": "V2–V3 is the closest visible pair at both endpoints.",
+          "answer": "The red-clad woman and the green-top woman is the closest visible pair at both endpoints.",
           "explanation": "Normalized start distances are [0.2863, 0.431, 0.2105] and end distances are [0.3622, 0.4188, 0.0601] in pair order ['the dark-blue-clad man and the red-clad woman', 'the dark-blue-clad man and the green-top woman', 'the red-clad woman and the green-top woman'].",
           "status": "ok",
           "quality": "high_2d_topology",

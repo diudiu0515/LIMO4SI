@@ -68,7 +68,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.</div><div class="explanation">Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.</div><div class="explanation">Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Rebuilds the person's body-centric frame at every valid pose sample and transforms the fixed 3D object center into that changing frame.</div>
 <pre class="jsonBlock">{
@@ -574,12 +574,12 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="optionsGrid answerOptions" data-correct="C">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The distance stays nearly constant throughout.</span></button>
 <button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The person moves steadily closer and ends within 0.3 m.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The person moves substantially farther from it: about 0.55 m at the start and 1.86 m at the end.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The egg whisk is very close to the person at the beginning and about 1.86 m away at the end.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The distance increases briefly but returns to its starting value by the end.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The person moves substantially farther from it: about 0.55 m at the start and 1.86 m at the end.</div><div class="explanation">The pelvis-to-object Euclidean distance changes by +1.30 m across 22 valid pose samples.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The egg whisk is very close to the person at the beginning and about 1.86 m away at the end.</div><div class="explanation">The pelvis-to-object Euclidean distance changes by +1.30 m across 22 valid pose samples.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Computes Euclidean distance from the human pelvis origin to the fixed 3D object center at every valid pose sample.</div>
 <pre class="jsonBlock">{
@@ -708,17 +708,17 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">position_consistency_between_people</div>
-<div class="question">Q1. Which statement about the dark-blue-clad man, expressed in the red-clad woman's body-centered frame, remains true across the entire 15-second clip?</div>
+<div class="question">Q1. Which body-centered position relation remains true between the two people in the video throughout the clip?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="B">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The dark-blue-clad man stays left-and-in-front of the red-clad woman throughout.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The dark-blue-clad man stays right-and-in-front of the red-clad woman in all 16 metric samples.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The dark-blue-clad man stays right-and-in-front of the red-clad woman throughout the clip.</span></button>
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The dark-blue-clad man crosses from the red-clad woman's right side to the red-clad woman's left side.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The dark-blue-clad man remains behind the red-clad woman throughout.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The dark-blue-clad man stays right-and-in-front of the red-clad woman in all 16 metric samples.</div><div class="explanation">The dense metric timeline contains 16 samples and every sample is right_front relative to the red-clad woman.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The dark-blue-clad man stays right-and-in-front of the red-clad woman throughout the clip.</div><div class="explanation">The dense metric timeline contains 16 samples and every sample is right_front relative to the red-clad woman.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses the red-clad woman's ground-plane body-forward axis and right axis at every sampled time; all-samples consistency is required.</div>
 <pre class="jsonBlock">{
@@ -1242,17 +1242,17 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">dominant_facing_relation_over_video</div>
-<div class="question">Q1. What is the dominant body-facing relation between the red-clad woman and the dark-blue-clad man over the full clip?</div>
+<div class="question">Q1. What is the dominant body-facing relation between the two people in the video?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="C">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They are side-by-side or oblique at every sampled time.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They are side-by-side or oblique throughout the clip.</span></button>
 <button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">They remain back-to-back for most of the clip.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They face each other in 14 of 16 metric samples, so facing each other is dominant.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They face each other for most of the clip, so facing each other is dominant.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">No dominant orientation can be determined because only one frame is used.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">They face each other in 14 of 16 metric samples, so facing each other is dominant.</div><div class="explanation">Facing-score classification gives {'facing_each_other': 14, 'side_by_side_or_oblique': 2} across the 16-sample timeline.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">They face each other for most of the clip, so facing each other is dominant.</div><div class="explanation">Facing-score classification gives {'facing_each_other': 14, 'side_by_side_or_oblique': 2} across the 16-sample timeline.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Projects both SMPL-X root-forward vectors and the the red-clad woman↔the dark-blue-clad man direction onto the ground plane, then aggregates the facing state over all samples.</div>
 <pre class="jsonBlock">{
@@ -1777,7 +1777,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">metric_distance_pattern_over_video</div>
-<div class="question">Q1. Which description best matches how the pelvis-to-pelvis distance between the red-clad woman and the dark-blue-clad man evolves over the clip?</div>
+<div class="question">Q1. How does the distance between the two people in the video evolve over the clip?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="D">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They steadily approach until they are less than 1 m apart at the end.</span></button>
@@ -2326,17 +2326,17 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">body_forward_visibility_consistency</div>
-<div class="question">Q1. Ignoring physical occlusion, what body-forward visibility relation holds between the red-clad woman and the dark-blue-clad man throughout the clip?</div>
+<div class="question">Q1. Ignoring physical occlusion, what body-forward visibility relation holds between the two people in the video throughout the clip?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="A">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">Each person stays inside the other's ±60° body-forward field in all 16 metric samples.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">Each person stays inside the other's ±60° body-forward field throughout the clip.</span></button>
 <button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Only the red-clad woman keeps the dark-blue-clad man inside the body-forward field throughout.</span></button>
 <button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Only the dark-blue-clad man keeps the red-clad woman inside the body-forward field throughout.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Neither person contains the other in the body-forward field at any sampled time.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Neither person contains the other in the body-forward field at any time in the clip.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">Each person stays inside the other's ±60° body-forward field in all 16 metric samples.</div><div class="explanation">The directional field state is mutual_body_forward_field in all 16 samples. This does not claim gaze contact or an unoccluded sightline.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">Each person stays inside the other's ±60° body-forward field throughout the clip.</div><div class="explanation">The directional field state is mutual_body_forward_field in all 16 samples. This does not claim gaze contact or an unoccluded sightline.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Measures the ground-plane angle from each SMPL-X body-forward vector to the other person's pelvis; accepts inside-field at ≤60°. Dense occlusion is deliberately not inferred.</div>
 <pre class="jsonBlock">{
@@ -2860,17 +2860,17 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">body_centric_relation_change_over_video</div>
-<div class="question">Q1. How does the red-clad woman's left/right relation in the dark-blue-clad man's body-centric frame change and then persist over the clip?</div>
+<div class="question">Q1. How does the left/right relation between the two people in the video change in a body-centric frame?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="B">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The red-clad woman starts right-front and then remains left-front for the rest of the clip.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The red-clad woman is left-front for the first four samples, then moves to the dark-blue-clad man's right-front side for the remaining twelve samples.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The red-clad woman alternates left and right at nearly every sampled second.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The red-clad woman begins left-front of the dark-blue-clad man, then moves to his right-front side and remains there.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The red-clad woman alternates left and right repeatedly throughout the clip.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The red-clad woman remains directly behind the dark-blue-clad man throughout the clip.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The red-clad woman is left-front for the first four samples, then moves to the dark-blue-clad man's right-front side for the remaining twelve samples.</div><div class="explanation">The lateral sequence has 4/4 left samples before the transition and 12/12 right samples after it.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The red-clad woman begins left-front of the dark-blue-clad man, then moves to his right-front side and remains there.</div><div class="explanation">The lateral sequence has 4/4 left samples before the transition and 12/12 right samples after it.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Transforms the red-clad woman's pelvis into the dark-blue-clad man's ground-plane body frame at each of 16 samples and requires the new side to persist after the crossing.</div>
 <pre class="jsonBlock">{
@@ -3566,7 +3566,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">metric_separation_over_video</div>
-<div class="question">Q1. After a short early fluctuation, what sustained distance trend develops between the dark-blue-clad man and the red-clad woman?</div>
+<div class="question">Q1. After a short early fluctuation, what sustained distance trend develops between the two people in the video?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="B">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They steadily converge and finish less than 1 m apart.</span></button>
@@ -4115,17 +4115,17 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">dominant_body_centric_position</div>
-<div class="question">Q1. Which body-centric position of the red-clad woman relative to the dark-blue-clad man dominates this clip despite a few brief deviations?</div>
+<div class="question">Q1. Which body-centric position relation between the two people in the video dominates the clip?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="C">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">Left-front dominates the clip.</span></button>
 <button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Right-front dominates the clip.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The red-clad woman is on the dark-blue-clad man's right-and-behind side in 13 of 16 samples, so right-behind dominates.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The red-clad woman is predominantly on the dark-blue-clad man's right-and-behind side.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The four position quadrants occur equally often.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The red-clad woman is on the dark-blue-clad man's right-and-behind side in 13 of 16 samples, so right-behind dominates.</div><div class="explanation">The complete position counts are {'right_behind': 13, 'left_behind': 1, 'left_front': 2}; right_behind is the clear temporal majority.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The red-clad woman is predominantly on the dark-blue-clad man's right-and-behind side.</div><div class="explanation">The complete position counts are {'right_behind': 13, 'left_behind': 1, 'left_front': 2}; right_behind is the clear temporal majority.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Transforms the red-clad woman into the dark-blue-clad man's body-centric frame at each sampled second and aggregates the full position sequence.</div>
 <pre class="jsonBlock">{
@@ -4651,7 +4651,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">nonmonotonic_distance_pattern</div>
-<div class="question">Q1. Which full-clip distance pattern best describes the red-clad woman and the dark-blue-clad man?</div>
+<div class="question">Q1. Which full-clip distance pattern best describes the two people in the video?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="D">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They approach continuously for the entire clip.</span></button>
@@ -5201,17 +5201,17 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">approach_while_facing</div>
-<div class="question">Q1. What combined distance-and-orientation pattern occurs between the dark-blue-clad man and the red-clad woman?</div>
+<div class="question">Q1. What combined distance-and-orientation pattern occurs between the two people in the video?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="C">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They move farther apart while remaining back-to-back throughout.</span></button>
 <button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Their distance stays constant and their facing relation cannot be determined.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They approach to about 0.96 m while facing each other is dominant (14/16 samples).</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They approach, but side-by-side orientation dominates all 16 samples.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They approach to about 0.96 m while predominantly facing each other.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They approach, but side-by-side orientation dominates the entire clip.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">They approach to about 0.96 m while facing each other is dominant (14/16 samples).</div><div class="explanation">The minimum distance occurs near t=9.0 s, and the facing-state aggregate is {'facing_each_other': 14, 'side_by_side_or_oblique': 2}.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">They approach to about 0.96 m while predominantly facing each other.</div><div class="explanation">The minimum distance occurs near t=9.0 s, and the facing-state aggregate is {'facing_each_other': 14, 'side_by_side_or_oblique': 2}.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Jointly aggregates the 16-sample pelvis-distance series and the ground-plane SMPL-X body-facing score.</div>
 <pre class="jsonBlock">{
@@ -5754,7 +5754,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">coupled_distance_relation_change</div>
-<div class="question">Q1. As the red-clad woman approaches the dark-blue-clad man during the clip, how does the red-clad woman's lateral relation in the dark-blue-clad man's frame change?</div>
+<div class="question">Q1. As the two people in the video approach each other, how does their lateral relation change in a body-centric frame?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="B">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The red-clad woman moves farther away while crossing from left to right.</span></button>
@@ -6321,7 +6321,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">distance_out_and_back_over_video</div>
-<div class="question">Q1. Which temporal distance pattern occurs between the red-clad woman and the dark-blue-clad man across this clip?</div>
+<div class="question">Q1. Which temporal distance pattern occurs between the two people in the video?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="C">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They move steadily farther apart from start to finish.</span></button>
@@ -6871,17 +6871,17 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
 <div class="questionType">body_forward_field_transition_over_video</div>
-<div class="question">Q1. Ignoring physical occlusion, how does the one-sided body-forward field relation change over this clip?</div>
+<div class="question">Q1. Ignoring physical occlusion, how does the one-sided body-forward field relation between the two people in the video change?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="C">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The relation stays mutual for all 16 samples.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The relation stays mutual throughout the clip.</span></button>
 <button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Neither person enters the other's body-forward field at any time.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, only the dark-blue-clad man keeps the red-clad woman inside the field for most samples.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, the relation reverses for most of the remaining clip.</span></button>
 <button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Only the dark-blue-clad man contains the red-clad woman early, then only the red-clad woman contains the dark-blue-clad man later.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, only the dark-blue-clad man keeps the red-clad woman inside the field for most samples.</div><div class="explanation">The 16-sample state sequence is ['b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field']; the first six are the red-clad woman-only and the final segment is predominantly the dark-blue-clad man-only.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, the relation reverses for most of the remaining clip.</div><div class="explanation">The 16-sample state sequence is ['b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'b_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field', 'mutual_body_forward_field', 'a_only_body_forward_field', 'a_only_body_forward_field']; the first six are the red-clad woman-only and the final segment is predominantly the dark-blue-clad man-only.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Uses ground-plane SMPL-X root-forward directions at all 16 samples. It does not claim eye gaze or an unobstructed physical sightline.</div>
 <pre class="jsonBlock">{

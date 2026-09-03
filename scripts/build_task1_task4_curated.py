@@ -551,7 +551,7 @@ def task1_expansion_groups(expansion: dict[str, Any]) -> list[dict[str, Any]]:
         task_id=TASK1_ID, task_name=TASK1_NAME,
         qtype="human_object_distance_pattern_over_video",
         question="How does the person's 3D distance to the egg whisk change over this clip?",
-        correct=f"The person moves substantially farther from it: about {distances[0]:.2f} m at the start and {distances[-1]:.2f} m at the end.",
+        correct=f"The egg whisk is very close to the person at the beginning and about {distances[-1]:.2f} m away at the end.",
         distractors=[
             "The distance stays nearly constant throughout.",
             "The person moves steadily closer and ends within 0.3 m.",
