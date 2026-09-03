@@ -1,0 +1,506 @@
+{
+  "status": "failed",
+  "policy": {
+    "min_temporal_states": 8,
+    "min_task1_span_ratio": 0.6,
+    "min_task4_span_ratio": 0.85,
+    "min_visible_track_coverage": 0.8,
+    "min_identity_assignment_margin": 0.18,
+    "min_dominance_ratio": 0.65,
+    "min_dominance_margin": 0.2,
+    "max_radial_speed_mps": 3.0,
+    "max_temporal_gap_ratio": 0.3,
+    "min_transition_run_length": 2,
+    "min_distance_pattern_range_m": 0.25,
+    "min_topology_margin_normalized": 0.03,
+    "endpoint_tolerance_sec": 0.6,
+    "forbid_sample_count_in_answers": true
+  },
+  "case_count": 25,
+  "accepted_count": 24,
+  "rejected_count": 1,
+  "warning_count": 5,
+  "cases": [
+    {
+      "case_index": 1,
+      "case_id": "query_04_iiith145_frame11250",
+      "task_id": "task1_dynamic_human_referenced_relations",
+      "question_type": "relation_change_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [
+        "orientation audit metadata is absent but this QA is not front/behind-sensitive"
+      ],
+      "metrics": {
+        "temporal_state_count": 29,
+        "temporal_span_sec": 15.0,
+        "max_temporal_gap_ratio": 0.066667,
+        "temporal_span_ratio": 1.0
+      }
+    },
+    {
+      "case_index": 2,
+      "case_id": "query_02_iiith30_frame4440",
+      "task_id": "task1_dynamic_human_referenced_relations",
+      "question_type": "turn_induced_relation_change_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [
+        "orientation audit metadata is absent but this QA is not front/behind-sensitive"
+      ],
+      "metrics": {
+        "temporal_state_count": 10,
+        "temporal_span_sec": 14.0,
+        "max_temporal_gap_ratio": 0.285714,
+        "temporal_span_ratio": 0.933333
+      }
+    },
+    {
+      "case_index": 3,
+      "case_id": "query_01_iiith32_frame5280",
+      "task_id": "task1_dynamic_human_referenced_relations",
+      "question_type": "relation_consistency_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [
+        "orientation audit metadata is absent but this QA is not front/behind-sensitive"
+      ],
+      "metrics": {
+        "temporal_state_count": 21,
+        "temporal_span_sec": 15.0,
+        "max_temporal_gap_ratio": 0.233333,
+        "temporal_span_ratio": 1.0
+      }
+    },
+    {
+      "case_index": 4,
+      "case_id": "sfu0083_cam04_3450",
+      "task_id": "task1_dynamic_human_referenced_relations",
+      "question_type": "body_forward_visibility_change_cause_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [
+        "orientation audit metadata is absent but this QA is not front/behind-sensitive"
+      ],
+      "metrics": {
+        "temporal_state_count": 31,
+        "temporal_span_sec": 15.0,
+        "max_temporal_gap_ratio": 0.033333,
+        "temporal_span_ratio": 1.0
+      }
+    },
+    {
+      "case_index": 5,
+      "case_id": "diverse_iiith_145_2_frame7380",
+      "task_id": "task1_dynamic_human_referenced_relations",
+      "question_type": "nearest_object_consistency_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "temporal_state_count": 31,
+        "temporal_span_sec": 15.0,
+        "max_temporal_gap_ratio": 0.033333,
+        "temporal_span_ratio": 1.0
+      }
+    },
+    {
+      "case_index": 6,
+      "case_id": "query_03_iiith29_frame4350",
+      "task_id": "task1_dynamic_human_referenced_relations",
+      "question_type": "multi_object_front_consistency_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "temporal_state_count": 26,
+        "temporal_span_sec": 14.5,
+        "max_temporal_gap_ratio": 0.137931,
+        "temporal_span_ratio": 0.966667,
+        "orientation_forward_sign": 1
+      }
+    },
+    {
+      "case_index": 7,
+      "case_id": "diverse_iiith_31_3_frame1620",
+      "task_id": "task1_dynamic_human_referenced_relations",
+      "question_type": "nearest_and_vertical_consistency_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "temporal_state_count": 19,
+        "temporal_span_sec": 10.0,
+        "max_temporal_gap_ratio": 0.1,
+        "temporal_span_ratio": 0.666667
+      }
+    },
+    {
+      "case_index": 8,
+      "case_id": "sfu0101_cam05_5460",
+      "task_id": "task1_dynamic_human_referenced_relations",
+      "question_type": "relation_change_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "temporal_state_count": 24,
+        "temporal_span_sec": 15.0,
+        "max_temporal_gap_ratio": 0.266667,
+        "temporal_span_ratio": 1.0
+      }
+    },
+    {
+      "case_index": 9,
+      "case_id": "val_3",
+      "task_id": "task1_dynamic_human_referenced_relations",
+      "question_type": "relation_change_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "temporal_state_count": 26,
+        "temporal_span_sec": 15.0,
+        "max_temporal_gap_ratio": 0.2,
+        "temporal_span_ratio": 1.0,
+        "orientation_forward_sign": -1
+      }
+    },
+    {
+      "case_index": 10,
+      "case_id": "val_12_replacement_egg_whisk",
+      "task_id": "task1_dynamic_human_referenced_relations",
+      "question_type": "human_object_distance_pattern_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "temporal_state_count": 22,
+        "temporal_span_sec": 15.0,
+        "max_temporal_gap_ratio": 0.233333,
+        "temporal_span_ratio": 1.0
+      }
+    },
+    {
+      "case_index": 11,
+      "case_id": "diverse_sfu_008_3_frame6960",
+      "task_id": "task1_dynamic_human_referenced_relations",
+      "question_type": "body_forward_visibility_change_cause_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [
+        "orientation audit metadata is absent but this QA is not front/behind-sensitive"
+      ],
+      "metrics": {
+        "temporal_state_count": 31,
+        "temporal_span_sec": 15.0,
+        "max_temporal_gap_ratio": 0.033333,
+        "temporal_span_ratio": 1.0
+      }
+    },
+    {
+      "case_index": 12,
+      "case_id": "hoi_m3_bedroom_data02_win08",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "position_consistency_between_people",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "identity_assignment_margin": 0.2131,
+        "identity_mapping": {
+          "A": "V2",
+          "B": "V1"
+        },
+        "temporal_state_count": 16,
+        "temporal_span_sec": 14.997641,
+        "max_temporal_gap_ratio": 0.066741,
+        "temporal_span_ratio": 0.999843,
+        "max_radial_speed_mps": 0.275748
+      }
+    },
+    {
+      "case_index": 13,
+      "case_id": "hoi_m3_bedroom_data01_win06",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "dominant_facing_relation_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "identity_assignment_margin": 0.2061,
+        "identity_mapping": {
+          "A": "V2",
+          "B": "V1"
+        },
+        "temporal_state_count": 16,
+        "temporal_span_sec": 14.997643,
+        "max_temporal_gap_ratio": 0.066741,
+        "temporal_span_ratio": 0.999843,
+        "max_radial_speed_mps": 0.037425,
+        "dominance_ratio": 0.875,
+        "dominance_margin": 0.75
+      }
+    },
+    {
+      "case_index": 14,
+      "case_id": "hoi_m3_bedroom_data03_win04",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "metric_distance_pattern_over_video",
+      "status": "rejected",
+      "errors": [
+        "visible track V1 coverage is below threshold"
+      ],
+      "warnings": [],
+      "metrics": {
+        "identity_assignment_margin": 0.664,
+        "identity_mapping": {
+          "A": "V2",
+          "B": "V1"
+        },
+        "temporal_state_count": 16,
+        "temporal_span_sec": 14.997642,
+        "max_temporal_gap_ratio": 0.066741,
+        "temporal_span_ratio": 0.999843,
+        "max_radial_speed_mps": 0.715689,
+        "distance_range_m": 2.331274
+      }
+    },
+    {
+      "case_index": 15,
+      "case_id": "hoi_m3_bedroom_data02_win05",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "body_forward_visibility_consistency",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "identity_assignment_margin": 0.5285,
+        "identity_mapping": {
+          "A": "V2",
+          "B": "V1"
+        },
+        "temporal_state_count": 16,
+        "temporal_span_sec": 14.997641,
+        "max_temporal_gap_ratio": 0.066741,
+        "temporal_span_ratio": 0.999843,
+        "max_radial_speed_mps": 0.394773
+      }
+    },
+    {
+      "case_index": 16,
+      "case_id": "hoi_m3_bedroom_data03_win03",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "body_centric_relation_change_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "identity_assignment_margin": 0.4127,
+        "identity_mapping": {
+          "A": "V1",
+          "B": "V2"
+        },
+        "temporal_state_count": 16,
+        "temporal_span_sec": 14.997642,
+        "max_temporal_gap_ratio": 0.066741,
+        "temporal_span_ratio": 0.999843,
+        "max_radial_speed_mps": 0.707869,
+        "transition_endpoint_segment_support": [
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "case_index": 17,
+      "case_id": "hoi_m3_bedroom_data05_win02",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "visible_pair_topology_change_2d",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "start_closest_pair_margin": 0.1273,
+        "end_closest_pair_margin": 0.1587
+      }
+    },
+    {
+      "case_index": 18,
+      "case_id": "hoi_m3_bedroom_data01_win02",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "metric_separation_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "identity_assignment_margin": 1.7849,
+        "identity_mapping": {
+          "A": "V1",
+          "B": "V2"
+        },
+        "temporal_state_count": 16,
+        "temporal_span_sec": 14.997643,
+        "max_temporal_gap_ratio": 0.066741,
+        "temporal_span_ratio": 0.999843,
+        "max_radial_speed_mps": 0.784832,
+        "distance_range_m": 2.31205
+      }
+    },
+    {
+      "case_index": 19,
+      "case_id": "hoi_m3_bedroom_data01_win04",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "dominant_body_centric_position",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "identity_assignment_margin": 2.6125,
+        "identity_mapping": {
+          "A": "V1",
+          "B": "V2"
+        },
+        "temporal_state_count": 16,
+        "temporal_span_sec": 14.997643,
+        "max_temporal_gap_ratio": 0.066741,
+        "temporal_span_ratio": 0.999843,
+        "max_radial_speed_mps": 0.512436,
+        "dominance_ratio": 0.8125,
+        "dominance_margin": 0.6875
+      }
+    },
+    {
+      "case_index": 20,
+      "case_id": "hoi_m3_bedroom_data02_win04",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "nonmonotonic_distance_pattern",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "identity_assignment_margin": 0.4945,
+        "identity_mapping": {
+          "A": "V2",
+          "B": "V1"
+        },
+        "temporal_state_count": 16,
+        "temporal_span_sec": 14.997641,
+        "max_temporal_gap_ratio": 0.066741,
+        "temporal_span_ratio": 0.999843,
+        "max_radial_speed_mps": 0.387329,
+        "distance_range_m": 1.618598
+      }
+    },
+    {
+      "case_index": 21,
+      "case_id": "hoi_m3_bedroom_data02_win06",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "approach_while_facing",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "identity_assignment_margin": 0.5291,
+        "identity_mapping": {
+          "A": "V1",
+          "B": "V2"
+        },
+        "temporal_state_count": 16,
+        "temporal_span_sec": 14.997641,
+        "max_temporal_gap_ratio": 0.066741,
+        "temporal_span_ratio": 0.999843,
+        "max_radial_speed_mps": 0.352717,
+        "distance_range_m": 1.158799,
+        "dominance_ratio": 0.875,
+        "dominance_margin": 0.75
+      }
+    },
+    {
+      "case_index": 22,
+      "case_id": "hoi_m3_bedroom_data03_win09",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "coupled_distance_relation_change",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "identity_assignment_margin": 0.5107,
+        "identity_mapping": {
+          "A": "V1",
+          "B": "V2"
+        },
+        "temporal_state_count": 16,
+        "temporal_span_sec": 14.997642,
+        "max_temporal_gap_ratio": 0.066741,
+        "temporal_span_ratio": 0.999843,
+        "max_radial_speed_mps": 0.547877,
+        "distance_range_m": 1.678996,
+        "transition_endpoint_segment_support": [
+          5,
+          4
+        ]
+      }
+    },
+    {
+      "case_index": 23,
+      "case_id": "hoi_m3_bedroom_data03_win08",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "distance_out_and_back_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "identity_assignment_margin": 0.2641,
+        "identity_mapping": {
+          "A": "V2",
+          "B": "V1"
+        },
+        "temporal_state_count": 16,
+        "temporal_span_sec": 14.997642,
+        "max_temporal_gap_ratio": 0.066741,
+        "temporal_span_ratio": 0.999843,
+        "max_radial_speed_mps": 0.61202,
+        "distance_range_m": 1.729483
+      }
+    },
+    {
+      "case_index": 24,
+      "case_id": "hoi_m3_bedroom_data01_win01",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "body_forward_field_transition_over_video",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "identity_assignment_margin": 1.0665,
+        "identity_mapping": {
+          "A": "V1",
+          "B": "V2"
+        },
+        "temporal_state_count": 16,
+        "temporal_span_sec": 14.997643,
+        "max_temporal_gap_ratio": 0.066741,
+        "temporal_span_ratio": 0.999843,
+        "max_radial_speed_mps": 0.756052,
+        "transition_endpoint_segment_support": [
+          5,
+          4
+        ]
+      }
+    },
+    {
+      "case_index": 25,
+      "case_id": "hoi_m3_bedroom_data05_win_extra_90s",
+      "task_id": "task4_multi_human_relational_dynamics",
+      "question_type": "visible_pair_topology_consistency_2d",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "start_closest_pair_margin": 0.0758,
+        "end_closest_pair_margin": 0.3021
+      }
+    }
+  ]
+}

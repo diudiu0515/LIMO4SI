@@ -1,8 +1,8 @@
 {
   "status": "ok",
-  "case_count": 25,
-  "qa_count": 25,
-  "unique_case_windows": 25,
+  "case_count": 24,
+  "qa_count": 24,
+  "unique_case_windows": 24,
   "minimum_examples_per_category": 2,
   "category_counts": {
     "task1_dynamic_human_referenced_relations": {
@@ -14,10 +14,10 @@
     "task4_multi_human_relational_dynamics": {
       "body_centric_position": 2,
       "body_orientation": 2,
-      "metric_distance": 6,
       "body_forward_visibility": 2,
       "relation_change": 2,
-      "image_plane_topology": 2
+      "image_plane_topology": 2,
+      "metric_distance": 5
     }
   },
   "hard_gates": [
@@ -25,8 +25,56 @@
     "four unique options",
     "at least two independent cases per capability category",
     "Task 1 object world coordinates are scene-fixed unless motion is explicitly measured",
-    "metric Task 4 uses identity-aligned 16-sample timelines",
+    "metric Task 4 uses temporally covered, identity-aligned timelines",
     "2D topology requires real observations near both endpoints; nearest-time substitution is forbidden",
     "body-forward visibility is labeled as a directional proxy, never gaze or physical occlusion"
-  ]
+  ],
+  "scale_quality_gate": {
+    "candidate_count": 25,
+    "accepted_count": 24,
+    "rejected_count": 1,
+    "rejected_cases": [
+      {
+        "case_index": 14,
+        "case_id": "hoi_m3_bedroom_data03_win04",
+        "task_id": "task4_multi_human_relational_dynamics",
+        "question_type": "metric_distance_pattern_over_video",
+        "status": "rejected",
+        "errors": [
+          "visible track V1 coverage is below threshold"
+        ],
+        "warnings": [],
+        "metrics": {
+          "identity_assignment_margin": 0.664,
+          "identity_mapping": {
+            "A": "V2",
+            "B": "V1"
+          },
+          "temporal_state_count": 16,
+          "temporal_span_sec": 14.997642,
+          "max_temporal_gap_ratio": 0.066741,
+          "temporal_span_ratio": 0.999843,
+          "max_radial_speed_mps": 0.715689,
+          "distance_range_m": 2.331274
+        }
+      }
+    ],
+    "release_warning_count": 5,
+    "policy": {
+      "min_temporal_states": 8,
+      "min_task1_span_ratio": 0.6,
+      "min_task4_span_ratio": 0.85,
+      "min_visible_track_coverage": 0.8,
+      "min_identity_assignment_margin": 0.18,
+      "min_dominance_ratio": 0.65,
+      "min_dominance_margin": 0.2,
+      "max_radial_speed_mps": 3.0,
+      "max_temporal_gap_ratio": 0.3,
+      "min_transition_run_length": 2,
+      "min_distance_pattern_range_m": 0.25,
+      "min_topology_margin_normalized": 0.03,
+      "endpoint_tolerance_sec": 0.6,
+      "forbid_sample_count_in_answers": true
+    }
+  }
 }
