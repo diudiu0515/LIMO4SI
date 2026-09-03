@@ -27,6 +27,7 @@ from build_task1_task4_curated import (
     load_js, metric_group, qa, save_js, source_qa,
 )
 from limo4si.multihuman import pair_timeline
+from limo4si.scale_quality import ScaleQualityPolicy, require_release_quality, validate_release
 
 
 REQUIRED_CATEGORIES = {
@@ -235,11 +236,16 @@ def add_task4_topology(data: dict[str, Any], evidence: dict[str, Any]) -> None:
 
 
 
-VISIBLE_PERSON_DESCRIPTORS = {
-    "V1": "the dark-blue-clad man",
-    "V2": "the red-clad woman",
-    "V3": "the green-top woman",
-}
+PERSON_ALIAS_PATH = ROOT / "configs/person_display_aliases.json"
+PERSON_ALIAS_CONFIG = json.loads(PERSON_ALIAS_PATH.read_text(encoding="utf-8"))
+
+
+def visible_person_descriptors(group: dict[str, Any]) -> dict[str, str]:
+    name = str(group.get("name", ""))
+    if name in PERSON_ALIAS_CONFIG:
+        return dict(PERSON_ALIAS_CONFIG[name])
+    sequence = name.removeprefix("hoi_m3_").split("_win", 1)[0]
+    return dict(PERSON_ALIAS_CONFIG.get(sequence) or {})
 
 
 def _replace_person_ids(text: str, aliases: dict[str, str]) -> str:
@@ -269,16 +275,24 @@ def apply_person_descriptions(data: dict[str, Any]) -> None:
     """Resolve per-clip metric identities to stable, visually audited descriptions."""
     display_fields = ("question", "correct_answer", "explanation", "method")
     for group in data["groups"]:
-        if not str(group.get("name", "")).startswith("hoi_m3"):
+        if not group.get("qa") or group["qa"][0].get("task_id") != TASK4_ID:
             continue
         alignment = (group.get("visual_person_audit") or {}).get("metric_identity_alignment") or {}
         metric_to_visible = alignment.get("mapping") or {}
-        aliases = dict(VISIBLE_PERSON_DESCRIPTORS)
+        descriptors = visible_person_descriptors(group)
+        required_visible_ids = set(metric_to_visible.values())
+        if not descriptors or not required_visible_ids.issubset(descriptors):
+            group["person_display_alias_status"] = {
+                "status": "missing",
+                "required_visible_ids": sorted(required_visible_ids),
+                "configured_visible_ids": sorted(descriptors),
+            }
+            continue
+        aliases = dict(descriptors)
         for metric_id, visible_id in metric_to_visible.items():
-            if visible_id not in VISIBLE_PERSON_DESCRIPTORS:
-                raise ValueError(f"Unknown visible identity {visible_id} in {group['name']}")
-            aliases[metric_id] = VISIBLE_PERSON_DESCRIPTORS[visible_id]
+            aliases[metric_id] = descriptors[visible_id]
         group["person_display_aliases"] = aliases
+        group["person_display_alias_status"] = {"status": "complete", "source": str(PERSON_ALIAS_PATH.relative_to(ROOT))}
         for question in group.get("qa", []):
             for field in display_fields:
                 if isinstance(question.get(field), str):
@@ -317,7 +331,7 @@ MULTIHUMAN_SAMPLE_FREE_ANSWERS = {
 def apply_multihuman_copy_edits(data: dict[str, Any]) -> None:
     """Apply reviewer-facing copy only; metric results and algorithms are untouched."""
     for group in data["groups"]:
-        if not str(group.get("name", "")).startswith("hoi_m3"):
+        if not group.get("qa") or group["qa"][0].get("task_id") != TASK4_ID:
             continue
         question = group["qa"][0]
         qtype = question["question_type"]
@@ -385,7 +399,7 @@ def validate_scale(data: dict[str, Any]) -> dict[str, Any]:
             "four unique options",
             "at least two independent cases per capability category",
             "Task 1 object world coordinates are scene-fixed unless motion is explicitly measured",
-            "metric Task 4 uses identity-aligned 16-sample timelines",
+            "metric Task 4 uses temporally covered, identity-aligned timelines",
             "2D topology requires real observations near both endpoints; nearest-time substitution is forbidden",
             "body-forward visibility is labeled as a directional proxy, never gaze or physical occlusion",
         ],
@@ -402,6 +416,9 @@ def main() -> None:
     ap.add_argument("--topology-evidence", type=Path, default=Path("outputs/qa/topology_extra_90s_calibration.json"))
     ap.add_argument("--output-jsonl", type=Path, default=Path("outputs/qa/task1_task4_curated_qa.jsonl"))
     ap.add_argument("--audit-output", type=Path, default=Path("outputs/qa/task1_task4_curated_audit.json"))
+    ap.add_argument("--quality-report", type=Path, default=Path("outputs/qa/task1_task4_scale_quality.json"))
+    ap.add_argument("--quality-policy", type=Path, help="Optional JSON overrides for ScaleQualityPolicy")
+    ap.add_argument("--fail-on-rejected", action="store_true", help="Fail instead of filtering candidates rejected by scale quality gates")
     args = ap.parse_args()
     resolve = lambda p: p if p.is_absolute() else ROOT / p
     data = load_js(resolve(args.site_data))
@@ -409,6 +426,8 @@ def main() -> None:
     dense = json.loads(resolve(args.dense_scenes).read_text())
     audits = json.loads(resolve(args.visual_audits).read_text())
     evidence = json.loads(resolve(args.topology_evidence).read_text())
+    policy_values = json.loads(resolve(args.quality_policy).read_text()) if args.quality_policy else {}
+    policy = ScaleQualityPolicy(**policy_values)
 
     by_name = {g["name"]: g for g in data["groups"]}
     rewrite_case1(by_name["query_04_iiith145_frame11250"])
@@ -418,7 +437,24 @@ def main() -> None:
     add_task4_topology(data, evidence)
     apply_person_descriptions(data)
     apply_multihuman_copy_edits(data)
+
+    # Evaluate every candidate before category counting.  Large-scale runs keep
+    # rejection reasons while publishing only cases that pass all hard gates.
+    candidate_quality = validate_release(data, policy)
+    rejected_indices = {case["case_index"] for case in candidate_quality["cases"] if case["status"] == "rejected"}
+    if rejected_indices and args.fail_on_rejected:
+        require_release_quality(data, policy)
+    data["groups"] = [group for index, group in enumerate(data["groups"], 1) if index not in rejected_indices]
+    release_quality = require_release_quality(data, policy)
     audit = validate_scale(data)
+    audit["scale_quality_gate"] = {
+        "candidate_count": candidate_quality["case_count"],
+        "accepted_count": candidate_quality["accepted_count"],
+        "rejected_count": candidate_quality["rejected_count"],
+        "rejected_cases": [case for case in candidate_quality["cases"] if case["status"] == "rejected"],
+        "release_warning_count": release_quality["warning_count"],
+        "policy": candidate_quality["policy"],
+    }
 
     save_js(resolve(args.site_data), data)
     rows = []
@@ -426,6 +462,9 @@ def main() -> None:
         rows.append({"case_index": case_index, "case_id": group["name"], "video_clip": group.get("video_clip"), **group["qa"][0]})
     resolve(args.output_jsonl).write_text("\n".join(json.dumps(x, ensure_ascii=False) for x in rows) + "\n")
     resolve(args.audit_output).write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n")
+    quality_path = resolve(args.quality_report)
+    quality_path.parent.mkdir(parents=True, exist_ok=True)
+    quality_path.write_text(json.dumps(candidate_quality, ensure_ascii=False, indent=2) + "\n")
     print(json.dumps(audit, ensure_ascii=False, indent=2))
 
 

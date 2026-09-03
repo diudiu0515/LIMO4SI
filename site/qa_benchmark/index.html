@@ -39,7 +39,6 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <a href="#case-22">Case 22</a>
 <a href="#case-23">Case 23</a>
 <a href="#case-24">Case 24</a>
-<a href="#case-25">Case 25</a>
 </nav>
 <section class="staticCase" id="case-1">
 <p class="eyebrow">Case 1</p><h2>Task 1 · overall relation change · iiith_cooking_145_2 · cam01 · 15s dynamic window around frame 11250</h2>
@@ -68,7 +67,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.</div><div class="explanation">Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.</div><div class="explanation">Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Rebuilds the person's body-centric frame at every valid pose sample and transforms the fixed 3D object center into that changing frame.</div>
 <pre class="jsonBlock">{
@@ -1755,556 +1754,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </article>
 </div></section>
 <section class="staticCase" id="case-14">
-<p class="eyebrow">Case 14</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 04</h2>
-<div class="metaGrid">
-<div class="metaBox"><strong>1</strong><span>questions</span></div>
-<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
-<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
-<div class="metaBox"><strong>2 / 2</strong><span>visible 2D / metric 3D tracks</span></div>
-</div>
-<div class="coverageNotice ok"><strong>Multi-person coverage audit: complete_and_identity_aligned</strong><br>The original-video localization layer covers 2 persistent visible-person tracks. Metric distance and body orientation use only 2 SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>
-<div class="videoPanel"><div class="taskName">15-second evidence video</div>
-<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./outputs/hoim3/bedroom_data03/win04_view0_15s.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./multihuman_media/hoi_m3_bedroom_data03_win04_localized.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="originalVideoBox"><summary>Show original full video on this page</summary>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./hoim3_data/videos/bedroom_data03/0.mp4" type="video/mp4">Your browser cannot play this video.</video></details>
-<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
-<figure><img src="./multihuman_media/hoi_m3_bedroom_data03_win04_localized.jpg" loading="lazy" alt="original"><figcaption>Original-video localization: boxes + head/pelvis points + persistent 2D IDs</figcaption></figure>
-<figure><img src="./multihuman_media/hoi_m3_bedroom_data03_win04_curated.svg" loading="lazy" alt="topdown"><figcaption>Metric 3D top-down map (SMPL-X tracks only)</figcaption></figure>
-</div></details><div class="qaList">
-<article class="card task4_multi_human_relational_dynamics">
-<div class="cardHead"><div>
-<div class="taskName">Task 4 · Multi-Human Relational Dynamics</div>
-<div class="questionType">metric_distance_pattern_over_video</div>
-<div class="question">Q1. How does the distance between the two people in the video evolve over the clip?</div>
-</div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="D">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">They steadily approach until they are less than 1 m apart at the end.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Their distance stays within a narrow 0.1 m band throughout.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They separate briefly but return to approximately their starting distance by the end.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">They move substantially farther apart: about 1.08 m at the start, above 3 m in the second half, and 3.09 m at the end.</span></button>
-</div>
-<button type="button" class="submitAnswer" disabled>Submit answer</button>
-<div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">They move substantially farther apart: about 1.08 m at the start, above 3 m in the second half, and 3.09 m at the end.</div><div class="explanation">Across 16 metric samples, distance ranges from 1.04 m to 3.37 m; net change is +2.02 m.</div></div>
-<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Computes Euclidean distance between aligned SMPL-X pelvis/root translations at approximately 1 Hz across the full 15 seconds.</div>
-<pre class="jsonBlock">{
-  &quot;T/H/S&quot;: {
-    &quot;T&quot;: true,
-    &quot;H&quot;: true,
-    &quot;S&quot;: true
-  },
-  &quot;pair&quot;: [
-    &quot;the red-clad woman&quot;,
-    &quot;the dark-blue-clad man&quot;
-  ],
-  &quot;timeline&quot;: [
-    {
-      &quot;t&quot;: 0.0,
-      &quot;frame_id&quot;: 6954,
-      &quot;distance_m&quot;: 1.0765114684166757,
-      &quot;facing_state&quot;: &quot;facing_each_other&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;left_front&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;a_only_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: true,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 13.570926646833911,
-        &quot;b_to_a_angle_deg&quot;: 64.62521442651482,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 1.0009550054580612,
-      &quot;frame_id&quot;: 7014,
-      &quot;distance_m&quot;: 1.1312120181401646,
-      &quot;facing_state&quot;: &quot;side_by_side_or_oblique&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;left_front&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;a_only_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: true,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 39.307003400966046,
-        &quot;b_to_a_angle_deg&quot;: 76.71289371610533,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 2.0019100109161223,
-      &quot;frame_id&quot;: 7074,
-      &quot;distance_m&quot;: 1.0350037992211454,
-      &quot;facing_state&quot;: &quot;side_by_side_or_oblique&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;left_behind&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;neither_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: false,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 75.6075300246722,
-        &quot;b_to_a_angle_deg&quot;: 99.81806972502991,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 3.0028650163741832,
-      &quot;frame_id&quot;: 7134,
-      &quot;distance_m&quot;: 1.4353759547300087,
-      &quot;facing_state&quot;: &quot;back_to_back_or_away&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_behind&quot;,
-      &quot;a_relative_to_b&quot;: &quot;left_behind&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;neither_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: false,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 101.74319310376477,
-        &quot;b_to_a_angle_deg&quot;: 162.43783451357112,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 4.003820021832245,
-      &quot;frame_id&quot;: 7194,
-      &quot;distance_m&quot;: 2.1517487779298774,
-      &quot;facing_state&quot;: &quot;back_to_back_or_away&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_behind&quot;,
-      &quot;a_relative_to_b&quot;: &quot;right_behind&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;neither_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: false,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 97.8340075696168,
-        &quot;b_to_a_angle_deg&quot;: 143.18132514562572,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 5.0047750272903055,
-      &quot;frame_id&quot;: 7254,
-      &quot;distance_m&quot;: 2.7470643177179457,
-      &quot;facing_state&quot;: &quot;side_by_side_or_oblique&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;right_behind&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;neither_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: false,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 71.91608473652266,
-        &quot;b_to_a_angle_deg&quot;: 121.05540534007116,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 6.0057300327483665,
-      &quot;frame_id&quot;: 7314,
-      &quot;distance_m&quot;: 3.0450015768745575,
-      &quot;facing_state&quot;: &quot;side_by_side_or_oblique&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;right_behind&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;neither_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: false,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 65.53707781312363,
-        &quot;b_to_a_angle_deg&quot;: 97.30340284287729,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 7.006685038206427,
-      &quot;frame_id&quot;: 7374,
-      &quot;distance_m&quot;: 3.177163021636472,
-      &quot;facing_state&quot;: &quot;side_by_side_or_oblique&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;right_front&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;a_only_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: true,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 51.48631616909215,
-        &quot;b_to_a_angle_deg&quot;: 82.15211293985347,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 7.990957460240188,
-      &quot;frame_id&quot;: 7433,
-      &quot;distance_m&quot;: 3.271509877522105,
-      &quot;facing_state&quot;: &quot;side_by_side_or_oblique&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;right_front&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;a_only_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: true,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 50.99976638758992,
-        &quot;b_to_a_angle_deg&quot;: 72.6087940303737,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 8.991912465698249,
-      &quot;frame_id&quot;: 7493,
-      &quot;distance_m&quot;: 3.258292654916272,
-      &quot;facing_state&quot;: &quot;side_by_side_or_oblique&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;right_front&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;a_only_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: true,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 52.86804079679788,
-        &quot;b_to_a_angle_deg&quot;: 61.375883850671336,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 9.99286747115631,
-      &quot;frame_id&quot;: 7553,
-      &quot;distance_m&quot;: 3.32624411525453,
-      &quot;facing_state&quot;: &quot;side_by_side_or_oblique&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;right_front&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;neither_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: false,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 68.3112655334266,
-        &quot;b_to_a_angle_deg&quot;: 82.3455172785978,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 10.99382247661437,
-      &quot;frame_id&quot;: 7613,
-      &quot;distance_m&quot;: 3.308967113885056,
-      &quot;facing_state&quot;: &quot;side_by_side_or_oblique&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;right_front&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;neither_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: false,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 65.7624013556641,
-        &quot;b_to_a_angle_deg&quot;: 82.17480775475116,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 11.994777482072433,
-      &quot;frame_id&quot;: 7673,
-      &quot;distance_m&quot;: 3.366277735615575,
-      &quot;facing_state&quot;: &quot;side_by_side_or_oblique&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;right_front&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;b_only_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: false,
-        &quot;b_contains_a&quot;: true,
-        &quot;a_to_b_angle_deg&quot;: 66.82888638109716,
-        &quot;b_to_a_angle_deg&quot;: 47.89183857648607,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 12.995732487530493,
-      &quot;frame_id&quot;: 7733,
-      &quot;distance_m&quot;: 3.2825589938596784,
-      &quot;facing_state&quot;: &quot;side_by_side_or_oblique&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;left_behind&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;neither_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: false,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 64.34379062839572,
-        &quot;b_to_a_angle_deg&quot;: 173.28730235121225,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 13.996687492988555,
-      &quot;frame_id&quot;: 7793,
-      &quot;distance_m&quot;: 3.0996139084284233,
-      &quot;facing_state&quot;: &quot;side_by_side_or_oblique&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;left_behind&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;a_only_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: true,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 58.904159184739065,
-        &quot;b_to_a_angle_deg&quot;: 122.04838387226113,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    },
-    {
-      &quot;t&quot;: 14.997642498446616,
-      &quot;frame_id&quot;: 7853,
-      &quot;distance_m&quot;: 3.094379078834867,
-      &quot;facing_state&quot;: &quot;side_by_side_or_oblique&quot;,
-      &quot;b_relative_to_a&quot;: &quot;left_front&quot;,
-      &quot;a_relative_to_b&quot;: &quot;left_behind&quot;,
-      &quot;line_of_sight_status&quot;: &quot;not_evaluated_no_blocker_geometry&quot;,
-      &quot;line_of_sight_blocked&quot;: null,
-      &quot;blocker&quot;: null,
-      &quot;body_forward_field&quot;: {
-        &quot;state&quot;: &quot;neither_body_forward_field&quot;,
-        &quot;a_contains_b&quot;: false,
-        &quot;b_contains_a&quot;: false,
-        &quot;a_to_b_angle_deg&quot;: 77.62316730533401,
-        &quot;b_to_a_angle_deg&quot;: 131.63304336892602,
-        &quot;half_angle_deg&quot;: 60.0,
-        &quot;scope&quot;: &quot;body-forward field only; does not prove gaze or absence of occlusion&quot;
-      }
-    }
-  ],
-  &quot;computed_from&quot;: [
-    &quot;SMPL-X transl as pelvis/root proxy&quot;,
-    &quot;SMPL-X global_orient-derived body forward&quot;,
-    &quot;head = pelvis + 1.6m proxy when fitted head joints are not loaded&quot;
-  ],
-  &quot;visual_person_audit&quot;: {
-    &quot;scene_id&quot;: &quot;hoi_m3_bedroom_data03_win04&quot;,
-    &quot;status&quot;: &quot;complete_and_identity_aligned&quot;,
-    &quot;detector&quot;: &quot;IDEA Research Grounding DINO tiny (local weights)&quot;,
-    &quot;tracking&quot;: &quot;motion + box overlap + HSV appearance Hungarian association&quot;,
-    &quot;sample_fps&quot;: 2.0,
-    &quot;duration_sec&quot;: 15.015,
-    &quot;sample_count&quot;: 31,
-    &quot;sampled_visible_counts&quot;: [
-      2,
-      2,
-      1,
-      1,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      2,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      1,
-      2,
-      2,
-      2,
-      2,
-      2,
-      1,
-      1,
-      1,
-      2
-    ],
-    &quot;mode_visible_person_count&quot;: 2,
-    &quot;max_visible_person_count&quot;: 2,
-    &quot;persistent_visible_person_count&quot;: 2,
-    &quot;metric_3d_track_count&quot;: 2,
-    &quot;metric_identity_alignment&quot;: {
-      &quot;status&quot;: &quot;aligned&quot;,
-      &quot;mapping&quot;: {
-        &quot;the red-clad woman&quot;: &quot;the red-clad woman&quot;,
-        &quot;the dark-blue-clad man&quot;: &quot;the dark-blue-clad man&quot;
-      },
-      &quot;best_cost&quot;: 1.4322,
-      &quot;alternative_cost&quot;: 2.0962,
-      &quot;margin&quot;: 0.664,
-      &quot;metric_motion_profiles&quot;: {
-        &quot;the red-clad woman&quot;: [
-          0.05705287900942891,
-          0.06970047944489259,
-          0.02944906648165095,
-          0.04623483426406837,
-          0.26092966718652366,
-          0.09566847132603302,
-          0.03427870341886964,
-          0.01514280958609353,
-          0.009515713523858327,
-          0.13761763612552974,
-          0.03238559058287845,
-          0.01523931497948101,
-          0.03131000059287653,
-          0.015176360777287925,
-          0.15029847270052737,
-          0.5143604949116707
-        ],
-        &quot;the dark-blue-clad man&quot;: [
-          0.09276809788395715,
-          0.10730606929387958,
-          0.1241995896193755,
-          0.1356645938915697,
-          0.15808225332026424,
-          0.1295291208341498,
-          0.09234163098340159,
-          0.02511593329884444,
-          0.005357099251838736,
-          0.00741474455991173,
-          0.003317626655986158,
-          0.013480134242706075,
-          0.020611145669262174,
-          0.06729985540083815,
-          0.017512105094014987,
-          5.70907267741859
-        ]
-      },
-      &quot;visual_motion_profiles&quot;: {
-        &quot;the dark-blue-clad man&quot;: [
-          0.036819326680185574,
-          0.08710176757395019,
-          0.19424509106241272,
-          0.16290610443208045,
-          0.09120201482651187,
-          0.13038731739086534,
-          0.2973383780339939,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.0,
-          0.6077304088672286
-        ],
-        &quot;the red-clad woman&quot;: [
-          0.2939740189458707,
-          0.09611689823311237,
-          0.03362065258477506,
-          0.005750048672709779,
-          0.042329962768831025,
-          0.11615359274103158,
-          0.030190012522185613,
-          0.005637729742260004,
-          0.008099211729671759,
-          0.013139322763852239,
-          0.07924090550372266,
-          0.04307988519572,
-          0.0169108196649391,
-          0.06196624056884955,
-          0.1537906983624685,
-          0.1782386606060246
-        ]
-      },
-      &quot;criterion&quot;: &quot;start-middle-end segment-motion profile; accept only when assignment margin &gt;= 0.18&quot;
-    },
-    &quot;visible_2d_tracks&quot;: [
-      {
-        &quot;id&quot;: &quot;the dark-blue-clad man&quot;,
-        &quot;first_seen_sec&quot;: 0.0,
-        &quot;last_seen_sec&quot;: 7.0,
-        &quot;coverage&quot;: 0.467,
-        &quot;observations&quot;: 14,
-        &quot;mean_score&quot;: 0.769,
-        &quot;normalized_path_length&quot;: 0.6326,
-        &quot;normalized_displacement&quot;: 0.1823
-      },
-      {
-        &quot;id&quot;: &quot;the red-clad woman&quot;,
-        &quot;first_seen_sec&quot;: 0.0,
-        &quot;last_seen_sec&quot;: 14.935,
-        &quot;coverage&quot;: 1.0,
-        &quot;observations&quot;: 30,
-        &quot;mean_score&quot;: 0.849,
-        &quot;normalized_path_length&quot;: 0.1979,
-        &quot;normalized_displacement&quot;: 0.071
-      }
-    ]
-  },
-  &quot;distance_series_m&quot;: [
-    1.0765114684166757,
-    1.1312120181401646,
-    1.0350037992211454,
-    1.4353759547300087,
-    2.1517487779298774,
-    2.7470643177179457,
-    3.0450015768745575,
-    3.177163021636472,
-    3.271509877522105,
-    3.258292654916272,
-    3.32624411525453,
-    3.308967113885056,
-    3.366277735615575,
-    3.2825589938596784,
-    3.0996139084284233,
-    3.094379078834867
-  ]
-}</pre></details>
-</article>
-</div></section>
-<section class="staticCase" id="case-15">
-<p class="eyebrow">Case 15</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 05</h2>
+<p class="eyebrow">Case 14</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 05</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -2837,8 +2287,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-16">
-<p class="eyebrow">Case 16</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 03</h2>
+<section class="staticCase" id="case-15">
+<p class="eyebrow">Case 15</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 03</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -3386,8 +2836,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-17">
-<p class="eyebrow">Case 17</p><h2>Task 4 · HOI-M3 · three-person topology change</h2>
+<section class="staticCase" id="case-16">
+<p class="eyebrow">Case 16</p><h2>Task 4 · HOI-M3 · three-person topology change</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -3543,8 +2993,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-18">
-<p class="eyebrow">Case 18</p><h2>Task 4 · HOI-M3 · bedroom_data01 · window 02</h2>
+<section class="staticCase" id="case-17">
+<p class="eyebrow">Case 17</p><h2>Task 4 · HOI-M3 · bedroom_data01 · window 02</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -4092,8 +3542,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-19">
-<p class="eyebrow">Case 19</p><h2>Task 4 · HOI-M3 · bedroom_data01 · window 04</h2>
+<section class="staticCase" id="case-18">
+<p class="eyebrow">Case 18</p><h2>Task 4 · HOI-M3 · bedroom_data01 · window 04</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -4628,8 +4078,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-20">
-<p class="eyebrow">Case 20</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 04</h2>
+<section class="staticCase" id="case-19">
+<p class="eyebrow">Case 19</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 04</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -5178,8 +4628,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-21">
-<p class="eyebrow">Case 21</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 06</h2>
+<section class="staticCase" id="case-20">
+<p class="eyebrow">Case 20</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 06</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -5731,8 +5181,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-22">
-<p class="eyebrow">Case 22</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 09</h2>
+<section class="staticCase" id="case-21">
+<p class="eyebrow">Case 21</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 09</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -6298,8 +5748,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-23">
-<p class="eyebrow">Case 23</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 08</h2>
+<section class="staticCase" id="case-22">
+<p class="eyebrow">Case 22</p><h2>Task 4 · HOI-M3 · bedroom_data03 · window 08</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -6848,8 +6298,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-24">
-<p class="eyebrow">Case 24</p><h2>Task 4 · HOI-M3 · bedroom_data01 · window 01</h2>
+<section class="staticCase" id="case-23">
+<p class="eyebrow">Case 23</p><h2>Task 4 · HOI-M3 · bedroom_data01 · window 01</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -6894,8 +6344,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-25">
-<p class="eyebrow">Case 25</p><h2>Task 4 · HOI-M3 · second three-person 2D topology example</h2>
+<section class="staticCase" id="case-24">
+<p class="eyebrow">Case 24</p><h2>Task 4 · HOI-M3 · second three-person 2D topology example</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>

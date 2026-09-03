@@ -351,7 +351,7 @@ window.QA_DATA = {
           "correct_option": "A",
           "correct_answer": "It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.",
           "answer": "It is on the person's left at the start and on the person's right at the end; this is a change in human-relative coordinates, not bowl motion.",
-          "explanation": "Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes. The object world coordinate is held fixed; only the human origin/orientation changes.",
+          "explanation": "Across 29 valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame. The object world coordinate is held fixed; only the human origin/orientation changes.",
           "status": "ok",
           "quality": "high",
           "method": "Rebuilds the person's body-centric frame at every valid pose sample and transforms the fixed 3D object center into that changing frame.",
@@ -18910,9 +18910,12 @@ window.QA_DATA = {
       "person_display_aliases": {
         "V1": "the dark-blue-clad man",
         "V2": "the red-clad woman",
-        "V3": "the green-top woman",
         "A": "the red-clad woman",
         "B": "the dark-blue-clad man"
+      },
+      "person_display_alias_status": {
+        "status": "complete",
+        "source": "configs/person_display_aliases.json"
       }
     },
     {
@@ -20410,1523 +20413,12 @@ window.QA_DATA = {
       "person_display_aliases": {
         "V1": "the dark-blue-clad man",
         "V2": "the red-clad woman",
-        "V3": "the green-top woman",
         "A": "the red-clad woman",
         "B": "the dark-blue-clad man"
-      }
-    },
-    {
-      "name": "hoi_m3_bedroom_data03_win04",
-      "title": "Task 4 · HOI-M3 · bedroom_data03 · window 04",
-      "dataset": "HOI-M3",
-      "video_clip": "./outputs/hoim3/bedroom_data03/win04_view0_15s.mp4",
-      "original_video": "./hoim3_data/videos/bedroom_data03/0.mp4",
-      "localization_video": "./multihuman_media/hoi_m3_bedroom_data03_win04_localized.mp4",
-      "localization_image": "./multihuman_media/hoi_m3_bedroom_data03_win04_localized.jpg",
-      "original_image": "./multihuman_media/hoi_m3_bedroom_data03_win04_localized.jpg",
-      "topdown_image": "./multihuman_media/hoi_m3_bedroom_data03_win04_curated.svg",
-      "video_window": {
-        "start_sec": 116.01068513258929,
-        "duration_sec": 15.0,
-        "metric_sample_count": 16,
-        "visual_sample_fps": 2.0,
-        "source": "data/HOI-M3/videos/bedroom_data03/0.mp4"
       },
-      "visual_person_audit": {
-        "scene_id": "hoi_m3_bedroom_data03_win04",
-        "status": "complete_and_identity_aligned",
-        "detector": "IDEA Research Grounding DINO tiny (local weights)",
-        "tracking": "motion + box overlap + HSV appearance Hungarian association",
-        "sample_fps": 2.0,
-        "duration_sec": 15.015,
-        "sample_count": 31,
-        "sampled_visible_counts": [
-          2,
-          2,
-          1,
-          1,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          2,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          1,
-          2,
-          2,
-          2,
-          2,
-          2,
-          1,
-          1,
-          1,
-          2
-        ],
-        "mode_visible_person_count": 2,
-        "max_visible_person_count": 2,
-        "persistent_visible_person_count": 2,
-        "metric_3d_track_count": 2,
-        "metric_identity_alignment": {
-          "status": "aligned",
-          "mapping": {
-            "A": "V2",
-            "B": "V1"
-          },
-          "best_cost": 1.4322,
-          "alternative_cost": 2.0962,
-          "margin": 0.664,
-          "metric_motion_profiles": {
-            "A": [
-              0.05705287900942891,
-              0.06970047944489259,
-              0.02944906648165095,
-              0.04623483426406837,
-              0.26092966718652366,
-              0.09566847132603302,
-              0.03427870341886964,
-              0.01514280958609353,
-              0.009515713523858327,
-              0.13761763612552974,
-              0.03238559058287845,
-              0.01523931497948101,
-              0.03131000059287653,
-              0.015176360777287925,
-              0.15029847270052737,
-              0.5143604949116707
-            ],
-            "B": [
-              0.09276809788395715,
-              0.10730606929387958,
-              0.1241995896193755,
-              0.1356645938915697,
-              0.15808225332026424,
-              0.1295291208341498,
-              0.09234163098340159,
-              0.02511593329884444,
-              0.005357099251838736,
-              0.00741474455991173,
-              0.003317626655986158,
-              0.013480134242706075,
-              0.020611145669262174,
-              0.06729985540083815,
-              0.017512105094014987,
-              5.70907267741859
-            ]
-          },
-          "visual_motion_profiles": {
-            "V1": [
-              0.036819326680185574,
-              0.08710176757395019,
-              0.19424509106241272,
-              0.16290610443208045,
-              0.09120201482651187,
-              0.13038731739086534,
-              0.2973383780339939,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.0,
-              0.6077304088672286
-            ],
-            "V2": [
-              0.2939740189458707,
-              0.09611689823311237,
-              0.03362065258477506,
-              0.005750048672709779,
-              0.042329962768831025,
-              0.11615359274103158,
-              0.030190012522185613,
-              0.005637729742260004,
-              0.008099211729671759,
-              0.013139322763852239,
-              0.07924090550372266,
-              0.04307988519572,
-              0.0169108196649391,
-              0.06196624056884955,
-              0.1537906983624685,
-              0.1782386606060246
-            ]
-          },
-          "criterion": "start-middle-end segment-motion profile; accept only when assignment margin >= 0.18"
-        },
-        "visible_2d_tracks": [
-          {
-            "id": "B",
-            "first_seen_sec": 0.0,
-            "last_seen_sec": 7.0,
-            "coverage": 0.467,
-            "observations": 14,
-            "mean_score": 0.769,
-            "normalized_path_length": 0.6326,
-            "normalized_displacement": 0.1823
-          },
-          {
-            "id": "A",
-            "first_seen_sec": 0.0,
-            "last_seen_sec": 14.935,
-            "coverage": 1.0,
-            "observations": 30,
-            "mean_score": 0.849,
-            "normalized_path_length": 0.1979,
-            "normalized_displacement": 0.071
-          }
-        ]
-      },
-      "case_policy": "one temporal question per unique video window",
-      "qa": [
-        {
-          "task_id": "task4_multi_human_relational_dynamics",
-          "task_name": "Task 4 · Multi-Human Relational Dynamics",
-          "question_type": "metric_distance_pattern_over_video",
-          "question": "How does the distance between the two people in the video evolve over the clip?",
-          "options": [
-            {
-              "label": "A",
-              "text": "They steadily approach until they are less than 1 m apart at the end."
-            },
-            {
-              "label": "B",
-              "text": "Their distance stays within a narrow 0.1 m band throughout."
-            },
-            {
-              "label": "C",
-              "text": "They separate briefly but return to approximately their starting distance by the end."
-            },
-            {
-              "label": "D",
-              "text": "They move substantially farther apart: about 1.08 m at the start, above 3 m in the second half, and 3.09 m at the end."
-            }
-          ],
-          "correct_option": "D",
-          "correct_answer": "They move substantially farther apart: about 1.08 m at the start, above 3 m in the second half, and 3.09 m at the end.",
-          "answer": "They move substantially farther apart: about 1.08 m at the start, above 3 m in the second half, and 3.09 m at the end.",
-          "explanation": "Across 16 metric samples, distance ranges from 1.04 m to 3.37 m; net change is +2.02 m.",
-          "status": "ok",
-          "quality": "high",
-          "method": "Computes Euclidean distance between aligned SMPL-X pelvis/root translations at approximately 1 Hz across the full 15 seconds.",
-          "result_json": {
-            "scene_id": "hoi_m3_bedroom_data03_win04",
-            "pair_timeline": {
-              "status": "ok",
-              "pair": [
-                "A",
-                "B"
-              ],
-              "states": [
-                {
-                  "t": 0.0,
-                  "frame_id": 6954,
-                  "distance_m": 1.0765114684166757,
-                  "facing_score": 0.7003088747100403,
-                  "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_front",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "a_only_body_forward_field",
-                    "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 13.570926646833911,
-                    "b_to_a_angle_deg": 64.62521442651482,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.9150571823120117,
-                        0.7587487697601318,
-                        0.5587731599807739
-                      ],
-                      "head_xyz_m": [
-                        3.9150571823120117,
-                        2.358748769760132,
-                        0.5587731599807739
-                      ],
-                      "forward_unit": [
-                        0.12453357478011046,
-                        0.8778960839765371,
-                        0.46237414989502573
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        3.9406843185424805,
-                        1.210892677307129,
-                        1.5353928804397583
-                      ],
-                      "head_xyz_m": [
-                        3.9406843185424805,
-                        2.810892677307129,
-                        1.5353928804397583
-                      ],
-                      "forward_unit": [
-                        -0.8933997298050861,
-                        0.21335007463816055,
-                        -0.3953715574445013
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 1.0009550054580612,
-                  "frame_id": 7014,
-                  "distance_m": 1.1312120181401646,
-                  "facing_score": 0.501796756805738,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_front",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "a_only_body_forward_field",
-                    "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 39.307003400966046,
-                    "b_to_a_angle_deg": 76.71289371610533,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.8940176963806152,
-                        0.7408828735351562,
-                        0.5488070845603943
-                      ],
-                      "head_xyz_m": [
-                        3.8940176963806152,
-                        2.3408828735351563,
-                        0.5488070845603943
-                      ],
-                      "forward_unit": [
-                        0.098240825582013,
-                        0.8741591289558492,
-                        0.4755991562777582
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        3.416288137435913,
-                        1.2087644338607788,
-                        1.461222529411316
-                      ],
-                      "head_xyz_m": [
-                        3.416288137435913,
-                        2.808764433860779,
-                        1.461222529411316
-                      ],
-                      "forward_unit": [
-                        -0.7436030794432329,
-                        0.1774125470252992,
-                        -0.6446543635162468
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 2.0019100109161223,
-                  "frame_id": 7074,
-                  "distance_m": 1.0350037992211454,
-                  "facing_score": 0.03902116266037979,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_behind",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "neither_body_forward_field",
-                    "a_contains_b": false,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 75.6075300246722,
-                    "b_to_a_angle_deg": 99.81806972502991,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.8829185962677,
-                        0.7320561408996582,
-                        0.5158798098564148
-                      ],
-                      "head_xyz_m": [
-                        3.8829185962677,
-                        2.3320561408996583,
-                        0.5158798098564148
-                      ],
-                      "forward_unit": [
-                        0.11103664511287757,
-                        0.8898402833650251,
-                        0.4425552321947272
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        3.0662667751312256,
-                        1.1882109642028809,
-                        0.9588645100593567
-                      ],
-                      "head_xyz_m": [
-                        3.0662667751312256,
-                        2.788210964202881,
-                        0.9588645100593567
-                      ],
-                      "forward_unit": [
-                        -0.6145324432634868,
-                        0.1290441039178527,
-                        -0.7782656971887222
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 3.0028650163741832,
-                  "frame_id": 7134,
-                  "distance_m": 1.4353759547300087,
-                  "facing_score": -0.5784577811726181,
-                  "facing_state": "back_to_back_or_away",
-                  "b_relative_to_a": "left_behind",
-                  "a_relative_to_b": "left_behind",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "neither_body_forward_field",
-                    "a_contains_b": false,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 101.74319310376477,
-                    "b_to_a_angle_deg": 162.43783451357112,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.875673770904541,
-                        0.7239028215408325,
-                        0.5053688287734985
-                      ],
-                      "head_xyz_m": [
-                        3.875673770904541,
-                        2.3239028215408326,
-                        0.5053688287734985
-                      ],
-                      "forward_unit": [
-                        0.09460649289027957,
-                        0.8797889824641103,
-                        0.4658550824427775
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        2.5270938873291016,
-                        1.2154289484024048,
-                        0.499164342880249
-                      ],
-                      "head_xyz_m": [
-                        2.5270938873291016,
-                        2.815428948402405,
-                        0.499164342880249
-                      ],
-                      "forward_unit": [
-                        -0.9271768835465432,
-                        0.22683299467971366,
-                        -0.2981439570770354
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 4.003820021832245,
-                  "frame_id": 7194,
-                  "distance_m": 2.1517487779298774,
-                  "facing_score": -0.46841984251873564,
-                  "facing_state": "back_to_back_or_away",
-                  "b_relative_to_a": "left_behind",
-                  "a_relative_to_b": "right_behind",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "neither_body_forward_field",
-                    "a_contains_b": false,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 97.8340075696168,
-                    "b_to_a_angle_deg": 143.18132514562572,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.872729778289795,
-                        0.741854190826416,
-                        0.5206866264343262
-                      ],
-                      "head_xyz_m": [
-                        3.872729778289795,
-                        2.341854190826416,
-                        0.5206866264343262
-                      ],
-                      "forward_unit": [
-                        0.08114471978842246,
-                        0.9247579739309404,
-                        0.371804013025143
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        1.7754794359207153,
-                        1.1941733360290527,
-                        0.6849157214164734
-                      ],
-                      "head_xyz_m": [
-                        1.7754794359207153,
-                        2.794173336029053,
-                        0.6849157214164734
-                      ],
-                      "forward_unit": [
-                        -0.7356691940070484,
-                        0.20297199633709614,
-                        0.6462145198708813
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 5.0047750272903055,
-                  "frame_id": 7254,
-                  "distance_m": 2.7470643177179457,
-                  "facing_score": -0.10272857099119667,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_behind",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "neither_body_forward_field",
-                    "a_contains_b": false,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 71.91608473652266,
-                    "b_to_a_angle_deg": 121.05540534007116,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.8355932235717773,
-                        0.8232298493385315,
-                        0.6207451820373535
-                      ],
-                      "head_xyz_m": [
-                        3.8355932235717773,
-                        2.4232298493385316,
-                        0.6207451820373535
-                      ],
-                      "forward_unit": [
-                        -0.017706896211838394,
-                        0.7197937598414411,
-                        0.693962109282535
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        1.225205659866333,
-                        1.176693081855774,
-                        1.4000415802001953
-                      ],
-                      "head_xyz_m": [
-                        1.225205659866333,
-                        2.776693081855774,
-                        1.4000415802001953
-                      ],
-                      "forward_unit": [
-                        -0.2481852359408932,
-                        0.09231660315602348,
-                        0.9643037557962203
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 6.0057300327483665,
-                  "frame_id": 7314,
-                  "distance_m": 3.0450015768745575,
-                  "facing_score": 0.14349038745429385,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_behind",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "neither_body_forward_field",
-                    "a_contains_b": false,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 65.53707781312363,
-                    "b_to_a_angle_deg": 97.30340284287729,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.863964080810547,
-                        0.8634269833564758,
-                        0.6215938925743103
-                      ],
-                      "head_xyz_m": [
-                        3.863964080810547,
-                        2.463426983356476,
-                        0.6215938925743103
-                      ],
-                      "forward_unit": [
-                        0.06857794290079734,
-                        0.7150137044568433,
-                        0.6957387930728005
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        1.2460414171218872,
-                        1.205426812171936,
-                        2.1386804580688477
-                      ],
-                      "head_xyz_m": [
-                        1.2460414171218872,
-                        2.805426812171936,
-                        2.1386804580688477
-                      ],
-                      "forward_unit": [
-                        0.38731467824910965,
-                        0.010713886888262168,
-                        0.9218853251031466
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 7.006685038206427,
-                  "frame_id": 7374,
-                  "distance_m": 3.177163021636472,
-                  "facing_score": 0.37962255325966743,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_front",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "a_only_body_forward_field",
-                    "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 51.48631616909215,
-                    "b_to_a_angle_deg": 82.15211293985347,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.8605899810791016,
-                        0.8462340831756592,
-                        0.6235670447349548
-                      ],
-                      "head_xyz_m": [
-                        3.8605899810791016,
-                        2.4462340831756593,
-                        0.6235670447349548
-                      ],
-                      "forward_unit": [
-                        0.012084657918880803,
-                        0.7331107512863814,
-                        0.6800019024909425
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        1.423963189125061,
-                        1.1832859516143799,
-                        2.6344401836395264
-                      ],
-                      "head_xyz_m": [
-                        1.423963189125061,
-                        2.78328595161438,
-                        2.6344401836395264
-                      ],
-                      "forward_unit": [
-                        0.7285083708682278,
-                        -0.14097417719239133,
-                        0.6703743990784918
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 7.990957460240188,
-                  "frame_id": 7433,
-                  "distance_m": 3.271509877522105,
-                  "facing_score": 0.46410894353469384,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_front",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "a_only_body_forward_field",
-                    "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 50.99976638758992,
-                    "b_to_a_angle_deg": 72.6087940303737,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.865778684616089,
-                        0.8515897393226624,
-                        0.6258166432380676
-                      ],
-                      "head_xyz_m": [
-                        3.865778684616089,
-                        2.4515897393226624,
-                        0.6258166432380676
-                      ],
-                      "forward_unit": [
-                        0.028746337631874622,
-                        0.7267811421216182,
-                        0.6862673090925654
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        1.4248415231704712,
-                        1.1892040967941284,
-                        2.7777040004730225
-                      ],
-                      "head_xyz_m": [
-                        1.4248415231704712,
-                        2.7892040967941285,
-                        2.7777040004730225
-                      ],
-                      "forward_unit": [
-                        0.731447178968096,
-                        -0.5182659553045805,
-                        0.4431539506219537
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 8.991912465698249,
-                  "frame_id": 7493,
-                  "distance_m": 3.258292654916272,
-                  "facing_score": 0.5413570724423453,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_front",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "a_only_body_forward_field",
-                    "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 52.86804079679788,
-                    "b_to_a_angle_deg": 61.375883850671336,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.8667690753936768,
-                        0.8512786626815796,
-                        0.6210334897041321
-                      ],
-                      "head_xyz_m": [
-                        3.8667690753936768,
-                        2.4512786626815797,
-                        0.6210334897041321
-                      ],
-                      "forward_unit": [
-                        0.04650035637690748,
-                        0.7294304281930931,
-                        0.6824726861075552
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        1.4226032495498657,
-                        1.1959023475646973,
-                        2.7479465007781982
-                      ],
-                      "head_xyz_m": [
-                        1.4226032495498657,
-                        2.7959023475646974,
-                        2.7479465007781982
-                      ],
-                      "forward_unit": [
-                        0.8248509663378774,
-                        -0.47545830542980727,
-                        0.3058762546018997
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 9.99286747115631,
-                  "frame_id": 7553,
-                  "distance_m": 3.32624411525453,
-                  "facing_score": 0.2513814717521144,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_front",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "neither_body_forward_field",
-                    "a_contains_b": false,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 68.3112655334266,
-                    "b_to_a_angle_deg": 82.3455172785978,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.8877503871917725,
-                        0.7915968894958496,
-                        0.5892782211303711
-                      ],
-                      "head_xyz_m": [
-                        3.8877503871917725,
-                        2.3915968894958497,
-                        0.5892782211303711
-                      ],
-                      "forward_unit": [
-                        0.15337960823660438,
-                        0.8926445836089764,
-                        0.42386359023952863
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        1.41603422164917,
-                        1.172168493270874,
-                        2.7823774814605713
-                      ],
-                      "head_xyz_m": [
-                        1.41603422164917,
-                        2.772168493270874,
-                        2.7823774814605713
-                      ],
-                      "forward_unit": [
-                        0.7570537155463295,
-                        0.030679604659475442,
-                        0.6526319281459004
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 10.99382247661437,
-                  "frame_id": 7613,
-                  "distance_m": 3.308967113885056,
-                  "facing_score": 0.27333633799635315,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_front",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "neither_body_forward_field",
-                    "a_contains_b": false,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 65.7624013556641,
-                    "b_to_a_angle_deg": 82.17480775475116,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.888683557510376,
-                        0.8018249869346619,
-                        0.6023930907249451
-                      ],
-                      "head_xyz_m": [
-                        3.888683557510376,
-                        2.401824986934662,
-                        0.6023930907249451
-                      ],
-                      "forward_unit": [
-                        0.17317493127073366,
-                        0.8034994953309438,
-                        0.5695603604380272
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        1.4118671417236328,
-                        1.1621872186660767,
-                        2.766829013824463
-                      ],
-                      "head_xyz_m": [
-                        1.4118671417236328,
-                        2.7621872186660767,
-                        2.766829013824463
-                      ],
-                      "forward_unit": [
-                        0.7533073397764789,
-                        0.054285131007092896,
-                        0.6554244246215023
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 11.994777482072433,
-                  "frame_id": 7673,
-                  "distance_m": 3.366277735615575,
-                  "facing_score": 0.5320053839807533,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_front",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "b_only_body_forward_field",
-                    "a_contains_b": false,
-                    "b_contains_a": true,
-                    "a_to_b_angle_deg": 66.82888638109716,
-                    "b_to_a_angle_deg": 47.89183857648607,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.8873274326324463,
-                        0.8064053058624268,
-                        0.6086078882217407
-                      ],
-                      "head_xyz_m": [
-                        3.8873274326324463,
-                        2.406405305862427,
-                        0.6086078882217407
-                      ],
-                      "forward_unit": [
-                        0.19956127079240346,
-                        0.782133474768471,
-                        0.5902902056161179
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        1.3944239616394043,
-                        1.1692836284637451,
-                        2.8414485454559326
-                      ],
-                      "head_xyz_m": [
-                        1.3944239616394043,
-                        2.769283628463745,
-                        2.8414485454559326
-                      ],
-                      "forward_unit": [
-                        0.9929369239017476,
-                        0.05506158278455129,
-                        0.10509275547722217
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 12.995732487530493,
-                  "frame_id": 7733,
-                  "distance_m": 3.2825589938596784,
-                  "facing_score": -0.28008724790864037,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_behind",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "neither_body_forward_field",
-                    "a_contains_b": false,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 64.34379062839572,
-                    "b_to_a_angle_deg": 173.28730235121225,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.8981497287750244,
-                        0.7945281863212585,
-                        0.6096900105476379
-                      ],
-                      "head_xyz_m": [
-                        3.8981497287750244,
-                        2.3945281863212586,
-                        0.6096900105476379
-                      ],
-                      "forward_unit": [
-                        0.18170827709923584,
-                        0.7887482140044662,
-                        0.5872464192640021
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        1.5040044784545898,
-                        1.1278167963027954,
-                        2.8305413722991943
-                      ],
-                      "head_xyz_m": [
-                        1.5040044784545898,
-                        2.7278167963027955,
-                        2.8305413722991943
-                      ],
-                      "forward_unit": [
-                        -0.8069634570446179,
-                        0.040031007711959915,
-                        0.5892431564440646
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 13.996687492988555,
-                  "frame_id": 7793,
-                  "distance_m": 3.0996139084284233,
-                  "facing_score": -0.007082023137838345,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_behind",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "a_only_body_forward_field",
-                    "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 58.904159184739065,
-                    "b_to_a_angle_deg": 122.04838387226113,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.900468587875366,
-                        0.7896555662155151,
-                        0.6040494441986084
-                      ],
-                      "head_xyz_m": [
-                        3.900468587875366,
-                        2.3896555662155152,
-                        0.6040494441986084
-                      ],
-                      "forward_unit": [
-                        0.16564550317871776,
-                        0.7953169940861835,
-                        0.5831230112029425
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        1.785406470298767,
-                        0.8689821362495422,
-                        2.8685197830200195
-                      ],
-                      "head_xyz_m": [
-                        1.785406470298767,
-                        2.4689821362495423,
-                        2.8685197830200195
-                      ],
-                      "forward_unit": [
-                        -0.9547475542542879,
-                        0.23244409851988296,
-                        -0.18554473506067076
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                },
-                {
-                  "t": 14.997642498446616,
-                  "frame_id": 7853,
-                  "distance_m": 3.094379078834867,
-                  "facing_score": -0.22500848634865264,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_behind",
-                  "line_of_sight_blocked": null,
-                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
-                  "blocker": null,
-                  "body_forward_field": {
-                    "state": "neither_body_forward_field",
-                    "a_contains_b": false,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 77.62316730533401,
-                    "b_to_a_angle_deg": 131.63304336892602,
-                    "half_angle_deg": 60.0,
-                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
-                  },
-                  "evidence": {
-                    "person_a": {
-                      "id": "A",
-                      "pelvis_xyz_m": [
-                        3.8887574672698975,
-                        0.768952488899231,
-                        0.5304920077323914
-                      ],
-                      "head_xyz_m": [
-                        3.8887574672698975,
-                        2.368952488899231,
-                        0.5304920077323914
-                      ],
-                      "forward_unit": [
-                        0.19869614053410903,
-                        0.9421280815213932,
-                        0.2700268907825087
-                      ]
-                    },
-                    "person_b": {
-                      "id": "B",
-                      "pelvis_xyz_m": [
-                        1.8474864959716797,
-                        0.7916237115859985,
-                        2.8559770584106445
-                      ],
-                      "head_xyz_m": [
-                        1.8474864959716797,
-                        2.3916237115859986,
-                        2.8559770584106445
-                      ],
-                      "forward_unit": [
-                        -0.7802013689082775,
-                        0.6255095519436192,
-                        0.004860491841650467
-                      ]
-                    },
-                    "computed_from": [
-                      "SMPL-X transl as pelvis/root proxy",
-                      "SMPL-X global_orient-derived body forward",
-                      "head = pelvis + 1.6m proxy when fitted head joints are not loaded"
-                    ],
-                    "limitations": [
-                      "pelvis uses SMPL-X transl/root proxy",
-                      "body forward uses SMPL-X global orientation",
-                      "head uses pelvis + 1.6 m when fitted joints are not loaded"
-                    ]
-                  }
-                }
-              ],
-              "distance_change_m": 2.0178676104181914,
-              "facing_changed": true,
-              "los_changed": null,
-              "line_of_sight_evidence_status": "missing_blocker_geometry"
-            },
-            "distance_series_m": [
-              1.0765114684166757,
-              1.1312120181401646,
-              1.0350037992211454,
-              1.4353759547300087,
-              2.1517487779298774,
-              2.7470643177179457,
-              3.0450015768745575,
-              3.177163021636472,
-              3.271509877522105,
-              3.258292654916272,
-              3.32624411525453,
-              3.308967113885056,
-              3.366277735615575,
-              3.2825589938596784,
-              3.0996139084284233,
-              3.094379078834867
-            ],
-            "visual_person_audit": {
-              "scene_id": "hoi_m3_bedroom_data03_win04",
-              "status": "complete_and_identity_aligned",
-              "detector": "IDEA Research Grounding DINO tiny (local weights)",
-              "tracking": "motion + box overlap + HSV appearance Hungarian association",
-              "sample_fps": 2.0,
-              "duration_sec": 15.015,
-              "sample_count": 31,
-              "sampled_visible_counts": [
-                2,
-                2,
-                1,
-                1,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                2,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                1,
-                2,
-                2,
-                2,
-                2,
-                2,
-                1,
-                1,
-                1,
-                2
-              ],
-              "mode_visible_person_count": 2,
-              "max_visible_person_count": 2,
-              "persistent_visible_person_count": 2,
-              "metric_3d_track_count": 2,
-              "metric_identity_alignment": {
-                "status": "aligned",
-                "mapping": {
-                  "A": "V2",
-                  "B": "V1"
-                },
-                "best_cost": 1.4322,
-                "alternative_cost": 2.0962,
-                "margin": 0.664,
-                "metric_motion_profiles": {
-                  "A": [
-                    0.05705287900942891,
-                    0.06970047944489259,
-                    0.02944906648165095,
-                    0.04623483426406837,
-                    0.26092966718652366,
-                    0.09566847132603302,
-                    0.03427870341886964,
-                    0.01514280958609353,
-                    0.009515713523858327,
-                    0.13761763612552974,
-                    0.03238559058287845,
-                    0.01523931497948101,
-                    0.03131000059287653,
-                    0.015176360777287925,
-                    0.15029847270052737,
-                    0.5143604949116707
-                  ],
-                  "B": [
-                    0.09276809788395715,
-                    0.10730606929387958,
-                    0.1241995896193755,
-                    0.1356645938915697,
-                    0.15808225332026424,
-                    0.1295291208341498,
-                    0.09234163098340159,
-                    0.02511593329884444,
-                    0.005357099251838736,
-                    0.00741474455991173,
-                    0.003317626655986158,
-                    0.013480134242706075,
-                    0.020611145669262174,
-                    0.06729985540083815,
-                    0.017512105094014987,
-                    5.70907267741859
-                  ]
-                },
-                "visual_motion_profiles": {
-                  "V1": [
-                    0.036819326680185574,
-                    0.08710176757395019,
-                    0.19424509106241272,
-                    0.16290610443208045,
-                    0.09120201482651187,
-                    0.13038731739086534,
-                    0.2973383780339939,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    0.6077304088672286
-                  ],
-                  "V2": [
-                    0.2939740189458707,
-                    0.09611689823311237,
-                    0.03362065258477506,
-                    0.005750048672709779,
-                    0.042329962768831025,
-                    0.11615359274103158,
-                    0.030190012522185613,
-                    0.005637729742260004,
-                    0.008099211729671759,
-                    0.013139322763852239,
-                    0.07924090550372266,
-                    0.04307988519572,
-                    0.0169108196649391,
-                    0.06196624056884955,
-                    0.1537906983624685,
-                    0.1782386606060246
-                  ]
-                },
-                "criterion": "start-middle-end segment-motion profile; accept only when assignment margin >= 0.18"
-              },
-              "visible_2d_tracks": [
-                {
-                  "id": "B",
-                  "first_seen_sec": 0.0,
-                  "last_seen_sec": 7.0,
-                  "coverage": 0.467,
-                  "observations": 14,
-                  "mean_score": 0.769,
-                  "normalized_path_length": 0.6326,
-                  "normalized_displacement": 0.1823
-                },
-                {
-                  "id": "A",
-                  "first_seen_sec": 0.0,
-                  "last_seen_sec": 14.935,
-                  "coverage": 1.0,
-                  "observations": 30,
-                  "mean_score": 0.849,
-                  "normalized_path_length": 0.1979,
-                  "normalized_displacement": 0.071
-                }
-              ]
-            },
-            "answer_type": "metric_distance_pattern_over_video",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true
-          },
-          "question_categories": [
-            "metric_distance"
-          ]
-        }
-      ],
-      "person_display_aliases": {
-        "V1": "the dark-blue-clad man",
-        "V2": "the red-clad woman",
-        "V3": "the green-top woman",
-        "A": "the red-clad woman",
-        "B": "the dark-blue-clad man"
+      "person_display_alias_status": {
+        "status": "complete",
+        "source": "configs/person_display_aliases.json"
       }
     },
     {
@@ -23424,9 +21916,12 @@ window.QA_DATA = {
       "person_display_aliases": {
         "V1": "the dark-blue-clad man",
         "V2": "the red-clad woman",
-        "V3": "the green-top woman",
         "A": "the red-clad woman",
         "B": "the dark-blue-clad man"
+      },
+      "person_display_alias_status": {
+        "status": "complete",
+        "source": "configs/person_display_aliases.json"
       }
     },
     {
@@ -24938,9 +23433,12 @@ window.QA_DATA = {
       "person_display_aliases": {
         "V1": "the dark-blue-clad man",
         "V2": "the red-clad woman",
-        "V3": "the green-top woman",
         "A": "the dark-blue-clad man",
         "B": "the red-clad woman"
+      },
+      "person_display_alias_status": {
+        "status": "complete",
+        "source": "configs/person_display_aliases.json"
       }
     },
     {
@@ -25219,6 +23717,10 @@ window.QA_DATA = {
         "V1": "the dark-blue-clad man",
         "V2": "the red-clad woman",
         "V3": "the green-top woman"
+      },
+      "person_display_alias_status": {
+        "status": "complete",
+        "source": "configs/person_display_aliases.json"
       }
     },
     {
@@ -26730,9 +25232,12 @@ window.QA_DATA = {
       "person_display_aliases": {
         "V1": "the dark-blue-clad man",
         "V2": "the red-clad woman",
-        "V3": "the green-top woman",
         "A": "the dark-blue-clad man",
         "B": "the red-clad woman"
+      },
+      "person_display_alias_status": {
+        "status": "complete",
+        "source": "configs/person_display_aliases.json"
       }
     },
     {
@@ -28231,9 +26736,12 @@ window.QA_DATA = {
       "person_display_aliases": {
         "V1": "the dark-blue-clad man",
         "V2": "the red-clad woman",
-        "V3": "the green-top woman",
         "A": "the dark-blue-clad man",
         "B": "the red-clad woman"
+      },
+      "person_display_alias_status": {
+        "status": "complete",
+        "source": "configs/person_display_aliases.json"
       }
     },
     {
@@ -29746,9 +28254,12 @@ window.QA_DATA = {
       "person_display_aliases": {
         "V1": "the dark-blue-clad man",
         "V2": "the red-clad woman",
-        "V3": "the green-top woman",
         "A": "the red-clad woman",
         "B": "the dark-blue-clad man"
+      },
+      "person_display_alias_status": {
+        "status": "complete",
+        "source": "configs/person_display_aliases.json"
       }
     },
     {
@@ -31265,9 +29776,12 @@ window.QA_DATA = {
       "person_display_aliases": {
         "V1": "the dark-blue-clad man",
         "V2": "the red-clad woman",
-        "V3": "the green-top woman",
         "A": "the dark-blue-clad man",
         "B": "the red-clad woman"
+      },
+      "person_display_alias_status": {
+        "status": "complete",
+        "source": "configs/person_display_aliases.json"
       }
     },
     {
@@ -32798,9 +31312,12 @@ window.QA_DATA = {
       "person_display_aliases": {
         "V1": "the dark-blue-clad man",
         "V2": "the red-clad woman",
-        "V3": "the green-top woman",
         "A": "the dark-blue-clad man",
         "B": "the red-clad woman"
+      },
+      "person_display_alias_status": {
+        "status": "complete",
+        "source": "configs/person_display_aliases.json"
       }
     },
     {
@@ -34313,9 +32830,12 @@ window.QA_DATA = {
       "person_display_aliases": {
         "V1": "the dark-blue-clad man",
         "V2": "the red-clad woman",
-        "V3": "the green-top woman",
         "A": "the red-clad woman",
         "B": "the dark-blue-clad man"
+      },
+      "person_display_alias_status": {
+        "status": "complete",
+        "source": "configs/person_display_aliases.json"
       }
     },
     {
@@ -35727,9 +34247,12 @@ window.QA_DATA = {
       "person_display_aliases": {
         "V1": "the dark-blue-clad man",
         "V2": "the red-clad woman",
-        "V3": "the green-top woman",
         "A": "the dark-blue-clad man",
         "B": "the red-clad woman"
+      },
+      "person_display_alias_status": {
+        "status": "complete",
+        "source": "configs/person_display_aliases.json"
       }
     },
     {
@@ -35911,6 +34434,10 @@ window.QA_DATA = {
         "V1": "the dark-blue-clad man",
         "V2": "the red-clad woman",
         "V3": "the green-top woman"
+      },
+      "person_display_alias_status": {
+        "status": "complete",
+        "source": "configs/person_display_aliases.json"
       }
     }
   ],
