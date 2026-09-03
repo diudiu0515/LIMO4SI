@@ -287,6 +287,68 @@ def apply_person_descriptions(data: dict[str, Any]) -> None:
                 option["text"] = _replace_person_ids(option["text"], aliases)
 
 
+
+MULTIHUMAN_GENERIC_QUESTIONS = {
+    "position_consistency_between_people": "Which body-centered position relation remains true between the two people in the video throughout the clip?",
+    "dominant_facing_relation_over_video": "What is the dominant body-facing relation between the two people in the video?",
+    "metric_distance_pattern_over_video": "How does the distance between the two people in the video evolve over the clip?",
+    "body_forward_visibility_consistency": "Ignoring physical occlusion, what body-forward visibility relation holds between the two people in the video throughout the clip?",
+    "body_centric_relation_change_over_video": "How does the left/right relation between the two people in the video change in a body-centric frame?",
+    "metric_separation_over_video": "After a short early fluctuation, what sustained distance trend develops between the two people in the video?",
+    "dominant_body_centric_position": "Which body-centric position relation between the two people in the video dominates the clip?",
+    "nonmonotonic_distance_pattern": "Which full-clip distance pattern best describes the two people in the video?",
+    "approach_while_facing": "What combined distance-and-orientation pattern occurs between the two people in the video?",
+    "coupled_distance_relation_change": "As the two people in the video approach each other, how does their lateral relation change in a body-centric frame?",
+    "distance_out_and_back_over_video": "Which temporal distance pattern occurs between the two people in the video?",
+    "body_forward_field_transition_over_video": "Ignoring physical occlusion, how does the one-sided body-forward field relation between the two people in the video change?",
+}
+
+MULTIHUMAN_SAMPLE_FREE_ANSWERS = {
+    "position_consistency_between_people": "The dark-blue-clad man stays right-and-in-front of the red-clad woman throughout the clip.",
+    "dominant_facing_relation_over_video": "They face each other for most of the clip, so facing each other is dominant.",
+    "body_forward_visibility_consistency": "Each person stays inside the other's ±60° body-forward field throughout the clip.",
+    "body_centric_relation_change_over_video": "The red-clad woman begins left-front of the dark-blue-clad man, then moves to his right-front side and remains there.",
+    "dominant_body_centric_position": "The red-clad woman is predominantly on the dark-blue-clad man's right-and-behind side.",
+    "approach_while_facing": "They approach to about 0.96 m while predominantly facing each other.",
+    "body_forward_field_transition_over_video": "Early, only the red-clad woman keeps the dark-blue-clad man inside the ±60° body-forward field; later, the relation reverses for most of the remaining clip.",
+}
+
+
+def apply_multihuman_copy_edits(data: dict[str, Any]) -> None:
+    """Apply reviewer-facing copy only; metric results and algorithms are untouched."""
+    for group in data["groups"]:
+        if not str(group.get("name", "")).startswith("hoi_m3"):
+            continue
+        question = group["qa"][0]
+        qtype = question["question_type"]
+        if qtype in MULTIHUMAN_GENERIC_QUESTIONS:
+            question["question"] = MULTIHUMAN_GENERIC_QUESTIONS[qtype]
+        if qtype in MULTIHUMAN_SAMPLE_FREE_ANSWERS:
+            rewritten = MULTIHUMAN_SAMPLE_FREE_ANSWERS[qtype]
+            question["correct_answer"] = rewritten
+            question["answer"] = rewritten
+            for option in question.get("options", []):
+                if option.get("label") == question.get("correct_option"):
+                    option["text"] = rewritten
+        replacements = {
+            "in all 16 metric samples": "throughout the clip",
+            "for all 16 samples": "throughout the clip",
+            "all 16 samples": "the entire clip",
+            "at every sampled time": "throughout the clip",
+            "at any sampled time": "at any time in the clip",
+            "at nearly every sampled second": "repeatedly throughout the clip",
+            "for most samples": "for most of the clip",
+        }
+        for option in question.get("options", []):
+            for source, shown in replacements.items():
+                option["text"] = option["text"].replace(source, shown)
+        # Keep all three published answer representations synchronized.
+        question["answer"] = question["correct_answer"]
+        for option in question.get("options", []):
+            if option.get("label") == question.get("correct_option"):
+                option["text"] = question["correct_answer"]
+
+
 def validate_scale(data: dict[str, Any]) -> dict[str, Any]:
     names = [g["name"] for g in data["groups"]]
     if len(names) != len(set(names)):
@@ -355,6 +417,7 @@ def main() -> None:
     add_task4_visibility(data, dense, audits)
     add_task4_topology(data, evidence)
     apply_person_descriptions(data)
+    apply_multihuman_copy_edits(data)
     audit = validate_scale(data)
 
     save_js(resolve(args.site_data), data)
