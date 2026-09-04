@@ -1,4 +1,4 @@
-"""Reusable release gates for scaling Task 1 and Task 4 QA generation.
+"""Reusable release gates for scaling Task 1, Task 3, and Task 4 QA generation.
 
 The validator is deliberately independent of the curated-case builders.  A
 large-scale miner can pass any release-shaped dictionary and receive per-case
@@ -12,6 +12,7 @@ from dataclasses import asdict, dataclass
 from typing import Any, Iterable, Mapping, Sequence
 
 TASK1_ID = "task1_dynamic_human_referenced_relations"
+TASK3_ID = "task3_human_scene_topological_reasoning"
 TASK4_ID = "task4_multi_human_relational_dynamics"
 TOPOLOGY_TYPES = {
     "visible_pair_topology_change_2d",
@@ -39,6 +40,13 @@ class ScaleQualityPolicy:
     min_temporal_states: int = 8
     min_task1_span_ratio: float = 0.60
     min_task4_span_ratio: float = 0.85
+    min_task3_span_ratio: float = 0.85
+    min_task3_path_length_m: float = 0.75
+    min_task3_route_margin_m: float = 0.15
+    min_task3_order_gap_sec: float = 2.0
+    min_task3_side_margin_m: float = 0.25
+    min_task3_local_travel_m: float = 0.35
+    min_task3_grounding_inliers: int = 12
     min_visible_track_coverage: float = 0.80
     min_identity_assignment_margin: float = 0.18
     min_dominance_ratio: float = 0.65
@@ -417,6 +425,76 @@ def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any]
                 errors.append("relation transition lacks repeated support in an endpoint segment")
 
 
+def _validate_task3(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], metrics: dict[str, Any]) -> None:
+    result = question["result_json"]
+    topology = result.get("topology") or {}
+    if topology.get("status") != "ok":
+        errors.append("Task 3 topology status is not ok")
+        return
+    states = topology.get("trajectory_states") or []
+    duration = (group.get("video_window") or {}).get("duration_sec")
+    _validate_time_series(states, float(duration) if _finite(duration) else None, policy.min_task3_span_ratio, policy, errors, metrics)
+    path_length = topology.get("path_length_m")
+    if not _finite(path_length) or float(path_length) < policy.min_task3_path_length_m:
+        errors.append("Task 3 path is too short for trajectory-topology reasoning")
+    else:
+        metrics["path_length_m"] = round(float(path_length), 6)
+    speed = topology.get("max_smoothed_speed_mps")
+    if not _finite(speed) or float(speed) > policy.max_radial_speed_mps:
+        errors.append("Task 3 smoothed trajectory contains an implausible speed")
+    landmark_rows = {row.get("landmark_id"): row for row in topology.get("landmarks") or []}
+
+    def validate_static_landmarks(ids: Sequence[str]) -> None:
+        for landmark_id in ids:
+            row = landmark_rows.get(landmark_id) or {}
+            grounding = row.get("grounding") or {}
+            if row.get("static_scene_landmark") is not True:
+                errors.append(f"Task 3 landmark {landmark_id!r} is not audited as scene-fixed")
+            if grounding.get("manual_static_review") is not True or grounding.get("centroid_reprojects_inside_box") is not True:
+                errors.append(f"Task 3 landmark {landmark_id!r} lacks complete visual/reprojection audit")
+            inliers = grounding.get("robust_inlier_points")
+            if not _finite(inliers) or int(inliers) < policy.min_task3_grounding_inliers:
+                errors.append(f"Task 3 landmark {landmark_id!r} has insufficient metric grounding inliers")
+
+    qtype = question.get("question_type")
+    if qtype == "local_landmark_pass_side":
+        event = result.get("pass_event") or {}
+        validate_static_landmarks([str(event.get("landmark_id"))])
+        if event.get("valid_local_pass") is not True:
+            errors.append("Task 3 local-pass event does not pass its geometry gate")
+        if not _finite(event.get("signed_lateral_m")) or abs(float(event["signed_lateral_m"])) < policy.min_task3_side_margin_m:
+            errors.append("Task 3 local-pass side margin is too small")
+        if not _finite(event.get("local_travel_m")) or float(event["local_travel_m"]) < policy.min_task3_local_travel_m:
+            errors.append("Task 3 local-pass window contains too little travel")
+        if not _finite(event.get("side_support_ratio")) or float(event["side_support_ratio"]) < 2 / 3:
+            errors.append("Task 3 local-pass side lacks repeated temporal support")
+    elif qtype == "landmark_closest_approach_order":
+        event = result.get("order_event") or {}
+        ordered_ids = [str(event.get("first_landmark")), str(event.get("second_landmark"))]
+        validate_static_landmarks(ordered_ids)
+        if any((landmark_rows.get(landmark_id) or {}).get("valid_visit") is not True for landmark_id in ordered_ids):
+            errors.append("Task 3 landmark-order evidence lacks two prominent interior visits")
+        if not _finite(event.get("time_gap_sec")) or float(event["time_gap_sec"]) < policy.min_task3_order_gap_sec:
+            errors.append("Task 3 landmark-order events are not sufficiently separated in time")
+        if not _finite(event.get("center_separation_m")) or float(event["center_separation_m"]) < policy.min_task3_side_margin_m:
+            errors.append("Task 3 ordered landmarks are not spatially distinct")
+        threshold = (topology.get("thresholds") or {}).get("max_landmark_distance_m", 2.0)
+        if not _finite(event.get("max_closest_distance_m")) or float(event["max_closest_distance_m"]) > float(threshold):
+            errors.append("Task 3 ordered landmark is too far from the trajectory")
+    elif qtype == "closest_landmark_to_full_trajectory":
+        ranking = result.get("route_landmark_ranking") or []
+        validate_static_landmarks([str(row.get("landmark_id")) for row in ranking[:3]])
+        if len(ranking) < 3:
+            errors.append("Task 3 full-route ranking needs at least three static landmarks")
+        else:
+            margin = float(ranking[1]["minimum_horizontal_distance_m"]) - float(ranking[0]["minimum_horizontal_distance_m"])
+            metrics["route_landmark_margin_m"] = round(margin, 6)
+            if margin < policy.min_task3_route_margin_m:
+                errors.append("Task 3 closest-route landmark margin is too small")
+    else:
+        errors.append(f"unsupported Task 3 question type {qtype!r}")
+
+
 def _validate_topology(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], metrics: dict[str, Any]) -> None:
     result = question["result_json"]
     start = result.get("start_pair_distances_normalized") or []
@@ -487,6 +565,8 @@ def validate_release(data: Mapping[str, Any], policy: ScaleQualityPolicy | None 
             if isinstance(question.get("result_json"), Mapping):
                 if task_id == TASK1_ID:
                     _validate_task1(group, question, policy, errors, warnings, metrics)
+                elif task_id == TASK3_ID:
+                    _validate_task3(group, question, policy, errors, metrics)
                 elif task_id == TASK4_ID:
                     if question.get("question_type") in TOPOLOGY_TYPES:
                         _validate_topology(group, question, policy, errors, metrics)

@@ -1,0 +1,13 @@
+{
+  "status": "ok",
+  "case_count": 6,
+  "minimum_examples_per_category": 2,
+  "category_counts": {
+    "local_path_side": 2,
+    "temporal_landmark_order": 2,
+    "full_route_proximity": 2
+  },
+  "unique_video_windows": 6,
+  "coordinate_policy": "metric world trajectory projected onto scene horizontal plane; local path side is never image left/right",
+  "scope_limit": "no room-entry, doorway, or obstacle-bypass claim is generated without semantic region/footprint annotations"
+}

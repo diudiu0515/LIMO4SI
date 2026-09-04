@@ -1,0 +1,60 @@
+{
+  "frame_size": [796, 448],
+  "grounding_policy": {
+    "max_point_dist_std_m": 0.1,
+    "minimum_selected_points": 20,
+    "minimum_robust_inliers": 12,
+    "manual_review": "Each box was drawn on the named fixed exocentric frame and is restricted to a scene-fixed surface or fixture. Movable utensils, containers, and ingredients are excluded."
+  },
+  "scenes": [
+    {
+      "source_summary": "outputs/spatial/showcase_multi/sfu0101_cam05_5460/summary.json",
+      "landmarks": [
+        {"id": "dining_table", "display_name": "dining table", "box_xyxy": [75, 120, 300, 210]},
+        {"id": "front_chair", "display_name": "front chair", "box_xyxy": [80, 285, 195, 390]},
+        {"id": "cooking_range", "display_name": "cooking range", "box_xyxy": [370, 300, 655, 435]}
+      ]
+    },
+    {
+      "source_summary": "outputs/spatial/val_12_replacement_egg_whisk/summary.json",
+      "landmarks": [
+        {"id": "left_work_counter", "display_name": "left work counter", "box_xyxy": [5, 260, 180, 410]},
+        {"id": "cooktop", "display_name": "cooktop", "box_xyxy": [305, 205, 435, 340]},
+        {"id": "espresso_station", "display_name": "espresso station", "box_xyxy": [620, 210, 790, 430]}
+      ]
+    },
+    {
+      "source_summary": "outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame6630/summary.json",
+      "landmarks": [
+        {"id": "left_cooking_counter", "display_name": "left cooking counter", "box_xyxy": [190, 165, 310, 285]},
+        {"id": "back_sink_counter", "display_name": "back sink counter", "box_xyxy": [405, 165, 625, 245]},
+        {"id": "dining_table", "display_name": "dining table", "box_xyxy": [500, 265, 790, 420]},
+        {"id": "refrigerator", "display_name": "refrigerator", "box_xyxy": [690, 80, 790, 245]}
+      ]
+    },
+    {
+      "source_summary": "outputs/spatial/showcase_queries/query_01_iiith32_frame5280/summary.json",
+      "landmarks": [
+        {"id": "plate_rack", "display_name": "plate rack", "box_xyxy": [5, 125, 170, 290]},
+        {"id": "wooden_cabinet", "display_name": "wooden cabinet", "box_xyxy": [280, 85, 365, 285]},
+        {"id": "right_work_counter", "display_name": "right work counter", "box_xyxy": [510, 335, 750, 440]}
+      ]
+    },
+    {
+      "source_summary": "outputs/spatial/val_3/summary.json",
+      "landmarks": [
+        {"id": "refrigerator", "display_name": "refrigerator", "box_xyxy": [105, 50, 195, 230]},
+        {"id": "sink_counter", "display_name": "sink counter", "box_xyxy": [335, 110, 430, 205]},
+        {"id": "cooking_range", "display_name": "cooking range", "box_xyxy": [445, 165, 590, 290]}
+      ]
+    },
+    {
+      "source_summary": "outputs/spatial/showcase_queries/query_04_iiith145_frame11250/summary.json",
+      "landmarks": [
+        {"id": "concrete_counter", "display_name": "concrete counter", "box_xyxy": [205, 325, 535, 440]},
+        {"id": "wall_cabinet", "display_name": "wall cabinet", "box_xyxy": [520, 70, 590, 185]},
+        {"id": "cooking_station", "display_name": "cooking station", "box_xyxy": [285, 205, 505, 295]}
+      ]
+    }
+  ]
+}

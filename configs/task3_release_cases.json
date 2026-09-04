@@ -1,0 +1,45 @@
+{
+  "minimum_examples_per_category": 2,
+  "cases": [
+    {
+      "source_summary": "outputs/spatial/val_12_replacement_egg_whisk/summary.json",
+      "center_frame": 13050,
+      "duration_sec": 30,
+      "question_type": "local_landmark_pass_side",
+      "landmark_id": "espresso_station"
+    },
+    {
+      "source_summary": "outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame6630/summary.json",
+      "center_frame": 6150,
+      "duration_sec": 30,
+      "question_type": "local_landmark_pass_side",
+      "landmark_id": "left_cooking_counter"
+    },
+    {
+      "source_summary": "outputs/spatial/showcase_multi/sfu0101_cam05_5460/summary.json",
+      "center_frame": 2177,
+      "duration_sec": 30,
+      "question_type": "landmark_closest_approach_order",
+      "landmark_ids": ["cooking_range", "dining_table"]
+    },
+    {
+      "source_summary": "outputs/spatial/val_3/summary.json",
+      "center_frame": 5850,
+      "duration_sec": 30,
+      "question_type": "landmark_closest_approach_order",
+      "landmark_ids": ["sink_counter", "cooking_range"]
+    },
+    {
+      "source_summary": "outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame6630/summary.json",
+      "center_frame": 7650,
+      "duration_sec": 30,
+      "question_type": "closest_landmark_to_full_trajectory"
+    },
+    {
+      "source_summary": "outputs/spatial/showcase_queries/query_04_iiith145_frame11250/summary.json",
+      "center_frame": 11400,
+      "duration_sec": 30,
+      "question_type": "closest_landmark_to_full_trajectory"
+    }
+  ]
+}

@@ -1,11 +1,16 @@
 window.QA_DATA = {
-  "title": "Humans in Space · Task 1 + Task 4 Curated QA",
-  "subtitle": "One evidence-grounded temporal question per unique case.",
+  "title": "Humans in Space · Task 1 + Task 3 + Task 4 QA",
+  "subtitle": "One evidence-grounded temporal question per unique video window.",
   "tasks": [
     {
       "id": "task1_dynamic_human_referenced_relations",
       "name": "Task 1 · Dynamic Human-Referenced Relations",
       "description": "How object relations and body-forward visibility change or remain stable as the human moves or turns."
+    },
+    {
+      "id": "task3_human_scene_topological_reasoning",
+      "name": "Task 3 · Human–Scene Topological Reasoning",
+      "description": "How the full human trajectory passes, approaches, and is arranged relative to static scene landmarks."
     },
     {
       "id": "task4_multi_human_relational_dynamics",
@@ -34439,14 +34444,9428 @@ window.QA_DATA = {
         "status": "complete",
         "source": "configs/person_display_aliases.json"
       }
+    },
+    {
+      "name": "task3_uniandes_cooking_001_5_frame13050_30s",
+      "title": "Task 3 · uniandes_cooking_001_5 · local landmark pass side",
+      "original_image": "./outputs/qa/task3_media/uniandes_cooking_001_5_cam04_frame6690_static_landmarks.jpg",
+      "topdown_image": "./outputs/qa/task3_media/task3_uniandes_cooking_001_5_frame13050_30s_trajectory.svg",
+      "summary_path": "outputs/spatial/val_12_replacement_egg_whisk/summary.json",
+      "raw_summary": {
+        "sample_count": 1,
+        "success_count": 1,
+        "error_count": 0,
+        "samples": [
+          {
+            "status": "ok",
+            "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+            "take_name": "uniandes_cooking_001_5",
+            "frame": 13050,
+            "camera": "cam04",
+            "object_id": "egg whisk_1",
+            "object_xyz_world_m": [
+              -0.070778,
+              0.539263,
+              -0.723034
+            ],
+            "human_frame": {
+              "origin": [
+                -0.6181228981484255,
+                0.13820735345030236,
+                -0.5654988219105141
+              ],
+              "right": [
+                0.9482703443804482,
+                -0.3003806984836389,
+                0.10273650737234287
+              ],
+              "up": [
+                -0.07317595330425591,
+                0.1080861170375198,
+                0.9914447393383884
+              ],
+              "forward": [
+                0.3089152534702675,
+                0.9476754862727182,
+                -0.0805142154601758
+              ]
+            },
+            "orientation": {
+              "forward_sign": 1,
+              "source": "nose"
+            },
+            "human_xyz_m": {
+              "right": 0.3823769458354893,
+              "up": -0.15289136073425993,
+              "forward": 0.5618376140848368
+            },
+            "distance_m": 0.6965984506831696,
+            "horizontal_distance_m": 0.6796128554603854,
+            "lateral_relation": "right",
+            "longitudinal_relation": "front",
+            "vertical_relation": "below",
+            "text_zh": "物体在人的右侧、前方、下方，前向分量 0.56 m，右向分量 0.38 m，高度差 -0.15 m，直线距离 0.70 m",
+            "quality": {
+              "mask_pixels": 38997,
+              "point_cloud_scanned": 34818915,
+              "point_cloud_quality": 30700605,
+              "point_cloud_in_image": 21988183,
+              "points_in_mask": 39084,
+              "robust_inliers": 35679,
+              "max_point_dist_std_m": 0.1,
+              "pose_reprojection": {
+                "joint_count": 13,
+                "positive_depth_joint_count": 13,
+                "median_px": 2.5421149729252077e-12,
+                "mean_px": 2.692043258981599e-12,
+                "max_px": 4.321595453972853e-12
+              }
+            },
+            "inputs": {
+              "point_cloud": "data/egoexo4d/takes/uniandes_cooking_001_5/trajectory/semidense_points.csv.gz",
+              "camera_pose": "outputs/calibration/val_12/3528e260-6a6d-46d7-b97d-b6c029ec7304.json",
+              "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/3528e260-6a6d-46d7-b97d-b6c029ec7304.json"
+            },
+            "output_path": "outputs/spatial/val_12_replacement_egg_whisk/uniandes_cooking_001_5_frame6690_egg whisk_1.json"
+          }
+        ]
+      },
+      "static_landmark_audit": {
+        "source_summary": "outputs/spatial/val_12_replacement_egg_whisk/summary.json",
+        "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+        "take_name": "uniandes_cooking_001_5",
+        "camera": "cam04",
+        "frame": 6690,
+        "review_image": "outputs/qa/task3_media/uniandes_cooking_001_5_cam04_frame6690_static_landmarks.jpg",
+        "landmark_count": 3,
+        "landmarks": [
+          {
+            "object_id": "left_work_counter",
+            "display_name": "left work counter",
+            "object_xyz_world_m": [
+              0.199448,
+              0.634487,
+              -0.495821
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 6690,
+              "source_camera": "cam04",
+              "box_xyxy_796x448": [
+                5.0,
+                260.0,
+                180.0,
+                410.0
+              ],
+              "selected_points": 1466159,
+              "robust_inlier_points": 1340904,
+              "inlier_radius_p90_m": 0.5721817009914272,
+              "reprojected_centroid_796x448": [
+                130.69516945645213,
+                294.19015813071684
+              ],
+              "camera_depth_m": 1.1450784062698494,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "cooktop",
+            "display_name": "cooktop",
+            "object_xyz_world_m": [
+              0.6513835,
+              -0.749486,
+              -0.52512
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 6690,
+              "source_camera": "cam04",
+              "box_xyxy_796x448": [
+                305.0,
+                205.0,
+                435.0,
+                340.0
+              ],
+              "selected_points": 6192531,
+              "robust_inlier_points": 6165340,
+              "inlier_radius_p90_m": 1.2276133835926712,
+              "reprojected_centroid_796x448": [
+                354.0999696920633,
+                232.0033411316833
+              ],
+              "camera_depth_m": 2.3505345379082185,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "espresso_station",
+            "display_name": "espresso station",
+            "object_xyz_world_m": [
+              -1.3530544999999998,
+              -0.198845,
+              -0.213498
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 6690,
+              "source_camera": "cam04",
+              "box_xyxy_796x448": [
+                620.0,
+                210.0,
+                790.0,
+                430.0
+              ],
+              "selected_points": 137747,
+              "robust_inlier_points": 109590,
+              "inlier_radius_p90_m": 0.20242023389409147,
+              "reprojected_centroid_796x448": [
+                669.350255012708,
+                315.73975283159916
+              ],
+              "camera_depth_m": 0.4272121233771634,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          }
+        ],
+        "point_cloud_scan": {
+          "scanned_points": 34818915,
+          "quality_points": 30700605,
+          "projected_points": 21987722
+        },
+        "status": "ok"
+      },
+      "clip_filename": "task3_clip_frame13050_30s.mp4",
+      "qa": [
+        {
+          "task_id": "task3_human_scene_topological_reasoning",
+          "task_name": "Task 3 · Human–Scene Topological Reasoning",
+          "question_type": "local_landmark_pass_side",
+          "question_categories": [
+            "local_path_side"
+          ],
+          "question": "As the person moves past the espresso station, which side of the person's local direction of travel is it on around closest approach?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Around closest approach, the espresso station stays on the left side of the person's local travel direction."
+            },
+            {
+              "label": "B",
+              "text": "Around closest approach, the espresso station changes from the left side to the right side of the person's local travel direction."
+            },
+            {
+              "label": "C",
+              "text": "Around closest approach, the espresso station changes from the right side to the left side of the person's local travel direction."
+            },
+            {
+              "label": "D",
+              "text": "Around closest approach, the espresso station stays on the right side of the person's local travel direction."
+            }
+          ],
+          "correct_option": "D",
+          "correct_answer": "Around closest approach, the espresso station stays on the right side of the person's local travel direction.",
+          "answer": "Around closest approach, the espresso station stays on the right side of the person's local travel direction.",
+          "explanation": "The local-tangent signed offset is about 1.8 m to the right; the local trajectory covers about 0.4 m and keeps the same side around closest approach.",
+          "status": "ok",
+          "method": "Uses the full smoothed metric pelvis trajectory. Side is measured against the local path tangent at closest approach, not image left/right or the start-to-end chord.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "local_landmark_pass_side",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "topology": {
+              "status": "ok",
+              "coordinate_frame": "metric world trajectory projected onto the local horizontal plane",
+              "side_definition": "left/right uses the local smoothed path tangent at closest approach, not image coordinates or the start-end chord",
+              "trajectory_states": [
+                {
+                  "frame": 12600,
+                  "t": -15.0,
+                  "origin_world_m": [
+                    0.9972288136217556,
+                    -0.36250172535560526,
+                    -0.5910716964510686
+                  ]
+                },
+                {
+                  "frame": 12615,
+                  "t": -14.5,
+                  "origin_world_m": [
+                    0.9962638724225394,
+                    -0.3597872899598305,
+                    -0.5886819099508961
+                  ]
+                },
+                {
+                  "frame": 12630,
+                  "t": -14.0,
+                  "origin_world_m": [
+                    0.9934900930734306,
+                    -0.35795835863405845,
+                    -0.58629890070994
+                  ]
+                },
+                {
+                  "frame": 12645,
+                  "t": -13.5,
+                  "origin_world_m": [
+                    0.9908050638762889,
+                    -0.35490161570777556,
+                    -0.5835282792958705
+                  ]
+                },
+                {
+                  "frame": 12660,
+                  "t": -13.0,
+                  "origin_world_m": [
+                    0.9847006335076267,
+                    -0.3545622938144898,
+                    -0.5834495429101365
+                  ]
+                },
+                {
+                  "frame": 12675,
+                  "t": -12.5,
+                  "origin_world_m": [
+                    0.9786691873156326,
+                    -0.35716397740316036,
+                    -0.583648418083458
+                  ]
+                },
+                {
+                  "frame": 12690,
+                  "t": -12.0,
+                  "origin_world_m": [
+                    0.9759896537247095,
+                    -0.35897131128606363,
+                    -0.5857552938802575
+                  ]
+                },
+                {
+                  "frame": 12705,
+                  "t": -11.5,
+                  "origin_world_m": [
+                    0.9744201024742658,
+                    -0.36073436065361847,
+                    -0.5877245252375676
+                  ]
+                },
+                {
+                  "frame": 12720,
+                  "t": -11.0,
+                  "origin_world_m": [
+                    0.971103835510602,
+                    -0.3641874562681397,
+                    -0.5897854900928765
+                  ]
+                },
+                {
+                  "frame": 12735,
+                  "t": -10.5,
+                  "origin_world_m": [
+                    0.9723087343933263,
+                    -0.36409331790244803,
+                    -0.5909210810823303
+                  ]
+                },
+                {
+                  "frame": 12750,
+                  "t": -10.0,
+                  "origin_world_m": [
+                    0.9660594535035149,
+                    -0.36716759635127644,
+                    -0.5946885020048873
+                  ]
+                },
+                {
+                  "frame": 12765,
+                  "t": -9.5,
+                  "origin_world_m": [
+                    0.9576435358100694,
+                    -0.3707606355342362,
+                    -0.5978095719376937
+                  ]
+                },
+                {
+                  "frame": 12780,
+                  "t": -9.0,
+                  "origin_world_m": [
+                    0.9534409243135784,
+                    -0.3877865316920112,
+                    -0.6025504627214747
+                  ]
+                },
+                {
+                  "frame": 12795,
+                  "t": -8.5,
+                  "origin_world_m": [
+                    0.9501987578194582,
+                    -0.3913895838571101,
+                    -0.5997809094526603
+                  ]
+                },
+                {
+                  "frame": 12810,
+                  "t": -8.0,
+                  "origin_world_m": [
+                    0.9944925920030878,
+                    -0.4381055899307764,
+                    -0.6083401246574999
+                  ]
+                },
+                {
+                  "frame": 12825,
+                  "t": -7.5,
+                  "origin_world_m": [
+                    1.0610948683769217,
+                    -0.49466344847661914,
+                    -0.6109927845768585
+                  ]
+                },
+                {
+                  "frame": 12840,
+                  "t": -7.0,
+                  "origin_world_m": [
+                    1.1205935433894325,
+                    -0.5591026231437729,
+                    -0.6153455694813672
+                  ]
+                },
+                {
+                  "frame": 12855,
+                  "t": -6.5,
+                  "origin_world_m": [
+                    1.158751614770472,
+                    -0.5960037325156429,
+                    -0.6096380721079697
+                  ]
+                },
+                {
+                  "frame": 12870,
+                  "t": -6.0,
+                  "origin_world_m": [
+                    1.2126284589098257,
+                    -0.6515137009304081,
+                    -0.6129870077929385
+                  ]
+                },
+                {
+                  "frame": 12885,
+                  "t": -5.5,
+                  "origin_world_m": [
+                    1.198382402416089,
+                    -0.6501840022295629,
+                    -0.6015270954454336
+                  ]
+                },
+                {
+                  "frame": 12900,
+                  "t": -5.0,
+                  "origin_world_m": [
+                    1.1509424001904258,
+                    -0.622642074050664,
+                    -0.5947940343497722
+                  ]
+                },
+                {
+                  "frame": 12915,
+                  "t": -4.5,
+                  "origin_world_m": [
+                    1.1183302693817947,
+                    -0.5896474117693015,
+                    -0.5858482786751199
+                  ]
+                },
+                {
+                  "frame": 12930,
+                  "t": -4.0,
+                  "origin_world_m": [
+                    1.1143426709489206,
+                    -0.5718543593546939,
+                    -0.587602542772508
+                  ]
+                },
+                {
+                  "frame": 12945,
+                  "t": -3.5,
+                  "origin_world_m": [
+                    1.1068543594978286,
+                    -0.5492669967416417,
+                    -0.5872258103148085
+                  ]
+                },
+                {
+                  "frame": 12960,
+                  "t": -3.0,
+                  "origin_world_m": [
+                    1.0968632142057815,
+                    -0.5134190850299672,
+                    -0.5933574441228224
+                  ]
+                },
+                {
+                  "frame": 12975,
+                  "t": -2.5,
+                  "origin_world_m": [
+                    1.0831186258490626,
+                    -0.48876341708573545,
+                    -0.5966811072817265
+                  ]
+                },
+                {
+                  "frame": 12990,
+                  "t": -2.0,
+                  "origin_world_m": [
+                    1.0643014960158201,
+                    -0.45281508034796747,
+                    -0.6003548956860967
+                  ]
+                },
+                {
+                  "frame": 13005,
+                  "t": -1.5,
+                  "origin_world_m": [
+                    1.03274204155245,
+                    -0.41925148657383476,
+                    -0.6010612220350857
+                  ]
+                },
+                {
+                  "frame": 13020,
+                  "t": -1.0,
+                  "origin_world_m": [
+                    0.9891015408921122,
+                    -0.38385722420755947,
+                    -0.604222319203606
+                  ]
+                },
+                {
+                  "frame": 13035,
+                  "t": -0.5,
+                  "origin_world_m": [
+                    0.9671837364504412,
+                    -0.37533586765030125,
+                    -0.6038931057302235
+                  ]
+                },
+                {
+                  "frame": 13050,
+                  "t": 0.0,
+                  "origin_world_m": [
+                    0.9682572964479199,
+                    -0.3661247432937638,
+                    -0.6058211591418707
+                  ]
+                },
+                {
+                  "frame": 13065,
+                  "t": 0.5,
+                  "origin_world_m": [
+                    0.9699774922197463,
+                    -0.3645007921639847,
+                    -0.6081485248564331
+                  ]
+                },
+                {
+                  "frame": 13080,
+                  "t": 1.0,
+                  "origin_world_m": [
+                    0.9734426544356489,
+                    -0.3619418015231306,
+                    -0.6122067086719221
+                  ]
+                },
+                {
+                  "frame": 13095,
+                  "t": 1.5,
+                  "origin_world_m": [
+                    0.9795066342214896,
+                    -0.3582109656650357,
+                    -0.6142055039767021
+                  ]
+                },
+                {
+                  "frame": 13110,
+                  "t": 2.0,
+                  "origin_world_m": [
+                    0.9837253639290363,
+                    -0.35799120357006115,
+                    -0.614130011592352
+                  ]
+                },
+                {
+                  "frame": 13125,
+                  "t": 2.5,
+                  "origin_world_m": [
+                    0.980345473333835,
+                    -0.3639277854376918,
+                    -0.6157366842012368
+                  ]
+                },
+                {
+                  "frame": 13140,
+                  "t": 3.0,
+                  "origin_world_m": [
+                    0.9774907046114197,
+                    -0.3688942478226462,
+                    -0.6125805109184429
+                  ]
+                },
+                {
+                  "frame": 13155,
+                  "t": 3.5,
+                  "origin_world_m": [
+                    0.9757932816903494,
+                    -0.37025847700105585,
+                    -0.6117618699111728
+                  ]
+                },
+                {
+                  "frame": 13170,
+                  "t": 4.0,
+                  "origin_world_m": [
+                    0.9684388848156484,
+                    -0.3746036254221106,
+                    -0.6085805734308382
+                  ]
+                },
+                {
+                  "frame": 13185,
+                  "t": 4.5,
+                  "origin_world_m": [
+                    0.9636905264301923,
+                    -0.37784887880693424,
+                    -0.6077885735340709
+                  ]
+                },
+                {
+                  "frame": 13200,
+                  "t": 5.0,
+                  "origin_world_m": [
+                    0.9669554985448281,
+                    -0.3747591710620822,
+                    -0.6052715659074765
+                  ]
+                },
+                {
+                  "frame": 13215,
+                  "t": 5.5,
+                  "origin_world_m": [
+                    0.9687878271619056,
+                    -0.37210006438647725,
+                    -0.6076255945385747
+                  ]
+                },
+                {
+                  "frame": 13230,
+                  "t": 6.0,
+                  "origin_world_m": [
+                    0.9970780765513657,
+                    -0.39006190926340006,
+                    -0.608884607439675
+                  ]
+                },
+                {
+                  "frame": 13245,
+                  "t": 6.5,
+                  "origin_world_m": [
+                    1.0212448452540468,
+                    -0.38675340820946574,
+                    -0.6102709397427871
+                  ]
+                },
+                {
+                  "frame": 13260,
+                  "t": 7.0,
+                  "origin_world_m": [
+                    1.0119266308072785,
+                    -0.32138086535663146,
+                    -0.6066872062221451
+                  ]
+                },
+                {
+                  "frame": 13275,
+                  "t": 7.5,
+                  "origin_world_m": [
+                    0.9366389904141188,
+                    -0.23160604833938275,
+                    -0.6003512537138265
+                  ]
+                },
+                {
+                  "frame": 13290,
+                  "t": 8.0,
+                  "origin_world_m": [
+                    0.8270357194128177,
+                    -0.12973682759629188,
+                    -0.5890106943486936
+                  ]
+                },
+                {
+                  "frame": 13305,
+                  "t": 8.5,
+                  "origin_world_m": [
+                    0.6959675215672132,
+                    -0.011775502960114741,
+                    -0.5761549057027879
+                  ]
+                },
+                {
+                  "frame": 13320,
+                  "t": 9.0,
+                  "origin_world_m": [
+                    0.6177303164879608,
+                    0.0741948575256137,
+                    -0.5678798354346195
+                  ]
+                },
+                {
+                  "frame": 13335,
+                  "t": 9.5,
+                  "origin_world_m": [
+                    0.5873918387061084,
+                    0.09701159649393425,
+                    -0.5671442355410315
+                  ]
+                },
+                {
+                  "frame": 13350,
+                  "t": 10.0,
+                  "origin_world_m": [
+                    0.6129603714901616,
+                    0.09992373604318912,
+                    -0.569728679694528
+                  ]
+                },
+                {
+                  "frame": 13365,
+                  "t": 10.5,
+                  "origin_world_m": [
+                    0.6682596834482144,
+                    0.09032377078034087,
+                    -0.5766732395996316
+                  ]
+                },
+                {
+                  "frame": 13380,
+                  "t": 11.0,
+                  "origin_world_m": [
+                    0.7205648970289686,
+                    0.07946421371518632,
+                    -0.5820026261296247
+                  ]
+                },
+                {
+                  "frame": 13395,
+                  "t": 11.5,
+                  "origin_world_m": [
+                    0.7232899202998563,
+                    0.08750999357957355,
+                    -0.5859155918513569
+                  ]
+                },
+                {
+                  "frame": 13410,
+                  "t": 12.0,
+                  "origin_world_m": [
+                    0.7095287872971083,
+                    0.09889696108311818,
+                    -0.5871139257872787
+                  ]
+                },
+                {
+                  "frame": 13425,
+                  "t": 12.5,
+                  "origin_world_m": [
+                    0.7039154277400804,
+                    0.1027586885743584,
+                    -0.5873038522406029
+                  ]
+                },
+                {
+                  "frame": 13440,
+                  "t": 13.0,
+                  "origin_world_m": [
+                    0.6969892322356018,
+                    0.10542115116875275,
+                    -0.5866233780046628
+                  ]
+                },
+                {
+                  "frame": 13455,
+                  "t": 13.5,
+                  "origin_world_m": [
+                    0.6816411639178046,
+                    0.10518317882257408,
+                    -0.5867643278548045
+                  ]
+                },
+                {
+                  "frame": 13470,
+                  "t": 14.0,
+                  "origin_world_m": [
+                    0.6643624972208257,
+                    0.07973291790624257,
+                    -0.5852832609470923
+                  ]
+                },
+                {
+                  "frame": 13485,
+                  "t": 14.5,
+                  "origin_world_m": [
+                    0.6576305002098211,
+                    0.07123692992605288,
+                    -0.5839601302708013
+                  ]
+                },
+                {
+                  "frame": 13500,
+                  "t": 15.0,
+                  "origin_world_m": [
+                    0.6433875126895895,
+                    0.05654498782790293,
+                    -0.5832094388070832
+                  ]
+                }
+              ],
+              "trajectory_state_count": 61,
+              "temporal_span_sec": 30.0,
+              "path_length_m": 1.864503558326861,
+              "net_displacement_m": 0.5468610100849771,
+              "max_smoothed_speed_mps": 0.3506057443988968,
+              "reference_up_world_unit": [
+                -0.012424868021605839,
+                0.07228522796679274,
+                0.997306607053435
+              ],
+              "landmarks": [
+                {
+                  "landmark_id": "left_work_counter",
+                  "display_name": "left work counter",
+                  "center_world_m": [
+                    0.199448,
+                    0.634487,
+                    -0.495821
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6690,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      5.0,
+                      260.0,
+                      180.0,
+                      410.0
+                    ],
+                    "selected_points": 1466159,
+                    "robust_inlier_points": 1340904,
+                    "inlier_radius_p90_m": 0.5721817009914272,
+                    "reprojected_centroid_796x448": [
+                      130.69516945645213,
+                      294.19015813071684
+                    ],
+                    "camera_depth_m": 1.1450784062698494,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 49,
+                  "closest_frame": 13335,
+                  "closest_time_sec": 9.5,
+                  "closest_horizontal_distance_m": 0.6567248651273696,
+                  "local_window_indices": [
+                    45,
+                    53
+                  ],
+                  "local_travel_m": 0.3820367125981664,
+                  "signed_lateral_m": 0.0251634871188467,
+                  "pass_side": "near_centerline",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": false,
+                  "visit_prominence_m": 0.06484313089372595,
+                  "valid_visit": false
+                },
+                {
+                  "landmark_id": "cooktop",
+                  "display_name": "cooktop",
+                  "center_world_m": [
+                    0.6513835,
+                    -0.749486,
+                    -0.52512
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6690,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      305.0,
+                      205.0,
+                      435.0,
+                      340.0
+                    ],
+                    "selected_points": 6192531,
+                    "robust_inlier_points": 6165340,
+                    "inlier_radius_p90_m": 1.2276133835926712,
+                    "reprojected_centroid_796x448": [
+                      354.0999696920633,
+                      232.0033411316833
+                    ],
+                    "camera_depth_m": 2.3505345379082185,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 14,
+                  "closest_frame": 12810,
+                  "closest_time_sec": -8.0,
+                  "closest_horizontal_distance_m": 0.46627730363324105,
+                  "local_window_indices": [
+                    10,
+                    18
+                  ],
+                  "local_travel_m": 0.3744742786723836,
+                  "signed_lateral_m": -0.46607618801948303,
+                  "pass_side": "left",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": true,
+                  "visit_prominence_m": 0.05520443428699984,
+                  "valid_visit": false
+                },
+                {
+                  "landmark_id": "espresso_station",
+                  "display_name": "espresso station",
+                  "center_world_m": [
+                    -1.3530544999999998,
+                    -0.198845,
+                    -0.213498
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6690,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      620.0,
+                      210.0,
+                      790.0,
+                      430.0
+                    ],
+                    "selected_points": 137747,
+                    "robust_inlier_points": 109590,
+                    "inlier_radius_p90_m": 0.20242023389409147,
+                    "reprojected_centroid_796x448": [
+                      669.350255012708,
+                      315.73975283159916
+                    ],
+                    "camera_depth_m": 0.4272121233771634,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 49,
+                  "closest_frame": 13335,
+                  "closest_time_sec": 9.5,
+                  "closest_horizontal_distance_m": 1.9625511996873073,
+                  "local_window_indices": [
+                    45,
+                    53
+                  ],
+                  "local_travel_m": 0.3820367125981664,
+                  "signed_lateral_m": 1.7864364006762772,
+                  "pass_side": "right",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": true,
+                  "visit_prominence_m": 0.049169730517995225,
+                  "valid_visit": false
+                }
+              ],
+              "valid_pass_landmarks": [
+                "cooktop",
+                "espresso_station"
+              ],
+              "valid_visit_landmarks": [],
+              "order_pairs": [],
+              "proximity_order_pairs": [
+                {
+                  "first_landmark": "cooktop",
+                  "second_landmark": "left_work_counter",
+                  "first_time_sec": -8.0,
+                  "second_time_sec": 9.5,
+                  "time_gap_sec": 17.5,
+                  "center_separation_m": 1.4499289024324666,
+                  "max_closest_distance_m": 0.6567248651273696
+                },
+                {
+                  "first_landmark": "cooktop",
+                  "second_landmark": "espresso_station",
+                  "first_time_sec": -8.0,
+                  "second_time_sec": 9.5,
+                  "time_gap_sec": 17.5,
+                  "center_separation_m": 2.0681131886973123,
+                  "max_closest_distance_m": 1.9625511996873073
+                }
+              ],
+              "flank_pairs": [
+                {
+                  "left_landmark": "cooktop",
+                  "right_landmark": "espresso_station",
+                  "time_gap_sec": 17.5,
+                  "minimum_side_margin_m": 0.46607618801948303
+                }
+              ],
+              "nearest_landmark_states": [
+                {
+                  "frame": 12600,
+                  "t": -15.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5214817379202409,
+                  "runner_up_margin_m": 0.7466640083687196
+                },
+                {
+                  "frame": 12615,
+                  "t": -14.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.522768515626134,
+                  "runner_up_margin_m": 0.7428186205683737
+                },
+                {
+                  "frame": 12630,
+                  "t": -14.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.522213943817723,
+                  "runner_up_margin_m": 0.7403660219758511
+                },
+                {
+                  "frame": 12645,
+                  "t": -13.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5226500330853808,
+                  "runner_up_margin_m": 0.7360507348151805
+                },
+                {
+                  "frame": 12660,
+                  "t": -13.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5189674268033766,
+                  "runner_up_margin_m": 0.7356554481965445
+                },
+                {
+                  "frame": 12675,
+                  "t": -12.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5131244921126962,
+                  "runner_up_margin_m": 0.7397623419814207
+                },
+                {
+                  "frame": 12690,
+                  "t": -12.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.510128920233631,
+                  "runner_up_margin_m": 0.7423770614560987
+                },
+                {
+                  "frame": 12705,
+                  "t": -11.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5078673012048672,
+                  "runner_up_margin_m": 0.744924289590937
+                },
+                {
+                  "frame": 12720,
+                  "t": -11.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5031980906855716,
+                  "runner_up_margin_m": 0.7501320717220613
+                },
+                {
+                  "frame": 12735,
+                  "t": -10.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5040902554791374,
+                  "runner_up_margin_m": 0.7498325905787501
+                },
+                {
+                  "frame": 12750,
+                  "t": -10.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.49793947272375094,
+                  "runner_up_margin_m": 0.7543338039812852
+                },
+                {
+                  "frame": 12765,
+                  "t": -9.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.4900188226339115,
+                  "runner_up_margin_m": 0.7597823249639237
+                },
+                {
+                  "frame": 12780,
+                  "t": -9.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.4743989941219983,
+                  "runner_up_margin_m": 0.7861371978464857
+                },
+                {
+                  "frame": 12795,
+                  "t": -8.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.46942930529798715,
+                  "runner_up_margin_m": 0.7922469261074916
+                },
+                {
+                  "frame": 12810,
+                  "t": -8.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.46627730363324105,
+                  "runner_up_margin_m": 0.8586228380177383
+                },
+                {
+                  "frame": 12825,
+                  "t": -7.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.4847092109367487,
+                  "runner_up_margin_m": 0.9251679460603909
+                },
+                {
+                  "frame": 12840,
+                  "t": -7.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5077521639147404,
+                  "runner_up_margin_m": 0.9890424949003083
+                },
+                {
+                  "frame": 12855,
+                  "t": -6.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5308505238574812,
+                  "runner_up_margin_m": 1.018784306246055
+                },
+                {
+                  "frame": 12870,
+                  "t": -6.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.569785066734078,
+                  "runner_up_margin_m": 1.056437391364044
+                },
+                {
+                  "frame": 12885,
+                  "t": -5.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5560198872773744,
+                  "runner_up_margin_m": 1.061085737937841
+                },
+                {
+                  "frame": 12900,
+                  "t": -5.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5158269607403518,
+                  "runner_up_margin_m": 1.0510005972421164
+                },
+                {
+                  "frame": 12915,
+                  "t": -4.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.4942379727968188,
+                  "runner_up_margin_m": 1.0272655004879963
+                },
+                {
+                  "frame": 12930,
+                  "t": -4.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.49672760737689364,
+                  "runner_up_margin_m": 1.008123430542086
+                },
+                {
+                  "frame": 12945,
+                  "t": -3.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.49857420497727684,
+                  "runner_up_margin_m": 0.9838799450974296
+                },
+                {
+                  "frame": 12960,
+                  "t": -3.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5056096225624802,
+                  "runner_up_margin_m": 0.9421201838874877
+                },
+                {
+                  "frame": 12975,
+                  "t": -2.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5061043974132351,
+                  "runner_up_margin_m": 0.9136070909907548
+                },
+                {
+                  "frame": 12990,
+                  "t": -2.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5106147444437563,
+                  "runner_up_margin_m": 0.869112081874492
+                },
+                {
+                  "frame": 13005,
+                  "t": -1.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5070031901533724,
+                  "runner_up_margin_m": 0.8268463692831195
+                },
+                {
+                  "frame": 13020,
+                  "t": -1.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5007845575955401,
+                  "runner_up_margin_m": 0.7781384411137646
+                },
+                {
+                  "frame": 13035,
+                  "t": -0.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.4927979398907641,
+                  "runner_up_margin_m": 0.7660189830187711
+                },
+                {
+                  "frame": 13050,
+                  "t": 0.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.500671108696257,
+                  "runner_up_margin_m": 0.7514017943241473
+                },
+                {
+                  "frame": 13065,
+                  "t": 0.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5031264116866869,
+                  "runner_up_margin_m": 0.7485713016031352
+                },
+                {
+                  "frame": 13080,
+                  "t": 1.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5074917117677312,
+                  "runner_up_margin_m": 0.7440641432768161
+                },
+                {
+                  "frame": 13095,
+                  "t": 1.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5143140721449246,
+                  "runner_up_margin_m": 0.7379436132599635
+                },
+                {
+                  "frame": 13110,
+                  "t": 2.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5171739314621483,
+                  "runner_up_margin_m": 0.7375412355248402
+                },
+                {
+                  "frame": 13125,
+                  "t": 2.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5105372695157162,
+                  "runner_up_margin_m": 0.7466119710650445
+                },
+                {
+                  "frame": 13140,
+                  "t": 3.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5047566513116076,
+                  "runner_up_margin_m": 0.7547268207912702
+                },
+                {
+                  "frame": 13155,
+                  "t": 3.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5025829962248627,
+                  "runner_up_margin_m": 0.7569813020726854
+                },
+                {
+                  "frame": 13170,
+                  "t": 4.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.4943858512125748,
+                  "runner_up_margin_m": 0.7643114869745897
+                },
+                {
+                  "frame": 13185,
+                  "t": 4.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.48882322260821887,
+                  "runner_up_margin_m": 0.76961225006687
+                },
+                {
+                  "frame": 13200,
+                  "t": 5.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.4931606127033751,
+                  "runner_up_margin_m": 0.7649717360365232
+                },
+                {
+                  "frame": 13215,
+                  "t": 5.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.4964856479610547,
+                  "runner_up_margin_m": 0.76050834435284
+                },
+                {
+                  "frame": 13230,
+                  "t": 6.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5018775887696911,
+                  "runner_up_margin_m": 0.786530411508289
+                },
+                {
+                  "frame": 13245,
+                  "t": 6.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5211684346407885,
+                  "runner_up_margin_m": 0.7796421892893248
+                },
+                {
+                  "frame": 13260,
+                  "t": 7.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5629445634166707,
+                  "runner_up_margin_m": 0.6820808360477478
+                },
+                {
+                  "frame": 13275,
+                  "t": 7.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.5945904141692923,
+                  "runner_up_margin_m": 0.53391009056208
+                },
+                {
+                  "frame": 13290,
+                  "t": 8.0,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.6469771636089973,
+                  "runner_up_margin_m": 0.33397106909320584
+                },
+                {
+                  "frame": 13305,
+                  "t": 8.5,
+                  "nearest_landmark": "cooktop",
+                  "distance_m": 0.7408141207485996,
+                  "runner_up_margin_m": 0.06723963607749828
+                },
+                {
+                  "frame": 13320,
+                  "t": 9.0,
+                  "nearest_landmark": "left_work_counter",
+                  "distance_m": 0.6930071200358007,
+                  "runner_up_margin_m": 0.13228757916787504
+                },
+                {
+                  "frame": 13335,
+                  "t": 9.5,
+                  "nearest_landmark": "left_work_counter",
+                  "distance_m": 0.6567248651273696,
+                  "runner_up_margin_m": 0.19299050610379098
+                },
+                {
+                  "frame": 13350,
+                  "t": 10.0,
+                  "nearest_landmark": "left_work_counter",
+                  "distance_m": 0.6696337815558524,
+                  "runner_up_margin_m": 0.18163633170087623
+                },
+                {
+                  "frame": 13365,
+                  "t": 10.5,
+                  "nearest_landmark": "left_work_counter",
+                  "distance_m": 0.7117660278735989,
+                  "runner_up_margin_m": 0.1297448244832966
+                },
+                {
+                  "frame": 13380,
+                  "t": 11.0,
+                  "nearest_landmark": "left_work_counter",
+                  "distance_m": 0.7546339542048178,
+                  "runner_up_margin_m": 0.07913742816986924
+                },
+                {
+                  "frame": 13395,
+                  "t": 11.5,
+                  "nearest_landmark": "left_work_counter",
+                  "distance_m": 0.7504949781607696,
+                  "runner_up_margin_m": 0.09178044256695017
+                },
+                {
+                  "frame": 13410,
+                  "t": 12.0,
+                  "nearest_landmark": "left_work_counter",
+                  "distance_m": 0.7327006858992096,
+                  "runner_up_margin_m": 0.11992834957429621
+                },
+                {
+                  "frame": 13425,
+                  "t": 12.5,
+                  "nearest_landmark": "left_work_counter",
+                  "distance_m": 0.7260245701885631,
+                  "runner_up_margin_m": 0.1300982663465282
+                },
+                {
+                  "frame": 13440,
+                  "t": 13.0,
+                  "nearest_landmark": "left_work_counter",
+                  "distance_m": 0.7193625787008273,
+                  "runner_up_margin_m": 0.1389664805437968
+                },
+                {
+                  "frame": 13455,
+                  "t": 13.5,
+                  "nearest_landmark": "left_work_counter",
+                  "distance_m": 0.7090358641632668,
+                  "runner_up_margin_m": 0.14838757212314646
+                },
+                {
+                  "frame": 13470,
+                  "t": 14.0,
+                  "nearest_landmark": "left_work_counter",
+                  "distance_m": 0.7166934620604098,
+                  "runner_up_margin_m": 0.11480640972356015
+                },
+                {
+                  "frame": 13485,
+                  "t": 14.5,
+                  "nearest_landmark": "left_work_counter",
+                  "distance_m": 0.7189654898345644,
+                  "runner_up_margin_m": 0.10388746926612213
+                },
+                {
+                  "frame": 13500,
+                  "t": 15.0,
+                  "nearest_landmark": "left_work_counter",
+                  "distance_m": 0.7215679960210956,
+                  "runner_up_margin_m": 0.08659293270605406
+                }
+              ],
+              "route_landmark_ranking": [
+                {
+                  "landmark_id": "cooktop",
+                  "display_name": "cooktop",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6690,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      305.0,
+                      205.0,
+                      435.0,
+                      340.0
+                    ],
+                    "selected_points": 6192531,
+                    "robust_inlier_points": 6165340,
+                    "inlier_radius_p90_m": 1.2276133835926712,
+                    "reprojected_centroid_796x448": [
+                      354.0999696920633,
+                      232.0033411316833
+                    ],
+                    "camera_depth_m": 2.3505345379082185,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.46627730363324105,
+                  "closest_time_sec": -8.0
+                },
+                {
+                  "landmark_id": "left_work_counter",
+                  "display_name": "left work counter",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6690,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      5.0,
+                      260.0,
+                      180.0,
+                      410.0
+                    ],
+                    "selected_points": 1466159,
+                    "robust_inlier_points": 1340904,
+                    "inlier_radius_p90_m": 0.5721817009914272,
+                    "reprojected_centroid_796x448": [
+                      130.69516945645213,
+                      294.19015813071684
+                    ],
+                    "camera_depth_m": 1.1450784062698494,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.6567248651273696,
+                  "closest_time_sec": 9.5
+                },
+                {
+                  "landmark_id": "espresso_station",
+                  "display_name": "espresso station",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6690,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      620.0,
+                      210.0,
+                      790.0,
+                      430.0
+                    ],
+                    "selected_points": 137747,
+                    "robust_inlier_points": 109590,
+                    "inlier_radius_p90_m": 0.20242023389409147,
+                    "reprojected_centroid_796x448": [
+                      669.350255012708,
+                      315.73975283159916
+                    ],
+                    "camera_depth_m": 0.4272121233771634,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 1.9625511996873073,
+                  "closest_time_sec": 9.5
+                }
+              ],
+              "nearest_landmark_change": {
+                "start_landmark": "cooktop",
+                "end_landmark": "left_work_counter",
+                "changed": true,
+                "endpoint_run_length": 5,
+                "minimum_endpoint_margin_m": 0.08659293270605406,
+                "start_distance_m": 0.5214817379202409,
+                "end_distance_m": 0.7215679960210956,
+                "valid": false
+              },
+              "thresholds": {
+                "smoothing_radius": 2,
+                "side_dead_zone_m": 0.25,
+                "max_landmark_distance_m": 2.0,
+                "min_local_travel_m": 0.35,
+                "min_order_gap_sec": 2.0
+              }
+            },
+            "pass_event": {
+              "landmark_id": "espresso_station",
+              "display_name": "espresso station",
+              "center_world_m": [
+                -1.3530544999999998,
+                -0.198845,
+                -0.213498
+              ],
+              "static_scene_landmark": true,
+              "grounding": {
+                "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                "source_frame": 6690,
+                "source_camera": "cam04",
+                "box_xyxy_796x448": [
+                  620.0,
+                  210.0,
+                  790.0,
+                  430.0
+                ],
+                "selected_points": 137747,
+                "robust_inlier_points": 109590,
+                "inlier_radius_p90_m": 0.20242023389409147,
+                "reprojected_centroid_796x448": [
+                  669.350255012708,
+                  315.73975283159916
+                ],
+                "camera_depth_m": 0.4272121233771634,
+                "centroid_reprojects_inside_box": true,
+                "manual_static_review": true
+              },
+              "closest_index": 49,
+              "closest_frame": 13335,
+              "closest_time_sec": 9.5,
+              "closest_horizontal_distance_m": 1.9625511996873073,
+              "local_window_indices": [
+                45,
+                53
+              ],
+              "local_travel_m": 0.3820367125981664,
+              "signed_lateral_m": 1.7864364006762772,
+              "pass_side": "right",
+              "side_support_ratio": 1.0,
+              "valid_local_pass": true,
+              "visit_prominence_m": 0.049169730517995225,
+              "valid_visit": false
+            }
+          }
+        }
+      ],
+      "case_policy": "one temporal question per unique video window",
+      "video_clip": "./outputs/spatial/val_12_replacement_egg_whisk/task3_clip_frame13050_30s.mp4",
+      "video_window": {
+        "center_frame": 13050,
+        "fps": 30.0,
+        "start_sec": 420.0,
+        "duration_sec": 30.0,
+        "source_video": "data/egoexo4d/takes/uniandes_cooking_001_5/frame_aligned_videos/downscaled/448/cam04.mp4"
+      }
+    },
+    {
+      "name": "task3_sfu_cooking_010_3_frame6150_30s",
+      "title": "Task 3 · sfu_cooking_010_3 · local landmark pass side",
+      "original_image": "./outputs/qa/task3_media/sfu_cooking_010_3_cam04_frame6630_static_landmarks.jpg",
+      "topdown_image": "./outputs/qa/task3_media/task3_sfu_cooking_010_3_frame6150_30s_trajectory.svg",
+      "summary_path": "outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame6630/summary.json",
+      "raw_summary": {
+        "sample_count": 3,
+        "success_count": 3,
+        "filtered_count": 0,
+        "min_distance_m": 0.6,
+        "distance_definition": "Euclidean distance from pelvis midpoint to robust 3D object centroid in Ego-Exo4D world meters.",
+        "samples": [
+          {
+            "status": "ok",
+            "recognition_status": "eligible",
+            "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+            "take_name": "sfu_cooking_010_3",
+            "camera": "cam04",
+            "frame": 6150,
+            "object_id": "salt package_0",
+            "query": "Where is salt package relative to the person?",
+            "object_xyz_world_m": [
+              -1.170124,
+              -1.0389815,
+              -0.48759549999999996
+            ],
+            "human_frame": {
+              "origin": [
+                -0.6267489388367411,
+                -0.6666215406210363,
+                -0.5547365065328518
+              ],
+              "right": [
+                -0.4853345323434764,
+                0.8536272042755174,
+                -0.1891321967188641
+              ],
+              "up": [
+                -0.03380315991020506,
+                0.19783569035803913,
+                0.9796521760301681
+              ],
+              "forward": [
+                -0.8736748468938682,
+                -0.48185229660272666,
+                0.0671611953709411
+              ]
+            },
+            "human_xyz_m": {
+              "right": -0.0668364359675058,
+              "up": 0.010476537609054412,
+              "forward": 0.6586648952145626
+            },
+            "distance_m": 0.6621301316215138,
+            "horizontal_distance_m": 0.6620472440550215,
+            "lateral_relation": "same_lateral_position",
+            "longitudinal_relation": "front",
+            "vertical_relation": "same_height",
+            "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.66 m，右向分量 -0.07 m，高度差 0.01 m，直线距离 0.66 m",
+            "raw_relation_before_filter": {
+              "human_xyz_m": {
+                "right": -0.0668364359675058,
+                "up": 0.010476537609054412,
+                "forward": 0.6586648952145626
+              },
+              "distance_m": 0.6621301316215138,
+              "horizontal_distance_m": 0.6620472440550215,
+              "lateral_relation": "same_lateral_position",
+              "longitudinal_relation": "front",
+              "vertical_relation": "same_height",
+              "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.66 m，右向分量 -0.07 m，高度差 0.01 m，直线距离 0.66 m"
+            },
+            "distance_validation": {
+              "world_direct_m": 0.6621301316215138,
+              "human_components_m": 0.6621301316215138,
+              "agreement_residual_m": 0.0,
+              "agreement_pass": true,
+              "skeleton_scale": {
+                "shoulder_width_m": 0.3475823763637165,
+                "hip_width_m": 0.18128626752230362,
+                "torso_length_m": 0.5548871827586783,
+                "plausible": true
+              },
+              "validated": true
+            },
+            "quality": {
+              "mask_pixels": 19334,
+              "mask_source": "mask",
+              "points_in_mask": 80897,
+              "robust_inliers": 79820
+            },
+            "inputs": {
+              "point_cloud": "data/egoexo4d/takes/sfu_cooking_010_3/trajectory/semidense_points.csv.gz",
+              "camera_pose": "outputs/calibration/val_12/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json",
+              "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json"
+            }
+          }
+        ]
+      },
+      "static_landmark_audit": {
+        "source_summary": "outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame6630/summary.json",
+        "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+        "take_name": "sfu_cooking_010_3",
+        "camera": "cam04",
+        "frame": 6630,
+        "review_image": "outputs/qa/task3_media/sfu_cooking_010_3_cam04_frame6630_static_landmarks.jpg",
+        "landmark_count": 4,
+        "landmarks": [
+          {
+            "object_id": "left_cooking_counter",
+            "display_name": "left cooking counter",
+            "object_xyz_world_m": [
+              -1.056693,
+              -1.040612,
+              -0.4263895
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 6630,
+              "source_camera": "cam04",
+              "box_xyxy_796x448": [
+                190.0,
+                165.0,
+                310.0,
+                285.0
+              ],
+              "selected_points": 796863,
+              "robust_inlier_points": 774840,
+              "inlier_radius_p90_m": 0.6590179097163058,
+              "reprojected_centroid_796x448": [
+                273.8633644262083,
+                210.10193275504645
+              ],
+              "camera_depth_m": 1.6843291939983427,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "back_sink_counter",
+            "display_name": "back sink counter",
+            "object_xyz_world_m": [
+              -0.767703,
+              0.650621,
+              -0.510475
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 6630,
+              "source_camera": "cam04",
+              "box_xyxy_796x448": [
+                405.0,
+                165.0,
+                625.0,
+                245.0
+              ],
+              "selected_points": 984977,
+              "robust_inlier_points": 967095,
+              "inlier_radius_p90_m": 1.189604254742308,
+              "reprojected_centroid_796x448": [
+                471.9135922136361,
+                194.5535990003372
+              ],
+              "camera_depth_m": 2.511892608348733,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "dining_table",
+            "display_name": "dining table",
+            "object_xyz_world_m": [
+              0.4506295,
+              -0.210936,
+              -0.666377
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 6630,
+              "source_camera": "cam04",
+              "box_xyxy_796x448": [
+                500.0,
+                265.0,
+                790.0,
+                420.0
+              ],
+              "selected_points": 876034,
+              "robust_inlier_points": 811584,
+              "inlier_radius_p90_m": 0.5786018467721493,
+              "reprojected_centroid_796x448": [
+                591.4155728299473,
+                283.6183901230686
+              ],
+              "camera_depth_m": 1.112966811958978,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "refrigerator",
+            "display_name": "refrigerator",
+            "object_xyz_world_m": [
+              0.744429,
+              1.4142955000000001,
+              -0.346704
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 6630,
+              "source_camera": "cam04",
+              "box_xyxy_796x448": [
+                690.0,
+                80.0,
+                790.0,
+                245.0
+              ],
+              "selected_points": 143744,
+              "robust_inlier_points": 143742,
+              "inlier_radius_p90_m": 1.9074115789040715,
+              "reprojected_centroid_796x448": [
+                728.9521723905565,
+                177.28172550724878
+              ],
+              "camera_depth_m": 1.7929354602589567,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          }
+        ],
+        "point_cloud_scan": {
+          "scanned_points": 10441352,
+          "quality_points": 9612274,
+          "projected_points": 8182984
+        },
+        "status": "ok"
+      },
+      "clip_filename": "task3_clip_frame6150_30s.mp4",
+      "qa": [
+        {
+          "task_id": "task3_human_scene_topological_reasoning",
+          "task_name": "Task 3 · Human–Scene Topological Reasoning",
+          "question_type": "local_landmark_pass_side",
+          "question_categories": [
+            "local_path_side"
+          ],
+          "question": "As the person moves past the left cooking counter, which side of the person's local direction of travel is it on around closest approach?",
+          "options": [
+            {
+              "label": "A",
+              "text": "Around closest approach, the left cooking counter stays on the right side of the person's local travel direction."
+            },
+            {
+              "label": "B",
+              "text": "Around closest approach, the left cooking counter stays on the left side of the person's local travel direction."
+            },
+            {
+              "label": "C",
+              "text": "Around closest approach, the left cooking counter changes from the left side to the right side of the person's local travel direction."
+            },
+            {
+              "label": "D",
+              "text": "Around closest approach, the left cooking counter changes from the right side to the left side of the person's local travel direction."
+            }
+          ],
+          "correct_option": "B",
+          "correct_answer": "Around closest approach, the left cooking counter stays on the left side of the person's local travel direction.",
+          "answer": "Around closest approach, the left cooking counter stays on the left side of the person's local travel direction.",
+          "explanation": "The local-tangent signed offset is about 0.6 m to the left; the local trajectory covers about 0.4 m and keeps the same side around closest approach.",
+          "status": "ok",
+          "method": "Uses the full smoothed metric pelvis trajectory. Side is measured against the local path tangent at closest approach, not image left/right or the start-to-end chord.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "local_landmark_pass_side",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "topology": {
+              "status": "ok",
+              "coordinate_frame": "metric world trajectory projected onto the local horizontal plane",
+              "side_definition": "left/right uses the local smoothed path tangent at closest approach, not image coordinates or the start-end chord",
+              "trajectory_states": [
+                {
+                  "frame": 5700,
+                  "t": -15.0,
+                  "origin_world_m": [
+                    -0.5511311771347328,
+                    -0.4344770803219237,
+                    -0.5552486088410445
+                  ]
+                },
+                {
+                  "frame": 5715,
+                  "t": -14.5,
+                  "origin_world_m": [
+                    -0.5717878492051487,
+                    -0.46232762548006656,
+                    -0.5520337172162816
+                  ]
+                },
+                {
+                  "frame": 5730,
+                  "t": -14.0,
+                  "origin_world_m": [
+                    -0.5825539949828744,
+                    -0.4775598082438231,
+                    -0.5488392184471043
+                  ]
+                },
+                {
+                  "frame": 5745,
+                  "t": -13.5,
+                  "origin_world_m": [
+                    -0.6213366698177623,
+                    -0.5396339579069007,
+                    -0.5399773100362594
+                  ]
+                },
+                {
+                  "frame": 5760,
+                  "t": -13.0,
+                  "origin_world_m": [
+                    -0.6386587483331152,
+                    -0.5584037104472699,
+                    -0.5402362301957396
+                  ]
+                },
+                {
+                  "frame": 5775,
+                  "t": -12.5,
+                  "origin_world_m": [
+                    -0.6376282334082264,
+                    -0.557441609071361,
+                    -0.5367076328139424
+                  ]
+                },
+                {
+                  "frame": 5790,
+                  "t": -12.0,
+                  "origin_world_m": [
+                    -0.6237715541083999,
+                    -0.5172239509764148,
+                    -0.5400506341855891
+                  ]
+                },
+                {
+                  "frame": 5805,
+                  "t": -11.5,
+                  "origin_world_m": [
+                    -0.6448212526839383,
+                    -0.4114779589882069,
+                    -0.5451437621416624
+                  ]
+                },
+                {
+                  "frame": 5820,
+                  "t": -11.0,
+                  "origin_world_m": [
+                    -0.682084394257706,
+                    -0.24044697690192204,
+                    -0.5481908619127276
+                  ]
+                },
+                {
+                  "frame": 5835,
+                  "t": -10.5,
+                  "origin_world_m": [
+                    -0.6863567129008846,
+                    -0.037196336554288965,
+                    -0.5455363509146176
+                  ]
+                },
+                {
+                  "frame": 5850,
+                  "t": -10.0,
+                  "origin_world_m": [
+                    -0.7049551534759885,
+                    0.16023903604128004,
+                    -0.5480361864498835
+                  ]
+                },
+                {
+                  "frame": 5910,
+                  "t": -8.0,
+                  "origin_world_m": [
+                    -0.7283468128209865,
+                    0.31569107246099576,
+                    -0.5415330636013215
+                  ]
+                },
+                {
+                  "frame": 5925,
+                  "t": -7.5,
+                  "origin_world_m": [
+                    -0.7245810423133849,
+                    0.4101023194373948,
+                    -0.5350676153700389
+                  ]
+                },
+                {
+                  "frame": 5940,
+                  "t": -7.0,
+                  "origin_world_m": [
+                    -0.7058182497062614,
+                    0.4433603709009016,
+                    -0.5402328088233341
+                  ]
+                },
+                {
+                  "frame": 5955,
+                  "t": -6.5,
+                  "origin_world_m": [
+                    -0.721329263791058,
+                    0.39855676886699615,
+                    -0.554375464972747
+                  ]
+                },
+                {
+                  "frame": 5970,
+                  "t": -6.0,
+                  "origin_world_m": [
+                    -0.7756420889161476,
+                    0.31140251081167014,
+                    -0.5535799866082943
+                  ]
+                },
+                {
+                  "frame": 5985,
+                  "t": -5.5,
+                  "origin_world_m": [
+                    -0.86402534790593,
+                    0.2174229818442634,
+                    -0.5620225623111217
+                  ]
+                },
+                {
+                  "frame": 6000,
+                  "t": -5.0,
+                  "origin_world_m": [
+                    -0.9242186042587696,
+                    0.11101862296325282,
+                    -0.571325531165239
+                  ]
+                },
+                {
+                  "frame": 6015,
+                  "t": -4.5,
+                  "origin_world_m": [
+                    -0.9268056409438603,
+                    -0.018978771837385316,
+                    -0.563994536211788
+                  ]
+                },
+                {
+                  "frame": 6030,
+                  "t": -4.0,
+                  "origin_world_m": [
+                    -0.8950400769512171,
+                    -0.15735034577293883,
+                    -0.5510989474607149
+                  ]
+                },
+                {
+                  "frame": 6045,
+                  "t": -3.5,
+                  "origin_world_m": [
+                    -0.8211224470048979,
+                    -0.2715142472405946,
+                    -0.5593607759943973
+                  ]
+                },
+                {
+                  "frame": 6060,
+                  "t": -3.0,
+                  "origin_world_m": [
+                    -0.7129405372398685,
+                    -0.38928770740444063,
+                    -0.5581348445340154
+                  ]
+                },
+                {
+                  "frame": 6075,
+                  "t": -2.5,
+                  "origin_world_m": [
+                    -0.6256526068805248,
+                    -0.4954880820999252,
+                    -0.5520913071537468
+                  ]
+                },
+                {
+                  "frame": 6090,
+                  "t": -2.0,
+                  "origin_world_m": [
+                    -0.5874971416135709,
+                    -0.5750889694669465,
+                    -0.5521914787083441
+                  ]
+                },
+                {
+                  "frame": 6105,
+                  "t": -1.5,
+                  "origin_world_m": [
+                    -0.5834330051470394,
+                    -0.5981371270069783,
+                    -0.5526905223349688
+                  ]
+                },
+                {
+                  "frame": 6120,
+                  "t": -1.0,
+                  "origin_world_m": [
+                    -0.579244398041009,
+                    -0.6072902197188622,
+                    -0.5487129846975314
+                  ]
+                },
+                {
+                  "frame": 6135,
+                  "t": -0.5,
+                  "origin_world_m": [
+                    -0.5838035488229877,
+                    -0.6076937505859699,
+                    -0.5475085136436137
+                  ]
+                },
+                {
+                  "frame": 6150,
+                  "t": 0.0,
+                  "origin_world_m": [
+                    -0.5859167298072128,
+                    -0.6093118747447678,
+                    -0.552736312270355
+                  ]
+                },
+                {
+                  "frame": 6165,
+                  "t": 0.5,
+                  "origin_world_m": [
+                    -0.5919469245819352,
+                    -0.6145674953430318,
+                    -0.559642995793501
+                  ]
+                },
+                {
+                  "frame": 6180,
+                  "t": 1.0,
+                  "origin_world_m": [
+                    -0.5971288101156924,
+                    -0.6199040808139159,
+                    -0.5639144017579861
+                  ]
+                },
+                {
+                  "frame": 6195,
+                  "t": 1.5,
+                  "origin_world_m": [
+                    -0.600668090745349,
+                    -0.6236626233103216,
+                    -0.5671797824867275
+                  ]
+                },
+                {
+                  "frame": 6210,
+                  "t": 2.0,
+                  "origin_world_m": [
+                    -0.597792881394579,
+                    -0.6189060273726754,
+                    -0.565649203423119
+                  ]
+                },
+                {
+                  "frame": 6225,
+                  "t": 2.5,
+                  "origin_world_m": [
+                    -0.5998045545381476,
+                    -0.6235987895665455,
+                    -0.5620401126503504
+                  ]
+                },
+                {
+                  "frame": 6240,
+                  "t": 3.0,
+                  "origin_world_m": [
+                    -0.602250448908382,
+                    -0.623805017246772,
+                    -0.5584753472529874
+                  ]
+                },
+                {
+                  "frame": 6255,
+                  "t": 3.5,
+                  "origin_world_m": [
+                    -0.5995257172288487,
+                    -0.6205433429611636,
+                    -0.555392191298732
+                  ]
+                },
+                {
+                  "frame": 6270,
+                  "t": 4.0,
+                  "origin_world_m": [
+                    -0.5995946159602281,
+                    -0.6222992125037715,
+                    -0.5534328965288554
+                  ]
+                },
+                {
+                  "frame": 6285,
+                  "t": 4.5,
+                  "origin_world_m": [
+                    -0.5918510846789709,
+                    -0.6262625787505355,
+                    -0.5503326101312457
+                  ]
+                },
+                {
+                  "frame": 6300,
+                  "t": 5.0,
+                  "origin_world_m": [
+                    -0.601982388272214,
+                    -0.619634300471912,
+                    -0.5479809201161032
+                  ]
+                },
+                {
+                  "frame": 6315,
+                  "t": 5.5,
+                  "origin_world_m": [
+                    -0.6074655354739766,
+                    -0.6147282251800497,
+                    -0.5425864478875612
+                  ]
+                },
+                {
+                  "frame": 6330,
+                  "t": 6.0,
+                  "origin_world_m": [
+                    -0.6073244994606849,
+                    -0.6110432782838275,
+                    -0.5414287053634238
+                  ]
+                },
+                {
+                  "frame": 6345,
+                  "t": 6.5,
+                  "origin_world_m": [
+                    -0.605167146149677,
+                    -0.6073020283609456,
+                    -0.5395934997539751
+                  ]
+                },
+                {
+                  "frame": 6360,
+                  "t": 7.0,
+                  "origin_world_m": [
+                    -0.6027786245324258,
+                    -0.6004262852060607,
+                    -0.53740619597013
+                  ]
+                },
+                {
+                  "frame": 6375,
+                  "t": 7.5,
+                  "origin_world_m": [
+                    -0.6005350333464203,
+                    -0.5937802508946383,
+                    -0.542034868466278
+                  ]
+                },
+                {
+                  "frame": 6390,
+                  "t": 8.0,
+                  "origin_world_m": [
+                    -0.6464570344403328,
+                    -0.5410777334542477,
+                    -0.5446402592649902
+                  ]
+                },
+                {
+                  "frame": 6405,
+                  "t": 8.5,
+                  "origin_world_m": [
+                    -0.7165556468533658,
+                    -0.4758072389140926,
+                    -0.5393870994867962
+                  ]
+                },
+                {
+                  "frame": 6420,
+                  "t": 9.0,
+                  "origin_world_m": [
+                    -0.7929157151978213,
+                    -0.408056504642727,
+                    -0.5424440304002239
+                  ]
+                },
+                {
+                  "frame": 6435,
+                  "t": 9.5,
+                  "origin_world_m": [
+                    -0.8345049648381121,
+                    -0.3818977725445996,
+                    -0.5554111778869931
+                  ]
+                },
+                {
+                  "frame": 6450,
+                  "t": 10.0,
+                  "origin_world_m": [
+                    -0.8338169689535098,
+                    -0.3811731856498078,
+                    -0.5547852439156553
+                  ]
+                },
+                {
+                  "frame": 6465,
+                  "t": 10.5,
+                  "origin_world_m": [
+                    -0.7967059227272435,
+                    -0.4393328472132675,
+                    -0.557691463773379
+                  ]
+                },
+                {
+                  "frame": 6480,
+                  "t": 11.0,
+                  "origin_world_m": [
+                    -0.738139530455127,
+                    -0.520772440294966,
+                    -0.5656488244514944
+                  ]
+                },
+                {
+                  "frame": 6495,
+                  "t": 11.5,
+                  "origin_world_m": [
+                    -0.6628580907522441,
+                    -0.6028526117950976,
+                    -0.5641547352515343
+                  ]
+                },
+                {
+                  "frame": 6510,
+                  "t": 12.0,
+                  "origin_world_m": [
+                    -0.6331639237037479,
+                    -0.6425308212932312,
+                    -0.5575526795290784
+                  ]
+                },
+                {
+                  "frame": 6525,
+                  "t": 12.5,
+                  "origin_world_m": [
+                    -0.6264617715838139,
+                    -0.6602835934611837,
+                    -0.5570977186502988
+                  ]
+                },
+                {
+                  "frame": 6540,
+                  "t": 13.0,
+                  "origin_world_m": [
+                    -0.6127992863180356,
+                    -0.6641456894405565,
+                    -0.5557239586502928
+                  ]
+                },
+                {
+                  "frame": 6555,
+                  "t": 13.5,
+                  "origin_world_m": [
+                    -0.6014577838919362,
+                    -0.6589246158878189,
+                    -0.5537048629162163
+                  ]
+                },
+                {
+                  "frame": 6570,
+                  "t": 14.0,
+                  "origin_world_m": [
+                    -0.600493436166625,
+                    -0.6544470522663672,
+                    -0.5518439891638856
+                  ]
+                },
+                {
+                  "frame": 6585,
+                  "t": 14.5,
+                  "origin_world_m": [
+                    -0.600698203361158,
+                    -0.653667337546913,
+                    -0.5512090080807804
+                  ]
+                },
+                {
+                  "frame": 6600,
+                  "t": 15.0,
+                  "origin_world_m": [
+                    -0.6010386241304048,
+                    -0.6545398475501502,
+                    -0.548421758511742
+                  ]
+                }
+              ],
+              "trajectory_state_count": 58,
+              "temporal_span_sec": 30.0,
+              "path_length_m": 3.1874350085486007,
+              "net_displacement_m": 0.22574773031576204,
+              "max_smoothed_speed_mps": 0.40653450056945545,
+              "reference_up_world_unit": [
+                0.12249366655206156,
+                0.01080231977795277,
+                0.9924105055580817
+              ],
+              "landmarks": [
+                {
+                  "landmark_id": "left_cooking_counter",
+                  "display_name": "left cooking counter",
+                  "center_world_m": [
+                    -1.056693,
+                    -1.040612,
+                    -0.4263895
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      190.0,
+                      165.0,
+                      310.0,
+                      285.0
+                    ],
+                    "selected_points": 796863,
+                    "robust_inlier_points": 774840,
+                    "inlier_radius_p90_m": 0.6590179097163058,
+                    "reprojected_centroid_796x448": [
+                      273.8633644262083,
+                      210.10193275504645
+                    ],
+                    "camera_depth_m": 1.6843291939983427,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 52,
+                  "closest_frame": 6525,
+                  "closest_time_sec": 12.5,
+                  "closest_horizontal_distance_m": 0.584395232957255,
+                  "local_window_indices": [
+                    47,
+                    57
+                  ],
+                  "local_travel_m": 0.35768631488073843,
+                  "signed_lateral_m": -0.5843589776035721,
+                  "pass_side": "left",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": true,
+                  "visit_prominence_m": 0.02209362228195222,
+                  "valid_visit": false
+                },
+                {
+                  "landmark_id": "back_sink_counter",
+                  "display_name": "back sink counter",
+                  "center_world_m": [
+                    -0.767703,
+                    0.650621,
+                    -0.510475
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      405.0,
+                      165.0,
+                      625.0,
+                      245.0
+                    ],
+                    "selected_points": 984977,
+                    "robust_inlier_points": 967095,
+                    "inlier_radius_p90_m": 1.189604254742308,
+                    "reprojected_centroid_796x448": [
+                      471.9135922136361,
+                      194.5535990003372
+                    ],
+                    "camera_depth_m": 2.511892608348733,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 13,
+                  "closest_frame": 5940,
+                  "closest_time_sec": -7.0,
+                  "closest_horizontal_distance_m": 0.216995493014936,
+                  "local_window_indices": [
+                    7,
+                    19
+                  ],
+                  "local_travel_m": 0.3550807105235506,
+                  "signed_lateral_m": -0.09771781715359697,
+                  "pass_side": "near_centerline",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": false,
+                  "visit_prominence_m": 0.8900131488202832,
+                  "valid_visit": true
+                },
+                {
+                  "landmark_id": "dining_table",
+                  "display_name": "dining table",
+                  "center_world_m": [
+                    0.4506295,
+                    -0.210936,
+                    -0.666377
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      500.0,
+                      265.0,
+                      790.0,
+                      420.0
+                    ],
+                    "selected_points": 876034,
+                    "robust_inlier_points": 811584,
+                    "inlier_radius_p90_m": 0.5786018467721493,
+                    "reprojected_centroid_796x448": [
+                      591.4155728299473,
+                      283.6183901230686
+                    ],
+                    "camera_depth_m": 1.112966811958978,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 0,
+                  "closest_frame": 5700,
+                  "closest_time_sec": -15.0,
+                  "closest_horizontal_distance_m": 1.0322908450390667,
+                  "local_window_indices": [
+                    0,
+                    9
+                  ],
+                  "local_travel_m": 0.41976817886501155,
+                  "signed_lateral_m": -1.0260186285284951,
+                  "pass_side": "left",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": false,
+                  "visit_prominence_m": 0.0,
+                  "valid_visit": false
+                },
+                {
+                  "landmark_id": "refrigerator",
+                  "display_name": "refrigerator",
+                  "center_world_m": [
+                    0.744429,
+                    1.4142955000000001,
+                    -0.346704
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      690.0,
+                      80.0,
+                      790.0,
+                      245.0
+                    ],
+                    "selected_points": 143744,
+                    "robust_inlier_points": 143742,
+                    "inlier_radius_p90_m": 1.9074115789040715,
+                    "reprojected_centroid_796x448": [
+                      728.9521723905565,
+                      177.28172550724878
+                    ],
+                    "camera_depth_m": 1.7929354602589567,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 13,
+                  "closest_frame": 5940,
+                  "closest_time_sec": -7.0,
+                  "closest_horizontal_distance_m": 1.7143038438714275,
+                  "local_window_indices": [
+                    7,
+                    19
+                  ],
+                  "local_travel_m": 0.3550807105235506,
+                  "signed_lateral_m": -1.6888857463247275,
+                  "pass_side": "left",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": true,
+                  "visit_prominence_m": 0.5197990988917556,
+                  "valid_visit": true
+                }
+              ],
+              "valid_pass_landmarks": [
+                "left_cooking_counter",
+                "refrigerator"
+              ],
+              "valid_visit_landmarks": [
+                "back_sink_counter",
+                "refrigerator"
+              ],
+              "order_pairs": [],
+              "proximity_order_pairs": [
+                {
+                  "first_landmark": "dining_table",
+                  "second_landmark": "left_cooking_counter",
+                  "first_time_sec": -15.0,
+                  "second_time_sec": 12.5,
+                  "time_gap_sec": 27.5,
+                  "center_separation_m": 1.7366609442230363,
+                  "max_closest_distance_m": 1.0322908450390667
+                },
+                {
+                  "first_landmark": "back_sink_counter",
+                  "second_landmark": "left_cooking_counter",
+                  "first_time_sec": -7.0,
+                  "second_time_sec": 12.5,
+                  "time_gap_sec": 19.5,
+                  "center_separation_m": 1.7175470543050848,
+                  "max_closest_distance_m": 0.584395232957255
+                },
+                {
+                  "first_landmark": "refrigerator",
+                  "second_landmark": "left_cooking_counter",
+                  "first_time_sec": -7.0,
+                  "second_time_sec": 12.5,
+                  "time_gap_sec": 19.5,
+                  "center_separation_m": 3.0282896195759776,
+                  "max_closest_distance_m": 1.7143038438714275
+                },
+                {
+                  "first_landmark": "dining_table",
+                  "second_landmark": "back_sink_counter",
+                  "first_time_sec": -15.0,
+                  "second_time_sec": -7.0,
+                  "time_gap_sec": 8.0,
+                  "center_separation_m": 1.5002337503976384,
+                  "max_closest_distance_m": 1.0322908450390667
+                },
+                {
+                  "first_landmark": "dining_table",
+                  "second_landmark": "refrigerator",
+                  "first_time_sec": -15.0,
+                  "second_time_sec": -7.0,
+                  "time_gap_sec": 8.0,
+                  "center_separation_m": 1.6408534129943657,
+                  "max_closest_distance_m": 1.7143038438714275
+                }
+              ],
+              "flank_pairs": [],
+              "nearest_landmark_states": [
+                {
+                  "frame": 5700,
+                  "t": -15.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.7975386962781373,
+                  "runner_up_margin_m": 0.2347521487609293
+                },
+                {
+                  "frame": 5715,
+                  "t": -14.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.7627882144446316,
+                  "runner_up_margin_m": 0.2961734030792478
+                },
+                {
+                  "frame": 5730,
+                  "t": -14.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.7440023083531191,
+                  "runner_up_margin_m": 0.32940714857777253
+                },
+                {
+                  "frame": 5745,
+                  "t": -13.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.671194365698568,
+                  "runner_up_margin_m": 0.4570972515446433
+                },
+                {
+                  "frame": 5760,
+                  "t": -13.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6457853380213203,
+                  "runner_up_margin_m": 0.5044538409837325
+                },
+                {
+                  "frame": 5775,
+                  "t": -12.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6468674863588049,
+                  "runner_up_margin_m": 0.5025302884721348
+                },
+                {
+                  "frame": 5790,
+                  "t": -12.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6865467905638962,
+                  "runner_up_margin_m": 0.4377383663393155
+                },
+                {
+                  "frame": 5805,
+                  "t": -11.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.7588659720585312,
+                  "runner_up_margin_m": 0.3104355616409048
+                },
+                {
+                  "frame": 5820,
+                  "t": -11.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.8893983552621195,
+                  "runner_up_margin_m": 0.00582116564791102
+                },
+                {
+                  "frame": 5835,
+                  "t": -10.5,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.6927470255657474,
+                  "runner_up_margin_m": 0.38165468200409103
+                },
+                {
+                  "frame": 5850,
+                  "t": -10.0,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.4945760722708748,
+                  "runner_up_margin_m": 0.7247464255274685
+                },
+                {
+                  "frame": 5910,
+                  "t": -8.0,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.3373636839479557,
+                  "runner_up_margin_m": 0.9598206679246213
+                },
+                {
+                  "frame": 5925,
+                  "t": -7.5,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.2446256159831569,
+                  "runner_up_margin_m": 1.0910399416420642
+                },
+                {
+                  "frame": 5940,
+                  "t": -7.0,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.216995493014936,
+                  "runner_up_margin_m": 1.1176576766738242
+                },
+                {
+                  "frame": 5955,
+                  "t": -6.5,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.2568365343646516,
+                  "runner_up_margin_m": 1.068624269594586
+                },
+                {
+                  "frame": 5970,
+                  "t": -6.0,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.33873603423012727,
+                  "runner_up_margin_m": 0.9985141923919403
+                },
+                {
+                  "frame": 5985,
+                  "t": -5.5,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.44161205553322347,
+                  "runner_up_margin_m": 0.8345853407721826
+                },
+                {
+                  "frame": 6000,
+                  "t": -5.0,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.558640513265567,
+                  "runner_up_margin_m": 0.6039192619158833
+                },
+                {
+                  "frame": 6015,
+                  "t": -4.5,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.6856880595964054,
+                  "runner_up_margin_m": 0.34752296969939556
+                },
+                {
+                  "frame": 6030,
+                  "t": -4.0,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.8163970833313823,
+                  "runner_up_margin_m": 0.08522372581591076
+                },
+                {
+                  "frame": 6045,
+                  "t": -3.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.8097527459788596,
+                  "runner_up_margin_m": 0.11293318924060136
+                },
+                {
+                  "frame": 6060,
+                  "t": -3.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.7436982012315648,
+                  "runner_up_margin_m": 0.2974525239227931
+                },
+                {
+                  "frame": 6075,
+                  "t": -2.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.7031308532032317,
+                  "runner_up_margin_m": 0.41577589946260574
+                },
+                {
+                  "frame": 6090,
+                  "t": -2.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6699221520733887,
+                  "runner_up_margin_m": 0.4359876812422041
+                },
+                {
+                  "frame": 6105,
+                  "t": -1.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6571098131677672,
+                  "runner_up_margin_m": 0.45275940770455236
+                },
+                {
+                  "frame": 6120,
+                  "t": -1.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6536797824329796,
+                  "runner_up_margin_m": 0.456002622901023
+                },
+                {
+                  "frame": 6135,
+                  "t": -0.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.649919233830694,
+                  "runner_up_margin_m": 0.46427480380554975
+                },
+                {
+                  "frame": 6150,
+                  "t": 0.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6477938153577985,
+                  "runner_up_margin_m": 0.46831708673636596
+                },
+                {
+                  "frame": 6165,
+                  "t": 0.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6405148082879638,
+                  "runner_up_margin_m": 0.4822463240727687
+                },
+                {
+                  "frame": 6180,
+                  "t": 1.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6335500440245924,
+                  "runner_up_margin_m": 0.49542524196688065
+                },
+                {
+                  "frame": 6195,
+                  "t": 1.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6287525586679631,
+                  "runner_up_margin_m": 0.5044727236435461
+                },
+                {
+                  "frame": 6210,
+                  "t": 2.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6338945709289641,
+                  "runner_up_margin_m": 0.49512923926423436
+                },
+                {
+                  "frame": 6225,
+                  "t": 2.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6289275553794533,
+                  "runner_up_margin_m": 0.5040831424259951
+                },
+                {
+                  "frame": 6240,
+                  "t": 3.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6266289879300521,
+                  "runner_up_margin_m": 0.5091375127801835
+                },
+                {
+                  "frame": 6255,
+                  "t": 3.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6305132515738756,
+                  "runner_up_margin_m": 0.5019162059138271
+                },
+                {
+                  "frame": 6270,
+                  "t": 4.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6290987827741312,
+                  "runner_up_margin_m": 0.5042615523030811
+                },
+                {
+                  "frame": 6285,
+                  "t": 4.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6319275820712208,
+                  "runner_up_margin_m": 0.49609659917350746
+                },
+                {
+                  "frame": 6300,
+                  "t": 5.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6285838303163869,
+                  "runner_up_margin_m": 0.5066660618798806
+                },
+                {
+                  "frame": 6315,
+                  "t": 5.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6273619298781561,
+                  "runner_up_margin_m": 0.5118543331990113
+                },
+                {
+                  "frame": 6330,
+                  "t": 6.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6298628242131424,
+                  "runner_up_margin_m": 0.5080590857423081
+                },
+                {
+                  "frame": 6345,
+                  "t": 6.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6338037746667776,
+                  "runner_up_margin_m": 0.5010204306753051
+                },
+                {
+                  "frame": 6360,
+                  "t": 7.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.640034881858565,
+                  "runner_up_margin_m": 0.490441677764593
+                },
+                {
+                  "frame": 6375,
+                  "t": 7.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6466758034319243,
+                  "runner_up_margin_m": 0.4788850999050779
+                },
+                {
+                  "frame": 6390,
+                  "t": 8.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6542198864937043,
+                  "runner_up_margin_m": 0.49778640489772075
+                },
+                {
+                  "frame": 6405,
+                  "t": 8.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6658245007597066,
+                  "runner_up_margin_m": 0.4616042957702464
+                },
+                {
+                  "frame": 6420,
+                  "t": 9.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6909363656212458,
+                  "runner_up_margin_m": 0.36751373064783255
+                },
+                {
+                  "frame": 6435,
+                  "t": 9.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.7008116353533894,
+                  "runner_up_margin_m": 0.3328660393049051
+                },
+                {
+                  "frame": 6450,
+                  "t": 10.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.7016910403711631,
+                  "runner_up_margin_m": 0.3312354561166899
+                },
+                {
+                  "frame": 6465,
+                  "t": 10.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.661749821405064,
+                  "runner_up_margin_m": 0.4278386336159795
+                },
+                {
+                  "frame": 6480,
+                  "t": 11.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6183429580463755,
+                  "runner_up_margin_m": 0.5529861566541288
+                },
+                {
+                  "frame": 6495,
+                  "t": 11.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.5989195731784063,
+                  "runner_up_margin_m": 0.5852963620525578
+                },
+                {
+                  "frame": 6510,
+                  "t": 12.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.5912487424521207,
+                  "runner_up_margin_m": 0.58001526445561
+                },
+                {
+                  "frame": 6525,
+                  "t": 12.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.584395232957255,
+                  "runner_up_margin_m": 0.5874313834990612
+                },
+                {
+                  "frame": 6540,
+                  "t": 13.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.5921218006762452,
+                  "runner_up_margin_m": 0.5688611853559753
+                },
+                {
+                  "frame": 6555,
+                  "t": 13.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6039174533259987,
+                  "runner_up_margin_m": 0.5449067342595749
+                },
+                {
+                  "frame": 6570,
+                  "t": 14.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6073108949252222,
+                  "runner_up_margin_m": 0.5391113457093992
+                },
+                {
+                  "frame": 6585,
+                  "t": 14.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6075872978290059,
+                  "runner_up_margin_m": 0.5387954159873124
+                },
+                {
+                  "frame": 6600,
+                  "t": 15.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6064888552392073,
+                  "runner_up_margin_m": 0.5408688050451776
+                }
+              ],
+              "route_landmark_ranking": [
+                {
+                  "landmark_id": "back_sink_counter",
+                  "display_name": "back sink counter",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      405.0,
+                      165.0,
+                      625.0,
+                      245.0
+                    ],
+                    "selected_points": 984977,
+                    "robust_inlier_points": 967095,
+                    "inlier_radius_p90_m": 1.189604254742308,
+                    "reprojected_centroid_796x448": [
+                      471.9135922136361,
+                      194.5535990003372
+                    ],
+                    "camera_depth_m": 2.511892608348733,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.216995493014936,
+                  "closest_time_sec": -7.0
+                },
+                {
+                  "landmark_id": "left_cooking_counter",
+                  "display_name": "left cooking counter",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      190.0,
+                      165.0,
+                      310.0,
+                      285.0
+                    ],
+                    "selected_points": 796863,
+                    "robust_inlier_points": 774840,
+                    "inlier_radius_p90_m": 0.6590179097163058,
+                    "reprojected_centroid_796x448": [
+                      273.8633644262083,
+                      210.10193275504645
+                    ],
+                    "camera_depth_m": 1.6843291939983427,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.584395232957255,
+                  "closest_time_sec": 12.5
+                },
+                {
+                  "landmark_id": "dining_table",
+                  "display_name": "dining table",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      500.0,
+                      265.0,
+                      790.0,
+                      420.0
+                    ],
+                    "selected_points": 876034,
+                    "robust_inlier_points": 811584,
+                    "inlier_radius_p90_m": 0.5786018467721493,
+                    "reprojected_centroid_796x448": [
+                      591.4155728299473,
+                      283.6183901230686
+                    ],
+                    "camera_depth_m": 1.112966811958978,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 1.0322908450390667,
+                  "closest_time_sec": -15.0
+                },
+                {
+                  "landmark_id": "refrigerator",
+                  "display_name": "refrigerator",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      690.0,
+                      80.0,
+                      790.0,
+                      245.0
+                    ],
+                    "selected_points": 143744,
+                    "robust_inlier_points": 143742,
+                    "inlier_radius_p90_m": 1.9074115789040715,
+                    "reprojected_centroid_796x448": [
+                      728.9521723905565,
+                      177.28172550724878
+                    ],
+                    "camera_depth_m": 1.7929354602589567,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 1.7143038438714275,
+                  "closest_time_sec": -7.0
+                }
+              ],
+              "nearest_landmark_change": {
+                "start_landmark": "left_cooking_counter",
+                "end_landmark": "left_cooking_counter",
+                "changed": false,
+                "endpoint_run_length": 5,
+                "minimum_endpoint_margin_m": 0.2347521487609293,
+                "start_distance_m": 0.7975386962781373,
+                "end_distance_m": 0.6064888552392073,
+                "valid": false
+              },
+              "thresholds": {
+                "smoothing_radius": 2,
+                "side_dead_zone_m": 0.25,
+                "max_landmark_distance_m": 2.0,
+                "min_local_travel_m": 0.35,
+                "min_order_gap_sec": 2.0
+              }
+            },
+            "pass_event": {
+              "landmark_id": "left_cooking_counter",
+              "display_name": "left cooking counter",
+              "center_world_m": [
+                -1.056693,
+                -1.040612,
+                -0.4263895
+              ],
+              "static_scene_landmark": true,
+              "grounding": {
+                "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                "source_frame": 6630,
+                "source_camera": "cam04",
+                "box_xyxy_796x448": [
+                  190.0,
+                  165.0,
+                  310.0,
+                  285.0
+                ],
+                "selected_points": 796863,
+                "robust_inlier_points": 774840,
+                "inlier_radius_p90_m": 0.6590179097163058,
+                "reprojected_centroid_796x448": [
+                  273.8633644262083,
+                  210.10193275504645
+                ],
+                "camera_depth_m": 1.6843291939983427,
+                "centroid_reprojects_inside_box": true,
+                "manual_static_review": true
+              },
+              "closest_index": 52,
+              "closest_frame": 6525,
+              "closest_time_sec": 12.5,
+              "closest_horizontal_distance_m": 0.584395232957255,
+              "local_window_indices": [
+                47,
+                57
+              ],
+              "local_travel_m": 0.35768631488073843,
+              "signed_lateral_m": -0.5843589776035721,
+              "pass_side": "left",
+              "side_support_ratio": 1.0,
+              "valid_local_pass": true,
+              "visit_prominence_m": 0.02209362228195222,
+              "valid_visit": false
+            }
+          }
+        }
+      ],
+      "case_policy": "one temporal question per unique video window",
+      "video_clip": "./outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame6630/task3_clip_frame6150_30s.mp4",
+      "video_window": {
+        "center_frame": 6150,
+        "fps": 30.0,
+        "start_sec": 190.0,
+        "duration_sec": 30.0,
+        "source_video": "data/egoexo4d/takes/sfu_cooking_010_3/frame_aligned_videos/downscaled/448/cam04.mp4"
+      }
+    },
+    {
+      "name": "task3_sfu_cooking_010_1_frame2177_30s",
+      "title": "Task 3 · sfu_cooking_010_1 · landmark closest approach order",
+      "original_image": "./outputs/qa/task3_media/sfu_cooking_010_1_cam05_frame5460_static_landmarks.jpg",
+      "topdown_image": "./outputs/qa/task3_media/task3_sfu_cooking_010_1_frame2177_30s_trajectory.svg",
+      "summary_path": "outputs/spatial/showcase_multi/sfu0101_cam05_5460/summary.json",
+      "raw_summary": {
+        "sample_count": 3,
+        "success_count": 3,
+        "filtered_count": 0,
+        "error_count": 0,
+        "samples": [
+          {
+            "status": "ok",
+            "recognition_status": "eligible",
+            "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+            "take_name": "sfu_cooking_010_1",
+            "frame": 2177,
+            "camera": "cam05",
+            "object_id": "white plate_0",
+            "object_xyz_world_m": [
+              -1.019257,
+              -1.322883,
+              -0.382841
+            ],
+            "human_frame": {
+              "origin": [
+                0.6686041384402486,
+                1.022238987152698,
+                -0.5450151216933183
+              ],
+              "right": [
+                0.7282066520927877,
+                0.6666809360279216,
+                0.15890752463224575
+              ],
+              "up": [
+                -0.07471773057741757,
+                -0.15325304371542675,
+                0.9853581913848982
+              ],
+              "forward": [
+                -0.6812725831744397,
+                0.7294175992727977,
+                0.061786999327805764
+              ]
+            },
+            "orientation": {
+              "forward_sign": 1,
+              "source": "nose"
+            },
+            "distance_policy": {
+              "min_distance_m": 0.6
+            },
+            "distance_validation": {
+              "world_direct_m": 2.893919971773724,
+              "human_components_m": 2.893919971773723,
+              "agreement_residual_m": 8.881784197001252e-16,
+              "agreement_pass": true,
+              "skeleton_scale": {
+                "shoulder_width_m": 0.31854478112521817,
+                "hip_width_m": 0.3076159077765986,
+                "torso_length_m": 0.5712469051331494,
+                "plausible": true
+              },
+              "validated": true
+            },
+            "human_xyz_m": {
+              "right": -2.7667891420780206,
+              "up": 0.6453098354503553,
+              "forward": -0.5506594796977824
+            },
+            "distance_m": 2.893919971773723,
+            "horizontal_distance_m": 2.8210544162248734,
+            "lateral_relation": "left",
+            "longitudinal_relation": "behind",
+            "vertical_relation": "above",
+            "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.55 m，右向分量 -2.77 m，高度差 0.65 m，直线距离 2.89 m",
+            "quality": {
+              "mask_pixels": 33520,
+              "point_cloud_scanned": 10441352,
+              "point_cloud_quality": 9612274,
+              "point_cloud_in_image": 6488306,
+              "points_in_mask": 57246,
+              "robust_inliers": 56459,
+              "max_point_dist_std_m": 0.1,
+              "pose_reprojection": {
+                "joint_count": 17,
+                "positive_depth_joint_count": 17,
+                "median_px": 2.2737367544323206e-13,
+                "mean_px": 2.2911884728987866e-13,
+                "max_px": 8.527696984786813e-13
+              }
+            },
+            "inputs": {
+              "point_cloud": "data/egoexo4d/takes/sfu_cooking_010_1/trajectory/semidense_points.csv.gz",
+              "camera_pose": "data/egoexo4d/annotations/ego_pose/val/camera_pose/e2b190bb-f8b2-43a7-b2da-b80f3708dcf3.json",
+              "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/e2b190bb-f8b2-43a7-b2da-b80f3708dcf3.json"
+            },
+            "output_path": "outputs/spatial/showcase_multi/sfu0101_cam05_5460/sfu_cooking_010_1_frame5460_white plate_0.json"
+          }
+        ]
+      },
+      "static_landmark_audit": {
+        "source_summary": "outputs/spatial/showcase_multi/sfu0101_cam05_5460/summary.json",
+        "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+        "take_name": "sfu_cooking_010_1",
+        "camera": "cam05",
+        "frame": 5460,
+        "review_image": "outputs/qa/task3_media/sfu_cooking_010_1_cam05_frame5460_static_landmarks.jpg",
+        "landmark_count": 3,
+        "landmarks": [
+          {
+            "object_id": "dining_table",
+            "display_name": "dining table",
+            "object_xyz_world_m": [
+              0.264917,
+              -0.130903,
+              -0.653973
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 5460,
+              "source_camera": "cam05",
+              "box_xyxy_796x448": [
+                75.0,
+                120.0,
+                300.0,
+                210.0
+              ],
+              "selected_points": 1708738,
+              "robust_inlier_points": 1601675,
+              "inlier_radius_p90_m": 0.5563813934782695,
+              "reprojected_centroid_796x448": [
+                247.0011573984074,
+                168.9009139193457
+              ],
+              "camera_depth_m": 1.7911909715175485,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "front_chair",
+            "display_name": "front chair",
+            "object_xyz_world_m": [
+              -1.079661,
+              0.323904,
+              -0.561712
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 5460,
+              "source_camera": "cam05",
+              "box_xyxy_796x448": [
+                80.0,
+                285.0,
+                195.0,
+                390.0
+              ],
+              "selected_points": 26629,
+              "robust_inlier_points": 21502,
+              "inlier_radius_p90_m": 0.4776713539410126,
+              "reprojected_centroid_796x448": [
+                121.59092991782013,
+                358.8817735968767
+              ],
+              "camera_depth_m": 0.6139889579812622,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "cooking_range",
+            "display_name": "cooking range",
+            "object_xyz_world_m": [
+              -1.410746,
+              -0.47671699999999995,
+              -0.8939555
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 5460,
+              "source_camera": "cam05",
+              "box_xyxy_796x448": [
+                370.0,
+                300.0,
+                655.0,
+                435.0
+              ],
+              "selected_points": 211283,
+              "robust_inlier_points": 205808,
+              "inlier_radius_p90_m": 0.7862011289573339,
+              "reprojected_centroid_796x448": [
+                448.16788577984755,
+                362.20503306529616
+              ],
+              "camera_depth_m": 0.9614767676329894,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          }
+        ],
+        "point_cloud_scan": {
+          "scanned_points": 10441352,
+          "quality_points": 9612274,
+          "projected_points": 6487713
+        },
+        "status": "ok"
+      },
+      "clip_filename": "task3_clip_frame2177_30s.mp4",
+      "qa": [
+        {
+          "task_id": "task3_human_scene_topological_reasoning",
+          "task_name": "Task 3 · Human–Scene Topological Reasoning",
+          "question_type": "landmark_closest_approach_order",
+          "question_categories": [
+            "temporal_landmark_order"
+          ],
+          "question": "During the clip, in what order does the person's trajectory reach its closest points to the cooking range and the dining table?",
+          "options": [
+            {
+              "label": "A",
+              "text": "The person reaches the closest point to the dining table first and to the cooking range later."
+            },
+            {
+              "label": "B",
+              "text": "The person reaches the closest points to the cooking range and the dining table at the same time."
+            },
+            {
+              "label": "C",
+              "text": "The person reaches the closest point to the cooking range first and to the dining table later."
+            },
+            {
+              "label": "D",
+              "text": "The person reaches no distinct closest point to either the cooking range or the dining table during the clip."
+            }
+          ],
+          "correct_option": "C",
+          "correct_answer": "The person reaches the closest point to the cooking range first and to the dining table later.",
+          "answer": "The person reaches the closest point to the cooking range first and to the dining table later.",
+          "explanation": "The two closest-approach times are separated by about 18.5 seconds, with the cooking range occurring first.",
+          "status": "ok",
+          "method": "Computes each landmark's minimum horizontal distance to every state of the full smoothed metric trajectory, then compares the associated times.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "landmark_closest_approach_order",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "topology": {
+              "status": "ok",
+              "coordinate_frame": "metric world trajectory projected onto the local horizontal plane",
+              "side_definition": "left/right uses the local smoothed path tangent at closest approach, not image coordinates or the start-end chord",
+              "trajectory_states": [
+                {
+                  "frame": 1727,
+                  "t": -15.0,
+                  "origin_world_m": [
+                    -0.48565427897622415,
+                    -0.49687178684323924,
+                    -0.5351436804602624
+                  ]
+                },
+                {
+                  "frame": 1742,
+                  "t": -14.5,
+                  "origin_world_m": [
+                    -0.5006389486672174,
+                    -0.505097325722973,
+                    -0.531804446959773
+                  ]
+                },
+                {
+                  "frame": 1757,
+                  "t": -14.0,
+                  "origin_world_m": [
+                    -0.523774299937578,
+                    -0.5157177434404014,
+                    -0.5366750642273069
+                  ]
+                },
+                {
+                  "frame": 1772,
+                  "t": -13.5,
+                  "origin_world_m": [
+                    -0.5649666260284688,
+                    -0.5191872985676629,
+                    -0.5384138079177049
+                  ]
+                },
+                {
+                  "frame": 1787,
+                  "t": -13.0,
+                  "origin_world_m": [
+                    -0.6187434381002175,
+                    -0.5146674874714356,
+                    -0.5460744922987331
+                  ]
+                },
+                {
+                  "frame": 1802,
+                  "t": -12.5,
+                  "origin_world_m": [
+                    -0.6667173842891799,
+                    -0.5131258531488376,
+                    -0.5479850755893911
+                  ]
+                },
+                {
+                  "frame": 1817,
+                  "t": -12.0,
+                  "origin_world_m": [
+                    -0.6955096797210105,
+                    -0.5161139569405447,
+                    -0.5527364915419305
+                  ]
+                },
+                {
+                  "frame": 1832,
+                  "t": -11.5,
+                  "origin_world_m": [
+                    -0.7162319862508159,
+                    -0.5193389519542713,
+                    -0.5520046331442422
+                  ]
+                },
+                {
+                  "frame": 1847,
+                  "t": -11.0,
+                  "origin_world_m": [
+                    -0.7176990794014537,
+                    -0.5320661395067725,
+                    -0.5485197476735119
+                  ]
+                },
+                {
+                  "frame": 1862,
+                  "t": -10.5,
+                  "origin_world_m": [
+                    -0.705108453138742,
+                    -0.5587015679128816,
+                    -0.5411123203498633
+                  ]
+                },
+                {
+                  "frame": 1877,
+                  "t": -10.0,
+                  "origin_world_m": [
+                    -0.6895596265397325,
+                    -0.5815663618883983,
+                    -0.537978429101369
+                  ]
+                },
+                {
+                  "frame": 1892,
+                  "t": -9.5,
+                  "origin_world_m": [
+                    -0.6884060911731076,
+                    -0.5925925896536277,
+                    -0.5345150415303357
+                  ]
+                },
+                {
+                  "frame": 1907,
+                  "t": -9.0,
+                  "origin_world_m": [
+                    -0.6800893018450221,
+                    -0.5832261748975852,
+                    -0.5334985319748475
+                  ]
+                },
+                {
+                  "frame": 1922,
+                  "t": -8.5,
+                  "origin_world_m": [
+                    -0.6828100426943673,
+                    -0.5866164236665649,
+                    -0.533965982382647
+                  ]
+                },
+                {
+                  "frame": 1937,
+                  "t": -8.0,
+                  "origin_world_m": [
+                    -0.6820383911568488,
+                    -0.5775675879769373,
+                    -0.5400704915647525
+                  ]
+                },
+                {
+                  "frame": 1952,
+                  "t": -7.5,
+                  "origin_world_m": [
+                    -0.6998367383374451,
+                    -0.5328660662381691,
+                    -0.546087229110218
+                  ]
+                },
+                {
+                  "frame": 1967,
+                  "t": -7.0,
+                  "origin_world_m": [
+                    -0.7087916940398353,
+                    -0.4653287837141738,
+                    -0.5542678761864781
+                  ]
+                },
+                {
+                  "frame": 1982,
+                  "t": -6.5,
+                  "origin_world_m": [
+                    -0.6714549328462105,
+                    -0.37806849041628937,
+                    -0.5534685862007356
+                  ]
+                },
+                {
+                  "frame": 1997,
+                  "t": -6.0,
+                  "origin_world_m": [
+                    -0.5961211719101078,
+                    -0.2327520969261355,
+                    -0.554559589030886
+                  ]
+                },
+                {
+                  "frame": 2012,
+                  "t": -5.5,
+                  "origin_world_m": [
+                    -0.5393961279945797,
+                    -0.05199129305062163,
+                    -0.5600110712453128
+                  ]
+                },
+                {
+                  "frame": 2027,
+                  "t": -5.0,
+                  "origin_world_m": [
+                    -0.48336915523136526,
+                    0.1394902830239522,
+                    -0.5608848709621277
+                  ]
+                },
+                {
+                  "frame": 2042,
+                  "t": -4.5,
+                  "origin_world_m": [
+                    -0.39414594821479565,
+                    0.33907857441080774,
+                    -0.5526419560023824
+                  ]
+                },
+                {
+                  "frame": 2057,
+                  "t": -4.0,
+                  "origin_world_m": [
+                    -0.3471971161098059,
+                    0.5327369628281042,
+                    -0.5495110916491978
+                  ]
+                },
+                {
+                  "frame": 2072,
+                  "t": -3.5,
+                  "origin_world_m": [
+                    -0.33469966683990415,
+                    0.6830996021095289,
+                    -0.5475448043451426
+                  ]
+                },
+                {
+                  "frame": 2087,
+                  "t": -3.0,
+                  "origin_world_m": [
+                    -0.30532821297113394,
+                    0.7923107746092714,
+                    -0.5342671668980011
+                  ]
+                },
+                {
+                  "frame": 2102,
+                  "t": -2.5,
+                  "origin_world_m": [
+                    -0.25937309484811405,
+                    0.8549422780687529,
+                    -0.5262161684201364
+                  ]
+                },
+                {
+                  "frame": 2117,
+                  "t": -2.0,
+                  "origin_world_m": [
+                    -0.25522703009611225,
+                    0.8878170168403526,
+                    -0.5269203680137815
+                  ]
+                },
+                {
+                  "frame": 2132,
+                  "t": -1.5,
+                  "origin_world_m": [
+                    -0.25556120304538543,
+                    0.8957427135061365,
+                    -0.5264504049908789
+                  ]
+                },
+                {
+                  "frame": 2147,
+                  "t": -1.0,
+                  "origin_world_m": [
+                    -0.263324888344781,
+                    0.9040360201180097,
+                    -0.5296201827881284
+                  ]
+                },
+                {
+                  "frame": 2162,
+                  "t": -0.5,
+                  "origin_world_m": [
+                    -0.2829308882520309,
+                    0.8794929196479874,
+                    -0.530604062540065
+                  ]
+                },
+                {
+                  "frame": 2177,
+                  "t": 0.0,
+                  "origin_world_m": [
+                    -0.30700933915674644,
+                    0.841171766157286,
+                    -0.5366213051584277
+                  ]
+                },
+                {
+                  "frame": 2192,
+                  "t": 0.5,
+                  "origin_world_m": [
+                    -0.3329229620686055,
+                    0.8120283356628141,
+                    -0.5440767900102287
+                  ]
+                },
+                {
+                  "frame": 2207,
+                  "t": 1.0,
+                  "origin_world_m": [
+                    -0.3447618231447649,
+                    0.7771068680945608,
+                    -0.5556919735641844
+                  ]
+                },
+                {
+                  "frame": 2222,
+                  "t": 1.5,
+                  "origin_world_m": [
+                    -0.35202183782316154,
+                    0.7072993321033632,
+                    -0.5634080303917592
+                  ]
+                },
+                {
+                  "frame": 2237,
+                  "t": 2.0,
+                  "origin_world_m": [
+                    -0.3699533558886495,
+                    0.6298793763722583,
+                    -0.5650256554950597
+                  ]
+                },
+                {
+                  "frame": 2252,
+                  "t": 2.5,
+                  "origin_world_m": [
+                    -0.4016091778143201,
+                    0.5098881906731572,
+                    -0.5623522900951625
+                  ]
+                },
+                {
+                  "frame": 2267,
+                  "t": 3.0,
+                  "origin_world_m": [
+                    -0.40878558422166417,
+                    0.3571225558588395,
+                    -0.5615047859714927
+                  ]
+                },
+                {
+                  "frame": 2282,
+                  "t": 3.5,
+                  "origin_world_m": [
+                    -0.41519125481652336,
+                    0.20363979562669593,
+                    -0.5574578599832727
+                  ]
+                },
+                {
+                  "frame": 2297,
+                  "t": 4.0,
+                  "origin_world_m": [
+                    -0.40675384431664907,
+                    0.08022350488939564,
+                    -0.5497814478334156
+                  ]
+                },
+                {
+                  "frame": 2312,
+                  "t": 4.5,
+                  "origin_world_m": [
+                    -0.3759960151813265,
+                    -0.003699517463616647,
+                    -0.5530777628910585
+                  ]
+                },
+                {
+                  "frame": 2327,
+                  "t": 5.0,
+                  "origin_world_m": [
+                    -0.3299046305761835,
+                    -0.029042033929260802,
+                    -0.5573554826828397
+                  ]
+                },
+                {
+                  "frame": 2342,
+                  "t": 5.5,
+                  "origin_world_m": [
+                    -0.3053416182677826,
+                    -0.032015223498695906,
+                    -0.5582811089471561
+                  ]
+                },
+                {
+                  "frame": 2357,
+                  "t": 6.0,
+                  "origin_world_m": [
+                    -0.29815105885752297,
+                    -0.03314961157003995,
+                    -0.559154921330761
+                  ]
+                },
+                {
+                  "frame": 2372,
+                  "t": 6.5,
+                  "origin_world_m": [
+                    -0.30031311074213124,
+                    -0.039972750106931014,
+                    -0.5604060536937409
+                  ]
+                },
+                {
+                  "frame": 2387,
+                  "t": 7.0,
+                  "origin_world_m": [
+                    -0.3004947549028185,
+                    -0.04230419308948886,
+                    -0.5644682440938487
+                  ]
+                },
+                {
+                  "frame": 2402,
+                  "t": 7.5,
+                  "origin_world_m": [
+                    -0.29604516993512076,
+                    -0.04577012975448534,
+                    -0.5600841255573812
+                  ]
+                },
+                {
+                  "frame": 2417,
+                  "t": 8.0,
+                  "origin_world_m": [
+                    -0.29886713638778717,
+                    -0.05426353942431583,
+                    -0.5553659468031753
+                  ]
+                },
+                {
+                  "frame": 2432,
+                  "t": 8.5,
+                  "origin_world_m": [
+                    -0.30155296063334863,
+                    -0.06576729944622692,
+                    -0.5558617112877962
+                  ]
+                },
+                {
+                  "frame": 2447,
+                  "t": 9.0,
+                  "origin_world_m": [
+                    -0.330579927861285,
+                    -0.06385759889490258,
+                    -0.558480661983374
+                  ]
+                },
+                {
+                  "frame": 2462,
+                  "t": 9.5,
+                  "origin_world_m": [
+                    -0.33869521595612306,
+                    -0.06256522584614599,
+                    -0.5513760488198072
+                  ]
+                },
+                {
+                  "frame": 2477,
+                  "t": 10.0,
+                  "origin_world_m": [
+                    -0.34418183625418497,
+                    -0.06016503273835525,
+                    -0.5532834347635942
+                  ]
+                },
+                {
+                  "frame": 2492,
+                  "t": 10.5,
+                  "origin_world_m": [
+                    -0.35456774615767805,
+                    -0.07226186984330711,
+                    -0.5604728812375473
+                  ]
+                },
+                {
+                  "frame": 2507,
+                  "t": 11.0,
+                  "origin_world_m": [
+                    -0.4048393298878496,
+                    -0.1179203571922915,
+                    -0.5646222581256118
+                  ]
+                },
+                {
+                  "frame": 2522,
+                  "t": 11.5,
+                  "origin_world_m": [
+                    -0.43517917875685014,
+                    -0.20597291664583922,
+                    -0.5606188669001516
+                  ]
+                },
+                {
+                  "frame": 2537,
+                  "t": 12.0,
+                  "origin_world_m": [
+                    -0.4720904999002835,
+                    -0.3084690393348484,
+                    -0.5625876738506533
+                  ]
+                },
+                {
+                  "frame": 2552,
+                  "t": 12.5,
+                  "origin_world_m": [
+                    -0.5283887264414017,
+                    -0.3714456860452878,
+                    -0.5635426823454999
+                  ]
+                },
+                {
+                  "frame": 2567,
+                  "t": 13.0,
+                  "origin_world_m": [
+                    -0.5886757498006865,
+                    -0.36222403175842965,
+                    -0.5581696815637546
+                  ]
+                },
+                {
+                  "frame": 2582,
+                  "t": 13.5,
+                  "origin_world_m": [
+                    -0.6217366032247273,
+                    -0.251629595739135,
+                    -0.5506740518332458
+                  ]
+                },
+                {
+                  "frame": 2597,
+                  "t": 14.0,
+                  "origin_world_m": [
+                    -0.6192122968126638,
+                    -0.04929059505145581,
+                    -0.5559096385689564
+                  ]
+                },
+                {
+                  "frame": 2612,
+                  "t": 14.5,
+                  "origin_world_m": [
+                    -0.6464558929932329,
+                    0.07826029817399939,
+                    -0.558536652424928
+                  ]
+                },
+                {
+                  "frame": 2627,
+                  "t": 15.0,
+                  "origin_world_m": [
+                    -0.6652148617557533,
+                    0.22127923139157582,
+                    -0.5591058375525061
+                  ]
+                }
+              ],
+              "trajectory_state_count": 61,
+              "temporal_span_sec": 30.0,
+              "path_length_m": 4.034840678155803,
+              "net_displacement_m": 0.7401670798214762,
+              "max_smoothed_speed_mps": 0.4337525491341512,
+              "reference_up_world_unit": [
+                0.047084752888715185,
+                0.0820866864630788,
+                0.995512331390687
+              ],
+              "landmarks": [
+                {
+                  "landmark_id": "dining_table",
+                  "display_name": "dining table",
+                  "center_world_m": [
+                    0.264917,
+                    -0.130903,
+                    -0.653973
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 5460,
+                    "source_camera": "cam05",
+                    "box_xyxy_796x448": [
+                      75.0,
+                      120.0,
+                      300.0,
+                      210.0
+                    ],
+                    "selected_points": 1708738,
+                    "robust_inlier_points": 1601675,
+                    "inlier_radius_p90_m": 0.5563813934782695,
+                    "reprojected_centroid_796x448": [
+                      247.0011573984074,
+                      168.9009139193457
+                    ],
+                    "camera_depth_m": 1.7911909715175485,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 45,
+                  "closest_frame": 2402,
+                  "closest_time_sec": 7.5,
+                  "closest_horizontal_distance_m": 0.5703147467110651,
+                  "local_window_indices": [
+                    39,
+                    51
+                  ],
+                  "local_travel_m": 0.07121172136192301,
+                  "signed_lateral_m": 0.0,
+                  "pass_side": "near_centerline",
+                  "side_support_ratio": 0.0,
+                  "valid_local_pass": false,
+                  "visit_prominence_m": 0.27147552919560636,
+                  "valid_visit": true
+                },
+                {
+                  "landmark_id": "front_chair",
+                  "display_name": "front chair",
+                  "center_world_m": [
+                    -1.079661,
+                    0.323904,
+                    -0.561712
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 5460,
+                    "source_camera": "cam05",
+                    "box_xyxy_796x448": [
+                      80.0,
+                      285.0,
+                      195.0,
+                      390.0
+                    ],
+                    "selected_points": 26629,
+                    "robust_inlier_points": 21502,
+                    "inlier_radius_p90_m": 0.4776713539410126,
+                    "reprojected_centroid_796x448": [
+                      121.59092991782013,
+                      358.8817735968767
+                    ],
+                    "camera_depth_m": 0.6139889579812622,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 60,
+                  "closest_frame": 2627,
+                  "closest_time_sec": 15.0,
+                  "closest_horizontal_distance_m": 0.4267516525987326,
+                  "local_window_indices": [
+                    57,
+                    60
+                  ],
+                  "local_travel_m": 0.47412960112372826,
+                  "signed_lateral_m": 0.40270427506285233,
+                  "pass_side": "right",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": false,
+                  "visit_prominence_m": 0.0,
+                  "valid_visit": false
+                },
+                {
+                  "landmark_id": "cooking_range",
+                  "display_name": "cooking range",
+                  "center_world_m": [
+                    -1.410746,
+                    -0.47671699999999995,
+                    -0.8939555
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 5460,
+                    "source_camera": "cam05",
+                    "box_xyxy_796x448": [
+                      370.0,
+                      300.0,
+                      655.0,
+                      435.0
+                    ],
+                    "selected_points": 211283,
+                    "robust_inlier_points": 205808,
+                    "inlier_radius_p90_m": 0.7862011289573339,
+                    "reprojected_centroid_796x448": [
+                      448.16788577984755,
+                      362.20503306529616
+                    ],
+                    "camera_depth_m": 0.9614767676329894,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 8,
+                  "closest_frame": 1847,
+                  "closest_time_sec": -11.0,
+                  "closest_horizontal_distance_m": 0.6814240339891308,
+                  "local_window_indices": [
+                    2,
+                    14
+                  ],
+                  "local_travel_m": 0.16920802711901398,
+                  "signed_lateral_m": 0.0,
+                  "pass_side": "near_centerline",
+                  "side_support_ratio": 0.0,
+                  "valid_local_pass": false,
+                  "visit_prominence_m": 0.2272354925574771,
+                  "valid_visit": true
+                }
+              ],
+              "valid_pass_landmarks": [],
+              "valid_visit_landmarks": [
+                "dining_table",
+                "cooking_range"
+              ],
+              "order_pairs": [
+                {
+                  "first_landmark": "cooking_range",
+                  "second_landmark": "dining_table",
+                  "first_time_sec": -11.0,
+                  "second_time_sec": 7.5,
+                  "time_gap_sec": 18.5,
+                  "center_separation_m": 1.6926835470692465,
+                  "max_closest_distance_m": 0.6814240339891308
+                }
+              ],
+              "proximity_order_pairs": [
+                {
+                  "first_landmark": "cooking_range",
+                  "second_landmark": "front_chair",
+                  "first_time_sec": -11.0,
+                  "second_time_sec": 15.0,
+                  "time_gap_sec": 26.0,
+                  "center_separation_m": 0.8313855975529985,
+                  "max_closest_distance_m": 0.6814240339891308
+                },
+                {
+                  "first_landmark": "cooking_range",
+                  "second_landmark": "dining_table",
+                  "first_time_sec": -11.0,
+                  "second_time_sec": 7.5,
+                  "time_gap_sec": 18.5,
+                  "center_separation_m": 1.6926835470692465,
+                  "max_closest_distance_m": 0.6814240339891308
+                },
+                {
+                  "first_landmark": "dining_table",
+                  "second_landmark": "front_chair",
+                  "first_time_sec": 7.5,
+                  "second_time_sec": 15.0,
+                  "time_gap_sec": 7.5,
+                  "center_separation_m": 1.4208843903897679,
+                  "max_closest_distance_m": 0.5703147467110651
+                }
+              ],
+              "flank_pairs": [],
+              "nearest_landmark_states": [
+                {
+                  "frame": 1727,
+                  "t": -15.0,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.8417902759066714,
+                  "runner_up_margin_m": 0.06686925063993643
+                },
+                {
+                  "frame": 1742,
+                  "t": -14.5,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.8590768698643244,
+                  "runner_up_margin_m": 0.03502261434517162
+                },
+                {
+                  "frame": 1757,
+                  "t": -14.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.8720465495091346,
+                  "runner_up_margin_m": 0.012015973741954178
+                },
+                {
+                  "frame": 1772,
+                  "t": -13.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.8314056711290183,
+                  "runner_up_margin_m": 0.09102659430859761
+                },
+                {
+                  "frame": 1787,
+                  "t": -13.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.777786861935051,
+                  "runner_up_margin_m": 0.1787147092308673
+                },
+                {
+                  "frame": 1802,
+                  "t": -12.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.7299838526561854,
+                  "runner_up_margin_m": 0.20278752839828018
+                },
+                {
+                  "frame": 1817,
+                  "t": -12.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.7018183140199116,
+                  "runner_up_margin_m": 0.2209626583830514
+                },
+                {
+                  "frame": 1832,
+                  "t": -11.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.6815268221751538,
+                  "runner_up_margin_m": 0.2357692736756335
+                },
+                {
+                  "frame": 1847,
+                  "t": -11.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.6814240339891308,
+                  "runner_up_margin_m": 0.2471600032956126
+                },
+                {
+                  "frame": 1862,
+                  "t": -10.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.6974564788378749,
+                  "runner_up_margin_m": 0.2609429997273661
+                },
+                {
+                  "frame": 1877,
+                  "t": -10.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.7166785868614434,
+                  "runner_up_margin_m": 0.2690057291583885
+                },
+                {
+                  "frame": 1892,
+                  "t": -9.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.7198790083198994,
+                  "runner_up_margin_m": 0.2765656212096923
+                },
+                {
+                  "frame": 1907,
+                  "t": -9.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.7261494581331075,
+                  "runner_up_margin_m": 0.2651017675441538
+                },
+                {
+                  "frame": 1922,
+                  "t": -8.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.7241485379714104,
+                  "runner_up_margin_m": 0.26907824705321726
+                },
+                {
+                  "frame": 1937,
+                  "t": -8.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.7233858388123133,
+                  "runner_up_margin_m": 0.2615432138096291
+                },
+                {
+                  "frame": 1952,
+                  "t": -7.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.6991449874497006,
+                  "runner_up_margin_m": 0.2374470347852493
+                },
+                {
+                  "frame": 1967,
+                  "t": -7.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.6853919000556093,
+                  "runner_up_margin_m": 0.18575380332840186
+                },
+                {
+                  "frame": 1982,
+                  "t": -6.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.7255291284353129,
+                  "runner_up_margin_m": 0.085984107703731
+                },
+                {
+                  "frame": 1997,
+                  "t": -6.0,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.7372096653461212,
+                  "runner_up_margin_m": 0.0882015367018929
+                },
+                {
+                  "frame": 2012,
+                  "t": -5.5,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.6581583584334851,
+                  "runner_up_margin_m": 0.15308344459631207
+                },
+                {
+                  "frame": 2027,
+                  "t": -5.0,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.6240061548101515,
+                  "runner_up_margin_m": 0.1730939962331436
+                },
+                {
+                  "frame": 2042,
+                  "t": -4.5,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.6844214514963594,
+                  "runner_up_margin_m": 0.12413215084614493
+                },
+                {
+                  "frame": 2057,
+                  "t": -4.0,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.7590757374756993,
+                  "runner_up_margin_m": 0.14048271448917948
+                },
+                {
+                  "frame": 2072,
+                  "t": -3.5,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.8234083905261014,
+                  "runner_up_margin_m": 0.18286022594738105
+                },
+                {
+                  "frame": 2087,
+                  "t": -3.0,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.899610045505631,
+                  "runner_up_margin_m": 0.1790809978800022
+                },
+                {
+                  "frame": 2102,
+                  "t": -2.5,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.9707294535845915,
+                  "runner_up_margin_m": 0.1380758128905416
+                },
+                {
+                  "frame": 2117,
+                  "t": -2.0,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.992250577478219,
+                  "runner_up_margin_m": 0.14354418519169443
+                },
+                {
+                  "frame": 2132,
+                  "t": -1.5,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.9963832383299174,
+                  "runner_up_margin_m": 0.1465504884026534
+                },
+                {
+                  "frame": 2147,
+                  "t": -1.0,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.9950187437766688,
+                  "runner_up_margin_m": 0.15901375806046858
+                },
+                {
+                  "frame": 2162,
+                  "t": -0.5,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.9650955429676233,
+                  "runner_up_margin_m": 0.1767763812589349
+                },
+                {
+                  "frame": 2177,
+                  "t": 0.0,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.9243417592849889,
+                  "runner_up_margin_m": 0.19682087896221112
+                },
+                {
+                  "frame": 2192,
+                  "t": 0.5,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.8874599097848026,
+                  "runner_up_margin_m": 0.22314243870979422
+                },
+                {
+                  "frame": 2207,
+                  "t": 1.0,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.8599147823243112,
+                  "runner_up_margin_m": 0.22875807487290456
+                },
+                {
+                  "frame": 2222,
+                  "t": 1.5,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.8199707195052766,
+                  "runner_up_margin_m": 0.21662017667808264
+                },
+                {
+                  "frame": 2237,
+                  "t": 2.0,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.7708865301527259,
+                  "runner_up_margin_m": 0.21658259051260287
+                },
+                {
+                  "frame": 2252,
+                  "t": 2.5,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.7015535657870228,
+                  "runner_up_margin_m": 0.2207398125592167
+                },
+                {
+                  "frame": 2267,
+                  "t": 3.0,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.6708096848864955,
+                  "runner_up_margin_m": 0.1601631341645805
+                },
+                {
+                  "frame": 2282,
+                  "t": 3.5,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.6747916193449055,
+                  "runner_up_margin_m": 0.08376308347229189
+                },
+                {
+                  "frame": 2297,
+                  "t": 4.0,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.7060980264008663,
+                  "runner_up_margin_m": 0.009284105150511923
+                },
+                {
+                  "frame": 2312,
+                  "t": 4.5,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.6562137293954401,
+                  "runner_up_margin_m": 0.11988093859046
+                },
+                {
+                  "frame": 2327,
+                  "t": 5.0,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.6063540693049296,
+                  "runner_up_margin_m": 0.22226569455902212
+                },
+                {
+                  "frame": 2342,
+                  "t": 5.5,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.5816131721150056,
+                  "runner_up_margin_m": 0.27052952645926087
+                },
+                {
+                  "frame": 2357,
+                  "t": 6.0,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.5743085219409204,
+                  "runner_up_margin_m": 0.284848587098373
+                },
+                {
+                  "frame": 2372,
+                  "t": 6.5,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.5753542674744375,
+                  "runner_up_margin_m": 0.28471845883307356
+                },
+                {
+                  "frame": 2387,
+                  "t": 7.0,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.5750528132889863,
+                  "runner_up_margin_m": 0.2858774997535275
+                },
+                {
+                  "frame": 2402,
+                  "t": 7.5,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.5703147467110651,
+                  "runner_up_margin_m": 0.2960850491263657
+                },
+                {
+                  "frame": 2417,
+                  "t": 8.0,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.5721709056822359,
+                  "runner_up_margin_m": 0.2953226627505152
+                },
+                {
+                  "frame": 2432,
+                  "t": 8.5,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.573522483343905,
+                  "runner_up_margin_m": 0.29666161145968206
+                },
+                {
+                  "frame": 2447,
+                  "t": 9.0,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.6024699817239633,
+                  "runner_up_margin_m": 0.24100357161882258
+                },
+                {
+                  "frame": 2462,
+                  "t": 9.5,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.6109430436419903,
+                  "runner_up_margin_m": 0.2247091467776242
+                },
+                {
+                  "frame": 2477,
+                  "t": 10.0,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.6165697731240073,
+                  "runner_up_margin_m": 0.21311544377481983
+                },
+                {
+                  "frame": 2492,
+                  "t": 10.5,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.6254751449664485,
+                  "runner_up_margin_m": 0.2007820853924388
+                },
+                {
+                  "frame": 2507,
+                  "t": 11.0,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.6732798206124279,
+                  "runner_up_margin_m": 0.1332850481911938
+                },
+                {
+                  "frame": 2522,
+                  "t": 11.5,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.7082299961323749,
+                  "runner_up_margin_m": 0.12602539609886776
+                },
+                {
+                  "frame": 2537,
+                  "t": 12.0,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.7624449761244468,
+                  "runner_up_margin_m": 0.11417008506709003
+                },
+                {
+                  "frame": 2552,
+                  "t": 12.5,
+                  "nearest_landmark": "dining_table",
+                  "distance_m": 0.8332396082252649,
+                  "runner_up_margin_m": 0.035713412259526955
+                },
+                {
+                  "frame": 2567,
+                  "t": 13.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.8095940589976677,
+                  "runner_up_margin_m": 0.033596297822158006
+                },
+                {
+                  "frame": 2582,
+                  "t": 13.5,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.7354179739288662,
+                  "runner_up_margin_m": 0.0602836456132233
+                },
+                {
+                  "frame": 2597,
+                  "t": 14.0,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.5927147564980672,
+                  "runner_up_margin_m": 0.2769448354922809
+                },
+                {
+                  "frame": 2612,
+                  "t": 14.5,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.49800206227523824,
+                  "runner_up_margin_m": 0.4141607909422699
+                },
+                {
+                  "frame": 2627,
+                  "t": 15.0,
+                  "nearest_landmark": "front_chair",
+                  "distance_m": 0.4267516525987326,
+                  "runner_up_margin_m": 0.5601018261620883
+                }
+              ],
+              "route_landmark_ranking": [
+                {
+                  "landmark_id": "front_chair",
+                  "display_name": "front chair",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 5460,
+                    "source_camera": "cam05",
+                    "box_xyxy_796x448": [
+                      80.0,
+                      285.0,
+                      195.0,
+                      390.0
+                    ],
+                    "selected_points": 26629,
+                    "robust_inlier_points": 21502,
+                    "inlier_radius_p90_m": 0.4776713539410126,
+                    "reprojected_centroid_796x448": [
+                      121.59092991782013,
+                      358.8817735968767
+                    ],
+                    "camera_depth_m": 0.6139889579812622,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.4267516525987326,
+                  "closest_time_sec": 15.0
+                },
+                {
+                  "landmark_id": "dining_table",
+                  "display_name": "dining table",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 5460,
+                    "source_camera": "cam05",
+                    "box_xyxy_796x448": [
+                      75.0,
+                      120.0,
+                      300.0,
+                      210.0
+                    ],
+                    "selected_points": 1708738,
+                    "robust_inlier_points": 1601675,
+                    "inlier_radius_p90_m": 0.5563813934782695,
+                    "reprojected_centroid_796x448": [
+                      247.0011573984074,
+                      168.9009139193457
+                    ],
+                    "camera_depth_m": 1.7911909715175485,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.5703147467110651,
+                  "closest_time_sec": 7.5
+                },
+                {
+                  "landmark_id": "cooking_range",
+                  "display_name": "cooking range",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 5460,
+                    "source_camera": "cam05",
+                    "box_xyxy_796x448": [
+                      370.0,
+                      300.0,
+                      655.0,
+                      435.0
+                    ],
+                    "selected_points": 211283,
+                    "robust_inlier_points": 205808,
+                    "inlier_radius_p90_m": 0.7862011289573339,
+                    "reprojected_centroid_796x448": [
+                      448.16788577984755,
+                      362.20503306529616
+                    ],
+                    "camera_depth_m": 0.9614767676329894,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.6814240339891308,
+                  "closest_time_sec": -11.0
+                }
+              ],
+              "nearest_landmark_change": null,
+              "thresholds": {
+                "smoothing_radius": 2,
+                "side_dead_zone_m": 0.25,
+                "max_landmark_distance_m": 2.0,
+                "min_local_travel_m": 0.35,
+                "min_order_gap_sec": 2.0
+              }
+            },
+            "order_event": {
+              "first_landmark": "cooking_range",
+              "second_landmark": "dining_table",
+              "first_time_sec": -11.0,
+              "second_time_sec": 7.5,
+              "time_gap_sec": 18.5,
+              "center_separation_m": 1.6926835470692465,
+              "max_closest_distance_m": 0.6814240339891308
+            }
+          }
+        }
+      ],
+      "case_policy": "one temporal question per unique video window",
+      "video_clip": "./outputs/spatial/showcase_multi/sfu0101_cam05_5460/task3_clip_frame2177_30s.mp4",
+      "video_window": {
+        "center_frame": 2177,
+        "fps": 30.0,
+        "start_sec": 57.567,
+        "duration_sec": 30.0,
+        "source_video": "data/egoexo4d/takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/cam05.mp4"
+      }
+    },
+    {
+      "name": "task3_sfu_cooking_007_3_frame5850_30s",
+      "title": "Task 3 · sfu_cooking_007_3 · landmark closest approach order",
+      "original_image": "./outputs/qa/task3_media/sfu_cooking_007_3_cam01_frame10890_static_landmarks.jpg",
+      "topdown_image": "./outputs/qa/task3_media/task3_sfu_cooking_007_3_frame5850_30s_trajectory.svg",
+      "summary_path": "outputs/spatial/val_3/summary.json",
+      "raw_summary": {
+        "sample_count": 3,
+        "success_count": 3,
+        "error_count": 0,
+        "samples": [
+          {
+            "status": "ok",
+            "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
+            "take_name": "sfu_cooking_007_3",
+            "frame": 5850,
+            "camera": "cam01",
+            "object_id": "oyster sauce bottle_0",
+            "object_xyz_world_m": [
+              2.8797875,
+              -0.783569,
+              -0.6012014999999999
+            ],
+            "human_frame": {
+              "origin": [
+                4.069195258069465,
+                -1.729117055746722,
+                -0.6785414864204579
+              ],
+              "right": [
+                -0.9455501906514642,
+                -0.3221858577044052,
+                0.04616394755928747
+              ],
+              "up": [
+                0.039496844851164566,
+                0.02720348633184157,
+                0.9988493227600428
+              ],
+              "forward": [
+                0.32307094608736164,
+                -0.946285497842311,
+                0.012996936852467023
+              ]
+            },
+            "orientation": {
+              "forward_sign": -1,
+              "source": "visual_review_no_nose"
+            },
+            "human_xyz_m": {
+              "right": 0.823572840140773,
+              "up": 0.05599534298370947,
+              "forward": -1.2780163194295886
+            },
+            "distance_m": 1.521424797412529,
+            "horizontal_distance_m": 1.5203940067449264,
+            "lateral_relation": "right",
+            "longitudinal_relation": "behind",
+            "vertical_relation": "slightly_above",
+            "text_zh": "物体在人的右侧、后方、略偏上，前向分量 -1.28 m，右向分量 0.82 m，高度差 0.06 m，直线距离 1.52 m",
+            "quality": {
+              "mask_pixels": 50235,
+              "point_cloud_scanned": 17974280,
+              "point_cloud_quality": 15477467,
+              "point_cloud_in_image": 12421635,
+              "points_in_mask": 59092,
+              "robust_inliers": 46398,
+              "max_point_dist_std_m": 0.1,
+              "pose_reprojection": {
+                "joint_count": 10,
+                "positive_depth_joint_count": 10,
+                "median_px": 2.3087254776378533e-13,
+                "mean_px": 1.9438384549692263e-13,
+                "max_px": 3.2155493553843715e-13
+              }
+            },
+            "inputs": {
+              "point_cloud": "data/egoexo4d/takes/sfu_cooking_007_3/trajectory/semidense_points.csv.gz",
+              "camera_pose": "data/egoexo4d/annotations/ego_pose/val/camera_pose/f76f2040-989c-42df-b2fb-e0903165443d.json",
+              "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/f76f2040-989c-42df-b2fb-e0903165443d.json"
+            },
+            "output_path": "outputs/spatial/val_3/sfu_cooking_007_3_frame10890_oyster sauce bottle_0.json"
+          }
+        ]
+      },
+      "static_landmark_audit": {
+        "source_summary": "outputs/spatial/val_3/summary.json",
+        "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
+        "take_name": "sfu_cooking_007_3",
+        "camera": "cam01",
+        "frame": 10890,
+        "review_image": "outputs/qa/task3_media/sfu_cooking_007_3_cam01_frame10890_static_landmarks.jpg",
+        "landmark_count": 3,
+        "landmarks": [
+          {
+            "object_id": "refrigerator",
+            "display_name": "refrigerator",
+            "object_xyz_world_m": [
+              5.416040000000001,
+              -1.0563859999999998,
+              -0.286763
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 10890,
+              "source_camera": "cam01",
+              "box_xyxy_796x448": [
+                105.0,
+                50.0,
+                195.0,
+                230.0
+              ],
+              "selected_points": 211327,
+              "robust_inlier_points": 172222,
+              "inlier_radius_p90_m": 1.059714071941084,
+              "reprojected_centroid_796x448": [
+                156.24901942285013,
+                106.74400672856842
+              ],
+              "camera_depth_m": 2.348761167714528,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "sink_counter",
+            "display_name": "sink counter",
+            "object_xyz_world_m": [
+              3.5882225,
+              -1.9890395,
+              -0.48078
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 10890,
+              "source_camera": "cam01",
+              "box_xyxy_796x448": [
+                335.0,
+                110.0,
+                430.0,
+                205.0
+              ],
+              "selected_points": 2329527,
+              "robust_inlier_points": 2310758,
+              "inlier_radius_p90_m": 0.9993694384135895,
+              "reprojected_centroid_796x448": [
+                379.3257772335084,
+                143.653062093218
+              ],
+              "camera_depth_m": 2.0617020633812038,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "cooking_range",
+            "display_name": "cooking range",
+            "object_xyz_world_m": [
+              2.575902,
+              -1.692634,
+              -0.567959
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 10890,
+              "source_camera": "cam01",
+              "box_xyxy_796x448": [
+                445.0,
+                165.0,
+                590.0,
+                290.0
+              ],
+              "selected_points": 1839801,
+              "robust_inlier_points": 1817943,
+              "inlier_radius_p90_m": 0.587316189436658,
+              "reprojected_centroid_796x448": [
+                484.90178874931723,
+                201.84402227135953
+              ],
+              "camera_depth_m": 1.3454095582624144,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          }
+        ],
+        "point_cloud_scan": {
+          "scanned_points": 17974280,
+          "quality_points": 15477467,
+          "projected_points": 12420442
+        },
+        "status": "ok"
+      },
+      "clip_filename": "task3_clip_frame5850_30s.mp4",
+      "qa": [
+        {
+          "task_id": "task3_human_scene_topological_reasoning",
+          "task_name": "Task 3 · Human–Scene Topological Reasoning",
+          "question_type": "landmark_closest_approach_order",
+          "question_categories": [
+            "temporal_landmark_order"
+          ],
+          "question": "During the clip, in what order does the person's trajectory reach its closest points to the sink counter and the cooking range?",
+          "options": [
+            {
+              "label": "A",
+              "text": "The person reaches the closest point to the cooking range first and to the sink counter later."
+            },
+            {
+              "label": "B",
+              "text": "The person reaches the closest points to the sink counter and the cooking range at the same time."
+            },
+            {
+              "label": "C",
+              "text": "The person reaches the closest point to the sink counter first and to the cooking range later."
+            },
+            {
+              "label": "D",
+              "text": "The person reaches no distinct closest point to either the sink counter or the cooking range during the clip."
+            }
+          ],
+          "correct_option": "C",
+          "correct_answer": "The person reaches the closest point to the sink counter first and to the cooking range later.",
+          "answer": "The person reaches the closest point to the sink counter first and to the cooking range later.",
+          "explanation": "The two closest-approach times are separated by about 17.5 seconds, with the sink counter occurring first.",
+          "status": "ok",
+          "method": "Computes each landmark's minimum horizontal distance to every state of the full smoothed metric trajectory, then compares the associated times.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "landmark_closest_approach_order",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "topology": {
+              "status": "ok",
+              "coordinate_frame": "metric world trajectory projected onto the local horizontal plane",
+              "side_definition": "left/right uses the local smoothed path tangent at closest approach, not image coordinates or the start-end chord",
+              "trajectory_states": [
+                {
+                  "frame": 5400,
+                  "t": -15.0,
+                  "origin_world_m": [
+                    3.3894483659156447,
+                    -1.6275000952035503,
+                    -0.6641698065599323
+                  ]
+                },
+                {
+                  "frame": 5415,
+                  "t": -14.5,
+                  "origin_world_m": [
+                    3.4103687908490343,
+                    -1.6770808989423804,
+                    -0.6632559929362793
+                  ]
+                },
+                {
+                  "frame": 5430,
+                  "t": -14.0,
+                  "origin_world_m": [
+                    3.424371597673576,
+                    -1.7079382505781637,
+                    -0.6577412889331326
+                  ]
+                },
+                {
+                  "frame": 5445,
+                  "t": -13.5,
+                  "origin_world_m": [
+                    3.450793240879885,
+                    -1.774518868308503,
+                    -0.6690892642698978
+                  ]
+                },
+                {
+                  "frame": 5460,
+                  "t": -13.0,
+                  "origin_world_m": [
+                    3.4523698054494445,
+                    -1.8358359458057243,
+                    -0.6581985664529413
+                  ]
+                },
+                {
+                  "frame": 5475,
+                  "t": -12.5,
+                  "origin_world_m": [
+                    3.4373606694132577,
+                    -1.861455643721272,
+                    -0.6547261857408776
+                  ]
+                },
+                {
+                  "frame": 5490,
+                  "t": -12.0,
+                  "origin_world_m": [
+                    3.4334448293034696,
+                    -1.8909210277118078,
+                    -0.6558713910373734
+                  ]
+                },
+                {
+                  "frame": 5505,
+                  "t": -11.5,
+                  "origin_world_m": [
+                    3.432984302118502,
+                    -1.9150702275088327,
+                    -0.6543706957326417
+                  ]
+                },
+                {
+                  "frame": 5520,
+                  "t": -11.0,
+                  "origin_world_m": [
+                    3.4341965571258037,
+                    -1.940747668534295,
+                    -0.6422859337464278
+                  ]
+                },
+                {
+                  "frame": 5535,
+                  "t": -10.5,
+                  "origin_world_m": [
+                    3.4468216552886775,
+                    -1.9566699125515714,
+                    -0.6496750548239905
+                  ]
+                },
+                {
+                  "frame": 5550,
+                  "t": -10.0,
+                  "origin_world_m": [
+                    3.442860857983592,
+                    -1.9589249083032627,
+                    -0.6543827814078582
+                  ]
+                },
+                {
+                  "frame": 5565,
+                  "t": -9.5,
+                  "origin_world_m": [
+                    3.4276249348239345,
+                    -1.9491609137376629,
+                    -0.6480364966199774
+                  ]
+                },
+                {
+                  "frame": 5580,
+                  "t": -9.0,
+                  "origin_world_m": [
+                    3.4307599821431554,
+                    -1.9211836581387083,
+                    -0.6492787689796545
+                  ]
+                },
+                {
+                  "frame": 5595,
+                  "t": -8.5,
+                  "origin_world_m": [
+                    3.46802848601181,
+                    -1.8749295194398332,
+                    -0.6387828386168184
+                  ]
+                },
+                {
+                  "frame": 5610,
+                  "t": -8.0,
+                  "origin_world_m": [
+                    3.569585530753237,
+                    -1.825977081334781,
+                    -0.6334385494989295
+                  ]
+                },
+                {
+                  "frame": 5625,
+                  "t": -7.5,
+                  "origin_world_m": [
+                    3.737953627221438,
+                    -1.7814960871891323,
+                    -0.6355444760323316
+                  ]
+                },
+                {
+                  "frame": 5640,
+                  "t": -7.0,
+                  "origin_world_m": [
+                    3.9082678885615736,
+                    -1.7444942388434257,
+                    -0.6470660788778477
+                  ]
+                },
+                {
+                  "frame": 5685,
+                  "t": -5.5,
+                  "origin_world_m": [
+                    4.034448264465977,
+                    -1.7024298419411807,
+                    -0.6542211345244425
+                  ]
+                },
+                {
+                  "frame": 5820,
+                  "t": -1.0,
+                  "origin_world_m": [
+                    4.074320988714502,
+                    -1.654799993217193,
+                    -0.6647619321675793
+                  ]
+                },
+                {
+                  "frame": 5940,
+                  "t": 3.0,
+                  "origin_world_m": [
+                    3.9941116433771624,
+                    -1.605585592683384,
+                    -0.664924173647836
+                  ]
+                },
+                {
+                  "frame": 5955,
+                  "t": 3.5,
+                  "origin_world_m": [
+                    3.801289980108532,
+                    -1.5696485639321485,
+                    -0.6599823058053371
+                  ]
+                },
+                {
+                  "frame": 5970,
+                  "t": 4.0,
+                  "origin_world_m": [
+                    3.5696432113723136,
+                    -1.5016238596540723,
+                    -0.6459621144315388
+                  ]
+                },
+                {
+                  "frame": 5985,
+                  "t": 4.5,
+                  "origin_world_m": [
+                    3.349129434182971,
+                    -1.4546955469357996,
+                    -0.6380739241296313
+                  ]
+                },
+                {
+                  "frame": 6000,
+                  "t": 5.0,
+                  "origin_world_m": [
+                    3.175180979458189,
+                    -1.4323964350108995,
+                    -0.6407809492164998
+                  ]
+                },
+                {
+                  "frame": 6015,
+                  "t": 5.5,
+                  "origin_world_m": [
+                    3.0635106142169883,
+                    -1.4044953744163293,
+                    -0.6423277493676972
+                  ]
+                },
+                {
+                  "frame": 6030,
+                  "t": 6.0,
+                  "origin_world_m": [
+                    3.010751990265873,
+                    -1.3688897390804295,
+                    -0.6410993630721205
+                  ]
+                },
+                {
+                  "frame": 6045,
+                  "t": 6.5,
+                  "origin_world_m": [
+                    2.9978858199253233,
+                    -1.361927026811517,
+                    -0.6426361744534687
+                  ]
+                },
+                {
+                  "frame": 6060,
+                  "t": 7.0,
+                  "origin_world_m": [
+                    2.9965230612117892,
+                    -1.3614865151014581,
+                    -0.639844565628721
+                  ]
+                },
+                {
+                  "frame": 6075,
+                  "t": 7.5,
+                  "origin_world_m": [
+                    3.0018883194838675,
+                    -1.3619359352205374,
+                    -0.6334834358905307
+                  ]
+                },
+                {
+                  "frame": 6090,
+                  "t": 8.0,
+                  "origin_world_m": [
+                    3.0080484896548607,
+                    -1.3633167634926266,
+                    -0.6291636738524959
+                  ]
+                },
+                {
+                  "frame": 6105,
+                  "t": 8.5,
+                  "origin_world_m": [
+                    3.014142348468654,
+                    -1.3527854167955986,
+                    -0.6234157204229444
+                  ]
+                },
+                {
+                  "frame": 6120,
+                  "t": 9.0,
+                  "origin_world_m": [
+                    3.0153922172985568,
+                    -1.3520705034054366,
+                    -0.621888080551866
+                  ]
+                },
+                {
+                  "frame": 6135,
+                  "t": 9.5,
+                  "origin_world_m": [
+                    3.0152688805052223,
+                    -1.3499316667351646,
+                    -0.624016013106462
+                  ]
+                },
+                {
+                  "frame": 6150,
+                  "t": 10.0,
+                  "origin_world_m": [
+                    3.0258869205498145,
+                    -1.347355593821082,
+                    -0.6220852442130583
+                  ]
+                },
+                {
+                  "frame": 6165,
+                  "t": 10.5,
+                  "origin_world_m": [
+                    3.0748973392474306,
+                    -1.3539553714866934,
+                    -0.616507318115327
+                  ]
+                },
+                {
+                  "frame": 6180,
+                  "t": 11.0,
+                  "origin_world_m": [
+                    3.1742444801982765,
+                    -1.3894784515457475,
+                    -0.6198279860248557
+                  ]
+                },
+                {
+                  "frame": 6195,
+                  "t": 11.5,
+                  "origin_world_m": [
+                    3.3136350529756795,
+                    -1.452758783584787,
+                    -0.6190161964074374
+                  ]
+                },
+                {
+                  "frame": 6210,
+                  "t": 12.0,
+                  "origin_world_m": [
+                    3.48930162243515,
+                    -1.5250067370138152,
+                    -0.625050596210031
+                  ]
+                },
+                {
+                  "frame": 6225,
+                  "t": 12.5,
+                  "origin_world_m": [
+                    3.6795817690371893,
+                    -1.5959432003083227,
+                    -0.6329098625672394
+                  ]
+                },
+                {
+                  "frame": 6240,
+                  "t": 13.0,
+                  "origin_world_m": [
+                    3.8414701444115606,
+                    -1.6759691847099638,
+                    -0.6553949202271012
+                  ]
+                },
+                {
+                  "frame": 6255,
+                  "t": 13.5,
+                  "origin_world_m": [
+                    3.9548656510949898,
+                    -1.7387490535018313,
+                    -0.6712392444940172
+                  ]
+                },
+                {
+                  "frame": 6270,
+                  "t": 14.0,
+                  "origin_world_m": [
+                    4.030409005058592,
+                    -1.7630986776308943,
+                    -0.6916864083327592
+                  ]
+                },
+                {
+                  "frame": 6285,
+                  "t": 14.5,
+                  "origin_world_m": [
+                    4.06476355907791,
+                    -1.77497163322548,
+                    -0.700213434770719
+                  ]
+                },
+                {
+                  "frame": 6300,
+                  "t": 15.0,
+                  "origin_world_m": [
+                    4.079262953014273,
+                    -1.7982867138042156,
+                    -0.7168303892635266
+                  ]
+                }
+              ],
+              "trajectory_state_count": 44,
+              "temporal_span_sec": 30.0,
+              "path_length_m": 3.418061579504639,
+              "net_displacement_m": 0.7095582304293316,
+              "max_smoothed_speed_mps": 0.480867650574269,
+              "reference_up_world_unit": [
+                0.16284749009545785,
+                -0.03084085191892041,
+                0.9861691218155865
+              ],
+              "landmarks": [
+                {
+                  "landmark_id": "refrigerator",
+                  "display_name": "refrigerator",
+                  "center_world_m": [
+                    5.416040000000001,
+                    -1.0563859999999998,
+                    -0.286763
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 10890,
+                    "source_camera": "cam01",
+                    "box_xyxy_796x448": [
+                      105.0,
+                      50.0,
+                      195.0,
+                      230.0
+                    ],
+                    "selected_points": 211327,
+                    "robust_inlier_points": 172222,
+                    "inlier_radius_p90_m": 1.059714071941084,
+                    "reprojected_centroid_796x448": [
+                      156.24901942285013,
+                      106.74400672856842
+                    ],
+                    "camera_depth_m": 2.348761167714528,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 18,
+                  "closest_frame": 5820,
+                  "closest_time_sec": -1.0,
+                  "closest_horizontal_distance_m": 1.4046637085728504,
+                  "local_window_indices": [
+                    14,
+                    22
+                  ],
+                  "local_travel_m": 0.42869149291719194,
+                  "signed_lateral_m": -1.4006267852430732,
+                  "pass_side": "left",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": true,
+                  "visit_prominence_m": 0.05796209818713405,
+                  "valid_visit": false
+                },
+                {
+                  "landmark_id": "sink_counter",
+                  "display_name": "sink counter",
+                  "center_world_m": [
+                    3.5882225,
+                    -1.9890395,
+                    -0.48078
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 10890,
+                    "source_camera": "cam01",
+                    "box_xyxy_796x448": [
+                      335.0,
+                      110.0,
+                      430.0,
+                      205.0
+                    ],
+                    "selected_points": 2329527,
+                    "robust_inlier_points": 2310758,
+                    "inlier_radius_p90_m": 0.9993694384135895,
+                    "reprojected_centroid_796x448": [
+                      379.3257772335084,
+                      143.653062093218
+                    ],
+                    "camera_depth_m": 2.0617020633812038,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 9,
+                  "closest_frame": 5535,
+                  "closest_time_sec": -10.5,
+                  "closest_horizontal_distance_m": 0.1150878108750275,
+                  "local_window_indices": [
+                    3,
+                    15
+                  ],
+                  "local_travel_m": 0.27789479990873406,
+                  "signed_lateral_m": 0.0,
+                  "pass_side": "near_centerline",
+                  "side_support_ratio": 0.0,
+                  "valid_local_pass": false,
+                  "visit_prominence_m": 0.27671607972785683,
+                  "valid_visit": true
+                },
+                {
+                  "landmark_id": "cooking_range",
+                  "display_name": "cooking range",
+                  "center_world_m": [
+                    2.575902,
+                    -1.692634,
+                    -0.567959
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 10890,
+                    "source_camera": "cam01",
+                    "box_xyxy_796x448": [
+                      445.0,
+                      165.0,
+                      590.0,
+                      290.0
+                    ],
+                    "selected_points": 1839801,
+                    "robust_inlier_points": 1817943,
+                    "inlier_radius_p90_m": 0.587316189436658,
+                    "reprojected_centroid_796x448": [
+                      484.90178874931723,
+                      201.84402227135953
+                    ],
+                    "camera_depth_m": 1.3454095582624144,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 27,
+                  "closest_frame": 6060,
+                  "closest_time_sec": 7.0,
+                  "closest_horizontal_distance_m": 0.5399901195143437,
+                  "local_window_indices": [
+                    21,
+                    33
+                  ],
+                  "local_travel_m": 0.5614028696425346,
+                  "signed_lateral_m": 0.4342012945963793,
+                  "pass_side": "right",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": true,
+                  "visit_prominence_m": 0.28103949334628187,
+                  "valid_visit": true
+                }
+              ],
+              "valid_pass_landmarks": [
+                "refrigerator",
+                "cooking_range"
+              ],
+              "valid_visit_landmarks": [
+                "sink_counter",
+                "cooking_range"
+              ],
+              "order_pairs": [
+                {
+                  "first_landmark": "sink_counter",
+                  "second_landmark": "cooking_range",
+                  "first_time_sec": -10.5,
+                  "second_time_sec": 7.0,
+                  "time_gap_sec": 17.5,
+                  "center_separation_m": 1.0259949211013704,
+                  "max_closest_distance_m": 0.5399901195143437
+                }
+              ],
+              "proximity_order_pairs": [
+                {
+                  "first_landmark": "sink_counter",
+                  "second_landmark": "cooking_range",
+                  "first_time_sec": -10.5,
+                  "second_time_sec": 7.0,
+                  "time_gap_sec": 17.5,
+                  "center_separation_m": 1.0259949211013704,
+                  "max_closest_distance_m": 0.5399901195143437
+                },
+                {
+                  "first_landmark": "sink_counter",
+                  "second_landmark": "refrigerator",
+                  "first_time_sec": -10.5,
+                  "second_time_sec": -1.0,
+                  "time_gap_sec": 9.5,
+                  "center_separation_m": 2.0091278433030393,
+                  "max_closest_distance_m": 1.4046637085728504
+                },
+                {
+                  "first_landmark": "refrigerator",
+                  "second_landmark": "cooking_range",
+                  "first_time_sec": -1.0,
+                  "second_time_sec": 7.0,
+                  "time_gap_sec": 8.0,
+                  "center_separation_m": 2.8340055685845704,
+                  "max_closest_distance_m": 1.4046637085728504
+                }
+              ],
+              "flank_pairs": [
+                {
+                  "left_landmark": "refrigerator",
+                  "right_landmark": "cooking_range",
+                  "time_gap_sec": 8.0,
+                  "minimum_side_margin_m": 0.4342012945963793
+                }
+              ],
+              "nearest_landmark_states": [
+                {
+                  "frame": 5400,
+                  "t": -15.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.39180389060288434,
+                  "runner_up_margin_m": 0.42922572225774125
+                },
+                {
+                  "frame": 5415,
+                  "t": -14.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.3383629546498929,
+                  "runner_up_margin_m": 0.5006493299265404
+                },
+                {
+                  "frame": 5430,
+                  "t": -14.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.3051829703404723,
+                  "runner_up_margin_m": 0.5466887718764428
+                },
+                {
+                  "frame": 5445,
+                  "t": -13.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.23295890658247126,
+                  "runner_up_margin_m": 0.6503971829456425
+                },
+                {
+                  "frame": 5460,
+                  "t": -13.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.18076554035610076,
+                  "runner_up_margin_m": 0.7100002646350856
+                },
+                {
+                  "frame": 5475,
+                  "t": -12.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.17110568962356734,
+                  "runner_up_margin_m": 0.7089790912875386
+                },
+                {
+                  "frame": 5490,
+                  "t": -12.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.154528868363576,
+                  "runner_up_margin_m": 0.7280452430590061
+                },
+                {
+                  "frame": 5505,
+                  "t": -11.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.14213387150315382,
+                  "runner_up_margin_m": 0.7454399980436065
+                },
+                {
+                  "frame": 5520,
+                  "t": -11.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.13267316282482822,
+                  "runner_up_margin_m": 0.760780826899487
+                },
+                {
+                  "frame": 5535,
+                  "t": -10.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.1150878108750275,
+                  "runner_up_margin_m": 0.795999088661398
+                },
+                {
+                  "frame": 5550,
+                  "t": -10.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.1176278191980251,
+                  "runner_up_margin_m": 0.7911517315761037
+                },
+                {
+                  "frame": 5565,
+                  "t": -9.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.13552611521081295,
+                  "runner_up_margin_m": 0.7550214204912754
+                },
+                {
+                  "frame": 5580,
+                  "t": -9.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.14209915545456497,
+                  "runner_up_margin_m": 0.7440528763950235
+                },
+                {
+                  "frame": 5595,
+                  "t": -8.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.1429117734405902,
+                  "runner_up_margin_m": 0.7667952515000096
+                },
+                {
+                  "frame": 5610,
+                  "t": -8.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.1583787733623566,
+                  "runner_up_margin_m": 0.8412219423756314
+                },
+                {
+                  "frame": 5625,
+                  "t": -7.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.26705319399678373,
+                  "runner_up_margin_m": 0.893602387354693
+                },
+                {
+                  "frame": 5640,
+                  "t": -7.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.41907498706579344,
+                  "runner_up_margin_m": 0.9092282433677266
+                },
+                {
+                  "frame": 5685,
+                  "t": -5.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.5475850034463512,
+                  "runner_up_margin_m": 0.905535996411394
+                },
+                {
+                  "frame": 5820,
+                  "t": -1.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.6076031762451818,
+                  "runner_up_margin_m": 0.7970605323276686
+                },
+                {
+                  "frame": 5940,
+                  "t": 3.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.5740036904184305,
+                  "runner_up_margin_m": 0.8439892754186902
+                },
+                {
+                  "frame": 5955,
+                  "t": 3.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.478943808511109,
+                  "runner_up_margin_m": 0.7515612755542607
+                },
+                {
+                  "frame": 5970,
+                  "t": 4.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.4821405073299343,
+                  "runner_up_margin_m": 0.5297131813768989
+                },
+                {
+                  "frame": 5985,
+                  "t": 4.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.5684240296033202,
+                  "runner_up_margin_m": 0.2421113987273592
+                },
+                {
+                  "frame": 6000,
+                  "t": 5.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.6571505505148973,
+                  "runner_up_margin_m": 0.011718261073130343
+                },
+                {
+                  "frame": 6015,
+                  "t": 5.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.5712344373142693,
+                  "runner_up_margin_m": 0.18642899775901478
+                },
+                {
+                  "frame": 6030,
+                  "t": 6.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.5469247698331591,
+                  "runner_up_margin_m": 0.2717168588497796
+                },
+                {
+                  "frame": 6045,
+                  "t": 6.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.541096454600055,
+                  "runner_up_margin_m": 0.29094240408403405
+                },
+                {
+                  "frame": 6060,
+                  "t": 7.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.5399901195143437,
+                  "runner_up_margin_m": 0.2936375269476219
+                },
+                {
+                  "frame": 6075,
+                  "t": 7.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.5432212652802749,
+                  "runner_up_margin_m": 0.2873929277903452
+                },
+                {
+                  "frame": 6090,
+                  "t": 8.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.5467599318818236,
+                  "runner_up_margin_m": 0.2793706846109102
+                },
+                {
+                  "frame": 6105,
+                  "t": 8.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.5573048781379469,
+                  "runner_up_margin_m": 0.27355699665638367
+                },
+                {
+                  "frame": 6120,
+                  "t": 9.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.5585529015127949,
+                  "runner_up_margin_m": 0.2722470998048312
+                },
+                {
+                  "frame": 6135,
+                  "t": 9.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.5599982647740742,
+                  "runner_up_margin_m": 0.27222657703254305
+                },
+                {
+                  "frame": 6150,
+                  "t": 10.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.5696908338107539,
+                  "runner_up_margin_m": 0.2580097500975398
+                },
+                {
+                  "frame": 6165,
+                  "t": 10.5,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.6045910539525402,
+                  "runner_up_margin_m": 0.1885502284759223
+                },
+                {
+                  "frame": 6180,
+                  "t": 11.0,
+                  "nearest_landmark": "cooking_range",
+                  "distance_m": 0.6717462542612556,
+                  "runner_up_margin_m": 0.035673514424963026
+                },
+                {
+                  "frame": 6195,
+                  "t": 11.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.5857190968208095,
+                  "runner_up_margin_m": 0.18920324006303157
+                },
+                {
+                  "frame": 6210,
+                  "t": 12.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.4648677795996138,
+                  "runner_up_margin_m": 0.46143704393127427
+                },
+                {
+                  "frame": 6225,
+                  "t": 12.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.4053711837335402,
+                  "runner_up_margin_m": 0.6987013512163852
+                },
+                {
+                  "frame": 6240,
+                  "t": 13.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.4157707749059515,
+                  "runner_up_margin_m": 0.8472969583961564
+                },
+                {
+                  "frame": 6255,
+                  "t": 13.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.4635681882385067,
+                  "runner_up_margin_m": 0.9144469063981975
+                },
+                {
+                  "frame": 6270,
+                  "t": 14.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.5202166491281361,
+                  "runner_up_margin_m": 0.9365505674830912
+                },
+                {
+                  "frame": 6285,
+                  "t": 14.5,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.5476560763318484,
+                  "runner_up_margin_m": 0.917429689577277
+                },
+                {
+                  "frame": 6300,
+                  "t": 15.0,
+                  "nearest_landmark": "sink_counter",
+                  "distance_m": 0.5550137090660108,
+                  "runner_up_margin_m": 0.9076120976939737
+                }
+              ],
+              "route_landmark_ranking": [
+                {
+                  "landmark_id": "sink_counter",
+                  "display_name": "sink counter",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 10890,
+                    "source_camera": "cam01",
+                    "box_xyxy_796x448": [
+                      335.0,
+                      110.0,
+                      430.0,
+                      205.0
+                    ],
+                    "selected_points": 2329527,
+                    "robust_inlier_points": 2310758,
+                    "inlier_radius_p90_m": 0.9993694384135895,
+                    "reprojected_centroid_796x448": [
+                      379.3257772335084,
+                      143.653062093218
+                    ],
+                    "camera_depth_m": 2.0617020633812038,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.1150878108750275,
+                  "closest_time_sec": -10.5
+                },
+                {
+                  "landmark_id": "cooking_range",
+                  "display_name": "cooking range",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 10890,
+                    "source_camera": "cam01",
+                    "box_xyxy_796x448": [
+                      445.0,
+                      165.0,
+                      590.0,
+                      290.0
+                    ],
+                    "selected_points": 1839801,
+                    "robust_inlier_points": 1817943,
+                    "inlier_radius_p90_m": 0.587316189436658,
+                    "reprojected_centroid_796x448": [
+                      484.90178874931723,
+                      201.84402227135953
+                    ],
+                    "camera_depth_m": 1.3454095582624144,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.5399901195143437,
+                  "closest_time_sec": 7.0
+                },
+                {
+                  "landmark_id": "refrigerator",
+                  "display_name": "refrigerator",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 10890,
+                    "source_camera": "cam01",
+                    "box_xyxy_796x448": [
+                      105.0,
+                      50.0,
+                      195.0,
+                      230.0
+                    ],
+                    "selected_points": 211327,
+                    "robust_inlier_points": 172222,
+                    "inlier_radius_p90_m": 1.059714071941084,
+                    "reprojected_centroid_796x448": [
+                      156.24901942285013,
+                      106.74400672856842
+                    ],
+                    "camera_depth_m": 2.348761167714528,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 1.4046637085728504,
+                  "closest_time_sec": -1.0
+                }
+              ],
+              "nearest_landmark_change": {
+                "start_landmark": "sink_counter",
+                "end_landmark": "sink_counter",
+                "changed": false,
+                "endpoint_run_length": 5,
+                "minimum_endpoint_margin_m": 0.42922572225774125,
+                "start_distance_m": 0.39180389060288434,
+                "end_distance_m": 0.5550137090660108,
+                "valid": false
+              },
+              "thresholds": {
+                "smoothing_radius": 2,
+                "side_dead_zone_m": 0.25,
+                "max_landmark_distance_m": 2.0,
+                "min_local_travel_m": 0.35,
+                "min_order_gap_sec": 2.0
+              }
+            },
+            "order_event": {
+              "first_landmark": "sink_counter",
+              "second_landmark": "cooking_range",
+              "first_time_sec": -10.5,
+              "second_time_sec": 7.0,
+              "time_gap_sec": 17.5,
+              "center_separation_m": 1.0259949211013704,
+              "max_closest_distance_m": 0.5399901195143437
+            }
+          }
+        }
+      ],
+      "case_policy": "one temporal question per unique video window",
+      "video_clip": "./outputs/spatial/val_3/task3_clip_frame5850_30s.mp4",
+      "video_window": {
+        "center_frame": 5850,
+        "fps": 30.0,
+        "start_sec": 180.0,
+        "duration_sec": 30.0,
+        "source_video": "data/egoexo4d/takes/sfu_cooking_007_3/frame_aligned_videos/downscaled/448/cam01.mp4"
+      }
+    },
+    {
+      "name": "task3_sfu_cooking_010_3_frame7650_30s",
+      "title": "Task 3 · sfu_cooking_010_3 · closest landmark to full trajectory",
+      "original_image": "./outputs/qa/task3_media/sfu_cooking_010_3_cam04_frame6630_static_landmarks.jpg",
+      "topdown_image": "./outputs/qa/task3_media/task3_sfu_cooking_010_3_frame7650_30s_trajectory.svg",
+      "summary_path": "outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame6630/summary.json",
+      "raw_summary": {
+        "sample_count": 3,
+        "success_count": 3,
+        "filtered_count": 0,
+        "min_distance_m": 0.6,
+        "distance_definition": "Euclidean distance from pelvis midpoint to robust 3D object centroid in Ego-Exo4D world meters.",
+        "samples": [
+          {
+            "status": "ok",
+            "recognition_status": "eligible",
+            "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+            "take_name": "sfu_cooking_010_3",
+            "camera": "cam04",
+            "frame": 7650,
+            "object_id": "salt package_0",
+            "query": "Where is salt package relative to the person?",
+            "object_xyz_world_m": [
+              -1.170124,
+              -1.0389815,
+              -0.48759549999999996
+            ],
+            "human_frame": {
+              "origin": [
+                -0.6267489388367411,
+                -0.6666215406210363,
+                -0.5547365065328518
+              ],
+              "right": [
+                -0.4853345323434764,
+                0.8536272042755174,
+                -0.1891321967188641
+              ],
+              "up": [
+                -0.03380315991020506,
+                0.19783569035803913,
+                0.9796521760301681
+              ],
+              "forward": [
+                -0.8736748468938682,
+                -0.48185229660272666,
+                0.0671611953709411
+              ]
+            },
+            "human_xyz_m": {
+              "right": -0.0668364359675058,
+              "up": 0.010476537609054412,
+              "forward": 0.6586648952145626
+            },
+            "distance_m": 0.6621301316215138,
+            "horizontal_distance_m": 0.6620472440550215,
+            "lateral_relation": "same_lateral_position",
+            "longitudinal_relation": "front",
+            "vertical_relation": "same_height",
+            "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.66 m，右向分量 -0.07 m，高度差 0.01 m，直线距离 0.66 m",
+            "raw_relation_before_filter": {
+              "human_xyz_m": {
+                "right": -0.0668364359675058,
+                "up": 0.010476537609054412,
+                "forward": 0.6586648952145626
+              },
+              "distance_m": 0.6621301316215138,
+              "horizontal_distance_m": 0.6620472440550215,
+              "lateral_relation": "same_lateral_position",
+              "longitudinal_relation": "front",
+              "vertical_relation": "same_height",
+              "text_zh": "物体在人的左右中线附近、前方、近似同高，前向分量 0.66 m，右向分量 -0.07 m，高度差 0.01 m，直线距离 0.66 m"
+            },
+            "distance_validation": {
+              "world_direct_m": 0.6621301316215138,
+              "human_components_m": 0.6621301316215138,
+              "agreement_residual_m": 0.0,
+              "agreement_pass": true,
+              "skeleton_scale": {
+                "shoulder_width_m": 0.3475823763637165,
+                "hip_width_m": 0.18128626752230362,
+                "torso_length_m": 0.5548871827586783,
+                "plausible": true
+              },
+              "validated": true
+            },
+            "quality": {
+              "mask_pixels": 19334,
+              "mask_source": "mask",
+              "points_in_mask": 80897,
+              "robust_inliers": 79820
+            },
+            "inputs": {
+              "point_cloud": "data/egoexo4d/takes/sfu_cooking_010_3/trajectory/semidense_points.csv.gz",
+              "camera_pose": "outputs/calibration/val_12/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json",
+              "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/31c74ac0-8c3d-4d5e-b577-4e54f16fb52d.json"
+            }
+          }
+        ]
+      },
+      "static_landmark_audit": {
+        "source_summary": "outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame6630/summary.json",
+        "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+        "take_name": "sfu_cooking_010_3",
+        "camera": "cam04",
+        "frame": 6630,
+        "review_image": "outputs/qa/task3_media/sfu_cooking_010_3_cam04_frame6630_static_landmarks.jpg",
+        "landmark_count": 4,
+        "landmarks": [
+          {
+            "object_id": "left_cooking_counter",
+            "display_name": "left cooking counter",
+            "object_xyz_world_m": [
+              -1.056693,
+              -1.040612,
+              -0.4263895
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 6630,
+              "source_camera": "cam04",
+              "box_xyxy_796x448": [
+                190.0,
+                165.0,
+                310.0,
+                285.0
+              ],
+              "selected_points": 796863,
+              "robust_inlier_points": 774840,
+              "inlier_radius_p90_m": 0.6590179097163058,
+              "reprojected_centroid_796x448": [
+                273.8633644262083,
+                210.10193275504645
+              ],
+              "camera_depth_m": 1.6843291939983427,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "back_sink_counter",
+            "display_name": "back sink counter",
+            "object_xyz_world_m": [
+              -0.767703,
+              0.650621,
+              -0.510475
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 6630,
+              "source_camera": "cam04",
+              "box_xyxy_796x448": [
+                405.0,
+                165.0,
+                625.0,
+                245.0
+              ],
+              "selected_points": 984977,
+              "robust_inlier_points": 967095,
+              "inlier_radius_p90_m": 1.189604254742308,
+              "reprojected_centroid_796x448": [
+                471.9135922136361,
+                194.5535990003372
+              ],
+              "camera_depth_m": 2.511892608348733,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "dining_table",
+            "display_name": "dining table",
+            "object_xyz_world_m": [
+              0.4506295,
+              -0.210936,
+              -0.666377
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 6630,
+              "source_camera": "cam04",
+              "box_xyxy_796x448": [
+                500.0,
+                265.0,
+                790.0,
+                420.0
+              ],
+              "selected_points": 876034,
+              "robust_inlier_points": 811584,
+              "inlier_radius_p90_m": 0.5786018467721493,
+              "reprojected_centroid_796x448": [
+                591.4155728299473,
+                283.6183901230686
+              ],
+              "camera_depth_m": 1.112966811958978,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "refrigerator",
+            "display_name": "refrigerator",
+            "object_xyz_world_m": [
+              0.744429,
+              1.4142955000000001,
+              -0.346704
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 6630,
+              "source_camera": "cam04",
+              "box_xyxy_796x448": [
+                690.0,
+                80.0,
+                790.0,
+                245.0
+              ],
+              "selected_points": 143744,
+              "robust_inlier_points": 143742,
+              "inlier_radius_p90_m": 1.9074115789040715,
+              "reprojected_centroid_796x448": [
+                728.9521723905565,
+                177.28172550724878
+              ],
+              "camera_depth_m": 1.7929354602589567,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          }
+        ],
+        "point_cloud_scan": {
+          "scanned_points": 10441352,
+          "quality_points": 9612274,
+          "projected_points": 8182984
+        },
+        "status": "ok"
+      },
+      "clip_filename": "task3_clip_frame7650_30s.mp4",
+      "qa": [
+        {
+          "task_id": "task3_human_scene_topological_reasoning",
+          "task_name": "Task 3 · Human–Scene Topological Reasoning",
+          "question_type": "closest_landmark_to_full_trajectory",
+          "question_categories": [
+            "full_route_proximity"
+          ],
+          "question": "Which listed landmark does the person's full trajectory come closest to at any point in the clip?",
+          "options": [
+            {
+              "label": "A",
+              "text": "The left cooking counter has the smallest minimum distance to the person's full trajectory."
+            },
+            {
+              "label": "B",
+              "text": "The back sink counter has the smallest minimum distance to the person's full trajectory."
+            },
+            {
+              "label": "C",
+              "text": "The dining table has the smallest minimum distance to the person's full trajectory."
+            },
+            {
+              "label": "D",
+              "text": "All listed landmarks have the same minimum distance to the person's full trajectory."
+            }
+          ],
+          "correct_option": "B",
+          "correct_answer": "The back sink counter has the smallest minimum distance to the person's full trajectory.",
+          "answer": "The back sink counter has the smallest minimum distance to the person's full trajectory.",
+          "explanation": "The route comes within about 0.1 m of the back sink counter; the next-smallest minimum distance is about 0.6 m.",
+          "status": "ok",
+          "method": "Ranks static 3D landmarks by their minimum horizontal distance to the full smoothed metric pelvis trajectory, rather than using one frame.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "closest_landmark_to_full_trajectory",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "topology": {
+              "status": "ok",
+              "coordinate_frame": "metric world trajectory projected onto the local horizontal plane",
+              "side_definition": "left/right uses the local smoothed path tangent at closest approach, not image coordinates or the start-end chord",
+              "trajectory_states": [
+                {
+                  "frame": 7200,
+                  "t": -15.0,
+                  "origin_world_m": [
+                    -0.5655599935756487,
+                    -0.6089287538222922,
+                    -0.5486141336767797
+                  ]
+                },
+                {
+                  "frame": 7215,
+                  "t": -14.5,
+                  "origin_world_m": [
+                    -0.569961152749355,
+                    -0.6089716740061125,
+                    -0.5493826601451387
+                  ]
+                },
+                {
+                  "frame": 7230,
+                  "t": -14.0,
+                  "origin_world_m": [
+                    -0.5710740761032984,
+                    -0.6101801484459296,
+                    -0.5512682985004838
+                  ]
+                },
+                {
+                  "frame": 7245,
+                  "t": -13.5,
+                  "origin_world_m": [
+                    -0.5682172497773927,
+                    -0.6110214829428167,
+                    -0.5515242004697191
+                  ]
+                },
+                {
+                  "frame": 7260,
+                  "t": -13.0,
+                  "origin_world_m": [
+                    -0.5776026142620019,
+                    -0.611266752272731,
+                    -0.5552074053926788
+                  ]
+                },
+                {
+                  "frame": 7275,
+                  "t": -12.5,
+                  "origin_world_m": [
+                    -0.5741916566622022,
+                    -0.6129670895345034,
+                    -0.5550661668709316
+                  ]
+                },
+                {
+                  "frame": 7290,
+                  "t": -12.0,
+                  "origin_world_m": [
+                    -0.5688525529445763,
+                    -0.6155398767307779,
+                    -0.5555882463489008
+                  ]
+                },
+                {
+                  "frame": 7305,
+                  "t": -11.5,
+                  "origin_world_m": [
+                    -0.5694360477838469,
+                    -0.6141953612424483,
+                    -0.5551887323816691
+                  ]
+                },
+                {
+                  "frame": 7320,
+                  "t": -11.0,
+                  "origin_world_m": [
+                    -0.5700866388182846,
+                    -0.614772703041411,
+                    -0.5561842306627307
+                  ]
+                },
+                {
+                  "frame": 7335,
+                  "t": -10.5,
+                  "origin_world_m": [
+                    -0.5694614861545337,
+                    -0.6125545815289776,
+                    -0.5536718146965307
+                  ]
+                },
+                {
+                  "frame": 7350,
+                  "t": -10.0,
+                  "origin_world_m": [
+                    -0.5778106485299753,
+                    -0.6129873342961034,
+                    -0.5496432779228281
+                  ]
+                },
+                {
+                  "frame": 7365,
+                  "t": -9.5,
+                  "origin_world_m": [
+                    -0.5822429045830037,
+                    -0.6145143148362416,
+                    -0.5496017940496337
+                  ]
+                },
+                {
+                  "frame": 7380,
+                  "t": -9.0,
+                  "origin_world_m": [
+                    -0.5850722526390882,
+                    -0.6188491622740253,
+                    -0.5498116703464837
+                  ]
+                },
+                {
+                  "frame": 7395,
+                  "t": -8.5,
+                  "origin_world_m": [
+                    -0.5875894386377899,
+                    -0.626343953168494,
+                    -0.5471046056059705
+                  ]
+                },
+                {
+                  "frame": 7410,
+                  "t": -8.0,
+                  "origin_world_m": [
+                    -0.5909473689373395,
+                    -0.6377296982320937,
+                    -0.5484976851055243
+                  ]
+                },
+                {
+                  "frame": 7425,
+                  "t": -7.5,
+                  "origin_world_m": [
+                    -0.5869570461725115,
+                    -0.6478470909190076,
+                    -0.5506072201701515
+                  ]
+                },
+                {
+                  "frame": 7440,
+                  "t": -7.0,
+                  "origin_world_m": [
+                    -0.5927973204382179,
+                    -0.6581487580389501,
+                    -0.5449800239510134
+                  ]
+                },
+                {
+                  "frame": 7455,
+                  "t": -6.5,
+                  "origin_world_m": [
+                    -0.5784068033260631,
+                    -0.6597300019457256,
+                    -0.5427178576681493
+                  ]
+                },
+                {
+                  "frame": 7470,
+                  "t": -6.0,
+                  "origin_world_m": [
+                    -0.5598057786521861,
+                    -0.6476921021557447,
+                    -0.5503013018060396
+                  ]
+                },
+                {
+                  "frame": 7485,
+                  "t": -5.5,
+                  "origin_world_m": [
+                    -0.5641747287264325,
+                    -0.5671029303194239,
+                    -0.5509702548794608
+                  ]
+                },
+                {
+                  "frame": 7500,
+                  "t": -5.0,
+                  "origin_world_m": [
+                    -0.5915812478600184,
+                    -0.41039199244379576,
+                    -0.5576189961759028
+                  ]
+                },
+                {
+                  "frame": 7515,
+                  "t": -4.5,
+                  "origin_world_m": [
+                    -0.6114197531518462,
+                    -0.19992094250511763,
+                    -0.5644028247267566
+                  ]
+                },
+                {
+                  "frame": 7530,
+                  "t": -4.0,
+                  "origin_world_m": [
+                    -0.6256063090142793,
+                    0.03658636142001999,
+                    -0.5615539382657524
+                  ]
+                },
+                {
+                  "frame": 7545,
+                  "t": -3.5,
+                  "origin_world_m": [
+                    -0.647332095626909,
+                    0.2649603659415819,
+                    -0.5518105028187931
+                  ]
+                },
+                {
+                  "frame": 7560,
+                  "t": -3.0,
+                  "origin_world_m": [
+                    -0.6571544760503158,
+                    0.4311944152667756,
+                    -0.5443582376276221
+                  ]
+                },
+                {
+                  "frame": 7575,
+                  "t": -2.5,
+                  "origin_world_m": [
+                    -0.6445563231930513,
+                    0.5215903900263681,
+                    -0.5302715742753025
+                  ]
+                },
+                {
+                  "frame": 7590,
+                  "t": -2.0,
+                  "origin_world_m": [
+                    -0.6357027960654819,
+                    0.5614478348555156,
+                    -0.5203012370494802
+                  ]
+                },
+                {
+                  "frame": 7605,
+                  "t": -1.5,
+                  "origin_world_m": [
+                    -0.6444608721473895,
+                    0.5653484655565097,
+                    -0.5185161321675948
+                  ]
+                },
+                {
+                  "frame": 7620,
+                  "t": -1.0,
+                  "origin_world_m": [
+                    -0.6547091940042007,
+                    0.5746480718849455,
+                    -0.5204646459053434
+                  ]
+                },
+                {
+                  "frame": 7635,
+                  "t": -0.5,
+                  "origin_world_m": [
+                    -0.6592315565092711,
+                    0.5794528696168071,
+                    -0.5295957378321672
+                  ]
+                },
+                {
+                  "frame": 7650,
+                  "t": 0.0,
+                  "origin_world_m": [
+                    -0.655653051893837,
+                    0.5883967293579684,
+                    -0.5396561897442813
+                  ]
+                },
+                {
+                  "frame": 7665,
+                  "t": 0.5,
+                  "origin_world_m": [
+                    -0.6537029620442241,
+                    0.5867194138640179,
+                    -0.5473421156663896
+                  ]
+                },
+                {
+                  "frame": 7680,
+                  "t": 1.0,
+                  "origin_world_m": [
+                    -0.6578716628493353,
+                    0.5321490058463041,
+                    -0.5568849506040897
+                  ]
+                },
+                {
+                  "frame": 7695,
+                  "t": 1.5,
+                  "origin_world_m": [
+                    -0.6762330247153878,
+                    0.4058991408691254,
+                    -0.5684722235519659
+                  ]
+                },
+                {
+                  "frame": 7710,
+                  "t": 2.0,
+                  "origin_world_m": [
+                    -0.6742673701528489,
+                    0.2054333641120448,
+                    -0.569738784873536
+                  ]
+                },
+                {
+                  "frame": 7725,
+                  "t": 2.5,
+                  "origin_world_m": [
+                    -0.6795430215807763,
+                    -0.030094803356882825,
+                    -0.5728359580274205
+                  ]
+                },
+                {
+                  "frame": 7740,
+                  "t": 3.0,
+                  "origin_world_m": [
+                    -0.673849647567361,
+                    -0.26158348965199396,
+                    -0.5735992826538832
+                  ]
+                },
+                {
+                  "frame": 7755,
+                  "t": 3.5,
+                  "origin_world_m": [
+                    -0.6658502892054339,
+                    -0.43996648311253655,
+                    -0.5695685082688089
+                  ]
+                },
+                {
+                  "frame": 7770,
+                  "t": 4.0,
+                  "origin_world_m": [
+                    -0.6392782865865978,
+                    -0.5546875067831352,
+                    -0.5575874919653508
+                  ]
+                },
+                {
+                  "frame": 7785,
+                  "t": 4.5,
+                  "origin_world_m": [
+                    -0.6305847106838562,
+                    -0.5922868661292406,
+                    -0.5502414001878653
+                  ]
+                },
+                {
+                  "frame": 7800,
+                  "t": 5.0,
+                  "origin_world_m": [
+                    -0.6219559322534802,
+                    -0.600794280277381,
+                    -0.5434109563504207
+                  ]
+                },
+                {
+                  "frame": 7815,
+                  "t": 5.5,
+                  "origin_world_m": [
+                    -0.6220768964981183,
+                    -0.6026887312192086,
+                    -0.5410147886392975
+                  ]
+                },
+                {
+                  "frame": 7830,
+                  "t": 6.0,
+                  "origin_world_m": [
+                    -0.6232359082683129,
+                    -0.6034112907081136,
+                    -0.5402404502077434
+                  ]
+                },
+                {
+                  "frame": 7845,
+                  "t": 6.5,
+                  "origin_world_m": [
+                    -0.6310173667929887,
+                    -0.6003930537626798,
+                    -0.5410182566066479
+                  ]
+                },
+                {
+                  "frame": 7860,
+                  "t": 7.0,
+                  "origin_world_m": [
+                    -0.6394270975383912,
+                    -0.5996702284500023,
+                    -0.5443936172382869
+                  ]
+                },
+                {
+                  "frame": 7875,
+                  "t": 7.5,
+                  "origin_world_m": [
+                    -0.6472037027719014,
+                    -0.5958602474766032,
+                    -0.5475884637350614
+                  ]
+                },
+                {
+                  "frame": 7890,
+                  "t": 8.0,
+                  "origin_world_m": [
+                    -0.6553071851819033,
+                    -0.593242217063296,
+                    -0.5489949154529705
+                  ]
+                },
+                {
+                  "frame": 7905,
+                  "t": 8.5,
+                  "origin_world_m": [
+                    -0.6525430424089739,
+                    -0.593102014508622,
+                    -0.5468868530200283
+                  ]
+                },
+                {
+                  "frame": 7920,
+                  "t": 9.0,
+                  "origin_world_m": [
+                    -0.6436180729558887,
+                    -0.5951772923005676,
+                    -0.5453428391917938
+                  ]
+                },
+                {
+                  "frame": 7935,
+                  "t": 9.5,
+                  "origin_world_m": [
+                    -0.6392373867359455,
+                    -0.5929492449616951,
+                    -0.5450487751545556
+                  ]
+                },
+                {
+                  "frame": 7950,
+                  "t": 10.0,
+                  "origin_world_m": [
+                    -0.6374752107382144,
+                    -0.5937294552302393,
+                    -0.5452355423742098
+                  ]
+                },
+                {
+                  "frame": 7965,
+                  "t": 10.5,
+                  "origin_world_m": [
+                    -0.635917702455648,
+                    -0.5943534339772658,
+                    -0.5469851336545083
+                  ]
+                },
+                {
+                  "frame": 7980,
+                  "t": 11.0,
+                  "origin_world_m": [
+                    -0.646241136461768,
+                    -0.5923819363160783,
+                    -0.5506895003150459
+                  ]
+                },
+                {
+                  "frame": 7995,
+                  "t": 11.5,
+                  "origin_world_m": [
+                    -0.6466653541757412,
+                    -0.5914389000653865,
+                    -0.5501902556820147
+                  ]
+                },
+                {
+                  "frame": 8010,
+                  "t": 12.0,
+                  "origin_world_m": [
+                    -0.6508829092314772,
+                    -0.5930288002877793,
+                    -0.5508542707545556
+                  ]
+                },
+                {
+                  "frame": 8025,
+                  "t": 12.5,
+                  "origin_world_m": [
+                    -0.6507773293451001,
+                    -0.5926055109492632,
+                    -0.5487609737816472
+                  ]
+                },
+                {
+                  "frame": 8040,
+                  "t": 13.0,
+                  "origin_world_m": [
+                    -0.6526345869912207,
+                    -0.5918461211255247,
+                    -0.549170671802478
+                  ]
+                },
+                {
+                  "frame": 8055,
+                  "t": 13.5,
+                  "origin_world_m": [
+                    -0.6528543210545473,
+                    -0.5911230508124581,
+                    -0.5498153853524441
+                  ]
+                },
+                {
+                  "frame": 8070,
+                  "t": 14.0,
+                  "origin_world_m": [
+                    -0.6652439779442645,
+                    -0.5807459455039385,
+                    -0.5547288261901622
+                  ]
+                },
+                {
+                  "frame": 8085,
+                  "t": 14.5,
+                  "origin_world_m": [
+                    -0.6651779515392089,
+                    -0.5795489022472169,
+                    -0.5559532742398559
+                  ]
+                },
+                {
+                  "frame": 8100,
+                  "t": 15.0,
+                  "origin_world_m": [
+                    -0.6689134197083204,
+                    -0.5753733538884923,
+                    -0.5596331696586101
+                  ]
+                }
+              ],
+              "trajectory_state_count": 61,
+              "temporal_span_sec": 30.0,
+              "path_length_m": 2.6391767243235713,
+              "net_displacement_m": 0.10921536205488122,
+              "max_smoothed_speed_mps": 0.4637011107053648,
+              "reference_up_world_unit": [
+                -0.030762079958586038,
+                0.19306545008329004,
+                0.9807035364577606
+              ],
+              "landmarks": [
+                {
+                  "landmark_id": "left_cooking_counter",
+                  "display_name": "left cooking counter",
+                  "center_world_m": [
+                    -1.056693,
+                    -1.040612,
+                    -0.4263895
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      190.0,
+                      165.0,
+                      310.0,
+                      285.0
+                    ],
+                    "selected_points": 796863,
+                    "robust_inlier_points": 774840,
+                    "inlier_radius_p90_m": 0.6590179097163058,
+                    "reprojected_centroid_796x448": [
+                      273.8633644262083,
+                      210.10193275504645
+                    ],
+                    "camera_depth_m": 1.6843291939983427,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 16,
+                  "closest_frame": 7440,
+                  "closest_time_sec": -7.0,
+                  "closest_horizontal_distance_m": 0.6101823610068458,
+                  "local_window_indices": [
+                    11,
+                    21
+                  ],
+                  "local_travel_m": 0.4105431037100064,
+                  "signed_lateral_m": 0.4876853755494939,
+                  "pass_side": "right",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": true,
+                  "visit_prominence_m": 0.007707721935216072,
+                  "valid_visit": false
+                },
+                {
+                  "landmark_id": "back_sink_counter",
+                  "display_name": "back sink counter",
+                  "center_world_m": [
+                    -0.767703,
+                    0.650621,
+                    -0.510475
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      405.0,
+                      165.0,
+                      625.0,
+                      245.0
+                    ],
+                    "selected_points": 984977,
+                    "robust_inlier_points": 967095,
+                    "inlier_radius_p90_m": 1.189604254742308,
+                    "reprojected_centroid_796x448": [
+                      471.9135922136361,
+                      194.5535990003372
+                    ],
+                    "camera_depth_m": 2.511892608348733,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 30,
+                  "closest_frame": 7650,
+                  "closest_time_sec": 0.0,
+                  "closest_horizontal_distance_m": 0.12383736231829319,
+                  "local_window_indices": [
+                    25,
+                    35
+                  ],
+                  "local_travel_m": 0.5345380688023573,
+                  "signed_lateral_m": -0.11454153388043652,
+                  "pass_side": "near_centerline",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": false,
+                  "visit_prominence_m": 1.0729605853287456,
+                  "valid_visit": true
+                },
+                {
+                  "landmark_id": "dining_table",
+                  "display_name": "dining table",
+                  "center_world_m": [
+                    0.4506295,
+                    -0.210936,
+                    -0.666377
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      500.0,
+                      265.0,
+                      790.0,
+                      420.0
+                    ],
+                    "selected_points": 876034,
+                    "robust_inlier_points": 811584,
+                    "inlier_radius_p90_m": 0.5786018467721493,
+                    "reprojected_centroid_796x448": [
+                      591.4155728299473,
+                      283.6183901230686
+                    ],
+                    "camera_depth_m": 1.112966811958978,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 21,
+                  "closest_frame": 7515,
+                  "closest_time_sec": -4.5,
+                  "closest_horizontal_distance_m": 1.0584406393958061,
+                  "local_window_indices": [
+                    19,
+                    23
+                  ],
+                  "local_travel_m": 0.8202920082814855,
+                  "signed_lateral_m": -1.0544303747713573,
+                  "pass_side": "left",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": true,
+                  "visit_prominence_m": 0.03701348389064507,
+                  "valid_visit": false
+                },
+                {
+                  "landmark_id": "refrigerator",
+                  "display_name": "refrigerator",
+                  "center_world_m": [
+                    0.744429,
+                    1.4142955000000001,
+                    -0.346704
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      690.0,
+                      80.0,
+                      790.0,
+                      245.0
+                    ],
+                    "selected_points": 143744,
+                    "robust_inlier_points": 143742,
+                    "inlier_radius_p90_m": 1.9074115789040715,
+                    "reprojected_centroid_796x448": [
+                      728.9521723905565,
+                      177.28172550724878
+                    ],
+                    "camera_depth_m": 1.7929354602589567,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 26,
+                  "closest_frame": 7590,
+                  "closest_time_sec": -2.0,
+                  "closest_horizontal_distance_m": 1.605217617136478,
+                  "local_window_indices": [
+                    22,
+                    30
+                  ],
+                  "local_travel_m": 0.5378222399293039,
+                  "signed_lateral_m": -1.4271196661651813,
+                  "pass_side": "left",
+                  "side_support_ratio": 1.0,
+                  "valid_local_pass": true,
+                  "visit_prominence_m": 0.7505431290292846,
+                  "valid_visit": true
+                }
+              ],
+              "valid_pass_landmarks": [
+                "left_cooking_counter",
+                "dining_table",
+                "refrigerator"
+              ],
+              "valid_visit_landmarks": [
+                "back_sink_counter",
+                "refrigerator"
+              ],
+              "order_pairs": [
+                {
+                  "first_landmark": "refrigerator",
+                  "second_landmark": "back_sink_counter",
+                  "first_time_sec": -2.0,
+                  "second_time_sec": 0.0,
+                  "time_gap_sec": 2.0,
+                  "center_separation_m": 1.681714311609872,
+                  "max_closest_distance_m": 1.605217617136478
+                }
+              ],
+              "proximity_order_pairs": [
+                {
+                  "first_landmark": "left_cooking_counter",
+                  "second_landmark": "back_sink_counter",
+                  "first_time_sec": -7.0,
+                  "second_time_sec": 0.0,
+                  "time_gap_sec": 7.0,
+                  "center_separation_m": 1.7016320718023008,
+                  "max_closest_distance_m": 0.6101823610068458
+                },
+                {
+                  "first_landmark": "left_cooking_counter",
+                  "second_landmark": "refrigerator",
+                  "first_time_sec": -7.0,
+                  "second_time_sec": -2.0,
+                  "time_gap_sec": 5.0,
+                  "center_separation_m": 3.0050375643920786,
+                  "max_closest_distance_m": 1.605217617136478
+                },
+                {
+                  "first_landmark": "dining_table",
+                  "second_landmark": "back_sink_counter",
+                  "first_time_sec": -4.5,
+                  "second_time_sec": 0.0,
+                  "time_gap_sec": 4.5,
+                  "center_separation_m": 1.4572846962487607,
+                  "max_closest_distance_m": 1.0584406393958061
+                },
+                {
+                  "first_landmark": "left_cooking_counter",
+                  "second_landmark": "dining_table",
+                  "first_time_sec": -7.0,
+                  "second_time_sec": -4.5,
+                  "time_gap_sec": 2.5,
+                  "center_separation_m": 1.732975659356342,
+                  "max_closest_distance_m": 1.0584406393958061
+                },
+                {
+                  "first_landmark": "dining_table",
+                  "second_landmark": "refrigerator",
+                  "first_time_sec": -4.5,
+                  "second_time_sec": -2.0,
+                  "time_gap_sec": 2.5,
+                  "center_separation_m": 1.5645007121178074,
+                  "max_closest_distance_m": 1.605217617136478
+                },
+                {
+                  "first_landmark": "refrigerator",
+                  "second_landmark": "back_sink_counter",
+                  "first_time_sec": -2.0,
+                  "second_time_sec": 0.0,
+                  "time_gap_sec": 2.0,
+                  "center_separation_m": 1.681714311609872,
+                  "max_closest_distance_m": 1.605217617136478
+                }
+              ],
+              "flank_pairs": [
+                {
+                  "left_landmark": "dining_table",
+                  "right_landmark": "left_cooking_counter",
+                  "time_gap_sec": 2.5,
+                  "minimum_side_margin_m": 0.4876853755494939
+                },
+                {
+                  "left_landmark": "refrigerator",
+                  "right_landmark": "left_cooking_counter",
+                  "time_gap_sec": 5.0,
+                  "minimum_side_margin_m": 0.4876853755494939
+                }
+              ],
+              "nearest_landmark_states": [
+                {
+                  "frame": 7200,
+                  "t": -15.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6632006685115995,
+                  "runner_up_margin_m": 0.43225345477485166
+                },
+                {
+                  "frame": 7215,
+                  "t": -14.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.660013404298813,
+                  "runner_up_margin_m": 0.4394978046437109
+                },
+                {
+                  "frame": 7230,
+                  "t": -14.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6585915791521931,
+                  "runner_up_margin_m": 0.44231862985409764
+                },
+                {
+                  "frame": 7245,
+                  "t": -13.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6601601347768358,
+                  "runner_up_margin_m": 0.4384092094290244
+                },
+                {
+                  "frame": 7260,
+                  "t": -13.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6535092060745836,
+                  "runner_up_margin_m": 0.45368073049345925
+                },
+                {
+                  "frame": 7275,
+                  "t": -12.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6548483140998438,
+                  "runner_up_margin_m": 0.4498234226102178
+                },
+                {
+                  "frame": 7290,
+                  "t": -12.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6571219771287353,
+                  "runner_up_margin_m": 0.44355546328534223
+                },
+                {
+                  "frame": 7305,
+                  "t": -11.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6575420082380926,
+                  "runner_up_margin_m": 0.4431850622622241
+                },
+                {
+                  "frame": 7320,
+                  "t": -11.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6567847511659095,
+                  "runner_up_margin_m": 0.44471688456944536
+                },
+                {
+                  "frame": 7335,
+                  "t": -10.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.658452673592544,
+                  "runner_up_margin_m": 0.44174814097695236
+                },
+                {
+                  "frame": 7350,
+                  "t": -10.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6515893190073334,
+                  "runner_up_margin_m": 0.45668388136120175
+                },
+                {
+                  "frame": 7365,
+                  "t": -9.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6473151286917918,
+                  "runner_up_margin_m": 0.4656366852478653
+                },
+                {
+                  "frame": 7380,
+                  "t": -9.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6423503684776676,
+                  "runner_up_margin_m": 0.4748393915891246
+                },
+                {
+                  "frame": 7395,
+                  "t": -8.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6351824258596276,
+                  "runner_up_margin_m": 0.48730030755579523
+                },
+                {
+                  "frame": 7410,
+                  "t": -8.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6252793342486769,
+                  "runner_up_margin_m": 0.5046205050890415
+                },
+                {
+                  "frame": 7425,
+                  "t": -7.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6218464519530188,
+                  "runner_up_margin_m": 0.5082625535610109
+                },
+                {
+                  "frame": 7440,
+                  "t": -7.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6101823610068458,
+                  "runner_up_margin_m": 0.5296753182200256
+                },
+                {
+                  "frame": 7455,
+                  "t": -6.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6199251806801608,
+                  "runner_up_margin_m": 0.507563221709984
+                },
+                {
+                  "frame": 7470,
+                  "t": -6.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6425905249415101,
+                  "runner_up_margin_m": 0.46264111869260216
+                },
+                {
+                  "frame": 7485,
+                  "t": -5.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6929630402684556,
+                  "runner_up_margin_m": 0.3860553819928162
+                },
+                {
+                  "frame": 7500,
+                  "t": -5.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.7938969423544828,
+                  "runner_up_margin_m": 0.25166474049188414
+                },
+                {
+                  "frame": 7515,
+                  "t": -4.5,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.8375633706125424,
+                  "runner_up_margin_m": 0.12363460580479735
+                },
+                {
+                  "frame": 7530,
+                  "t": -4.0,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.6081985222743475,
+                  "runner_up_margin_m": 0.48578257040329775
+                },
+                {
+                  "frame": 7545,
+                  "t": -3.5,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.3883845705166466,
+                  "runner_up_margin_m": 0.7899504845419505
+                },
+                {
+                  "frame": 7560,
+                  "t": -3.0,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.235110728521122,
+                  "runner_up_margin_m": 1.0207872256429433
+                },
+                {
+                  "frame": 7575,
+                  "t": -2.5,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.17288994537067773,
+                  "runner_up_margin_m": 1.1152563326740041
+                },
+                {
+                  "frame": 7590,
+                  "t": -2.0,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.15657847454893178,
+                  "runner_up_margin_m": 1.1441482732339285
+                },
+                {
+                  "frame": 7605,
+                  "t": -1.5,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.14742051680571905,
+                  "runner_up_margin_m": 1.1624443531340853
+                },
+                {
+                  "frame": 7620,
+                  "t": -1.0,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.13363608987206038,
+                  "runner_up_margin_m": 1.1900397400218314
+                },
+                {
+                  "frame": 7635,
+                  "t": -0.5,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.12614620269877505,
+                  "runner_up_margin_m": 1.205113008117562
+                },
+                {
+                  "frame": 7650,
+                  "t": 0.0,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.12383736231829319,
+                  "runner_up_margin_m": 1.2107465235373718
+                },
+                {
+                  "frame": 7665,
+                  "t": 0.5,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.12543774840037886,
+                  "runner_up_margin_m": 1.2076511289570009
+                },
+                {
+                  "frame": 7680,
+                  "t": 1.0,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.1519936718720987,
+                  "runner_up_margin_m": 1.1563434798325074
+                },
+                {
+                  "frame": 7695,
+                  "t": 1.5,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.24532269534423573,
+                  "runner_up_margin_m": 1.0186018111087403
+                },
+                {
+                  "frame": 7710,
+                  "t": 2.0,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.43455915764632796,
+                  "runner_up_margin_m": 0.7503857202888597
+                },
+                {
+                  "frame": 7725,
+                  "t": 2.5,
+                  "nearest_landmark": "back_sink_counter",
+                  "distance_m": 0.6609810841785032,
+                  "runner_up_margin_m": 0.42678901173801054
+                },
+                {
+                  "frame": 7740,
+                  "t": 3.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.8803932040211284,
+                  "runner_up_margin_m": 0.006665560358495193
+                },
+                {
+                  "frame": 7755,
+                  "t": 3.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.7298649432122966,
+                  "runner_up_margin_m": 0.33289474113064266
+                },
+                {
+                  "frame": 7770,
+                  "t": 4.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6521472807897238,
+                  "runner_up_margin_m": 0.4934727207098536
+                },
+                {
+                  "frame": 7785,
+                  "t": 4.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6289655478556594,
+                  "runner_up_margin_m": 0.5210490476541424
+                },
+                {
+                  "frame": 7800,
+                  "t": 5.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6279026387729488,
+                  "runner_up_margin_m": 0.51726792024141
+                },
+                {
+                  "frame": 7815,
+                  "t": 5.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6261841232487554,
+                  "runner_up_margin_m": 0.5198680293474075
+                },
+                {
+                  "frame": 7830,
+                  "t": 6.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.624775828443006,
+                  "runner_up_margin_m": 0.5226469854063895
+                },
+                {
+                  "frame": 7845,
+                  "t": 6.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.621683450207512,
+                  "runner_up_margin_m": 0.531913908760067
+                },
+                {
+                  "frame": 7860,
+                  "t": 7.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6169109153851035,
+                  "runner_up_margin_m": 0.5441732054647767
+                },
+                {
+                  "frame": 7875,
+                  "t": 7.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6148953357309831,
+                  "runner_up_margin_m": 0.5520435517428633
+                },
+                {
+                  "frame": 7890,
+                  "t": 8.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6116751766299295,
+                  "runner_up_margin_m": 0.5619339018539979
+                },
+                {
+                  "frame": 7905,
+                  "t": 8.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6133252161821073,
+                  "runner_up_margin_m": 0.5577159307477021
+                },
+                {
+                  "frame": 7920,
+                  "t": 9.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6175048004286202,
+                  "runner_up_margin_m": 0.5459198274557507
+                },
+                {
+                  "frame": 7935,
+                  "t": 9.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6220295458300709,
+                  "runner_up_margin_m": 0.536530485229038
+                },
+                {
+                  "frame": 7950,
+                  "t": 10.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6226621844189248,
+                  "runner_up_margin_m": 0.5345049464127958
+                },
+                {
+                  "frame": 7965,
+                  "t": 10.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6234676243763787,
+                  "runner_up_margin_m": 0.5323860788609825
+                },
+                {
+                  "frame": 7980,
+                  "t": 11.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6184887760602429,
+                  "runner_up_margin_m": 0.546242836793412
+                },
+                {
+                  "frame": 7995,
+                  "t": 11.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6188440646817561,
+                  "runner_up_margin_m": 0.5459849157878607
+                },
+                {
+                  "frame": 8010,
+                  "t": 12.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6149692444091762,
+                  "runner_up_margin_m": 0.5543386920669285
+                },
+                {
+                  "frame": 8025,
+                  "t": 12.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6150901602136345,
+                  "runner_up_margin_m": 0.5540530017504475
+                },
+                {
+                  "frame": 8040,
+                  "t": 13.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6144873900137585,
+                  "runner_up_margin_m": 0.5561299495551039
+                },
+                {
+                  "frame": 8055,
+                  "t": 13.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6149636814270587,
+                  "runner_up_margin_m": 0.5555925099972665
+                },
+                {
+                  "frame": 8070,
+                  "t": 14.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6154407337884287,
+                  "runner_up_margin_m": 0.5631827276204917
+                },
+                {
+                  "frame": 8085,
+                  "t": 14.5,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6165555651823761,
+                  "runner_up_margin_m": 0.5615742591222369
+                },
+                {
+                  "frame": 8100,
+                  "t": 15.0,
+                  "nearest_landmark": "left_cooking_counter",
+                  "distance_m": 0.6178900829420618,
+                  "runner_up_margin_m": 0.5623034577580565
+                }
+              ],
+              "route_landmark_ranking": [
+                {
+                  "landmark_id": "back_sink_counter",
+                  "display_name": "back sink counter",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      405.0,
+                      165.0,
+                      625.0,
+                      245.0
+                    ],
+                    "selected_points": 984977,
+                    "robust_inlier_points": 967095,
+                    "inlier_radius_p90_m": 1.189604254742308,
+                    "reprojected_centroid_796x448": [
+                      471.9135922136361,
+                      194.5535990003372
+                    ],
+                    "camera_depth_m": 2.511892608348733,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.12383736231829319,
+                  "closest_time_sec": 0.0
+                },
+                {
+                  "landmark_id": "left_cooking_counter",
+                  "display_name": "left cooking counter",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      190.0,
+                      165.0,
+                      310.0,
+                      285.0
+                    ],
+                    "selected_points": 796863,
+                    "robust_inlier_points": 774840,
+                    "inlier_radius_p90_m": 0.6590179097163058,
+                    "reprojected_centroid_796x448": [
+                      273.8633644262083,
+                      210.10193275504645
+                    ],
+                    "camera_depth_m": 1.6843291939983427,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.6101823610068458,
+                  "closest_time_sec": -7.0
+                },
+                {
+                  "landmark_id": "dining_table",
+                  "display_name": "dining table",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      500.0,
+                      265.0,
+                      790.0,
+                      420.0
+                    ],
+                    "selected_points": 876034,
+                    "robust_inlier_points": 811584,
+                    "inlier_radius_p90_m": 0.5786018467721493,
+                    "reprojected_centroid_796x448": [
+                      591.4155728299473,
+                      283.6183901230686
+                    ],
+                    "camera_depth_m": 1.112966811958978,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 1.0584406393958061,
+                  "closest_time_sec": -4.5
+                },
+                {
+                  "landmark_id": "refrigerator",
+                  "display_name": "refrigerator",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 6630,
+                    "source_camera": "cam04",
+                    "box_xyxy_796x448": [
+                      690.0,
+                      80.0,
+                      790.0,
+                      245.0
+                    ],
+                    "selected_points": 143744,
+                    "robust_inlier_points": 143742,
+                    "inlier_radius_p90_m": 1.9074115789040715,
+                    "reprojected_centroid_796x448": [
+                      728.9521723905565,
+                      177.28172550724878
+                    ],
+                    "camera_depth_m": 1.7929354602589567,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 1.605217617136478,
+                  "closest_time_sec": -2.0
+                }
+              ],
+              "nearest_landmark_change": {
+                "start_landmark": "left_cooking_counter",
+                "end_landmark": "left_cooking_counter",
+                "changed": false,
+                "endpoint_run_length": 5,
+                "minimum_endpoint_margin_m": 0.43225345477485166,
+                "start_distance_m": 0.6632006685115995,
+                "end_distance_m": 0.6178900829420618,
+                "valid": false
+              },
+              "thresholds": {
+                "smoothing_radius": 2,
+                "side_dead_zone_m": 0.25,
+                "max_landmark_distance_m": 2.0,
+                "min_local_travel_m": 0.35,
+                "min_order_gap_sec": 2.0
+              }
+            },
+            "route_landmark_ranking": [
+              {
+                "landmark_id": "back_sink_counter",
+                "display_name": "back sink counter",
+                "static_scene_landmark": true,
+                "grounding": {
+                  "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                  "source_frame": 6630,
+                  "source_camera": "cam04",
+                  "box_xyxy_796x448": [
+                    405.0,
+                    165.0,
+                    625.0,
+                    245.0
+                  ],
+                  "selected_points": 984977,
+                  "robust_inlier_points": 967095,
+                  "inlier_radius_p90_m": 1.189604254742308,
+                  "reprojected_centroid_796x448": [
+                    471.9135922136361,
+                    194.5535990003372
+                  ],
+                  "camera_depth_m": 2.511892608348733,
+                  "centroid_reprojects_inside_box": true,
+                  "manual_static_review": true
+                },
+                "minimum_horizontal_distance_m": 0.12383736231829319,
+                "closest_time_sec": 0.0
+              },
+              {
+                "landmark_id": "left_cooking_counter",
+                "display_name": "left cooking counter",
+                "static_scene_landmark": true,
+                "grounding": {
+                  "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                  "source_frame": 6630,
+                  "source_camera": "cam04",
+                  "box_xyxy_796x448": [
+                    190.0,
+                    165.0,
+                    310.0,
+                    285.0
+                  ],
+                  "selected_points": 796863,
+                  "robust_inlier_points": 774840,
+                  "inlier_radius_p90_m": 0.6590179097163058,
+                  "reprojected_centroid_796x448": [
+                    273.8633644262083,
+                    210.10193275504645
+                  ],
+                  "camera_depth_m": 1.6843291939983427,
+                  "centroid_reprojects_inside_box": true,
+                  "manual_static_review": true
+                },
+                "minimum_horizontal_distance_m": 0.6101823610068458,
+                "closest_time_sec": -7.0
+              },
+              {
+                "landmark_id": "dining_table",
+                "display_name": "dining table",
+                "static_scene_landmark": true,
+                "grounding": {
+                  "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                  "source_frame": 6630,
+                  "source_camera": "cam04",
+                  "box_xyxy_796x448": [
+                    500.0,
+                    265.0,
+                    790.0,
+                    420.0
+                  ],
+                  "selected_points": 876034,
+                  "robust_inlier_points": 811584,
+                  "inlier_radius_p90_m": 0.5786018467721493,
+                  "reprojected_centroid_796x448": [
+                    591.4155728299473,
+                    283.6183901230686
+                  ],
+                  "camera_depth_m": 1.112966811958978,
+                  "centroid_reprojects_inside_box": true,
+                  "manual_static_review": true
+                },
+                "minimum_horizontal_distance_m": 1.0584406393958061,
+                "closest_time_sec": -4.5
+              },
+              {
+                "landmark_id": "refrigerator",
+                "display_name": "refrigerator",
+                "static_scene_landmark": true,
+                "grounding": {
+                  "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                  "source_frame": 6630,
+                  "source_camera": "cam04",
+                  "box_xyxy_796x448": [
+                    690.0,
+                    80.0,
+                    790.0,
+                    245.0
+                  ],
+                  "selected_points": 143744,
+                  "robust_inlier_points": 143742,
+                  "inlier_radius_p90_m": 1.9074115789040715,
+                  "reprojected_centroid_796x448": [
+                    728.9521723905565,
+                    177.28172550724878
+                  ],
+                  "camera_depth_m": 1.7929354602589567,
+                  "centroid_reprojects_inside_box": true,
+                  "manual_static_review": true
+                },
+                "minimum_horizontal_distance_m": 1.605217617136478,
+                "closest_time_sec": -2.0
+              }
+            ]
+          }
+        }
+      ],
+      "case_policy": "one temporal question per unique video window",
+      "video_clip": "./outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame6630/task3_clip_frame7650_30s.mp4",
+      "video_window": {
+        "center_frame": 7650,
+        "fps": 30.0,
+        "start_sec": 240.0,
+        "duration_sec": 30.0,
+        "source_video": "data/egoexo4d/takes/sfu_cooking_010_3/frame_aligned_videos/downscaled/448/cam04.mp4"
+      }
+    },
+    {
+      "name": "task3_iiith_cooking_145_2_frame11400_30s",
+      "title": "Task 3 · iiith_cooking_145_2 · closest landmark to full trajectory",
+      "original_image": "./outputs/qa/task3_media/iiith_cooking_145_2_cam01_frame11250_static_landmarks.jpg",
+      "topdown_image": "./outputs/qa/task3_media/task3_iiith_cooking_145_2_frame11400_30s_trajectory.svg",
+      "summary_path": "outputs/spatial/showcase_queries/query_04_iiith145_frame11250/summary.json",
+      "raw_summary": {
+        "sample_count": 3,
+        "success_count": 3,
+        "filtered_count": 0,
+        "min_distance_m": 0.6,
+        "distance_definition": "Euclidean distance from pelvis midpoint to robust 3D object centroid in Ego-Exo4D world meters.",
+        "samples": [
+          {
+            "status": "ok",
+            "recognition_status": "eligible",
+            "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+            "take_name": "iiith_cooking_145_2",
+            "camera": "cam01",
+            "frame": 11400,
+            "object_id": "Large steel bowl_0",
+            "query": "Where is the large bowl relative to the person?",
+            "object_xyz_world_m": [
+              -0.359922,
+              1.051152,
+              -0.170162
+            ],
+            "human_frame": {
+              "origin": [
+                0.16626110253562706,
+                0.2586457094104282,
+                -0.4240010324036807
+              ],
+              "right": [
+                0.9697227152864358,
+                -0.22624339737025279,
+                -0.09193356625231208
+              ],
+              "up": [
+                0.1097661224378294,
+                0.06751897140607947,
+                0.9916615283781197
+              ],
+              "forward": [
+                -0.21814961339059438,
+                -0.9717279010333248,
+                0.09030854074174427
+              ]
+            },
+            "human_xyz_m": {
+              "right": -0.7128873500518775,
+              "up": 0.2474745335512699,
+              "forward": -0.6323900013198276
+            },
+            "distance_m": 0.9845654535833047,
+            "horizontal_distance_m": 0.9529561834802689,
+            "lateral_relation": "left",
+            "longitudinal_relation": "behind",
+            "vertical_relation": "above",
+            "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.63 m，右向分量 -0.71 m，高度差 0.25 m，直线距离 0.98 m",
+            "raw_relation_before_filter": {
+              "human_xyz_m": {
+                "right": -0.7128873500518775,
+                "up": 0.2474745335512699,
+                "forward": -0.6323900013198276
+              },
+              "distance_m": 0.9845654535833047,
+              "horizontal_distance_m": 0.9529561834802689,
+              "lateral_relation": "left",
+              "longitudinal_relation": "behind",
+              "vertical_relation": "above",
+              "text_zh": "物体在人的左侧、后方、上方，前向分量 -0.63 m，右向分量 -0.71 m，高度差 0.25 m，直线距离 0.98 m"
+            },
+            "distance_validation": {
+              "world_direct_m": 0.9845654535833045,
+              "human_components_m": 0.9845654535833047,
+              "agreement_residual_m": 2.220446049250313e-16,
+              "agreement_pass": true,
+              "skeleton_scale": {
+                "shoulder_width_m": 0.2826189798187059,
+                "hip_width_m": 0.19025135682661248,
+                "torso_length_m": 0.4201849163765348,
+                "plausible": true
+              },
+              "validated": true
+            },
+            "quality": {
+              "mask_pixels": 64678,
+              "points_in_mask": 121870,
+              "robust_inliers": 99189
+            },
+            "inputs": {
+              "point_cloud": "data/egoexo4d/takes/iiith_cooking_145_2/trajectory/semidense_points.csv.gz",
+              "camera_pose": "outputs/calibration/val_12/fac6316e-d141-4bbd-b88b-a624491acb30.json",
+              "body_pose": "data/egoexo4d/annotations/ego_pose/val/body/automatic/fac6316e-d141-4bbd-b88b-a624491acb30.json"
+            }
+          }
+        ]
+      },
+      "static_landmark_audit": {
+        "source_summary": "outputs/spatial/showcase_queries/query_04_iiith145_frame11250/summary.json",
+        "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+        "take_name": "iiith_cooking_145_2",
+        "camera": "cam01",
+        "frame": 11250,
+        "review_image": "outputs/qa/task3_media/iiith_cooking_145_2_cam01_frame11250_static_landmarks.jpg",
+        "landmark_count": 3,
+        "landmarks": [
+          {
+            "object_id": "concrete_counter",
+            "display_name": "concrete counter",
+            "object_xyz_world_m": [
+              -0.139109,
+              0.744883,
+              -0.834763
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 11250,
+              "source_camera": "cam01",
+              "box_xyxy_796x448": [
+                205.0,
+                325.0,
+                535.0,
+                440.0
+              ],
+              "selected_points": 190152,
+              "robust_inlier_points": 187859,
+              "inlier_radius_p90_m": 0.7083961995285947,
+              "reprojected_centroid_796x448": [
+                470.4919167565114,
+                388.7839197565384
+              ],
+              "camera_depth_m": 0.9880100985665556,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "wall_cabinet",
+            "display_name": "wall cabinet",
+            "object_xyz_world_m": [
+              0.663985,
+              0.478887,
+              0.204011
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 11250,
+              "source_camera": "cam01",
+              "box_xyxy_796x448": [
+                520.0,
+                70.0,
+                590.0,
+                185.0
+              ],
+              "selected_points": 77810,
+              "robust_inlier_points": 66061,
+              "inlier_radius_p90_m": 0.3537446433149201,
+              "reprojected_centroid_796x448": [
+                546.0465342405747,
+                144.7131060532489
+              ],
+              "camera_depth_m": 1.4624813513642139,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          },
+          {
+            "object_id": "cooking_station",
+            "display_name": "cooking station",
+            "object_xyz_world_m": [
+              -0.143889,
+              0.894313,
+              -0.250791
+            ],
+            "static_scene_landmark": true,
+            "grounding": {
+              "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+              "source_frame": 11250,
+              "source_camera": "cam01",
+              "box_xyxy_796x448": [
+                285.0,
+                205.0,
+                505.0,
+                295.0
+              ],
+              "selected_points": 858358,
+              "robust_inlier_points": 801541,
+              "inlier_radius_p90_m": 0.4947330814014765,
+              "reprojected_centroid_796x448": [
+                430.9352324186521,
+                240.7352182416337
+              ],
+              "camera_depth_m": 0.9982371762537312,
+              "centroid_reprojects_inside_box": true,
+              "manual_static_review": true
+            }
+          }
+        ],
+        "point_cloud_scan": {
+          "scanned_points": 4032696,
+          "quality_points": 3569347,
+          "projected_points": 2307411
+        },
+        "status": "ok"
+      },
+      "clip_filename": "task3_clip_frame11400_30s.mp4",
+      "qa": [
+        {
+          "task_id": "task3_human_scene_topological_reasoning",
+          "task_name": "Task 3 · Human–Scene Topological Reasoning",
+          "question_type": "closest_landmark_to_full_trajectory",
+          "question_categories": [
+            "full_route_proximity"
+          ],
+          "question": "Which listed landmark does the person's full trajectory come closest to at any point in the clip?",
+          "options": [
+            {
+              "label": "A",
+              "text": "The concrete counter has the smallest minimum distance to the person's full trajectory."
+            },
+            {
+              "label": "B",
+              "text": "The wall cabinet has the smallest minimum distance to the person's full trajectory."
+            },
+            {
+              "label": "C",
+              "text": "All listed landmarks have the same minimum distance to the person's full trajectory."
+            },
+            {
+              "label": "D",
+              "text": "The cooking station has the smallest minimum distance to the person's full trajectory."
+            }
+          ],
+          "correct_option": "D",
+          "correct_answer": "The cooking station has the smallest minimum distance to the person's full trajectory.",
+          "answer": "The cooking station has the smallest minimum distance to the person's full trajectory.",
+          "explanation": "The route comes within about 0.2 m of the cooking station; the next-smallest minimum distance is about 0.4 m.",
+          "status": "ok",
+          "method": "Ranks static 3D landmarks by their minimum horizontal distance to the full smoothed metric pelvis trajectory, rather than using one frame.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "closest_landmark_to_full_trajectory",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "topology": {
+              "status": "ok",
+              "coordinate_frame": "metric world trajectory projected onto the local horizontal plane",
+              "side_definition": "left/right uses the local smoothed path tangent at closest approach, not image coordinates or the start-end chord",
+              "trajectory_states": [
+                {
+                  "frame": 10950,
+                  "t": -15.0,
+                  "origin_world_m": [
+                    -0.15067175964244137,
+                    0.5135342183226642,
+                    -0.45494141230763746
+                  ]
+                },
+                {
+                  "frame": 10965,
+                  "t": -14.5,
+                  "origin_world_m": [
+                    -0.1364121840157994,
+                    0.5114808059544844,
+                    -0.45691280192719896
+                  ]
+                },
+                {
+                  "frame": 10980,
+                  "t": -14.0,
+                  "origin_world_m": [
+                    -0.12568598614393328,
+                    0.48713548203896256,
+                    -0.4589632159328533
+                  ]
+                },
+                {
+                  "frame": 10995,
+                  "t": -13.5,
+                  "origin_world_m": [
+                    -0.10253089972894228,
+                    0.4739223763324363,
+                    -0.45416888607696954
+                  ]
+                },
+                {
+                  "frame": 11010,
+                  "t": -13.0,
+                  "origin_world_m": [
+                    -0.0779761826350994,
+                    0.47850938695470757,
+                    -0.445991960448158
+                  ]
+                },
+                {
+                  "frame": 11025,
+                  "t": -12.5,
+                  "origin_world_m": [
+                    -0.06324768145375378,
+                    0.4700878816066134,
+                    -0.4379670161261691
+                  ]
+                },
+                {
+                  "frame": 11040,
+                  "t": -12.0,
+                  "origin_world_m": [
+                    -0.05524778013088334,
+                    0.4607543580335124,
+                    -0.43078459683774195
+                  ]
+                },
+                {
+                  "frame": 11055,
+                  "t": -11.5,
+                  "origin_world_m": [
+                    -0.051949376902432565,
+                    0.47256168760133316,
+                    -0.42104633282477755
+                  ]
+                },
+                {
+                  "frame": 11070,
+                  "t": -11.0,
+                  "origin_world_m": [
+                    -0.05247181692501244,
+                    0.47752408173913957,
+                    -0.4251793549388516
+                  ]
+                },
+                {
+                  "frame": 11085,
+                  "t": -10.5,
+                  "origin_world_m": [
+                    -0.051447388053338726,
+                    0.4760465955194862,
+                    -0.42952209812119957
+                  ]
+                },
+                {
+                  "frame": 11100,
+                  "t": -10.0,
+                  "origin_world_m": [
+                    -0.045847086181293614,
+                    0.4547019020383514,
+                    -0.4359318194210008
+                  ]
+                },
+                {
+                  "frame": 11115,
+                  "t": -9.5,
+                  "origin_world_m": [
+                    -0.01624080643989235,
+                    0.4164230723097832,
+                    -0.4331466178900615
+                  ]
+                },
+                {
+                  "frame": 11130,
+                  "t": -9.0,
+                  "origin_world_m": [
+                    0.03165408970958964,
+                    0.3710434479892147,
+                    -0.4267362441723316
+                  ]
+                },
+                {
+                  "frame": 11145,
+                  "t": -8.5,
+                  "origin_world_m": [
+                    0.08391509242681741,
+                    0.3151976697601734,
+                    -0.4184382752225032
+                  ]
+                },
+                {
+                  "frame": 11160,
+                  "t": -8.0,
+                  "origin_world_m": [
+                    0.13563251131425336,
+                    0.25101276356456126,
+                    -0.40675651300164617
+                  ]
+                },
+                {
+                  "frame": 11190,
+                  "t": -7.0,
+                  "origin_world_m": [
+                    0.18156103683924113,
+                    0.2140179365733684,
+                    -0.3956191143436228
+                  ]
+                },
+                {
+                  "frame": 11205,
+                  "t": -6.5,
+                  "origin_world_m": [
+                    0.20324139678868985,
+                    0.20031004936374935,
+                    -0.38578353696931456
+                  ]
+                },
+                {
+                  "frame": 11220,
+                  "t": -6.0,
+                  "origin_world_m": [
+                    0.20185655684917622,
+                    0.2076606487232077,
+                    -0.39329940678965103
+                  ]
+                },
+                {
+                  "frame": 11235,
+                  "t": -5.5,
+                  "origin_world_m": [
+                    0.18877300065713065,
+                    0.24569895728219274,
+                    -0.38944648381772257
+                  ]
+                },
+                {
+                  "frame": 11250,
+                  "t": -5.0,
+                  "origin_world_m": [
+                    0.17268537042311735,
+                    0.31227498432988776,
+                    -0.39734390416019616
+                  ]
+                },
+                {
+                  "frame": 11265,
+                  "t": -4.5,
+                  "origin_world_m": [
+                    0.15063153527332532,
+                    0.38290429855622354,
+                    -0.4152669391299373
+                  ]
+                },
+                {
+                  "frame": 11280,
+                  "t": -4.0,
+                  "origin_world_m": [
+                    0.11637972252907743,
+                    0.4426241144576103,
+                    -0.4319802874311317
+                  ]
+                },
+                {
+                  "frame": 11295,
+                  "t": -3.5,
+                  "origin_world_m": [
+                    0.07857131474584751,
+                    0.4859945102878954,
+                    -0.42992952117766076
+                  ]
+                },
+                {
+                  "frame": 11310,
+                  "t": -3.0,
+                  "origin_world_m": [
+                    0.04292070288416498,
+                    0.4895350842042463,
+                    -0.43185287901515823
+                  ]
+                },
+                {
+                  "frame": 11325,
+                  "t": -2.5,
+                  "origin_world_m": [
+                    0.03282642011824986,
+                    0.46953642791454236,
+                    -0.44071563119991114
+                  ]
+                },
+                {
+                  "frame": 11340,
+                  "t": -2.0,
+                  "origin_world_m": [
+                    0.02518377933336068,
+                    0.42003790206652286,
+                    -0.4290061424574099
+                  ]
+                },
+                {
+                  "frame": 11370,
+                  "t": -1.0,
+                  "origin_world_m": [
+                    0.01864156348170894,
+                    0.3756413012552289,
+                    -0.41305592944618413
+                  ]
+                },
+                {
+                  "frame": 11385,
+                  "t": -0.5,
+                  "origin_world_m": [
+                    0.02385472525165232,
+                    0.35165305595310686,
+                    -0.4230827818132611
+                  ]
+                },
+                {
+                  "frame": 11400,
+                  "t": 0.0,
+                  "origin_world_m": [
+                    0.042158768821204715,
+                    0.3616429995428471,
+                    -0.43459687737293395
+                  ]
+                },
+                {
+                  "frame": 11415,
+                  "t": 0.5,
+                  "origin_world_m": [
+                    0.0006369148013755848,
+                    0.3605571253626577,
+                    -0.4325987392520938
+                  ]
+                },
+                {
+                  "frame": 11430,
+                  "t": 1.0,
+                  "origin_world_m": [
+                    -0.04962550661626124,
+                    0.3761569720440702,
+                    -0.4381661314641748
+                  ]
+                },
+                {
+                  "frame": 11445,
+                  "t": 1.5,
+                  "origin_world_m": [
+                    -0.08942854197482346,
+                    0.4017224326701022,
+                    -0.45704244434891245
+                  ]
+                },
+                {
+                  "frame": 11460,
+                  "t": 2.0,
+                  "origin_world_m": [
+                    -0.12931812988617172,
+                    0.4094945101587652,
+                    -0.4585158051621593
+                  ]
+                },
+                {
+                  "frame": 11475,
+                  "t": 2.5,
+                  "origin_world_m": [
+                    -0.17564168391912144,
+                    0.39577946364407446,
+                    -0.45978893629226353
+                  ]
+                },
+                {
+                  "frame": 11490,
+                  "t": 3.0,
+                  "origin_world_m": [
+                    -0.18945840029304317,
+                    0.3936509803538403,
+                    -0.4605901365111686
+                  ]
+                },
+                {
+                  "frame": 11505,
+                  "t": 3.5,
+                  "origin_world_m": [
+                    -0.18654989222090124,
+                    0.3912587627577998,
+                    -0.46316294030659744
+                  ]
+                },
+                {
+                  "frame": 11520,
+                  "t": 4.0,
+                  "origin_world_m": [
+                    -0.16499024986462918,
+                    0.38375147486321476,
+                    -0.4620717751762909
+                  ]
+                },
+                {
+                  "frame": 11535,
+                  "t": 4.5,
+                  "origin_world_m": [
+                    -0.11360458173178274,
+                    0.3787170069129771,
+                    -0.4518077555898559
+                  ]
+                },
+                {
+                  "frame": 11550,
+                  "t": 5.0,
+                  "origin_world_m": [
+                    -0.07409216022075192,
+                    0.34903521257613196,
+                    -0.4620787513120185
+                  ]
+                },
+                {
+                  "frame": 11565,
+                  "t": 5.5,
+                  "origin_world_m": [
+                    -0.03951507617730498,
+                    0.32043594326352676,
+                    -0.48553184227451707
+                  ]
+                },
+                {
+                  "frame": 11580,
+                  "t": 6.0,
+                  "origin_world_m": [
+                    -1.6083453505104372e-05,
+                    0.3184764643201974,
+                    -0.47916573660958617
+                  ]
+                },
+                {
+                  "frame": 11595,
+                  "t": 6.5,
+                  "origin_world_m": [
+                    0.0283030046397283,
+                    0.31974064921948453,
+                    -0.4674073405366756
+                  ]
+                },
+                {
+                  "frame": 11625,
+                  "t": 7.5,
+                  "origin_world_m": [
+                    0.0291024336276549,
+                    0.320725496927051,
+                    -0.4638324507668113
+                  ]
+                },
+                {
+                  "frame": 11640,
+                  "t": 8.0,
+                  "origin_world_m": [
+                    0.03564459960646691,
+                    0.3462277282806173,
+                    -0.44424991670370384
+                  ]
+                },
+                {
+                  "frame": 11655,
+                  "t": 8.5,
+                  "origin_world_m": [
+                    0.03573260352676612,
+                    0.3610879858109769,
+                    -0.41443013935626916
+                  ]
+                },
+                {
+                  "frame": 11670,
+                  "t": 9.0,
+                  "origin_world_m": [
+                    0.026299561553749757,
+                    0.3527383524405844,
+                    -0.4033109731319998
+                  ]
+                },
+                {
+                  "frame": 11685,
+                  "t": 9.5,
+                  "origin_world_m": [
+                    0.010448016586899074,
+                    0.3470049496763005,
+                    -0.4049578820318061
+                  ]
+                },
+                {
+                  "frame": 11700,
+                  "t": 10.0,
+                  "origin_world_m": [
+                    -0.002436579804272535,
+                    0.36141818853614216,
+                    -0.41245676208819954
+                  ]
+                },
+                {
+                  "frame": 11715,
+                  "t": 10.5,
+                  "origin_world_m": [
+                    0.005222166269478044,
+                    0.380446016117761,
+                    -0.4145852584638198
+                  ]
+                },
+                {
+                  "frame": 11730,
+                  "t": 11.0,
+                  "origin_world_m": [
+                    0.02513185147346611,
+                    0.40298183866108117,
+                    -0.4051640203809937
+                  ]
+                },
+                {
+                  "frame": 11745,
+                  "t": 11.5,
+                  "origin_world_m": [
+                    0.044918965985215366,
+                    0.4369775109877675,
+                    -0.42084021106083813
+                  ]
+                },
+                {
+                  "frame": 11760,
+                  "t": 12.0,
+                  "origin_world_m": [
+                    0.05269808625924601,
+                    0.44273236901277857,
+                    -0.4232360474151001
+                  ]
+                },
+                {
+                  "frame": 11775,
+                  "t": 12.5,
+                  "origin_world_m": [
+                    0.07316869937926439,
+                    0.44431125673799865,
+                    -0.4163608248323527
+                  ]
+                },
+                {
+                  "frame": 11805,
+                  "t": 13.5,
+                  "origin_world_m": [
+                    0.08163244515495853,
+                    0.45724344873007217,
+                    -0.40907351091235844
+                  ]
+                },
+                {
+                  "frame": 11820,
+                  "t": 14.0,
+                  "origin_world_m": [
+                    0.08823195732484469,
+                    0.4714728091999656,
+                    -0.4149173959628777
+                  ]
+                },
+                {
+                  "frame": 11835,
+                  "t": 14.5,
+                  "origin_world_m": [
+                    0.09075098410717355,
+                    0.4681226423074038,
+                    -0.406872691504802
+                  ]
+                },
+                {
+                  "frame": 11850,
+                  "t": 15.0,
+                  "origin_world_m": [
+                    0.11805282649494919,
+                    0.5001453543427803,
+                    -0.40317220835797024
+                  ]
+                }
+              ],
+              "trajectory_state_count": 57,
+              "temporal_span_sec": 30.0,
+              "path_length_m": 1.6249724831130625,
+              "net_displacement_m": 0.2730446662124341,
+              "max_smoothed_speed_mps": 0.14230606075774432,
+              "reference_up_world_unit": [
+                -0.19374539460808324,
+                0.6508771171527249,
+                0.734044753700424
+              ],
+              "landmarks": [
+                {
+                  "landmark_id": "concrete_counter",
+                  "display_name": "concrete counter",
+                  "center_world_m": [
+                    -0.139109,
+                    0.744883,
+                    -0.834763
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 11250,
+                    "source_camera": "cam01",
+                    "box_xyxy_796x448": [
+                      205.0,
+                      325.0,
+                      535.0,
+                      440.0
+                    ],
+                    "selected_points": 190152,
+                    "robust_inlier_points": 187859,
+                    "inlier_radius_p90_m": 0.7083961995285947,
+                    "reprojected_centroid_796x448": [
+                      470.4919167565114,
+                      388.7839197565384
+                    ],
+                    "camera_depth_m": 0.9880100985665556,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 0,
+                  "closest_frame": 10950,
+                  "closest_time_sec": -15.0,
+                  "closest_horizontal_distance_m": 0.42532205286662605,
+                  "local_window_indices": [
+                    0,
+                    12
+                  ],
+                  "local_travel_m": 0.2069169893679497,
+                  "signed_lateral_m": 0.0,
+                  "pass_side": "near_centerline",
+                  "side_support_ratio": 0.0,
+                  "valid_local_pass": false,
+                  "visit_prominence_m": 0.0,
+                  "valid_visit": false
+                },
+                {
+                  "landmark_id": "wall_cabinet",
+                  "display_name": "wall cabinet",
+                  "center_world_m": [
+                    0.663985,
+                    0.478887,
+                    0.204011
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 11250,
+                    "source_camera": "cam01",
+                    "box_xyxy_796x448": [
+                      520.0,
+                      70.0,
+                      590.0,
+                      185.0
+                    ],
+                    "selected_points": 77810,
+                    "robust_inlier_points": 66061,
+                    "inlier_radius_p90_m": 0.3537446433149201,
+                    "reprojected_centroid_796x448": [
+                      546.0465342405747,
+                      144.7131060532489
+                    ],
+                    "camera_depth_m": 1.4624813513642139,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 16,
+                  "closest_frame": 11205,
+                  "closest_time_sec": -6.5,
+                  "closest_horizontal_distance_m": 0.6017765234970063,
+                  "local_window_indices": [
+                    10,
+                    22
+                  ],
+                  "local_travel_m": 0.12843187703566739,
+                  "signed_lateral_m": 0.0,
+                  "pass_side": "near_centerline",
+                  "side_support_ratio": 0.0,
+                  "valid_local_pass": false,
+                  "visit_prominence_m": 0.14710919230021802,
+                  "valid_visit": false
+                },
+                {
+                  "landmark_id": "cooking_station",
+                  "display_name": "cooking station",
+                  "center_world_m": [
+                    -0.143889,
+                    0.894313,
+                    -0.250791
+                  ],
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 11250,
+                    "source_camera": "cam01",
+                    "box_xyxy_796x448": [
+                      285.0,
+                      205.0,
+                      505.0,
+                      295.0
+                    ],
+                    "selected_points": 858358,
+                    "robust_inlier_points": 801541,
+                    "inlier_radius_p90_m": 0.4947330814014765,
+                    "reprojected_centroid_796x448": [
+                      430.9352324186521,
+                      240.7352182416337
+                    ],
+                    "camera_depth_m": 0.9982371762537312,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "closest_index": 1,
+                  "closest_frame": 10965,
+                  "closest_time_sec": -14.5,
+                  "closest_horizontal_distance_m": 0.16600156386338005,
+                  "local_window_indices": [
+                    0,
+                    12
+                  ],
+                  "local_travel_m": 0.2069169893679497,
+                  "signed_lateral_m": 0.0,
+                  "pass_side": "near_centerline",
+                  "side_support_ratio": 0.0,
+                  "valid_local_pass": false,
+                  "visit_prominence_m": 0.006037674052546488,
+                  "valid_visit": false
+                }
+              ],
+              "valid_pass_landmarks": [],
+              "valid_visit_landmarks": [],
+              "order_pairs": [],
+              "proximity_order_pairs": [
+                {
+                  "first_landmark": "concrete_counter",
+                  "second_landmark": "wall_cabinet",
+                  "first_time_sec": -15.0,
+                  "second_time_sec": -6.5,
+                  "time_gap_sec": 8.5,
+                  "center_separation_m": 1.2675172841189426,
+                  "max_closest_distance_m": 0.6017765234970063
+                },
+                {
+                  "first_landmark": "cooking_station",
+                  "second_landmark": "wall_cabinet",
+                  "first_time_sec": -14.5,
+                  "second_time_sec": -6.5,
+                  "time_gap_sec": 8.0,
+                  "center_separation_m": 1.0116433883542109,
+                  "max_closest_distance_m": 0.6017765234970063
+                }
+              ],
+              "flank_pairs": [],
+              "nearest_landmark_states": [
+                {
+                  "frame": 10950,
+                  "t": -15.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.17203923791592654,
+                  "runner_up_margin_m": 0.2532828149506995
+                },
+                {
+                  "frame": 10965,
+                  "t": -14.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.16600156386338005,
+                  "runner_up_margin_m": 0.2602020783769572
+                },
+                {
+                  "frame": 10980,
+                  "t": -14.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.17865841453802916,
+                  "runner_up_margin_m": 0.2648627618493789
+                },
+                {
+                  "frame": 10995,
+                  "t": -13.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.18467755006329675,
+                  "runner_up_margin_m": 0.2740250153669551
+                },
+                {
+                  "frame": 11010,
+                  "t": -13.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.18240923355205377,
+                  "runner_up_margin_m": 0.2821379547959678
+                },
+                {
+                  "frame": 11025,
+                  "t": -12.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.19324987789090978,
+                  "runner_up_margin_m": 0.2854640578173526
+                },
+                {
+                  "frame": 11040,
+                  "t": -12.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.20504617511871537,
+                  "runner_up_margin_m": 0.2867538393180364
+                },
+                {
+                  "frame": 11055,
+                  "t": -11.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2029232153410024,
+                  "runner_up_margin_m": 0.28790824589014496
+                },
+                {
+                  "frame": 11070,
+                  "t": -11.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.19645185702718565,
+                  "runner_up_margin_m": 0.28798458995882775
+                },
+                {
+                  "frame": 11085,
+                  "t": -10.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.19468929650087335,
+                  "runner_up_margin_m": 0.2880603290567119
+                },
+                {
+                  "frame": 11100,
+                  "t": -10.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.20649486943058853,
+                  "runner_up_margin_m": 0.28808002583581094
+                },
+                {
+                  "frame": 11115,
+                  "t": -9.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.23951700082442212,
+                  "runner_up_margin_m": 0.2905820460950392
+                },
+                {
+                  "frame": 11130,
+                  "t": -9.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2860464416470751,
+                  "runner_up_margin_m": 0.2926315233018731
+                },
+                {
+                  "frame": 11145,
+                  "t": -8.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.34539535595827153,
+                  "runner_up_margin_m": 0.2928811228094399
+                },
+                {
+                  "frame": 11160,
+                  "t": -8.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.4138978435644408,
+                  "runner_up_margin_m": 0.2641908946738072
+                },
+                {
+                  "frame": 11190,
+                  "t": -7.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.46364067693516076,
+                  "runner_up_margin_m": 0.16325277644294112
+                },
+                {
+                  "frame": 11205,
+                  "t": -6.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.488230710415453,
+                  "runner_up_margin_m": 0.11354581308155326
+                },
+                {
+                  "frame": 11220,
+                  "t": -6.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.4783017117138136,
+                  "runner_up_margin_m": 0.12816839773086924
+                },
+                {
+                  "frame": 11235,
+                  "t": -5.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.4520796679762692,
+                  "runner_up_margin_m": 0.17004742169856346
+                },
+                {
+                  "frame": 11250,
+                  "t": -5.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.40054858902717827,
+                  "runner_up_margin_m": 0.25062745134075426
+                },
+                {
+                  "frame": 11265,
+                  "t": -4.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.3384686230279647,
+                  "runner_up_margin_m": 0.2865857814903527
+                },
+                {
+                  "frame": 11280,
+                  "t": -4.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2768781793769666,
+                  "runner_up_margin_m": 0.2856391703280447
+                },
+                {
+                  "frame": 11295,
+                  "t": -3.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.23320576090564796,
+                  "runner_up_margin_m": 0.28719615982366364
+                },
+                {
+                  "frame": 11310,
+                  "t": -3.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.21075289887550855,
+                  "runner_up_margin_m": 0.29102791676967654
+                },
+                {
+                  "frame": 11325,
+                  "t": -2.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.21241310981504713,
+                  "runner_up_margin_m": 0.29232930511726074
+                },
+                {
+                  "frame": 11340,
+                  "t": -2.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.249488223091834,
+                  "runner_up_margin_m": 0.2928919680120699
+                },
+                {
+                  "frame": 11370,
+                  "t": -1.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2888531756973609,
+                  "runner_up_margin_m": 0.2921520976520793
+                },
+                {
+                  "frame": 11385,
+                  "t": -0.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2999660342645176,
+                  "runner_up_margin_m": 0.29202403702052715
+                },
+                {
+                  "frame": 11400,
+                  "t": 0.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2900915514136458,
+                  "runner_up_margin_m": 0.29281461067269093
+                },
+                {
+                  "frame": 11415,
+                  "t": 0.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2826531338516419,
+                  "runner_up_margin_m": 0.29062517568155155
+                },
+                {
+                  "frame": 11430,
+                  "t": 1.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.26338528917997395,
+                  "runner_up_margin_m": 0.2844410155292847
+                },
+                {
+                  "frame": 11445,
+                  "t": 1.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.23512105803091682,
+                  "runner_up_margin_m": 0.27570097616358197
+                },
+                {
+                  "frame": 11460,
+                  "t": 2.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.23812204199205578,
+                  "runner_up_margin_m": 0.26288546587726314
+                },
+                {
+                  "frame": 11475,
+                  "t": 2.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.26585671670755423,
+                  "runner_up_margin_m": 0.24480677646989318
+                },
+                {
+                  "frame": 11490,
+                  "t": 3.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.27363045452063756,
+                  "runner_up_margin_m": 0.239000064003199
+                },
+                {
+                  "frame": 11505,
+                  "t": 3.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.27260097067953015,
+                  "runner_up_margin_m": 0.23994605695543847
+                },
+                {
+                  "frame": 11520,
+                  "t": 4.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.26863616993657446,
+                  "runner_up_margin_m": 0.24913727767722693
+                },
+                {
+                  "frame": 11535,
+                  "t": 4.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2608275055113229,
+                  "runner_up_margin_m": 0.26827662117587064
+                },
+                {
+                  "frame": 11550,
+                  "t": 5.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2697446471196371,
+                  "runner_up_margin_m": 0.27780003070520454
+                },
+                {
+                  "frame": 11565,
+                  "t": 5.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2737024028068419,
+                  "runner_up_margin_m": 0.28352235587239427
+                },
+                {
+                  "frame": 11580,
+                  "t": 6.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2814031356681405,
+                  "runner_up_margin_m": 0.28932428828034856
+                },
+                {
+                  "frame": 11595,
+                  "t": 6.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2931913391818707,
+                  "runner_up_margin_m": 0.29175575623863503
+                },
+                {
+                  "frame": 11625,
+                  "t": 7.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2950993806887341,
+                  "runner_up_margin_m": 0.29181652420648674
+                },
+                {
+                  "frame": 11640,
+                  "t": 8.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.29224059766504895,
+                  "runner_up_margin_m": 0.292499261163937
+                },
+                {
+                  "frame": 11655,
+                  "t": 8.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.30229687485954215,
+                  "runner_up_margin_m": 0.2926229899823768
+                },
+                {
+                  "frame": 11670,
+                  "t": 9.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.31320072218337214,
+                  "runner_up_margin_m": 0.2921278940058214
+                },
+                {
+                  "frame": 11685,
+                  "t": 9.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.312786169605718,
+                  "runner_up_margin_m": 0.29107445508402113
+                },
+                {
+                  "frame": 11700,
+                  "t": 10.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2952062463515257,
+                  "runner_up_margin_m": 0.29038436409375135
+                },
+                {
+                  "frame": 11715,
+                  "t": 10.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.28154286296027364,
+                  "runner_up_margin_m": 0.29145236229327276
+                },
+                {
+                  "frame": 11730,
+                  "t": 11.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2770918909565588,
+                  "runner_up_margin_m": 0.2927389337229696
+                },
+                {
+                  "frame": 11745,
+                  "t": 11.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2509429267999795,
+                  "runner_up_margin_m": 0.29257409712806287
+                },
+                {
+                  "frame": 11760,
+                  "t": 12.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.24899927560690693,
+                  "runner_up_margin_m": 0.29209287373561577
+                },
+                {
+                  "frame": 11775,
+                  "t": 12.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.26201151590161575,
+                  "runner_up_margin_m": 0.29072227853420674
+                },
+                {
+                  "frame": 11805,
+                  "t": 13.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.26360645408374145,
+                  "runner_up_margin_m": 0.2894489873106035
+                },
+                {
+                  "frame": 11820,
+                  "t": 14.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2557838244966596,
+                  "runner_up_margin_m": 0.2876128132808069
+                },
+                {
+                  "frame": 11835,
+                  "t": 14.5,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.264029510338208,
+                  "runner_up_margin_m": 0.28780942068774684
+                },
+                {
+                  "frame": 11850,
+                  "t": 15.0,
+                  "nearest_landmark": "cooking_station",
+                  "distance_m": 0.2674081624377187,
+                  "runner_up_margin_m": 0.2809552496294563
+                }
+              ],
+              "route_landmark_ranking": [
+                {
+                  "landmark_id": "cooking_station",
+                  "display_name": "cooking station",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 11250,
+                    "source_camera": "cam01",
+                    "box_xyxy_796x448": [
+                      285.0,
+                      205.0,
+                      505.0,
+                      295.0
+                    ],
+                    "selected_points": 858358,
+                    "robust_inlier_points": 801541,
+                    "inlier_radius_p90_m": 0.4947330814014765,
+                    "reprojected_centroid_796x448": [
+                      430.9352324186521,
+                      240.7352182416337
+                    ],
+                    "camera_depth_m": 0.9982371762537312,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.16600156386338005,
+                  "closest_time_sec": -14.5
+                },
+                {
+                  "landmark_id": "concrete_counter",
+                  "display_name": "concrete counter",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 11250,
+                    "source_camera": "cam01",
+                    "box_xyxy_796x448": [
+                      205.0,
+                      325.0,
+                      535.0,
+                      440.0
+                    ],
+                    "selected_points": 190152,
+                    "robust_inlier_points": 187859,
+                    "inlier_radius_p90_m": 0.7083961995285947,
+                    "reprojected_centroid_796x448": [
+                      470.4919167565114,
+                      388.7839197565384
+                    ],
+                    "camera_depth_m": 0.9880100985665556,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.42532205286662605,
+                  "closest_time_sec": -15.0
+                },
+                {
+                  "landmark_id": "wall_cabinet",
+                  "display_name": "wall cabinet",
+                  "static_scene_landmark": true,
+                  "grounding": {
+                    "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                    "source_frame": 11250,
+                    "source_camera": "cam01",
+                    "box_xyxy_796x448": [
+                      520.0,
+                      70.0,
+                      590.0,
+                      185.0
+                    ],
+                    "selected_points": 77810,
+                    "robust_inlier_points": 66061,
+                    "inlier_radius_p90_m": 0.3537446433149201,
+                    "reprojected_centroid_796x448": [
+                      546.0465342405747,
+                      144.7131060532489
+                    ],
+                    "camera_depth_m": 1.4624813513642139,
+                    "centroid_reprojects_inside_box": true,
+                    "manual_static_review": true
+                  },
+                  "minimum_horizontal_distance_m": 0.6017765234970063,
+                  "closest_time_sec": -6.5
+                }
+              ],
+              "nearest_landmark_change": {
+                "start_landmark": "cooking_station",
+                "end_landmark": "cooking_station",
+                "changed": false,
+                "endpoint_run_length": 5,
+                "minimum_endpoint_margin_m": 0.2532828149506995,
+                "start_distance_m": 0.17203923791592654,
+                "end_distance_m": 0.2674081624377187,
+                "valid": false
+              },
+              "thresholds": {
+                "smoothing_radius": 2,
+                "side_dead_zone_m": 0.25,
+                "max_landmark_distance_m": 2.0,
+                "min_local_travel_m": 0.35,
+                "min_order_gap_sec": 2.0
+              }
+            },
+            "route_landmark_ranking": [
+              {
+                "landmark_id": "cooking_station",
+                "display_name": "cooking station",
+                "static_scene_landmark": true,
+                "grounding": {
+                  "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                  "source_frame": 11250,
+                  "source_camera": "cam01",
+                  "box_xyxy_796x448": [
+                    285.0,
+                    205.0,
+                    505.0,
+                    295.0
+                  ],
+                  "selected_points": 858358,
+                  "robust_inlier_points": 801541,
+                  "inlier_radius_p90_m": 0.4947330814014765,
+                  "reprojected_centroid_796x448": [
+                    430.9352324186521,
+                    240.7352182416337
+                  ],
+                  "camera_depth_m": 0.9982371762537312,
+                  "centroid_reprojects_inside_box": true,
+                  "manual_static_review": true
+                },
+                "minimum_horizontal_distance_m": 0.16600156386338005,
+                "closest_time_sec": -14.5
+              },
+              {
+                "landmark_id": "concrete_counter",
+                "display_name": "concrete counter",
+                "static_scene_landmark": true,
+                "grounding": {
+                  "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                  "source_frame": 11250,
+                  "source_camera": "cam01",
+                  "box_xyxy_796x448": [
+                    205.0,
+                    325.0,
+                    535.0,
+                    440.0
+                  ],
+                  "selected_points": 190152,
+                  "robust_inlier_points": 187859,
+                  "inlier_radius_p90_m": 0.7083961995285947,
+                  "reprojected_centroid_796x448": [
+                    470.4919167565114,
+                    388.7839197565384
+                  ],
+                  "camera_depth_m": 0.9880100985665556,
+                  "centroid_reprojects_inside_box": true,
+                  "manual_static_review": true
+                },
+                "minimum_horizontal_distance_m": 0.42532205286662605,
+                "closest_time_sec": -15.0
+              },
+              {
+                "landmark_id": "wall_cabinet",
+                "display_name": "wall cabinet",
+                "static_scene_landmark": true,
+                "grounding": {
+                  "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+                  "source_frame": 11250,
+                  "source_camera": "cam01",
+                  "box_xyxy_796x448": [
+                    520.0,
+                    70.0,
+                    590.0,
+                    185.0
+                  ],
+                  "selected_points": 77810,
+                  "robust_inlier_points": 66061,
+                  "inlier_radius_p90_m": 0.3537446433149201,
+                  "reprojected_centroid_796x448": [
+                    546.0465342405747,
+                    144.7131060532489
+                  ],
+                  "camera_depth_m": 1.4624813513642139,
+                  "centroid_reprojects_inside_box": true,
+                  "manual_static_review": true
+                },
+                "minimum_horizontal_distance_m": 0.6017765234970063,
+                "closest_time_sec": -6.5
+              }
+            ]
+          }
+        }
+      ],
+      "case_policy": "one temporal question per unique video window",
+      "video_clip": "./outputs/spatial/showcase_queries/query_04_iiith145_frame11250/task3_clip_frame11400_30s.mp4",
+      "video_window": {
+        "center_frame": 11400,
+        "fps": 30.0,
+        "start_sec": 365.0,
+        "duration_sec": 30.0,
+        "source_video": "data/egoexo4d/takes/iiith_cooking_145_2/frame_aligned_videos/downscaled/448/cam01.mp4"
+      }
     }
   ],
   "release_policy": {
     "task_scope": [
       "task1_dynamic_human_referenced_relations",
+      "task3_human_scene_topological_reasoning",
       "task4_multi_human_relational_dynamics"
     ],
     "one_question_per_case": true,
-    "no_guessed_answers": true
+    "no_guessed_answers": true,
+    "task3_scope": "full metric human trajectory versus static 3D landmarks"
   }
 };

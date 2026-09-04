@@ -1,0 +1,708 @@
+{
+  "status": "ok",
+  "coordinate_frame": "Ego-Exo4D metric world coordinates",
+  "frame_size": [
+    796,
+    448
+  ],
+  "grounding_policy": {
+    "max_point_dist_std_m": 0.1,
+    "minimum_selected_points": 20,
+    "minimum_robust_inliers": 12,
+    "manual_review": "Each box was drawn on the named fixed exocentric frame and is restricted to a scene-fixed surface or fixture. Movable utensils, containers, and ingredients are excluded."
+  },
+  "scene_count": 6,
+  "scenes": [
+    {
+      "source_summary": "outputs/spatial/showcase_multi/sfu0101_cam05_5460/summary.json",
+      "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+      "take_name": "sfu_cooking_010_1",
+      "camera": "cam05",
+      "frame": 5460,
+      "review_image": "outputs/qa/task3_media/sfu_cooking_010_1_cam05_frame5460_static_landmarks.jpg",
+      "landmark_count": 3,
+      "landmarks": [
+        {
+          "object_id": "dining_table",
+          "display_name": "dining table",
+          "object_xyz_world_m": [
+            0.264917,
+            -0.130903,
+            -0.653973
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 5460,
+            "source_camera": "cam05",
+            "box_xyxy_796x448": [
+              75.0,
+              120.0,
+              300.0,
+              210.0
+            ],
+            "selected_points": 1708738,
+            "robust_inlier_points": 1601675,
+            "inlier_radius_p90_m": 0.5563813934782695,
+            "reprojected_centroid_796x448": [
+              247.0011573984074,
+              168.9009139193457
+            ],
+            "camera_depth_m": 1.7911909715175485,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        },
+        {
+          "object_id": "front_chair",
+          "display_name": "front chair",
+          "object_xyz_world_m": [
+            -1.079661,
+            0.323904,
+            -0.561712
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 5460,
+            "source_camera": "cam05",
+            "box_xyxy_796x448": [
+              80.0,
+              285.0,
+              195.0,
+              390.0
+            ],
+            "selected_points": 26629,
+            "robust_inlier_points": 21502,
+            "inlier_radius_p90_m": 0.4776713539410126,
+            "reprojected_centroid_796x448": [
+              121.59092991782013,
+              358.8817735968767
+            ],
+            "camera_depth_m": 0.6139889579812622,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        },
+        {
+          "object_id": "cooking_range",
+          "display_name": "cooking range",
+          "object_xyz_world_m": [
+            -1.410746,
+            -0.47671699999999995,
+            -0.8939555
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 5460,
+            "source_camera": "cam05",
+            "box_xyxy_796x448": [
+              370.0,
+              300.0,
+              655.0,
+              435.0
+            ],
+            "selected_points": 211283,
+            "robust_inlier_points": 205808,
+            "inlier_radius_p90_m": 0.7862011289573339,
+            "reprojected_centroid_796x448": [
+              448.16788577984755,
+              362.20503306529616
+            ],
+            "camera_depth_m": 0.9614767676329894,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        }
+      ],
+      "point_cloud_scan": {
+        "scanned_points": 10441352,
+        "quality_points": 9612274,
+        "projected_points": 6487713
+      },
+      "status": "ok"
+    },
+    {
+      "source_summary": "outputs/spatial/val_12_replacement_egg_whisk/summary.json",
+      "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+      "take_name": "uniandes_cooking_001_5",
+      "camera": "cam04",
+      "frame": 6690,
+      "review_image": "outputs/qa/task3_media/uniandes_cooking_001_5_cam04_frame6690_static_landmarks.jpg",
+      "landmark_count": 3,
+      "landmarks": [
+        {
+          "object_id": "left_work_counter",
+          "display_name": "left work counter",
+          "object_xyz_world_m": [
+            0.199448,
+            0.634487,
+            -0.495821
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 6690,
+            "source_camera": "cam04",
+            "box_xyxy_796x448": [
+              5.0,
+              260.0,
+              180.0,
+              410.0
+            ],
+            "selected_points": 1466159,
+            "robust_inlier_points": 1340904,
+            "inlier_radius_p90_m": 0.5721817009914272,
+            "reprojected_centroid_796x448": [
+              130.69516945645213,
+              294.19015813071684
+            ],
+            "camera_depth_m": 1.1450784062698494,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        },
+        {
+          "object_id": "cooktop",
+          "display_name": "cooktop",
+          "object_xyz_world_m": [
+            0.6513835,
+            -0.749486,
+            -0.52512
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 6690,
+            "source_camera": "cam04",
+            "box_xyxy_796x448": [
+              305.0,
+              205.0,
+              435.0,
+              340.0
+            ],
+            "selected_points": 6192531,
+            "robust_inlier_points": 6165340,
+            "inlier_radius_p90_m": 1.2276133835926712,
+            "reprojected_centroid_796x448": [
+              354.0999696920633,
+              232.0033411316833
+            ],
+            "camera_depth_m": 2.3505345379082185,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        },
+        {
+          "object_id": "espresso_station",
+          "display_name": "espresso station",
+          "object_xyz_world_m": [
+            -1.3530544999999998,
+            -0.198845,
+            -0.213498
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 6690,
+            "source_camera": "cam04",
+            "box_xyxy_796x448": [
+              620.0,
+              210.0,
+              790.0,
+              430.0
+            ],
+            "selected_points": 137747,
+            "robust_inlier_points": 109590,
+            "inlier_radius_p90_m": 0.20242023389409147,
+            "reprojected_centroid_796x448": [
+              669.350255012708,
+              315.73975283159916
+            ],
+            "camera_depth_m": 0.4272121233771634,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        }
+      ],
+      "point_cloud_scan": {
+        "scanned_points": 34818915,
+        "quality_points": 30700605,
+        "projected_points": 21987722
+      },
+      "status": "ok"
+    },
+    {
+      "source_summary": "outputs/spatial/showcase_diverse_new/diverse_sfu0103_extra_frame6630/summary.json",
+      "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+      "take_name": "sfu_cooking_010_3",
+      "camera": "cam04",
+      "frame": 6630,
+      "review_image": "outputs/qa/task3_media/sfu_cooking_010_3_cam04_frame6630_static_landmarks.jpg",
+      "landmark_count": 4,
+      "landmarks": [
+        {
+          "object_id": "left_cooking_counter",
+          "display_name": "left cooking counter",
+          "object_xyz_world_m": [
+            -1.056693,
+            -1.040612,
+            -0.4263895
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 6630,
+            "source_camera": "cam04",
+            "box_xyxy_796x448": [
+              190.0,
+              165.0,
+              310.0,
+              285.0
+            ],
+            "selected_points": 796863,
+            "robust_inlier_points": 774840,
+            "inlier_radius_p90_m": 0.6590179097163058,
+            "reprojected_centroid_796x448": [
+              273.8633644262083,
+              210.10193275504645
+            ],
+            "camera_depth_m": 1.6843291939983427,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        },
+        {
+          "object_id": "back_sink_counter",
+          "display_name": "back sink counter",
+          "object_xyz_world_m": [
+            -0.767703,
+            0.650621,
+            -0.510475
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 6630,
+            "source_camera": "cam04",
+            "box_xyxy_796x448": [
+              405.0,
+              165.0,
+              625.0,
+              245.0
+            ],
+            "selected_points": 984977,
+            "robust_inlier_points": 967095,
+            "inlier_radius_p90_m": 1.189604254742308,
+            "reprojected_centroid_796x448": [
+              471.9135922136361,
+              194.5535990003372
+            ],
+            "camera_depth_m": 2.511892608348733,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        },
+        {
+          "object_id": "dining_table",
+          "display_name": "dining table",
+          "object_xyz_world_m": [
+            0.4506295,
+            -0.210936,
+            -0.666377
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 6630,
+            "source_camera": "cam04",
+            "box_xyxy_796x448": [
+              500.0,
+              265.0,
+              790.0,
+              420.0
+            ],
+            "selected_points": 876034,
+            "robust_inlier_points": 811584,
+            "inlier_radius_p90_m": 0.5786018467721493,
+            "reprojected_centroid_796x448": [
+              591.4155728299473,
+              283.6183901230686
+            ],
+            "camera_depth_m": 1.112966811958978,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        },
+        {
+          "object_id": "refrigerator",
+          "display_name": "refrigerator",
+          "object_xyz_world_m": [
+            0.744429,
+            1.4142955000000001,
+            -0.346704
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 6630,
+            "source_camera": "cam04",
+            "box_xyxy_796x448": [
+              690.0,
+              80.0,
+              790.0,
+              245.0
+            ],
+            "selected_points": 143744,
+            "robust_inlier_points": 143742,
+            "inlier_radius_p90_m": 1.9074115789040715,
+            "reprojected_centroid_796x448": [
+              728.9521723905565,
+              177.28172550724878
+            ],
+            "camera_depth_m": 1.7929354602589567,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        }
+      ],
+      "point_cloud_scan": {
+        "scanned_points": 10441352,
+        "quality_points": 9612274,
+        "projected_points": 8182984
+      },
+      "status": "ok"
+    },
+    {
+      "source_summary": "outputs/spatial/showcase_queries/query_01_iiith32_frame5280/summary.json",
+      "take_uid": "35bfade9-8ead-46a4-b2f0-cdcfb86df1d6",
+      "take_name": "iiith_cooking_32_1",
+      "camera": "cam02",
+      "frame": 5280,
+      "review_image": "outputs/qa/task3_media/iiith_cooking_32_1_cam02_frame5280_static_landmarks.jpg",
+      "landmark_count": 3,
+      "landmarks": [
+        {
+          "object_id": "plate_rack",
+          "display_name": "plate rack",
+          "object_xyz_world_m": [
+            -0.208683,
+            0.563073,
+            0.035914
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 5280,
+            "source_camera": "cam02",
+            "box_xyxy_796x448": [
+              5.0,
+              125.0,
+              170.0,
+              290.0
+            ],
+            "selected_points": 89721,
+            "robust_inlier_points": 69999,
+            "inlier_radius_p90_m": 0.39362006461502036,
+            "reprojected_centroid_796x448": [
+              107.33508111216643,
+              193.21575760002247
+            ],
+            "camera_depth_m": 1.030155282050477,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        },
+        {
+          "object_id": "wooden_cabinet",
+          "display_name": "wooden cabinet",
+          "object_xyz_world_m": [
+            0.483693,
+            -0.148478,
+            -0.093908
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 5280,
+            "source_camera": "cam02",
+            "box_xyxy_796x448": [
+              280.0,
+              85.0,
+              365.0,
+              285.0
+            ],
+            "selected_points": 167877,
+            "robust_inlier_points": 165255,
+            "inlier_radius_p90_m": 1.2184405204852007,
+            "reprojected_centroid_796x448": [
+              314.4630171715932,
+              214.9944117101103
+            ],
+            "camera_depth_m": 1.8493693473363448,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        },
+        {
+          "object_id": "right_work_counter",
+          "display_name": "right work counter",
+          "object_xyz_world_m": [
+            -0.982186,
+            -0.870887,
+            -0.390503
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 5280,
+            "source_camera": "cam02",
+            "box_xyxy_796x448": [
+              510.0,
+              335.0,
+              750.0,
+              440.0
+            ],
+            "selected_points": 112299,
+            "robust_inlier_points": 101889,
+            "inlier_radius_p90_m": 0.18132190507979795,
+            "reprojected_centroid_796x448": [
+              567.6241176868309,
+              357.5058228029425
+            ],
+            "camera_depth_m": 0.5664862924033667,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        }
+      ],
+      "point_cloud_scan": {
+        "scanned_points": 2808872,
+        "quality_points": 2629657,
+        "projected_points": 1805074
+      },
+      "status": "ok"
+    },
+    {
+      "source_summary": "outputs/spatial/val_3/summary.json",
+      "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
+      "take_name": "sfu_cooking_007_3",
+      "camera": "cam01",
+      "frame": 10890,
+      "review_image": "outputs/qa/task3_media/sfu_cooking_007_3_cam01_frame10890_static_landmarks.jpg",
+      "landmark_count": 3,
+      "landmarks": [
+        {
+          "object_id": "refrigerator",
+          "display_name": "refrigerator",
+          "object_xyz_world_m": [
+            5.416040000000001,
+            -1.0563859999999998,
+            -0.286763
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 10890,
+            "source_camera": "cam01",
+            "box_xyxy_796x448": [
+              105.0,
+              50.0,
+              195.0,
+              230.0
+            ],
+            "selected_points": 211327,
+            "robust_inlier_points": 172222,
+            "inlier_radius_p90_m": 1.059714071941084,
+            "reprojected_centroid_796x448": [
+              156.24901942285013,
+              106.74400672856842
+            ],
+            "camera_depth_m": 2.348761167714528,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        },
+        {
+          "object_id": "sink_counter",
+          "display_name": "sink counter",
+          "object_xyz_world_m": [
+            3.5882225,
+            -1.9890395,
+            -0.48078
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 10890,
+            "source_camera": "cam01",
+            "box_xyxy_796x448": [
+              335.0,
+              110.0,
+              430.0,
+              205.0
+            ],
+            "selected_points": 2329527,
+            "robust_inlier_points": 2310758,
+            "inlier_radius_p90_m": 0.9993694384135895,
+            "reprojected_centroid_796x448": [
+              379.3257772335084,
+              143.653062093218
+            ],
+            "camera_depth_m": 2.0617020633812038,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        },
+        {
+          "object_id": "cooking_range",
+          "display_name": "cooking range",
+          "object_xyz_world_m": [
+            2.575902,
+            -1.692634,
+            -0.567959
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 10890,
+            "source_camera": "cam01",
+            "box_xyxy_796x448": [
+              445.0,
+              165.0,
+              590.0,
+              290.0
+            ],
+            "selected_points": 1839801,
+            "robust_inlier_points": 1817943,
+            "inlier_radius_p90_m": 0.587316189436658,
+            "reprojected_centroid_796x448": [
+              484.90178874931723,
+              201.84402227135953
+            ],
+            "camera_depth_m": 1.3454095582624144,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        }
+      ],
+      "point_cloud_scan": {
+        "scanned_points": 17974280,
+        "quality_points": 15477467,
+        "projected_points": 12420442
+      },
+      "status": "ok"
+    },
+    {
+      "source_summary": "outputs/spatial/showcase_queries/query_04_iiith145_frame11250/summary.json",
+      "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+      "take_name": "iiith_cooking_145_2",
+      "camera": "cam01",
+      "frame": 11250,
+      "review_image": "outputs/qa/task3_media/iiith_cooking_145_2_cam01_frame11250_static_landmarks.jpg",
+      "landmark_count": 3,
+      "landmarks": [
+        {
+          "object_id": "concrete_counter",
+          "display_name": "concrete counter",
+          "object_xyz_world_m": [
+            -0.139109,
+            0.744883,
+            -0.834763
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 11250,
+            "source_camera": "cam01",
+            "box_xyxy_796x448": [
+              205.0,
+              325.0,
+              535.0,
+              440.0
+            ],
+            "selected_points": 190152,
+            "robust_inlier_points": 187859,
+            "inlier_radius_p90_m": 0.7083961995285947,
+            "reprojected_centroid_796x448": [
+              470.4919167565114,
+              388.7839197565384
+            ],
+            "camera_depth_m": 0.9880100985665556,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        },
+        {
+          "object_id": "wall_cabinet",
+          "display_name": "wall cabinet",
+          "object_xyz_world_m": [
+            0.663985,
+            0.478887,
+            0.204011
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 11250,
+            "source_camera": "cam01",
+            "box_xyxy_796x448": [
+              520.0,
+              70.0,
+              590.0,
+              185.0
+            ],
+            "selected_points": 77810,
+            "robust_inlier_points": 66061,
+            "inlier_radius_p90_m": 0.3537446433149201,
+            "reprojected_centroid_796x448": [
+              546.0465342405747,
+              144.7131060532489
+            ],
+            "camera_depth_m": 1.4624813513642139,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        },
+        {
+          "object_id": "cooking_station",
+          "display_name": "cooking station",
+          "object_xyz_world_m": [
+            -0.143889,
+            0.894313,
+            -0.250791
+          ],
+          "static_scene_landmark": true,
+          "grounding": {
+            "method": "human-reviewed fixed-scene box plus semidense metric point-cloud centroid",
+            "source_frame": 11250,
+            "source_camera": "cam01",
+            "box_xyxy_796x448": [
+              285.0,
+              205.0,
+              505.0,
+              295.0
+            ],
+            "selected_points": 858358,
+            "robust_inlier_points": 801541,
+            "inlier_radius_p90_m": 0.4947330814014765,
+            "reprojected_centroid_796x448": [
+              430.9352324186521,
+              240.7352182416337
+            ],
+            "camera_depth_m": 0.9982371762537312,
+            "centroid_reprojects_inside_box": true,
+            "manual_static_review": true
+          }
+        }
+      ],
+      "point_cloud_scan": {
+        "scanned_points": 4032696,
+        "quality_points": 3569347,
+        "projected_points": 2307411
+      },
+      "status": "ok"
+    }
+  ]
+}
