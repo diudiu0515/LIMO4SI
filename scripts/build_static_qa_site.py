@@ -119,6 +119,18 @@ def evidence_payload(group: dict[str, Any], qa: dict[str, Any]) -> dict[str, Any
             for x in selected
         ]
         out['changed'] = r.get('changed')
+    elif qtype == 'local_landmark_pass_side':
+        topology = r.get('topology') or {}
+        out['trajectory_summary'] = {key: topology.get(key) for key in ('coordinate_frame', 'side_definition', 'trajectory_state_count', 'temporal_span_sec', 'path_length_m', 'net_displacement_m')}
+        out['pass_event'] = r.get('pass_event')
+    elif qtype == 'landmark_closest_approach_order':
+        topology = r.get('topology') or {}
+        out['trajectory_summary'] = {key: topology.get(key) for key in ('coordinate_frame', 'trajectory_state_count', 'temporal_span_sec', 'path_length_m', 'net_displacement_m')}
+        out['order_event'] = r.get('order_event')
+    elif qtype == 'closest_landmark_to_full_trajectory':
+        topology = r.get('topology') or {}
+        out['trajectory_summary'] = {key: topology.get(key) for key in ('coordinate_frame', 'trajectory_state_count', 'temporal_span_sec', 'path_length_m', 'net_displacement_m')}
+        out['route_landmark_ranking'] = r.get('route_landmark_ranking')
     elif qtype == 'objects_along_human_path_sides':
         out['path_start_world_m'] = r.get('path_start_world_m')
         out['path_end_world_m'] = r.get('path_end_world_m')
@@ -167,6 +179,19 @@ def evidence_payload(group: dict[str, Any], qa: dict[str, Any]) -> dict[str, Any
         for key in ('answer_type', 'sampled_frame_count', 'human_motion', 'changed'):
             if key in r:
                 out[key] = r[key]
+    if qtype in {'local_landmark_pass_side', 'landmark_closest_approach_order', 'closest_landmark_to_full_trajectory'}:
+        audit = group.get('static_landmark_audit') or {}
+        out['static_landmark_grounding'] = [
+            {
+                'landmark': row.get('display_name') or row.get('object_id'),
+                'scene_fixed': row.get('static_scene_landmark'),
+                'method': (row.get('grounding') or {}).get('method'),
+                'selected_points': (row.get('grounding') or {}).get('selected_points'),
+                'robust_inlier_points': (row.get('grounding') or {}).get('robust_inlier_points'),
+                'centroid_reprojects_inside_box': (row.get('grounding') or {}).get('centroid_reprojects_inside_box'),
+            }
+            for row in audit.get('landmarks') or []
+        ]
     return out
 
 
@@ -186,7 +211,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <body>
 <main class="staticShell">
 <h1>Humans in Space QA Benchmark</h1>
-<p class="topNote">This site shows only Task 1 and Task 4. Each case contains one question that requires evidence from the full 15-second clip. Submit an answer first; localization views, top-down views, and computed evidence are collapsed by default and can be expanded when needed.</p>
+<p class="topNote">This site shows Task 1, Task 3, and Task 4. Each case contains one question grounded in its full evidence clip. Submit an answer first; localization views, trajectory/top-down views, and computed evidence are collapsed by default and can be expanded when needed.</p>
 <nav class="caseNav">
 ''')
     for i, _ in enumerate(data.get('groups', []), 1):
@@ -210,7 +235,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
             cls = 'coverageNotice ok' if str(audit.get('status','')).startswith('complete_') else 'coverageNotice'
             parts.append(f'<div class="{cls}"><strong>Multi-person coverage audit: {esc(audit.get("status"))}</strong><br>The original-video localization layer covers {esc(audit.get("persistent_visible_person_count"))} persistent visible-person tracks. Metric distance and body orientation use only {esc(audit.get("metric_3d_track_count"))} SMPL-X 3D tracks; unannotated people are never included in metric 3D answers.</div>')
         if group.get('video_clip'):
-            parts.append('<div class="videoPanel"><div class="taskName">15-second evidence video</div>')
+            duration_label = vw.get("duration_sec", "evidence")
+            parts.append(f'<div class="videoPanel"><div class="taskName">{esc(duration_label)}-second evidence video</div>')
             parts.append(f'<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="{esc(group["video_clip"])}" type="video/mp4">Your browser cannot play this video.</video></div>')
         if group.get('localization_video'):
             parts.append('<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>')

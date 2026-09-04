@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate a Task 1/4 release and emit per-case accept/reject reasons."""
+"""Validate a Task 1/3/4 release and emit per-case accept/reject reasons."""
 from __future__ import annotations
 
 import argparse

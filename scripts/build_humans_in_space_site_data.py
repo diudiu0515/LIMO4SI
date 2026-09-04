@@ -87,7 +87,8 @@ def build_clip(root: Path, group: dict, seconds: float) -> None:
     fps = fps_for_video(video)
     center_frame = int(first['frame'])
     start = max(0.0, center_frame / fps - seconds / 2.0)
-    out = (root / group['summary_path']).parent / f'showcase_clip_{int(round(seconds))}s.mp4'
+    clip_filename = group.get('clip_filename') or f'showcase_clip_{int(round(seconds))}s.mp4'
+    out = (root / group['summary_path']).parent / clip_filename
     group['video_clip'] = './' + str(out.relative_to(root))
     group['video_window'] = {
         'center_frame': center_frame, 'fps': fps, 'start_sec': round(start, 3),

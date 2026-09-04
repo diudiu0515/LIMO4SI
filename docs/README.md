@@ -2,8 +2,8 @@
 
 ## Current benchmark
 
-- `current_task_status.md`: authoritative status, coverage, limitations, and acceptance commands for the current Task 1 / Task 4 benchmark.
-- `task1_task4_work_summary.md`: summary of the work completed after switching to the new Task 1 / Task 4 definition.
+- `current_task_status.md`: authoritative status, coverage, limitations, and acceptance commands for the current Task 1 / Task 3 / Task 4 benchmark.
+- `task1_task4_work_summary.md`: summary of the work completed during the earlier Task 1 / Task 4 stage; current release status is maintained only in `current_task_status.md`.
 
 ## Reference
 

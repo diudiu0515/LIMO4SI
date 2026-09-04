@@ -1,5 +1,5 @@
 {
-  "status": "failed",
+  "status": "ok",
   "policy": {
     "min_temporal_states": 8,
     "min_task1_span_ratio": 0.6,
@@ -29,9 +29,9 @@
     "max_option_relation_marker_gap": 2,
     "max_published_distance_decimals": 1
   },
-  "case_count": 25,
-  "accepted_count": 24,
-  "rejected_count": 1,
+  "case_count": 30,
+  "accepted_count": 30,
+  "rejected_count": 0,
   "warning_count": 8,
   "cases": [
     {
@@ -657,65 +657,6 @@
     },
     {
       "case_index": 14,
-      "case_id": "hoi_m3_bedroom_data03_win04",
-      "task_id": "task4_multi_human_relational_dynamics",
-      "question_type": "metric_distance_pattern_over_video",
-      "status": "rejected",
-      "errors": [
-        "visible track V1 coverage is below threshold"
-      ],
-      "warnings": [],
-      "metrics": {
-        "option_information_profiles": [
-          {
-            "words": 14,
-            "numbers": 2,
-            "temporal_markers": 1,
-            "relation_markers": 1,
-            "information_units": 20
-          },
-          {
-            "words": 13,
-            "numbers": 2,
-            "temporal_markers": 2,
-            "relation_markers": 0,
-            "information_units": 19
-          },
-          {
-            "words": 14,
-            "numbers": 2,
-            "temporal_markers": 1,
-            "relation_markers": 0,
-            "information_units": 19
-          },
-          {
-            "words": 14,
-            "numbers": 2,
-            "temporal_markers": 1,
-            "relation_markers": 1,
-            "information_units": 20
-          }
-        ],
-        "identity_assignment_margin": 0.664,
-        "identity_mapping": {
-          "A": "V2",
-          "B": "V1"
-        },
-        "visible_person_counts": {
-          "persistent": 2,
-          "maximum": 2,
-          "metric_3d": 2
-        },
-        "temporal_state_count": 16,
-        "temporal_span_sec": 14.997642,
-        "max_temporal_gap_ratio": 0.066741,
-        "temporal_span_ratio": 0.999843,
-        "max_radial_speed_mps": 0.715689,
-        "distance_range_m": 2.331274
-      }
-    },
-    {
-      "case_index": 15,
       "case_id": "hoi_m3_bedroom_data02_win05",
       "task_id": "task4_multi_human_relational_dynamics",
       "question_type": "body_forward_visibility_consistency",
@@ -771,7 +712,7 @@
       }
     },
     {
-      "case_index": 16,
+      "case_index": 15,
       "case_id": "hoi_m3_bedroom_data03_win03",
       "task_id": "task4_multi_human_relational_dynamics",
       "question_type": "body_centric_relation_change_over_video",
@@ -831,7 +772,7 @@
       }
     },
     {
-      "case_index": 17,
+      "case_index": 16,
       "case_id": "hoi_m3_bedroom_data05_win02",
       "task_id": "task4_multi_human_relational_dynamics",
       "question_type": "visible_pair_topology_change_2d",
@@ -874,7 +815,7 @@
       }
     },
     {
-      "case_index": 18,
+      "case_index": 17,
       "case_id": "hoi_m3_bedroom_data01_win02",
       "task_id": "task4_multi_human_relational_dynamics",
       "question_type": "metric_separation_over_video",
@@ -931,7 +872,7 @@
       }
     },
     {
-      "case_index": 19,
+      "case_index": 18,
       "case_id": "hoi_m3_bedroom_data01_win04",
       "task_id": "task4_multi_human_relational_dynamics",
       "question_type": "dominant_body_centric_position",
@@ -991,7 +932,7 @@
       }
     },
     {
-      "case_index": 20,
+      "case_index": 19,
       "case_id": "hoi_m3_bedroom_data02_win04",
       "task_id": "task4_multi_human_relational_dynamics",
       "question_type": "nonmonotonic_distance_pattern",
@@ -1050,7 +991,7 @@
       }
     },
     {
-      "case_index": 21,
+      "case_index": 20,
       "case_id": "hoi_m3_bedroom_data02_win06",
       "task_id": "task4_multi_human_relational_dynamics",
       "question_type": "approach_while_facing",
@@ -1109,7 +1050,7 @@
       }
     },
     {
-      "case_index": 22,
+      "case_index": 21,
       "case_id": "hoi_m3_bedroom_data03_win09",
       "task_id": "task4_multi_human_relational_dynamics",
       "question_type": "coupled_distance_relation_change",
@@ -1170,7 +1111,7 @@
       }
     },
     {
-      "case_index": 23,
+      "case_index": 22,
       "case_id": "hoi_m3_bedroom_data03_win08",
       "task_id": "task4_multi_human_relational_dynamics",
       "question_type": "distance_out_and_back_over_video",
@@ -1229,7 +1170,7 @@
       }
     },
     {
-      "case_index": 24,
+      "case_index": 23,
       "case_id": "hoi_m3_bedroom_data01_win01",
       "task_id": "task4_multi_human_relational_dynamics",
       "question_type": "body_forward_field_transition_over_video",
@@ -1289,7 +1230,7 @@
       }
     },
     {
-      "case_index": 25,
+      "case_index": 24,
       "case_id": "hoi_m3_bedroom_data05_win_extra_90s",
       "task_id": "task4_multi_human_relational_dynamics",
       "question_type": "visible_pair_topology_consistency_2d",
@@ -1329,6 +1270,284 @@
         ],
         "start_closest_pair_margin": 0.0758,
         "end_closest_pair_margin": 0.3021
+      }
+    },
+    {
+      "case_index": 25,
+      "case_id": "task3_uniandes_cooking_001_5_frame13050_30s",
+      "task_id": "task3_human_scene_topological_reasoning",
+      "question_type": "local_landmark_pass_side",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 18,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 2,
+            "information_units": 20
+          },
+          {
+            "words": 22,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 3,
+            "information_units": 25
+          },
+          {
+            "words": 22,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 3,
+            "information_units": 25
+          },
+          {
+            "words": 18,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 2,
+            "information_units": 20
+          }
+        ],
+        "temporal_state_count": 61,
+        "temporal_span_sec": 30.0,
+        "max_temporal_gap_ratio": 0.016667,
+        "temporal_span_ratio": 1.0,
+        "path_length_m": 1.864504
+      }
+    },
+    {
+      "case_index": 26,
+      "case_id": "task3_sfu_cooking_010_3_frame6150_30s",
+      "task_id": "task3_human_scene_topological_reasoning",
+      "question_type": "local_landmark_pass_side",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 19,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 3,
+            "information_units": 22
+          },
+          {
+            "words": 19,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 3,
+            "information_units": 22
+          },
+          {
+            "words": 23,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 4,
+            "information_units": 27
+          },
+          {
+            "words": 23,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 4,
+            "information_units": 27
+          }
+        ],
+        "temporal_state_count": 58,
+        "temporal_span_sec": 30.0,
+        "max_temporal_gap_ratio": 0.066667,
+        "temporal_span_ratio": 1.0,
+        "path_length_m": 3.187435
+      }
+    },
+    {
+      "case_index": 27,
+      "case_id": "task3_sfu_cooking_010_1_frame2177_30s",
+      "task_id": "task3_human_scene_topological_reasoning",
+      "question_type": "landmark_closest_approach_order",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 17,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 18
+          },
+          {
+            "words": 18,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 0,
+            "information_units": 18
+          },
+          {
+            "words": 17,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 18
+          },
+          {
+            "words": 19,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 0,
+            "information_units": 19
+          }
+        ],
+        "temporal_state_count": 61,
+        "temporal_span_sec": 30.0,
+        "max_temporal_gap_ratio": 0.016667,
+        "temporal_span_ratio": 1.0,
+        "path_length_m": 4.034841
+      }
+    },
+    {
+      "case_index": 28,
+      "case_id": "task3_sfu_cooking_007_3_frame5850_30s",
+      "task_id": "task3_human_scene_topological_reasoning",
+      "question_type": "landmark_closest_approach_order",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 17,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 18
+          },
+          {
+            "words": 18,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 0,
+            "information_units": 18
+          },
+          {
+            "words": 17,
+            "numbers": 0,
+            "temporal_markers": 1,
+            "relation_markers": 0,
+            "information_units": 18
+          },
+          {
+            "words": 19,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 0,
+            "information_units": 19
+          }
+        ],
+        "temporal_state_count": 44,
+        "temporal_span_sec": 30.0,
+        "max_temporal_gap_ratio": 0.15,
+        "temporal_span_ratio": 1.0,
+        "path_length_m": 3.418062
+      }
+    },
+    {
+      "case_index": 29,
+      "case_id": "task3_sfu_cooking_010_3_frame7650_30s",
+      "task_id": "task3_human_scene_topological_reasoning",
+      "question_type": "closest_landmark_to_full_trajectory",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 15,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 1,
+            "information_units": 16
+          },
+          {
+            "words": 15,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 0,
+            "information_units": 15
+          },
+          {
+            "words": 14,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 0,
+            "information_units": 14
+          },
+          {
+            "words": 14,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 0,
+            "information_units": 14
+          }
+        ],
+        "temporal_state_count": 61,
+        "temporal_span_sec": 30.0,
+        "max_temporal_gap_ratio": 0.016667,
+        "temporal_span_ratio": 1.0,
+        "path_length_m": 2.639177,
+        "route_landmark_margin_m": 0.486345
+      }
+    },
+    {
+      "case_index": 30,
+      "case_id": "task3_iiith_cooking_145_2_frame11400_30s",
+      "task_id": "task3_human_scene_topological_reasoning",
+      "question_type": "closest_landmark_to_full_trajectory",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 14,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 0,
+            "information_units": 14
+          },
+          {
+            "words": 14,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 0,
+            "information_units": 14
+          },
+          {
+            "words": 14,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 0,
+            "information_units": 14
+          },
+          {
+            "words": 14,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 0,
+            "information_units": 14
+          }
+        ],
+        "temporal_state_count": 57,
+        "temporal_span_sec": 30.0,
+        "max_temporal_gap_ratio": 0.033333,
+        "temporal_span_ratio": 1.0,
+        "path_length_m": 1.624972,
+        "route_landmark_margin_m": 0.25932
       }
     }
   ]

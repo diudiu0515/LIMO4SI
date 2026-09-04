@@ -1,36 +1,44 @@
 # Current Task Status
 
-最近更新：2026-09-02。
+最近更新：2026-09-04。
 
-本文档是当前 benchmark 的唯一集中状态记录。当前只做新版 **Task 1** 和 **Task 4**；网站只是验收入口，答案来自代码与保存的几何/视觉证据。
+本文档是当前 benchmark 的唯一集中状态记录。当前发布新版 **Task 1、Task 3 和 Task 4**；网站只是验收入口，答案来自代码与保存的几何/视觉证据。
 
 ## 当前交付
 
 | 项目 | 当前真实状态 |
 |---|---:|
-| 展示 case | 25 |
-| QA | 25 |
+| 展示 case | 30 |
+| QA | 30 |
 | 每个 case 的问题数 | 1 |
-| 不重复的视频窗口 | 25 / 25 |
+| 不重复的视频窗口 | 30 / 30 |
 | Task 1 | 11 case；四类能力均至少 2 例 |
-| Task 4 | 14 case；六类能力均至少 2 例 |
+| Task 3 | 6 case；三类能力均 2 例 |
+| Task 4 | 13 case；六类能力均至少 2 例 |
 | 每题选项 | 4 个互不重复选项 |
-| 视频长度 | 每段约 15 秒 |
-| 非 Task 1 / Task 4 题 | 0 |
+| 视频长度 | Task 1/4 约 15 秒；Task 3 为 30 秒 |
+| 非 Task 1 / Task 3 / Task 4 题 | 0 |
 
 最终数据：
 
 - `outputs/qa/task1_task4_curated_qa.jsonl`
 - `outputs/qa/task1_task4_curated_audit.json`
+- `outputs/qa/task3_scaled_qa.jsonl`
+- `outputs/qa/task3_static_landmarks.json`
+- `outputs/qa/task3_scale_audit.json`
+- `outputs/qa/task1_task3_task4_scale_quality.json`
 - `site/qa_benchmark/data.js`
 - `site/qa_benchmark/index.html`
 
 生成入口：
 
 ```bash
-python scripts/build_task1_task4_curated.py
-python scripts/build_task1_task4_scaled.py
-python scripts/build_static_qa_site.py
+# 日常重建使用已审计的静态地标缓存
+python scripts/build_all_scaled_qa.py
+
+# 只有修改 Task 3 地标框时才重跑原始点云落点
+python scripts/ground_task3_landmarks.py
+python scripts/build_all_scaled_qa.py
 ```
 
 ## Task 1：Dynamic Human-Referenced Relations
@@ -55,13 +63,25 @@ Task 1 的可见性题回答的是“目标是否进入人的 body/head-forward 
 | 前后关系翻转 | `sfu_cooking_007_3` frame 10890 | oyster-sauce bottle 从 front 变为 behind |
 | 人物体距离显著增加 | `uniandes_cooking_001_5` frame 6690 | egg whisk 距离约 0.55 m 增至 1.86 m |
 
+## Task 3：Human–Scene Topological Reasoning
+
+Task 3 回答人的完整三维轨迹与静态场景地标之间的关系，不使用图像左右，也不把可移动厨具当作场景地标。
+
+| 类别 | 例数 | 计算与发布门槛 |
+|---|---:|---|
+| `local_path_side` | 2 | 在最近点处用平滑轨迹的局部切向量定义左右；横向 margin ≥ 0.25 m，局部移动 ≥ 0.35 m |
+| `temporal_landmark_order` | 2 | 分别计算两个固定地标对完整轨迹的最近点；两次访问均须为片段内部的显著靠近事件，时间间隔 ≥ 2 s |
+| `full_route_proximity` | 2 | 比较至少三个固定地标到完整轨迹的最小水平距离；第一、第二名 margin ≥ 0.15 m |
+
+静态地标采用人工核验的固定设施框（操作台、餐桌、固定设备等），再由 Ego-Exo4D 半稠密点云计算世界坐标。每个发布地标必须通过：`manual_static_review = true`、稳健三维内点数 ≥ 12、三维中心回投仍在人工框内。答案完全由 annotation/点云和人体轨迹计算，LLM 不参与判题。当前没有 room region、doorway footprint 或 obstacle mesh，因此不发布“进入哪个房间”“从障碍哪侧绕过”等超出证据的问题。
+
 ## Task 4：Multi-Human Relational Dynamics
 
 | 类别 | 问题类型 | case | 证据与门槛 | 当前状态 |
 |---|---|---|---|---|
 | position | `position_consistency_between_people` | HOI-M3 `bedroom_data02_win08` | 16 个 metric pose；B 在全部采样中都位于 A 的右前方 | 已发布 |
 | orientation | `dominant_facing_relation_over_video` | HOI-M3 `bedroom_data01_win06` | 16 个 metric pose；14/16 为 facing each other | 已发布 |
-| distance | `metric_distance_pattern_over_video` | HOI-M3 `bedroom_data03_win04` | 16 个 pelvis/root 样本；约 1.08 m 增至 3.09 m | 已发布 |
+| distance | `metric_separation_over_video` | HOI-M3 `bedroom_data01_win02` | 16 个 pelvis/root 状态；约 1.49 m 增至 3.55 m | 已发布 |
 | topology | `visible_pair_topology_change_2d` | HOI-M3 `bedroom_data05_win02` | Grounding DINO + 时序关联覆盖 3 人；比较归一化图像平面 pair distance | 已发布，明确为 2D topology |
 | visibility | `body_forward_visibility_consistency` | HOI-M3 `bedroom_data02_win05` | 16 个 body-forward 样本；双方均落在彼此 ±60° forward field | 已发布，但标为 `audited_proxy` |
 | relation change | `body_centric_relation_change_over_video` | HOI-M3 `bedroom_data03_win03` | 前 4 个样本 left-front，之后 12 个样本持续 right-front | 已发布 |
@@ -86,9 +106,9 @@ Task 1 的可见性题回答的是“目标是否进入人的 body/head-forward 
 
 ## 本轮关键修正
 
-- 在首版 10 case / 10 题的基础上新增 12 个通过门控的 temporal case；当前为 22 case / 22 题，每个 case 仍只保留一道高信号题。
-- 删除 Task 2、Task 3、reachability、hand-approach 等不在当前范围内的问题。
-- 删除同一窗口重复 case；22 个 case 使用 22 个不同的 15 秒窗口。
+- 当前合并发布为 30 case / 30 题；Task 1/4 为 24 个 15 秒窗口，Task 3 为 6 个 30 秒窗口，每个 case 只保留一道高信号题。
+- Task 3 已以新的静态场景地标拓扑定义恢复；Task 2、reachability、hand-approach 仍不在当前发布范围。
+- 删除同一窗口重复 case；30 个 case 使用 30 个不同视频窗口；同一 take 的不同 Task 3 窗口也使用包含中心帧的独立 clip 文件名。
 - HOI-M3 每段 metric timeline 从 3 个时刻提高到 16 个时刻，约 1 Hz 覆盖完整 15 秒。
 - 人体朝向、A-centered 左右前后均投影到真实 X/Z 地面，不让竖直分量干扰。
 - 没有 blocker geometry 时，`line_of_sight_blocked` 现在为 `null`，状态为 `missing_blocker_geometry`，不再错误输出 `False = clear`。
@@ -104,7 +124,7 @@ Task 1 的可见性题回答的是“目标是否进入人的 body/head-forward 
 | 三人米制距离/身体朝向 | `bedroom_data05` 画面有 3 人，但本地只有 2 条 SMPL-X | 只发布覆盖三人的 2D topology |
 | 完整 SMPL-X 关节头部位置 | 当前本地只有参数文件，未装载受许可的人体模型文件 | pelvis 使用 transl/root；head 明确标为 `pelvis + 1.6 m proxy` |
 
-因此，当前可以真实地说：**Task 1 已有 10 个可验收 temporal case，Task 4 已有 12 个可验收 temporal case；六类 Task 4 能力均有覆盖。物理遮挡与 gaze 真值仍未完成，不算进“已完成”。**
+因此，当前可以真实地说：**合并发布包含 30 个唯一窗口：Task 1 为 11 例、Task 3 为 6 例、Task 4 为 13 例；Task 3 三类能力各 2 例。物理遮挡、gaze 真值和语义房间拓扑仍未完成，不算进“已完成”。**
 
 ## 验收
 
@@ -124,19 +144,16 @@ http://<服务器IP>:8000/
 自动检查：
 
 ```bash
-python scripts/build_task1_task4_curated.py
-python scripts/build_task1_task4_scaled.py
-python scripts/build_static_qa_site.py
+python scripts/build_all_scaled_qa.py
 ```
 
-审计文件 `outputs/qa/task1_task4_curated_audit.json` 应满足：
+合并审计文件 `outputs/qa/task1_task3_task4_scale_quality.json` 应满足：
 
 - `status = ok`
-- `case_count = 25`
-- `qa_count = 25`
-- `one_question_per_case = true`
-- `unique_case_windows = 25`
-- Task 1 = 11，Task 4 = 14；每个能力类别至少 2 例
+- `case_count = accepted_count = 30`
+- `rejected_count = 0`
+
+Task 3 子审计 `outputs/qa/task3_scale_audit.json` 还应满足：6 个唯一窗口，`local_path_side`、`temporal_landmark_order`、`full_route_proximity` 各 2 例。
 
 ## 工作原则
 

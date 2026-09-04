@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="500" viewBox="0 0 820 500">
+<rect width="820" height="500" fill="#f8fafc"/>
+<polyline points="168.3,164.1 168.4,163.4 168.3,163.2 168.1,163.7 168.3,162.1 168.0,162.6 167.5,163.5 167.7,163.4 167.7,163.3 168.0,163.4 167.8,162.1 167.6,161.3 167.0,160.8 165.7,160.3 163.9,159.7 162.3,160.2 160.5,159.2 160.1,161.5 162.1,164.7 175.1,164.8 200.9,161.8 235.2,160.7 273.4,160.8 310.1,159.6 336.8,159.6 350.8,162.7 356.8,164.6 357.5,163.2 359.1,161.6 360.2,160.9 362.0,161.5 361.9,161.8 353.5,160.5 333.7,156.2 301.4,154.5 263.5,151.2 226.2,149.8 197.2,149.3 178.1,152.5 171.7,153.6 170.0,154.9 169.6,154.9 169.5,154.7 170.1,153.5 170.4,152.1 171.2,150.8 171.7,149.5 171.6,150.0 171.2,151.4 171.5,152.2 171.4,152.5 171.3,152.7 171.8,151.0 172.0,151.0 171.8,150.3 171.8,150.3 171.9,150.0 172.1,149.9 174.0,148.0 174.2,148.0 175.1,147.4" fill="none" stroke="#2563eb" stroke-width="5" stroke-linejoin="round" opacity="0.9"/>
+<circle cx="168.3" cy="164.1" r="9" fill="#16a34a"/><text x="180.3" y="154.1" font-size="15">start</text>
+<circle cx="175.1" cy="147.4" r="9" fill="#dc2626"/><text x="187.1" y="137.4" font-size="15">end</text>
+<circle cx="99.4" cy="79.4" r="10" fill="#f59e0b"/><text x="112.4" y="84.4" font-size="15" font-weight="700">left cooking counter</text>
+<circle cx="372.1" cy="143.8" r="10" fill="#7c3aed"/><text x="385.1" y="148.8" font-size="15" font-weight="700">back sink counter</text>
+<circle cx="226.8" cy="334.8" r="10" fill="#0891b2"/><text x="239.8" y="339.8" font-size="15" font-weight="700">dining table</text>
+<circle cx="475.9" cy="400.6" r="10" fill="#db2777"/><text x="488.9" y="405.6" font-size="15" font-weight="700">refrigerator</text>
+<text x="22" y="486" font-size="14" fill="#475569">Blue: full smoothed metric pelvis trajectory · landmark coordinates are scene-fixed</text></svg>

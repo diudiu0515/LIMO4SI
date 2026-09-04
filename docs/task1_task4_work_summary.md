@@ -2,6 +2,8 @@
 
 最近更新：2026-09-02。
 
+> 历史阶段说明：本文记录 Task 1 / Task 4 切换阶段的工作；当前发布已加入新版 Task 3。最新数量、门槛与命令以 `current_task_status.md` 为准。
+
 ## 目标调整
 
 Benchmark 已从旧版 Task 1 / Task 3 调整为新版 Task 1 / Task 4：

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="500" viewBox="0 0 820 500">
+<rect width="820" height="500" fill="#f8fafc"/>
+<polyline points="244.3,325.0 251.3,332.1 255.7,336.6 265.2,346.2 269.4,356.9 268.5,362.4 269.9,367.8 271.5,372.1 273.1,376.5 276.6,378.4 276.3,379.0 272.8,378.4 271.4,373.3 274.2,362.7 288.1,347.1 313.9,327.6 340.9,309.2 359.8,293.0 363.7,281.9 346.5,278.9 310.7,286.2 265.8,290.6 224.5,297.8 193.2,306.1 172.1,309.0 160.5,306.5 157.9,306.2 157.5,306.2 158.3,306.0 159.3,305.8 159.4,303.6 159.6,303.4 159.5,303.0 161.0,301.8 169.7,299.6 189.4,298.8 217.7,300.1 253.0,300.4 290.9,299.4 324.9,301.9 349.2,304.8 364.5,303.7 371.5,303.3 376.1,306.2" fill="none" stroke="#2563eb" stroke-width="5" stroke-linejoin="round" opacity="0.9"/>
+<circle cx="244.3" cy="325.0" r="9" fill="#16a34a"/><text x="256.3" y="315.0" font-size="15">start</text>
+<circle cx="376.1" cy="306.2" r="9" fill="#dc2626"/><text x="388.1" y="296.2" font-size="15">end</text>
+<circle cx="540.5" cy="86.3" r="10" fill="#f59e0b"/><text x="553.5" y="91.3" font-size="15" font-weight="700">refrigerator</text>
+<circle cx="298.0" cy="375.2" r="10" fill="#7c3aed"/><text x="311.0" y="380.2" font-size="15" font-weight="700">sink counter</text>
+<circle cx="106.3" cy="393.7" r="10" fill="#0891b2"/><text x="119.3" y="398.7" font-size="15" font-weight="700">cooking range</text>
+<text x="22" y="486" font-size="14" fill="#475569">Blue: full smoothed metric pelvis trajectory · landmark coordinates are scene-fixed</text></svg>
