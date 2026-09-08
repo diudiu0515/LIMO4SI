@@ -41,280 +41,276 @@
   "cases": [
     {
       "case_index": 1,
-      "case_id": "task3_uniandes_cooking_001_5_frame13050_30s",
-      "task_id": "task3_human_scene_topological_reasoning",
-      "question_type": "local_landmark_pass_side",
+      "case_id": "task5_repeated_gaze_white_vase",
+      "task_id": "task5_human_state_grounded_spatial_reasoning",
+      "question_type": "relation_change_between_gazes",
       "status": "accepted",
       "errors": [],
       "warnings": [],
       "metrics": {
         "option_information_profiles": [
           {
-            "words": 18,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 2,
-            "information_units": 20
-          },
-          {
-            "words": 22,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
             "relation_markers": 3,
-            "information_units": 25
+            "information_units": 11
           },
           {
-            "words": 22,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
             "relation_markers": 3,
-            "information_units": 25
+            "information_units": 11
           },
           {
-            "words": 18,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 2,
-            "information_units": 20
+            "relation_markers": 4,
+            "information_units": 12
+          },
+          {
+            "words": 8,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 3,
+            "information_units": 11
           }
         ],
-        "temporal_state_count": 61,
-        "temporal_span_sec": 30.0,
-        "max_temporal_gap_ratio": 0.016667,
+        "temporal_state_count": 78,
+        "temporal_span_sec": 2.566256,
+        "max_temporal_gap_ratio": 0.012987,
         "temporal_span_ratio": 1.0,
-        "path_length_m": 1.864504
+        "lateral_relation_shift_m": 0.228776
       }
     },
     {
       "case_index": 2,
-      "case_id": "task3_sfu_cooking_010_3_frame6150_30s",
-      "task_id": "task3_human_scene_topological_reasoning",
-      "question_type": "local_landmark_pass_side",
+      "case_id": "task5_repeated_gaze_kitchen_island",
+      "task_id": "task5_human_state_grounded_spatial_reasoning",
+      "question_type": "relation_change_between_gazes",
       "status": "accepted",
       "errors": [],
       "warnings": [],
       "metrics": {
         "option_information_profiles": [
           {
-            "words": 19,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
             "relation_markers": 3,
-            "information_units": 22
+            "information_units": 11
           },
           {
-            "words": 19,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
             "relation_markers": 3,
-            "information_units": 22
+            "information_units": 11
           },
           {
-            "words": 23,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
             "relation_markers": 4,
-            "information_units": 27
+            "information_units": 12
           },
           {
-            "words": 23,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 4,
-            "information_units": 27
+            "relation_markers": 3,
+            "information_units": 11
           }
         ],
-        "temporal_state_count": 58,
-        "temporal_span_sec": 30.0,
-        "max_temporal_gap_ratio": 0.066667,
+        "temporal_state_count": 82,
+        "temporal_span_sec": 2.699568,
+        "max_temporal_gap_ratio": 0.012346,
         "temporal_span_ratio": 1.0,
-        "path_length_m": 3.187435
+        "lateral_relation_shift_m": 0.131736
       }
     },
     {
       "case_index": 3,
-      "case_id": "task3_sfu_cooking_010_1_frame2177_30s",
-      "task_id": "task3_human_scene_topological_reasoning",
-      "question_type": "landmark_closest_approach_order",
+      "case_id": "task5_gaze_onset_wooden_bowl",
+      "task_id": "task5_human_state_grounded_spatial_reasoning",
+      "question_type": "gaze_onset_side_change",
       "status": "accepted",
       "errors": [],
       "warnings": [],
       "metrics": {
         "option_information_profiles": [
           {
-            "words": 17,
-            "numbers": 0,
-            "temporal_markers": 1,
-            "relation_markers": 0,
-            "information_units": 18
-          },
-          {
-            "words": 18,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 0,
-            "information_units": 18
+            "relation_markers": 3,
+            "information_units": 11
           },
           {
-            "words": 17,
-            "numbers": 0,
-            "temporal_markers": 1,
-            "relation_markers": 0,
-            "information_units": 18
-          },
-          {
-            "words": 19,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 0,
-            "information_units": 19
+            "relation_markers": 3,
+            "information_units": 11
+          },
+          {
+            "words": 8,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 4,
+            "information_units": 12
+          },
+          {
+            "words": 8,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 3,
+            "information_units": 11
           }
         ],
-        "temporal_state_count": 61,
-        "temporal_span_sec": 30.0,
-        "max_temporal_gap_ratio": 0.016667,
+        "temporal_state_count": 54,
+        "temporal_span_sec": 1.766384,
+        "max_temporal_gap_ratio": 0.018868,
         "temporal_span_ratio": 1.0,
-        "path_length_m": 4.034841
+        "lateral_relation_shift_m": 0.231151
       }
     },
     {
       "case_index": 4,
-      "case_id": "task3_sfu_cooking_007_3_frame5850_30s",
-      "task_id": "task3_human_scene_topological_reasoning",
-      "question_type": "landmark_closest_approach_order",
+      "case_id": "task5_gaze_onset_kitchen_island",
+      "task_id": "task5_human_state_grounded_spatial_reasoning",
+      "question_type": "gaze_onset_side_change",
       "status": "accepted",
       "errors": [],
       "warnings": [],
       "metrics": {
         "option_information_profiles": [
           {
-            "words": 17,
-            "numbers": 0,
-            "temporal_markers": 1,
-            "relation_markers": 0,
-            "information_units": 18
-          },
-          {
-            "words": 18,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 0,
-            "information_units": 18
+            "relation_markers": 4,
+            "information_units": 12
           },
           {
-            "words": 17,
-            "numbers": 0,
-            "temporal_markers": 1,
-            "relation_markers": 0,
-            "information_units": 18
-          },
-          {
-            "words": 19,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 0,
-            "information_units": 19
+            "relation_markers": 4,
+            "information_units": 12
+          },
+          {
+            "words": 8,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 4,
+            "information_units": 12
+          },
+          {
+            "words": 8,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 4,
+            "information_units": 12
           }
         ],
-        "temporal_state_count": 44,
-        "temporal_span_sec": 30.0,
-        "max_temporal_gap_ratio": 0.15,
+        "temporal_state_count": 30,
+        "temporal_span_sec": 0.966512,
+        "max_temporal_gap_ratio": 0.034483,
         "temporal_span_ratio": 1.0,
-        "path_length_m": 3.418062
+        "lateral_relation_shift_m": 0.325032
       }
     },
     {
       "case_index": 5,
-      "case_id": "task3_sfu_cooking_010_3_frame7650_30s",
-      "task_id": "task3_human_scene_topological_reasoning",
-      "question_type": "closest_landmark_to_full_trajectory",
+      "case_id": "task5_last_gaze_object_wooden_bowl",
+      "task_id": "task5_human_state_grounded_spatial_reasoning",
+      "question_type": "last_gaze_annotated_object_relation_change",
       "status": "accepted",
       "errors": [],
       "warnings": [],
       "metrics": {
         "option_information_profiles": [
           {
-            "words": 15,
+            "words": 7,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 1,
-            "information_units": 16
+            "relation_markers": 4,
+            "information_units": 11
           },
           {
-            "words": 15,
+            "words": 7,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 0,
-            "information_units": 15
+            "relation_markers": 4,
+            "information_units": 11
           },
           {
-            "words": 14,
+            "words": 7,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 0,
-            "information_units": 14
+            "relation_markers": 4,
+            "information_units": 11
           },
           {
-            "words": 14,
+            "words": 7,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 0,
-            "information_units": 14
+            "relation_markers": 4,
+            "information_units": 11
           }
         ],
-        "temporal_state_count": 61,
-        "temporal_span_sec": 30.0,
-        "max_temporal_gap_ratio": 0.016667,
-        "temporal_span_ratio": 1.0,
-        "path_length_m": 2.639177,
-        "route_landmark_margin_m": 0.486345
+        "temporal_state_count": 114,
+        "temporal_span_sec": 3.766064,
+        "max_temporal_gap_ratio": 0.00885,
+        "temporal_span_ratio": 1.0
       }
     },
     {
       "case_index": 6,
-      "case_id": "task3_iiith_cooking_145_2_frame11400_30s",
-      "task_id": "task3_human_scene_topological_reasoning",
-      "question_type": "closest_landmark_to_full_trajectory",
+      "case_id": "task5_last_gaze_object_white_vase",
+      "task_id": "task5_human_state_grounded_spatial_reasoning",
+      "question_type": "last_gaze_annotated_object_relation_change",
       "status": "accepted",
       "errors": [],
       "warnings": [],
       "metrics": {
         "option_information_profiles": [
           {
-            "words": 14,
+            "words": 6,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 0,
-            "information_units": 14
+            "relation_markers": 3,
+            "information_units": 9
           },
           {
-            "words": 14,
+            "words": 6,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 0,
-            "information_units": 14
+            "relation_markers": 3,
+            "information_units": 9
           },
           {
-            "words": 14,
+            "words": 6,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 0,
-            "information_units": 14
+            "relation_markers": 3,
+            "information_units": 9
           },
           {
-            "words": 14,
+            "words": 6,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 0,
-            "information_units": 14
+            "relation_markers": 3,
+            "information_units": 9
           }
         ],
-        "temporal_state_count": 57,
-        "temporal_span_sec": 30.0,
-        "max_temporal_gap_ratio": 0.033333,
-        "temporal_span_ratio": 1.0,
-        "path_length_m": 1.624972,
-        "route_landmark_margin_m": 0.25932
+        "temporal_state_count": 87,
+        "temporal_span_sec": 2.866208,
+        "max_temporal_gap_ratio": 0.011628,
+        "temporal_span_ratio": 1.0
       }
     }
   ]

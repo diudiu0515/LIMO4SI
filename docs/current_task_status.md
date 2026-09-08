@@ -1,23 +1,24 @@
 # Current Task Status
 
-最近更新：2026-09-04。
+最近更新：2026-09-08。
 
-本文档是当前 benchmark 的唯一集中状态记录。当前发布新版 **Task 1、Task 3 和 Task 4**；网站只是验收入口，答案来自代码与保存的几何/视觉证据。
+本文档是当前 benchmark 的唯一集中状态记录。当前发布新版 **Task 1、Task 3、Task 4 和 Task 5**；网站只是验收入口，答案来自代码与保存的几何/视觉证据。
 
 ## 当前交付
 
 | 项目 | 当前真实状态 |
 |---|---:|
-| 展示 case | 30 |
-| QA | 30 |
+| 展示 case | 36 |
+| QA | 36 |
 | 每个 case 的问题数 | 1 |
-| 不重复的视频窗口 | 30 / 30 |
+| 不重复的视频窗口 | 36 / 36 |
 | Task 1 | 11 case；四类能力均至少 2 例 |
 | Task 3 | 6 case；三类能力均 2 例 |
 | Task 4 | 13 case；六类能力均至少 2 例 |
+| Task 5 | 6 case；三类能力均 2 例 |
 | 每题选项 | 4 个互不重复选项 |
-| 视频长度 | Task 1/4 约 15 秒；Task 3 为 30 秒 |
-| 非 Task 1 / Task 3 / Task 4 题 | 0 |
+| 视频长度 | Task 1/4 约 15 秒；Task 3 为 30 秒；Task 5 为约 1–4 秒的 gaze 事件窗口 |
+| 非 Task 1 / Task 3 / Task 4 / Task 5 题 | 0 |
 
 最终数据：
 
@@ -26,7 +27,10 @@
 - `outputs/qa/task3_scaled_qa.jsonl`
 - `outputs/qa/task3_static_landmarks.json`
 - `outputs/qa/task3_scale_audit.json`
-- `outputs/qa/task1_task3_task4_scale_quality.json`
+- `outputs/qa/task5_scaled_qa.jsonl`
+- `outputs/qa/task5_adt_analysis.json`
+- `outputs/qa/task5_scale_audit.json`
+- `outputs/qa/task1_task3_task4_task5_scale_quality.json`
 - `site/qa_benchmark/data.js`
 - `site/qa_benchmark/index.html`
 
@@ -104,11 +108,25 @@ Task 3 回答人的完整三维轨迹与静态场景地标之间的关系，不�
 3. 每个 15 秒窗口使用 16 个 metric pose，而不是旧版仅 3 个时刻；
 4. 三人但只有两条 SMPL-X 的窗口不能回答三人米制问题，只能回答覆盖全部三人的 2D topology。
 
+## Task 5：Human-State–Grounded Spatial Reasoning
+
+Task 5 当前使用 Aria Digital Twin v2 的官方完整样本，不把 Task 1/4 的 body-forward proxy 当作 gaze。逐帧答案链路为：真实 `eyegaze.csv` 射线 → 同时刻物体 6DoF/3D OBB 相交 → 世界坐标中的物体中心 → 重力对齐的 wearer CPF 左右/前后坐标。动态物体使用逐帧位姿，不假设物体固定；LLM 不参与答案标签判断。
+
+| 类别 | 例数 | 计算与发布门槛 |
+|---|---:|---|
+| `between_repeated_gaze_events` | 2 | 同一物体两个持续 gaze 段；每段至少 4 个连续状态，事件间隔至少 0.3 s |
+| `after_gaze_turns_to_object` | 2 | gaze onset 前不在注视目标；onset 后形成持续目标 gaze；wearer 水平转向至少 8° |
+| `last_gaze_annotated_object` | 2 | 目标必须是窗口内最后一个持续 gaze 事件，并从完整窗口重算其关系序列 |
+
+发布中的 6 个窗口来自同一官方 10 秒端到端验证序列，但窗口边界、目标和问题均不同。它们用于验证算法闭环，不代表规模上限。批量扩展时，`scripts/mine_task5_adt.py` 可直接遍历更多 ADT 序列；独立门禁会拒绝 head-forward 伪 gaze、非连续单帧命中、图像左右、陈旧关系标签和信息量不平衡选项。
+
+Task 5 的官方原始样本下载和 VRS 解析只在重新挖掘/导出证据时需要；日常网站重建使用已保存的 `task5_adt_analysis.json`、短视频和定位图。当前 Ego-Exo4D 账号对 gaze manifest 返回 403，因此未把其 gaze 写入答案，也没有用推测结果补齐。
+
 ## 本轮关键修正
 
-- 当前合并发布为 30 case / 30 题；Task 1/4 为 24 个 15 秒窗口，Task 3 为 6 个 30 秒窗口，每个 case 只保留一道高信号题。
+- 当前合并发布为 36 case / 36 题；Task 1/4 为 24 个 15 秒窗口，Task 3 为 6 个 30 秒窗口，Task 5 为 6 个 gaze 事件窗口，每个 case 只保留一道高信号题。
 - Task 3 已以新的静态场景地标拓扑定义恢复；Task 2、reachability、hand-approach 仍不在当前发布范围。
-- 删除同一窗口重复 case；30 个 case 使用 30 个不同视频窗口；同一 take 的不同 Task 3 窗口也使用包含中心帧的独立 clip 文件名。
+- 删除同一窗口重复 case；36 个 case 使用 36 个不同视频窗口；同一源序列内的窗口也以起止时间共同定义并使用独立 clip 文件名。
 - HOI-M3 每段 metric timeline 从 3 个时刻提高到 16 个时刻，约 1 Hz 覆盖完整 15 秒。
 - 人体朝向、A-centered 左右前后均投影到真实 X/Z 地面，不让竖直分量干扰。
 - 没有 blocker geometry 时，`line_of_sight_blocked` 现在为 `null`，状态为 `missing_blocker_geometry`，不再错误输出 `False = clear`。
@@ -120,11 +138,11 @@ Task 3 回答人的完整三维轨迹与静态场景地标之间的关系，不�
 | 能力 | 当前缺口 | 当前处理 |
 |---|---|---|
 | 人绕过隔板后 A/B 是否真正互相可见 | 本地 HOI-M3 子集没有隔板/场景 mesh 的时变遮挡几何与相机对齐标注 | 不发布此类题；结果为 `missing_blocker_geometry` |
-| “看着对方”或 mutual gaze | 当前使用 SMPL-X root/body forward，没有真实眼动或可靠 head gaze | 只称 body-forward field，不称 gaze |
+| Task 4 的“看着对方”或 mutual gaze | HOI-M3 当前仍只有 SMPL-X root/body forward；ADT 的 wearer gaze 不能补成两人 mutual gaze | Task 4 只称 body-forward field；Task 5 才使用真实 wearer gaze |
 | 三人米制距离/身体朝向 | `bedroom_data05` 画面有 3 人，但本地只有 2 条 SMPL-X | 只发布覆盖三人的 2D topology |
 | 完整 SMPL-X 关节头部位置 | 当前本地只有参数文件，未装载受许可的人体模型文件 | pelvis 使用 transl/root；head 明确标为 `pelvis + 1.6 m proxy` |
 
-因此，当前可以真实地说：**合并发布包含 30 个唯一窗口：Task 1 为 11 例、Task 3 为 6 例、Task 4 为 13 例；Task 3 三类能力各 2 例。物理遮挡、gaze 真值和语义房间拓扑仍未完成，不算进“已完成”。**
+因此，当前可以真实地说：**合并发布包含 36 个唯一窗口：Task 1 为 11 例、Task 3 为 6 例、Task 4 为 13 例、Task 5 为 6 例；Task 3 和 Task 5 的三类能力均各 2 例。Task 5 有真实 wearer gaze；Task 4 mutual gaze、物理遮挡和语义房间拓扑仍未完成。**
 
 ## 验收
 
@@ -147,13 +165,15 @@ http://<服务器IP>:8000/
 python scripts/build_all_scaled_qa.py
 ```
 
-合并审计文件 `outputs/qa/task1_task3_task4_scale_quality.json` 应满足：
+合并审计文件 `outputs/qa/task1_task3_task4_task5_scale_quality.json` 应满足：
 
 - `status = ok`
-- `case_count = accepted_count = 30`
+- `case_count = accepted_count = 36`
 - `rejected_count = 0`
 
 Task 3 子审计 `outputs/qa/task3_scale_audit.json` 还应满足：6 个唯一窗口，`local_path_side`、`temporal_landmark_order`、`full_route_proximity` 各 2 例。
+
+Task 5 子审计 `outputs/qa/task5_scale_audit.json` 还应满足：6 个唯一窗口，`between_repeated_gaze_events`、`after_gaze_turns_to_object`、`last_gaze_annotated_object` 各 2 例。
 
 ## 工作原则
 

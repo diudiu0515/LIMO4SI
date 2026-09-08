@@ -131,6 +131,31 @@ def evidence_payload(group: dict[str, Any], qa: dict[str, Any]) -> dict[str, Any
         topology = r.get('topology') or {}
         out['trajectory_summary'] = {key: topology.get(key) for key in ('coordinate_frame', 'trajectory_state_count', 'temporal_span_sec', 'path_length_m', 'net_displacement_m')}
         out['route_landmark_ranking'] = r.get('route_landmark_ranking')
+    elif qtype in {
+        'relation_change_between_gazes', 'gaze_onset_side_change',
+        'last_gaze_annotated_object_relation_change',
+    }:
+        timeline = r.get('timeline') or []
+        anchors = set((r.get('transition') or {}).get(key) for key in ('start_frame', 'end_frame'))
+        selected = [state for state in timeline if state.get('frame') in anchors]
+        if not selected and timeline:
+            selected = [timeline[0], timeline[-1]]
+        out['annotation_source'] = r.get('annotation_source')
+        out['answer_provenance'] = 'direct computation from annotations; no LLM label judgment'
+        out['coordinate_frame'] = r.get('coordinate_frame')
+        out['gaze_grounding_method'] = r.get('gaze_grounding_method')
+        out['object'] = {'id': r.get('object_id'), 'name': r.get('object_name')}
+        out['gaze_events'] = r.get('gaze_events')
+        out['transition'] = r.get('transition')
+        out['anchor_states'] = [
+            {
+                'frame': state.get('frame'), 'time_s': state.get('time_s'),
+                'gazed_object_name': state.get('gazed_object_name'),
+                'gaze_hit_distance_m': state.get('gaze_hit_distance_m'),
+                'relation': state.get('relation'),
+            }
+            for state in selected
+        ]
     elif qtype == 'objects_along_human_path_sides':
         out['path_start_world_m'] = r.get('path_start_world_m')
         out['path_end_world_m'] = r.get('path_end_world_m')
@@ -211,7 +236,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <body>
 <main class="staticShell">
 <h1>Humans in Space QA Benchmark</h1>
-<p class="topNote">This site shows Task 1, Task 3, and Task 4. Each case contains one question grounded in its full evidence clip. Submit an answer first; localization views, trajectory/top-down views, and computed evidence are collapsed by default and can be expanded when needed.</p>
+<p class="topNote">This site shows Task 1, Task 3, Task 4, and Task 5. Each case contains one question grounded in its full evidence clip. Submit an answer first; localization views, trajectory/top-down views, gaze views, and computed evidence are collapsed by default and can be expanded when needed.</p>
 <nav class="caseNav">
 ''')
     for i, _ in enumerate(data.get('groups', []), 1):
@@ -244,9 +269,10 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         if group.get('original_video'):
             parts.append('<details class="originalVideoBox"><summary>Show original full video on this page</summary>')
             parts.append(f'<video class="inlineVideo" controls muted playsinline preload="none"><source src="{esc(group["original_video"])}" type="video/mp4">Your browser cannot play this video.</video></details>')
-        parts.append('<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">')
+        evidence_summary = 'Show gaze and object localization evidence' if str(group.get('name', '')).startswith('task5_') else 'Show localization and top-down evidence'
+        parts.append(f'<details class="visualEvidenceBox"><summary>{evidence_summary}</summary><div class="mediaGrid">')
         if group.get('original_image'):
-            original_caption = 'Original-video localization: boxes + head/pelvis points + persistent 2D IDs' if group.get('localization_image') else 'Photo / skeleton evidence'
+            original_caption = group.get('original_caption') or ('Original-video localization: boxes + head/pelvis points + persistent 2D IDs' if group.get('localization_image') else 'Photo / skeleton evidence')
             parts.append(f'<figure><img src="{esc(group["original_image"])}" loading="lazy" alt="original"><figcaption>{esc(original_caption)}</figcaption></figure>')
         if group.get('topdown_image'):
             topdown_caption = 'Metric 3D top-down map (SMPL-X tracks only)' if group.get('visual_person_audit') else 'Top-down human-centered map'

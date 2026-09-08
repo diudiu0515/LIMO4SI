@@ -1,0 +1,49 @@
+{
+  "minimum_examples_per_category": 2,
+  "analysis": "outputs/qa/task5_adt_analysis.json",
+  "media_source": "site/qa_benchmark/task5_media/adt_seq100_rgb.mp4",
+  "cases": [
+    {
+      "id": "task5_repeated_gaze_white_vase",
+      "question_type": "relation_change_between_gazes",
+      "object_name": "WhiteVase",
+      "event_start_frames": [130, 196],
+      "window_frames": [130, 207]
+    },
+    {
+      "id": "task5_repeated_gaze_kitchen_island",
+      "question_type": "relation_change_between_gazes",
+      "object_name": "KitchIsland",
+      "event_start_frames": [114, 182],
+      "window_frames": [114, 195]
+    },
+    {
+      "id": "task5_gaze_onset_wooden_bowl",
+      "question_type": "gaze_onset_side_change",
+      "object_name": "WoodenBowl",
+      "event_start_frames": [84],
+      "pre_frame": 60,
+      "window_frames": [60, 113]
+    },
+    {
+      "id": "task5_gaze_onset_kitchen_island",
+      "question_type": "gaze_onset_side_change",
+      "object_name": "KitchIsland",
+      "event_start_frames": [114],
+      "pre_frame": 90,
+      "window_frames": [90, 119]
+    },
+    {
+      "id": "task5_last_gaze_object_wooden_bowl",
+      "question_type": "last_gaze_annotated_object_relation_change",
+      "object_name": "WoodenBowl",
+      "window_frames": [0, 113]
+    },
+    {
+      "id": "task5_last_gaze_object_white_vase",
+      "question_type": "last_gaze_annotated_object_relation_change",
+      "object_name": "WhiteVase",
+      "window_frames": [114, 200]
+    }
+  ]
+}

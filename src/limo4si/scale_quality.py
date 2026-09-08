@@ -1,4 +1,4 @@
-"""Reusable release gates for scaling Task 1, Task 3, and Task 4 QA generation.
+"""Reusable release gates for scaling Task 1, Task 3, Task 4, and Task 5 QA generation.
 
 The validator is deliberately independent of the curated-case builders.  A
 large-scale miner can pass any release-shaped dictionary and receive per-case
@@ -14,6 +14,7 @@ from typing import Any, Iterable, Mapping, Sequence
 TASK1_ID = "task1_dynamic_human_referenced_relations"
 TASK3_ID = "task3_human_scene_topological_reasoning"
 TASK4_ID = "task4_multi_human_relational_dynamics"
+TASK5_ID = "task5_human_state_grounded_spatial_reasoning"
 TOPOLOGY_TYPES = {
     "visible_pair_topology_change_2d",
     "visible_pair_topology_consistency_2d",
@@ -47,6 +48,11 @@ class ScaleQualityPolicy:
     min_task3_side_margin_m: float = 0.25
     min_task3_local_travel_m: float = 0.35
     min_task3_grounding_inliers: int = 12
+    min_task5_span_ratio: float = 0.85
+    min_task5_gaze_run_states: int = 4
+    min_task5_event_gap_sec: float = 0.30
+    min_task5_relation_shift_m: float = 0.05
+    min_task5_gaze_onset_turn_deg: float = 8.0
     min_visible_track_coverage: float = 0.80
     min_identity_assignment_margin: float = 0.18
     min_dominance_ratio: float = 0.65
@@ -495,6 +501,115 @@ def _validate_task3(group: Mapping[str, Any], question: Mapping[str, Any], polic
         errors.append(f"unsupported Task 3 question type {qtype!r}")
 
 
+def _task5_relation_label(relation: Mapping[str, Any], deadband_m: float = 0.12) -> str | None:
+    right, forward = relation.get("right_m"), relation.get("forward_m")
+    if not _finite(right) or not _finite(forward):
+        return None
+    side = "left" if float(right) < -deadband_m else "right" if float(right) > deadband_m else "center"
+    depth = "behind" if float(forward) < -deadband_m else "front" if float(forward) > deadband_m else "level"
+    return depth if side == "center" else side if depth == "level" else f"{side}-{depth}"
+
+
+def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], metrics: dict[str, Any]) -> None:
+    """Independently audit annotation-derived gaze/object/wearer claims."""
+    result = question["result_json"]
+    if result.get("annotation_direct") is not True:
+        errors.append("Task 5 answer is not marked as directly annotation-derived")
+    if result.get("gaze_grounding_method") != "ray_obb_intersection":
+        errors.append("Task 5 gaze is not grounded by a measured ray/3D-box intersection")
+    coordinate_frame = str(result.get("coordinate_frame", "")).lower()
+    if "wearer" not in coordinate_frame or "gravity" not in coordinate_frame or "image" in coordinate_frame:
+        errors.append("Task 5 relation must use a gravity-aligned wearer frame, not image coordinates")
+    states = result.get("timeline") or []
+    duration = (group.get("video_window") or {}).get("duration_sec")
+    _validate_time_series(states, float(duration) if _finite(duration) else None, policy.min_task5_span_ratio, policy, errors, metrics)
+    target = str(result.get("object_id"))
+    for state in states:
+        relation = state.get("relation") or {}
+        components = [relation.get("right_m"), relation.get("forward_m"), relation.get("up_m")]
+        distance = relation.get("distance_m")
+        if not all(_finite(value) for value in components) or not _finite(distance) or float(distance) < 0:
+            errors.append("Task 5 relation lacks finite metric wearer-frame coordinates")
+            break
+        reconstructed = math.sqrt(sum(float(value) ** 2 for value in components))
+        if abs(reconstructed - float(distance)) > 0.02:
+            errors.append("Task 5 distance is inconsistent with wearer-frame coordinates")
+            break
+        if _task5_relation_label(relation) != relation.get("label"):
+            errors.append("Task 5 published relation label is stale or geometrically inconsistent")
+            break
+        gaze = state.get("gaze_direction_world_unit")
+        if not isinstance(gaze, list) or len(gaze) != 3 or not all(_finite(value) for value in gaze):
+            errors.append("Task 5 timeline lacks a finite measured gaze direction")
+            break
+        if not 0.98 <= math.sqrt(sum(float(value) ** 2 for value in gaze)) <= 1.02:
+            errors.append("Task 5 gaze direction is not unit length")
+            break
+    events = result.get("gaze_events") or []
+    for event in events:
+        if str(event.get("object_id")) != target:
+            errors.append("Task 5 gaze event object differs from the question target")
+        if int(event.get("state_count") or 0) < policy.min_task5_gaze_run_states:
+            errors.append("Task 5 gaze event lacks sustained consecutive support")
+        if not _finite(event.get("start_time_s")) or not _finite(event.get("end_time_s")) or float(event["end_time_s"]) <= float(event["start_time_s"]):
+            errors.append("Task 5 gaze event has invalid temporal bounds")
+    hit_states = [
+        state for state in states
+        if str(state.get("gazed_object_id")) == target and _finite(state.get("gaze_hit_distance_m")) and float(state["gaze_hit_distance_m"]) > 0
+    ]
+    if len(hit_states) < policy.min_task5_gaze_run_states:
+        errors.append("Task 5 timeline contains too few direct gaze-ray hits on the target")
+    transition = result.get("transition") or {}
+    qtype = question.get("question_type")
+    if qtype == "relation_change_between_gazes":
+        if len(events) != 2:
+            errors.append("repeated-gaze Task 5 QA must contain exactly two gaze events")
+        elif float(events[1]["start_time_s"]) - float(events[0]["end_time_s"]) < policy.min_task5_event_gap_sec:
+            errors.append("the two gaze events are not temporally distinct")
+        if transition.get("start_relation") == transition.get("end_relation"):
+            errors.append("repeated-gaze relation-change QA contains no relation change")
+    elif qtype == "gaze_onset_side_change":
+        if len(events) != 1:
+            errors.append("gaze-onset Task 5 QA must contain exactly one target event")
+        if str(transition.get("pre_gazed_object_id")) == target:
+            errors.append("gaze-onset pre-state already gazes at the target")
+        if transition.get("start_relation") == transition.get("end_relation"):
+            errors.append("gaze-onset side-change QA contains no relation change")
+        turn = transition.get("wearer_turn_deg")
+        if not _finite(turn) or float(turn) < policy.min_task5_gaze_onset_turn_deg:
+            errors.append("gaze-onset relation change lacks a salient wearer turn")
+    elif qtype == "last_gaze_annotated_object_relation_change":
+        if len(events) != 1:
+            errors.append("last-gaze-object Task 5 QA must expose exactly its final gaze event")
+        if str(transition.get("last_supported_event_object_id")) != target:
+            errors.append("configured target is not the last gaze-annotated object")
+        sequence = transition.get("relation_sequence") or []
+        recomputed = []
+        for state in states:
+            label = (state.get("relation") or {}).get("label")
+            if not recomputed or recomputed[-1] != label:
+                recomputed.append(label)
+        if sequence != recomputed:
+            errors.append("last-gaze-object relation sequence is stale")
+        if len(sequence) < 2:
+            errors.append("last-gaze-object QA contains no spatial relation change")
+        if events and int(transition.get("last_supported_event_end_frame", -1)) != int(events[0].get("end_index", -2)):
+            errors.append("last gaze event endpoint is inconsistent")
+    else:
+        errors.append(f"unsupported Task 5 question type {qtype!r}")
+    start_frame, end_frame = transition.get("start_frame"), transition.get("end_frame")
+    indexed = {state.get("frame"): state for state in states}
+    if start_frame not in indexed or end_frame not in indexed:
+        errors.append("Task 5 transition anchors are outside the evidence timeline")
+    elif qtype != "last_gaze_annotated_object_relation_change":
+        first = indexed[start_frame]["relation"]
+        last = indexed[end_frame]["relation"]
+        shift = abs(float(first["right_m"]) - float(last["right_m"]))
+        metrics["lateral_relation_shift_m"] = round(shift, 6)
+        if shift < policy.min_task5_relation_shift_m:
+            errors.append("Task 5 lateral relation change is below the salience threshold")
+
+
 def _validate_topology(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], metrics: dict[str, Any]) -> None:
     result = question["result_json"]
     start = result.get("start_pair_distances_normalized") or []
@@ -572,6 +687,8 @@ def validate_release(data: Mapping[str, Any], policy: ScaleQualityPolicy | None 
                         _validate_topology(group, question, policy, errors, metrics)
                     else:
                         _validate_metric_task4(group, question, policy, errors, warnings, metrics)
+                elif task_id == TASK5_ID:
+                    _validate_task5(group, question, policy, errors, metrics)
                 else:
                     errors.append(f"unsupported task_id {task_id!r}")
         reports.append({

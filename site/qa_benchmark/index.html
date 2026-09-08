@@ -12,7 +12,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <body>
 <main class="staticShell">
 <h1>Humans in Space QA Benchmark</h1>
-<p class="topNote">This site shows Task 1, Task 3, and Task 4. Each case contains one question grounded in its full evidence clip. Submit an answer first; localization views, trajectory/top-down views, and computed evidence are collapsed by default and can be expanded when needed.</p>
+<p class="topNote">This site shows Task 1, Task 3, Task 4, and Task 5. Each case contains one question grounded in its full evidence clip. Submit an answer first; localization views, trajectory/top-down views, gaze views, and computed evidence are collapsed by default and can be expanded when needed.</p>
 <nav class="caseNav">
 
 <a href="#case-1">Case 1</a>
@@ -45,6 +45,12 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <a href="#case-28">Case 28</a>
 <a href="#case-29">Case 29</a>
 <a href="#case-30">Case 30</a>
+<a href="#case-31">Case 31</a>
+<a href="#case-32">Case 32</a>
+<a href="#case-33">Case 33</a>
+<a href="#case-34">Case 34</a>
+<a href="#case-35">Case 35</a>
+<a href="#case-36">Case 36</a>
 </nav>
 <section class="staticCase" id="case-1">
 <p class="eyebrow">Case 1</p><h2>Task 1 · overall relation change · iiith_cooking_145_2 · cam01 · 15s dynamic window around frame 11250</h2>
@@ -7148,6 +7154,679 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
       &quot;selected_points&quot;: 858358,
       &quot;robust_inlier_points&quot;: 801541,
       &quot;centroid_reprojects_inside_box&quot;: true
+    }
+  ]
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-31">
+<p class="eyebrow">Case 31</p><h2>Task 5 · white vase</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>2.566256s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">2.566256-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./task5_media/task5_repeated_gaze_white_vase.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_repeated_gaze_white_vase_gaze_evidence.jpg" loading="lazy" alt="original"><figcaption>ADT RGB anchor frames · green: target 2D box · red: measured gaze projection</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">relation_change_between_gazes</div>
+<div class="question">Q1. Between the two sustained gazes at the white vase, how does its wearer-relative position change?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="D">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The white vase changes from left-front to front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The white vase changes from front to right-front.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The white vase changes from left-front to left-front.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The white vase changes from front to left-front.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The white vase changes from front to left-front.</div><div class="explanation">At the first gaze event the white vase is front; at the later event it is left-front.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Uses measured ADT eye-gaze rays, same-time object 6DoF/3D boxes, and a gravity-aligned wearer frame; no answer label is inferred by an LLM.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Aria Digital Twin v2&quot;,
+  &quot;answer_provenance&quot;: &quot;direct computation from annotations; no LLM label judgment&quot;,
+  &quot;coordinate_frame&quot;: &quot;gravity-aligned wearer CPF: +right and +forward, metric world positions&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;ray_obb_intersection&quot;,
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;7379153972126671&quot;,
+    &quot;name&quot;: &quot;WhiteVase&quot;
+  },
+  &quot;gaze_events&quot;: [
+    {
+      &quot;object_id&quot;: &quot;7379153972126671&quot;,
+      &quot;object_name&quot;: &quot;WhiteVase&quot;,
+      &quot;start_index&quot;: 130,
+      &quot;end_index&quot;: 137,
+      &quot;start_time_s&quot;: 4.33264,
+      &quot;end_time_s&quot;: 4.565936,
+      &quot;state_count&quot;: 8,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.039875423485767746,
+        &quot;forward_m&quot;: 0.6186565417383649,
+        &quot;up_m&quot;: -0.5870501768832009,
+        &quot;distance_m&quot;: 0.8539422598397226
+      }
+    },
+    {
+      &quot;object_id&quot;: &quot;7379153972126671&quot;,
+      &quot;object_name&quot;: &quot;WhiteVase&quot;,
+      &quot;start_index&quot;: 196,
+      &quot;end_index&quot;: 200,
+      &quot;start_time_s&quot;: 6.532288,
+      &quot;end_time_s&quot;: 6.6656,
+      &quot;state_count&quot;: 5,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.18890013112059256,
+        &quot;forward_m&quot;: 0.5070741060622512,
+        &quot;up_m&quot;: -0.38193739856857745,
+        &quot;distance_m&quot;: 0.6606927859449713
+      }
+    }
+  ],
+  &quot;transition&quot;: {
+    &quot;start_frame&quot;: 134,
+    &quot;end_frame&quot;: 198,
+    &quot;start_relation&quot;: &quot;front&quot;,
+    &quot;end_relation&quot;: &quot;left-front&quot;
+  },
+  &quot;anchor_states&quot;: [
+    {
+      &quot;frame&quot;: 134,
+      &quot;time_s&quot;: 4.465952,
+      &quot;gazed_object_name&quot;: &quot;WhiteVase&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.7691127807010998,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.039875423485767746,
+        &quot;forward_m&quot;: 0.6186565417383649,
+        &quot;up_m&quot;: -0.5870501768832009,
+        &quot;distance_m&quot;: 0.8539422598397226
+      }
+    },
+    {
+      &quot;frame&quot;: 198,
+      &quot;time_s&quot;: 6.598944,
+      &quot;gazed_object_name&quot;: &quot;WhiteVase&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.6445339078458051,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.18890013112059256,
+        &quot;forward_m&quot;: 0.5070741060622512,
+        &quot;up_m&quot;: -0.38193739856857745,
+        &quot;distance_m&quot;: 0.6606927859449713
+      }
+    }
+  ]
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-32">
+<p class="eyebrow">Case 32</p><h2>Task 5 · kitchen island</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>2.699568s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">2.699568-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./task5_media/task5_repeated_gaze_kitchen_island.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_repeated_gaze_kitchen_island_gaze_evidence.jpg" loading="lazy" alt="original"><figcaption>ADT RGB anchor frames · green: target 2D box · red: measured gaze projection</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">relation_change_between_gazes</div>
+<div class="question">Q1. Between the two sustained gazes at the kitchen island, how does its wearer-relative position change?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The kitchen island changes from right-front to front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The kitchen island changes from front to right-front.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The kitchen island changes from right-front to right-front.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The kitchen island changes from left-front to front.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The kitchen island changes from right-front to front.</div><div class="explanation">At the first gaze event the kitchen island is right-front; at the later event it is front.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Uses measured ADT eye-gaze rays, same-time object 6DoF/3D boxes, and a gravity-aligned wearer frame; no answer label is inferred by an LLM.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Aria Digital Twin v2&quot;,
+  &quot;answer_provenance&quot;: &quot;direct computation from annotations; no LLM label judgment&quot;,
+  &quot;coordinate_frame&quot;: &quot;gravity-aligned wearer CPF: +right and +forward, metric world positions&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;ray_obb_intersection&quot;,
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;4671332369591132&quot;,
+    &quot;name&quot;: &quot;KitchIsland&quot;
+  },
+  &quot;gaze_events&quot;: [
+    {
+      &quot;object_id&quot;: &quot;4671332369591132&quot;,
+      &quot;object_name&quot;: &quot;KitchIsland&quot;,
+      &quot;start_index&quot;: 114,
+      &quot;end_index&quot;: 119,
+      &quot;start_time_s&quot;: 3.799392,
+      &quot;end_time_s&quot;: 3.966032,
+      &quot;state_count&quot;: 6,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;right-front&quot;,
+        &quot;side&quot;: &quot;right&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.1325049697024569,
+        &quot;forward_m&quot;: 0.5606058051551558,
+        &quot;up_m&quot;: -1.1162224973012878,
+        &quot;distance_m&quot;: 1.2563135364625455
+      }
+    },
+    {
+      &quot;object_id&quot;: &quot;4671332369591132&quot;,
+      &quot;object_name&quot;: &quot;KitchIsland&quot;,
+      &quot;start_index&quot;: 182,
+      &quot;end_index&quot;: 195,
+      &quot;start_time_s&quot;: 6.065696,
+      &quot;end_time_s&quot;: 6.49896,
+      &quot;state_count&quot;: 14,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.0007689131457076295,
+        &quot;forward_m&quot;: 0.4172547651575349,
+        &quot;up_m&quot;: -1.0945101737237233,
+        &quot;distance_m&quot;: 1.1713821979209842
+      }
+    }
+  ],
+  &quot;transition&quot;: {
+    &quot;start_frame&quot;: 117,
+    &quot;end_frame&quot;: 189,
+    &quot;start_relation&quot;: &quot;right-front&quot;,
+    &quot;end_relation&quot;: &quot;front&quot;
+  },
+  &quot;anchor_states&quot;: [
+    {
+      &quot;frame&quot;: 117,
+      &quot;time_s&quot;: 3.899376,
+      &quot;gazed_object_name&quot;: &quot;KitchIsland&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.9285302507868235,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;right-front&quot;,
+        &quot;side&quot;: &quot;right&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.1325049697024569,
+        &quot;forward_m&quot;: 0.5606058051551558,
+        &quot;up_m&quot;: -1.1162224973012878,
+        &quot;distance_m&quot;: 1.2563135364625455
+      }
+    },
+    {
+      &quot;frame&quot;: 189,
+      &quot;time_s&quot;: 6.298992,
+      &quot;gazed_object_name&quot;: &quot;KitchIsland&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.8656764218535903,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.0007689131457076295,
+        &quot;forward_m&quot;: 0.4172547651575349,
+        &quot;up_m&quot;: -1.0945101737237233,
+        &quot;distance_m&quot;: 1.1713821979209842
+      }
+    }
+  ]
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-33">
+<p class="eyebrow">Case 33</p><h2>Task 5 · wooden bowl</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>1.7663840000000002s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">1.7663840000000002-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./task5_media/task5_gaze_onset_wooden_bowl.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_gaze_onset_wooden_bowl_gaze_evidence.jpg" loading="lazy" alt="original"><figcaption>ADT RGB anchor frames · green: target 2D box · red: measured gaze projection</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_onset_side_change</div>
+<div class="question">Q1. As gaze turns to the wooden bowl, how does it shift in the wearer's body-relative view?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The wooden bowl changes from left-front to front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The wooden bowl changes from front to left-front.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The wooden bowl changes from left-front to right-front.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The wooden bowl changes from right-front to front.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The wooden bowl changes from left-front to front.</div><div class="explanation">Immediately before the gaze onset the wooden bowl is left-front; during the sustained gaze it is front.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Uses measured ADT eye-gaze rays, same-time object 6DoF/3D boxes, and a gravity-aligned wearer frame; no answer label is inferred by an LLM.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Aria Digital Twin v2&quot;,
+  &quot;answer_provenance&quot;: &quot;direct computation from annotations; no LLM label judgment&quot;,
+  &quot;coordinate_frame&quot;: &quot;gravity-aligned wearer CPF: +right and +forward, metric world positions&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;ray_obb_intersection&quot;,
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;4508463855879675&quot;,
+    &quot;name&quot;: &quot;WoodenBowl&quot;
+  },
+  &quot;gaze_events&quot;: [
+    {
+      &quot;object_id&quot;: &quot;4508463855879675&quot;,
+      &quot;object_name&quot;: &quot;WoodenBowl&quot;,
+      &quot;start_index&quot;: 84,
+      &quot;end_index&quot;: 113,
+      &quot;start_time_s&quot;: 2.799552,
+      &quot;end_time_s&quot;: 3.766064,
+      &quot;state_count&quot;: 30,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.09632152977530736,
+        &quot;forward_m&quot;: 0.34353407574347794,
+        &quot;up_m&quot;: -0.5933230529981411,
+        &quot;distance_m&quot;: 0.6921352255106716
+      }
+    }
+  ],
+  &quot;transition&quot;: {
+    &quot;start_frame&quot;: 60,
+    &quot;end_frame&quot;: 99,
+    &quot;start_relation&quot;: &quot;left-front&quot;,
+    &quot;end_relation&quot;: &quot;front&quot;,
+    &quot;wearer_turn_deg&quot;: 23.77907874012218,
+    &quot;pre_gazed_object_id&quot;: &quot;4695377347159520&quot;
+  },
+  &quot;anchor_states&quot;: [
+    {
+      &quot;frame&quot;: 60,
+      &quot;time_s&quot;: 1.99968,
+      &quot;gazed_object_name&quot;: &quot;WoodenSpoon&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.6715561358429722,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.32747266209917075,
+        &quot;forward_m&quot;: 0.2313173107256944,
+        &quot;up_m&quot;: -0.5860010381374574,
+        &quot;distance_m&quot;: 0.7109899912016697
+      }
+    },
+    {
+      &quot;frame&quot;: 99,
+      &quot;time_s&quot;: 3.299472,
+      &quot;gazed_object_name&quot;: &quot;WoodenBowl&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.6851296203222834,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.09632152977530736,
+        &quot;forward_m&quot;: 0.34353407574347794,
+        &quot;up_m&quot;: -0.5933230529981411,
+        &quot;distance_m&quot;: 0.6921352255106716
+      }
+    }
+  ]
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-34">
+<p class="eyebrow">Case 34</p><h2>Task 5 · kitchen island</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>0.9665119999999998s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">0.9665119999999998-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./task5_media/task5_gaze_onset_kitchen_island.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_gaze_onset_kitchen_island_gaze_evidence.jpg" loading="lazy" alt="original"><figcaption>ADT RGB anchor frames · green: target 2D box · red: measured gaze projection</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_onset_side_change</div>
+<div class="question">Q1. As gaze turns to the kitchen island, how does it shift in the wearer's body-relative view?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The kitchen island changes from left-front to right-front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The kitchen island changes from right-front to left-front.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The kitchen island changes from left-front to left-front.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The kitchen island changes from right-front to right-front.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The kitchen island changes from left-front to right-front.</div><div class="explanation">Immediately before the gaze onset the kitchen island is left-front; during the sustained gaze it is right-front.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Uses measured ADT eye-gaze rays, same-time object 6DoF/3D boxes, and a gravity-aligned wearer frame; no answer label is inferred by an LLM.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Aria Digital Twin v2&quot;,
+  &quot;answer_provenance&quot;: &quot;direct computation from annotations; no LLM label judgment&quot;,
+  &quot;coordinate_frame&quot;: &quot;gravity-aligned wearer CPF: +right and +forward, metric world positions&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;ray_obb_intersection&quot;,
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;4671332369591132&quot;,
+    &quot;name&quot;: &quot;KitchIsland&quot;
+  },
+  &quot;gaze_events&quot;: [
+    {
+      &quot;object_id&quot;: &quot;4671332369591132&quot;,
+      &quot;object_name&quot;: &quot;KitchIsland&quot;,
+      &quot;start_index&quot;: 114,
+      &quot;end_index&quot;: 119,
+      &quot;start_time_s&quot;: 3.799392,
+      &quot;end_time_s&quot;: 3.966032,
+      &quot;state_count&quot;: 6,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;right-front&quot;,
+        &quot;side&quot;: &quot;right&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.1325049697024569,
+        &quot;forward_m&quot;: 0.5606058051551558,
+        &quot;up_m&quot;: -1.1162224973012878,
+        &quot;distance_m&quot;: 1.2563135364625455
+      }
+    }
+  ],
+  &quot;transition&quot;: {
+    &quot;start_frame&quot;: 90,
+    &quot;end_frame&quot;: 117,
+    &quot;start_relation&quot;: &quot;left-front&quot;,
+    &quot;end_relation&quot;: &quot;right-front&quot;,
+    &quot;wearer_turn_deg&quot;: 16.097504001260283,
+    &quot;pre_gazed_object_id&quot;: &quot;4508463855879675&quot;
+  },
+  &quot;anchor_states&quot;: [
+    {
+      &quot;frame&quot;: 90,
+      &quot;time_s&quot;: 2.99952,
+      &quot;gazed_object_name&quot;: &quot;WoodenBowl&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.661775204951531,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.19252706816579723,
+        &quot;forward_m&quot;: 0.5652718548678993,
+        &quot;up_m&quot;: -1.107194670049238,
+        &quot;distance_m&quot;: 1.2577968287452301
+      }
+    },
+    {
+      &quot;frame&quot;: 117,
+      &quot;time_s&quot;: 3.899376,
+      &quot;gazed_object_name&quot;: &quot;KitchIsland&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.9285302507868235,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;right-front&quot;,
+        &quot;side&quot;: &quot;right&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.1325049697024569,
+        &quot;forward_m&quot;: 0.5606058051551558,
+        &quot;up_m&quot;: -1.1162224973012878,
+        &quot;distance_m&quot;: 1.2563135364625455
+      }
+    }
+  ]
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-35">
+<p class="eyebrow">Case 35</p><h2>Task 5 · wooden bowl</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>3.766064s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">3.766064-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./task5_media/task5_last_gaze_object_wooden_bowl.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_last_gaze_object_wooden_bowl_gaze_evidence.jpg" loading="lazy" alt="original"><figcaption>ADT RGB anchor frames · green: target 2D box · red: measured gaze projection</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">last_gaze_annotated_object_relation_change</div>
+<div class="question">Q1. The wooden bowl is the last gaze-annotated object in this window. How does its wearer-relative position evolve?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="D">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The wooden bowl follows: front → right-front → front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The wooden bowl follows: behind → left-behind → behind.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The wooden bowl follows: behind → right-behind → behind.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The wooden bowl follows: front → left-front → front.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The wooden bowl follows: front → left-front → front.</div><div class="explanation">Across the full window, the annotation-derived relation sequence is front → left-front → front.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Uses measured ADT eye-gaze rays, same-time object 6DoF/3D boxes, and a gravity-aligned wearer frame; no answer label is inferred by an LLM.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Aria Digital Twin v2&quot;,
+  &quot;answer_provenance&quot;: &quot;direct computation from annotations; no LLM label judgment&quot;,
+  &quot;coordinate_frame&quot;: &quot;gravity-aligned wearer CPF: +right and +forward, metric world positions&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;ray_obb_intersection&quot;,
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;4508463855879675&quot;,
+    &quot;name&quot;: &quot;WoodenBowl&quot;
+  },
+  &quot;gaze_events&quot;: [
+    {
+      &quot;object_id&quot;: &quot;4508463855879675&quot;,
+      &quot;object_name&quot;: &quot;WoodenBowl&quot;,
+      &quot;start_index&quot;: 84,
+      &quot;end_index&quot;: 113,
+      &quot;start_time_s&quot;: 2.799552,
+      &quot;end_time_s&quot;: 3.766064,
+      &quot;state_count&quot;: 30,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.09632152977530736,
+        &quot;forward_m&quot;: 0.34353407574347794,
+        &quot;up_m&quot;: -0.5933230529981411,
+        &quot;distance_m&quot;: 0.6921352255106716
+      }
+    }
+  ],
+  &quot;transition&quot;: {
+    &quot;start_frame&quot;: 0,
+    &quot;end_frame&quot;: 113,
+    &quot;relation_sequence&quot;: [
+      &quot;front&quot;,
+      &quot;left-front&quot;,
+      &quot;front&quot;
+    ],
+    &quot;last_supported_event_end_frame&quot;: 113,
+    &quot;last_supported_event_object_id&quot;: &quot;4508463855879675&quot;
+  },
+  &quot;anchor_states&quot;: [
+    {
+      &quot;frame&quot;: 0,
+      &quot;time_s&quot;: 0.0,
+      &quot;gazed_object_name&quot;: &quot;WoodenFork&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.49969721989333954,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.03545060447593768,
+        &quot;forward_m&quot;: 0.33522151950801726,
+        &quot;up_m&quot;: -0.5937892066678826,
+        &quot;distance_m&quot;: 0.6828230668416624
+      }
+    },
+    {
+      &quot;frame&quot;: 113,
+      &quot;time_s&quot;: 3.766064,
+      &quot;gazed_object_name&quot;: &quot;WoodenBowl&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.6664843065637793,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.024366839034606437,
+        &quot;forward_m&quot;: 0.3309626859027276,
+        &quot;up_m&quot;: -0.5969297295498701,
+        &quot;distance_m&quot;: 0.683037567422291
+      }
+    }
+  ]
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-36">
+<p class="eyebrow">Case 36</p><h2>Task 5 · white vase</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>2.8662080000000003s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">2.8662080000000003-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="./task5_media/task5_last_gaze_object_white_vase.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_last_gaze_object_white_vase_gaze_evidence.jpg" loading="lazy" alt="original"><figcaption>ADT RGB anchor frames · green: target 2D box · red: measured gaze projection</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">last_gaze_annotated_object_relation_change</div>
+<div class="question">Q1. The white vase is the last gaze-annotated object in this window. How does its wearer-relative position evolve?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The white vase follows: front → left-front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The white vase follows: front → right-front.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The white vase follows: behind → left-behind.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The white vase follows: behind → right-behind.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The white vase follows: front → left-front.</div><div class="explanation">Across the full window, the annotation-derived relation sequence is front → left-front.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Uses measured ADT eye-gaze rays, same-time object 6DoF/3D boxes, and a gravity-aligned wearer frame; no answer label is inferred by an LLM.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Aria Digital Twin v2&quot;,
+  &quot;answer_provenance&quot;: &quot;direct computation from annotations; no LLM label judgment&quot;,
+  &quot;coordinate_frame&quot;: &quot;gravity-aligned wearer CPF: +right and +forward, metric world positions&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;ray_obb_intersection&quot;,
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;7379153972126671&quot;,
+    &quot;name&quot;: &quot;WhiteVase&quot;
+  },
+  &quot;gaze_events&quot;: [
+    {
+      &quot;object_id&quot;: &quot;7379153972126671&quot;,
+      &quot;object_name&quot;: &quot;WhiteVase&quot;,
+      &quot;start_index&quot;: 196,
+      &quot;end_index&quot;: 200,
+      &quot;start_time_s&quot;: 6.532288,
+      &quot;end_time_s&quot;: 6.6656,
+      &quot;state_count&quot;: 5,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.18890013112059256,
+        &quot;forward_m&quot;: 0.5070741060622512,
+        &quot;up_m&quot;: -0.38193739856857745,
+        &quot;distance_m&quot;: 0.6606927859449713
+      }
+    }
+  ],
+  &quot;transition&quot;: {
+    &quot;start_frame&quot;: 114,
+    &quot;end_frame&quot;: 200,
+    &quot;relation_sequence&quot;: [
+      &quot;front&quot;,
+      &quot;left-front&quot;
+    ],
+    &quot;last_supported_event_end_frame&quot;: 200,
+    &quot;last_supported_event_object_id&quot;: &quot;7379153972126671&quot;
+  },
+  &quot;anchor_states&quot;: [
+    {
+      &quot;frame&quot;: 114,
+      &quot;time_s&quot;: 3.799392,
+      &quot;gazed_object_name&quot;: &quot;KitchIsland&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.882237262985174,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.04316672516298341,
+        &quot;forward_m&quot;: 0.6208470111065518,
+        &quot;up_m&quot;: -0.5806101533695809,
+        &quot;distance_m&quot;: 0.8509835310118771
+      }
+    },
+    {
+      &quot;frame&quot;: 200,
+      &quot;time_s&quot;: 6.6656,
+      &quot;gazed_object_name&quot;: &quot;WhiteVase&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.6512225127798523,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.1944817414284229,
+        &quot;forward_m&quot;: 0.5204676377441969,
+        &quot;up_m&quot;: -0.31865650092751574,
+        &quot;distance_m&quot;: 0.6389595319902945
+      }
     }
   ]
 }</pre></details>
