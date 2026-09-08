@@ -53,6 +53,10 @@ class ScaleQualityPolicy:
     min_task5_event_gap_sec: float = 0.30
     min_task5_relation_shift_m: float = 0.05
     min_task5_gaze_onset_turn_deg: float = 8.0
+    min_task5_event_hit_support: float = 0.80
+    max_task5_wearer_skew_ms: float = 10.0
+    max_task5_dynamic_object_skew_ms: float = 50.0
+    max_task5_internal_gaze_gap_states: int = 1
     min_visible_track_coverage: float = 0.80
     min_identity_assignment_margin: float = 0.18
     min_dominance_ratio: float = 0.65
@@ -520,10 +524,22 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
     coordinate_frame = str(result.get("coordinate_frame", "")).lower()
     if "wearer" not in coordinate_frame or "gravity" not in coordinate_frame or "image" in coordinate_frame:
         errors.append("Task 5 relation must use a gravity-aligned wearer frame, not image coordinates")
+    alignment = result.get("alignment_diagnostics") or {}
+    wearer_skew = alignment.get("maximum_observed_wearer_skew_ms")
+    if not _finite(wearer_skew) or float(wearer_skew) > policy.max_task5_wearer_skew_ms:
+        errors.append("Task 5 gaze/wearer timestamp alignment is missing or too stale")
+    internal_gap = result.get("maximum_internal_gaze_gap_states")
+    if not isinstance(internal_gap, int) or internal_gap > policy.max_task5_internal_gaze_gap_states:
+        errors.append("Task 5 gaze-event gap policy is missing or too permissive")
     states = result.get("timeline") or []
     duration = (group.get("video_window") or {}).get("duration_sec")
     _validate_time_series(states, float(duration) if _finite(duration) else None, policy.min_task5_span_ratio, policy, errors, metrics)
     target = str(result.get("object_id"))
+    target_object_skews = [state.get("object_pose_skew_ms") for state in states]
+    if not target_object_skews or any(not _finite(value) for value in target_object_skews):
+        errors.append("Task 5 target-object timestamp alignment is missing")
+    elif max(float(value) for value in target_object_skews) > policy.max_task5_dynamic_object_skew_ms:
+        errors.append("Task 5 target-object timestamp alignment is too stale")
     for state in states:
         relation = state.get("relation") or {}
         components = [relation.get("right_m"), relation.get("forward_m"), relation.get("up_m")]
@@ -549,10 +565,23 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
     for event in events:
         if str(event.get("object_id")) != target:
             errors.append("Task 5 gaze event object differs from the question target")
-        if int(event.get("state_count") or 0) < policy.min_task5_gaze_run_states:
+        state_count = int(event.get("state_count") or 0)
+        direct_hits = int(event.get("direct_hit_count") or 0)
+        support = event.get("hit_support_ratio")
+        if state_count < policy.min_task5_gaze_run_states:
             errors.append("Task 5 gaze event lacks sustained consecutive support")
+        if direct_hits < policy.min_task5_gaze_run_states or not _finite(support) or float(support) < policy.min_task5_event_hit_support:
+            errors.append("Task 5 gaze event contains insufficient direct ray-hit support")
         if not _finite(event.get("start_time_s")) or not _finite(event.get("end_time_s")) or float(event["end_time_s"]) <= float(event["start_time_s"]):
             errors.append("Task 5 gaze event has invalid temporal bounds")
+        event_states = [
+            state for state in states
+            if int(event.get("start_index", -1)) <= int(state.get("frame", -2)) <= int(event.get("end_index", -1))
+        ]
+        if len(event_states) != state_count:
+            errors.append("Task 5 gaze event bounds do not match its evidence states")
+        elif sum(str(state.get("gazed_object_id")) == target for state in event_states) != direct_hits:
+            errors.append("Task 5 stored direct-hit count is stale")
     hit_states = [
         state for state in states
         if str(state.get("gazed_object_id")) == target and _finite(state.get("gaze_hit_distance_m")) and float(state["gaze_hit_distance_m"]) > 0

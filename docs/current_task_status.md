@@ -1,6 +1,6 @@
 # Current Task Status
 
-最近更新：2026-09-08。
+最近更新：2026-09-09。
 
 本文档是当前 benchmark 的唯一集中状态记录。当前发布新版 **Task 1、Task 3、Task 4 和 Task 5**；网站只是验收入口，答案来自代码与保存的几何/视觉证据。
 
@@ -118,9 +118,33 @@ Task 5 当前使用 Aria Digital Twin v2 的官方完整样本，不把 Task 1/4
 | `after_gaze_turns_to_object` | 2 | gaze onset 前不在注视目标；onset 后形成持续目标 gaze；wearer 水平转向至少 8° |
 | `last_gaze_annotated_object` | 2 | 目标必须是窗口内最后一个持续 gaze 事件，并从完整窗口重算其关系序列 |
 
-发布中的 6 个窗口来自同一官方 10 秒端到端验证序列，但窗口边界、目标和问题均不同。它们用于验证算法闭环，不代表规模上限。批量扩展时，`scripts/mine_task5_adt.py` 可直接遍历更多 ADT 序列；独立门禁会拒绝 head-forward 伪 gaze、非连续单帧命中、图像左右、陈旧关系标签和信息量不平衡选项。
+发布中的 6 个窗口来自同一官方 10 秒端到端验证序列，但窗口边界、目标和问题均不同。它们用于验证算法闭环，不代表规模上限。批量扩展时，`scripts/scale_task5_adt.py` 可直接遍历更多 ADT 序列；独立门禁会拒绝 head-forward 伪 gaze、非连续单帧命中、图像左右、陈旧关系标签和信息量不平衡选项。
 
 Task 5 的官方原始样本下载和 VRS 解析只在重新挖掘/导出证据时需要；日常网站重建使用已保存的 `task5_adt_analysis.json`、短视频和定位图。当前 Ego-Exo4D 账号对 gaze manifest 返回 403，因此未把其 gaze 写入答案，也没有用推测结果补齐。
+
+### Task 5 批量 scale pipeline
+
+Task 5 已从手工单序列配置升级为可直接遍历多个 ADT 序列的 fail-closed pipeline：
+
+```bash
+# 先只挖掘、自动选例和检查配额，不修改网站
+.venv/bin/python scripts/scale_task5_adt.py /path/to/unpacked_adt \
+  --target-per-category 100 --plan-only --reuse-analysis
+
+# 确认 pipeline_report.json 后正式导出媒体、生成 QA、更新网站并执行合并门禁
+.venv/bin/python scripts/scale_task5_adt.py /path/to/unpacked_adt \
+  --target-per-category 100 --reuse-analysis --reuse-media
+```
+
+一条命令会执行：发现完整序列 → 时间对齐 gaze/wearer/object annotation → gaze ray/OBB 相交 → 持续 gaze 事件 → 三类候选自动挖掘 → 跨序列和物体平衡选择 → 视频/定位证据 → QA → 独立发布门禁。关键输出位于 `outputs/qa/task5_scale/`。单个坏序列会记录为 `rejected_sequence` 并继续处理其他序列；任一类别数量不足、证据导出失败或质量门禁失败时，不会静默发布。
+
+此前的三个通用生成要求在 Task 5 中均已编码：
+
+1. **选项信息量一致**：所有 transition 选项严格使用两个关系槽，sequence 选项严格保持相同状态数；共享门禁再次检查词数、数字槽、时间槽和关系槽。
+2. **距离不伪精确**：当前 Task 5 发布答案不使用米制距离；以后若加入，公共门禁最多允许 1 位小数。完整精度只保留在隐藏证据 JSON 中。
+3. **样例规则进入算法**：同一物体两次 gaze、gaze onset 前后变化、最后 gaze 物体三类均由 annotation 自动提候选，不再依赖手写答案；每类默认至少 2 例，规模化时由 `--target-per-category` 控制。
+
+scale 门槛还包括：wearer 对齐误差 ≤ 10 ms、动态物体位姿误差 ≤ 50 ms、每个 gaze event 至少 4 个直接命中状态、event 命中支持率 ≥ 80%、内部缺失最多 1 个状态、关系横向变化 ≥ 0.05 m，gaze onset 题还要求 wearer 转向 ≥ 8°。
 
 ## 本轮关键修正
 

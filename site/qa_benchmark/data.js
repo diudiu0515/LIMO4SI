@@ -43870,6 +43870,7 @@ window.QA_DATA = {
       "original_caption": "ADT RGB anchor frames · green: target 2D box · red: measured gaze projection",
       "video_window": {
         "source_video": "site/qa_benchmark/task5_media/adt_seq100_rgb.mp4",
+        "source_sequence": "Apartment_release_golden_skeleton_seq100_10s_sample_M1292",
         "start_sec": 4.33264,
         "duration_sec": 2.566256
       },
@@ -43893,7 +43894,7 @@ window.QA_DATA = {
             },
             {
               "label": "C",
-              "text": "The white vase changes from left-front to left-front."
+              "text": "The white vase changes from behind to left-front."
             },
             {
               "label": "D",
@@ -43914,7 +43915,17 @@ window.QA_DATA = {
             "S_Q": true,
             "annotation_direct": true,
             "annotation_source": "Aria Digital Twin v2",
+            "analysis_schema_version": 3,
             "coordinate_frame": "gravity-aligned wearer CPF: +right and +forward, metric world positions",
+            "alignment_diagnostics": {
+              "maximum_allowed_wearer_skew_ms": 10.0,
+              "maximum_observed_wearer_skew_ms": 0.003,
+              "maximum_allowed_dynamic_object_skew_ms": 50.0,
+              "maximum_observed_dynamic_object_skew_ms": 0.0037,
+              "gaze_state_count": 300,
+              "wearer_state_count": 300
+            },
+            "maximum_internal_gaze_gap_states": 1,
             "gaze_definition": "nearest positive intersection of the measured gaze ray with a same-time object OBB",
             "gaze_grounding_method": "ray_obb_intersection",
             "object_id": "7379153972126671",
@@ -43951,6 +43962,8 @@ window.QA_DATA = {
                   -0.2955340193747646,
                   0.1626546704925922
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -43992,6 +44005,8 @@ window.QA_DATA = {
                   -0.29216679685187447,
                   0.15826265804225487
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44033,6 +44048,8 @@ window.QA_DATA = {
                   -0.2898398590134789,
                   0.15247296914158076
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44074,6 +44091,8 @@ window.QA_DATA = {
                   -0.2873284278666096,
                   0.14643726889950748
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44115,6 +44134,8 @@ window.QA_DATA = {
                   -0.2843031388080306,
                   0.14028889786668658
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44156,6 +44177,8 @@ window.QA_DATA = {
                   -0.28101772114814977,
                   0.13401520585021337
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44197,6 +44220,8 @@ window.QA_DATA = {
                   -0.2784660334401624,
                   0.12778511298318346
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44238,6 +44263,8 @@ window.QA_DATA = {
                   -0.27653382573091445,
                   0.12174015378286573
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44279,6 +44306,8 @@ window.QA_DATA = {
                   -0.27384592207036135,
                   0.11594509473249798
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44320,6 +44349,8 @@ window.QA_DATA = {
                   -0.27147723357497217,
                   0.11029428139289721
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44361,6 +44392,8 @@ window.QA_DATA = {
                   -0.271681989750854,
                   0.10459266950935853
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44402,6 +44435,8 @@ window.QA_DATA = {
                   -0.2725373388195625,
                   0.09878514503959668
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44443,6 +44478,8 @@ window.QA_DATA = {
                   -0.2715765996120135,
                   0.09283531477517015
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44484,6 +44521,8 @@ window.QA_DATA = {
                   -0.27066635641980175,
                   0.08657792004530152
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44525,6 +44564,8 @@ window.QA_DATA = {
                   -0.27109923302500566,
                   0.08020113472807144
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44566,6 +44607,8 @@ window.QA_DATA = {
                   -0.27100014527935096,
                   0.0746486882442135
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44607,6 +44650,8 @@ window.QA_DATA = {
                   -0.2698171046923694,
                   0.07047873544532945
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44648,6 +44693,8 @@ window.QA_DATA = {
                   -0.2689894190034743,
                   0.06764466392949081
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44689,6 +44736,8 @@ window.QA_DATA = {
                   -0.2689729563464889,
                   0.06565209549311474
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44730,6 +44779,8 @@ window.QA_DATA = {
                   -0.2692054972804027,
                   0.0638309332053213
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44771,6 +44822,8 @@ window.QA_DATA = {
                   -0.2676106694186232,
                   0.06231232168398937
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44812,6 +44865,8 @@ window.QA_DATA = {
                   -0.26241101342476725,
                   0.06136075947891767
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44853,6 +44908,8 @@ window.QA_DATA = {
                   -0.25521600557905133,
                   0.060482869318320254
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44894,6 +44951,8 @@ window.QA_DATA = {
                   -0.24833089131468908,
                   0.05930415812811779
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44935,6 +44994,8 @@ window.QA_DATA = {
                   -0.24384449783279583,
                   0.058156440218274985
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -44976,6 +45037,8 @@ window.QA_DATA = {
                   -0.24296223656211297,
                   0.058229934169318154
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45017,6 +45080,8 @@ window.QA_DATA = {
                   -0.24567488187615813,
                   0.061408831307644296
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45058,6 +45123,8 @@ window.QA_DATA = {
                   -0.2497271409146264,
                   0.06691640542872523
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45099,6 +45166,8 @@ window.QA_DATA = {
                   -0.25207356052614993,
                   0.07229592688274356
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45140,6 +45209,8 @@ window.QA_DATA = {
                   -0.25496513450443076,
                   0.07656375648592773
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45181,6 +45252,8 @@ window.QA_DATA = {
                   -0.26098168158331986,
                   0.07951033663566681
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45222,6 +45295,8 @@ window.QA_DATA = {
                   -0.265722797031219,
                   0.08152449288260727
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45263,6 +45338,8 @@ window.QA_DATA = {
                   -0.2654045306135613,
                   0.08287246630076978
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45304,6 +45381,8 @@ window.QA_DATA = {
                   -0.26081189677986744,
                   0.08331684824026692
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45345,6 +45424,8 @@ window.QA_DATA = {
                   -0.2532333379606435,
                   0.08286510863010965
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45386,6 +45467,8 @@ window.QA_DATA = {
                   -0.24391037866408197,
                   0.08181389973412306
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45427,6 +45510,8 @@ window.QA_DATA = {
                   -0.23429180665978838,
                   0.07915931769794071
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45468,6 +45553,8 @@ window.QA_DATA = {
                   -0.22556783121299814,
                   0.07311201417493068
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45509,6 +45596,8 @@ window.QA_DATA = {
                   -0.21605995151887328,
                   0.06328805100348939
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45550,6 +45639,8 @@ window.QA_DATA = {
                   -0.20399018570760116,
                   0.050496108946092966
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45591,6 +45682,8 @@ window.QA_DATA = {
                   -0.1918452433259761,
                   0.03765305449069012
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45632,6 +45725,8 @@ window.QA_DATA = {
                   -0.18280110961938187,
                   0.0269843192717521
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45673,6 +45768,8 @@ window.QA_DATA = {
                   -0.17921197992885227,
                   0.01826418330718177
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45714,6 +45811,8 @@ window.QA_DATA = {
                   -0.18106278880981838,
                   0.010870737233210914
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -45755,6 +45854,8 @@ window.QA_DATA = {
                   -0.18560275263037307,
                   0.004129823900978824
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -45796,6 +45897,8 @@ window.QA_DATA = {
                   -0.1905072357300301,
                   -0.0013871443285513596
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -45837,6 +45940,8 @@ window.QA_DATA = {
                   -0.19416070062548804,
                   -0.004545313673210538
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -45878,6 +45983,8 @@ window.QA_DATA = {
                   -0.19677176098860058,
                   -0.006545026175041269
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -45919,6 +46026,8 @@ window.QA_DATA = {
                   -0.19887860035078395,
                   -0.00904593342898019
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -45960,6 +46069,8 @@ window.QA_DATA = {
                   -0.19939964127126358,
                   -0.011755394606325964
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46001,6 +46112,8 @@ window.QA_DATA = {
                   -0.19715660091132914,
                   -0.014497903608062301
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46042,6 +46155,8 @@ window.QA_DATA = {
                   -0.1916397483116017,
                   -0.018266370851617697
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46083,6 +46198,8 @@ window.QA_DATA = {
                   -0.1846484412622985,
                   -0.02398247062476544
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46124,6 +46241,8 @@ window.QA_DATA = {
                   -0.1804263202368304,
                   -0.03211094620762095
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46165,6 +46284,8 @@ window.QA_DATA = {
                   -0.17926349235081823,
                   -0.040997491733922975
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46206,6 +46327,8 @@ window.QA_DATA = {
                   -0.17891055723934962,
                   -0.04772775978958599
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46247,6 +46370,8 @@ window.QA_DATA = {
                   -0.1801396147346236,
                   -0.05098979937139919
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46288,6 +46413,8 @@ window.QA_DATA = {
                   -0.18445636985924985,
                   -0.050628112607515374
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46329,6 +46456,8 @@ window.QA_DATA = {
                   -0.19133581893335644,
                   -0.04828991817609318
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46370,6 +46499,8 @@ window.QA_DATA = {
                   -0.19892807352036632,
                   -0.045362066216181385
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46411,6 +46542,8 @@ window.QA_DATA = {
                   -0.2036366524119317,
                   -0.04177729176739836
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46452,6 +46585,8 @@ window.QA_DATA = {
                   -0.2030882944038775,
                   -0.03672886699295547
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46493,6 +46628,8 @@ window.QA_DATA = {
                   -0.1968259196959424,
                   -0.028888653208140713
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46534,6 +46671,8 @@ window.QA_DATA = {
                   -0.18674369457250287,
                   -0.019483036644563856
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46575,6 +46714,8 @@ window.QA_DATA = {
                   -0.17635323672123376,
                   -0.011256058456546425
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46616,6 +46757,8 @@ window.QA_DATA = {
                   -0.16892122187544756,
                   -0.004219410829425452
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46657,6 +46800,8 @@ window.QA_DATA = {
                   -0.1654680450154183,
                   0.002400812389011464
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46698,6 +46843,8 @@ window.QA_DATA = {
                   -0.15904398734965772,
                   0.008035411966410555
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46739,6 +46886,8 @@ window.QA_DATA = {
                   -0.1463271431813869,
                   0.012427801958945772
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46780,6 +46929,8 @@ window.QA_DATA = {
                   -0.13548716516463866,
                   0.016548399310544637
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46821,6 +46972,8 @@ window.QA_DATA = {
                   -0.1291809217212658,
                   0.020179887155437226
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46862,6 +47015,8 @@ window.QA_DATA = {
                   -0.12182167589032002,
                   0.021618220471516847
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46903,6 +47058,8 @@ window.QA_DATA = {
                   -0.1136203330703282,
                   0.021697963841597834
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46944,6 +47101,8 @@ window.QA_DATA = {
                   -0.10875724800787206,
                   0.02283931594179134
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -46985,6 +47144,8 @@ window.QA_DATA = {
                   -0.10675489427172623,
                   0.0250387822222341
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -47026,6 +47187,8 @@ window.QA_DATA = {
                   -0.10539682268355857,
                   0.027269693193803235
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -47067,6 +47230,8 @@ window.QA_DATA = {
                   -0.10356605487043444,
                   0.028628171571069283
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -47108,6 +47273,8 @@ window.QA_DATA = {
                   -0.10090332251868236,
                   0.028828457123206697
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -47128,6 +47295,9 @@ window.QA_DATA = {
                 "start_time_s": 4.33264,
                 "end_time_s": 4.565936,
                 "state_count": 8,
+                "direct_hit_count": 8,
+                "merged_gap_count": 0,
+                "hit_support_ratio": 1.0,
                 "median_relation": {
                   "label": "front",
                   "side": "center",
@@ -47146,6 +47316,9 @@ window.QA_DATA = {
                 "start_time_s": 6.532288,
                 "end_time_s": 6.6656,
                 "state_count": 5,
+                "direct_hit_count": 5,
+                "merged_gap_count": 0,
+                "hit_support_ratio": 1.0,
                 "median_relation": {
                   "label": "left-front",
                   "side": "left",
@@ -47183,6 +47356,7 @@ window.QA_DATA = {
       "original_caption": "ADT RGB anchor frames · green: target 2D box · red: measured gaze projection",
       "video_window": {
         "source_video": "site/qa_benchmark/task5_media/adt_seq100_rgb.mp4",
+        "source_sequence": "Apartment_release_golden_skeleton_seq100_10s_sample_M1292",
         "start_sec": 3.799392,
         "duration_sec": 2.699568
       },
@@ -47206,7 +47380,7 @@ window.QA_DATA = {
             },
             {
               "label": "C",
-              "text": "The kitchen island changes from right-front to right-front."
+              "text": "The kitchen island changes from right-front to behind."
             },
             {
               "label": "D",
@@ -47227,7 +47401,17 @@ window.QA_DATA = {
             "S_Q": true,
             "annotation_direct": true,
             "annotation_source": "Aria Digital Twin v2",
+            "analysis_schema_version": 3,
             "coordinate_frame": "gravity-aligned wearer CPF: +right and +forward, metric world positions",
+            "alignment_diagnostics": {
+              "maximum_allowed_wearer_skew_ms": 10.0,
+              "maximum_observed_wearer_skew_ms": 0.003,
+              "maximum_allowed_dynamic_object_skew_ms": 50.0,
+              "maximum_observed_dynamic_object_skew_ms": 0.0037,
+              "gaze_state_count": 300,
+              "wearer_state_count": 300
+            },
+            "maximum_internal_gaze_gap_states": 1,
             "gaze_definition": "nearest positive intersection of the measured gaze ray with a same-time object OBB",
             "gaze_grounding_method": "ray_obb_intersection",
             "object_id": "4671332369591132",
@@ -47264,6 +47448,8 @@ window.QA_DATA = {
                   -0.3043892702837046,
                   0.10263564577768702
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -47305,6 +47491,8 @@ window.QA_DATA = {
                   -0.30264807652602466,
                   0.10747551484039902
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -47346,6 +47534,8 @@ window.QA_DATA = {
                   -0.3004051491982136,
                   0.11318208450985096
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47387,6 +47577,8 @@ window.QA_DATA = {
                   -0.29764188631631927,
                   0.11824300421352674
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47428,6 +47620,8 @@ window.QA_DATA = {
                   -0.2953321567860876,
                   0.12281487064092489
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47469,6 +47663,8 @@ window.QA_DATA = {
                   -0.2944639932255416,
                   0.12696285421974285
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47510,6 +47706,8 @@ window.QA_DATA = {
                   -0.29574991856005495,
                   0.13045025351032852
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47551,6 +47749,8 @@ window.QA_DATA = {
                   -0.2980248156143821,
                   0.1336905139909606
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47592,6 +47792,8 @@ window.QA_DATA = {
                   -0.29922388943340145,
                   0.13744261580386985
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47633,6 +47835,8 @@ window.QA_DATA = {
                   -0.3000899091568769,
                   0.14160870986367835
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47674,6 +47878,8 @@ window.QA_DATA = {
                   -0.3018320501762355,
                   0.14590858913808524
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47715,6 +47921,8 @@ window.QA_DATA = {
                   -0.30315081192192195,
                   0.1506927383283279
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47756,6 +47964,8 @@ window.QA_DATA = {
                   -0.3032192472641094,
                   0.1559559866682939
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47797,6 +48007,8 @@ window.QA_DATA = {
                   -0.30328664608861833,
                   0.16067430571906155
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47838,6 +48050,8 @@ window.QA_DATA = {
                   -0.30301732762384975,
                   0.16382454594091933
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47879,6 +48093,8 @@ window.QA_DATA = {
                   -0.3001157550066354,
                   0.16457884030647496
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47920,6 +48136,8 @@ window.QA_DATA = {
                   -0.2955340193747646,
                   0.1626546704925922
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -47961,6 +48179,8 @@ window.QA_DATA = {
                   -0.29216679685187447,
                   0.15826265804225487
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48002,6 +48222,8 @@ window.QA_DATA = {
                   -0.2898398590134789,
                   0.15247296914158076
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48043,6 +48265,8 @@ window.QA_DATA = {
                   -0.2873284278666096,
                   0.14643726889950748
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48084,6 +48308,8 @@ window.QA_DATA = {
                   -0.2843031388080306,
                   0.14028889786668658
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48125,6 +48351,8 @@ window.QA_DATA = {
                   -0.28101772114814977,
                   0.13401520585021337
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48166,6 +48394,8 @@ window.QA_DATA = {
                   -0.2784660334401624,
                   0.12778511298318346
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48207,6 +48437,8 @@ window.QA_DATA = {
                   -0.27653382573091445,
                   0.12174015378286573
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48248,6 +48480,8 @@ window.QA_DATA = {
                   -0.27384592207036135,
                   0.11594509473249798
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48289,6 +48523,8 @@ window.QA_DATA = {
                   -0.27147723357497217,
                   0.11029428139289721
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48330,6 +48566,8 @@ window.QA_DATA = {
                   -0.271681989750854,
                   0.10459266950935853
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48371,6 +48609,8 @@ window.QA_DATA = {
                   -0.2725373388195625,
                   0.09878514503959668
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48412,6 +48652,8 @@ window.QA_DATA = {
                   -0.2715765996120135,
                   0.09283531477517015
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48453,6 +48695,8 @@ window.QA_DATA = {
                   -0.27066635641980175,
                   0.08657792004530152
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48494,6 +48738,8 @@ window.QA_DATA = {
                   -0.27109923302500566,
                   0.08020113472807144
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48535,6 +48781,8 @@ window.QA_DATA = {
                   -0.27100014527935096,
                   0.0746486882442135
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48576,6 +48824,8 @@ window.QA_DATA = {
                   -0.2698171046923694,
                   0.07047873544532945
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48617,6 +48867,8 @@ window.QA_DATA = {
                   -0.2689894190034743,
                   0.06764466392949081
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -48658,6 +48910,8 @@ window.QA_DATA = {
                   -0.2689729563464889,
                   0.06565209549311474
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -48699,6 +48953,8 @@ window.QA_DATA = {
                   -0.2692054972804027,
                   0.0638309332053213
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -48740,6 +48996,8 @@ window.QA_DATA = {
                   -0.2676106694186232,
                   0.06231232168398937
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -48781,6 +49039,8 @@ window.QA_DATA = {
                   -0.26241101342476725,
                   0.06136075947891767
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -48822,6 +49082,8 @@ window.QA_DATA = {
                   -0.25521600557905133,
                   0.060482869318320254
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -48863,6 +49125,8 @@ window.QA_DATA = {
                   -0.24833089131468908,
                   0.05930415812811779
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -48904,6 +49168,8 @@ window.QA_DATA = {
                   -0.24384449783279583,
                   0.058156440218274985
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -48945,6 +49211,8 @@ window.QA_DATA = {
                   -0.24296223656211297,
                   0.058229934169318154
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -48986,6 +49254,8 @@ window.QA_DATA = {
                   -0.24567488187615813,
                   0.061408831307644296
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49027,6 +49297,8 @@ window.QA_DATA = {
                   -0.2497271409146264,
                   0.06691640542872523
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49068,6 +49340,8 @@ window.QA_DATA = {
                   -0.25207356052614993,
                   0.07229592688274356
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49109,6 +49383,8 @@ window.QA_DATA = {
                   -0.25496513450443076,
                   0.07656375648592773
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49150,6 +49426,8 @@ window.QA_DATA = {
                   -0.26098168158331986,
                   0.07951033663566681
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49191,6 +49469,8 @@ window.QA_DATA = {
                   -0.265722797031219,
                   0.08152449288260727
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49232,6 +49512,8 @@ window.QA_DATA = {
                   -0.2654045306135613,
                   0.08287246630076978
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49273,6 +49555,8 @@ window.QA_DATA = {
                   -0.26081189677986744,
                   0.08331684824026692
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49314,6 +49598,8 @@ window.QA_DATA = {
                   -0.2532333379606435,
                   0.08286510863010965
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49355,6 +49641,8 @@ window.QA_DATA = {
                   -0.24391037866408197,
                   0.08181389973412306
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49396,6 +49684,8 @@ window.QA_DATA = {
                   -0.23429180665978838,
                   0.07915931769794071
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49437,6 +49727,8 @@ window.QA_DATA = {
                   -0.22556783121299814,
                   0.07311201417493068
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49478,6 +49770,8 @@ window.QA_DATA = {
                   -0.21605995151887328,
                   0.06328805100348939
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49519,6 +49813,8 @@ window.QA_DATA = {
                   -0.20399018570760116,
                   0.050496108946092966
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49560,6 +49856,8 @@ window.QA_DATA = {
                   -0.1918452433259761,
                   0.03765305449069012
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49601,6 +49899,8 @@ window.QA_DATA = {
                   -0.18280110961938187,
                   0.0269843192717521
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49642,6 +49942,8 @@ window.QA_DATA = {
                   -0.17921197992885227,
                   0.01826418330718177
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49683,6 +49985,8 @@ window.QA_DATA = {
                   -0.18106278880981838,
                   0.010870737233210914
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49724,6 +50028,8 @@ window.QA_DATA = {
                   -0.18560275263037307,
                   0.004129823900978824
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49765,6 +50071,8 @@ window.QA_DATA = {
                   -0.1905072357300301,
                   -0.0013871443285513596
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49806,6 +50114,8 @@ window.QA_DATA = {
                   -0.19416070062548804,
                   -0.004545313673210538
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49847,6 +50157,8 @@ window.QA_DATA = {
                   -0.19677176098860058,
                   -0.006545026175041269
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49888,6 +50200,8 @@ window.QA_DATA = {
                   -0.19887860035078395,
                   -0.00904593342898019
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49929,6 +50243,8 @@ window.QA_DATA = {
                   -0.19939964127126358,
                   -0.011755394606325964
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -49970,6 +50286,8 @@ window.QA_DATA = {
                   -0.19715660091132914,
                   -0.014497903608062301
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50011,6 +50329,8 @@ window.QA_DATA = {
                   -0.1916397483116017,
                   -0.018266370851617697
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50052,6 +50372,8 @@ window.QA_DATA = {
                   -0.1846484412622985,
                   -0.02398247062476544
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50093,6 +50415,8 @@ window.QA_DATA = {
                   -0.1804263202368304,
                   -0.03211094620762095
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50134,6 +50458,8 @@ window.QA_DATA = {
                   -0.17926349235081823,
                   -0.040997491733922975
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50175,6 +50501,8 @@ window.QA_DATA = {
                   -0.17891055723934962,
                   -0.04772775978958599
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50216,6 +50544,8 @@ window.QA_DATA = {
                   -0.1801396147346236,
                   -0.05098979937139919
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50257,6 +50587,8 @@ window.QA_DATA = {
                   -0.18445636985924985,
                   -0.050628112607515374
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50298,6 +50630,8 @@ window.QA_DATA = {
                   -0.19133581893335644,
                   -0.04828991817609318
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50339,6 +50673,8 @@ window.QA_DATA = {
                   -0.19892807352036632,
                   -0.045362066216181385
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50380,6 +50716,8 @@ window.QA_DATA = {
                   -0.2036366524119317,
                   -0.04177729176739836
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50421,6 +50759,8 @@ window.QA_DATA = {
                   -0.2030882944038775,
                   -0.03672886699295547
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50462,6 +50802,8 @@ window.QA_DATA = {
                   -0.1968259196959424,
                   -0.028888653208140713
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50503,6 +50845,8 @@ window.QA_DATA = {
                   -0.18674369457250287,
                   -0.019483036644563856
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50544,6 +50888,8 @@ window.QA_DATA = {
                   -0.17635323672123376,
                   -0.011256058456546425
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50585,6 +50931,8 @@ window.QA_DATA = {
                   -0.16892122187544756,
                   -0.004219410829425452
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -50605,6 +50953,9 @@ window.QA_DATA = {
                 "start_time_s": 3.799392,
                 "end_time_s": 3.966032,
                 "state_count": 6,
+                "direct_hit_count": 6,
+                "merged_gap_count": 0,
+                "hit_support_ratio": 1.0,
                 "median_relation": {
                   "label": "right-front",
                   "side": "right",
@@ -50623,6 +50974,9 @@ window.QA_DATA = {
                 "start_time_s": 6.065696,
                 "end_time_s": 6.49896,
                 "state_count": 14,
+                "direct_hit_count": 14,
+                "merged_gap_count": 0,
+                "hit_support_ratio": 1.0,
                 "median_relation": {
                   "label": "front",
                   "side": "center",
@@ -50660,6 +51014,7 @@ window.QA_DATA = {
       "original_caption": "ADT RGB anchor frames · green: target 2D box · red: measured gaze projection",
       "video_window": {
         "source_video": "site/qa_benchmark/task5_media/adt_seq100_rgb.mp4",
+        "source_sequence": "Apartment_release_golden_skeleton_seq100_10s_sample_M1292",
         "start_sec": 1.99968,
         "duration_sec": 1.7663840000000002
       },
@@ -50683,7 +51038,7 @@ window.QA_DATA = {
             },
             {
               "label": "C",
-              "text": "The wooden bowl changes from left-front to right-front."
+              "text": "The wooden bowl changes from left-front to behind."
             },
             {
               "label": "D",
@@ -50704,7 +51059,17 @@ window.QA_DATA = {
             "S_Q": true,
             "annotation_direct": true,
             "annotation_source": "Aria Digital Twin v2",
+            "analysis_schema_version": 3,
             "coordinate_frame": "gravity-aligned wearer CPF: +right and +forward, metric world positions",
+            "alignment_diagnostics": {
+              "maximum_allowed_wearer_skew_ms": 10.0,
+              "maximum_observed_wearer_skew_ms": 0.003,
+              "maximum_allowed_dynamic_object_skew_ms": 50.0,
+              "maximum_observed_dynamic_object_skew_ms": 0.0037,
+              "gaze_state_count": 300,
+              "wearer_state_count": 300
+            },
+            "maximum_internal_gaze_gap_states": 1,
             "gaze_definition": "nearest positive intersection of the measured gaze ray with a same-time object OBB",
             "gaze_grounding_method": "ray_obb_intersection",
             "object_id": "4508463855879675",
@@ -50741,6 +51106,8 @@ window.QA_DATA = {
                   -0.3188551321019555,
                   -0.36414832257551083
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -50782,6 +51149,8 @@ window.QA_DATA = {
                   -0.3212059470035415,
                   -0.3620972681077505
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -50823,6 +51192,8 @@ window.QA_DATA = {
                   -0.3231326726994377,
                   -0.3614850590645041
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -50864,6 +51235,8 @@ window.QA_DATA = {
                   -0.32338450135057206,
                   -0.36233966010542384
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -50905,6 +51278,8 @@ window.QA_DATA = {
                   -0.32432834534535027,
                   -0.3633089825526219
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -50946,6 +51321,8 @@ window.QA_DATA = {
                   -0.326548079664588,
                   -0.3640629356260387
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -50987,6 +51364,8 @@ window.QA_DATA = {
                   -0.32816793196201544,
                   -0.36554059192853694
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51028,6 +51407,8 @@ window.QA_DATA = {
                   -0.3287318890026978,
                   -0.36723413550889134
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51069,6 +51450,8 @@ window.QA_DATA = {
                   -0.3287500929885949,
                   -0.36789575756501636
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51110,6 +51493,8 @@ window.QA_DATA = {
                   -0.32803024394302116,
                   -0.36829707111927606
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51151,6 +51536,8 @@ window.QA_DATA = {
                   -0.32644590812784563,
                   -0.3695551714184232
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51192,6 +51579,8 @@ window.QA_DATA = {
                   -0.32512142182994286,
                   -0.37113784318233095
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51233,6 +51622,8 @@ window.QA_DATA = {
                   -0.32470224641864587,
                   -0.37238284738275523
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51274,6 +51665,8 @@ window.QA_DATA = {
                   -0.3243297744479138,
                   -0.3730926561720755
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51315,6 +51708,8 @@ window.QA_DATA = {
                   -0.32339883206113107,
                   -0.3730428794041466
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51356,6 +51751,8 @@ window.QA_DATA = {
                   -0.32186017609498274,
                   -0.37198440808564054
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51397,6 +51794,8 @@ window.QA_DATA = {
                   -0.32024541955251745,
                   -0.37058773893745467
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51438,6 +51837,8 @@ window.QA_DATA = {
                   -0.31930221542212744,
                   -0.3699286052760927
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51479,6 +51880,8 @@ window.QA_DATA = {
                   -0.3186520143924141,
                   -0.3695725155639185
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51520,6 +51923,8 @@ window.QA_DATA = {
                   -0.3178961671889823,
                   -0.3685716657692484
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51561,6 +51966,8 @@ window.QA_DATA = {
                   -0.3181886331432657,
                   -0.3663192614252296
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51602,6 +52009,8 @@ window.QA_DATA = {
                   -0.3199696530447561,
                   -0.3622187956716828
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51643,6 +52052,8 @@ window.QA_DATA = {
                   -0.3216054774118828,
                   -0.3554794056732919
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51684,6 +52095,8 @@ window.QA_DATA = {
                   -0.32310006878133063,
                   -0.34370424028195895
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51725,6 +52138,8 @@ window.QA_DATA = {
                   -0.32638963485425176,
                   -0.32301735423512157
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51766,6 +52181,8 @@ window.QA_DATA = {
                   -0.3299074601518692,
                   -0.29489951345915366
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51807,6 +52224,8 @@ window.QA_DATA = {
                   -0.33048342005282183,
                   -0.26427651563709514
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51848,6 +52267,8 @@ window.QA_DATA = {
                   -0.3303999957301476,
                   -0.23305394131188578
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51889,6 +52310,8 @@ window.QA_DATA = {
                   -0.33223621364442096,
                   -0.20217269829670992
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51930,6 +52353,8 @@ window.QA_DATA = {
                   -0.3321619218026514,
                   -0.17339590702867375
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -51971,6 +52396,8 @@ window.QA_DATA = {
                   -0.3284478538669599,
                   -0.14747543262221213
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -52012,6 +52439,8 @@ window.QA_DATA = {
                   -0.32610219069684326,
                   -0.12289026596085917
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -52053,6 +52482,8 @@ window.QA_DATA = {
                   -0.3271477959225953,
                   -0.0993535505604955
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -52094,6 +52525,8 @@ window.QA_DATA = {
                   -0.32918490448958226,
                   -0.07817652275055637
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -52135,6 +52568,8 @@ window.QA_DATA = {
                   -0.3304057966439165,
                   -0.059142031313137555
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -52176,6 +52611,8 @@ window.QA_DATA = {
                   -0.33001139785474876,
                   -0.04109021822322384
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -52217,6 +52654,8 @@ window.QA_DATA = {
                   -0.3293757618106913,
                   -0.02414175310326855
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -52258,6 +52697,8 @@ window.QA_DATA = {
                   -0.32988824006540296,
                   -0.008705823603102236
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52299,6 +52740,8 @@ window.QA_DATA = {
                   -0.3301053115342764,
                   0.005730872472971271
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52340,6 +52783,8 @@ window.QA_DATA = {
                   -0.32904534605317753,
                   0.019526556340276557
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52381,6 +52826,8 @@ window.QA_DATA = {
                   -0.32791610590136433,
                   0.03227919640356253
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52422,6 +52869,8 @@ window.QA_DATA = {
                   -0.3275016017970629,
                   0.04389865928118558
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52463,6 +52912,8 @@ window.QA_DATA = {
                   -0.3277744787135486,
                   0.05472873118380672
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52504,6 +52955,8 @@ window.QA_DATA = {
                   -0.3286835597367837,
                   0.0644779744167604
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52545,6 +52998,8 @@ window.QA_DATA = {
                   -0.3299833670591279,
                   0.07255872306139988
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52586,6 +53041,8 @@ window.QA_DATA = {
                   -0.33018224722753364,
                   0.07947175957731484
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52627,6 +53084,8 @@ window.QA_DATA = {
                   -0.3281646072378154,
                   0.08583658815792322
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52668,6 +53127,8 @@ window.QA_DATA = {
                   -0.3259284429687149,
                   0.09110844398429802
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52709,6 +53170,8 @@ window.QA_DATA = {
                   -0.32456592355441605,
                   0.09484714071043204
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52750,6 +53213,8 @@ window.QA_DATA = {
                   -0.32195532427220025,
                   0.09735893183873345
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52791,6 +53256,8 @@ window.QA_DATA = {
                   -0.3174757182014869,
                   0.09890108850125534
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52832,6 +53299,8 @@ window.QA_DATA = {
                   -0.3127240043267824,
                   0.09958908394220167
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52873,6 +53342,8 @@ window.QA_DATA = {
                   -0.3087910642632822,
                   0.09984371912038947
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52914,6 +53385,8 @@ window.QA_DATA = {
                   -0.30617180756106044,
                   0.10039753184605427
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -52934,6 +53407,9 @@ window.QA_DATA = {
                 "start_time_s": 2.799552,
                 "end_time_s": 3.766064,
                 "state_count": 30,
+                "direct_hit_count": 30,
+                "merged_gap_count": 0,
+                "hit_support_ratio": 1.0,
                 "median_relation": {
                   "label": "front",
                   "side": "center",
@@ -52973,6 +53449,7 @@ window.QA_DATA = {
       "original_caption": "ADT RGB anchor frames · green: target 2D box · red: measured gaze projection",
       "video_window": {
         "source_video": "site/qa_benchmark/task5_media/adt_seq100_rgb.mp4",
+        "source_sequence": "Apartment_release_golden_skeleton_seq100_10s_sample_M1292",
         "start_sec": 2.99952,
         "duration_sec": 0.9665119999999998
       },
@@ -53017,7 +53494,17 @@ window.QA_DATA = {
             "S_Q": true,
             "annotation_direct": true,
             "annotation_source": "Aria Digital Twin v2",
+            "analysis_schema_version": 3,
             "coordinate_frame": "gravity-aligned wearer CPF: +right and +forward, metric world positions",
+            "alignment_diagnostics": {
+              "maximum_allowed_wearer_skew_ms": 10.0,
+              "maximum_observed_wearer_skew_ms": 0.003,
+              "maximum_allowed_dynamic_object_skew_ms": 50.0,
+              "maximum_observed_dynamic_object_skew_ms": 0.0037,
+              "gaze_state_count": 300,
+              "wearer_state_count": 300
+            },
+            "maximum_internal_gaze_gap_states": 1,
             "gaze_definition": "nearest positive intersection of the measured gaze ray with a same-time object OBB",
             "gaze_grounding_method": "ray_obb_intersection",
             "object_id": "4671332369591132",
@@ -53054,6 +53541,8 @@ window.QA_DATA = {
                   -0.3284478538669599,
                   -0.14747543262221213
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -53095,6 +53584,8 @@ window.QA_DATA = {
                   -0.32610219069684326,
                   -0.12289026596085917
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -53136,6 +53627,8 @@ window.QA_DATA = {
                   -0.3271477959225953,
                   -0.0993535505604955
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -53177,6 +53670,8 @@ window.QA_DATA = {
                   -0.32918490448958226,
                   -0.07817652275055637
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -53218,6 +53713,8 @@ window.QA_DATA = {
                   -0.3304057966439165,
                   -0.059142031313137555
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53259,6 +53756,8 @@ window.QA_DATA = {
                   -0.33001139785474876,
                   -0.04109021822322384
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53300,6 +53799,8 @@ window.QA_DATA = {
                   -0.3293757618106913,
                   -0.02414175310326855
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53341,6 +53842,8 @@ window.QA_DATA = {
                   -0.32988824006540296,
                   -0.008705823603102236
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53382,6 +53885,8 @@ window.QA_DATA = {
                   -0.3301053115342764,
                   0.005730872472971271
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53423,6 +53928,8 @@ window.QA_DATA = {
                   -0.32904534605317753,
                   0.019526556340276557
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53464,6 +53971,8 @@ window.QA_DATA = {
                   -0.32791610590136433,
                   0.03227919640356253
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53505,6 +54014,8 @@ window.QA_DATA = {
                   -0.3275016017970629,
                   0.04389865928118558
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53546,6 +54057,8 @@ window.QA_DATA = {
                   -0.3277744787135486,
                   0.05472873118380672
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53587,6 +54100,8 @@ window.QA_DATA = {
                   -0.3286835597367837,
                   0.0644779744167604
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53628,6 +54143,8 @@ window.QA_DATA = {
                   -0.3299833670591279,
                   0.07255872306139988
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53669,6 +54186,8 @@ window.QA_DATA = {
                   -0.33018224722753364,
                   0.07947175957731484
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53710,6 +54229,8 @@ window.QA_DATA = {
                   -0.3281646072378154,
                   0.08583658815792322
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53751,6 +54272,8 @@ window.QA_DATA = {
                   -0.3259284429687149,
                   0.09110844398429802
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53792,6 +54315,8 @@ window.QA_DATA = {
                   -0.32456592355441605,
                   0.09484714071043204
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53833,6 +54358,8 @@ window.QA_DATA = {
                   -0.32195532427220025,
                   0.09735893183873345
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53874,6 +54401,8 @@ window.QA_DATA = {
                   -0.3174757182014869,
                   0.09890108850125534
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53915,6 +54444,8 @@ window.QA_DATA = {
                   -0.3127240043267824,
                   0.09958908394220167
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53956,6 +54487,8 @@ window.QA_DATA = {
                   -0.3087910642632822,
                   0.09984371912038947
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -53997,6 +54530,8 @@ window.QA_DATA = {
                   -0.30617180756106044,
                   0.10039753184605427
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54038,6 +54573,8 @@ window.QA_DATA = {
                   -0.3043892702837046,
                   0.10263564577768702
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54079,6 +54616,8 @@ window.QA_DATA = {
                   -0.30264807652602466,
                   0.10747551484039902
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54120,6 +54659,8 @@ window.QA_DATA = {
                   -0.3004051491982136,
                   0.11318208450985096
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -54161,6 +54702,8 @@ window.QA_DATA = {
                   -0.29764188631631927,
                   0.11824300421352674
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -54202,6 +54745,8 @@ window.QA_DATA = {
                   -0.2953321567860876,
                   0.12281487064092489
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -54243,6 +54788,8 @@ window.QA_DATA = {
                   -0.2944639932255416,
                   0.12696285421974285
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0,
                 "relation": {
                   "label": "right-front",
                   "side": "right",
@@ -54263,6 +54810,9 @@ window.QA_DATA = {
                 "start_time_s": 3.799392,
                 "end_time_s": 3.966032,
                 "state_count": 6,
+                "direct_hit_count": 6,
+                "merged_gap_count": 0,
+                "hit_support_ratio": 1.0,
                 "median_relation": {
                   "label": "right-front",
                   "side": "right",
@@ -54302,6 +54852,7 @@ window.QA_DATA = {
       "original_caption": "ADT RGB anchor frames · green: target 2D box · red: measured gaze projection",
       "video_window": {
         "source_video": "site/qa_benchmark/task5_media/adt_seq100_rgb.mp4",
+        "source_sequence": "Apartment_release_golden_skeleton_seq100_10s_sample_M1292",
         "start_sec": 0.0,
         "duration_sec": 3.766064
       },
@@ -54317,15 +54868,15 @@ window.QA_DATA = {
           "options": [
             {
               "label": "A",
-              "text": "The wooden bowl follows: front → right-front → front."
+              "text": "The wooden bowl follows: right-front → front → right-front."
             },
             {
               "label": "B",
-              "text": "The wooden bowl follows: behind → left-behind → behind."
+              "text": "The wooden bowl follows: right → right-front → right."
             },
             {
               "label": "C",
-              "text": "The wooden bowl follows: behind → right-behind → behind."
+              "text": "The wooden bowl follows: right-behind → right → right-behind."
             },
             {
               "label": "D",
@@ -54346,7 +54897,17 @@ window.QA_DATA = {
             "S_Q": true,
             "annotation_direct": true,
             "annotation_source": "Aria Digital Twin v2",
+            "analysis_schema_version": 3,
             "coordinate_frame": "gravity-aligned wearer CPF: +right and +forward, metric world positions",
+            "alignment_diagnostics": {
+              "maximum_allowed_wearer_skew_ms": 10.0,
+              "maximum_observed_wearer_skew_ms": 0.003,
+              "maximum_allowed_dynamic_object_skew_ms": 50.0,
+              "maximum_observed_dynamic_object_skew_ms": 0.0037,
+              "gaze_state_count": 300,
+              "wearer_state_count": 300
+            },
+            "maximum_internal_gaze_gap_states": 1,
             "gaze_definition": "nearest positive intersection of the measured gaze ray with a same-time object OBB",
             "gaze_grounding_method": "ray_obb_intersection",
             "object_id": "4508463855879675",
@@ -54383,6 +54944,8 @@ window.QA_DATA = {
                   -0.3329978004179688,
                   -0.06542823444967738
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54424,6 +54987,8 @@ window.QA_DATA = {
                   -0.3374585457524975,
                   -0.07091445256724588
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54465,6 +55030,8 @@ window.QA_DATA = {
                   -0.3468570587310897,
                   -0.0778892607138379
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54506,6 +55073,8 @@ window.QA_DATA = {
                   -0.3549627956891025,
                   -0.08494921180668763
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54547,6 +55116,8 @@ window.QA_DATA = {
                   -0.3593518521819993,
                   -0.09144135304123646
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54588,6 +55159,8 @@ window.QA_DATA = {
                   -0.36058423723446015,
                   -0.09745795934617951
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54629,6 +55202,8 @@ window.QA_DATA = {
                   -0.36102452258805295,
                   -0.10456810098901015
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54670,6 +55245,8 @@ window.QA_DATA = {
                   -0.36256019909397513,
                   -0.11454193553411735
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54711,6 +55288,8 @@ window.QA_DATA = {
                   -0.3631205635439354,
                   -0.1279137450562442
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54752,6 +55331,8 @@ window.QA_DATA = {
                   -0.3616790376737454,
                   -0.14429493724728443
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54793,6 +55374,8 @@ window.QA_DATA = {
                   -0.36086858058629134,
                   -0.16203783786443604
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54834,6 +55417,8 @@ window.QA_DATA = {
                   -0.3615090903718371,
                   -0.17996786472690807
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54875,6 +55460,8 @@ window.QA_DATA = {
                   -0.3617658297783311,
                   -0.1976215972770725
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -54916,6 +55503,8 @@ window.QA_DATA = {
                   -0.359458028716023,
                   -0.21448355165447214
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -54957,6 +55546,8 @@ window.QA_DATA = {
                   -0.35333573824557324,
                   -0.23016010490878913
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -54998,6 +55589,8 @@ window.QA_DATA = {
                   -0.34919535321980255,
                   -0.24517580691278257
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55039,6 +55632,8 @@ window.QA_DATA = {
                   -0.3523065790053448,
                   -0.26020609236611475
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55080,6 +55675,8 @@ window.QA_DATA = {
                   -0.35651705071301765,
                   -0.27539425564054193
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55121,6 +55718,8 @@ window.QA_DATA = {
                   -0.35715601716604656,
                   -0.29007497959926476
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55162,6 +55761,8 @@ window.QA_DATA = {
                   -0.35699108158687737,
                   -0.302232117346076
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55203,6 +55804,8 @@ window.QA_DATA = {
                   -0.35727364712451726,
                   -0.31137049901767094
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55244,6 +55847,8 @@ window.QA_DATA = {
                   -0.3566774677126733,
                   -0.31880593883442243
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55285,6 +55890,8 @@ window.QA_DATA = {
                   -0.3551742694728833,
                   -0.32485948730556524
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55326,6 +55933,8 @@ window.QA_DATA = {
                   -0.3535139309136267,
                   -0.3292856310176248
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55367,6 +55976,8 @@ window.QA_DATA = {
                   -0.3512854507823322,
                   -0.3329074854328915
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55408,6 +56019,8 @@ window.QA_DATA = {
                   -0.3481779470671176,
                   -0.33671471440917494
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55449,6 +56062,8 @@ window.QA_DATA = {
                   -0.3457960733520524,
                   -0.34081548022425295
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55490,6 +56105,8 @@ window.QA_DATA = {
                   -0.34492499648485897,
                   -0.34516633419458104
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55531,6 +56148,8 @@ window.QA_DATA = {
                   -0.3439652031528204,
                   -0.34980988229514365
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55572,6 +56191,8 @@ window.QA_DATA = {
                   -0.3420852814752208,
                   -0.35472151988444595
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55613,6 +56234,8 @@ window.QA_DATA = {
                   -0.33965925144546455,
                   -0.35980981778729604
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55654,6 +56277,8 @@ window.QA_DATA = {
                   -0.3371280241807977,
                   -0.3653063832466189
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55695,6 +56320,8 @@ window.QA_DATA = {
                   -0.33489050140473,
                   -0.371537157749027
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55736,6 +56363,8 @@ window.QA_DATA = {
                   -0.33307166601387517,
                   -0.37802955440385305
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55777,6 +56406,8 @@ window.QA_DATA = {
                   -0.3313397749494511,
                   -0.3840338731334049
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55818,6 +56449,8 @@ window.QA_DATA = {
                   -0.32815379690106533,
                   -0.3889139431369366
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55859,6 +56492,8 @@ window.QA_DATA = {
                   -0.3231854905904716,
                   -0.39217898542056057
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55900,6 +56535,8 @@ window.QA_DATA = {
                   -0.3189506967451165,
                   -0.39360457134101595
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55941,6 +56578,8 @@ window.QA_DATA = {
                   -0.31672652612917246,
                   -0.39360314864434864
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -55982,6 +56621,8 @@ window.QA_DATA = {
                   -0.3160183441386599,
                   -0.39320245128551734
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56023,6 +56664,8 @@ window.QA_DATA = {
                   -0.3168742366377367,
                   -0.3926037671246166
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56064,6 +56707,8 @@ window.QA_DATA = {
                   -0.31934581842207543,
                   -0.39148929824932616
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56105,6 +56750,8 @@ window.QA_DATA = {
                   -0.3207154502446131,
                   -0.38989789986267853
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56146,6 +56793,8 @@ window.QA_DATA = {
                   -0.3187611669585115,
                   -0.3879407173964035
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56187,6 +56836,8 @@ window.QA_DATA = {
                   -0.31679155776685874,
                   -0.3855094913869131
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56228,6 +56879,8 @@ window.QA_DATA = {
                   -0.31706880185478636,
                   -0.3829745328039201
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56269,6 +56922,8 @@ window.QA_DATA = {
                   -0.31743126497462093,
                   -0.3817277857986496
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56310,6 +56965,8 @@ window.QA_DATA = {
                   -0.31673017460865005,
                   -0.38197418579098347
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56351,6 +57008,8 @@ window.QA_DATA = {
                   -0.3155517685306216,
                   -0.382452283184795
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56392,6 +57051,8 @@ window.QA_DATA = {
                   -0.3142330117075145,
                   -0.38260379306064635
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56433,6 +57094,8 @@ window.QA_DATA = {
                   -0.3130034675125764,
                   -0.3823407977129757
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56474,6 +57137,8 @@ window.QA_DATA = {
                   -0.3129145864276297,
                   -0.3811379383038796
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56515,6 +57180,8 @@ window.QA_DATA = {
                   -0.31460280010599984,
                   -0.37870324633223634
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56556,6 +57223,8 @@ window.QA_DATA = {
                   -0.3161194892031456,
                   -0.3761791243814495
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56597,6 +57266,8 @@ window.QA_DATA = {
                   -0.3160383935332459,
                   -0.37436784661790024
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56638,6 +57309,8 @@ window.QA_DATA = {
                   -0.31507808926801906,
                   -0.37277093226372093
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56679,6 +57352,8 @@ window.QA_DATA = {
                   -0.3145080310593178,
                   -0.3712507042649673
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56720,6 +57395,8 @@ window.QA_DATA = {
                   -0.3157556217435345,
                   -0.3701909075815309
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56761,6 +57438,8 @@ window.QA_DATA = {
                   -0.3177588586606411,
                   -0.36903955141540223
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56802,6 +57481,8 @@ window.QA_DATA = {
                   -0.3183041268478558,
                   -0.3668323520159136
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56843,6 +57524,8 @@ window.QA_DATA = {
                   -0.3188551321019555,
                   -0.36414832257551083
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56884,6 +57567,8 @@ window.QA_DATA = {
                   -0.3212059470035415,
                   -0.3620972681077505
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56925,6 +57610,8 @@ window.QA_DATA = {
                   -0.3231326726994377,
                   -0.3614850590645041
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -56966,6 +57653,8 @@ window.QA_DATA = {
                   -0.32338450135057206,
                   -0.36233966010542384
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57007,6 +57696,8 @@ window.QA_DATA = {
                   -0.32432834534535027,
                   -0.3633089825526219
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57048,6 +57739,8 @@ window.QA_DATA = {
                   -0.326548079664588,
                   -0.3640629356260387
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57089,6 +57782,8 @@ window.QA_DATA = {
                   -0.32816793196201544,
                   -0.36554059192853694
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57130,6 +57825,8 @@ window.QA_DATA = {
                   -0.3287318890026978,
                   -0.36723413550889134
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57171,6 +57868,8 @@ window.QA_DATA = {
                   -0.3287500929885949,
                   -0.36789575756501636
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57212,6 +57911,8 @@ window.QA_DATA = {
                   -0.32803024394302116,
                   -0.36829707111927606
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57253,6 +57954,8 @@ window.QA_DATA = {
                   -0.32644590812784563,
                   -0.3695551714184232
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57294,6 +57997,8 @@ window.QA_DATA = {
                   -0.32512142182994286,
                   -0.37113784318233095
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57335,6 +58040,8 @@ window.QA_DATA = {
                   -0.32470224641864587,
                   -0.37238284738275523
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57376,6 +58083,8 @@ window.QA_DATA = {
                   -0.3243297744479138,
                   -0.3730926561720755
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57417,6 +58126,8 @@ window.QA_DATA = {
                   -0.32339883206113107,
                   -0.3730428794041466
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57458,6 +58169,8 @@ window.QA_DATA = {
                   -0.32186017609498274,
                   -0.37198440808564054
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57499,6 +58212,8 @@ window.QA_DATA = {
                   -0.32024541955251745,
                   -0.37058773893745467
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57540,6 +58255,8 @@ window.QA_DATA = {
                   -0.31930221542212744,
                   -0.3699286052760927
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57581,6 +58298,8 @@ window.QA_DATA = {
                   -0.3186520143924141,
                   -0.3695725155639185
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57622,6 +58341,8 @@ window.QA_DATA = {
                   -0.3178961671889823,
                   -0.3685716657692484
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57663,6 +58384,8 @@ window.QA_DATA = {
                   -0.3181886331432657,
                   -0.3663192614252296
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57704,6 +58427,8 @@ window.QA_DATA = {
                   -0.3199696530447561,
                   -0.3622187956716828
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57745,6 +58470,8 @@ window.QA_DATA = {
                   -0.3216054774118828,
                   -0.3554794056732919
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57786,6 +58513,8 @@ window.QA_DATA = {
                   -0.32310006878133063,
                   -0.34370424028195895
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57827,6 +58556,8 @@ window.QA_DATA = {
                   -0.32638963485425176,
                   -0.32301735423512157
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57868,6 +58599,8 @@ window.QA_DATA = {
                   -0.3299074601518692,
                   -0.29489951345915366
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57909,6 +58642,8 @@ window.QA_DATA = {
                   -0.33048342005282183,
                   -0.26427651563709514
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57950,6 +58685,8 @@ window.QA_DATA = {
                   -0.3303999957301476,
                   -0.23305394131188578
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -57991,6 +58728,8 @@ window.QA_DATA = {
                   -0.33223621364442096,
                   -0.20217269829670992
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -58032,6 +58771,8 @@ window.QA_DATA = {
                   -0.3321619218026514,
                   -0.17339590702867375
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -58073,6 +58814,8 @@ window.QA_DATA = {
                   -0.3284478538669599,
                   -0.14747543262221213
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -58114,6 +58857,8 @@ window.QA_DATA = {
                   -0.32610219069684326,
                   -0.12289026596085917
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -58155,6 +58900,8 @@ window.QA_DATA = {
                   -0.3271477959225953,
                   -0.0993535505604955
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -58196,6 +58943,8 @@ window.QA_DATA = {
                   -0.32918490448958226,
                   -0.07817652275055637
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -58237,6 +58986,8 @@ window.QA_DATA = {
                   -0.3304057966439165,
                   -0.059142031313137555
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -58278,6 +59029,8 @@ window.QA_DATA = {
                   -0.33001139785474876,
                   -0.04109021822322384
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -58319,6 +59072,8 @@ window.QA_DATA = {
                   -0.3293757618106913,
                   -0.02414175310326855
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -58360,6 +59115,8 @@ window.QA_DATA = {
                   -0.32988824006540296,
                   -0.008705823603102236
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58401,6 +59158,8 @@ window.QA_DATA = {
                   -0.3301053115342764,
                   0.005730872472971271
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58442,6 +59201,8 @@ window.QA_DATA = {
                   -0.32904534605317753,
                   0.019526556340276557
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58483,6 +59244,8 @@ window.QA_DATA = {
                   -0.32791610590136433,
                   0.03227919640356253
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58524,6 +59287,8 @@ window.QA_DATA = {
                   -0.3275016017970629,
                   0.04389865928118558
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58565,6 +59330,8 @@ window.QA_DATA = {
                   -0.3277744787135486,
                   0.05472873118380672
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58606,6 +59373,8 @@ window.QA_DATA = {
                   -0.3286835597367837,
                   0.0644779744167604
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58647,6 +59416,8 @@ window.QA_DATA = {
                   -0.3299833670591279,
                   0.07255872306139988
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58688,6 +59459,8 @@ window.QA_DATA = {
                   -0.33018224722753364,
                   0.07947175957731484
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58729,6 +59502,8 @@ window.QA_DATA = {
                   -0.3281646072378154,
                   0.08583658815792322
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58770,6 +59545,8 @@ window.QA_DATA = {
                   -0.3259284429687149,
                   0.09110844398429802
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58811,6 +59588,8 @@ window.QA_DATA = {
                   -0.32456592355441605,
                   0.09484714071043204
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58852,6 +59631,8 @@ window.QA_DATA = {
                   -0.32195532427220025,
                   0.09735893183873345
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58893,6 +59674,8 @@ window.QA_DATA = {
                   -0.3174757182014869,
                   0.09890108850125534
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58934,6 +59717,8 @@ window.QA_DATA = {
                   -0.3127240043267824,
                   0.09958908394220167
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -58975,6 +59760,8 @@ window.QA_DATA = {
                   -0.3087910642632822,
                   0.09984371912038947
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59016,6 +59803,8 @@ window.QA_DATA = {
                   -0.30617180756106044,
                   0.10039753184605427
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59036,6 +59825,9 @@ window.QA_DATA = {
                 "start_time_s": 2.799552,
                 "end_time_s": 3.766064,
                 "state_count": 30,
+                "direct_hit_count": 30,
+                "merged_gap_count": 0,
+                "hit_support_ratio": 1.0,
                 "median_relation": {
                   "label": "front",
                   "side": "center",
@@ -59078,6 +59870,7 @@ window.QA_DATA = {
       "original_caption": "ADT RGB anchor frames · green: target 2D box · red: measured gaze projection",
       "video_window": {
         "source_video": "site/qa_benchmark/task5_media/adt_seq100_rgb.mp4",
+        "source_sequence": "Apartment_release_golden_skeleton_seq100_10s_sample_M1292",
         "start_sec": 3.799392,
         "duration_sec": 2.8662080000000003
       },
@@ -59097,15 +59890,15 @@ window.QA_DATA = {
             },
             {
               "label": "B",
-              "text": "The white vase follows: front → right-front."
+              "text": "The white vase follows: left-front → front."
             },
             {
               "label": "C",
-              "text": "The white vase follows: behind → left-behind."
+              "text": "The white vase follows: right-front → front."
             },
             {
               "label": "D",
-              "text": "The white vase follows: behind → right-behind."
+              "text": "The white vase follows: right → right-front."
             }
           ],
           "correct_option": "A",
@@ -59122,7 +59915,17 @@ window.QA_DATA = {
             "S_Q": true,
             "annotation_direct": true,
             "annotation_source": "Aria Digital Twin v2",
+            "analysis_schema_version": 3,
             "coordinate_frame": "gravity-aligned wearer CPF: +right and +forward, metric world positions",
+            "alignment_diagnostics": {
+              "maximum_allowed_wearer_skew_ms": 10.0,
+              "maximum_observed_wearer_skew_ms": 0.003,
+              "maximum_allowed_dynamic_object_skew_ms": 50.0,
+              "maximum_observed_dynamic_object_skew_ms": 0.0037,
+              "gaze_state_count": 300,
+              "wearer_state_count": 300
+            },
+            "maximum_internal_gaze_gap_states": 1,
             "gaze_definition": "nearest positive intersection of the measured gaze ray with a same-time object OBB",
             "gaze_grounding_method": "ray_obb_intersection",
             "object_id": "7379153972126671",
@@ -59159,6 +59962,8 @@ window.QA_DATA = {
                   -0.3043892702837046,
                   0.10263564577768702
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59200,6 +60005,8 @@ window.QA_DATA = {
                   -0.30264807652602466,
                   0.10747551484039902
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59241,6 +60048,8 @@ window.QA_DATA = {
                   -0.3004051491982136,
                   0.11318208450985096
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59282,6 +60091,8 @@ window.QA_DATA = {
                   -0.29764188631631927,
                   0.11824300421352674
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59323,6 +60134,8 @@ window.QA_DATA = {
                   -0.2953321567860876,
                   0.12281487064092489
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59364,6 +60177,8 @@ window.QA_DATA = {
                   -0.2944639932255416,
                   0.12696285421974285
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59405,6 +60220,8 @@ window.QA_DATA = {
                   -0.29574991856005495,
                   0.13045025351032852
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59446,6 +60263,8 @@ window.QA_DATA = {
                   -0.2980248156143821,
                   0.1336905139909606
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59487,6 +60306,8 @@ window.QA_DATA = {
                   -0.29922388943340145,
                   0.13744261580386985
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59528,6 +60349,8 @@ window.QA_DATA = {
                   -0.3000899091568769,
                   0.14160870986367835
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59569,6 +60392,8 @@ window.QA_DATA = {
                   -0.3018320501762355,
                   0.14590858913808524
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59610,6 +60435,8 @@ window.QA_DATA = {
                   -0.30315081192192195,
                   0.1506927383283279
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59651,6 +60478,8 @@ window.QA_DATA = {
                   -0.3032192472641094,
                   0.1559559866682939
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59692,6 +60521,8 @@ window.QA_DATA = {
                   -0.30328664608861833,
                   0.16067430571906155
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59733,6 +60564,8 @@ window.QA_DATA = {
                   -0.30301732762384975,
                   0.16382454594091933
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59774,6 +60607,8 @@ window.QA_DATA = {
                   -0.3001157550066354,
                   0.16457884030647496
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59815,6 +60650,8 @@ window.QA_DATA = {
                   -0.2955340193747646,
                   0.1626546704925922
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59856,6 +60693,8 @@ window.QA_DATA = {
                   -0.29216679685187447,
                   0.15826265804225487
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59897,6 +60736,8 @@ window.QA_DATA = {
                   -0.2898398590134789,
                   0.15247296914158076
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59938,6 +60779,8 @@ window.QA_DATA = {
                   -0.2873284278666096,
                   0.14643726889950748
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -59979,6 +60822,8 @@ window.QA_DATA = {
                   -0.2843031388080306,
                   0.14028889786668658
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60020,6 +60865,8 @@ window.QA_DATA = {
                   -0.28101772114814977,
                   0.13401520585021337
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60061,6 +60908,8 @@ window.QA_DATA = {
                   -0.2784660334401624,
                   0.12778511298318346
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60102,6 +60951,8 @@ window.QA_DATA = {
                   -0.27653382573091445,
                   0.12174015378286573
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60143,6 +60994,8 @@ window.QA_DATA = {
                   -0.27384592207036135,
                   0.11594509473249798
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60184,6 +61037,8 @@ window.QA_DATA = {
                   -0.27147723357497217,
                   0.11029428139289721
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60225,6 +61080,8 @@ window.QA_DATA = {
                   -0.271681989750854,
                   0.10459266950935853
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60266,6 +61123,8 @@ window.QA_DATA = {
                   -0.2725373388195625,
                   0.09878514503959668
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60307,6 +61166,8 @@ window.QA_DATA = {
                   -0.2715765996120135,
                   0.09283531477517015
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60348,6 +61209,8 @@ window.QA_DATA = {
                   -0.27066635641980175,
                   0.08657792004530152
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60389,6 +61252,8 @@ window.QA_DATA = {
                   -0.27109923302500566,
                   0.08020113472807144
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60430,6 +61295,8 @@ window.QA_DATA = {
                   -0.27100014527935096,
                   0.0746486882442135
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60471,6 +61338,8 @@ window.QA_DATA = {
                   -0.2698171046923694,
                   0.07047873544532945
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60512,6 +61381,8 @@ window.QA_DATA = {
                   -0.2689894190034743,
                   0.06764466392949081
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60553,6 +61424,8 @@ window.QA_DATA = {
                   -0.2689729563464889,
                   0.06565209549311474
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60594,6 +61467,8 @@ window.QA_DATA = {
                   -0.2692054972804027,
                   0.0638309332053213
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60635,6 +61510,8 @@ window.QA_DATA = {
                   -0.2676106694186232,
                   0.06231232168398937
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60676,6 +61553,8 @@ window.QA_DATA = {
                   -0.26241101342476725,
                   0.06136075947891767
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60717,6 +61596,8 @@ window.QA_DATA = {
                   -0.25521600557905133,
                   0.060482869318320254
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60758,6 +61639,8 @@ window.QA_DATA = {
                   -0.24833089131468908,
                   0.05930415812811779
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60799,6 +61682,8 @@ window.QA_DATA = {
                   -0.24384449783279583,
                   0.058156440218274985
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60840,6 +61725,8 @@ window.QA_DATA = {
                   -0.24296223656211297,
                   0.058229934169318154
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60881,6 +61768,8 @@ window.QA_DATA = {
                   -0.24567488187615813,
                   0.061408831307644296
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60922,6 +61811,8 @@ window.QA_DATA = {
                   -0.2497271409146264,
                   0.06691640542872523
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -60963,6 +61854,8 @@ window.QA_DATA = {
                   -0.25207356052614993,
                   0.07229592688274356
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61004,6 +61897,8 @@ window.QA_DATA = {
                   -0.25496513450443076,
                   0.07656375648592773
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61045,6 +61940,8 @@ window.QA_DATA = {
                   -0.26098168158331986,
                   0.07951033663566681
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61086,6 +61983,8 @@ window.QA_DATA = {
                   -0.265722797031219,
                   0.08152449288260727
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61127,6 +62026,8 @@ window.QA_DATA = {
                   -0.2654045306135613,
                   0.08287246630076978
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61168,6 +62069,8 @@ window.QA_DATA = {
                   -0.26081189677986744,
                   0.08331684824026692
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61209,6 +62112,8 @@ window.QA_DATA = {
                   -0.2532333379606435,
                   0.08286510863010965
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61250,6 +62155,8 @@ window.QA_DATA = {
                   -0.24391037866408197,
                   0.08181389973412306
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61291,6 +62198,8 @@ window.QA_DATA = {
                   -0.23429180665978838,
                   0.07915931769794071
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61332,6 +62241,8 @@ window.QA_DATA = {
                   -0.22556783121299814,
                   0.07311201417493068
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61373,6 +62284,8 @@ window.QA_DATA = {
                   -0.21605995151887328,
                   0.06328805100348939
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61414,6 +62327,8 @@ window.QA_DATA = {
                   -0.20399018570760116,
                   0.050496108946092966
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61455,6 +62370,8 @@ window.QA_DATA = {
                   -0.1918452433259761,
                   0.03765305449069012
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61496,6 +62413,8 @@ window.QA_DATA = {
                   -0.18280110961938187,
                   0.0269843192717521
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61537,6 +62456,8 @@ window.QA_DATA = {
                   -0.17921197992885227,
                   0.01826418330718177
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61578,6 +62499,8 @@ window.QA_DATA = {
                   -0.18106278880981838,
                   0.010870737233210914
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
@@ -61619,6 +62542,8 @@ window.QA_DATA = {
                   -0.18560275263037307,
                   0.004129823900978824
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -61660,6 +62585,8 @@ window.QA_DATA = {
                   -0.1905072357300301,
                   -0.0013871443285513596
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -61701,6 +62628,8 @@ window.QA_DATA = {
                   -0.19416070062548804,
                   -0.004545313673210538
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -61742,6 +62671,8 @@ window.QA_DATA = {
                   -0.19677176098860058,
                   -0.006545026175041269
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -61783,6 +62714,8 @@ window.QA_DATA = {
                   -0.19887860035078395,
                   -0.00904593342898019
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -61824,6 +62757,8 @@ window.QA_DATA = {
                   -0.19939964127126358,
                   -0.011755394606325964
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -61865,6 +62800,8 @@ window.QA_DATA = {
                   -0.19715660091132914,
                   -0.014497903608062301
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -61906,6 +62843,8 @@ window.QA_DATA = {
                   -0.1916397483116017,
                   -0.018266370851617697
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -61947,6 +62886,8 @@ window.QA_DATA = {
                   -0.1846484412622985,
                   -0.02398247062476544
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -61988,6 +62929,8 @@ window.QA_DATA = {
                   -0.1804263202368304,
                   -0.03211094620762095
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62029,6 +62972,8 @@ window.QA_DATA = {
                   -0.17926349235081823,
                   -0.040997491733922975
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62070,6 +63015,8 @@ window.QA_DATA = {
                   -0.17891055723934962,
                   -0.04772775978958599
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62111,6 +63058,8 @@ window.QA_DATA = {
                   -0.1801396147346236,
                   -0.05098979937139919
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62152,6 +63101,8 @@ window.QA_DATA = {
                   -0.18445636985924985,
                   -0.050628112607515374
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62193,6 +63144,8 @@ window.QA_DATA = {
                   -0.19133581893335644,
                   -0.04828991817609318
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62234,6 +63187,8 @@ window.QA_DATA = {
                   -0.19892807352036632,
                   -0.045362066216181385
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62275,6 +63230,8 @@ window.QA_DATA = {
                   -0.2036366524119317,
                   -0.04177729176739836
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62316,6 +63273,8 @@ window.QA_DATA = {
                   -0.2030882944038775,
                   -0.03672886699295547
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62357,6 +63316,8 @@ window.QA_DATA = {
                   -0.1968259196959424,
                   -0.028888653208140713
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62398,6 +63359,8 @@ window.QA_DATA = {
                   -0.18674369457250287,
                   -0.019483036644563856
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62439,6 +63402,8 @@ window.QA_DATA = {
                   -0.17635323672123376,
                   -0.011256058456546425
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62480,6 +63445,8 @@ window.QA_DATA = {
                   -0.16892122187544756,
                   -0.004219410829425452
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62521,6 +63488,8 @@ window.QA_DATA = {
                   -0.1654680450154183,
                   0.002400812389011464
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62562,6 +63531,8 @@ window.QA_DATA = {
                   -0.15904398734965772,
                   0.008035411966410555
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62603,6 +63574,8 @@ window.QA_DATA = {
                   -0.1463271431813869,
                   0.012427801958945772
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62644,6 +63617,8 @@ window.QA_DATA = {
                   -0.13548716516463866,
                   0.016548399310544637
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62685,6 +63660,8 @@ window.QA_DATA = {
                   -0.1291809217212658,
                   0.020179887155437226
                 ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
@@ -62705,6 +63682,9 @@ window.QA_DATA = {
                 "start_time_s": 6.532288,
                 "end_time_s": 6.6656,
                 "state_count": 5,
+                "direct_hit_count": 5,
+                "merged_gap_count": 0,
+                "hit_support_ratio": 1.0,
                 "median_relation": {
                   "label": "left-front",
                   "side": "left",

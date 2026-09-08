@@ -47,15 +47,25 @@ def main() -> None:
         box_times.setdefault(uid, []).append(timestamp)
     for values in box_times.values():
         values.sort()
-    objects = {row["instance_name"]: uid for uid, row in analysis["objects"].items()}
+    objects_by_name: dict[str, list[str]] = {}
+    for uid, row in analysis["objects"].items():
+        objects_by_name.setdefault(row["instance_name"], []).append(uid)
     args.output_dir.mkdir(parents=True, exist_ok=True)
     for spec in config["cases"]:
-        uid = objects[spec["object_name"]]
+        if spec.get("object_id"):
+            uid = str(spec["object_id"])
+        else:
+            matches = objects_by_name.get(spec["object_name"], [])
+            if len(matches) != 1:
+                raise ValueError(f"{spec['id']} object name does not uniquely resolve; provide object_id")
+            uid = matches[0]
+        if uid not in box_times:
+            raise ValueError(f"{spec['id']} target has no RGB 2D bounding-box annotation")
         if spec["question_type"] == "relation_change_between_gazes":
-            events = [next(event for event in analysis["gaze_events"] if event["object_id"] == uid and event["start_index"] == frame) for frame in spec["event_start_frames"]]
+            events = [next(event for event in analysis["gaze_events"] if str(event["object_id"]) == uid and event["start_index"] == frame) for frame in spec["event_start_frames"]]
             frame_ids = [event["start_index"] + event["state_count"] // 2 for event in events]
         elif spec["question_type"] == "gaze_onset_side_change":
-            event = next(event for event in analysis["gaze_events"] if event["object_id"] == uid and event["start_index"] == spec["event_start_frames"][0])
+            event = next(event for event in analysis["gaze_events"] if str(event["object_id"]) == uid and event["start_index"] == spec["event_start_frames"][0])
             frame_ids = [spec["pre_frame"], event["start_index"] + event["state_count"] // 2]
         else:
             frame_ids = list(spec["window_frames"])
@@ -67,6 +77,9 @@ def main() -> None:
             state = analysis["states"][frame_index]
             timestamp = int(state["timestamp_ns"])
             nearest = min(box_times[uid], key=lambda value: abs(value - timestamp))
+            skew_ms = abs(nearest - timestamp) / 1_000_000
+            if skew_ms > 50.0:
+                raise ValueError(f"{spec['id']} nearest 2D box is stale by {skew_ms:.1f} ms")
             x1, y1, x2, y2 = boxes[(nearest, uid)]
             cv2.rectangle(canvas, (x1, y1), (x2, y2), (30, 210, 40), 8)
             gaze = gaze_rows[frame_index]
@@ -83,7 +96,8 @@ def main() -> None:
                 cv2.circle(canvas, (px, py), 18, (20, 20, 240), 5)
             canvas = cv2.rotate(canvas, cv2.ROTATE_90_CLOCKWISE)
             relation = state["object_relations"][uid]["label"]
-            label = f"t={state['time_s']:.1f}s  {spec['object_name']}  {relation}"
+            target_name = analysis["objects"][uid]["instance_name"]
+            label = f"t={state['time_s']:.1f}s  {target_name}  {relation}"
             cv2.rectangle(canvas, (0, 0), (1408, 80), (15, 23, 42), -1)
             cv2.putText(canvas, label, (24, 54), cv2.FONT_HERSHEY_SIMPLEX, 1.25, (255, 255, 255), 3, cv2.LINE_AA)
             panels.append(cv2.resize(canvas, (448, 448), interpolation=cv2.INTER_AREA))

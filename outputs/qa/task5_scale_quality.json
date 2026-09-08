@@ -16,6 +16,10 @@
     "min_task5_event_gap_sec": 0.3,
     "min_task5_relation_shift_m": 0.05,
     "min_task5_gaze_onset_turn_deg": 8.0,
+    "min_task5_event_hit_support": 0.8,
+    "max_task5_wearer_skew_ms": 10.0,
+    "max_task5_dynamic_object_skew_ms": 50.0,
+    "max_task5_internal_gaze_gap_states": 1,
     "min_visible_track_coverage": 0.8,
     "min_identity_assignment_margin": 0.18,
     "min_dominance_ratio": 0.65,
@@ -67,8 +71,8 @@
             "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 4,
-            "information_units": 12
+            "relation_markers": 3,
+            "information_units": 11
           },
           {
             "words": 8,
@@ -113,8 +117,8 @@
             "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 4,
-            "information_units": 12
+            "relation_markers": 3,
+            "information_units": 11
           },
           {
             "words": 8,
@@ -159,8 +163,8 @@
             "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 4,
-            "information_units": 12
+            "relation_markers": 3,
+            "information_units": 11
           },
           {
             "words": 8,
@@ -237,8 +241,8 @@
             "words": 7,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 4,
-            "information_units": 11
+            "relation_markers": 5,
+            "information_units": 12
           },
           {
             "words": 7,
@@ -251,8 +255,8 @@
             "words": 7,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 4,
-            "information_units": 11
+            "relation_markers": 5,
+            "information_units": 12
           },
           {
             "words": 7,

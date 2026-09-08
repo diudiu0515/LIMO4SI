@@ -144,6 +144,7 @@ def supported_gaze_events(
         if object_id is None or len(run) < minimum_run:
             continue
         middle = run[len(run) // 2]
+        direct_hit_count = sum(state.get("gazed_object_id") == object_id for state in run)
         events.append({
             "object_id": object_id,
             "object_name": middle.get("gazed_object_name"),
@@ -152,6 +153,9 @@ def supported_gaze_events(
             "start_time_s": float(run[0]["time_s"]),
             "end_time_s": float(run[-1]["time_s"]),
             "state_count": len(run),
+            "direct_hit_count": direct_hit_count,
+            "merged_gap_count": len(run) - direct_hit_count,
+            "hit_support_ratio": direct_hit_count / len(run),
             "median_state": dict(middle),
         })
     return events

@@ -29,6 +29,8 @@ class Task5HumanStateTests(unittest.TestCase):
         ]
         events = supported_gaze_events(states, minimum_run=4, maximum_internal_gap=0)
         self.assertEqual([(event["start_index"], event["end_index"]) for event in events], [(5, 8)])
+        self.assertEqual(events[0]["direct_hit_count"], 4)
+        self.assertEqual(events[0]["hit_support_ratio"], 1.0)
 
 
 if __name__ == "__main__":
