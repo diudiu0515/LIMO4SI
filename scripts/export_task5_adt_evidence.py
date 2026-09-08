@@ -63,10 +63,10 @@ def main() -> None:
             raise ValueError(f"{spec['id']} target has no RGB 2D bounding-box annotation")
         if spec["question_type"] == "relation_change_between_gazes":
             events = [next(event for event in analysis["gaze_events"] if str(event["object_id"]) == uid and event["start_index"] == frame) for frame in spec["event_start_frames"]]
-            frame_ids = [event["start_index"] + event["state_count"] // 2 for event in events]
+            frame_ids = [(event["start_index"] + event["end_index"]) // 2 for event in events]
         elif spec["question_type"] == "gaze_onset_side_change":
             event = next(event for event in analysis["gaze_events"] if str(event["object_id"]) == uid and event["start_index"] == spec["event_start_frames"][0])
-            frame_ids = [spec["pre_frame"], event["start_index"] + event["state_count"] // 2]
+            frame_ids = [spec["pre_frame"], (event["start_index"] + event["end_index"]) // 2]
         else:
             frame_ids = list(spec["window_frames"])
         panels = []

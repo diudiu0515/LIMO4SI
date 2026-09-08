@@ -109,28 +109,27 @@ def generate_task5_candidates(
 
     # 1. Compare two temporally distinct sustained gazes at the same object.
     for object_id, object_events in by_object.items():
-        for first_index, first in enumerate(object_events):
-            for second in object_events[first_index + 1:]:
-                gap = float(second["start_time_s"]) - float(first["end_time_s"])
-                duration = float(second["end_time_s"]) - float(first["start_time_s"])
-                if gap < policy.min_event_gap_sec or duration > policy.max_repeated_window_sec:
-                    rejection_counts["repeated_gap_or_window"] += 1
-                    continue
-                first_frame, second_frame = _anchor(first), _anchor(second)
-                left, right = _relation(states, first_frame, object_id), _relation(states, second_frame, object_id)
-                if not left or not right:
-                    rejection_counts["missing_relation"] += 1
-                    continue
-                shift = abs(float(left["right_m"]) - float(right["right_m"]))
-                if left["label"] == right["label"] or shift < policy.min_lateral_shift_m:
-                    rejection_counts["repeated_not_salient"] += 1
-                    continue
-                score = shift + min(gap, 2.0) * 0.05 + min(int(first["state_count"]), int(second["state_count"])) / 100
-                candidates.append(_candidate(
-                    analysis, "between_repeated_gaze_events", object_id,
-                    int(first["start_index"]), int(second["end_index"]), score,
-                    event_start_frames=[int(first["start_index"]), int(second["start_index"])],
-                ))
+        for first, second in zip(object_events, object_events[1:]):
+            gap = float(second["start_time_s"]) - float(first["end_time_s"])
+            duration = float(second["end_time_s"]) - float(first["start_time_s"])
+            if gap < policy.min_event_gap_sec or duration > policy.max_repeated_window_sec:
+                rejection_counts["repeated_gap_or_window"] += 1
+                continue
+            first_frame, second_frame = _anchor(first), _anchor(second)
+            left, right = _relation(states, first_frame, object_id), _relation(states, second_frame, object_id)
+            if not left or not right:
+                rejection_counts["missing_relation"] += 1
+                continue
+            shift = abs(float(left["right_m"]) - float(right["right_m"]))
+            if left["label"] == right["label"] or shift < policy.min_lateral_shift_m:
+                rejection_counts["repeated_not_salient"] += 1
+                continue
+            score = shift + min(gap, 2.0) * 0.05 + min(int(first["state_count"]), int(second["state_count"])) / 100
+            candidates.append(_candidate(
+                analysis, "between_repeated_gaze_events", object_id,
+                int(first["start_index"]), int(second["end_index"]), score,
+                event_start_frames=[int(first["start_index"]), int(second["start_index"])],
+            ))
 
     # 2. Find a real pre-onset state where the wearer turns and the target changes side.
     for event in events:

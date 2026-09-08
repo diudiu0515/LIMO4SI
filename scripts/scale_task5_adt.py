@@ -112,7 +112,7 @@ def main() -> None:
             use_cache = False
             if args.reuse_analysis and analysis_path.is_file():
                 analysis = json.loads(analysis_path.read_text(encoding="utf-8"))
-                use_cache = int(analysis.get("schema_version") or 0) >= 3 and analysis.get("sequence_name") == sequence_name
+                use_cache = int(analysis.get("schema_version") or 0) >= 4 and analysis.get("sequence_name") == sequence_name
             if use_cache:
                 record["analysis_status"] = "reused"
             else:

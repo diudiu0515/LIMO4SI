@@ -4,6 +4,7 @@ from limo4si.task5_human_state import (
     body_centric_relation,
     quaternion_rotation_xyzw,
     ray_aabb_distance,
+    ray_aabb_interval,
     supported_gaze_events,
 )
 
@@ -13,6 +14,7 @@ class Task5HumanStateTests(unittest.TestCase):
         distance = ray_aabb_distance([0, 0, 0], [0, 0, 1], [[-1, 1], [-1, 1], [2, 3]])
         self.assertAlmostEqual(distance, 2.0)
         self.assertIsNone(ray_aabb_distance([0, 0, 0], [1, 0, 0], [[-1, 1], [-1, 1], [2, 3]]))
+        self.assertEqual(ray_aabb_interval([0, 0, 0], [0, 0, 1], [[-1, 1], [-1, 1], [2, 3]]), (2.0, 3.0))
 
     def test_body_relation_uses_metric_wearer_axes(self):
         relation = body_centric_relation([0, 0, 0], [-1, 0, 2], [1, 0, 0], [0, 0, 1])

@@ -18,7 +18,7 @@ from limo4si.task5_human_state import (
     body_centric_relation,
     mat_vec,
     quaternion_rotation_xyzw,
-    ray_aabb_distance,
+    ray_aabb_interval,
     supported_gaze_events,
     transpose,
     unit,
@@ -98,13 +98,17 @@ def object_center(pose: dict[str, Any], bounds: list[list[float]]) -> list[float
 
 
 def gaze_hit(
-    origin_world: list[float], direction_world: list[float], timestamp_ns: int,
+    origin_world: list[float], direction_world: list[float], gaze_depth_m: float, timestamp_ns: int,
     bounds: dict[str, list[list[float]]], static: dict[str, Any], dynamic: dict[str, list[tuple[int, Any]]],
-    maximum_distance_m: float, maximum_object_pose_skew_ns: int,
-) -> tuple[str | None, float | None]:
+    maximum_distance_m: float, maximum_object_pose_skew_ns: int, maximum_depth_residual_m: float,
+    eligible_object_ids: set[str],
+) -> tuple[str | None, float | None, float | None, float | None]:
+    """Assign gaze only when its measured fixation depth lies inside an object OBB."""
+    if not math.isfinite(gaze_depth_m) or not 0 < gaze_depth_m <= maximum_distance_m:
+        return None, None, None, None
     candidates = []
     for uid, box in bounds.items():
-        if uid not in static and uid not in dynamic:
+        if uid not in eligible_object_ids or (uid not in static and uid not in dynamic):
             continue
         pose, _ = object_pose(uid, timestamp_ns, static, dynamic, maximum_object_pose_skew_ns)
         if pose is None:
@@ -112,14 +116,20 @@ def gaze_hit(
         inverse = transpose(pose["rotation"])
         origin_local = mat_vec(inverse, [x - y for x, y in zip(origin_world, pose["translation"])])
         direction_local = mat_vec(inverse, direction_world)
-        distance = ray_aabb_distance(origin_local, direction_local, box)
-        if distance is not None and distance <= maximum_distance_m:
-            candidates.append((distance, uid))
+        interval = ray_aabb_interval(origin_local, direction_local, box)
+        if interval is None:
+            continue
+        entry, exit_distance = interval
+        residual = max(entry - gaze_depth_m, gaze_depth_m - exit_distance, 0.0)
+        if entry > maximum_distance_m or residual > maximum_depth_residual_m:
+            continue
+        volume = math.prod(maximum - minimum for minimum, maximum in box)
+        midpoint_error = abs((entry + exit_distance) / 2 - gaze_depth_m)
+        candidates.append((residual, volume, midpoint_error, entry, uid, exit_distance))
     if not candidates:
-        return None, None
-    distance, uid = min(candidates)
-    return uid, distance
-
+        return None, None, None, None
+    residual, _, _, entry, uid, exit_distance = min(candidates)
+    return uid, entry, exit_distance, residual
 
 def calibration_device_from_cpf(vrs_path: Path) -> list[list[float]]:
     try:
@@ -133,7 +143,7 @@ def calibration_device_from_cpf(vrs_path: Path) -> list[list[float]]:
 def mine(
     sequence: Path, minimum_gaze_run: int = 4, maximum_hit_distance_m: float = 8.0,
     maximum_wearer_skew_ms: float = 10.0, maximum_object_pose_skew_ms: float = 50.0,
-    maximum_internal_gaze_gap_states: int = 1,
+    maximum_internal_gaze_gap_states: int = 1, maximum_gaze_depth_residual_m: float = 0.05,
 ) -> dict[str, Any]:
     required = {
         "video.vrs", "eyegaze.csv", "aria_trajectory.csv", "scene_objects.csv",
@@ -155,6 +165,10 @@ def mine(
         key=lambda item: item[0],
     )
     bounds = parse_bounds(sequence / "3d_bounding_box.csv")
+    eligible_object_ids = {
+        uid for uid, row in instances.items()
+        if row.get("instance_type") == "object" and row.get("category") != "shelter"
+    }
     static, dynamic = parse_object_poses(sequence / "scene_objects.csv")
     transform = calibration_device_from_cpf(sequence / "video.vrs")
     rotation_device_cpf = [row[:3] for row in transform[:3]]
@@ -191,9 +205,11 @@ def mine(
         gaze_world = mat_vec(rotation_world_device, mat_vec(rotation_device_cpf, gaze_cpf))
         right_world = mat_vec(rotation_world_device, matrix_column(rotation_device_cpf, 0))
         forward_world = mat_vec(rotation_world_device, matrix_column(rotation_device_cpf, 2))
-        hit_uid, hit_distance = gaze_hit(
-            cpf_origin_world, gaze_world, timestamp_ns, bounds, static, dynamic,
-            maximum_hit_distance_m, maximum_object_pose_skew_ns,
+        gaze_depth_m = float(gaze["depth_m"])
+        hit_uid, hit_distance, hit_exit_distance, hit_depth_residual = gaze_hit(
+            cpf_origin_world, gaze_world, gaze_depth_m, timestamp_ns, bounds, static, dynamic,
+            maximum_hit_distance_m, maximum_object_pose_skew_ns, maximum_gaze_depth_residual_m,
+            eligible_object_ids,
         )
         centers = {}
         center_skews_ms: dict[str, float] = {}
@@ -215,10 +231,12 @@ def mine(
             "wearer_world_m": wearer_world,
             "gaze_origin_world_m": cpf_origin_world,
             "gaze_direction_world_unit": gaze_world,
-            "gaze_depth_m": float(gaze["depth_m"]),
+            "gaze_depth_m": gaze_depth_m,
             "gazed_object_id": hit_uid,
             "gazed_object_name": instances.get(str(hit_uid), {}).get("instance_name") if hit_uid else None,
             "gaze_hit_distance_m": hit_distance,
+            "gaze_hit_exit_distance_m": hit_exit_distance,
+            "gaze_depth_obb_residual_m": hit_depth_residual,
             "right_world": right_world,
             "forward_world": forward_world,
             "wearer_timestamp_skew_ms": wearer_skew_us / 1000,
@@ -242,7 +260,7 @@ def mine(
     intervals = sorted((right - left) / 1_000_000 for left, right in zip(gaze_stamps_us, gaze_stamps_us[1:]))
     median_interval_s = intervals[len(intervals) // 2] if intervals else 0.0
     return {
-        "schema_version": 3,
+        "schema_version": 4,
         "dataset": "Aria Digital Twin v2",
         "sequence_name": sequence.name,
         "source_files": [
@@ -250,10 +268,11 @@ def mine(
             "3d_bounding_box.csv", "instances.json",
         ],
         "coordinate_frame": "gravity-aligned wearer CPF: +right and +forward, metric world positions",
-        "gaze_definition": "nearest positive intersection of the measured gaze ray with a same-time object OBB",
+        "gaze_definition": "smallest eligible same-time object OBB containing the measured fixation depth along the gaze ray",
         "minimum_gaze_run_states": minimum_gaze_run,
         "maximum_internal_gaze_gap_states": maximum_internal_gaze_gap_states,
         "maximum_gaze_hit_distance_m": maximum_hit_distance_m,
+        "maximum_gaze_depth_obb_residual_m": maximum_gaze_depth_residual_m,
         "state_rate_hz": round(1.0 / median_interval_s, 3) if median_interval_s > 0 else 0,
         "alignment_diagnostics": {
             "maximum_allowed_wearer_skew_ms": maximum_wearer_skew_ms,
@@ -285,13 +304,14 @@ def main() -> None:
     parser.add_argument("--maximum-wearer-skew-ms", type=float, default=10.0)
     parser.add_argument("--maximum-object-pose-skew-ms", type=float, default=50.0)
     parser.add_argument("--maximum-internal-gaze-gap-states", type=int, default=1)
+    parser.add_argument("--maximum-gaze-depth-residual-m", type=float, default=0.05)
     args = parser.parse_args()
     output = args.output if args.output.is_absolute() else ROOT / args.output
     output.parent.mkdir(parents=True, exist_ok=True)
     result = mine(
         args.sequence, args.minimum_gaze_run, args.maximum_hit_distance_m,
         args.maximum_wearer_skew_ms, args.maximum_object_pose_skew_ms,
-        args.maximum_internal_gaze_gap_states,
+        args.maximum_internal_gaze_gap_states, args.maximum_gaze_depth_residual_m,
     )
     output.write_text(json.dumps(result, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({

@@ -57,6 +57,7 @@ class ScaleQualityPolicy:
     max_task5_wearer_skew_ms: float = 10.0
     max_task5_dynamic_object_skew_ms: float = 50.0
     max_task5_internal_gaze_gap_states: int = 1
+    max_task5_gaze_depth_obb_residual_m: float = 0.05
     min_visible_track_coverage: float = 0.80
     min_identity_assignment_margin: float = 0.18
     min_dominance_ratio: float = 0.65
@@ -77,6 +78,8 @@ class ScaleQualityPolicy:
     max_option_temporal_marker_gap: int = 1
     max_option_relation_marker_gap: int = 2
     max_published_distance_decimals: int = 1
+    max_task5_correct_option_share: float = 0.50
+    min_task5_correct_option_labels: int = 3
 
 
 def _finite(value: Any) -> bool:
@@ -519,8 +522,8 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
     result = question["result_json"]
     if result.get("annotation_direct") is not True:
         errors.append("Task 5 answer is not marked as directly annotation-derived")
-    if result.get("gaze_grounding_method") != "ray_obb_intersection":
-        errors.append("Task 5 gaze is not grounded by a measured ray/3D-box intersection")
+    if result.get("gaze_grounding_method") != "depth_consistent_ray_obb_intersection":
+        errors.append("Task 5 gaze is not grounded by measured direction+depth/3D-box containment")
     coordinate_frame = str(result.get("coordinate_frame", "")).lower()
     if "wearer" not in coordinate_frame or "gravity" not in coordinate_frame or "image" in coordinate_frame:
         errors.append("Task 5 relation must use a gravity-aligned wearer frame, not image coordinates")
@@ -554,6 +557,18 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
         if _task5_relation_label(relation) != relation.get("label"):
             errors.append("Task 5 published relation label is stale or geometrically inconsistent")
             break
+        if str(state.get("gazed_object_id")) == target:
+            depth = state.get("gaze_depth_m")
+            entry = state.get("gaze_hit_distance_m")
+            exit_distance = state.get("gaze_hit_exit_distance_m")
+            residual = state.get("gaze_depth_obb_residual_m")
+            if not all(_finite(value) for value in (depth, entry, exit_distance, residual)):
+                errors.append("Task 5 target hit lacks finite gaze-depth/OBB interval evidence")
+                break
+            recomputed_residual = max(float(entry) - float(depth), float(depth) - float(exit_distance), 0.0)
+            if abs(recomputed_residual - float(residual)) > 1e-6 or float(residual) > policy.max_task5_gaze_depth_obb_residual_m:
+                errors.append("Task 5 measured fixation depth is inconsistent with the target OBB")
+                break
         gaze = state.get("gaze_direction_world_unit")
         if not isinstance(gaze, list) or len(gaze) != 3 or not all(_finite(value) for value in gaze):
             errors.append("Task 5 timeline lacks a finite measured gaze direction")
@@ -591,6 +606,35 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
     transition = result.get("transition") or {}
     qtype = question.get("question_type")
     if qtype == "relation_change_between_gazes":
+        target_runs = []
+        run_start = None
+        last_hit = None
+        direct_hits_in_run = 0
+        gap_states = 0
+        for state in states:
+            if str(state.get("gazed_object_id")) == target:
+                if run_start is None:
+                    run_start = int(state["frame"])
+                last_hit = int(state["frame"])
+                direct_hits_in_run += 1
+                gap_states = 0
+            elif run_start is not None:
+                if state.get("gazed_object_id") is None:
+                    gap_states += 1
+                else:
+                    gap_states = policy.max_task5_internal_gaze_gap_states + 1
+                if gap_states > policy.max_task5_internal_gaze_gap_states:
+                    if direct_hits_in_run >= policy.min_task5_gaze_run_states:
+                        target_runs.append((run_start, last_hit))
+                    run_start = None
+                    last_hit = None
+                    direct_hits_in_run = 0
+                    gap_states = 0
+        if run_start is not None and direct_hits_in_run >= policy.min_task5_gaze_run_states:
+            target_runs.append((run_start, last_hit))
+        published_runs = [(int(event["start_index"]), int(event["end_index"])) for event in events]
+        if target_runs != published_runs:
+            errors.append("repeated-gaze window contains an unreported target gaze or mismatched event bounds")
         if len(events) != 2:
             errors.append("repeated-gaze Task 5 QA must contain exactly two gaze events")
         elif float(events[1]["start_time_s"]) - float(events[0]["end_time_s"]) < policy.min_task5_event_gap_sec:
@@ -730,6 +774,20 @@ def validate_release(data: Mapping[str, Any], policy: ScaleQualityPolicy | None 
             "warnings": warnings,
             "metrics": metrics,
         })
+    task5_reports = [report for report in reports if report["task_id"] == TASK5_ID]
+    if len(task5_reports) >= 4:
+        task5_labels = [
+            (group.get("qa") or [{}])[0].get("correct_option")
+            for group in groups
+            if (group.get("qa") or [{}])[0].get("task_id") == TASK5_ID
+        ]
+        label_counts = {label: task5_labels.count(label) for label in sorted(set(task5_labels))}
+        share = max(label_counts.values(), default=0) / len(task5_labels)
+        if len(label_counts) < policy.min_task5_correct_option_labels or share > policy.max_task5_correct_option_share:
+            message = f"Task 5 correct-option positions are imbalanced: {label_counts}"
+            for report in task5_reports:
+                report["errors"].append(message)
+                report["status"] = "rejected"
     rejected = [report for report in reports if report["status"] == "rejected"]
     return {
         "status": "ok" if not rejected else "failed",

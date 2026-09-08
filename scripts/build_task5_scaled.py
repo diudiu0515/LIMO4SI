@@ -55,11 +55,15 @@ def reduced(values: list[str]) -> list[str]:
     return out
 
 
-def make_options(correct: str, alternatives: list[str], seed: str) -> tuple[list[dict[str, str]], str]:
+def make_options(
+    correct: str, alternatives: list[str], seed: str, correct_index: int | None = None,
+) -> tuple[list[dict[str, str]], str]:
     values = [correct, *alternatives]
     if len(values) != 4 or len(set(values)) != 4:
         raise ValueError(f"Task 5 options are not four unique parallel choices: {seed}")
-    offset = int(hashlib.sha256(seed.encode("utf-8")).hexdigest()[:8], 16) % 4
+    offset = correct_index if correct_index is not None else int(hashlib.sha256(seed.encode("utf-8")).hexdigest()[:8], 16) % 4
+    if not 0 <= offset < 4:
+        raise ValueError(f"invalid correct option index {offset}")
     ordered = alternatives[:]
     ordered.insert(offset, correct)
     labels = ["A", "B", "C", "D"]
@@ -84,15 +88,19 @@ def _parallel_pair_distractors(start: str, end: str) -> list[tuple[str, str]]:
     raise ValueError("could not construct three parallel relation-pair distractors")
 
 
-def transition_options(object_name: str, start: str, end: str, seed: str) -> tuple[list[dict[str, str]], str, str]:
+def transition_options(
+    object_name: str, start: str, end: str, seed: str, correct_index: int | None = None,
+) -> tuple[list[dict[str, str]], str, str]:
     template = f"The {object_name} changes from {{}} to {{}}."
     correct = template.format(start, end)
     alternatives = [template.format(*pair) for pair in _parallel_pair_distractors(start, end)]
-    options, label = make_options(correct, alternatives, seed)
+    options, label = make_options(correct, alternatives, seed, correct_index)
     return options, label, correct
 
 
-def sequence_options(object_name: str, sequence: list[str], seed: str) -> tuple[list[dict[str, str]], str, str]:
+def sequence_options(
+    object_name: str, sequence: list[str], seed: str, correct_index: int | None = None,
+) -> tuple[list[dict[str, str]], str, str]:
     arrow = " → "
     template = f"The {object_name} follows: {{}}."
     correct = template.format(arrow.join(sequence))
@@ -111,14 +119,17 @@ def sequence_options(object_name: str, sequence: list[str], seed: str) -> tuple[
             break
     if len(alternatives) != 3:
         raise ValueError("could not construct three equal-slot relation-sequence distractors")
-    options, label = make_options(correct, alternatives, seed)
+    options, label = make_options(correct, alternatives, seed, correct_index)
     return options, label, correct
 
 def compact_state(state: dict[str, Any], object_id: str) -> dict[str, Any]:
     return {
         "frame": state["frame_index"], "time_s": state["time_s"],
         "gazed_object_id": state["gazed_object_id"], "gazed_object_name": state["gazed_object_name"],
+        "gaze_depth_m": state["gaze_depth_m"],
         "gaze_hit_distance_m": state["gaze_hit_distance_m"],
+        "gaze_hit_exit_distance_m": state["gaze_hit_exit_distance_m"],
+        "gaze_depth_obb_residual_m": state["gaze_depth_obb_residual_m"],
         "gaze_origin_world_m": state["gaze_origin_world_m"],
         "gaze_direction_world_unit": state["gaze_direction_world_unit"],
         "wearer_world_m": state["wearer_world_m"], "right_world": state["right_world"],
@@ -141,12 +152,13 @@ def build_question(spec: dict[str, Any], analysis: dict[str, Any]) -> tuple[dict
     lo, hi = (int(value) for value in spec["window_frames"])
     timeline = [compact_state(state, object_id) for state in states[lo:hi + 1]]
     qtype = spec["question_type"]
+    correct_index = spec.get("_correct_option_index")
     event_evidence: list[dict[str, Any]] = []
     if qtype == "relation_change_between_gazes":
         selected = [event_by_start(events, object_id, int(frame)) for frame in spec["event_start_frames"]]
-        anchor_frames = [int(event["start_index"]) + int(event["state_count"]) // 2 for event in selected]
+        anchor_frames = [(int(event["start_index"]) + int(event["end_index"])) // 2 for event in selected]
         start, end = (states[frame]["object_relations"][object_id]["label"] for frame in anchor_frames)
-        options, correct_option, correct = transition_options(display, start, end, spec["id"])
+        options, correct_option, correct = transition_options(display, start, end, spec["id"], correct_index)
         question = f"Between the two sustained gazes at the {display}, how does its wearer-relative position change?"
         explanation = f"At the first gaze event the {display} is {start}; at the later event it is {end}."
         event_evidence = selected
@@ -154,10 +166,10 @@ def build_question(spec: dict[str, Any], analysis: dict[str, Any]) -> tuple[dict
     elif qtype == "gaze_onset_side_change":
         selected = [event_by_start(events, object_id, int(spec["event_start_frames"][0]))]
         before = int(spec["pre_frame"])
-        after = int(selected[0]["start_index"]) + int(selected[0]["state_count"]) // 2
+        after = (int(selected[0]["start_index"]) + int(selected[0]["end_index"])) // 2
         start = states[before]["object_relations"][object_id]["label"]
         end = states[after]["object_relations"][object_id]["label"]
-        options, correct_option, correct = transition_options(display, start, end, spec["id"])
+        options, correct_option, correct = transition_options(display, start, end, spec["id"], correct_index)
         question = f"As gaze turns to the {display}, how does it shift in the wearer's body-relative view?"
         explanation = f"Immediately before the gaze onset the {display} is {start}; during the sustained gaze it is {end}."
         event_evidence = selected
@@ -174,7 +186,7 @@ def build_question(spec: dict[str, Any], analysis: dict[str, Any]) -> tuple[dict
         if str(last_event["object_id"]) != object_id:
             raise ValueError(f"{spec['id']} configured object is not the last gaze-annotated object")
         relation_sequence = reduced([row["relation"]["label"] for row in timeline])
-        options, correct_option, correct = sequence_options(display, relation_sequence, spec["id"])
+        options, correct_option, correct = sequence_options(display, relation_sequence, spec["id"], correct_index)
         question = f"The {display} is the last gaze-annotated object in this window. How does its wearer-relative position evolve?"
         explanation = f"Across the full window, the annotation-derived relation sequence is {' → '.join(relation_sequence)}."
         event_evidence = [last_event]
@@ -194,7 +206,8 @@ def build_question(spec: dict[str, Any], analysis: dict[str, Any]) -> tuple[dict
         "alignment_diagnostics": analysis.get("alignment_diagnostics"),
         "maximum_internal_gaze_gap_states": analysis.get("maximum_internal_gaze_gap_states"),
         "gaze_definition": analysis["gaze_definition"],
-        "gaze_grounding_method": "ray_obb_intersection",
+        "gaze_grounding_method": "depth_consistent_ray_obb_intersection",
+        "maximum_gaze_depth_obb_residual_m": analysis.get("maximum_gaze_depth_obb_residual_m"),
         "object_id": object_id, "object_name": canonical_object_name,
         "timeline": timeline, "gaze_events": event_evidence, "transition": transition,
     }
@@ -203,7 +216,7 @@ def build_question(spec: dict[str, Any], analysis: dict[str, Any]) -> tuple[dict
         "question_categories": [CATEGORY_BY_TYPE[qtype]], "question": question,
         "options": options, "correct_option": correct_option, "correct_answer": correct, "answer": correct,
         "explanation": explanation, "status": "ok",
-        "method": "Uses measured ADT eye-gaze rays, same-time object 6DoF/3D boxes, and a gravity-aligned wearer frame; no answer label is inferred by an LLM.",
+        "method": "Uses measured ADT eye-gaze direction and fixation depth, same-time object 6DoF/3D boxes, and a gravity-aligned wearer frame; no answer label is inferred by an LLM.",
         "result_json": result,
     }, {"object_id": object_id, "anchor_frames": [transition["start_frame"], transition["end_frame"]]}
 
@@ -235,7 +248,8 @@ def main() -> None:
     config = json.loads(resolve(args.config).read_text(encoding="utf-8"))
     analysis_cache: dict[Path, dict[str, Any]] = {}
     groups = []
-    for spec in config["cases"]:
+    for case_index, raw_spec in enumerate(config["cases"]):
+        spec = dict(raw_spec, _correct_option_index=case_index % 4)
         analysis_value = spec.get("analysis") or config.get("analysis")
         media_value = spec.get("media_source") or config.get("media_source")
         if not analysis_value or not media_value:
@@ -281,7 +295,7 @@ def main() -> None:
             (g['video_window']['source_sequence'], g['video_window']['start_sec'], g['video_window']['duration_sec'])
             for g in groups
         }),
-        "answer_provenance": "directly computed from gaze ray / same-time 3D OBB / wearer pose annotations",
+        "answer_provenance": "directly computed from gaze ray + fixation depth / same-time 3D OBB / wearer pose annotations",
         "coordinate_policy": next(iter(coordinate_frames)),
     }
     data_path = resolve(args.site_data)

@@ -20,6 +20,7 @@
     "max_task5_wearer_skew_ms": 10.0,
     "max_task5_dynamic_object_skew_ms": 50.0,
     "max_task5_internal_gaze_gap_states": 1,
+    "max_task5_gaze_depth_obb_residual_m": 0.05,
     "min_visible_track_coverage": 0.8,
     "min_identity_assignment_margin": 0.18,
     "min_dominance_ratio": 0.65,
@@ -36,7 +37,9 @@
     "max_option_numeric_count_gap": 0,
     "max_option_temporal_marker_gap": 1,
     "max_option_relation_marker_gap": 2,
-    "max_published_distance_decimals": 1
+    "max_published_distance_decimals": 1,
+    "max_task5_correct_option_share": 0.5,
+    "min_task5_correct_option_labels": 3
   },
   "case_count": 36,
   "accepted_count": 36,
@@ -1561,7 +1564,7 @@
     },
     {
       "case_index": 31,
-      "case_id": "task5_repeated_gaze_white_vase",
+      "case_id": "task5_repeated_gaze_white_flatware_tray",
       "task_id": "task5_human_state_grounded_spatial_reasoning",
       "question_type": "relation_change_between_gazes",
       "status": "accepted",
@@ -1570,39 +1573,39 @@
       "metrics": {
         "option_information_profiles": [
           {
-            "words": 8,
+            "words": 9,
             "numbers": 0,
             "temporal_markers": 0,
             "relation_markers": 3,
-            "information_units": 11
+            "information_units": 12
           },
           {
-            "words": 8,
+            "words": 9,
             "numbers": 0,
             "temporal_markers": 0,
             "relation_markers": 3,
-            "information_units": 11
+            "information_units": 12
           },
           {
-            "words": 8,
+            "words": 9,
             "numbers": 0,
             "temporal_markers": 0,
             "relation_markers": 3,
-            "information_units": 11
+            "information_units": 12
           },
           {
-            "words": 8,
+            "words": 9,
             "numbers": 0,
             "temporal_markers": 0,
             "relation_markers": 3,
-            "information_units": 11
+            "information_units": 12
           }
         ],
-        "temporal_state_count": 78,
-        "temporal_span_sec": 2.566256,
-        "max_temporal_gap_ratio": 0.012987,
+        "temporal_state_count": 70,
+        "temporal_span_sec": 2.299632,
+        "max_temporal_gap_ratio": 0.014493,
         "temporal_span_ratio": 1.0,
-        "lateral_relation_shift_m": 0.228776
+        "lateral_relation_shift_m": 0.115956
       }
     },
     {
@@ -1648,7 +1651,7 @@
         "temporal_span_sec": 2.699568,
         "max_temporal_gap_ratio": 0.012346,
         "temporal_span_ratio": 1.0,
-        "lateral_relation_shift_m": 0.131736
+        "lateral_relation_shift_m": 0.131534
       }
     },
     {
@@ -1694,7 +1697,7 @@
         "temporal_span_sec": 1.766384,
         "max_temporal_gap_ratio": 0.018868,
         "temporal_span_ratio": 1.0,
-        "lateral_relation_shift_m": 0.231151
+        "lateral_relation_shift_m": 0.219651
       }
     },
     {
@@ -1736,9 +1739,9 @@
             "information_units": 12
           }
         ],
-        "temporal_state_count": 30,
-        "temporal_span_sec": 0.966512,
-        "max_temporal_gap_ratio": 0.034483,
+        "temporal_state_count": 31,
+        "temporal_span_sec": 0.99984,
+        "max_temporal_gap_ratio": 0.033333,
         "temporal_span_ratio": 1.0,
         "lateral_relation_shift_m": 0.325032
       }
@@ -1757,13 +1760,6 @@
             "words": 7,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 5,
-            "information_units": 12
-          },
-          {
-            "words": 7,
-            "numbers": 0,
-            "temporal_markers": 0,
             "relation_markers": 4,
             "information_units": 11
           },
@@ -1780,6 +1776,13 @@
             "temporal_markers": 0,
             "relation_markers": 4,
             "information_units": 11
+          },
+          {
+            "words": 7,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 5,
+            "information_units": 12
           }
         ],
         "temporal_state_count": 114,
@@ -1827,9 +1830,9 @@
             "information_units": 9
           }
         ],
-        "temporal_state_count": 87,
-        "temporal_span_sec": 2.866208,
-        "max_temporal_gap_ratio": 0.011628,
+        "temporal_state_count": 68,
+        "temporal_span_sec": 2.232976,
+        "max_temporal_gap_ratio": 0.014925,
         "temporal_span_ratio": 1.0
       }
     }

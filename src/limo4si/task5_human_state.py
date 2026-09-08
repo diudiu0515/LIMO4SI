@@ -52,8 +52,10 @@ def quaternion_rotation_xyzw(quaternion: Vec3) -> list[list[float]]:
     ]
 
 
-def ray_aabb_distance(origin: Vec3, direction: Vec3, bounds: Sequence[Sequence[float]]) -> float | None:
-    """Distance parameter to the first positive ray/AABB intersection."""
+def ray_aabb_interval(
+    origin: Vec3, direction: Vec3, bounds: Sequence[Sequence[float]],
+) -> tuple[float, float] | None:
+    """Return the positive entry/exit interval for a ray through an AABB."""
     lo, hi = 0.0, math.inf
     for axis in range(3):
         value = float(direction[axis])
@@ -69,8 +71,16 @@ def ray_aabb_distance(origin: Vec3, direction: Vec3, bounds: Sequence[Sequence[f
         lo, hi = max(lo, first), min(hi, second)
         if hi < lo:
             return None
-    return lo if lo > 0 else hi if hi > 0 else None
+    return (lo, hi) if hi > 0 else None
 
+
+def ray_aabb_distance(origin: Vec3, direction: Vec3, bounds: Sequence[Sequence[float]]) -> float | None:
+    """Distance parameter to the first positive ray/AABB intersection."""
+    interval = ray_aabb_interval(origin, direction, bounds)
+    if interval is None:
+        return None
+    entry, exit_distance = interval
+    return entry if entry > 0 else exit_distance
 
 def body_centric_relation(
     wearer_world: Vec3,

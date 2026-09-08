@@ -20,6 +20,7 @@
     "max_task5_wearer_skew_ms": 10.0,
     "max_task5_dynamic_object_skew_ms": 50.0,
     "max_task5_internal_gaze_gap_states": 1,
+    "max_task5_gaze_depth_obb_residual_m": 0.05,
     "min_visible_track_coverage": 0.8,
     "min_identity_assignment_margin": 0.18,
     "min_dominance_ratio": 0.65,
@@ -36,7 +37,9 @@
     "max_option_numeric_count_gap": 0,
     "max_option_temporal_marker_gap": 1,
     "max_option_relation_marker_gap": 2,
-    "max_published_distance_decimals": 1
+    "max_published_distance_decimals": 1,
+    "max_task5_correct_option_share": 0.5,
+    "min_task5_correct_option_labels": 3
   },
   "case_count": 6,
   "accepted_count": 6,

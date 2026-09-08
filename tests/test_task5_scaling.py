@@ -34,6 +34,12 @@ class Task5ScalingTests(unittest.TestCase):
             self.assertEqual(len({profile["temporal_markers"] for profile in profiles}), 1)
             self.assertLessEqual(max(p["information_units"] for p in profiles) / min(p["information_units"] for p in profiles), 1.25)
 
+    def test_published_correct_option_positions_are_balanced(self):
+        rows = [json.loads(line) for line in (ROOT / "outputs/qa/task5_scaled_qa.jsonl").read_text().splitlines()]
+        counts = Counter(row["correct_option"] for row in rows)
+        self.assertGreaterEqual(len(counts), 3)
+        self.assertLessEqual(max(counts.values()) / len(rows), 0.5)
+
     def test_selection_reports_category_deficits(self):
         candidates, _ = generate_task5_candidates(self.analysis)
         _, report = select_balanced_candidates(

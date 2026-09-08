@@ -8,6 +8,6 @@
     "last_gaze_annotated_object": 2
   },
   "unique_video_windows": 6,
-  "answer_provenance": "directly computed from gaze ray / same-time 3D OBB / wearer pose annotations",
+  "answer_provenance": "directly computed from gaze ray + fixation depth / same-time 3D OBB / wearer pose annotations",
   "coordinate_policy": "gravity-aligned wearer CPF: +right and +forward, metric world positions"
 }

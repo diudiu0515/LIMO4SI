@@ -110,7 +110,7 @@ Task 3 回答人的完整三维轨迹与静态场景地标之间的关系，不�
 
 ## Task 5：Human-State–Grounded Spatial Reasoning
 
-Task 5 当前使用 Aria Digital Twin v2 的官方完整样本，不把 Task 1/4 的 body-forward proxy 当作 gaze。逐帧答案链路为：真实 `eyegaze.csv` 射线 → 同时刻物体 6DoF/3D OBB 相交 → 世界坐标中的物体中心 → 重力对齐的 wearer CPF 左右/前后坐标。动态物体使用逐帧位姿，不假设物体固定；LLM 不参与答案标签判断。
+Task 5 当前使用 Aria Digital Twin v2 的官方完整样本，不把 Task 1/4 的 body-forward proxy 当作 gaze。逐帧答案链路为：真实 `eyegaze.csv` 射线与 fixation depth → 同时刻物体 6DoF/3D OBB 包含检验 → 世界坐标中的物体中心 → 重力对齐的 wearer CPF 左右/前后坐标。动态物体使用逐帧位姿，不假设物体固定；LLM 不参与答案标签判断。
 
 | 类别 | 例数 | 计算与发布门槛 |
 |---|---:|---|
@@ -136,7 +136,7 @@ Task 5 已从手工单序列配置升级为可直接遍历多个 ADT 序列的 f
   --target-per-category 100 --reuse-analysis --reuse-media
 ```
 
-一条命令会执行：发现完整序列 → 时间对齐 gaze/wearer/object annotation → gaze ray/OBB 相交 → 持续 gaze 事件 → 三类候选自动挖掘 → 跨序列和物体平衡选择 → 视频/定位证据 → QA → 独立发布门禁。关键输出位于 `outputs/qa/task5_scale/`。单个坏序列会记录为 `rejected_sequence` 并继续处理其他序列；任一类别数量不足、证据导出失败或质量门禁失败时，不会静默发布。
+一条命令会执行：发现完整序列 → 时间对齐 gaze/wearer/object annotation → gaze ray + fixation depth/OBB 包含检验 → 持续 gaze 事件 → 三类候选自动挖掘 → 跨序列和物体平衡选择 → 视频/定位证据 → QA → 独立发布门禁。关键输出位于 `outputs/qa/task5_scale/`。单个坏序列会记录为 `rejected_sequence` 并继续处理其他序列；任一类别数量不足、证据导出失败或质量门禁失败时，不会静默发布。
 
 此前的三个通用生成要求在 Task 5 中均已编码：
 
@@ -144,7 +144,7 @@ Task 5 已从手工单序列配置升级为可直接遍历多个 ADT 序列的 f
 2. **距离不伪精确**：当前 Task 5 发布答案不使用米制距离；以后若加入，公共门禁最多允许 1 位小数。完整精度只保留在隐藏证据 JSON 中。
 3. **样例规则进入算法**：同一物体两次 gaze、gaze onset 前后变化、最后 gaze 物体三类均由 annotation 自动提候选，不再依赖手写答案；每类默认至少 2 例，规模化时由 `--target-per-category` 控制。
 
-scale 门槛还包括：wearer 对齐误差 ≤ 10 ms、动态物体位姿误差 ≤ 50 ms、每个 gaze event 至少 4 个直接命中状态、event 命中支持率 ≥ 80%、内部缺失最多 1 个状态、关系横向变化 ≥ 0.05 m，gaze onset 题还要求 wearer 转向 ≥ 8°。
+scale 门槛还包括：wearer 对齐误差 ≤ 10 ms、动态物体位姿误差 ≤ 50 ms、fixation depth 到目标 OBB 的残差 ≤ 0.05 m、每个 gaze event 至少 4 个直接命中状态、event 命中支持率 ≥ 80%、内部缺失最多 1 个状态、关系横向变化 ≥ 0.05 m，gaze onset 题还要求 wearer 转向 ≥ 8°。
 
 ## 本轮关键修正
 
