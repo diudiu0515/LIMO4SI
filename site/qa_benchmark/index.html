@@ -47,6 +47,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <a href="#case-30">Case 30</a>
 <a href="#case-31">Case 31</a>
 <a href="#case-32">Case 32</a>
+<a href="#case-33">Case 33</a>
+<a href="#case-34">Case 34</a>
 </nav>
 <section class="staticCase" id="case-1">
 <p class="eyebrow">Case 1</p><h2>Task 1 · overall relation change · iiith_cooking_145_2 · cam01 · 15s dynamic window around frame 11250</h2>
@@ -7373,6 +7375,80 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
       }
     }
   ]
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-33">
+<p class="eyebrow">Case 33</p><h2>Task 5A · EgoBody · gaze on interactee</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15s</strong><span>video window</span></div>
+</div>
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5a_egobody_gaze_interactee_schematic.svg" loading="lazy" alt="original"><figcaption>License-safe annotation-derived schematic; raw EgoBody RGB is not distributed.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_grounded_interactee_relation</div>
+<div class="question">Q1. While the measured gaze remains on the visible interactee, where is that person relative to the camera wearer?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">In front of the camera wearer.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">Behind the camera wearer.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">Clearly to the camera wearer's left.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">Clearly to the camera wearer's right.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">In front of the camera wearer.</div><div class="explanation">At three audited frames the interactee is approximately 1.92 m away and remains in the front sector of the wearer's SMPL-X root frame.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Measured HoloLens gaze and scene-aligned SMPL-X fits; no LLM label judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;answer_type&quot;: &quot;gaze_grounded_interactee_relation&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-34">
+<p class="eyebrow">Case 34</p><h2>Task 5C · BEHAVE · backpack motion</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>9.0s</strong><span>video window</span></div>
+</div>
+<details class="visualEvidenceBox"><summary>Show localization and top-down evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5c_behave_backpack_motion_schematic.svg" loading="lazy" alt="original"><figcaption>License-safe annotation-derived motion schematic; no BEHAVE source frames are distributed.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">human_object_motion_comparison</div>
+<div class="question">Q1. Across this interaction window, which moved farther in the registered 3D scene: the person or the backpack?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The backpack moved farther.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The person moved farther.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">They moved the same distance.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The annotations cannot distinguish them.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The backpack moved farther.</div><div class="explanation">The registered backpack moved about 1.10 m while the fitted human root moved about 0.38 m.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Time-aligned BEHAVE SMPL-H and registered object fits; no LLM label judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;answer_type&quot;: &quot;human_object_motion_comparison&quot;
 }</pre></details>
 </article>
 </div></section>

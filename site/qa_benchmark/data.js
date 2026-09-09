@@ -69026,6 +69026,157 @@ window.QA_DATA = {
         ]
       },
       "case_policy": "one annotation-derived question per unique gaze/object window"
+    },
+    {
+      "name": "task5a_egobody_gaze_interactee_front",
+      "title": "Task 5A · EgoBody · gaze on interactee",
+      "original_image": "./task5_media/task5a_egobody_gaze_interactee_schematic.svg",
+      "original_caption": "License-safe annotation-derived schematic; raw EgoBody RGB is not distributed.",
+      "video_window": {
+        "source_sequence": "recording_20220315_S21_S30_01",
+        "start_frame": 2925,
+        "end_frame": 3105,
+        "public_media": "schematic_only"
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_grounded_interactee_relation",
+          "question_categories": [
+            "gaze_on_visible_interactee"
+          ],
+          "question": "While the measured gaze remains on the visible interactee, where is that person relative to the camera wearer?",
+          "options": [
+            {
+              "label": "A",
+              "text": "In front of the camera wearer."
+            },
+            {
+              "label": "B",
+              "text": "Behind the camera wearer."
+            },
+            {
+              "label": "C",
+              "text": "Clearly to the camera wearer's left."
+            },
+            {
+              "label": "D",
+              "text": "Clearly to the camera wearer's right."
+            }
+          ],
+          "correct_option": "A",
+          "correct_answer": "In front of the camera wearer.",
+          "answer": "In front of the camera wearer.",
+          "explanation": "At three audited frames the interactee is approximately 1.92 m away and remains in the front sector of the wearer's SMPL-X root frame.",
+          "status": "ok",
+          "method": "Measured HoloLens gaze and scene-aligned SMPL-X fits; no LLM label judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_grounded_interactee_relation",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "annotation_source": "EgoBody",
+            "coordinate_frame": "camera wearer's scene-aligned SMPL-X root frame",
+            "gaze_grounding_method": "measured HoloLens gaze projected inside visible interactee keypoint box",
+            "measurements": [
+              {
+                "frame": 2925,
+                "distance_m": 1.9243462085723877,
+                "wearer_relative_xyz_m": [
+                  -0.10371435763564368,
+                  -0.8415358881467239,
+                  1.727474757152242
+                ],
+                "relation": "front"
+              },
+              {
+                "frame": 3015,
+                "distance_m": 1.9160230159759521,
+                "wearer_relative_xyz_m": [
+                  -0.10779993429003734,
+                  -0.857035121968365,
+                  1.7102673153703984
+                ],
+                "relation": "front"
+              },
+              {
+                "frame": 3105,
+                "distance_m": 1.932133436203003,
+                "wearer_relative_xyz_m": [
+                  -0.11607199996321158,
+                  -0.8371635819367979,
+                  1.7374763058996896
+                ],
+                "relation": "front"
+              }
+            ]
+          }
+        }
+      ],
+      "case_policy": "No EgoBody RGB or raw annotation is included in the public repository."
+    },
+    {
+      "name": "task5c_behave_backpack_motion",
+      "title": "Task 5C · BEHAVE · backpack motion",
+      "original_image": "./task5_media/task5c_behave_backpack_motion_schematic.svg",
+      "original_caption": "License-safe annotation-derived motion schematic; no BEHAVE source frames are distributed.",
+      "video_window": {
+        "source_sequence": "Date05_Sub05_backpack",
+        "start_sec": 24.0,
+        "duration_sec": 9.0,
+        "public_media": "schematic_only"
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "human_object_motion_comparison",
+          "question_categories": [
+            "human_object_state"
+          ],
+          "question": "Across this interaction window, which moved farther in the registered 3D scene: the person or the backpack?",
+          "options": [
+            {
+              "label": "A",
+              "text": "The backpack moved farther."
+            },
+            {
+              "label": "B",
+              "text": "The person moved farther."
+            },
+            {
+              "label": "C",
+              "text": "They moved the same distance."
+            },
+            {
+              "label": "D",
+              "text": "The annotations cannot distinguish them."
+            }
+          ],
+          "correct_option": "A",
+          "correct_answer": "The backpack moved farther.",
+          "answer": "The backpack moved farther.",
+          "explanation": "The registered backpack moved about 1.10 m while the fitted human root moved about 0.38 m.",
+          "status": "ok",
+          "method": "Time-aligned BEHAVE SMPL-H and registered object fits; no LLM label judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "human_object_motion_comparison",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "annotation_source": "BEHAVE",
+            "human_displacement_m": 0.38459441977574765,
+            "object_displacement_m": 1.1030272877697263,
+            "evidence_scope": "time-aligned fitted SMPL-H root and registered backpack 6DoF; no contact or gaze claim"
+          }
+        }
+      ],
+      "case_policy": "No BEHAVE source frames or raw annotation is included in the public repository."
     }
   ],
   "release_policy": {
@@ -69038,6 +69189,6 @@ window.QA_DATA = {
     "one_question_per_case": true,
     "no_guessed_answers": true,
     "task3_scope": "full metric human trajectory versus static 3D landmarks",
-    "task5_scope": "measured gaze rays + same-time object 3D boxes + gravity-aligned wearer coordinates"
+    "task5_scope": "ADT gaze-object, EgoBody gaze-human, and BEHAVE human-object relations; public real-data additions use annotation-derived schematics only"
   }
 };

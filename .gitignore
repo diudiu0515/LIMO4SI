@@ -10,3 +10,10 @@ __pycache__/
 /.lfs-chunks/
 /models/
 /logs/
+/outputs/qa/task5_behave_candidates.json
+/outputs/qa/task5_behave_pilot_audit.json
+/outputs/qa/task5_behave_pilot_qa.jsonl
+/outputs/qa/task5_egobody_candidates.json
+/outputs/qa/task5_egobody_pilot/
+/site/qa_benchmark/hoim3_data
+/site/qa_benchmark/task5_media/task5c_behave_backpack_24_33_blurred.mp4
