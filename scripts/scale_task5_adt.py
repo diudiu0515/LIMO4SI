@@ -64,6 +64,10 @@ def main() -> None:
     parser.add_argument("--max-sequences", type=int, default=0)
     parser.add_argument("--max-cases-per-sequence", type=int, default=0)
     parser.add_argument("--minimum-gaze-run", type=int, default=4)
+    parser.add_argument("--minimum-repeated-gaze-gap-sec", type=float, default=2.0)
+    parser.add_argument("--target-window-sec", type=float, default=9.0)
+    parser.add_argument("--minimum-window-sec", type=float, default=8.5)
+    parser.add_argument("--maximum-window-sec", type=float, default=10.0)
     parser.add_argument("--maximum-hit-distance-m", type=float, default=8.0)
     parser.add_argument("--maximum-wearer-skew-ms", type=float, default=10.0)
     parser.add_argument("--maximum-object-pose-skew-ms", type=float, default=50.0)
@@ -98,6 +102,15 @@ def main() -> None:
     if not args.plan_only and shutil.which("ffmpeg") is None:
         raise SystemExit("ffmpeg is required for Task 5 media export")
 
+    if not 0 < args.minimum_window_sec <= args.target_window_sec <= args.maximum_window_sec:
+        raise SystemExit("Task 5 window thresholds must satisfy 0 < minimum <= target <= maximum")
+    candidate_policy = Task5CandidatePolicy(
+        min_event_gap_sec=args.minimum_repeated_gaze_gap_sec,
+        target_window_sec=args.target_window_sec,
+        min_window_sec=args.minimum_window_sec,
+        max_window_sec=args.maximum_window_sec,
+    )
+
     all_candidates: list[dict[str, Any]] = []
     sequence_records: list[dict[str, Any]] = []
     sequence_sources: dict[str, Path] = {}
@@ -124,7 +137,7 @@ def main() -> None:
                 analysis["sequence_name"] = sequence_name
                 analysis_path.write_text(json.dumps(analysis, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
                 record["analysis_status"] = "mined" if not args.reuse_analysis else "remined_stale_cache"
-            candidates, diagnostics = generate_task5_candidates(analysis, Task5CandidatePolicy())
+            candidates, diagnostics = generate_task5_candidates(analysis, candidate_policy)
             for candidate in candidates:
                 candidate["analysis"] = portable(analysis_path)
                 candidate["sequence_path"] = str(sequence)
@@ -146,6 +159,7 @@ def main() -> None:
     report: dict[str, Any] = {
         "pipeline": "annotation-only ADT Task 5 scale pipeline",
         "dataset_root": str(dataset_root),
+        "candidate_policy": candidate_policy.__dict__,
         "sequence_count": len(sequences),
         "accepted_sequence_count": sum(row["status"] == "ok" for row in sequence_records),
         "rejected_sequence_count": sum(row["status"] != "ok" for row in sequence_records),

@@ -49,8 +49,10 @@ class ScaleQualityPolicy:
     min_task3_local_travel_m: float = 0.35
     min_task3_grounding_inliers: int = 12
     min_task5_span_ratio: float = 0.85
+    min_task5_window_sec: float = 8.5
+    max_task5_window_sec: float = 10.0
     min_task5_gaze_run_states: int = 4
-    min_task5_event_gap_sec: float = 0.30
+    min_task5_event_gap_sec: float = 2.0
     min_task5_relation_shift_m: float = 0.05
     min_task5_gaze_onset_turn_deg: float = 8.0
     min_task5_event_hit_support: float = 0.80
@@ -536,6 +538,11 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
         errors.append("Task 5 gaze-event gap policy is missing or too permissive")
     states = result.get("timeline") or []
     duration = (group.get("video_window") or {}).get("duration_sec")
+    if not _finite(duration) or not policy.min_task5_window_sec <= float(duration) <= policy.max_task5_window_sec:
+        errors.append(
+            f"Task 5 public video must be about 9 seconds "
+            f"({policy.min_task5_window_sec:g}–{policy.max_task5_window_sec:g} s)"
+        )
     _validate_time_series(states, float(duration) if _finite(duration) else None, policy.min_task5_span_ratio, policy, errors, metrics)
     target = str(result.get("object_id"))
     target_object_skews = [state.get("object_pose_skew_ms") for state in states]
@@ -638,7 +645,9 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
         if len(events) != 2:
             errors.append("repeated-gaze Task 5 QA must contain exactly two gaze events")
         elif float(events[1]["start_time_s"]) - float(events[0]["end_time_s"]) < policy.min_task5_event_gap_sec:
-            errors.append("the two gaze events are not temporally distinct")
+            errors.append(
+                f"the two gaze events must be separated by at least {policy.min_task5_event_gap_sec:g} seconds"
+            )
         if transition.get("start_relation") == transition.get("end_relation"):
             errors.append("repeated-gaze relation-change QA contains no relation change")
     elif qtype == "gaze_onset_side_change":

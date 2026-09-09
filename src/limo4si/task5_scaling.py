@@ -19,7 +19,7 @@ CATEGORY_BY_TYPE = {
 
 @dataclass(frozen=True)
 class Task5CandidatePolicy:
-    min_event_gap_sec: float = 0.30
+    min_event_gap_sec: float = 2.0
     min_event_direct_hits: int = 4
     min_event_hit_support: float = 0.80
     max_internal_gap_states: int = 1
@@ -27,8 +27,10 @@ class Task5CandidatePolicy:
     min_onset_turn_deg: float = 8.0
     min_pre_gaze_gap_sec: float = 0.40
     max_pre_gaze_gap_sec: float = 1.50
-    max_repeated_window_sec: float = 6.0
-    max_last_object_window_sec: float = 4.0
+    max_repeated_window_sec: float = 12.0
+    target_window_sec: float = 9.0
+    min_window_sec: float = 8.5
+    max_window_sec: float = 10.0
     max_relation_sequence_length: int = 4
     max_candidates_per_object_category: int = 8
 
@@ -62,6 +64,59 @@ def _case_id(sequence: str, category: str, object_id: str, start: int, end: int)
 
 def _relation(states: Mapping[int, Mapping[str, Any]], frame: int, object_id: str) -> Mapping[str, Any] | None:
     return (states.get(frame, {}).get("object_relations") or {}).get(object_id)
+
+
+def _expanded_window(
+    states: Mapping[int, Mapping[str, Any]], core_start: int, core_end: int, policy: Task5CandidatePolicy,
+    *, align_end: bool = False, allowed_start_frame: int | None = None, allowed_end_frame: int | None = None,
+) -> tuple[int, int] | None:
+    """Return a real annotation-covered ~9 s window containing the core event."""
+    ordered = sorted(states.values(), key=lambda state: float(state["time_s"]))
+    if allowed_start_frame is not None:
+        ordered = [state for state in ordered if int(state["frame_index"]) >= allowed_start_frame]
+    if allowed_end_frame is not None:
+        ordered = [state for state in ordered if int(state["frame_index"]) <= allowed_end_frame]
+    if not ordered or core_start not in states or core_end not in states:
+        return None
+    times = [float(state["time_s"]) for state in ordered]
+    sequence_start, sequence_end = times[0], times[-1]
+    if sequence_end - sequence_start < policy.min_window_sec:
+        return None
+    core_start_time = float(states[core_start]["time_s"])
+    core_end_time = float(states[core_end]["time_s"])
+    if not sequence_start <= core_start_time <= core_end_time <= sequence_end:
+        return None
+    if core_end_time - core_start_time > policy.target_window_sec:
+        return None
+    if align_end:
+        desired_end = core_end_time
+        desired_start = desired_end - policy.target_window_sec
+        if desired_start < sequence_start:
+            return None
+    else:
+        center = (core_start_time + core_end_time) / 2.0
+        desired_start = center - policy.target_window_sec / 2.0
+        desired_end = desired_start + policy.target_window_sec
+        if desired_start < sequence_start:
+            desired_end += sequence_start - desired_start
+            desired_start = sequence_start
+        if desired_end > sequence_end:
+            desired_start -= desired_end - sequence_end
+            desired_end = sequence_end
+        if desired_start < sequence_start:
+            desired_start = sequence_start
+    if desired_start < sequence_start or desired_end > sequence_end:
+        return None
+    start_pos = min(range(len(times)), key=lambda index: abs(times[index] - desired_start))
+    end_pos = min(range(len(times)), key=lambda index: abs(times[index] - desired_end))
+    start_frame = int(ordered[start_pos]["frame_index"])
+    end_frame = int(ordered[end_pos]["frame_index"])
+    actual_duration = times[end_pos] - times[start_pos]
+    if not policy.min_window_sec <= actual_duration <= policy.max_window_sec:
+        return None
+    if start_frame > core_start or end_frame < core_end:
+        return None
+    return start_frame, end_frame
 
 
 def _candidate(
@@ -109,7 +164,7 @@ def generate_task5_candidates(
 
     # 1. Compare two temporally distinct sustained gazes at the same object.
     for object_id, object_events in by_object.items():
-        for first, second in zip(object_events, object_events[1:]):
+        for pair_index, (first, second) in enumerate(zip(object_events, object_events[1:])):
             gap = float(second["start_time_s"]) - float(first["end_time_s"])
             duration = float(second["end_time_s"]) - float(first["start_time_s"])
             if gap < policy.min_event_gap_sec or duration > policy.max_repeated_window_sec:
@@ -125,9 +180,30 @@ def generate_task5_candidates(
                 rejection_counts["repeated_not_salient"] += 1
                 continue
             score = shift + min(gap, 2.0) * 0.05 + min(int(first["state_count"]), int(second["state_count"])) / 100
+            allowed_start = (
+                int(object_events[pair_index - 1]["end_index"]) + 1 if pair_index > 0 else None
+            )
+            allowed_end = (
+                int(object_events[pair_index + 2]["start_index"]) - 1
+                if pair_index + 2 < len(object_events) else None
+            )
+            window = _expanded_window(
+                states, int(first["start_index"]), int(second["end_index"]), policy,
+                allowed_start_frame=allowed_start, allowed_end_frame=allowed_end,
+            )
+            if window is None:
+                rejection_counts["repeated_no_target_duration_annotation_window"] += 1
+                continue
+            target_events_in_window = [
+                event for event in object_events
+                if int(event["start_index"]) >= window[0] and int(event["end_index"]) <= window[1]
+            ]
+            if target_events_in_window != [first, second]:
+                rejection_counts["repeated_extra_target_gaze_in_public_window"] += 1
+                continue
             candidates.append(_candidate(
                 analysis, "between_repeated_gaze_events", object_id,
-                int(first["start_index"]), int(second["end_index"]), score,
+                window[0], window[1], score,
                 event_start_frames=[int(first["start_index"]), int(second["start_index"])],
             ))
 
@@ -159,39 +235,39 @@ def generate_task5_candidates(
             rejection_counts["onset_no_valid_pre_state"] += 1
             continue
         score, before_frame = max(viable)
+        window = _expanded_window(states, before_frame, int(event["end_index"]), policy)
+        if window is None:
+            rejection_counts["onset_no_target_duration_annotation_window"] += 1
+            continue
         candidates.append(_candidate(
-            analysis, "after_gaze_turns_to_object", object_id, before_frame,
-            int(event["end_index"]), score,
+            analysis, "after_gaze_turns_to_object", object_id, window[0], window[1], score,
             event_start_frames=[int(event["start_index"])], pre_frame=before_frame,
         ))
 
-    # 3. End a window on a sustained gaze and recompute the target's full relation sequence.
+    # 3. End a real ~9 s window on a sustained gaze, so the target is still the last gaze object.
     for event in events:
         object_id = str(event["object_id"])
         end = int(event["end_index"])
-        end_time = float(states[end]["time_s"])
-        viable_last: list[tuple[float, int, list[str]]] = []
-        for start, state in states.items():
-            if start >= int(event["start_index"]):
-                continue
-            duration = end_time - float(state["time_s"])
-            if duration <= 0 or duration > policy.max_last_object_window_sec:
-                continue
-            window = [states[index] for index in sorted(states) if start <= index <= end]
-            relations = [_relation(states, int(item["frame_index"]), object_id) for item in window]
-            if any(relation is None for relation in relations):
-                continue
-            sequence = _reduced([str(relation["label"]) for relation in relations if relation])
-            lateral = [float(relation["right_m"]) for relation in relations if relation]
-            shift = max(lateral) - min(lateral)
-            if not 2 <= len(sequence) <= policy.max_relation_sequence_length or shift < policy.min_lateral_shift_m:
-                continue
-            score = shift + min(duration, 2.0) * 0.03 - max(0, len(sequence) - 3) * 0.05
-            viable_last.append((score, start, sequence))
-        if not viable_last:
+        expanded = _expanded_window(
+            states, int(event["start_index"]), end, policy, align_end=True,
+        )
+        if expanded is None:
+            rejection_counts["last_no_target_duration_annotation_window"] += 1
+            continue
+        start, end = expanded
+        window = [states[index] for index in sorted(states) if start <= index <= end]
+        relations = [_relation(states, int(item["frame_index"]), object_id) for item in window]
+        if any(relation is None for relation in relations):
+            rejection_counts["last_missing_relation"] += 1
+            continue
+        sequence = _reduced([str(relation["label"]) for relation in relations if relation])
+        lateral = [float(relation["right_m"]) for relation in relations if relation]
+        shift = max(lateral) - min(lateral)
+        if not 2 <= len(sequence) <= policy.max_relation_sequence_length or shift < policy.min_lateral_shift_m:
             rejection_counts["last_no_salient_window"] += 1
             continue
-        score, start, sequence = max(viable_last)
+        duration = float(states[end]["time_s"]) - float(states[start]["time_s"])
+        score = shift + min(duration, policy.target_window_sec) * 0.01 - max(0, len(sequence) - 3) * 0.05
         candidates.append(_candidate(
             analysis, "last_gaze_annotated_object", object_id, start, end, score,
             expected_relation_sequence=sequence,

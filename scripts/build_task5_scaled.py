@@ -264,6 +264,12 @@ def main() -> None:
         lo, hi = (int(value) for value in spec["window_frames"])
         start_s, end_s = float(states_by_frame[lo]["time_s"]), float(states_by_frame[hi]["time_s"])
         duration = end_s - start_s
+        window_policy = ScaleQualityPolicy()
+        if not window_policy.min_task5_window_sec <= duration <= window_policy.max_task5_window_sec:
+            raise ValueError(
+                f"{spec['id']} spans {duration:.2f}s; Task 5 public videos must be "
+                f"{window_policy.min_task5_window_sec:g}–{window_policy.max_task5_window_sec:g}s"
+            )
         media_output_dir = resolve(args.media_output_dir)
         destination = media_output_dir / f"{spec['id']}.mp4"
         ensure_clip(source_media, destination, start_s, duration)

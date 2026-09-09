@@ -1,13 +1,13 @@
 {
   "status": "ok",
-  "case_count": 6,
-  "minimum_examples_per_category": 2,
+  "case_count": 3,
+  "minimum_examples_per_category": 1,
   "category_counts": {
-    "between_repeated_gaze_events": 2,
-    "after_gaze_turns_to_object": 2,
-    "last_gaze_annotated_object": 2
+    "between_repeated_gaze_events": 1,
+    "after_gaze_turns_to_object": 1,
+    "last_gaze_annotated_object": 1
   },
-  "unique_video_windows": 6,
+  "unique_video_windows": 3,
   "answer_provenance": "directly computed from gaze ray + fixation depth / same-time 3D OBB / wearer pose annotations",
   "coordinate_policy": "gravity-aligned wearer CPF: +right and +forward, metric world positions"
 }

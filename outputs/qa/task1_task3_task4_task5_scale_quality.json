@@ -12,8 +12,10 @@
     "min_task3_local_travel_m": 0.35,
     "min_task3_grounding_inliers": 12,
     "min_task5_span_ratio": 0.85,
+    "min_task5_window_sec": 8.5,
+    "max_task5_window_sec": 10.0,
     "min_task5_gaze_run_states": 4,
-    "min_task5_event_gap_sec": 0.3,
+    "min_task5_event_gap_sec": 2.0,
     "min_task5_relation_shift_m": 0.05,
     "min_task5_gaze_onset_turn_deg": 8.0,
     "min_task5_event_hit_support": 0.8,
@@ -41,8 +43,8 @@
     "max_task5_correct_option_share": 0.5,
     "min_task5_correct_option_labels": 3
   },
-  "case_count": 36,
-  "accepted_count": 36,
+  "case_count": 33,
+  "accepted_count": 33,
   "rejected_count": 0,
   "warning_count": 8,
   "cases": [
@@ -1564,53 +1566,7 @@
     },
     {
       "case_index": 31,
-      "case_id": "task5_repeated_gaze_white_flatware_tray",
-      "task_id": "task5_human_state_grounded_spatial_reasoning",
-      "question_type": "relation_change_between_gazes",
-      "status": "accepted",
-      "errors": [],
-      "warnings": [],
-      "metrics": {
-        "option_information_profiles": [
-          {
-            "words": 9,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 12
-          },
-          {
-            "words": 9,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 12
-          },
-          {
-            "words": 9,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 12
-          },
-          {
-            "words": 9,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 12
-          }
-        ],
-        "temporal_state_count": 70,
-        "temporal_span_sec": 2.299632,
-        "max_temporal_gap_ratio": 0.014493,
-        "temporal_span_ratio": 1.0,
-        "lateral_relation_shift_m": 0.115956
-      }
-    },
-    {
-      "case_index": 32,
-      "case_id": "task5_repeated_gaze_kitchen_island",
+      "case_id": "task5_repeated_apartment_release_golden_skeleton_seq100_10s_sam_0_256_a3c71b3a",
       "task_id": "task5_human_state_grounded_spatial_reasoning",
       "question_type": "relation_change_between_gazes",
       "status": "accepted",
@@ -1647,108 +1603,62 @@
             "information_units": 11
           }
         ],
-        "temporal_state_count": 82,
-        "temporal_span_sec": 2.699568,
-        "max_temporal_gap_ratio": 0.012346,
+        "temporal_state_count": 257,
+        "temporal_span_sec": 8.531968,
+        "max_temporal_gap_ratio": 0.003906,
         "temporal_span_ratio": 1.0,
         "lateral_relation_shift_m": 0.131534
       }
     },
     {
+      "case_index": 32,
+      "case_id": "task5_onset_apartment_release_golden_skeleton_seq100_10s_sam_0_270_00861c18",
+      "task_id": "task5_human_state_grounded_spatial_reasoning",
+      "question_type": "gaze_onset_side_change",
+      "status": "accepted",
+      "errors": [],
+      "warnings": [],
+      "metrics": {
+        "option_information_profiles": [
+          {
+            "words": 8,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 3,
+            "information_units": 11
+          },
+          {
+            "words": 8,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 3,
+            "information_units": 11
+          },
+          {
+            "words": 8,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 3,
+            "information_units": 11
+          },
+          {
+            "words": 8,
+            "numbers": 0,
+            "temporal_markers": 0,
+            "relation_markers": 3,
+            "information_units": 11
+          }
+        ],
+        "temporal_state_count": 271,
+        "temporal_span_sec": 8.99856,
+        "max_temporal_gap_ratio": 0.003704,
+        "temporal_span_ratio": 1.0,
+        "lateral_relation_shift_m": 0.509024
+      }
+    },
+    {
       "case_index": 33,
-      "case_id": "task5_gaze_onset_wooden_bowl",
-      "task_id": "task5_human_state_grounded_spatial_reasoning",
-      "question_type": "gaze_onset_side_change",
-      "status": "accepted",
-      "errors": [],
-      "warnings": [],
-      "metrics": {
-        "option_information_profiles": [
-          {
-            "words": 8,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 11
-          },
-          {
-            "words": 8,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 11
-          },
-          {
-            "words": 8,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 11
-          },
-          {
-            "words": 8,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 11
-          }
-        ],
-        "temporal_state_count": 54,
-        "temporal_span_sec": 1.766384,
-        "max_temporal_gap_ratio": 0.018868,
-        "temporal_span_ratio": 1.0,
-        "lateral_relation_shift_m": 0.219651
-      }
-    },
-    {
-      "case_index": 34,
-      "case_id": "task5_gaze_onset_kitchen_island",
-      "task_id": "task5_human_state_grounded_spatial_reasoning",
-      "question_type": "gaze_onset_side_change",
-      "status": "accepted",
-      "errors": [],
-      "warnings": [],
-      "metrics": {
-        "option_information_profiles": [
-          {
-            "words": 8,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 4,
-            "information_units": 12
-          },
-          {
-            "words": 8,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 4,
-            "information_units": 12
-          },
-          {
-            "words": 8,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 4,
-            "information_units": 12
-          },
-          {
-            "words": 8,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 4,
-            "information_units": 12
-          }
-        ],
-        "temporal_state_count": 31,
-        "temporal_span_sec": 0.99984,
-        "max_temporal_gap_ratio": 0.033333,
-        "temporal_span_ratio": 1.0,
-        "lateral_relation_shift_m": 0.325032
-      }
-    },
-    {
-      "case_index": 35,
-      "case_id": "task5_last_gaze_object_wooden_bowl",
+      "case_id": "task5_last_apartment_release_golden_skeleton_seq100_10s_sam_20_290_8c7549ef",
       "task_id": "task5_human_state_grounded_spatial_reasoning",
       "question_type": "last_gaze_annotated_object_relation_change",
       "status": "accepted",
@@ -1757,82 +1667,37 @@
       "metrics": {
         "option_information_profiles": [
           {
-            "words": 7,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 4,
-            "information_units": 11
+            "relation_markers": 6,
+            "information_units": 14
           },
           {
-            "words": 7,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 5,
-            "information_units": 12
+            "relation_markers": 6,
+            "information_units": 14
           },
           {
-            "words": 7,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 4,
-            "information_units": 11
+            "relation_markers": 6,
+            "information_units": 14
           },
           {
-            "words": 7,
+            "words": 8,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 5,
-            "information_units": 12
+            "relation_markers": 6,
+            "information_units": 14
           }
         ],
-        "temporal_state_count": 114,
-        "temporal_span_sec": 3.766064,
-        "max_temporal_gap_ratio": 0.00885,
-        "temporal_span_ratio": 1.0
-      }
-    },
-    {
-      "case_index": 36,
-      "case_id": "task5_last_gaze_object_white_vase",
-      "task_id": "task5_human_state_grounded_spatial_reasoning",
-      "question_type": "last_gaze_annotated_object_relation_change",
-      "status": "accepted",
-      "errors": [],
-      "warnings": [],
-      "metrics": {
-        "option_information_profiles": [
-          {
-            "words": 6,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 9
-          },
-          {
-            "words": 6,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 9
-          },
-          {
-            "words": 6,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 9
-          },
-          {
-            "words": 6,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 9
-          }
-        ],
-        "temporal_state_count": 68,
-        "temporal_span_sec": 2.232976,
-        "max_temporal_gap_ratio": 0.014925,
+        "temporal_state_count": 271,
+        "temporal_span_sec": 8.99856,
+        "max_temporal_gap_ratio": 0.003704,
         "temporal_span_ratio": 1.0
       }
     }
