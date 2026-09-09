@@ -21,9 +21,19 @@ CATEGORY_BY_TYPE = {
 class Task5CandidatePolicy:
     min_event_gap_sec: float = 2.0
     min_event_direct_hits: int = 4
+    min_repeated_event_direct_hits: int = 10
+    min_onset_event_direct_hits: int = 10
+    min_last_event_direct_hits: int = 4
+    min_repeated_event_duration_sec: float = 0.30
+    min_onset_event_duration_sec: float = 0.30
+    min_last_event_duration_sec: float = 0.10
     min_event_hit_support: float = 0.80
     max_internal_gap_states: int = 1
-    min_lateral_shift_m: float = 0.05
+    min_lateral_shift_m: float = 0.20
+    min_relation_run_states: int = 6
+    excluded_target_categories: tuple[str, ...] = (
+        "table", "shelter", "floor", "wall", "ceiling", "part of a cabinet/wardrobe",
+    )
     min_onset_turn_deg: float = 8.0
     min_pre_gaze_gap_sec: float = 0.40
     max_pre_gaze_gap_sec: float = 1.50
@@ -46,6 +56,41 @@ def _reduced(values: Sequence[str]) -> list[str]:
         if not output or output[-1] != value:
             output.append(value)
     return output
+
+
+def sustained_relation_sequence(values: Sequence[str], minimum_run: int = 6) -> list[str]:
+    """Drop brief relation-label flicker and retain only sustained transitions."""
+    runs: list[list[Any]] = []
+    for value in values:
+        if not runs or runs[-1][0] != value:
+            runs.append([value, 1])
+        else:
+            runs[-1][1] += 1
+    return _reduced([str(value) for value, count in runs if count >= minimum_run])
+
+
+def _event_duration(event: Mapping[str, Any]) -> float:
+    return float(event["end_time_s"]) - float(event["start_time_s"])
+
+
+def _relation_run_length(
+    states: Mapping[int, Mapping[str, Any]], frame: int, object_id: str,
+) -> int:
+    frames = sorted(states)
+    if frame not in states:
+        return 0
+    position = frames.index(frame)
+    relation = _relation(states, frame, object_id)
+    if not relation:
+        return 0
+    label = relation["label"]
+    left = position
+    while left > 0 and (_relation(states, frames[left - 1], object_id) or {}).get("label") == label:
+        left -= 1
+    right = position
+    while right + 1 < len(frames) and (_relation(states, frames[right + 1], object_id) or {}).get("label") == label:
+        right += 1
+    return right - left + 1
 
 
 def _anchor(event: Mapping[str, Any]) -> int:
@@ -153,6 +198,11 @@ def generate_task5_candidates(
         direct_hits = int(event.get("direct_hit_count") or 0)
         support = float(event.get("hit_support_ratio") or 0.0)
         gaps = int(event.get("merged_gap_count") or 0)
+        object_id = str(event["object_id"])
+        category = str((analysis.get("objects") or {}).get(object_id, {}).get("category", "")).lower()
+        if category in policy.excluded_target_categories:
+            rejection_counts["excluded_support_or_scene_target"] += 1
+            continue
         if direct_hits < policy.min_event_direct_hits or support < policy.min_event_hit_support or gaps > policy.max_internal_gap_states:
             rejection_counts["event_support"] += 1
             continue
@@ -165,6 +215,14 @@ def generate_task5_candidates(
     # 1. Compare two temporally distinct sustained gazes at the same object.
     for object_id, object_events in by_object.items():
         for pair_index, (first, second) in enumerate(zip(object_events, object_events[1:])):
+            if (
+                int(first["direct_hit_count"]) < policy.min_repeated_event_direct_hits
+                or int(second["direct_hit_count"]) < policy.min_repeated_event_direct_hits
+                or _event_duration(first) < policy.min_repeated_event_duration_sec
+                or _event_duration(second) < policy.min_repeated_event_duration_sec
+            ):
+                rejection_counts["repeated_event_too_short"] += 1
+                continue
             gap = float(second["start_time_s"]) - float(first["end_time_s"])
             duration = float(second["end_time_s"]) - float(first["start_time_s"])
             if gap < policy.min_event_gap_sec or duration > policy.max_repeated_window_sec:
@@ -176,7 +234,12 @@ def generate_task5_candidates(
                 rejection_counts["missing_relation"] += 1
                 continue
             shift = abs(float(left["right_m"]) - float(right["right_m"]))
-            if left["label"] == right["label"] or shift < policy.min_lateral_shift_m:
+            if (
+                left["label"] == right["label"]
+                or shift < policy.min_lateral_shift_m
+                or _relation_run_length(states, first_frame, object_id) < policy.min_relation_run_states
+                or _relation_run_length(states, second_frame, object_id) < policy.min_relation_run_states
+            ):
                 rejection_counts["repeated_not_salient"] += 1
                 continue
             score = shift + min(gap, 2.0) * 0.05 + min(int(first["state_count"]), int(second["state_count"])) / 100
@@ -210,6 +273,12 @@ def generate_task5_candidates(
     # 2. Find a real pre-onset state where the wearer turns and the target changes side.
     for event in events:
         object_id = str(event["object_id"])
+        if (
+            int(event["direct_hit_count"]) < policy.min_onset_event_direct_hits
+            or _event_duration(event) < policy.min_onset_event_duration_sec
+        ):
+            rejection_counts["onset_event_too_short"] += 1
+            continue
         after_frame = _anchor(event)
         after = _relation(states, after_frame, object_id)
         if not after:
@@ -228,7 +297,12 @@ def generate_task5_candidates(
                 continue
             shift = abs(float(before["right_m"]) - float(after["right_m"]))
             turn = circular_yaw_change_deg(before_state["forward_world"], states[after_frame]["forward_world"])
-            if shift < policy.min_lateral_shift_m or turn < policy.min_onset_turn_deg:
+            if (
+                shift < policy.min_lateral_shift_m
+                or turn < policy.min_onset_turn_deg
+                or _relation_run_length(states, before_frame, object_id) < policy.min_relation_run_states
+                or _relation_run_length(states, after_frame, object_id) < policy.min_relation_run_states
+            ):
                 continue
             viable.append((shift + math.radians(turn) * 0.15 - abs(gap - 0.8) * 0.02, before_frame))
         if not viable:
@@ -247,6 +321,12 @@ def generate_task5_candidates(
     # 3. End a real ~9 s window on a sustained gaze, so the target is still the last gaze object.
     for event in events:
         object_id = str(event["object_id"])
+        if (
+            int(event["direct_hit_count"]) < policy.min_last_event_direct_hits
+            or _event_duration(event) < policy.min_last_event_duration_sec
+        ):
+            rejection_counts["last_event_too_short"] += 1
+            continue
         end = int(event["end_index"])
         expanded = _expanded_window(
             states, int(event["start_index"]), end, policy, align_end=True,
@@ -260,7 +340,9 @@ def generate_task5_candidates(
         if any(relation is None for relation in relations):
             rejection_counts["last_missing_relation"] += 1
             continue
-        sequence = _reduced([str(relation["label"]) for relation in relations if relation])
+        sequence = sustained_relation_sequence(
+            [str(relation["label"]) for relation in relations if relation], policy.min_relation_run_states,
+        )
         lateral = [float(relation["right_m"]) for relation in relations if relation]
         shift = max(lateral) - min(lateral)
         if not 2 <= len(sequence) <= policy.max_relation_sequence_length or shift < policy.min_lateral_shift_m:

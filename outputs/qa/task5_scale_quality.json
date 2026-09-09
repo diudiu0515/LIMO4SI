@@ -15,8 +15,22 @@
     "min_task5_window_sec": 8.5,
     "max_task5_window_sec": 10.0,
     "min_task5_gaze_run_states": 4,
+    "min_task5_repeated_event_hits": 10,
+    "min_task5_onset_event_hits": 10,
+    "min_task5_repeated_event_duration_sec": 0.3,
+    "min_task5_onset_event_duration_sec": 0.3,
+    "min_task5_last_event_duration_sec": 0.1,
     "min_task5_event_gap_sec": 2.0,
-    "min_task5_relation_shift_m": 0.05,
+    "min_task5_relation_shift_m": 0.2,
+    "min_task5_relation_run_states": 6,
+    "excluded_task5_target_categories": [
+      "table",
+      "shelter",
+      "floor",
+      "wall",
+      "ceiling",
+      "part of a cabinet/wardrobe"
+    ],
     "min_task5_gaze_onset_turn_deg": 8.0,
     "min_task5_event_hit_support": 0.8,
     "max_task5_wearer_skew_ms": 10.0,
@@ -43,60 +57,14 @@
     "max_task5_correct_option_share": 0.5,
     "min_task5_correct_option_labels": 3
   },
-  "case_count": 3,
-  "accepted_count": 3,
+  "case_count": 2,
+  "accepted_count": 2,
   "rejected_count": 0,
   "warning_count": 0,
   "cases": [
     {
       "case_index": 1,
-      "case_id": "task5_repeated_apartment_release_golden_skeleton_seq100_10s_sam_0_256_a3c71b3a",
-      "task_id": "task5_human_state_grounded_spatial_reasoning",
-      "question_type": "relation_change_between_gazes",
-      "status": "accepted",
-      "errors": [],
-      "warnings": [],
-      "metrics": {
-        "option_information_profiles": [
-          {
-            "words": 8,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 11
-          },
-          {
-            "words": 8,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 11
-          },
-          {
-            "words": 8,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 11
-          },
-          {
-            "words": 8,
-            "numbers": 0,
-            "temporal_markers": 0,
-            "relation_markers": 3,
-            "information_units": 11
-          }
-        ],
-        "temporal_state_count": 257,
-        "temporal_span_sec": 8.531968,
-        "max_temporal_gap_ratio": 0.003906,
-        "temporal_span_ratio": 1.0,
-        "lateral_relation_shift_m": 0.131534
-      }
-    },
-    {
-      "case_index": 2,
-      "case_id": "task5_onset_apartment_release_golden_skeleton_seq100_10s_sam_0_270_00861c18",
+      "case_id": "task5_onset_apartment_release_golden_skeleton_seq100_10s_sam_0_270_c2f0b522",
       "task_id": "task5_human_state_grounded_spatial_reasoning",
       "question_type": "gaze_onset_side_change",
       "status": "accepted",
@@ -137,12 +105,16 @@
         "temporal_span_sec": 8.99856,
         "max_temporal_gap_ratio": 0.003704,
         "temporal_span_ratio": 1.0,
-        "lateral_relation_shift_m": 0.509024
+        "lateral_relation_shift_m": 0.221116,
+        "anchor_relation_run_states": [
+          84,
+          26
+        ]
       }
     },
     {
-      "case_index": 3,
-      "case_id": "task5_last_apartment_release_golden_skeleton_seq100_10s_sam_20_290_8c7549ef",
+      "case_index": 2,
+      "case_id": "task5_last_apartment_release_golden_skeleton_seq100_10s_sam_28_298_4ef37b82",
       "task_id": "task5_human_state_grounded_spatial_reasoning",
       "question_type": "last_gaze_annotated_object_relation_change",
       "status": "accepted",
@@ -151,32 +123,32 @@
       "metrics": {
         "option_information_profiles": [
           {
-            "words": 8,
+            "words": 7,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 6,
-            "information_units": 14
+            "relation_markers": 4,
+            "information_units": 11
           },
           {
-            "words": 8,
+            "words": 7,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 6,
-            "information_units": 14
+            "relation_markers": 5,
+            "information_units": 12
           },
           {
-            "words": 8,
+            "words": 7,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 6,
-            "information_units": 14
+            "relation_markers": 5,
+            "information_units": 12
           },
           {
-            "words": 8,
+            "words": 7,
             "numbers": 0,
             "temporal_markers": 0,
-            "relation_markers": 6,
-            "information_units": 14
+            "relation_markers": 4,
+            "information_units": 11
           }
         ],
         "temporal_state_count": 271,

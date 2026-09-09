@@ -17,7 +17,7 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from limo4si.scale_quality import TASK5_ID, ScaleQualityPolicy, require_release_quality
 from limo4si.task5_human_state import circular_yaw_change_deg
-from limo4si.task5_scaling import CATEGORY_BY_TYPE
+from limo4si.task5_scaling import CATEGORY_BY_TYPE, sustained_relation_sequence
 
 TASK5_NAME = "Task 5 · Human-State–Grounded Spatial Reasoning"
 RELATIONS = ["left-front", "front", "right-front", "right", "right-behind", "behind", "left-behind", "left"]
@@ -185,7 +185,9 @@ def build_question(spec: dict[str, Any], analysis: dict[str, Any]) -> tuple[dict
         last_event = max(in_window, key=lambda event: int(event["end_index"]))
         if str(last_event["object_id"]) != object_id:
             raise ValueError(f"{spec['id']} configured object is not the last gaze-annotated object")
-        relation_sequence = reduced([row["relation"]["label"] for row in timeline])
+        relation_sequence = sustained_relation_sequence(
+            [row["relation"]["label"] for row in timeline], ScaleQualityPolicy().min_task5_relation_run_states,
+        )
         options, correct_option, correct = sequence_options(display, relation_sequence, spec["id"], correct_index)
         question = f"The {display} is the last gaze-annotated object in this window. How does its wearer-relative position evolve?"
         explanation = f"Across the full window, the annotation-derived relation sequence is {' → '.join(relation_sequence)}."
@@ -209,6 +211,7 @@ def build_question(spec: dict[str, Any], analysis: dict[str, Any]) -> tuple[dict
         "gaze_grounding_method": "depth_consistent_ray_obb_intersection",
         "maximum_gaze_depth_obb_residual_m": analysis.get("maximum_gaze_depth_obb_residual_m"),
         "object_id": object_id, "object_name": canonical_object_name,
+        "object_category": analysis["objects"][object_id].get("category"),
         "timeline": timeline, "gaze_events": event_evidence, "transition": transition,
     }
     return {
@@ -291,13 +294,17 @@ def main() -> None:
         raise ValueError(f"Task 5 analyses disagree on coordinate policy: {sorted(coordinate_frames)}")
     counts = Counter(group["qa"][0]["question_categories"][0] for group in groups)
     minimum = int(config.get("minimum_examples_per_category", 2))
-    missing = [category for category in CATEGORY_BY_TYPE.values() if counts[category] < minimum]
+    category_minimums = {
+        category: int((config.get("minimum_examples_by_category") or {}).get(category, minimum))
+        for category in CATEGORY_BY_TYPE.values()
+    }
+    missing = {category: required - counts[category] for category, required in category_minimums.items() if counts[category] < required}
     if missing:
-        raise ValueError(f"Task 5 categories below {minimum} examples: {missing}")
+        raise ValueError(f"Task 5 categories below configured pilot minimums: {missing}")
     quality = require_release_quality({"groups": groups}, ScaleQualityPolicy())
     audit = {
         "status": "ok", "case_count": len(groups), "minimum_examples_per_category": minimum,
-        "category_counts": dict(counts), "unique_video_windows": len({
+        "minimum_examples_by_category": category_minimums, "category_counts": dict(counts), "unique_video_windows": len({
             (g['video_window']['source_sequence'], g['video_window']['start_sec'], g['video_window']['duration_sec'])
             for g in groups
         }),

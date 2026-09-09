@@ -52,8 +52,17 @@ class ScaleQualityPolicy:
     min_task5_window_sec: float = 8.5
     max_task5_window_sec: float = 10.0
     min_task5_gaze_run_states: int = 4
+    min_task5_repeated_event_hits: int = 10
+    min_task5_onset_event_hits: int = 10
+    min_task5_repeated_event_duration_sec: float = 0.30
+    min_task5_onset_event_duration_sec: float = 0.30
+    min_task5_last_event_duration_sec: float = 0.10
     min_task5_event_gap_sec: float = 2.0
-    min_task5_relation_shift_m: float = 0.05
+    min_task5_relation_shift_m: float = 0.20
+    min_task5_relation_run_states: int = 6
+    excluded_task5_target_categories: tuple[str, ...] = (
+        "table", "shelter", "floor", "wall", "ceiling", "part of a cabinet/wardrobe",
+    )
     min_task5_gaze_onset_turn_deg: float = 8.0
     min_task5_event_hit_support: float = 0.80
     max_task5_wearer_skew_ms: float = 10.0
@@ -545,6 +554,11 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
         )
     _validate_time_series(states, float(duration) if _finite(duration) else None, policy.min_task5_span_ratio, policy, errors, metrics)
     target = str(result.get("object_id"))
+    target_category = str(result.get("object_category", "")).lower()
+    if not target_category:
+        errors.append("Task 5 target category is missing")
+    elif target_category in policy.excluded_task5_target_categories:
+        errors.append("Task 5 target is a large scene/support object rather than a compact semantic object")
     target_object_skews = [state.get("object_pose_skew_ms") for state in states]
     if not target_object_skews or any(not _finite(value) for value in target_object_skews):
         errors.append("Task 5 target-object timestamp alignment is missing")
@@ -612,7 +626,15 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
         errors.append("Task 5 timeline contains too few direct gaze-ray hits on the target")
     transition = result.get("transition") or {}
     qtype = question.get("question_type")
+    event_durations = [
+        float(event["end_time_s"]) - float(event["start_time_s"])
+        for event in events if _finite(event.get("start_time_s")) and _finite(event.get("end_time_s"))
+    ]
     if qtype == "relation_change_between_gazes":
+        if any(int(event.get("direct_hit_count") or 0) < policy.min_task5_repeated_event_hits for event in events):
+            errors.append("repeated-gaze events are too short for a high-quality case")
+        if any(duration < policy.min_task5_repeated_event_duration_sec for duration in event_durations):
+            errors.append("repeated-gaze event duration is below the high-quality threshold")
         target_runs = []
         run_start = None
         last_hit = None
@@ -651,6 +673,10 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
         if transition.get("start_relation") == transition.get("end_relation"):
             errors.append("repeated-gaze relation-change QA contains no relation change")
     elif qtype == "gaze_onset_side_change":
+        if any(int(event.get("direct_hit_count") or 0) < policy.min_task5_onset_event_hits for event in events):
+            errors.append("gaze-onset event is too short for a high-quality case")
+        if any(duration < policy.min_task5_onset_event_duration_sec for duration in event_durations):
+            errors.append("gaze-onset event duration is below the high-quality threshold")
         if len(events) != 1:
             errors.append("gaze-onset Task 5 QA must contain exactly one target event")
         if str(transition.get("pre_gazed_object_id")) == target:
@@ -661,15 +687,23 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
         if not _finite(turn) or float(turn) < policy.min_task5_gaze_onset_turn_deg:
             errors.append("gaze-onset relation change lacks a salient wearer turn")
     elif qtype == "last_gaze_annotated_object_relation_change":
+        if any(duration < policy.min_task5_last_event_duration_sec for duration in event_durations):
+            errors.append("last-gaze event duration is below the high-quality threshold")
         if len(events) != 1:
             errors.append("last-gaze-object Task 5 QA must expose exactly its final gaze event")
         if str(transition.get("last_supported_event_object_id")) != target:
             errors.append("configured target is not the last gaze-annotated object")
         sequence = transition.get("relation_sequence") or []
-        recomputed = []
+        runs: list[list[Any]] = []
         for state in states:
             label = (state.get("relation") or {}).get("label")
-            if not recomputed or recomputed[-1] != label:
+            if not runs or runs[-1][0] != label:
+                runs.append([label, 1])
+            else:
+                runs[-1][1] += 1
+        recomputed = []
+        for label, count in runs:
+            if count >= policy.min_task5_relation_run_states and (not recomputed or recomputed[-1] != label):
                 recomputed.append(label)
         if sequence != recomputed:
             errors.append("last-gaze-object relation sequence is stale")
@@ -690,6 +724,21 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
         metrics["lateral_relation_shift_m"] = round(shift, 6)
         if shift < policy.min_task5_relation_shift_m:
             errors.append("Task 5 lateral relation change is below the salience threshold")
+        ordered_frames = [state.get("frame") for state in states]
+        def relation_run_length(anchor: Any) -> int:
+            position = ordered_frames.index(anchor)
+            label = (indexed[anchor].get("relation") or {}).get("label")
+            left = position
+            while left > 0 and (states[left - 1].get("relation") or {}).get("label") == label:
+                left -= 1
+            right = position
+            while right + 1 < len(states) and (states[right + 1].get("relation") or {}).get("label") == label:
+                right += 1
+            return right - left + 1
+        anchor_runs = [relation_run_length(start_frame), relation_run_length(end_frame)]
+        metrics["anchor_relation_run_states"] = anchor_runs
+        if min(anchor_runs) < policy.min_task5_relation_run_states:
+            errors.append("Task 5 transition anchor relation is not temporally sustained")
 
 
 def _validate_topology(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], metrics: dict[str, Any]) -> None:

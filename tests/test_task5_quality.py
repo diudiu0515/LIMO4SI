@@ -4,6 +4,7 @@ import unittest
 from pathlib import Path
 
 from limo4si.scale_quality import validate_release
+from scripts.build_task5_scaled import build_question
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -17,6 +18,20 @@ class Task5QualityTests(unittest.TestCase):
             "name": rows[0]["case_id"],
             "video_window": {"duration_sec": rows[0]["result_json"]["timeline"][-1]["time_s"] - rows[0]["result_json"]["timeline"][0]["time_s"]},
             "qa": [{key: value for key, value in rows[0].items() if key not in {"case_index", "case_id", "video_clip"}}],
+        }
+        analysis = json.loads((ROOT / "outputs/qa/task5_adt_analysis.json").read_text())
+        repeated_question, _ = build_question({
+            "id": "test_repeated_kitchen_island",
+            "question_type": "relation_change_between_gazes",
+            "object_name": "KitchIsland",
+            "event_start_frames": [114, 182],
+            "window_frames": [0, 256],
+            "_correct_option_index": 0,
+        }, analysis)
+        cls.repeated_group = {
+            "name": "test_repeated_kitchen_island",
+            "video_window": {"duration_sec": analysis["states"][256]["time_s"] - analysis["states"][0]["time_s"]},
+            "qa": [repeated_question],
         }
 
     def validate_current(self, data):
@@ -32,11 +47,24 @@ class Task5QualityTests(unittest.TestCase):
         self.assertTrue(any("about 9 seconds" in error for error in errors))
 
     def test_default_gate_rejects_short_repeated_gaze_gap(self):
-        group = copy.deepcopy(self.group)
+        group = copy.deepcopy(self.repeated_group)
         events = group["qa"][0]["result_json"]["gaze_events"]
         events[1]["start_time_s"] = events[0]["end_time_s"] + 0.5
         errors = validate_release({"groups": [group]})["cases"][0]["errors"]
         self.assertTrue(any("at least 2 seconds" in error for error in errors))
+
+    def test_rejects_large_support_target(self):
+        group = copy.deepcopy(self.group)
+        group["qa"][0]["result_json"]["object_category"] = "table"
+        errors = self.validate_current({"groups": [group]})["cases"][0]["errors"]
+        self.assertTrue(any("large scene/support object" in error for error in errors))
+
+    def test_rejects_short_gaze_onset_event(self):
+        group = copy.deepcopy(self.group)
+        event = group["qa"][0]["result_json"]["gaze_events"][0]
+        event["end_time_s"] = event["start_time_s"] + 0.1
+        errors = self.validate_current({"groups": [group]})["cases"][0]["errors"]
+        self.assertTrue(any("duration is below" in error for error in errors))
 
     def test_rejects_head_direction_disguised_as_gaze(self):
         group = copy.deepcopy(self.group)
@@ -81,7 +109,7 @@ class Task5QualityTests(unittest.TestCase):
         self.assertEqual(self.validate_current({"groups": [group]})["status"], "ok")
 
     def test_rejects_hidden_third_repeated_gaze(self):
-        group = copy.deepcopy(self.group)
+        group = copy.deepcopy(self.repeated_group)
         result = group["qa"][0]["result_json"]
         timeline = result["timeline"]
         first_end = int(result["gaze_events"][0]["end_index"])

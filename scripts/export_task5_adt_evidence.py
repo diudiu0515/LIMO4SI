@@ -68,7 +68,34 @@ def main() -> None:
             event = next(event for event in analysis["gaze_events"] if str(event["object_id"]) == uid and event["start_index"] == spec["event_start_frames"][0])
             frame_ids = [spec["pre_frame"], (event["start_index"] + event["end_index"]) // 2]
         else:
-            frame_ids = list(spec["window_frames"])
+            lo, hi = (int(value) for value in spec["window_frames"])
+            minimum_run = int((config.get("selection_policy") or {}).get("minimum_relation_run_states", 6))
+            runs = []
+            for frame_index in range(lo, hi + 1):
+                label = analysis["states"][frame_index]["object_relations"][uid]["label"]
+                if not runs or runs[-1][0] != label:
+                    runs.append([label, frame_index, frame_index])
+                else:
+                    runs[-1][2] = frame_index
+            stable_runs = [run for run in runs if run[2] - run[1] + 1 >= minimum_run]
+            collapsed = []
+            for label, start, end in stable_runs:
+                if collapsed and collapsed[-1][0] == label:
+                    collapsed[-1][2] = end
+                else:
+                    collapsed.append([label, start, end])
+            frame_ids = [(start + end) // 2 for _, start, end in collapsed]
+            in_window = [
+                event for event in analysis["gaze_events"]
+                if lo <= int(event["start_index"]) and int(event["end_index"]) <= hi
+            ]
+            if in_window and frame_ids:
+                last_event = max(in_window, key=lambda event: int(event["end_index"]))
+                last_anchor = (int(last_event["start_index"]) + int(last_event["end_index"])) // 2
+                if analysis["states"][last_anchor]["object_relations"][uid]["label"] == collapsed[-1][0]:
+                    frame_ids[-1] = last_anchor
+            if len(frame_ids) < 2:
+                raise ValueError(f"{spec['id']} has fewer than two sustained relation evidence stages")
         panels = []
         for frame_index in frame_ids:
             image, _ = provider.get_image_data_by_index(stream, int(frame_index))

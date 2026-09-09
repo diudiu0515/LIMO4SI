@@ -43863,53 +43863,53 @@ window.QA_DATA = {
       }
     },
     {
-      "name": "task5_repeated_apartment_release_golden_skeleton_seq100_10s_sam_0_256_a3c71b3a",
-      "title": "Task 5 · kitchen island",
-      "video_clip": "./task5_media/task5_repeated_apartment_release_golden_skeleton_seq100_10s_sam_0_256_a3c71b3a.mp4",
-      "original_image": "./task5_media/task5_repeated_apartment_release_golden_skeleton_seq100_10s_sam_0_256_a3c71b3a_gaze_evidence.jpg",
+      "name": "task5_onset_apartment_release_golden_skeleton_seq100_10s_sam_0_270_c2f0b522",
+      "title": "Task 5 · wooden bowl",
+      "video_clip": "./task5_media/task5_onset_apartment_release_golden_skeleton_seq100_10s_sam_0_270_c2f0b522.mp4",
+      "original_image": "./task5_media/task5_onset_apartment_release_golden_skeleton_seq100_10s_sam_0_270_c2f0b522_gaze_evidence.jpg",
       "original_caption": "ADT RGB anchor frames · green: target 2D box · red: measured gaze projection",
       "video_window": {
         "source_video": "site/qa_benchmark/task5_media/adt_seq100_rgb.mp4",
         "source_sequence": "Apartment_release_golden_skeleton_seq100_10s_sample_M1292",
         "start_sec": 0.0,
-        "duration_sec": 8.531968
+        "duration_sec": 8.99856
       },
       "qa": [
         {
           "task_id": "task5_human_state_grounded_spatial_reasoning",
           "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "relation_change_between_gazes",
+          "question_type": "gaze_onset_side_change",
           "question_categories": [
-            "between_repeated_gaze_events"
+            "after_gaze_turns_to_object"
           ],
-          "question": "Between the two sustained gazes at the kitchen island, how does its wearer-relative position change?",
+          "question": "As gaze turns to the wooden bowl, how does it shift in the wearer's body-relative view?",
           "options": [
             {
               "label": "A",
-              "text": "The kitchen island changes from right-front to front."
+              "text": "The wooden bowl changes from left-front to front."
             },
             {
               "label": "B",
-              "text": "The kitchen island changes from front to right-front."
+              "text": "The wooden bowl changes from front to left-front."
             },
             {
               "label": "C",
-              "text": "The kitchen island changes from right-front to behind."
+              "text": "The wooden bowl changes from left-front to behind."
             },
             {
               "label": "D",
-              "text": "The kitchen island changes from left-front to front."
+              "text": "The wooden bowl changes from right-front to front."
             }
           ],
           "correct_option": "A",
-          "correct_answer": "The kitchen island changes from right-front to front.",
-          "answer": "The kitchen island changes from right-front to front.",
-          "explanation": "At the first gaze event the kitchen island is right-front; at the later event it is front.",
+          "correct_answer": "The wooden bowl changes from left-front to front.",
+          "answer": "The wooden bowl changes from left-front to front.",
+          "explanation": "Immediately before the gaze onset the wooden bowl is left-front; during the sustained gaze it is front.",
           "status": "ok",
           "method": "Uses measured ADT eye-gaze direction and fixation depth, same-time object 6DoF/3D boxes, and a gravity-aligned wearer frame; no answer label is inferred by an LLM.",
           "result_json": {
             "status": "ok",
-            "answer_type": "relation_change_between_gazes",
+            "answer_type": "gaze_onset_side_change",
             "T_Q": true,
             "H_Q": true,
             "S_Q": true,
@@ -43929,8 +43929,9 @@ window.QA_DATA = {
             "gaze_definition": "smallest eligible same-time object OBB containing the measured fixation depth along the gaze ray",
             "gaze_grounding_method": "depth_consistent_ray_obb_intersection",
             "maximum_gaze_depth_obb_residual_m": 0.05,
-            "object_id": "4671332369591132",
-            "object_name": "KitchIsland",
+            "object_id": "4508463855879675",
+            "object_name": "WoodenBowl",
+            "object_category": "bowl",
             "timeline": [
               {
                 "frame": 0,
@@ -43967,15 +43968,15 @@ window.QA_DATA = {
                   -0.06542823444967738
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.0010304006308971964,
-                  "forward_m": 0.580059452987385,
-                  "up_m": -1.1096177058190428,
-                  "distance_m": 1.2520864558722293
+                  "right_m": -0.03545060447593768,
+                  "forward_m": 0.33522151950801726,
+                  "up_m": -0.5937892066678826,
+                  "distance_m": 0.6828230668416624
                 }
               },
               {
@@ -44013,15 +44014,15 @@ window.QA_DATA = {
                   -0.07091445256724588
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.0027140957143086814,
-                  "forward_m": 0.5777477488503249,
-                  "up_m": -1.1089968041906253,
-                  "distance_m": 1.2504716376000147
+                  "right_m": -0.03783705662551699,
+                  "forward_m": 0.33267043993158335,
+                  "up_m": -0.5932151656714996,
+                  "distance_m": 0.6812079426297222
                 }
               },
               {
@@ -44059,15 +44060,15 @@ window.QA_DATA = {
                   -0.0778892607138379
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.0075851623815993904,
-                  "forward_m": 0.5755161829766614,
-                  "up_m": -1.108128005158706,
-                  "distance_m": 1.2486941312121782
+                  "right_m": -0.04080586419747807,
+                  "forward_m": 0.33017300427105095,
+                  "up_m": -0.5922839784674373,
+                  "distance_m": 0.6793510074700745
                 }
               },
               {
@@ -44105,15 +44106,15 @@ window.QA_DATA = {
                   -0.08494921180668763
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.012532818078947669,
-                  "forward_m": 0.5732339563743253,
-                  "up_m": -1.1075737185431658,
-                  "distance_m": 1.2471937460745117
+                  "right_m": -0.0437857398946183,
+                  "forward_m": 0.327618628669892,
+                  "up_m": -0.5916709489123501,
+                  "distance_m": 0.6777622524473254
                 }
               },
               {
@@ -44151,15 +44152,15 @@ window.QA_DATA = {
                   -0.09144135304123646
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.017112540287353067,
-                  "forward_m": 0.5709630518027238,
-                  "up_m": -1.1073510619647255,
-                  "distance_m": 1.2460111858001333
+                  "right_m": -0.046596590521729965,
+                  "forward_m": 0.3251067847562836,
+                  "up_m": -0.5914459117716176,
+                  "distance_m": 0.6765451572399468
                 }
               },
               {
@@ -44197,15 +44198,15 @@ window.QA_DATA = {
                   -0.09745795934617951
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.02149528373522211,
-                  "forward_m": 0.568877253994406,
-                  "up_m": -1.1071598131003824,
-                  "distance_m": 1.2449614417494286
+                  "right_m": -0.04944313427095842,
+                  "forward_m": 0.32284408587891106,
+                  "up_m": -0.5913068915407093,
+                  "distance_m": 0.6755528577131065
                 }
               },
               {
@@ -44243,15 +44244,15 @@ window.QA_DATA = {
                   -0.10456810098901015
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.026960297576878775,
-                  "forward_m": 0.5670156498945376,
-                  "up_m": -1.1070491988581341,
-                  "distance_m": 1.244133269642819
+                  "right_m": -0.053193759497262204,
+                  "forward_m": 0.3207813810187498,
+                  "up_m": -0.5912513651812893,
+                  "distance_m": 0.6748272754837867
                 }
               },
               {
@@ -44289,15 +44290,15 @@ window.QA_DATA = {
                   -0.11454193553411735
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.03490380097396266,
-                  "forward_m": 0.565311203608421,
-                  "up_m": -1.1071108704249095,
-                  "distance_m": 1.243634650079926
+                  "right_m": -0.05875654965743729,
+                  "forward_m": 0.31877171828645623,
+                  "up_m": -0.5913168908302607,
+                  "distance_m": 0.6744269815938537
                 }
               },
               {
@@ -44335,15 +44336,15 @@ window.QA_DATA = {
                   -0.1279137450562442
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.04571013660701807,
-                  "forward_m": 0.5636295224444954,
-                  "up_m": -1.1071090938316384,
-                  "distance_m": 1.2432680729836374
+                  "right_m": -0.0663570504024438,
+                  "forward_m": 0.31676422471362464,
+                  "up_m": -0.5912708082417273,
+                  "distance_m": 0.6742034214026209
                 }
               },
               {
@@ -44381,15 +44382,15 @@ window.QA_DATA = {
                   -0.14429493724728443
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.05925469128335858,
-                  "forward_m": 0.5618606593492849,
-                  "up_m": -1.1068819539342087,
-                  "distance_m": 1.242916484037689
+                  "right_m": -0.07590593482309985,
+                  "forward_m": 0.31473840112777884,
+                  "up_m": -0.590979174140877,
+                  "distance_m": 0.67409165031593
                 }
               },
               {
@@ -44427,15 +44428,15 @@ window.QA_DATA = {
                   -0.16203783786443604
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.07482693546084786,
-                  "forward_m": 0.5600594190464562,
-                  "up_m": -1.1065469834980306,
-                  "distance_m": 1.2427342875776468
+                  "right_m": -0.08696610122484497,
+                  "forward_m": 0.31274757870908115,
+                  "up_m": -0.5906101999341754,
+                  "distance_m": 0.6742606772818365
                 }
               },
               {
@@ -44473,15 +44474,15 @@ window.QA_DATA = {
                   -0.17996786472690807
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.09169927371812062,
-                  "forward_m": 0.5580976159482608,
-                  "up_m": -1.1062361554886722,
-                  "distance_m": 1.24277240251636
+                  "right_m": -0.09904570342908603,
+                  "forward_m": 0.31065226553137554,
+                  "up_m": -0.5903055559081049,
+                  "distance_m": 0.67474207788048
                 }
               },
               {
@@ -44519,15 +44520,15 @@ window.QA_DATA = {
                   -0.1976215972770725
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.10917673829556224,
-                  "forward_m": 0.5555969477242911,
-                  "up_m": -1.1060550792504775,
-                  "distance_m": 1.2429262916585202
+                  "right_m": -0.11161428736912579,
+                  "forward_m": 0.3080822582517749,
+                  "up_m": -0.5901337627145475,
+                  "distance_m": 0.6753789797190978
                 }
               },
               {
@@ -44565,15 +44566,15 @@ window.QA_DATA = {
                   -0.21448355165447214
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.12627005202092514,
-                  "forward_m": 0.55233865735274,
-                  "up_m": -1.1060252772602897,
-                  "distance_m": 1.2430527348278049
+                  "right_m": -0.12395240438221203,
+                  "forward_m": 0.30482604718494627,
+                  "up_m": -0.5901157427915545,
+                  "distance_m": 0.6760077238649013
                 }
               },
               {
@@ -44611,15 +44612,15 @@ window.QA_DATA = {
                   -0.23016010490878913
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.1420283986982241,
-                  "forward_m": 0.5483308102236484,
-                  "up_m": -1.1060818526044751,
-                  "distance_m": 1.2430217470261657
+                  "right_m": -0.1353920730191818,
+                  "forward_m": 0.3008971294405213,
+                  "up_m": -0.5902077975099498,
+                  "distance_m": 0.6765033937782768
                 }
               },
               {
@@ -44657,15 +44658,15 @@ window.QA_DATA = {
                   -0.24517580691278257
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.1569453513465171,
-                  "forward_m": 0.5441056211492352,
-                  "up_m": -1.105965980217791,
-                  "distance_m": 1.2429010216077672
+                  "right_m": -0.14631207821896897,
+                  "forward_m": 0.29684655337529636,
+                  "up_m": -0.5901430245238326,
+                  "distance_m": 0.6769639611227819
                 }
               },
               {
@@ -44703,15 +44704,15 @@ window.QA_DATA = {
                   -0.26020609236611475
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.1719222510064556,
-                  "forward_m": 0.5401078914242732,
-                  "up_m": -1.1054692587737958,
-                  "distance_m": 1.2428282487914468
+                  "right_m": -0.15738043548978356,
+                  "forward_m": 0.29313704079228037,
+                  "up_m": -0.5896883205472876,
+                  "distance_m": 0.6775447328476056
                 }
               },
               {
@@ -44749,15 +44750,15 @@ window.QA_DATA = {
                   -0.27539425564054193
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.18725478249014468,
-                  "forward_m": 0.53614052268518,
-                  "up_m": -1.104825974088327,
-                  "distance_m": 1.2429286205048644
+                  "right_m": -0.16878924037950988,
+                  "forward_m": 0.28950741239138983,
+                  "up_m": -0.5890363760186472,
+                  "distance_m": 0.678308372793456
                 }
               },
               {
@@ -44795,15 +44796,15 @@ window.QA_DATA = {
                   -0.29007497959926476
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.20257309871182666,
-                  "forward_m": 0.5322506388426818,
-                  "up_m": -1.1042797035686316,
-                  "distance_m": 1.24333304620974
+                  "right_m": -0.18030419278702123,
+                  "forward_m": 0.28594842317544006,
+                  "up_m": -0.5884343960121368,
+                  "distance_m": 0.6793670145985613
                 }
               },
               {
@@ -44841,15 +44842,15 @@ window.QA_DATA = {
                   -0.302232117346076
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.2164895543295613,
-                  "forward_m": 0.5291525661213097,
-                  "up_m": -1.10391284367517,
-                  "distance_m": 1.2441851927166117
+                  "right_m": -0.19110133251610012,
+                  "forward_m": 0.2831745998065254,
+                  "up_m": -0.5880604605606601,
+                  "distance_m": 0.6809557504058869
                 }
               },
               {
@@ -44887,15 +44888,15 @@ window.QA_DATA = {
                   -0.31137049901767094
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.22861557375822922,
-                  "forward_m": 0.5271641541079266,
-                  "up_m": -1.1037596292049745,
-                  "distance_m": 1.2455254633196933
+                  "right_m": -0.20091634655078225,
+                  "forward_m": 0.2814994857435209,
+                  "up_m": -0.587963033328503,
+                  "distance_m": 0.6831230579590949
                 }
               },
               {
@@ -44933,15 +44934,15 @@ window.QA_DATA = {
                   -0.31880593883442243
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.23975302366054516,
-                  "forward_m": 0.5259545419520282,
-                  "up_m": -1.103811742554405,
-                  "distance_m": 1.2472665886820935
+                  "right_m": -0.21013862405929998,
+                  "forward_m": 0.2805994933399838,
+                  "up_m": -0.5880490936110601,
+                  "distance_m": 0.6856897469995008
                 }
               },
               {
@@ -44979,15 +44980,15 @@ window.QA_DATA = {
                   -0.32485948730556524
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.24996635732664368,
-                  "forward_m": 0.5252582965822443,
-                  "up_m": -1.1039698201685775,
-                  "distance_m": 1.2492029253932038
+                  "right_m": -0.21878687853330084,
+                  "forward_m": 0.2801729644740439,
+                  "up_m": -0.5882120072709763,
+                  "distance_m": 0.6884260952457741
                 }
               },
               {
@@ -45025,15 +45026,15 @@ window.QA_DATA = {
                   -0.3292856310176248
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.2589304415846644,
-                  "forward_m": 0.5248902312464957,
-                  "up_m": -1.1040829307349198,
-                  "distance_m": 1.251074174062736
+                  "right_m": -0.2266901412609914,
+                  "forward_m": 0.27997447938352715,
+                  "up_m": -0.5883403000623464,
+                  "distance_m": 0.6910930785946732
                 }
               },
               {
@@ -45071,15 +45072,15 @@ window.QA_DATA = {
                   -0.3329074854328915
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.26729602915177025,
-                  "forward_m": 0.5245351899064228,
-                  "up_m": -1.104053876918714,
-                  "distance_m": 1.2527471073195187
+                  "right_m": -0.2342233925322611,
+                  "forward_m": 0.2797090664921954,
+                  "up_m": -0.5883160383223919,
+                  "distance_m": 0.6935488829299616
                 }
               },
               {
@@ -45117,15 +45118,15 @@ window.QA_DATA = {
                   -0.33671471440917494
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.27586336330419436,
-                  "forward_m": 0.5238769562342486,
-                  "up_m": -1.1038531645533134,
-                  "distance_m": 1.2541860979924497
+                  "right_m": -0.24182903792464633,
+                  "forward_m": 0.27911933610646705,
+                  "up_m": -0.5880879906361439,
+                  "distance_m": 0.695753701732983
                 }
               },
               {
@@ -45163,15 +45164,15 @@ window.QA_DATA = {
                   -0.34081548022425295
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.28461548611248133,
-                  "forward_m": 0.5228772162141823,
-                  "up_m": -1.1036108597822463,
-                  "distance_m": 1.2555142555014367
+                  "right_m": -0.24943137576034674,
+                  "forward_m": 0.2782379553502482,
+                  "up_m": -0.5878434787316082,
+                  "distance_m": 0.6978762110914574
                 }
               },
               {
@@ -45209,15 +45210,15 @@ window.QA_DATA = {
                   -0.34516633419458104
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.2933579880015342,
-                  "forward_m": 0.5215393206525807,
-                  "up_m": -1.1034810574066647,
-                  "distance_m": 1.2568550847419107
+                  "right_m": -0.2568724125779056,
+                  "forward_m": 0.2771004029727589,
+                  "up_m": -0.5877488918748464,
+                  "distance_m": 0.7000368643973979
                 }
               },
               {
@@ -45255,15 +45256,15 @@ window.QA_DATA = {
                   -0.34980988229514365
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.30189501654232553,
-                  "forward_m": 0.5198339678947135,
-                  "up_m": -1.103594043263979,
-                  "distance_m": 1.2582670429692702
+                  "right_m": -0.2640502908852189,
+                  "forward_m": 0.2756277059617299,
+                  "up_m": -0.5878291537876514,
+                  "distance_m": 0.7021851087721981
                 }
               },
               {
@@ -45301,15 +45302,15 @@ window.QA_DATA = {
                   -0.35472151988444595
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3101352830363949,
-                  "forward_m": 0.5177755971278832,
-                  "up_m": -1.1039405363226549,
-                  "distance_m": 1.259726761925702
+                  "right_m": -0.2709263690306336,
+                  "forward_m": 0.2738033994553486,
+                  "up_m": -0.5880717448667658,
+                  "distance_m": 0.7042869995236827
                 }
               },
               {
@@ -45347,15 +45348,15 @@ window.QA_DATA = {
                   -0.35980981778729604
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3181200995339032,
-                  "forward_m": 0.5154167914827644,
-                  "up_m": -1.1043601991736642,
-                  "distance_m": 1.2611314849584692
+                  "right_m": -0.2775344591269866,
+                  "forward_m": 0.2716845940035086,
+                  "up_m": -0.588437373457451,
+                  "distance_m": 0.7063476746546784
                 }
               },
               {
@@ -45393,15 +45394,15 @@ window.QA_DATA = {
                   -0.3653063832466189
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.32600429575435863,
-                  "forward_m": 0.5126950400678221,
-                  "up_m": -1.1047667038797562,
-                  "distance_m": 1.2624269068472658
+                  "right_m": -0.2839597023303691,
+                  "forward_m": 0.269231215297322,
+                  "up_m": -0.5888560392310895,
+                  "distance_m": 0.7083308918459984
                 }
               },
               {
@@ -45439,15 +45440,15 @@ window.QA_DATA = {
                   -0.371537157749027
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.33393255221832246,
-                  "forward_m": 0.5095091692885942,
-                  "up_m": -1.1051355622784533,
-                  "distance_m": 1.263597890958132
+                  "right_m": -0.2902709623563469,
+                  "forward_m": 0.26636832157219903,
+                  "up_m": -0.5892485438079014,
+                  "distance_m": 0.7101760203696835
                 }
               },
               {
@@ -45485,15 +45486,15 @@ window.QA_DATA = {
                   -0.37802955440385305
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3415496907846826,
-                  "forward_m": 0.5060889940741157,
-                  "up_m": -1.105479870542102,
-                  "distance_m": 1.2646582590544149
+                  "right_m": -0.29625073486464903,
+                  "forward_m": 0.26329546037838925,
+                  "up_m": -0.5896042185063839,
+                  "distance_m": 0.7118620438555022
                 }
               },
               {
@@ -45531,15 +45532,15 @@ window.QA_DATA = {
                   -0.3840338731334049
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.34836691285892873,
-                  "forward_m": 0.5027900159362471,
-                  "up_m": -1.105817229927803,
-                  "distance_m": 1.2656142529641194
+                  "right_m": -0.30161354568759224,
+                  "forward_m": 0.2603151234861977,
+                  "up_m": -0.5899358093244885,
+                  "distance_m": 0.7133755273951247
                 }
               },
               {
@@ -45577,15 +45578,15 @@ window.QA_DATA = {
                   -0.3889139431369366
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.35408778795344875,
-                  "forward_m": 0.4998875432470476,
-                  "up_m": -1.10613099137829,
-                  "distance_m": 1.266409548658601
+                  "right_m": -0.30620548941929376,
+                  "forward_m": 0.2576602612099861,
+                  "up_m": -0.5902432995160805,
+                  "distance_m": 0.7146788094973324
                 }
               },
               {
@@ -45623,15 +45624,15 @@ window.QA_DATA = {
                   -0.39217898542056057
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.358551582412422,
-                  "forward_m": 0.4976015507128506,
-                  "up_m": -1.106409031330019,
-                  "distance_m": 1.2670175411978568
+                  "right_m": -0.30994371197036874,
+                  "forward_m": 0.2555252474703711,
+                  "up_m": -0.5905260429253398,
+                  "distance_m": 0.7157577782210579
                 }
               },
               {
@@ -45669,15 +45670,15 @@ window.QA_DATA = {
                   -0.39360457134101595
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.36177842382304815,
-                  "forward_m": 0.49603909340386404,
-                  "up_m": -1.106659529753032,
-                  "distance_m": 1.2674908132595275
+                  "right_m": -0.31282644154634576,
+                  "forward_m": 0.25402651011561045,
+                  "up_m": -0.5907845281631752,
+                  "distance_m": 0.716648346843422
                 }
               },
               {
@@ -45715,15 +45716,15 @@ window.QA_DATA = {
                   -0.39360314864434864
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.36388025186558837,
-                  "forward_m": 0.4949803794134567,
-                  "up_m": -1.1068531484014235,
-                  "distance_m": 1.2678163521402703
+                  "right_m": -0.3149343788998445,
+                  "forward_m": 0.2529701528630797,
+                  "up_m": -0.5909833394790613,
+                  "distance_m": 0.717335504127066
                 }
               },
               {
@@ -45761,15 +45762,15 @@ window.QA_DATA = {
                   -0.39320245128551734
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3650668173829211,
-                  "forward_m": 0.49388092087515434,
-                  "up_m": -1.1069154843862619,
-                  "distance_m": 1.2679002823791832
+                  "right_m": -0.3164415711069778,
+                  "forward_m": 0.2518478375492412,
+                  "up_m": -0.5910460673803667,
+                  "distance_m": 0.7177459637172331
                 }
               },
               {
@@ -45807,15 +45808,15 @@ window.QA_DATA = {
                   -0.3926037671246166
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3656844389045114,
-                  "forward_m": 0.4925894858036435,
-                  "up_m": -1.1067594237072786,
-                  "distance_m": 1.2676824722186575
+                  "right_m": -0.3176050062735589,
+                  "forward_m": 0.25052357228938205,
+                  "up_m": -0.5908790234286599,
+                  "distance_m": 0.7178472738191258
                 }
               },
               {
@@ -45853,15 +45854,15 @@ window.QA_DATA = {
                   -0.39148929824932616
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3661492598034696,
-                  "forward_m": 0.491219872763829,
-                  "up_m": -1.106319353231397,
-                  "distance_m": 1.2671420083914033
+                  "right_m": -0.31871191502827545,
+                  "forward_m": 0.2491088432537878,
+                  "up_m": -0.5904116373154817,
+                  "distance_m": 0.7176476931786889
                 }
               },
               {
@@ -45899,15 +45900,15 @@ window.QA_DATA = {
                   -0.38989789986267853
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.36676132943751305,
-                  "forward_m": 0.48979151543340405,
-                  "up_m": -1.1057182138506274,
-                  "distance_m": 1.2663461257757689
+                  "right_m": -0.3199100774633084,
+                  "forward_m": 0.24759580845535775,
+                  "up_m": -0.5897932629938769,
+                  "distance_m": 0.71722828910199
                 }
               },
               {
@@ -45945,15 +45946,15 @@ window.QA_DATA = {
                   -0.3879407173964035
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.36766570896288975,
-                  "forward_m": 0.48831477662331807,
-                  "up_m": -1.1051271033920977,
-                  "distance_m": 1.265408429119096
+                  "right_m": -0.32124455344091374,
+                  "forward_m": 0.2459747324674485,
+                  "up_m": -0.589219601133767,
+                  "distance_m": 0.7167036501606325
                 }
               },
               {
@@ -45991,15 +45992,15 @@ window.QA_DATA = {
                   -0.3855094913869131
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.36860561997014596,
-                  "forward_m": 0.48688762390764073,
-                  "up_m": -1.1046268306516094,
-                  "distance_m": 1.2644820949510844
+                  "right_m": -0.32258473846119773,
+                  "forward_m": 0.24438275955495042,
+                  "up_m": -0.5887465596589075,
+                  "distance_m": 0.716203480475123
                 }
               },
               {
@@ -46037,15 +46038,15 @@ window.QA_DATA = {
                   -0.3829745328039201
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3695294916616936,
-                  "forward_m": 0.4854777980866919,
-                  "up_m": -1.104229304577444,
-                  "distance_m": 1.2636619832984695
+                  "right_m": -0.32389286963406894,
+                  "forward_m": 0.24283566653481534,
+                  "up_m": -0.5883618043186036,
+                  "distance_m": 0.7157930841377544
                 }
               },
               {
@@ -46083,15 +46084,15 @@ window.QA_DATA = {
                   -0.3817277857986496
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3709168993972902,
-                  "forward_m": 0.4837419789654531,
-                  "up_m": -1.1038543461264803,
-                  "distance_m": 1.2629156735313993
+                  "right_m": -0.3253628121606909,
+                  "forward_m": 0.24103192248742925,
+                  "up_m": -0.5879837523504748,
+                  "distance_m": 0.7154115230620544
                 }
               },
               {
@@ -46129,15 +46130,15 @@ window.QA_DATA = {
                   -0.38197418579098347
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.37273125816503105,
-                  "forward_m": 0.4816712970337218,
-                  "up_m": -1.1034888351256424,
-                  "distance_m": 1.262227725038935
+                  "right_m": -0.32694387503949796,
+                  "forward_m": 0.23895989333665596,
+                  "up_m": -0.5876071270867436,
+                  "distance_m": 0.7150359556347045
                 }
               },
               {
@@ -46175,15 +46176,15 @@ window.QA_DATA = {
                   -0.382452283184795
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.37431909168732214,
-                  "forward_m": 0.4796810057296698,
-                  "up_m": -1.1032040829933545,
-                  "distance_m": 1.261616911511709
+                  "right_m": -0.3283038543369643,
+                  "forward_m": 0.23698440018468478,
+                  "up_m": -0.5873172673667147,
+                  "distance_m": 0.7147011524932243
                 }
               },
               {
@@ -46221,15 +46222,15 @@ window.QA_DATA = {
                   -0.38260379306064635
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.37534804475282657,
-                  "forward_m": 0.47794875311644663,
-                  "up_m": -1.1029995671479838,
-                  "distance_m": 1.2610512786192634
+                  "right_m": -0.3292712581631701,
+                  "forward_m": 0.2352549148546525,
+                  "up_m": -0.5871099827742035,
+                  "distance_m": 0.7143731589278322
                 }
               },
               {
@@ -46267,15 +46268,15 @@ window.QA_DATA = {
                   -0.3823407977129757
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3757357138421614,
-                  "forward_m": 0.4765022738264924,
-                  "up_m": -1.1028244246277181,
-                  "distance_m": 1.260472670771035
+                  "right_m": -0.32979905501988305,
+                  "forward_m": 0.2337859546247158,
+                  "up_m": -0.586922212969923,
+                  "distance_m": 0.7139816283988651
                 }
               },
               {
@@ -46313,15 +46314,15 @@ window.QA_DATA = {
                   -0.3811379383038796
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3754728501372555,
-                  "forward_m": 0.47558010852009003,
-                  "up_m": -1.1026416175895455,
-                  "distance_m": 1.259888844263665
+                  "right_m": -0.32989370670016704,
+                  "forward_m": 0.23278918381503927,
+                  "up_m": -0.5867294532491867,
+                  "distance_m": 0.7135415291421774
                 }
               },
               {
@@ -46359,15 +46360,15 @@ window.QA_DATA = {
                   -0.37870324633223634
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.37467539412388606,
-                  "forward_m": 0.4753277817953834,
-                  "up_m": -1.1024510293548424,
-                  "distance_m": 1.2593482534590816
+                  "right_m": -0.32964341048768864,
+                  "forward_m": 0.23240178358544453,
+                  "up_m": -0.5865444015290115,
+                  "distance_m": 0.7131163982281825
                 }
               },
               {
@@ -46405,15 +46406,15 @@ window.QA_DATA = {
                   -0.3761791243814495
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.37380339767482407,
-                  "forward_m": 0.4752732334410957,
-                  "up_m": -1.1023607957374832,
-                  "distance_m": 1.2589490232269578
+                  "right_m": -0.32935197779391945,
+                  "forward_m": 0.23222439244371862,
+                  "up_m": -0.5864545055897303,
+                  "distance_m": 0.7128201847217789
                 }
               },
               {
@@ -46451,15 +46452,15 @@ window.QA_DATA = {
                   -0.37436784661790024
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3731670344914068,
-                  "forward_m": 0.4750745862583653,
-                  "up_m": -1.1024162248008813,
-                  "distance_m": 1.2587224780336808
+                  "right_m": -0.3292178869298562,
+                  "forward_m": 0.23195106892623824,
+                  "up_m": -0.5864977923890032,
+                  "distance_m": 0.7126969250564614
                 }
               },
               {
@@ -46497,15 +46498,15 @@ window.QA_DATA = {
                   -0.37277093226372093
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3726432328366569,
-                  "forward_m": 0.4749087606784814,
-                  "up_m": -1.102495549571087,
-                  "distance_m": 1.2585490391056569
+                  "right_m": -0.3291453842044524,
+                  "forward_m": 0.23169283519866468,
+                  "up_m": -0.5865835800991251,
+                  "distance_m": 0.7126314097980285
                 }
               },
               {
@@ -46543,15 +46544,15 @@ window.QA_DATA = {
                   -0.3712507042649673
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.37222624269625176,
-                  "forward_m": 0.47476949040204086,
-                  "up_m": -1.102558473154187,
-                  "distance_m": 1.2583696694197188
+                  "right_m": -0.32909102118859723,
+                  "forward_m": 0.23146383788076452,
+                  "up_m": -0.5866233419284778,
+                  "distance_m": 0.712520335965882
                 }
               },
               {
@@ -46589,15 +46590,15 @@ window.QA_DATA = {
                   -0.3701909075815309
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3720626974211907,
-                  "forward_m": 0.4744105101740746,
-                  "up_m": -1.1026693445814435,
-                  "distance_m": 1.2582070578694602
+                  "right_m": -0.3290917535399997,
+                  "forward_m": 0.23113476280269746,
+                  "up_m": -0.5865549204449166,
+                  "distance_m": 0.712299351938582
                 }
               },
               {
@@ -46635,15 +46636,15 @@ window.QA_DATA = {
                   -0.36903955141540223
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3717559321442585,
-                  "forward_m": 0.47408938310125076,
-                  "up_m": -1.1027336228341693,
-                  "distance_m": 1.257968082957177
+                  "right_m": -0.32893713049444795,
+                  "forward_m": 0.23087966468392565,
+                  "up_m": -0.5863973602377929,
+                  "distance_m": 0.7119516568229657
                 }
               },
               {
@@ -46681,15 +46682,15 @@ window.QA_DATA = {
                   -0.3668323520159136
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3706810544315057,
-                  "forward_m": 0.47429572454425234,
-                  "up_m": -1.1025811963136791,
-                  "distance_m": 1.2575134595269184
+                  "right_m": -0.32832456717573444,
+                  "forward_m": 0.23100481395862038,
+                  "up_m": -0.5862136558493001,
+                  "distance_m": 0.7114970804900113
                 }
               },
               {
@@ -46727,15 +46728,15 @@ window.QA_DATA = {
                   -0.36414832257551083
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.36920184371549725,
-                  "forward_m": 0.4747630885653336,
-                  "up_m": -1.1022910582110559,
-                  "distance_m": 1.2569446567982099
+                  "right_m": -0.32747266209917075,
+                  "forward_m": 0.2313173107256944,
+                  "up_m": -0.5860010381374574,
+                  "distance_m": 0.7109899912016697
                 }
               },
               {
@@ -46773,15 +46774,15 @@ window.QA_DATA = {
                   -0.3620972681077505
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3679967244616562,
-                  "forward_m": 0.47498322860736275,
-                  "up_m": -1.1019971908956567,
-                  "distance_m": 1.256405893865578
+                  "right_m": -0.3267573970953217,
+                  "forward_m": 0.23144735936649552,
+                  "up_m": -0.5857356525130849,
+                  "distance_m": 0.7104772640285276
                 }
               },
               {
@@ -46819,15 +46820,15 @@ window.QA_DATA = {
                   -0.3614850590645041
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.36744522412052183,
-                  "forward_m": 0.47462785089096343,
-                  "up_m": -1.1016743350285942,
-                  "distance_m": 1.2558517614694744
+                  "right_m": -0.32637201972202445,
+                  "forward_m": 0.23108179811813417,
+                  "up_m": -0.5854113587744022,
+                  "distance_m": 0.7099321604523354
                 }
               },
               {
@@ -46865,15 +46866,15 @@ window.QA_DATA = {
                   -0.36233966010542384
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3675594591671991,
-                  "forward_m": 0.47370924615093807,
-                  "up_m": -1.1012977790501242,
-                  "distance_m": 1.255247923419059
+                  "right_m": -0.32630903969664504,
+                  "forward_m": 0.2302076008282753,
+                  "up_m": -0.5850391585099742,
+                  "distance_m": 0.7093403927573084
                 }
               },
               {
@@ -46911,15 +46912,15 @@ window.QA_DATA = {
                   -0.3633089825526219
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.36777296707435003,
-                  "forward_m": 0.47282476494452447,
-                  "up_m": -1.1009146804635346,
-                  "distance_m": 1.2546652858429195
+                  "right_m": -0.326254399727764,
+                  "forward_m": 0.22937010764904114,
+                  "up_m": -0.5846575484704184,
+                  "distance_m": 0.7087452272495132
                 }
               },
               {
@@ -46957,15 +46958,15 @@ window.QA_DATA = {
                   -0.3640629356260387
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3679714588642465,
-                  "forward_m": 0.4721409426108164,
-                  "up_m": -1.1005645110934097,
-                  "distance_m": 1.25416157419911
+                  "right_m": -0.3261629262816065,
+                  "forward_m": 0.22872689844814664,
+                  "up_m": -0.5843002734209621,
+                  "distance_m": 0.7082004278951501
                 }
               },
               {
@@ -47003,15 +47004,15 @@ window.QA_DATA = {
                   -0.36554059192853694
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3685840745801217,
-                  "forward_m": 0.4712892752698549,
-                  "up_m": -1.1002692012032351,
-                  "distance_m": 1.2537647504741694
+                  "right_m": -0.32630615716765243,
+                  "forward_m": 0.2279505031308861,
+                  "up_m": -0.5839934701048386,
+                  "distance_m": 0.7077621521486769
                 }
               },
               {
@@ -47049,15 +47050,15 @@ window.QA_DATA = {
                   -0.36723413550889134
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3692824957157482,
-                  "forward_m": 0.4705107796012584,
-                  "up_m": -1.1000733083515701,
-                  "distance_m": 1.253506277773698
+                  "right_m": -0.32650720209906325,
+                  "forward_m": 0.22725651756628143,
+                  "up_m": -0.5837912414296107,
+                  "distance_m": 0.7074623469823947
                 }
               },
               {
@@ -47095,15 +47096,15 @@ window.QA_DATA = {
                   -0.36789575756501636
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3693617781151278,
-                  "forward_m": 0.47035213415327487,
-                  "up_m": -1.1000263481308612,
-                  "distance_m": 1.2534108276286084
+                  "right_m": -0.32636071892588914,
+                  "forward_m": 0.2271312805563529,
+                  "up_m": -0.583752755138137,
+                  "distance_m": 0.7073082150971903
                 }
               },
               {
@@ -47141,15 +47142,15 @@ window.QA_DATA = {
                   -0.36829707111927606
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.36917787024507465,
-                  "forward_m": 0.470445419451641,
-                  "up_m": -1.100100849193772,
-                  "distance_m": 1.253432198621824
+                  "right_m": -0.32604431390837296,
+                  "forward_m": 0.22724646057816325,
+                  "up_m": -0.5838395358285853,
+                  "distance_m": 0.7072519494474019
                 }
               },
               {
@@ -47187,15 +47188,15 @@ window.QA_DATA = {
                   -0.3695551714184232
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3693014613501295,
-                  "forward_m": 0.470274602858304,
-                  "up_m": -1.1002441646056902,
-                  "distance_m": 1.2535082370276556
+                  "right_m": -0.32584640029262524,
+                  "forward_m": 0.22714279980464303,
+                  "up_m": -0.5839855765177829,
+                  "distance_m": 0.7072303234017215
                 }
               },
               {
@@ -47233,15 +47234,15 @@ window.QA_DATA = {
                   -0.37113784318233095
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.36955448642712274,
-                  "forward_m": 0.47010301659688436,
-                  "up_m": -1.1004237541458401,
-                  "distance_m": 1.2536209443558572
+                  "right_m": -0.3256198802886211,
+                  "forward_m": 0.22705508224324228,
+                  "up_m": -0.5841658171036392,
+                  "distance_m": 0.7072037104253782
                 }
               },
               {
@@ -47279,15 +47280,15 @@ window.QA_DATA = {
                   -0.37238284738275523
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.36961248113825906,
-                  "forward_m": 0.47021962780711585,
-                  "up_m": -1.1006415005137962,
-                  "distance_m": 1.2537878889202096
+                  "right_m": -0.32519760255528085,
+                  "forward_m": 0.2272365968785976,
+                  "up_m": -0.5843862724496374,
+                  "distance_m": 0.7071848748581727
                 }
               },
               {
@@ -47325,15 +47326,15 @@ window.QA_DATA = {
                   -0.3730926561720755
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.36919541982058834,
-                  "forward_m": 0.4706237349640555,
-                  "up_m": -1.1009552815010444,
-                  "distance_m": 1.254073827649177
+                  "right_m": -0.32456368124183,
+                  "forward_m": 0.2276749669165136,
+                  "up_m": -0.5846935297528626,
+                  "distance_m": 0.7072750312248534
                 }
               },
               {
@@ -47371,15 +47372,15 @@ window.QA_DATA = {
                   -0.3730428794041466
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3682182662969887,
-                  "forward_m": 0.47140383117170065,
-                  "up_m": -1.1013124330097888,
-                  "distance_m": 1.2544379732664062
+                  "right_m": -0.32371578155656855,
+                  "forward_m": 0.2284437367282558,
+                  "up_m": -0.5850369068975978,
+                  "distance_m": 0.7074536480596251
                 }
               },
               {
@@ -47417,15 +47418,15 @@ window.QA_DATA = {
                   -0.37198440808564054
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.36683082301561937,
-                  "forward_m": 0.47275210638647797,
-                  "up_m": -1.1015449421428878,
-                  "distance_m": 1.2547284749728422
+                  "right_m": -0.3226565273066721,
+                  "forward_m": 0.22971858484403554,
+                  "up_m": -0.5852663659993792,
+                  "distance_m": 0.7075641268281282
                 }
               },
               {
@@ -47463,15 +47464,15 @@ window.QA_DATA = {
                   -0.37058773893745467
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3653408227890128,
-                  "forward_m": 0.4743580476303411,
-                  "up_m": -1.1017587527177977,
-                  "distance_m": 1.2550221499348415
+                  "right_m": -0.3215013496363354,
+                  "forward_m": 0.23123485938653016,
+                  "up_m": -0.5854846189615508,
+                  "distance_m": 0.7076661547788935
                 }
               },
               {
@@ -47509,15 +47510,15 @@ window.QA_DATA = {
                   -0.3699286052760927
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3640770949608956,
-                  "forward_m": 0.4756713985636572,
-                  "up_m": -1.1021987491664573,
-                  "distance_m": 1.2555072052914547
+                  "right_m": -0.3204050968133064,
+                  "forward_m": 0.2325132515129689,
+                  "up_m": -0.5859217332658602,
+                  "distance_m": 0.7079281620970853
                 }
               },
               {
@@ -47555,15 +47556,15 @@ window.QA_DATA = {
                   -0.3695725155639185
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3628081205456386,
-                  "forward_m": 0.47680755482501613,
-                  "up_m": -1.1027484961953828,
-                  "distance_m": 1.2560380027971305
+                  "right_m": -0.319239262674341,
+                  "forward_m": 0.2336370133357919,
+                  "up_m": -0.5864709120639848,
+                  "distance_m": 0.7082161268326488
                 }
               },
               {
@@ -47601,15 +47602,15 @@ window.QA_DATA = {
                   -0.3685716657692484
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3610723504282517,
-                  "forward_m": 0.4781585130337642,
-                  "up_m": -1.1031678416967223,
-                  "distance_m": 1.2563889103198003
+                  "right_m": -0.31776474707523694,
+                  "forward_m": 0.23493577844312724,
+                  "up_m": -0.5869038362222981,
+                  "distance_m": 0.708320008751931
                 }
               },
               {
@@ -47647,15 +47648,15 @@ window.QA_DATA = {
                   -0.3663192614252296
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.35840615442559565,
-                  "forward_m": 0.48016668860746414,
-                  "up_m": -1.103296979514836,
-                  "distance_m": 1.256529783359251
+                  "right_m": -0.31576659118148287,
+                  "forward_m": 0.236826160847623,
+                  "up_m": -0.5870451770003112,
+                  "distance_m": 0.7081961027024846
                 }
               },
               {
@@ -47693,15 +47694,15 @@ window.QA_DATA = {
                   -0.3622187956716828
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.35435627693923344,
-                  "forward_m": 0.4832121052487508,
-                  "up_m": -1.103207157603919,
-                  "distance_m": 1.2565608194581388
+                  "right_m": -0.31296324317071156,
+                  "forward_m": 0.23966697106484952,
+                  "up_m": -0.5869561493813568,
+                  "distance_m": 0.7079106729302455
                 }
               },
               {
@@ -47739,15 +47740,15 @@ window.QA_DATA = {
                   -0.3554794056732919
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3484746222888724,
-                  "forward_m": 0.48753964973365793,
-                  "up_m": -1.1033818815880525,
-                  "distance_m": 1.256745752118905
+                  "right_m": -0.3089269266841539,
+                  "forward_m": 0.24367457494514455,
+                  "up_m": -0.5871333354879755,
+                  "distance_m": 0.707666456218903
                 }
               },
               {
@@ -47785,15 +47786,15 @@ window.QA_DATA = {
                   -0.34370424028195895
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.33926079048167773,
-                  "forward_m": 0.4939498573833766,
-                  "up_m": -1.1039172822284469,
-                  "distance_m": 1.2570567794050227
+                  "right_m": -0.3027170819471614,
+                  "forward_m": 0.24956662119868067,
+                  "up_m": -0.5876859341586698,
+                  "distance_m": 0.7073972110755863
                 }
               },
               {
@@ -47831,15 +47832,15 @@ window.QA_DATA = {
                   -0.32301735423512157
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.32414604810572334,
-                  "forward_m": 0.5036197536479309,
-                  "up_m": -1.1044298246337636,
-                  "distance_m": 1.2571385562812805
+                  "right_m": -0.2928789454351788,
+                  "forward_m": 0.25843579831487434,
+                  "up_m": -0.5882364093934676,
+                  "distance_m": 0.7067410742966416
                 }
               },
               {
@@ -47877,15 +47878,15 @@ window.QA_DATA = {
                   -0.29489951345915366
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.3038041070927068,
-                  "forward_m": 0.5155007636416737,
-                  "up_m": -1.1049345280329714,
-                  "distance_m": 1.257094391843788
+                  "right_m": -0.279800136480323,
+                  "forward_m": 0.26942940585235936,
+                  "up_m": -0.5887563604866526,
+                  "distance_m": 0.7058133468808517
                 }
               },
               {
@@ -47923,15 +47924,15 @@ window.QA_DATA = {
                   -0.26427651563709514
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.2811654792817309,
-                  "forward_m": 0.5274845243635794,
-                  "up_m": -1.1056620889838877,
-                  "distance_m": 1.2572696578054694
+                  "right_m": -0.2652068049109963,
+                  "forward_m": 0.28070138406933065,
+                  "up_m": -0.5894183240082997,
+                  "distance_m": 0.7049933368919329
                 }
               },
               {
@@ -47969,15 +47970,15 @@ window.QA_DATA = {
                   -0.23305394131188578
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.25790006143042726,
-                  "forward_m": 0.5387416021143077,
-                  "up_m": -1.1063196619510465,
-                  "distance_m": 1.2574831539706695
+                  "right_m": -0.25011689435363427,
+                  "forward_m": 0.2915309979926582,
+                  "up_m": -0.5899983032158,
+                  "distance_m": 0.7042325721220384
                 }
               },
               {
@@ -48015,15 +48016,15 @@ window.QA_DATA = {
                   -0.20217269829670992
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.23505565270977746,
-                  "forward_m": 0.5489778697561927,
-                  "up_m": -1.1065849160051549,
-                  "distance_m": 1.2574855963038294
+                  "right_m": -0.23517489419742982,
+                  "forward_m": 0.3016547395489116,
+                  "up_m": -0.5902581752640879,
+                  "distance_m": 0.7033982394814001
                 }
               },
               {
@@ -48061,15 +48062,15 @@ window.QA_DATA = {
                   -0.17339590702867375
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.21322900577356058,
-                  "forward_m": 0.5578489412658834,
-                  "up_m": -1.1067905304299028,
-                  "distance_m": 1.257531918256899
+                  "right_m": -0.2206748232911388,
+                  "forward_m": 0.31066851847488247,
+                  "up_m": -0.5904865350670685,
+                  "distance_m": 0.702663694264969
                 }
               },
               {
@@ -48107,15 +48108,15 @@ window.QA_DATA = {
                   -0.14747543262221213
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.19252706816579723,
-                  "forward_m": 0.5652718548678993,
-                  "up_m": -1.107194670049238,
-                  "distance_m": 1.2577968287452301
+                  "right_m": -0.20667198959886507,
+                  "forward_m": 0.31840122014461797,
+                  "up_m": -0.5909044587723613,
+                  "distance_m": 0.7021415799863108
                 }
               },
               {
@@ -48153,15 +48154,15 @@ window.QA_DATA = {
                   -0.12289026596085917
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.17232478535569623,
-                  "forward_m": 0.5715680251698668,
-                  "up_m": -1.1076126726777946,
-                  "distance_m": 1.258073161965766
+                  "right_m": -0.19290427867801124,
+                  "forward_m": 0.32515806941654757,
+                  "up_m": -0.5913602864093452,
+                  "distance_m": 0.7016864680868911
                 }
               },
               {
@@ -48199,15 +48200,15 @@ window.QA_DATA = {
                   -0.0993535505604955
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.15274160094116926,
-                  "forward_m": 0.5767640501811604,
-                  "up_m": -1.1079405566407845,
-                  "distance_m": 1.2582071165565158
+                  "right_m": -0.17945790186812344,
+                  "forward_m": 0.330953844134138,
+                  "up_m": -0.5917415779998563,
+                  "distance_m": 0.701142322359257
                 }
               },
               {
@@ -48245,15 +48246,15 @@ window.QA_DATA = {
                   -0.07817652275055637
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "left-front",
                   "side": "left",
                   "depth": "front",
-                  "right_m": -0.1347949881781944,
-                  "forward_m": 0.5806318752447843,
-                  "up_m": -1.1082353400343712,
-                  "distance_m": 1.2581685674601963
+                  "right_m": -0.1668555491108322,
+                  "forward_m": 0.3354866452712868,
+                  "up_m": -0.592043569937063,
+                  "distance_m": 0.7003916845848824
                 }
               },
               {
@@ -48291,15 +48292,15 @@ window.QA_DATA = {
                   -0.059142031313137555
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.11812191721337179,
-                  "forward_m": 0.5832429050738882,
-                  "up_m": -1.1085555528057087,
-                  "distance_m": 1.257955698663131
+                  "right_m": -0.15489310781921758,
+                  "forward_m": 0.33878431111064605,
+                  "up_m": -0.5923324113892786,
+                  "distance_m": 0.6994208313033282
                 }
               },
               {
@@ -48337,15 +48338,15 @@ window.QA_DATA = {
                   -0.04109021822322384
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.10152309662147399,
-                  "forward_m": 0.5847877300313131,
-                  "up_m": -1.1089304012033665,
-                  "distance_m": 1.2575718628023145
+                  "right_m": -0.14290949421199678,
+                  "forward_m": 0.34105289223591573,
+                  "up_m": -0.5926913011789323,
+                  "distance_m": 0.698276845060418
                 }
               },
               {
@@ -48383,15 +48384,15 @@ window.QA_DATA = {
                   -0.02414175310326855
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.0851428025990683,
-                  "forward_m": 0.5854600067313943,
-                  "up_m": -1.10923078826136,
-                  "distance_m": 1.2569750349107451
+                  "right_m": -0.1309752063179278,
+                  "forward_m": 0.34251400295439294,
+                  "up_m": -0.5930171037133726,
+                  "distance_m": 0.6969640443491715
                 }
               },
               {
@@ -48429,15 +48430,15 @@ window.QA_DATA = {
                   -0.008705823603102236
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.06946413819583944,
-                  "forward_m": 0.5854764626100967,
-                  "up_m": -1.109335279143074,
-                  "distance_m": 1.256147812882125
+                  "right_m": -0.11933769710885869,
+                  "forward_m": 0.3433850710146036,
+                  "up_m": -0.5931832572577478,
+                  "distance_m": 0.6954780318057154
                 }
               },
               {
@@ -48475,15 +48476,15 @@ window.QA_DATA = {
                   0.005730872472971271
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.05423158552673784,
-                  "forward_m": 0.5849516101766163,
-                  "up_m": -1.1093810529523545,
-                  "distance_m": 1.2552234951056966
+                  "right_m": -0.10782135873052968,
+                  "forward_m": 0.3437139551343175,
+                  "up_m": -0.593252864649064,
+                  "distance_m": 0.6938425587017901
                 }
               },
               {
@@ -48521,15 +48522,15 @@ window.QA_DATA = {
                   0.019526556340276557
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.03926503656982004,
-                  "forward_m": 0.5839595298346036,
-                  "up_m": -1.1094925214544102,
-                  "distance_m": 1.2543278349184788
+                  "right_m": -0.09632152977530736,
+                  "forward_m": 0.34353407574347794,
+                  "up_m": -0.5933230529981411,
+                  "distance_m": 0.6921352255106716
                 }
               },
               {
@@ -48567,15 +48568,15 @@ window.QA_DATA = {
                   0.03227919640356253
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.02485980262973029,
-                  "forward_m": 0.5826222061964564,
-                  "up_m": -1.1096489487850196,
-                  "distance_m": 1.2535000208864597
+                  "right_m": -0.08505451869880952,
+                  "forward_m": 0.3429930752214254,
+                  "up_m": -0.5934685552315251,
+                  "distance_m": 0.6905213543660251
                 }
               },
               {
@@ -48613,15 +48614,15 @@ window.QA_DATA = {
                   0.04389865928118558
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": -0.011022203164830682,
-                  "forward_m": 0.5810941162199152,
-                  "up_m": -1.1097510946632423,
-                  "distance_m": 1.2527104388824721
+                  "right_m": -0.07404914847378337,
+                  "forward_m": 0.34225422229878344,
+                  "up_m": -0.5936084342822826,
+                  "distance_m": 0.6890139570044025
                 }
               },
               {
@@ -48659,15 +48660,15 @@ window.QA_DATA = {
                   0.05472873118380672
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.002592712288797098,
-                  "forward_m": 0.5795164889515649,
-                  "up_m": -1.1096447309488344,
-                  "distance_m": 1.2518717080978656
+                  "right_m": -0.06310770810465557,
+                  "forward_m": 0.3414420596046456,
+                  "up_m": -0.5935048797660044,
+                  "distance_m": 0.6874510289795009
                 }
               },
               {
@@ -48705,15 +48706,15 @@ window.QA_DATA = {
                   0.0644779744167604
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.015649718231434556,
-                  "forward_m": 0.577940367650018,
-                  "up_m": -1.109396517698925,
-                  "distance_m": 1.2510511746874982
+                  "right_m": -0.052469702594704605,
+                  "forward_m": 0.3405725872264963,
+                  "up_m": -0.5932289509541699,
+                  "distance_m": 0.6859097839393523
                 }
               },
               {
@@ -48751,15 +48752,15 @@ window.QA_DATA = {
                   0.07255872306139988
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.027479646280157567,
-                  "forward_m": 0.57638122067628,
-                  "up_m": -1.1092066306341115,
-                  "distance_m": 1.2504028285929363
+                  "right_m": -0.042589398042431406,
+                  "forward_m": 0.3396205423745607,
+                  "up_m": -0.5930403807525912,
+                  "distance_m": 0.684607239433951
                 }
               },
               {
@@ -48797,15 +48798,15 @@ window.QA_DATA = {
                   0.07947175957731484
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.03843779427049992,
-                  "forward_m": 0.5747886332728115,
-                  "up_m": -1.1091197534920236,
-                  "distance_m": 1.249921211096786
+                  "right_m": -0.03325885141977152,
+                  "forward_m": 0.3385716095259407,
+                  "up_m": -0.592972822072563,
+                  "distance_m": 0.6835305466813071
                 }
               },
               {
@@ -48843,15 +48844,15 @@ window.QA_DATA = {
                   0.08583658815792322
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.04906101569331361,
-                  "forward_m": 0.5731174075461186,
-                  "up_m": -1.1091438558471303,
-                  "distance_m": 1.2495861243523714
+                  "right_m": -0.02414575890802875,
+                  "forward_m": 0.3374217371698518,
+                  "up_m": -0.5930012085375419,
+                  "distance_m": 0.6826287873560261
                 }
               },
               {
@@ -48889,15 +48890,15 @@ window.QA_DATA = {
                   0.09110844398429802
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.05904646846525106,
-                  "forward_m": 0.5715733440266334,
-                  "up_m": -1.1093854587907828,
-                  "distance_m": 1.2495563778454557
+                  "right_m": -0.015434961424458861,
+                  "forward_m": 0.3363062904968972,
+                  "up_m": -0.5932248541217288,
+                  "distance_m": 0.6820489357758421
                 }
               },
               {
@@ -48935,15 +48936,15 @@ window.QA_DATA = {
                   0.09484714071043204
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.06807134517386117,
-                  "forward_m": 0.5703031096397297,
-                  "up_m": -1.1098919918671826,
-                  "distance_m": 1.249904211560873
+                  "right_m": -0.00735798734874419,
+                  "forward_m": 0.33532184970329687,
+                  "up_m": -0.5936991234451493,
+                  "distance_m": 0.6818695700919348
                 }
               },
               {
@@ -48981,15 +48982,15 @@ window.QA_DATA = {
                   0.09735893183873345
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.07615389021309626,
-                  "forward_m": 0.5691717224451941,
-                  "up_m": -1.1105499511232921,
-                  "distance_m": 1.250453104113314
+                  "right_m": 3.3158135717414883e-06,
+                  "forward_m": 0.3343835423123181,
+                  "up_m": -0.5943365466386198,
+                  "distance_m": 0.6819477136918739
                 }
               },
               {
@@ -49027,15 +49028,15 @@ window.QA_DATA = {
                   0.09890108850125534
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.0833964941830023,
-                  "forward_m": 0.5681093805754527,
-                  "up_m": -1.1113055164491157,
-                  "distance_m": 1.2511143126223125
+                  "right_m": 0.006956972710221665,
+                  "forward_m": 0.3335636250699695,
+                  "up_m": -0.5950847179450877,
+                  "distance_m": 0.6822543326320477
                 }
               },
               {
@@ -49073,15 +49074,15 @@ window.QA_DATA = {
                   0.09958908394220167
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.08995794930664583,
-                  "forward_m": 0.5671676932511825,
-                  "up_m": -1.1121888517390124,
-                  "distance_m": 1.2519285057978737
+                  "right_m": 0.014129987374321206,
+                  "forward_m": 0.3330976329673045,
+                  "up_m": -0.5959365152503509,
+                  "distance_m": 0.6828989532463456
                 }
               },
               {
@@ -49119,15 +49120,15 @@ window.QA_DATA = {
                   0.09984371912038947
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.09607221628502251,
-                  "forward_m": 0.5663448732041504,
-                  "up_m": -1.1131134121858353,
-                  "distance_m": 1.2528297102693726
+                  "right_m": 0.020537710089518428,
+                  "forward_m": 0.33251092754212047,
+                  "up_m": -0.5966731707099897,
+                  "distance_m": 0.6834321346158648
                 }
               },
               {
@@ -49165,15 +49166,15 @@ window.QA_DATA = {
                   0.10039753184605427
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.10210789464178652,
-                  "forward_m": 0.5655809948119435,
-                  "up_m": -1.1139197984706606,
-                  "distance_m": 1.2536838523603662
+                  "right_m": 0.024366839034606437,
+                  "forward_m": 0.3309626859027276,
+                  "up_m": -0.5969297295498701,
+                  "distance_m": 0.683037567422291
                 }
               },
               {
@@ -49211,15 +49212,15 @@ window.QA_DATA = {
                   0.10263564577768702
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.10896459177297405,
-                  "forward_m": 0.5647450113433723,
-                  "up_m": -1.1145325640827926,
-                  "distance_m": 1.254429937291604
+                  "right_m": 0.025910293194545304,
+                  "forward_m": 0.32860584463865355,
+                  "up_m": -0.5964164100419365,
+                  "distance_m": 0.6815059459944103
                 }
               },
               {
@@ -49257,15 +49258,15 @@ window.QA_DATA = {
                   0.10747551484039902
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.11720579185821278,
-                  "forward_m": 0.5636686008540925,
-                  "up_m": -1.1149761549514237,
-                  "distance_m": 1.2550645399028444
+                  "right_m": 0.02554922349835957,
+                  "forward_m": 0.3259707305171169,
+                  "up_m": -0.594671026723134,
+                  "distance_m": 0.6786858541794814
                 }
               },
               {
@@ -49303,15 +49304,15 @@ window.QA_DATA = {
                   0.11318208450985096
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "front",
+                  "side": "center",
                   "depth": "front",
-                  "right_m": 0.12543165007444712,
-                  "forward_m": 0.5622705384406232,
-                  "up_m": -1.1155065656735137,
-                  "distance_m": 1.2556867203771824
+                  "right_m": 0.021036867611019312,
+                  "forward_m": 0.32348501401875773,
+                  "up_m": -0.5904792265420163,
+                  "distance_m": 0.6736477337133563
                 }
               },
               {
@@ -49349,15 +49350,15 @@ window.QA_DATA = {
                   0.11824300421352674
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "front",
+                  "side": "center",
                   "depth": "front",
-                  "right_m": 0.1325049697024569,
-                  "forward_m": 0.5606058051551558,
-                  "up_m": -1.1162224973012878,
-                  "distance_m": 1.2563135364625455
+                  "right_m": 0.0106371888696832,
+                  "forward_m": 0.32174163513510845,
+                  "up_m": -0.5832289571245011,
+                  "distance_m": 0.6661926166579697
                 }
               },
               {
@@ -49395,15 +49396,15 @@ window.QA_DATA = {
                   0.12281487064092489
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "front",
+                  "side": "center",
                   "depth": "front",
-                  "right_m": 0.13871022598269475,
-                  "forward_m": 0.5588506019973023,
-                  "up_m": -1.1168030807680929,
-                  "distance_m": 1.256751658156981
+                  "right_m": -0.005259790040212355,
+                  "forward_m": 0.32152514003388494,
+                  "up_m": -0.5740425481453695,
+                  "distance_m": 0.6579658989472155
                 }
               },
               {
@@ -49441,15 +49442,15 @@ window.QA_DATA = {
                   0.12696285421974285
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "front",
+                  "side": "center",
                   "depth": "front",
-                  "right_m": 0.14435944557364433,
-                  "forward_m": 0.5571532015105626,
-                  "up_m": -1.1170742539840595,
-                  "distance_m": 1.2569229409784026
+                  "right_m": -0.025916349979916986,
+                  "forward_m": 0.323178804104721,
+                  "up_m": -0.5642165163249265,
+                  "distance_m": 0.6506782710839186
                 }
               },
               {
@@ -49487,15 +49488,15 @@ window.QA_DATA = {
                   0.13045025351032852
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "front",
+                  "side": "center",
                   "depth": "front",
-                  "right_m": 0.14960383977379532,
-                  "forward_m": 0.5556199397179304,
-                  "up_m": -1.1171017126020886,
-                  "distance_m": 1.2569204508398015
+                  "right_m": -0.05041006448828463,
+                  "forward_m": 0.3265397407374065,
+                  "up_m": -0.5547892012876676,
+                  "distance_m": 0.6455996017498303
                 }
               },
               {
@@ -49533,15 +49534,15 @@ window.QA_DATA = {
                   0.1336905139909606
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "front",
+                  "side": "center",
                   "depth": "front",
-                  "right_m": 0.15477355496343403,
-                  "forward_m": 0.5542576008197703,
-                  "up_m": -1.1170083773948947,
-                  "distance_m": 1.2568900648822132
+                  "right_m": -0.07741764495801645,
+                  "forward_m": 0.33129746613034033,
+                  "up_m": -0.5467475693040853,
+                  "distance_m": 0.6437535696923284
                 }
               },
               {
@@ -49579,15 +49580,15 @@ window.QA_DATA = {
                   0.13744261580386985
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "front",
+                  "side": "center",
                   "depth": "front",
-                  "right_m": 0.16026344747215232,
-                  "forward_m": 0.5530114183493484,
-                  "up_m": -1.1169329434572572,
-                  "distance_m": 1.2569940818867047
+                  "right_m": -0.1053779812300768,
+                  "forward_m": 0.3370954942916754,
+                  "up_m": -0.5409940150769759,
+                  "distance_m": 0.645773880969382
                 }
               },
               {
@@ -49625,15 +49626,15 @@ window.QA_DATA = {
                   0.14160870986367835
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.1660135597010298,
-                  "forward_m": 0.551952270825193,
-                  "up_m": -1.116918940316987,
-                  "distance_m": 1.2573003518529695
+                  "right_m": -0.13333321827105954,
+                  "forward_m": 0.34345421979126545,
+                  "up_m": -0.5374959020661976,
+                  "distance_m": 0.6512363439463953
                 }
               },
               {
@@ -49671,15 +49672,15 @@ window.QA_DATA = {
                   0.14590858913808524
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.17186563289750506,
-                  "forward_m": 0.551144213710905,
-                  "up_m": -1.1169609074715883,
-                  "distance_m": 1.2578112810122593
+                  "right_m": -0.1604924820865455,
+                  "forward_m": 0.34984319080023785,
+                  "up_m": -0.5358673263440457,
+                  "distance_m": 0.6592495473127348
                 }
               },
               {
@@ -49717,15 +49718,15 @@ window.QA_DATA = {
                   0.1506927383283279
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.17797955649139657,
-                  "forward_m": 0.5504066900538401,
-                  "up_m": -1.1170166384247444,
-                  "distance_m": 1.2584346605100991
+                  "right_m": -0.1858284699360862,
+                  "forward_m": 0.35582888638965515,
+                  "up_m": -0.535787374513131,
+                  "distance_m": 0.6688414658729679
                 }
               },
               {
@@ -49763,15 +49764,15 @@ window.QA_DATA = {
                   0.1559559866682939
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.18430776564076412,
-                  "forward_m": 0.5496440289152877,
-                  "up_m": -1.117098197829871,
-                  "distance_m": 1.2591329110481204
+                  "right_m": -0.20855789284339193,
+                  "forward_m": 0.3610166467538966,
+                  "up_m": -0.5370103137170872,
+                  "distance_m": 0.6790933027307345
                 }
               },
               {
@@ -49809,15 +49810,15 @@ window.QA_DATA = {
                   0.16067430571906155
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.1902329861021822,
-                  "forward_m": 0.549071901759202,
-                  "up_m": -1.1173425805606108,
-                  "distance_m": 1.2600192204161207
+                  "right_m": -0.22852548737192246,
+                  "forward_m": 0.3649503034898507,
+                  "up_m": -0.5394398365590936,
+                  "distance_m": 0.689357420234795
                 }
               },
               {
@@ -49855,15 +49856,15 @@ window.QA_DATA = {
                   0.16382454594091933
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.1951100715366188,
-                  "forward_m": 0.5489122646672939,
-                  "up_m": -1.1177811300041345,
-                  "distance_m": 1.2610929962654722
+                  "right_m": -0.24592517303316155,
+                  "forward_m": 0.367279850708601,
+                  "up_m": -0.5430262073535739,
+                  "distance_m": 0.6992638802632392
                 }
               },
               {
@@ -49901,15 +49902,15 @@ window.QA_DATA = {
                   0.16457884030647496
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.19835557607571208,
-                  "forward_m": 0.549325922470349,
-                  "up_m": -1.118306858781121,
-                  "distance_m": 1.2622034416483237
+                  "right_m": -0.26125150586949836,
+                  "forward_m": 0.3678265996358898,
+                  "up_m": -0.5477609052424954,
+                  "distance_m": 0.7087591209390947
                 }
               },
               {
@@ -49947,15 +49948,15 @@ window.QA_DATA = {
                   0.1626546704925922
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.1995703322374488,
-                  "forward_m": 0.5503380603899936,
-                  "up_m": -1.1188909574113624,
-                  "distance_m": 1.2632899753541487
+                  "right_m": -0.27484061462568754,
+                  "forward_m": 0.36657856532063443,
+                  "up_m": -0.5536338725332846,
+                  "distance_m": 0.7178211239764892
                 }
               },
               {
@@ -49993,15 +49994,15 @@ window.QA_DATA = {
                   0.15826265804225487
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.19861901322940526,
-                  "forward_m": 0.5518436892359484,
-                  "up_m": -1.119546768953227,
-                  "distance_m": 1.2643466134956294
+                  "right_m": -0.2868137328906258,
+                  "forward_m": 0.3637500035408606,
+                  "up_m": -0.5605555747362103,
+                  "distance_m": 0.7264065987644654
                 }
               },
               {
@@ -50039,15 +50040,15 @@ window.QA_DATA = {
                   0.15247296914158076
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.19620506625178524,
-                  "forward_m": 0.5535696416744202,
-                  "up_m": -1.1201740086759553,
-                  "distance_m": 1.265271569756723
+                  "right_m": -0.29694250152896196,
+                  "forward_m": 0.3599764464864977,
+                  "up_m": -0.5680777066218671,
+                  "distance_m": 0.7343832484964959
                 }
               },
               {
@@ -50085,15 +50086,15 @@ window.QA_DATA = {
                   0.14643726889950748
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.1931938350213092,
-                  "forward_m": 0.5552310170346897,
-                  "up_m": -1.1206728379711612,
-                  "distance_m": 1.265965240134463
+                  "right_m": -0.3050135888572028,
+                  "forward_m": 0.355976614826408,
+                  "up_m": -0.5756300630718548,
+                  "distance_m": 0.7415859276982344
                 }
               },
               {
@@ -50131,15 +50132,15 @@ window.QA_DATA = {
                   0.14028889786668658
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.18978468088533013,
-                  "forward_m": 0.5567370100060952,
-                  "up_m": -1.1211129081519897,
-                  "distance_m": 1.2664765341714792
+                  "right_m": -0.31128391470765915,
+                  "forward_m": 0.35200639731731603,
+                  "up_m": -0.5826985667237964,
+                  "distance_m": 0.7478129531964862
                 }
               },
               {
@@ -50177,15 +50178,15 @@ window.QA_DATA = {
                   0.13401520585021337
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.18604691467654796,
-                  "forward_m": 0.5580666737401506,
-                  "up_m": -1.121559477815708,
-                  "distance_m": 1.266868214831248
+                  "right_m": -0.31613495110305057,
+                  "forward_m": 0.3481947969295553,
+                  "up_m": -0.588903436386962,
+                  "distance_m": 0.7529499392328793
                 }
               },
               {
@@ -50223,15 +50224,15 @@ window.QA_DATA = {
                   0.12778511298318346
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.18209536549596897,
-                  "forward_m": 0.5592531472731503,
-                  "up_m": -1.1219888565687282,
-                  "distance_m": 1.2671601883943444
+                  "right_m": -0.31998340299971384,
+                  "forward_m": 0.344659228529401,
+                  "up_m": -0.5940930910422432,
+                  "distance_m": 0.7570659591183531
                 }
               },
               {
@@ -50269,15 +50270,15 @@ window.QA_DATA = {
                   0.12174015378286573
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.17799314506420494,
-                  "forward_m": 0.5602840803815978,
-                  "up_m": -1.1223596742893533,
-                  "distance_m": 1.2673262673702475
+                  "right_m": -0.32323075516665745,
+                  "forward_m": 0.3413500151362436,
+                  "up_m": -0.5984685690343012,
+                  "distance_m": 0.7604342170772597
                 }
               },
               {
@@ -50315,15 +50316,15 @@ window.QA_DATA = {
                   0.11594509473249798
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.17372979135832317,
-                  "forward_m": 0.5610887157990424,
-                  "up_m": -1.1226261495901566,
-                  "distance_m": 1.267297360047097
+                  "right_m": -0.32625728802449927,
+                  "forward_m": 0.3380512424031232,
+                  "up_m": -0.6025469008778358,
+                  "distance_m": 0.7635083250241186
                 }
               },
               {
@@ -50361,15 +50362,15 @@ window.QA_DATA = {
                   0.11029428139289721
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.16923754869865726,
-                  "forward_m": 0.5617201055393373,
-                  "up_m": -1.1227832859603777,
-                  "distance_m": 1.2670812961197429
+                  "right_m": -0.3294649906984439,
+                  "forward_m": 0.3349710294782742,
+                  "up_m": -0.6057349529925298,
+                  "distance_m": 0.7660834668467607
                 }
               },
               {
@@ -50407,15 +50408,15 @@ window.QA_DATA = {
                   0.10459266950935853
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.16441139895064344,
-                  "forward_m": 0.5623019154696389,
-                  "up_m": -1.1228573980649892,
-                  "distance_m": 1.2667386741032802
+                  "right_m": -0.3332454847364502,
+                  "forward_m": 0.33251623848959533,
+                  "up_m": -0.6069446229854933,
+                  "distance_m": 0.7676487406814523
                 }
               },
               {
@@ -50453,15 +50454,15 @@ window.QA_DATA = {
                   0.09878514503959668
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.15914843668967293,
-                  "forward_m": 0.5628247292713453,
-                  "up_m": -1.122894289618313,
-                  "distance_m": 1.2663051615556429
+                  "right_m": -0.33776869975766916,
+                  "forward_m": 0.33038690392797365,
+                  "up_m": -0.607197191021613,
+                  "distance_m": 0.7689395546714821
                 }
               },
               {
@@ -50499,15 +50500,15 @@ window.QA_DATA = {
                   0.09283531477517015
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.1533605029067702,
-                  "forward_m": 0.5632651416805917,
-                  "up_m": -1.1229329282268898,
-                  "distance_m": 1.2658095165554049
+                  "right_m": -0.3430074551887279,
+                  "forward_m": 0.3280982691179634,
+                  "up_m": -0.6079121302218391,
+                  "distance_m": 0.7708457991776424
                 }
               },
               {
@@ -50545,15 +50546,15 @@ window.QA_DATA = {
                   0.08657792004530152
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.14702435600959368,
-                  "forward_m": 0.5637599925900453,
-                  "up_m": -1.122959377855655,
-                  "distance_m": 1.2652967203575525
+                  "right_m": -0.34856352172094407,
+                  "forward_m": 0.3255839892531802,
+                  "up_m": -0.6086991897930626,
+                  "distance_m": 0.7728793268323305
                 }
               },
               {
@@ -50591,15 +50592,15 @@ window.QA_DATA = {
                   0.08020113472807144
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.1403128103606351,
-                  "forward_m": 0.5643404959410373,
-                  "up_m": -1.1229590529848146,
-                  "distance_m": 1.2647862099159068
+                  "right_m": -0.3540335729732095,
+                  "forward_m": 0.32294477782375314,
+                  "up_m": -0.6090603678767701,
+                  "distance_m": 0.7745335045825775
                 }
               },
               {
@@ -50637,15 +50638,15 @@ window.QA_DATA = {
                   0.0746486882442135
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.13376667423728394,
-                  "forward_m": 0.564764469602192,
-                  "up_m": -1.1229412859789756,
-                  "distance_m": 1.2642385011930155
+                  "right_m": -0.35918701697887145,
+                  "forward_m": 0.3204183904438455,
+                  "up_m": -0.6091503537400638,
+                  "distance_m": 0.7759312114610298
                 }
               },
               {
@@ -50683,15 +50684,15 @@ window.QA_DATA = {
                   0.07047873544532945
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.12764433086089053,
-                  "forward_m": 0.5649578147195997,
-                  "up_m": -1.1229117518594591,
-                  "distance_m": 1.2636566384765795
+                  "right_m": -0.3639932505318162,
+                  "forward_m": 0.3182306697672263,
+                  "up_m": -0.6091364568577307,
+                  "distance_m": 0.7772580307585525
                 }
               },
               {
@@ -50729,15 +50730,15 @@ window.QA_DATA = {
                   0.06764466392949081
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "right-front",
-                  "side": "right",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.12179848629639947,
-                  "forward_m": 0.5650695556292534,
-                  "up_m": -1.122872430108365,
-                  "distance_m": 1.2631034734811255
+                  "right_m": -0.36863757249037177,
+                  "forward_m": 0.31654166178484217,
+                  "up_m": -0.6090928027573353,
+                  "distance_m": 0.7786737329442733
                 }
               },
               {
@@ -50775,15 +50776,15 @@ window.QA_DATA = {
                   0.06565209549311474
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.11597612227789765,
-                  "forward_m": 0.5652144794699808,
-                  "up_m": -1.1228816762761031,
-                  "distance_m": 1.2626464103851154
+                  "right_m": -0.3734553035248482,
+                  "forward_m": 0.31522232462300265,
+                  "up_m": -0.6091306624045297,
+                  "distance_m": 0.7803827201410356
                 }
               },
               {
@@ -50821,15 +50822,15 @@ window.QA_DATA = {
                   0.0638309332053213
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.10992687971562949,
-                  "forward_m": 0.5654147437185587,
-                  "up_m": -1.1230362835796939,
-                  "distance_m": 1.2623381183969382
+                  "right_m": -0.37881078853172234,
+                  "forward_m": 0.3139656729317961,
+                  "up_m": -0.6093781959644126,
+                  "distance_m": 0.782594231146569
                 }
               },
               {
@@ -50867,15 +50868,15 @@ window.QA_DATA = {
                   0.06231232168398937
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.10380792976117001,
-                  "forward_m": 0.5653686288446632,
-                  "up_m": -1.1234205805705384,
-                  "distance_m": 1.2621225437118406
+                  "right_m": -0.3846029785720555,
+                  "forward_m": 0.31269446323281797,
+                  "up_m": -0.6098408383514098,
+                  "distance_m": 0.785283978383217
                 }
               },
               {
@@ -50913,15 +50914,15 @@ window.QA_DATA = {
                   0.06136075947891767
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.09777932915177906,
-                  "forward_m": 0.5647630506030341,
-                  "up_m": -1.124058682442957,
-                  "distance_m": 1.2618976753287923
+                  "right_m": -0.39060947660294404,
+                  "forward_m": 0.3113805886633154,
+                  "up_m": -0.6104576211415446,
+                  "distance_m": 0.788295613623343
                 }
               },
               {
@@ -50959,15 +50960,15 @@ window.QA_DATA = {
                   0.060482869318320254
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.09141440903057158,
-                  "forward_m": 0.5636987229221667,
-                  "up_m": -1.1247696800618396,
-                  "distance_m": 1.2615497906728648
+                  "right_m": -0.39685529712499445,
+                  "forward_m": 0.3097862710441135,
+                  "up_m": -0.6111120356261887,
+                  "distance_m": 0.7913532267114134
                 }
               },
               {
@@ -51005,15 +51006,15 @@ window.QA_DATA = {
                   0.05930415812811779
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.08454331727594205,
-                  "forward_m": 0.5624093991986707,
-                  "up_m": -1.1253110884171749,
-                  "distance_m": 1.2609777297542466
+                  "right_m": -0.4032761839473215,
+                  "forward_m": 0.3078540692151245,
+                  "up_m": -0.6116244637452728,
+                  "distance_m": 0.794196768988732
                 }
               },
               {
@@ -51051,15 +51052,15 @@ window.QA_DATA = {
                   0.058156440218274985
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.07776554798566684,
-                  "forward_m": 0.5612202292494329,
-                  "up_m": -1.125420089901447,
-                  "distance_m": 1.2601228412867571
+                  "right_m": -0.4095332998611115,
+                  "forward_m": 0.3060583529249705,
+                  "up_m": -0.6117204156565883,
+                  "distance_m": 0.7966665982263959
                 }
               },
               {
@@ -51097,15 +51098,15 @@ window.QA_DATA = {
                   0.058229934169318154
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.07215656106889068,
-                  "forward_m": 0.5603072162109994,
-                  "up_m": -1.1250469394046994,
-                  "distance_m": 1.2590608100255558
+                  "right_m": -0.41502702210080533,
+                  "forward_m": 0.3051783561195012,
+                  "up_m": -0.6113486315803427,
+                  "distance_m": 0.798778174517326
                 }
               },
               {
@@ -51143,15 +51144,15 @@ window.QA_DATA = {
                   0.061408831307644296
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.06911649655962745,
-                  "forward_m": 0.5596669522217761,
-                  "up_m": -1.124397084044734,
-                  "distance_m": 1.2580181374874542
+                  "right_m": -0.4189543251426688,
+                  "forward_m": 0.3061818983122755,
+                  "up_m": -0.6107327376770827,
+                  "distance_m": 0.8007324156496289
                 }
               },
               {
@@ -51189,15 +51190,15 @@ window.QA_DATA = {
                   0.06691640542872523
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.06806278308724525,
-                  "forward_m": 0.5593314557989917,
-                  "up_m": -1.1235873586909888,
-                  "distance_m": 1.2570715862554678
+                  "right_m": -0.4215910388363655,
+                  "forward_m": 0.3086923476446119,
+                  "up_m": -0.609958381648475,
+                  "distance_m": 0.8025500266396324
                 }
               },
               {
@@ -51235,15 +51236,15 @@ window.QA_DATA = {
                   0.07229592688274356
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.0671560626633643,
-                  "forward_m": 0.5593412609748326,
-                  "up_m": -1.1226595896737597,
-                  "distance_m": 1.2561929814711497
+                  "right_m": -0.4239196368441775,
+                  "forward_m": 0.31145531034240465,
+                  "up_m": -0.6090103282629659,
+                  "distance_m": 0.8041318362308254
                 }
               },
               {
@@ -51281,15 +51282,15 @@ window.QA_DATA = {
                   0.07656375648592773
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.06584566569715243,
-                  "forward_m": 0.5597445844138691,
-                  "up_m": -1.121669439039036,
-                  "distance_m": 1.255427326053546
+                  "right_m": -0.4262336381797218,
+                  "forward_m": 0.31404585534247365,
+                  "up_m": -0.607957769177018,
+                  "distance_m": 0.8054972531311513
                 }
               },
               {
@@ -51327,15 +51328,15 @@ window.QA_DATA = {
                   0.07951033663566681
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.06422654803733838,
-                  "forward_m": 0.5604540669385591,
-                  "up_m": -1.1207802170121752,
-                  "distance_m": 1.2548819471420867
+                  "right_m": -0.4284692091806398,
+                  "forward_m": 0.31631454386549385,
+                  "up_m": -0.6070041273826212,
+                  "distance_m": 0.8067358494740741
                 }
               },
               {
@@ -51373,15 +51374,15 @@ window.QA_DATA = {
                   0.08152449288260727
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.06276307925236996,
-                  "forward_m": 0.5608691837561455,
-                  "up_m": -1.1205164191585641,
-                  "distance_m": 1.2547693295035656
+                  "right_m": -0.4303459940699377,
+                  "forward_m": 0.3177994509361119,
+                  "up_m": -0.6067025186791548,
+                  "distance_m": 0.8080002007504544
                 }
               },
               {
@@ -51419,15 +51420,15 @@ window.QA_DATA = {
                   0.08287246630076978
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.06177211579682366,
-                  "forward_m": 0.5604807850123793,
-                  "up_m": -1.121128751088532,
-                  "distance_m": 1.255093592800113
+                  "right_m": -0.4316581385153675,
+                  "forward_m": 0.31807916836676803,
+                  "up_m": -0.607320504779415,
+                  "distance_m": 0.8092556169577377
                 }
               },
               {
@@ -51465,15 +51466,15 @@ window.QA_DATA = {
                   0.08331684824026692
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.06106669124398989,
-                  "forward_m": 0.5592004116309872,
-                  "up_m": -1.1221414536826433,
-                  "distance_m": 1.255389878331876
+                  "right_m": -0.43247560603474255,
+                  "forward_m": 0.3169880048502267,
+                  "up_m": -0.6083796172393527,
+                  "distance_m": 0.8100665560430205
                 }
               },
               {
@@ -51511,15 +51512,15 @@ window.QA_DATA = {
                   0.08286510863010965
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.060618785038146765,
-                  "forward_m": 0.5568386801378901,
-                  "up_m": -1.1231983999932063,
-                  "distance_m": 1.2552586668509933
+                  "right_m": -0.43281653481039556,
+                  "forward_m": 0.3143514662854172,
+                  "up_m": -0.6094948693237634,
+                  "distance_m": 0.8100853308690108
                 }
               },
               {
@@ -51557,15 +51558,15 @@ window.QA_DATA = {
                   0.08181389973412306
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.06058385463904792,
-                  "forward_m": 0.5530484421680408,
-                  "up_m": -1.1241978772065082,
-                  "distance_m": 1.2544618003995203
+                  "right_m": -0.4326429031731028,
+                  "forward_m": 0.3099305003855854,
+                  "up_m": -0.6105116555412742,
+                  "distance_m": 0.8091426201856928
                 }
               },
               {
@@ -51603,15 +51604,15 @@ window.QA_DATA = {
                   0.07915931769794071
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.060152024519942594,
-                  "forward_m": 0.5478454194305118,
-                  "up_m": -1.1250624965793778,
-                  "distance_m": 1.2529177974328414
+                  "right_m": -0.43244015030003463,
+                  "forward_m": 0.30325477672799284,
+                  "up_m": -0.6113630083866546,
+                  "distance_m": 0.8072342410179246
                 }
               },
               {
@@ -51649,15 +51650,15 @@ window.QA_DATA = {
                   0.07311201417493068
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.05806271720512628,
-                  "forward_m": 0.5414727052590415,
-                  "up_m": -1.125718324927559,
-                  "distance_m": 1.2506349640802108
+                  "right_m": -0.4329025306636297,
+                  "forward_m": 0.2937311284874978,
+                  "up_m": -0.6120250462339956,
+                  "distance_m": 0.8044530742237529
                 }
               },
               {
@@ -51695,15 +51696,15 @@ window.QA_DATA = {
                   0.06328805100348939
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.05429995259980207,
-                  "forward_m": 0.533906789841485,
-                  "up_m": -1.1260811541620428,
-                  "distance_m": 1.2475350753816554
+                  "right_m": -0.4340134404739066,
+                  "forward_m": 0.2811540235518441,
+                  "up_m": -0.6124157969138616,
+                  "distance_m": 0.8008261728692001
                 }
               },
               {
@@ -51741,15 +51742,15 @@ window.QA_DATA = {
                   0.050496108946092966
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.04955656297647945,
-                  "forward_m": 0.5250579276192795,
-                  "up_m": -1.1260986508998558,
-                  "distance_m": 1.2435786809354923
+                  "right_m": -0.4353643001955813,
+                  "forward_m": 0.26585323109142645,
+                  "up_m": -0.6124627835799626,
+                  "distance_m": 0.7964041330801169
                 }
               },
               {
@@ -51787,15 +51788,15 @@ window.QA_DATA = {
                   0.03765305449069012
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.04528951486906564,
-                  "forward_m": 0.5150750764667239,
-                  "up_m": -1.1258403564208244,
-                  "distance_m": 1.2389856345200312
+                  "right_m": -0.4361752590912633,
+                  "forward_m": 0.24946784603468258,
+                  "up_m": -0.6122080998896875,
+                  "distance_m": 0.7913958369834304
                 }
               },
               {
@@ -51833,15 +51834,15 @@ window.QA_DATA = {
                   0.0269843192717521
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.04237762196676695,
-                  "forward_m": 0.5043559904849003,
-                  "up_m": -1.1252099120177377,
-                  "distance_m": 1.2338844317489062
+                  "right_m": -0.4360982957373899,
+                  "forward_m": 0.23348649890592008,
+                  "up_m": -0.6115508970741079,
+                  "distance_m": 0.7859758705570246
                 }
               },
               {
@@ -51879,15 +51880,15 @@ window.QA_DATA = {
                   0.01826418330718177
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.040263463996359265,
-                  "forward_m": 0.49359172047304645,
-                  "up_m": -1.123729800773692,
-                  "distance_m": 1.2281017253921678
+                  "right_m": -0.435614598414302,
+                  "forward_m": 0.2184690079424083,
+                  "up_m": -0.6100592833506175,
+                  "distance_m": 0.7801839374371716
                 }
               },
               {
@@ -51925,15 +51926,15 @@ window.QA_DATA = {
                   0.010870737233210914
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.03837798774907532,
-                  "forward_m": 0.4834012905473992,
-                  "up_m": -1.1214145837411404,
-                  "distance_m": 1.221864921784608
+                  "right_m": -0.4351465189828578,
+                  "forward_m": 0.20469991166497684,
+                  "up_m": -0.6077566221545552,
+                  "distance_m": 0.7743069958556797
                 }
               },
               {
@@ -51971,15 +51972,15 @@ window.QA_DATA = {
                   0.004129823900978824
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.036405015526803086,
-                  "forward_m": 0.4742622259037669,
-                  "up_m": -1.1189143714452696,
-                  "distance_m": 1.215924659301352
+                  "right_m": -0.43490725201473723,
+                  "forward_m": 0.1922905839728975,
+                  "up_m": -0.6052521765006083,
+                  "distance_m": 0.7689523830944512
                 }
               },
               {
@@ -52017,15 +52018,15 @@ window.QA_DATA = {
                   -0.0013871443285513596
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.0345751072583117,
-                  "forward_m": 0.46628350023083365,
-                  "up_m": -1.1165903775522648,
-                  "distance_m": 1.210645662124098
+                  "right_m": -0.4348381095049387,
+                  "forward_m": 0.1816323027481731,
+                  "up_m": -0.6029045406585937,
+                  "distance_m": 0.7644042364850367
                 }
               },
               {
@@ -52063,15 +52064,15 @@ window.QA_DATA = {
                   -0.004545313673210538
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.03332872061884804,
-                  "forward_m": 0.4593405397778345,
-                  "up_m": -1.1145532755952008,
-                  "distance_m": 1.2060840848403043
+                  "right_m": -0.4347829331646838,
+                  "forward_m": 0.17317540637626463,
+                  "up_m": -0.6008487740675591,
+                  "distance_m": 0.7606933606527674
                 }
               },
               {
@@ -52109,15 +52110,15 @@ window.QA_DATA = {
                   -0.006545026175041269
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.032134301888839034,
-                  "forward_m": 0.4534367788031999,
-                  "up_m": -1.1128170867257827,
-                  "distance_m": 1.2022236987395187
+                  "right_m": -0.43494740530123366,
+                  "forward_m": 0.16632377582832866,
+                  "up_m": -0.5991038425030032,
+                  "distance_m": 0.7577704028858805
                 }
               },
               {
@@ -52155,15 +52156,15 @@ window.QA_DATA = {
                   -0.00904593342898019
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.030337630008368366,
-                  "forward_m": 0.448554487060504,
-                  "up_m": -1.111359722662592,
-                  "distance_m": 1.199004503030514
+                  "right_m": -0.4355434607277089,
+                  "forward_m": 0.1602326799942006,
+                  "up_m": -0.5976442185023322,
+                  "distance_m": 0.7555449218494501
                 }
               },
               {
@@ -52201,15 +52202,15 @@ window.QA_DATA = {
                   -0.011755394606325964
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.02821919925535858,
-                  "forward_m": 0.4444068742241849,
-                  "up_m": -1.1101686174855474,
-                  "distance_m": 1.1963082834264351
+                  "right_m": -0.43642434871629543,
+                  "forward_m": 0.15477629585781075,
+                  "up_m": -0.5964539934846885,
+                  "distance_m": 0.7538896113042143
                 }
               },
               {
@@ -52247,15 +52248,15 @@ window.QA_DATA = {
                   -0.014497903608062301
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.025982848897426122,
-                  "forward_m": 0.440670052584178,
-                  "up_m": -1.109188774745009,
-                  "distance_m": 1.19396471950137
+                  "right_m": -0.4374959086150874,
+                  "forward_m": 0.14973579099266726,
+                  "up_m": -0.5954722278245165,
+                  "distance_m": 0.7526591166116791
                 }
               },
               {
@@ -52293,15 +52294,15 @@ window.QA_DATA = {
                   -0.018266370851617697
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.023234097247390416,
-                  "forward_m": 0.4370650772714317,
-                  "up_m": -1.1082681601179938,
-                  "distance_m": 1.1917165202822955
+                  "right_m": -0.43890781593679795,
+                  "forward_m": 0.1443555290399794,
+                  "up_m": -0.5945359429766535,
+                  "distance_m": 0.7516801441857189
                 }
               },
               {
@@ -52339,15 +52340,15 @@ window.QA_DATA = {
                   -0.02398247062476544
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.01956453047330227,
-                  "forward_m": 0.43344385550546055,
-                  "up_m": -1.1071169334949589,
-                  "distance_m": 1.1892348438619065
+                  "right_m": -0.440773935445551,
+                  "forward_m": 0.13804554068992134,
+                  "up_m": -0.5933607123489452,
+                  "distance_m": 0.7506957542399512
                 }
               },
               {
@@ -52385,15 +52386,15 @@ window.QA_DATA = {
                   -0.03211094620762095
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.014708764009499227,
-                  "forward_m": 0.42981185196725347,
-                  "up_m": -1.1053200908720773,
-                  "distance_m": 1.1861426056242843
+                  "right_m": -0.4431013219687179,
+                  "forward_m": 0.13058816081956587,
+                  "up_m": -0.5915559255910867,
+                  "distance_m": 0.7493649089102001
                 }
               },
               {
@@ -52431,15 +52432,15 @@ window.QA_DATA = {
                   -0.040997491733922975
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.009443073500986405,
-                  "forward_m": 0.4261843872479216,
-                  "up_m": -1.1028970857670692,
-                  "distance_m": 1.1824889372089384
+                  "right_m": -0.44552911845242893,
+                  "forward_m": 0.12279147645636931,
+                  "up_m": -0.5891409886761743,
+                  "distance_m": 0.7476371554634507
                 }
               },
               {
@@ -52477,15 +52478,15 @@ window.QA_DATA = {
                   -0.04772775978958599
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.005157556644400537,
-                  "forward_m": 0.4226643727998117,
-                  "up_m": -1.100197656065547,
-                  "distance_m": 1.178654503610321
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.4475496626770241,
+                  "forward_m": 0.11613701744427864,
+                  "up_m": -0.5864491339595811,
+                  "distance_m": 0.7456952816105817
                 }
               },
               {
@@ -52523,15 +52524,15 @@ window.QA_DATA = {
                   -0.05098979937139919
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0024483920614610973,
-                  "forward_m": 0.41963375642333955,
-                  "up_m": -1.0976119096018198,
-                  "distance_m": 1.1751326391380281
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.4490035326827426,
+                  "forward_m": 0.11159019332060624,
+                  "up_m": -0.5838685948139098,
+                  "distance_m": 0.7438490175888127
                 }
               },
               {
@@ -52569,15 +52570,15 @@ window.QA_DATA = {
                   -0.050628112607515374
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0013362143741393363,
-                  "forward_m": 0.41753360528035066,
-                  "up_m": -1.0955444753333214,
-                  "distance_m": 1.172446176187513
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.4499450549326915,
+                  "forward_m": 0.10963549608627218,
+                  "up_m": -0.5818057538262458,
+                  "distance_m": 0.7424727850317943
                 }
               },
               {
@@ -52615,15 +52616,15 @@ window.QA_DATA = {
                   -0.04828991817609318
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0009714411922989788,
-                  "forward_m": 0.41665469049951104,
-                  "up_m": -1.0944046395771756,
-                  "distance_m": 1.171068569087881
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.4507247447702994,
+                  "forward_m": 0.10981195155846799,
+                  "up_m": -0.5806616034674528,
+                  "distance_m": 0.7420084353099631
                 }
               },
               {
@@ -52661,15 +52662,15 @@ window.QA_DATA = {
                   -0.045362066216181385
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0007689131457076295,
-                  "forward_m": 0.4172547651575349,
-                  "up_m": -1.0945101737237233,
-                  "distance_m": 1.1713821979209842
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.4515682470061389,
+                  "forward_m": 0.11175067503159627,
+                  "up_m": -0.5807541073429545,
+                  "distance_m": 0.7428025988220277
                 }
               },
               {
@@ -52707,15 +52708,15 @@ window.QA_DATA = {
                   -0.04177729176739836
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0010960102961564064,
-                  "forward_m": 0.4195993981263335,
-                  "up_m": -1.0959785999563754,
-                  "distance_m": 1.1735940712487634
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.45232286056262316,
+                  "forward_m": 0.11575572949825745,
+                  "up_m": -0.5822230503183915,
+                  "distance_m": 0.7449618713348748
                 }
               },
               {
@@ -52753,15 +52754,15 @@ window.QA_DATA = {
                   -0.03672886699295547
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.0025125417964479597,
-                  "forward_m": 0.42375884390444346,
-                  "up_m": -1.0987760885849593,
-                  "distance_m": 1.177707358642617
+                  "right_m": -0.4527346637889736,
+                  "forward_m": 0.12228166666054502,
+                  "up_m": -0.5850347899319388,
+                  "distance_m": 0.7484205494380735
                 }
               },
               {
@@ -52799,15 +52800,15 @@ window.QA_DATA = {
                   -0.028888653208140713
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.005578184232097633,
-                  "forward_m": 0.42955253449388625,
-                  "up_m": -1.102702918441147,
-                  "distance_m": 1.183489422306091
+                  "right_m": -0.45250715374229666,
+                  "forward_m": 0.13178068284930816,
+                  "up_m": -0.588961890574185,
+                  "distance_m": 0.7529414937140414
                 }
               },
               {
@@ -52845,15 +52846,15 @@ window.QA_DATA = {
                   -0.019483036644563856
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.009525251606501375,
-                  "forward_m": 0.43677224405111703,
-                  "up_m": -1.1073532745976429,
-                  "distance_m": 1.1904974242100412
+                  "right_m": -0.45189617775237584,
+                  "forward_m": 0.14347868234848116,
+                  "up_m": -0.5936065490867694,
+                  "distance_m": 0.7583287930358548
                 }
               },
               {
@@ -52891,15 +52892,15 @@ window.QA_DATA = {
                   -0.011256058456546425
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.012748537597877453,
-                  "forward_m": 0.44524796776021114,
-                  "up_m": -1.1122095638692178,
-                  "distance_m": 1.1981812300648926
+                  "right_m": -0.4515975182997268,
+                  "forward_m": 0.15591394431439873,
+                  "up_m": -0.5984805717694536,
+                  "distance_m": 0.7644143711447372
                 }
               },
               {
@@ -52937,15 +52938,15 @@ window.QA_DATA = {
                   -0.004219410829425452
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.015049585850678233,
-                  "forward_m": 0.45485843240872076,
-                  "up_m": -1.1169880538196095,
-                  "distance_m": 1.206242121640725
+                  "right_m": -0.45174862644651703,
+                  "forward_m": 0.16890940568998614,
+                  "up_m": -0.6032887723846407,
+                  "distance_m": 0.7710075559777664
                 }
               },
               {
@@ -52983,15 +52984,15 @@ window.QA_DATA = {
                   0.002400812389011464
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.01678067967537055,
-                  "forward_m": 0.4653843689406121,
-                  "up_m": -1.1215828985674796,
-                  "distance_m": 1.2145208748746676
+                  "right_m": -0.45221054923967136,
+                  "forward_m": 0.1825759452666284,
+                  "up_m": -0.6079012068147218,
+                  "distance_m": 0.7779458960076641
                 }
               },
               {
@@ -53029,15 +53030,15 @@ window.QA_DATA = {
                   0.008035411966410555
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.01795642917675458,
-                  "forward_m": 0.47623736082000995,
-                  "up_m": -1.1261858177584205,
-                  "distance_m": 1.2229763312742914
+                  "right_m": -0.4529123965635582,
+                  "forward_m": 0.19611953736186902,
+                  "up_m": -0.6125037096015422,
+                  "distance_m": 0.7852063783230797
                 }
               },
               {
@@ -53075,15 +53076,15 @@ window.QA_DATA = {
                   0.012427801958945772
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.018589125566859887,
-                  "forward_m": 0.48697382636157843,
-                  "up_m": -1.1307422995226373,
-                  "distance_m": 1.231384328187703
+                  "right_m": -0.4538258193794316,
+                  "forward_m": 0.20900545335384363,
+                  "up_m": -0.6170494785763805,
+                  "distance_m": 0.7926149041136942
                 }
               },
               {
@@ -53121,15 +53122,15 @@ window.QA_DATA = {
                   0.016548399310544637
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.018904288421376054,
-                  "forward_m": 0.4976313247552537,
-                  "up_m": -1.134532107884159,
-                  "distance_m": 1.23910616849847
+                  "right_m": -0.4549217519702613,
+                  "forward_m": 0.22167738615829974,
+                  "up_m": -0.6208448553960397,
+                  "distance_m": 0.7996491921702559
                 }
               },
               {
@@ -53167,15 +53168,15 @@ window.QA_DATA = {
                   0.020179887155437226
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.018738710155758745,
-                  "forward_m": 0.5081390676999822,
-                  "up_m": -1.1374108450880478,
-                  "distance_m": 1.2459834651261554
+                  "right_m": -0.45628466237061055,
+                  "forward_m": 0.2339341197611137,
+                  "up_m": -0.6237503016584706,
+                  "distance_m": 0.8061567045194852
                 }
               },
               {
@@ -53213,15 +53214,15 @@ window.QA_DATA = {
                   0.021618220471516847
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.017449270709776858,
-                  "forward_m": 0.5182308625267495,
-                  "up_m": -1.1400187982357892,
-                  "distance_m": 1.2524781905510558
+                  "right_m": -0.4581650867469151,
+                  "forward_m": 0.2447068452239284,
+                  "up_m": -0.6263820621398826,
+                  "distance_m": 0.8124610077040668
                 }
               },
               {
@@ -53259,15 +53260,15 @@ window.QA_DATA = {
                   0.021697963841597834
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.015537827324357855,
-                  "forward_m": 0.5278740236348579,
-                  "up_m": -1.1423444342392728,
-                  "distance_m": 1.2585722933635688
+                  "right_m": -0.4603023462714704,
+                  "forward_m": 0.25437612859130004,
+                  "up_m": -0.628716234042085,
+                  "distance_m": 0.8184641898445524
                 }
               },
               {
@@ -53305,15 +53306,15 @@ window.QA_DATA = {
                   0.02283931594179134
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.014279757605505282,
-                  "forward_m": 0.5372093175034232,
-                  "up_m": -1.1439406039111395,
-                  "distance_m": 1.263937979631925
+                  "right_m": -0.46204121099431295,
+                  "forward_m": 0.2642527826031064,
+                  "up_m": -0.6303049783261148,
+                  "distance_m": 0.8238076534846979
                 }
               },
               {
@@ -53351,15 +53352,15 @@ window.QA_DATA = {
                   0.0250387822222341
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.013791367303308356,
-                  "forward_m": 0.5462201542891856,
-                  "up_m": -1.1449384733561498,
-                  "distance_m": 1.268685371480622
+                  "right_m": -0.4632589500324302,
+                  "forward_m": 0.27432269662624537,
+                  "up_m": -0.6312915371599662,
+                  "distance_m": 0.8285379541126409
                 }
               },
               {
@@ -53397,15 +53398,15 @@ window.QA_DATA = {
                   0.027269693193803235
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.01360498376042315,
-                  "forward_m": 0.5548368709794925,
-                  "up_m": -1.1456708381984708,
-                  "distance_m": 1.2730736083301941
+                  "right_m": -0.4641614822190709,
+                  "forward_m": 0.2840219813808626,
+                  "up_m": -0.6320234738047014,
+                  "distance_m": 0.8328693632255046
                 }
               },
               {
@@ -53443,15 +53444,15 @@ window.QA_DATA = {
                   0.028628171571069283
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.013088300609991773,
-                  "forward_m": 0.5630815500167139,
-                  "up_m": -1.1462782893499248,
-                  "distance_m": 1.277223978291618
+                  "right_m": -0.46516856933063094,
+                  "forward_m": 0.29291927401996964,
+                  "up_m": -0.6326461626042844,
+                  "distance_m": 0.8370086943207646
                 }
               },
               {
@@ -53489,15 +53490,15 @@ window.QA_DATA = {
                   0.028828457123206697
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.011931634298393692,
-                  "forward_m": 0.570965520581908,
-                  "up_m": -1.1467628780301047,
-                  "distance_m": 1.2811348485143128
+                  "right_m": -0.4665264028550908,
+                  "forward_m": 0.3008786783927252,
+                  "up_m": -0.6331547753702563,
+                  "distance_m": 0.8410260713791944
                 }
               },
               {
@@ -53535,15 +53536,15 @@ window.QA_DATA = {
                   0.028786846973410163
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.010615013941090913,
-                  "forward_m": 0.5784348692004462,
-                  "up_m": -1.1469357699780685,
-                  "distance_m": 1.2846172515941114
+                  "right_m": -0.4679745355858116,
+                  "forward_m": 0.30830635594751155,
+                  "up_m": -0.6333345640007434,
+                  "distance_m": 0.8447142329153425
                 }
               },
               {
@@ -53581,15 +53582,15 @@ window.QA_DATA = {
                   0.02858426767459271
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.009111447668011738,
-                  "forward_m": 0.5854931981611585,
-                  "up_m": -1.146838188748794,
-                  "distance_m": 1.287706771658282
+                  "right_m": -0.469527822337036,
+                  "forward_m": 0.315259832903551,
+                  "up_m": -0.6332221551935681,
+                  "distance_m": 0.8480963011186838
                 }
               },
               {
@@ -53627,15 +53628,15 @@ window.QA_DATA = {
                   0.027145265192898282
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.006652255744781093,
-                  "forward_m": 0.5922113565641516,
-                  "up_m": -1.1468113805889715,
-                  "distance_m": 1.2907300496506804
+                  "right_m": -0.4716314205658283,
+                  "forward_m": 0.32129683463179437,
+                  "up_m": -0.6331821774650408,
+                  "distance_m": 0.8515009010582245
                 }
               },
               {
@@ -53673,15 +53674,15 @@ window.QA_DATA = {
                   0.024232562719855244
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.0032007817349319987,
-                  "forward_m": 0.5985804738625483,
-                  "up_m": -1.1469870383727137,
-                  "distance_m": 1.2937992760849397
+                  "right_m": -0.4742861791939441,
+                  "forward_m": 0.3262782430386758,
+                  "up_m": -0.6333507339885962,
+                  "distance_m": 0.8549761311599401
                 }
               },
               {
@@ -53719,15 +53720,15 @@ window.QA_DATA = {
                   0.020442686327469095
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.0006054221811176725,
-                  "forward_m": 0.6045384768831293,
-                  "up_m": -1.1473245300649932,
-                  "distance_m": 1.2968523483635688
+                  "right_m": -0.47708003267477167,
+                  "forward_m": 0.3304035811718423,
+                  "up_m": -0.6336790975117542,
+                  "distance_m": 0.8583543738381958
                 }
               },
               {
@@ -53765,15 +53766,15 @@ window.QA_DATA = {
                   0.017518143825196564
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.003548690316517094,
-                  "forward_m": 0.6100487742902032,
-                  "up_m": -1.1477487364968537,
-                  "distance_m": 1.2998027235336416
+                  "right_m": -0.4792782260624152,
+                  "forward_m": 0.3344792581734659,
+                  "up_m": -0.6341028570858086,
+                  "distance_m": 0.8614904929478846
                 }
               },
               {
@@ -53811,15 +53812,15 @@ window.QA_DATA = {
                   0.01703662634744124
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.004577981564502209,
-                  "forward_m": 0.615099169819585,
-                  "up_m": -1.1481730355870248,
-                  "distance_m": 1.3025558632328462
+                  "right_m": -0.4802497359010174,
+                  "forward_m": 0.3392639011243666,
+                  "up_m": -0.6345449011267897,
+                  "distance_m": 0.864265634899033
                 }
               },
               {
@@ -53857,15 +53858,15 @@ window.QA_DATA = {
                   0.018110238639612808
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.004289034588507729,
-                  "forward_m": 0.6196604347355262,
-                  "up_m": -1.1485173380914402,
-                  "distance_m": 1.3050188314986417
+                  "right_m": -0.48033932784594974,
+                  "forward_m": 0.34431595681586263,
+                  "up_m": -0.6348993123249491,
+                  "distance_m": 0.8666144290821344
                 }
               },
               {
@@ -53903,15 +53904,15 @@ window.QA_DATA = {
                   0.019399080133154833
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.003623072170921374,
-                  "forward_m": 0.6237139750795155,
-                  "up_m": -1.1487409539123665,
-                  "distance_m": 1.307144354723265
+                  "right_m": -0.48011072112497066,
+                  "forward_m": 0.3489864063833547,
+                  "up_m": -0.6351112054174194,
+                  "distance_m": 0.8685461467151219
                 }
               },
               {
@@ -53949,15 +53950,15 @@ window.QA_DATA = {
                   0.01987997661090407
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.003371939642986776,
-                  "forward_m": 0.627292540519099,
-                  "up_m": -1.1488839166091076,
-                  "distance_m": 1.3089810383102454
+                  "right_m": -0.48005604257291096,
+                  "forward_m": 0.35282059294670487,
+                  "up_m": -0.6352483513693229,
+                  "distance_m": 0.8701984938031648
                 }
               },
               {
@@ -53995,15 +53996,15 @@ window.QA_DATA = {
                   0.019272117187726034
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.003770079532647878,
-                  "forward_m": 0.6304412726089411,
-                  "up_m": -1.1489779904848336,
-                  "distance_m": 1.3105758922665098
+                  "right_m": -0.48032788087338985,
+                  "forward_m": 0.3557117978021659,
+                  "up_m": -0.6353532221196022,
+                  "distance_m": 0.871633821231469
                 }
               },
               {
@@ -54041,15 +54042,15 @@ window.QA_DATA = {
                   0.018144965334685514
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.004380782825591078,
-                  "forward_m": 0.6332066798457368,
-                  "up_m": -1.1490312609103441,
-                  "distance_m": 1.3119561061630094
+                  "right_m": -0.4806613316430696,
+                  "forward_m": 0.3579427910120491,
+                  "up_m": -0.6354181609530497,
+                  "distance_m": 0.8728042779591406
                 }
               },
               {
@@ -54087,15 +54088,15 @@ window.QA_DATA = {
                   0.016881718831370074
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.004951651585129691,
-                  "forward_m": 0.6355771489999085,
-                  "up_m": -1.1490403195516967,
-                  "distance_m": 1.3131110413457627
+                  "right_m": -0.4809211845937901,
+                  "forward_m": 0.3597037515471529,
+                  "up_m": -0.6354423237383103,
+                  "distance_m": 0.8737087666332919
                 }
               },
               {
@@ -54133,15 +54134,15 @@ window.QA_DATA = {
                   0.015640314968371816
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.005430830920620413,
-                  "forward_m": 0.6375158912498096,
-                  "up_m": -1.1489947300290215,
-                  "distance_m": 1.3140119654126516
+                  "right_m": -0.4811036700815514,
+                  "forward_m": 0.36108082188107776,
+                  "up_m": -0.6354275587368389,
+                  "distance_m": 0.8743816750458143
                 }
               },
               {
@@ -54179,15 +54180,15 @@ window.QA_DATA = {
                   0.01421628001078068
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.005984462767454435,
-                  "forward_m": 0.6391118851733153,
-                  "up_m": -1.1488867374413967,
-                  "distance_m": 1.3146943403081155
+                  "right_m": -0.4813005381671492,
+                  "forward_m": 0.3620264375982811,
+                  "up_m": -0.6353434707474744,
+                  "distance_m": 0.8748301376222541
                 }
               },
               {
@@ -54225,15 +54226,15 @@ window.QA_DATA = {
                   0.012333421639030173
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.00681263146636441,
-                  "forward_m": 0.6404737509956766,
-                  "up_m": -1.1487075574002388,
-                  "distance_m": 1.315203303006384
+                  "right_m": -0.4816156344555848,
+                  "forward_m": 0.3624657833488249,
+                  "up_m": -0.6351547559775382,
+                  "distance_m": 0.8750539632645629
                 }
               },
               {
@@ -54271,15 +54272,15 @@ window.QA_DATA = {
                   0.010029228273371493
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.007891270074805681,
-                  "forward_m": 0.6415807541011521,
-                  "up_m": -1.1484399737349766,
-                  "distance_m": 1.3155136581337605
+                  "right_m": -0.4820451906896836,
+                  "forward_m": 0.3624373302367972,
+                  "up_m": -0.6348601942618048,
+                  "distance_m": 0.8750694708214027
                 }
               },
               {
@@ -54317,15 +54318,15 @@ window.QA_DATA = {
                   0.007479483602115922
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.009096768934792724,
-                  "forward_m": 0.6424269347279967,
-                  "up_m": -1.1481029649549621,
-                  "distance_m": 1.3156385970309128
+                  "right_m": -0.48252890005827226,
+                  "forward_m": 0.3620551736497845,
+                  "up_m": -0.6344955510668043,
+                  "distance_m": 0.8749201220331516
                 }
               },
               {
@@ -54363,15 +54364,15 @@ window.QA_DATA = {
                   0.00498394516376055
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.010209158414017535,
-                  "forward_m": 0.6431022112667129,
-                  "up_m": -1.1477964337209938,
-                  "distance_m": 1.31570785068274
+                  "right_m": -0.48294249039265075,
+                  "forward_m": 0.3615304261685622,
+                  "up_m": -0.6341578545176236,
+                  "distance_m": 0.8746986206799068
                 }
               },
               {
@@ -54409,15 +54410,15 @@ window.QA_DATA = {
                   0.0026445784258740668
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.011181697295274894,
-                  "forward_m": 0.6436329824105879,
-                  "up_m": -1.1475866014369904,
-                  "distance_m": 1.3157912725274032
+                  "right_m": -0.4832718654490171,
+                  "forward_m": 0.3609319434224521,
+                  "up_m": -0.6339197107917842,
+                  "distance_m": 0.8744779251968721
                 }
               },
               {
@@ -54455,15 +54456,15 @@ window.QA_DATA = {
                   0.0003332352136047323
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.012170902823474631,
-                  "forward_m": 0.6439549307792695,
-                  "up_m": -1.1474793727195627,
-                  "distance_m": 1.3158631267828522
+                  "right_m": -0.48363065894353463,
+                  "forward_m": 0.3601558198896389,
+                  "up_m": -0.6338061134109509,
+                  "distance_m": 0.8742911126469819
                 }
               },
               {
@@ -54501,15 +54502,15 @@ window.QA_DATA = {
                   -0.001596878633425336
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.012925381618919624,
-                  "forward_m": 0.6440838018251812,
-                  "up_m": -1.1474065182620963,
-                  "distance_m": 1.3158693577679808
+                  "right_m": -0.48386506285840536,
+                  "forward_m": 0.35938115511998775,
+                  "up_m": -0.6337400501512097,
+                  "distance_m": 0.8740726903045185
                 }
               },
               {
@@ -54547,15 +54548,15 @@ window.QA_DATA = {
                   -0.002576467904365942
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.012996635479939286,
-                  "forward_m": 0.6440866920579632,
-                  "up_m": -1.1472713237351724,
-                  "distance_m": 1.315754171407847
+                  "right_m": -0.48368954574493467,
+                  "forward_m": 0.3589224592688449,
+                  "up_m": -0.6335998512443378,
+                  "distance_m": 0.8737101042747447
                 }
               },
               {
@@ -54593,15 +54594,15 @@ window.QA_DATA = {
                   -0.003089311208891554
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.012742959095299652,
-                  "forward_m": 0.6439309327938622,
-                  "up_m": -1.1471417914848119,
-                  "distance_m": 1.3155633689956008
+                  "right_m": -0.4833157724581689,
+                  "forward_m": 0.358513189574427,
+                  "up_m": -0.6334640976217588,
+                  "distance_m": 0.8732577505624065
                 }
               },
               {
@@ -54639,15 +54640,15 @@ window.QA_DATA = {
                   -0.0039260862037165944
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.012748274817769484,
-                  "forward_m": 0.6435680823822449,
-                  "up_m": -1.147115778072792,
-                  "distance_m": 1.315363307814981
+                  "right_m": -0.48309154592718795,
+                  "forward_m": 0.3577368794890029,
+                  "up_m": -0.6334477556113997,
+                  "distance_m": 0.8728095734275257
                 }
               },
               {
@@ -54685,15 +54686,15 @@ window.QA_DATA = {
                   -0.005303830840863222
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.013123992676864673,
-                  "forward_m": 0.6430570438077153,
-                  "up_m": -1.1471337767312368,
-                  "distance_m": 1.3151322255799998
+                  "right_m": -0.4830662547476295,
+                  "forward_m": 0.3565669705342327,
+                  "up_m": -0.6334743522056694,
+                  "distance_m": 0.8723343084246974
                 }
               },
               {
@@ -54731,15 +54732,15 @@ window.QA_DATA = {
                   -0.0069087613196470166
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.013600083986444274,
-                  "forward_m": 0.6424500103471706,
-                  "up_m": -1.147121400582401,
-                  "distance_m": 1.3148289949623226
+                  "right_m": -0.4830713055593799,
+                  "forward_m": 0.3552137800381423,
+                  "up_m": -0.6334573361776193,
+                  "distance_m": 0.8717736461766531
                 }
               },
               {
@@ -54777,15 +54778,15 @@ window.QA_DATA = {
                   -0.007605330538594357
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.013352171554103693,
-                  "forward_m": 0.641732763483026,
-                  "up_m": -1.1470535989477697,
-                  "distance_m": 1.3144176074942406
+                  "right_m": -0.48263869123909847,
+                  "forward_m": 0.35418717350719725,
+                  "up_m": -0.6333868821117186,
+                  "distance_m": 0.8710778000140099
                 }
               },
               {
@@ -54823,15 +54824,15 @@ window.QA_DATA = {
                   -0.00700632765742859
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.012150800151547115,
-                  "forward_m": 0.6409323430343591,
-                  "up_m": -1.1469398779886415,
-                  "distance_m": 1.3139180344985948
+                  "right_m": -0.4816515535559652,
+                  "forward_m": 0.35368203914203483,
+                  "up_m": -0.633277012824484,
+                  "distance_m": 0.8702691106880533
                 }
               },
               {
@@ -54869,15 +54870,15 @@ window.QA_DATA = {
                   -0.005774484796998658
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.010574494691075142,
-                  "forward_m": 0.6401352143070673,
-                  "up_m": -1.1468227440109882,
-                  "distance_m": 1.3134156289296566
+                  "right_m": -0.4804617192900336,
+                  "forward_m": 0.3534593648878252,
+                  "up_m": -0.6331578284299662,
+                  "distance_m": 0.8694548820683461
                 }
               },
               {
@@ -54915,15 +54916,15 @@ window.QA_DATA = {
                   -0.004274319664402115
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.008916639255902697,
-                  "forward_m": 0.6393899170435701,
-                  "up_m": -1.1467093137062838,
-                  "distance_m": 1.312943142285032
+                  "right_m": -0.47925152818682026,
+                  "forward_m": 0.3534033381706348,
+                  "up_m": -0.6330366760985771,
+                  "distance_m": 0.8686903487239234
                 }
               },
               {
@@ -54961,15 +54962,15 @@ window.QA_DATA = {
                   -0.002632050495069038
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.007254239732827307,
-                  "forward_m": 0.6387092207813949,
-                  "up_m": -1.1465800861744582,
-                  "distance_m": 1.3124904428703523
+                  "right_m": -0.4780755741525279,
+                  "forward_m": 0.35348793477017465,
+                  "up_m": -0.632902650934285,
+                  "distance_m": 0.8679888159733434
                 }
               },
               {
@@ -55007,15 +55008,15 @@ window.QA_DATA = {
                   -0.001219221760866085
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.00587658511486313,
-                  "forward_m": 0.6380769307300758,
-                  "up_m": -1.1464255167343502,
-                  "distance_m": 1.3120423472750575
+                  "right_m": -0.4771163237731522,
+                  "forward_m": 0.353529001099166,
+                  "up_m": -0.6327419713716245,
+                  "distance_m": 0.8673697094353234
                 }
               },
               {
@@ -55053,15 +55054,15 @@ window.QA_DATA = {
                   -0.0004069356727081086
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.0050734260635963944,
-                  "forward_m": 0.6374691309837021,
-                  "up_m": -1.1462578835056603,
-                  "distance_m": 1.3115978754003603
+                  "right_m": -0.47655197175285763,
+                  "forward_m": 0.3533218293467644,
+                  "up_m": -0.632561082910851,
+                  "distance_m": 0.8668540110098879
                 }
               },
               {
@@ -55099,15 +55100,15 @@ window.QA_DATA = {
                   -0.00014396278370898408
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.004781503438769841,
-                  "forward_m": 0.6368717204154939,
-                  "up_m": -1.1461550883404967,
-                  "distance_m": 1.3112169559379134
+                  "right_m": -0.4763284221941984,
+                  "forward_m": 0.35284594460757146,
+                  "up_m": -0.6324475340015324,
+                  "distance_m": 0.8664566081668832
                 }
               },
               {
@@ -55145,15 +55146,15 @@ window.QA_DATA = {
                   -0.0002365200025187253
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.004844358959593957,
-                  "forward_m": 0.6362552744426189,
-                  "up_m": -1.1461652311852215,
-                  "distance_m": 1.310926602399877
+                  "right_m": -0.47634957734113353,
+                  "forward_m": 0.3521613071407616,
+                  "up_m": -0.6324566151153588,
+                  "distance_m": 0.8661866262795928
                 }
               },
               {
@@ -55191,15 +55192,15 @@ window.QA_DATA = {
                   -0.0004182189666314673
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.005095422289924237,
-                  "forward_m": 0.635555595968234,
-                  "up_m": -1.146238943180409,
-                  "distance_m": 1.3106523164151032
+                  "right_m": -0.47655333560195345,
+                  "forward_m": 0.35139858039341915,
+                  "up_m": -0.6325328186291661,
+                  "distance_m": 0.8660425394822714
                 }
               },
               {
@@ -55237,15 +55238,15 @@ window.QA_DATA = {
                   -0.0009056429570755142
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.005690162516388782,
-                  "forward_m": 0.6347382463626438,
-                  "up_m": -1.1463368872291326,
-                  "distance_m": 1.3103437966591203
+                  "right_m": -0.4770254313410008,
+                  "forward_m": 0.350417793359248,
+                  "up_m": -0.6326281405753387,
+                  "distance_m": 0.865980342376613
                 }
               },
               {
@@ -55283,15 +55284,15 @@ window.QA_DATA = {
                   -0.0024528572640221125
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.007131903127596833,
-                  "forward_m": 0.6338109098081954,
-                  "up_m": -1.1464438321426718,
-                  "distance_m": 1.309993955611652
+                  "right_m": -0.4780003530203524,
+                  "forward_m": 0.3487726134478283,
+                  "up_m": -0.6327199508241099,
+                  "distance_m": 0.8659086125826706
                 }
               },
               {
@@ -55329,15 +55330,15 @@ window.QA_DATA = {
                   -0.00467461684255599
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.009148574296224624,
-                  "forward_m": 0.6327916672585531,
-                  "up_m": -1.1464840945132018,
-                  "distance_m": 1.3095464029154182
+                  "right_m": -0.47932357539768794,
+                  "forward_m": 0.3466688232313809,
+                  "up_m": -0.632756772825237,
+                  "distance_m": 0.8657946661696995
                 }
               },
               {
@@ -55375,15 +55376,15 @@ window.QA_DATA = {
                   -0.006473985820251438
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.01098491325327546,
-                  "forward_m": 0.6317154549401371,
-                  "up_m": -1.1463548376968118,
-                  "distance_m": 1.3089251615867143
+                  "right_m": -0.4806033402293486,
+                  "forward_m": 0.344733005371442,
+                  "up_m": -0.6326714513607764,
+                  "distance_m": 0.8656465581014029
                 }
               },
               {
@@ -55421,15 +55422,15 @@ window.QA_DATA = {
                   -0.007901564071287004
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.012651272131634863,
-                  "forward_m": 0.6306495992007214,
-                  "up_m": -1.146089662776728,
-                  "distance_m": 1.308191153991803
+                  "right_m": -0.48181191865421547,
+                  "forward_m": 0.3429963427723412,
+                  "up_m": -0.6324480578595145,
+                  "distance_m": 0.8654360061590384
                 }
               },
               {
@@ -55467,15 +55468,15 @@ window.QA_DATA = {
                   -0.009419076289493566
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.014430345864247986,
-                  "forward_m": 0.6296387591441369,
-                  "up_m": -1.1457704749655342,
-                  "distance_m": 1.3074389644365207
+                  "right_m": -0.4830584265175701,
+                  "forward_m": 0.34125201946149725,
+                  "up_m": -0.6321117056867716,
+                  "distance_m": 0.8651407458082002
                 }
               },
               {
@@ -55513,15 +55514,15 @@ window.QA_DATA = {
                   -0.011155171366628636
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.01634884287686977,
-                  "forward_m": 0.6286011108183708,
-                  "up_m": -1.1454333425748104,
-                  "distance_m": 1.3066619045521306
+                  "right_m": -0.48437392891865716,
+                  "forward_m": 0.33938565632870077,
+                  "up_m": -0.631756575219013,
+                  "distance_m": 0.8648239465848555
                 }
               },
               {
@@ -55559,15 +55560,15 @@ window.QA_DATA = {
                   -0.013158752742867819
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.018341917854968366,
-                  "forward_m": 0.6274790766882319,
-                  "up_m": -1.1451286075248188,
-                  "distance_m": 1.305876962380307
+                  "right_m": -0.48571566583981746,
+                  "forward_m": 0.3373370191680805,
+                  "up_m": -0.6314750979693355,
+                  "distance_m": 0.8645258704375127
                 }
               },
               {
@@ -55605,15 +55606,15 @@ window.QA_DATA = {
                   -0.015429089561884879
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.020290059357422133,
-                  "forward_m": 0.626331796151915,
-                  "up_m": -1.1449618507385808,
-                  "distance_m": 1.3052033493790114
+                  "right_m": -0.4869267172311281,
+                  "forward_m": 0.3351358614040689,
+                  "up_m": -0.6313215831620576,
+                  "distance_m": 0.8641929856550354
                 }
               },
               {
@@ -55651,15 +55652,15 @@ window.QA_DATA = {
                   -0.017382394636910214
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.021733242890852426,
-                  "forward_m": 0.6251400606238523,
-                  "up_m": -1.1449347499108604,
-                  "distance_m": 1.3046263592209044
+                  "right_m": -0.4877130719900674,
+                  "forward_m": 0.3330191206747431,
+                  "up_m": -0.6312803303116177,
+                  "distance_m": 0.8637390033861406
                 }
               },
               {
@@ -55697,15 +55698,15 @@ window.QA_DATA = {
                   -0.017824681086583416
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.021859630105213135,
-                  "forward_m": 0.6237741769033982,
-                  "up_m": -1.1449086632580632,
-                  "distance_m": 1.3039501320537832
+                  "right_m": -0.4876685945303753,
+                  "forward_m": 0.3314238492083044,
+                  "up_m": -0.6312510380625097,
+                  "distance_m": 0.8630553707439098
                 }
               },
               {
@@ -55743,128 +55744,753 @@ window.QA_DATA = {
                   -0.017048496458082096
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": -0.020921525002241127,
-                  "forward_m": 0.6221892429328675,
-                  "up_m": -1.1447543046656612,
-                  "distance_m": 1.3030432119769968
+                  "right_m": -0.486957551358081,
+                  "forward_m": 0.33019259403211215,
+                  "up_m": -0.6311100934258159,
+                  "distance_m": 0.862075117729394
+                }
+              },
+              {
+                "frame": 257,
+                "time_s": 8.565296,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.16252,
+                "gaze_hit_distance_m": 1.1690561356656195,
+                "gaze_hit_exit_distance_m": 1.2872509046959149,
+                "gaze_depth_obb_residual_m": 0.006536135665619502,
+                "gaze_origin_world_m": [
+                  0.047093857275624346,
+                  1.5912710410111408,
+                  2.4338694706939497
+                ],
+                "gaze_direction_world_unit": [
+                  0.7882895343637634,
+                  -0.5953025978997231,
+                  0.15560985491414697
+                ],
+                "wearer_world_m": [
+                  0.054290389951802,
+                  1.5900639424078848,
+                  2.3623515391564482
+                ],
+                "right_world": [
+                  -0.02052724355654101,
+                  -0.03687391572708078,
+                  -0.9991090764330606
+                ],
+                "forward_world": [
+                  0.9937697837243851,
+                  -0.11024671074202019,
+                  -0.016348691903457835
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.48610395514016896,
+                  "forward_m": 0.3287688472931256,
+                  "up_m": -0.630744961252428,
+                  "distance_m": 0.860768685044343
+                }
+              },
+              {
+                "frame": 258,
+                "time_s": 8.598624,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.16522,
+                "gaze_hit_distance_m": 1.1721401920751355,
+                "gaze_hit_exit_distance_m": 1.278293145391295,
+                "gaze_depth_obb_residual_m": 0.006920192075135612,
+                "gaze_origin_world_m": [
+                  0.049074747062135785,
+                  1.5907336329645347,
+                  2.4347202790304117
+                ],
+                "gaze_direction_world_unit": [
+                  0.7923501666920818,
+                  -0.5931886717124533,
+                  0.14250758960506527
+                ],
+                "wearer_world_m": [
+                  0.056288951613372,
+                  1.589515940554461,
+                  2.363204307535316
+                ],
+                "right_world": [
+                  -0.02038292835261446,
+                  -0.03639115928939324,
+                  -0.9991297311947764
+                ],
+                "forward_world": [
+                  0.993187615589717,
+                  -0.11541447704997573,
+                  -0.016057980149840556
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.48516880999985124,
+                  "forward_m": 0.32697385866295203,
+                  "up_m": -0.6302127731981741,
+                  "distance_m": 0.8591463737902758
+                }
+              },
+              {
+                "frame": 259,
+                "time_s": 8.631952,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.16046,
+                "gaze_hit_distance_m": 1.1674120960169585,
+                "gaze_hit_exit_distance_m": 1.2766081467818373,
+                "gaze_depth_obb_residual_m": 0.006952096016958453,
+                "gaze_origin_world_m": [
+                  0.05122027833202597,
+                  1.590152704554883,
+                  2.4358238092633626
+                ],
+                "gaze_direction_world_unit": [
+                  0.791737135543964,
+                  -0.5950597800559678,
+                  0.13804407397777713
+                ],
+                "wearer_world_m": [
+                  0.05843548344817599,
+                  1.588944534226255,
+                  2.36430777721048
+                ],
+                "right_world": [
+                  -0.02047720848921214,
+                  -0.03556863971550951,
+                  -0.9991574229325817
+                ],
+                "forward_world": [
+                  0.9925169277922293,
+                  -0.12105009843004139,
+                  -0.0160318968295044
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4840201002939181,
+                  "forward_m": 0.32484284027857635,
+                  "up_m": -0.6296303735559925,
+                  "distance_m": 0.8572480844967926
+                }
+              },
+              {
+                "frame": 260,
+                "time_s": 8.66528,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.14142,
+                "gaze_hit_distance_m": 1.1478991851907323,
+                "gaze_hit_exit_distance_m": 1.2865967535868936,
+                "gaze_depth_obb_residual_m": 0.006479185190732206,
+                "gaze_origin_world_m": [
+                  0.05349969550170909,
+                  1.5896133267825334,
+                  2.4371799571178325
+                ],
+                "gaze_direction_world_unit": [
+                  0.7837740448449377,
+                  -0.6047099073391956,
+                  0.14150680051936404
+                ],
+                "wearer_world_m": [
+                  0.060725500448936,
+                  1.58844641480826,
+                  2.3656643101564234
+                ],
+                "right_world": [
+                  -0.020428444181024852,
+                  -0.0343357852406094,
+                  -0.9992015474969272
+                ],
+                "forward_world": [
+                  0.9918513800720216,
+                  -0.12639986670159203,
+                  -0.015934664949280586
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.48256949822672385,
+                  "forward_m": 0.3225909742364126,
+                  "up_m": -0.6290613440069409,
+                  "distance_m": 0.8551607357258003
+                }
+              },
+              {
+                "frame": 261,
+                "time_s": 8.698608,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.13364,
+                "gaze_hit_distance_m": 1.1402234251112058,
+                "gaze_hit_exit_distance_m": 1.2858643389573299,
+                "gaze_depth_obb_residual_m": 0.006583425111205798,
+                "gaze_origin_world_m": [
+                  0.05588634582901863,
+                  1.589158291295333,
+                  2.4387517929749003
+                ],
+                "gaze_direction_world_unit": [
+                  0.7824039563593117,
+                  -0.6083177366937408,
+                  0.1333925796178358
+                ],
+                "wearer_world_m": [
+                  0.06315487153348401,
+                  1.588075424449608,
+                  2.367239153291569
+                ],
+                "right_world": [
+                  -0.019914731805853736,
+                  -0.032592104355465015,
+                  -0.9992703128737412
+                ],
+                "forward_world": [
+                  0.991258441715072,
+                  -0.13102297858692755,
+                  -0.015481628170744888
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.48077921291502906,
+                  "forward_m": 0.32041130429910886,
+                  "up_m": -0.6285448258400513,
+                  "distance_m": 0.8529707053551087
+                }
+              },
+              {
+                "frame": 262,
+                "time_s": 8.731936,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.12831,
+                "gaze_hit_distance_m": 1.1349446640934313,
+                "gaze_hit_exit_distance_m": 1.285189888692074,
+                "gaze_depth_obb_residual_m": 0.006634664093431386,
+                "gaze_origin_world_m": [
+                  0.05837248359428648,
+                  1.5887578425826139,
+                  2.44044432697261
+                ],
+                "gaze_direction_world_unit": [
+                  0.7808851103422143,
+                  -0.6107803309442262,
+                  0.1310184406008904
+                ],
+                "wearer_world_m": [
+                  0.06572301101781501,
+                  1.587819354028172,
+                  2.368938028740712
+                ],
+                "right_world": [
+                  -0.018837789672183747,
+                  -0.030087382413367655,
+                  -0.9993697449391683
+                ],
+                "forward_world": [
+                  0.9907435045911827,
+                  -0.1349584945458281,
+                  -0.014612079260140742
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.47869537250163385,
+                  "forward_m": 0.3183493790674159,
+                  "up_m": -0.6280959691223967,
+                  "distance_m": 0.850738550864891
+                }
+              },
+              {
+                "frame": 263,
+                "time_s": 8.765264,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.04335,
+                "gaze_hit_distance_m": 1.0481070531459211,
+                "gaze_hit_exit_distance_m": 1.358972818637142,
+                "gaze_depth_obb_residual_m": 0.00475705314592112,
+                "gaze_origin_world_m": [
+                  0.06094963570598394,
+                  1.588412867734543,
+                  2.4422162141113404
+                ],
+                "gaze_direction_world_unit": [
+                  0.7363996757512286,
+                  -0.661012942163482,
+                  0.14414370553674088
+                ],
+                "wearer_world_m": [
+                  0.068392153693569,
+                  1.5876521494573117,
+                  2.370717319471583
+                ],
+                "right_world": [
+                  -0.017612380303604624,
+                  -0.027164230128644287,
+                  -0.9994758169468435
+                ],
+                "forward_world": [
+                  0.9902694504571561,
+                  -0.1384886361809013,
+                  -0.013686239075657802
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.47648343304669577,
+                  "forward_m": 0.31623714298118594,
+                  "up_m": -0.6277350219608488,
+                  "distance_m": 0.8485005552929182
+                }
+              },
+              {
+                "frame": 264,
+                "time_s": 8.798592,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.03886,
+                "gaze_hit_distance_m": 1.0432906359126393,
+                "gaze_hit_exit_distance_m": 1.3645455662789217,
+                "gaze_depth_obb_residual_m": 0.004430635912639369,
+                "gaze_origin_world_m": [
+                  0.06360531602458852,
+                  1.5881693034931508,
+                  2.4440981060939206
+                ],
+                "gaze_direction_world_unit": [
+                  0.7313584947870624,
+                  -0.6639290824024243,
+                  0.1559260261889509
+                ],
+                "wearer_world_m": [
+                  0.07108147701011501,
+                  1.587544817596264,
+                  2.372601401727334
+                ],
+                "right_world": [
+                  -0.017201312896685528,
+                  -0.024817685470051976,
+                  -0.9995439946908491
+                ],
+                "forward_world": [
+                  0.9897667331248972,
+                  -0.1420542229540466,
+                  -0.013505989048957001
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4744254117268399,
+                  "forward_m": 0.3136907871792271,
+                  "up_m": -0.6274881040012208,
+                  "distance_m": 0.8462661401146022
+                }
+              },
+              {
+                "frame": 265,
+                "time_s": 8.83192,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.03083,
+                "gaze_hit_distance_m": 1.0351368637625211,
+                "gaze_hit_exit_distance_m": 1.3699186683042304,
+                "gaze_depth_obb_residual_m": 0.004306863762521207,
+                "gaze_origin_world_m": [
+                  0.06633082508925334,
+                  1.587996369335354,
+                  2.4460424158194427
+                ],
+                "gaze_direction_world_unit": [
+                  0.7264754025768532,
+                  -0.6690004414132809,
+                  0.15707290931167822
+                ],
+                "wearer_world_m": [
+                  0.07378581255680901,
+                  1.5875197988086107,
+                  2.3745423616698713
+                ],
+                "right_world": [
+                  -0.017547997842052354,
+                  -0.022361615857553613,
+                  -0.9995959313182379
+                ],
+                "forward_world": [
+                  0.9893050889138915,
+                  -0.1451760183096445,
+                  -0.014119658524029632
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4725447618534956,
+                  "forward_m": 0.3106916692956416,
+                  "up_m": -0.6273211017202641,
+                  "distance_m": 0.8440375467540306
+                }
+              },
+              {
+                "frame": 266,
+                "time_s": 8.865248,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.02272,
+                "gaze_hit_distance_m": 1.0271199425873487,
+                "gaze_hit_exit_distance_m": 1.3722872357100806,
+                "gaze_depth_obb_residual_m": 0.00439994258734866,
+                "gaze_origin_world_m": [
+                  0.06911479236547526,
+                  1.5878121021355305,
+                  2.4479492970542958
+                ],
+                "gaze_direction_world_unit": [
+                  0.7232170826491964,
+                  -0.6739925783911941,
+                  0.15063550590075275
+                ],
+                "wearer_world_m": [
+                  0.076542971621787,
+                  1.5876182535898617,
+                  2.3764451274089007
+                ],
+                "right_world": [
+                  -0.01795217703884433,
+                  -0.018179367302100125,
+                  -0.9996735616910459
+                ],
+                "forward_world": [
+                  0.9890242801644453,
+                  -0.14698069275926243,
+                  -0.015088048290208766
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4707122971606399,
+                  "forward_m": 0.3074617152087613,
+                  "up_m": -0.6271590250718145,
+                  "distance_m": 0.8418143950899687
+                }
+              },
+              {
+                "frame": 267,
+                "time_s": 8.898576,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.01526,
+                "gaze_hit_distance_m": 1.0196285780234933,
+                "gaze_hit_exit_distance_m": 1.3766120185257902,
+                "gaze_depth_obb_residual_m": 0.004368578023493219,
+                "gaze_origin_world_m": [
+                  0.07190385503728437,
+                  1.5875944365536458,
+                  2.4497924677786886
+                ],
+                "gaze_direction_world_unit": [
+                  0.7189066074684596,
+                  -0.6787268627455988,
+                  0.15001045138825103
+                ],
+                "wearer_world_m": [
+                  0.07927110310212401,
+                  1.5877385227369367,
+                  2.37828187698178
+                ],
+                "right_world": [
+                  -0.018832669031301652,
+                  -0.013227634163515772,
+                  -0.9997351450617282
+                ],
+                "forward_world": [
+                  0.9887349114561608,
+                  -0.14874746212361142,
+                  -0.016657352117391555
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.46908863804690726,
+                  "forward_m": 0.3039545178678822,
+                  "up_m": -0.6269583013172384,
+                  "distance_m": 0.8396088395092712
+                }
+              },
+              {
+                "frame": 268,
+                "time_s": 8.931904,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 0.76594,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.07464285946070265,
+                  1.587333223517401,
+                  2.451570684569073
+                ],
+                "gaze_direction_world_unit": [
+                  0.7149802406414475,
+                  -0.6821624793002167,
+                  0.15315876510105142
+                ],
+                "wearer_world_m": [
+                  0.08187833434148101,
+                  1.587741116983296,
+                  2.380047658716064
+                ],
+                "right_world": [
+                  -0.02072645328559536,
+                  -0.009120658612275762,
+                  -0.999743580984984
+                ],
+                "forward_world": [
+                  0.9881842644297142,
+                  -0.152075874737725,
+                  -0.01909942031216083
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4678411053100477,
+                  "forward_m": 0.30011107029037665,
+                  "up_m": -0.6266919549517391,
+                  "distance_m": 0.8374313571639107
+                }
+              },
+              {
+                "frame": 269,
+                "time_s": 8.965232,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.00652,
+                "gaze_hit_distance_m": 1.0108301527939494,
+                "gaze_hit_exit_distance_m": 1.377755550858106,
+                "gaze_depth_obb_residual_m": 0.004310152793949307,
+                "gaze_origin_world_m": [
+                  0.07734131070154021,
+                  1.586963567146949,
+                  2.4532518056130574
+                ],
+                "gaze_direction_world_unit": [
+                  0.7143563592336748,
+                  -0.684005639380134,
+                  0.14775411100400293
+                ],
+                "wearer_world_m": [
+                  0.084437864675074,
+                  1.5875843898800892,
+                  2.381716393390615
+                ],
+                "right_world": [
+                  -0.022729160672940674,
+                  -0.005633649224123127,
+                  -0.9997257860291107
+                ],
+                "forward_world": [
+                  0.9874980622791136,
+                  -0.1561481953072712,
+                  -0.02157123309590253
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4667127628916381,
+                  "forward_m": 0.29629606272072073,
+                  "up_m": -0.6263451758492795,
+                  "distance_m": 0.8352690354194893
+                }
+              },
+              {
+                "frame": 270,
+                "time_s": 8.99856,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.993759,
+                "gaze_hit_distance_m": 0.9979649661206104,
+                "gaze_hit_exit_distance_m": 1.3878136215089847,
+                "gaze_depth_obb_residual_m": 0.004205966120610416,
+                "gaze_origin_world_m": [
+                  0.08003671161051092,
+                  1.5864865138838364,
+                  2.454825914963898
+                ],
+                "gaze_direction_world_unit": [
+                  0.7072405099610536,
+                  -0.6922981999445318,
+                  0.14329711589417982
+                ],
+                "wearer_world_m": [
+                  0.08704717522255101,
+                  1.587297128627144,
+                  2.383283913281794
+                ],
+                "right_world": [
+                  -0.02398583569092111,
+                  -0.0025171080024109505,
+                  -0.9997091296239684
+                ],
+                "forward_world": [
+                  0.9868685879526521,
+                  -0.15983945164422309,
+                  -0.023275304732968793
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4654531678087544,
+                  "forward_m": 0.2928294938938062,
+                  "up_m": -0.6259398374934316,
+                  "distance_m": 0.8331178732597879
                 }
               }
             ],
             "gaze_events": [
               {
-                "object_id": "4671332369591132",
-                "object_name": "KitchIsland",
-                "start_index": 114,
-                "end_index": 120,
-                "start_time_s": 3.799392,
-                "end_time_s": 3.99936,
-                "state_count": 7,
-                "direct_hit_count": 7,
-                "merged_gap_count": 0,
-                "hit_support_ratio": 1.0,
-                "median_relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.1325049697024569,
-                  "forward_m": 0.5606058051551558,
-                  "up_m": -1.1162224973012878,
-                  "distance_m": 1.2563135364625455
-                }
-              },
-              {
-                "object_id": "4671332369591132",
-                "object_name": "KitchIsland",
-                "start_index": 182,
-                "end_index": 195,
-                "start_time_s": 6.065696,
-                "end_time_s": 6.49896,
-                "state_count": 14,
-                "direct_hit_count": 14,
+                "object_id": "4508463855879675",
+                "object_name": "WoodenBowl",
+                "start_index": 84,
+                "end_index": 113,
+                "start_time_s": 2.799552,
+                "end_time_s": 3.766064,
+                "state_count": 30,
+                "direct_hit_count": 30,
                 "merged_gap_count": 0,
                 "hit_support_ratio": 1.0,
                 "median_relation": {
                   "label": "front",
                   "side": "center",
                   "depth": "front",
-                  "right_m": 0.0007689131457076295,
-                  "forward_m": 0.4172547651575349,
-                  "up_m": -1.0945101737237233,
-                  "distance_m": 1.1713821979209842
+                  "right_m": -0.09632152977530736,
+                  "forward_m": 0.34353407574347794,
+                  "up_m": -0.5933230529981411,
+                  "distance_m": 0.6921352255106716
                 }
               }
             ],
             "transition": {
-              "start_frame": 117,
-              "end_frame": 188,
-              "start_relation": "right-front",
-              "end_relation": "front"
+              "start_frame": 58,
+              "end_frame": 98,
+              "start_relation": "left-front",
+              "end_relation": "front",
+              "wearer_turn_deg": 23.253319854666923,
+              "pre_gazed_object_id": "4508384915897847"
             }
           }
         }
       ],
       "task5_media": {
-        "object_id": "4671332369591132",
+        "object_id": "4508463855879675",
         "anchor_frames": [
-          117,
-          188
+          58,
+          98
         ]
       },
       "case_policy": "one annotation-derived question per unique gaze/object window"
     },
     {
-      "name": "task5_onset_apartment_release_golden_skeleton_seq100_10s_sam_0_270_00861c18",
+      "name": "task5_last_apartment_release_golden_skeleton_seq100_10s_sam_28_298_4ef37b82",
       "title": "Task 5 · white vase",
-      "video_clip": "./task5_media/task5_onset_apartment_release_golden_skeleton_seq100_10s_sam_0_270_00861c18.mp4",
-      "original_image": "./task5_media/task5_onset_apartment_release_golden_skeleton_seq100_10s_sam_0_270_00861c18_gaze_evidence.jpg",
+      "video_clip": "./task5_media/task5_last_apartment_release_golden_skeleton_seq100_10s_sam_28_298_4ef37b82.mp4",
+      "original_image": "./task5_media/task5_last_apartment_release_golden_skeleton_seq100_10s_sam_28_298_4ef37b82_gaze_evidence.jpg",
       "original_caption": "ADT RGB anchor frames · green: target 2D box · red: measured gaze projection",
       "video_window": {
         "source_video": "site/qa_benchmark/task5_media/adt_seq100_rgb.mp4",
         "source_sequence": "Apartment_release_golden_skeleton_seq100_10s_sample_M1292",
-        "start_sec": 0.0,
+        "start_sec": 0.933184,
         "duration_sec": 8.99856
       },
       "qa": [
         {
           "task_id": "task5_human_state_grounded_spatial_reasoning",
           "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_onset_side_change",
+          "question_type": "last_gaze_annotated_object_relation_change",
           "question_categories": [
-            "after_gaze_turns_to_object"
+            "last_gaze_annotated_object"
           ],
-          "question": "As gaze turns to the white vase, how does it shift in the wearer's body-relative view?",
+          "question": "The white vase is the last gaze-annotated object in this window. How does its wearer-relative position evolve?",
           "options": [
             {
               "label": "A",
-              "text": "The white vase changes from front to left-front."
+              "text": "The white vase follows: front → right-front → front."
             },
             {
               "label": "B",
-              "text": "The white vase changes from left-front to front."
+              "text": "The white vase follows: left-front → front → left-front."
             },
             {
               "label": "C",
-              "text": "The white vase changes from left-front to behind."
+              "text": "The white vase follows: right-front → right → right-front."
             },
             {
               "label": "D",
-              "text": "The white vase changes from right-front to front."
+              "text": "The white vase follows: right → right-behind → right."
             }
           ],
           "correct_option": "B",
-          "correct_answer": "The white vase changes from left-front to front.",
-          "answer": "The white vase changes from left-front to front.",
-          "explanation": "Immediately before the gaze onset the white vase is left-front; during the sustained gaze it is front.",
+          "correct_answer": "The white vase follows: left-front → front → left-front.",
+          "answer": "The white vase follows: left-front → front → left-front.",
+          "explanation": "Across the full window, the annotation-derived relation sequence is left-front → front → left-front.",
           "status": "ok",
           "method": "Uses measured ADT eye-gaze direction and fixation depth, same-time object 6DoF/3D boxes, and a gravity-aligned wearer frame; no answer label is inferred by an LLM.",
           "result_json": {
             "status": "ok",
-            "answer_type": "gaze_onset_side_change",
+            "answer_type": "last_gaze_annotated_object_relation_change",
             "T_Q": true,
             "H_Q": true,
             "S_Q": true,
@@ -55886,1295 +56512,8 @@ window.QA_DATA = {
             "maximum_gaze_depth_obb_residual_m": 0.05,
             "object_id": "7379153972126671",
             "object_name": "WhiteVase",
+            "object_category": "vase",
             "timeline": [
-              {
-                "frame": 0,
-                "time_s": 0.0,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 0.0,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.0890603647950532,
-                  1.5565104287986649,
-                  2.4815097791327108
-                ],
-                "gaze_direction_world_unit": [
-                  0.5784858825578127,
-                  -0.8096220091141033,
-                  -0.09932918020074155
-                ],
-                "wearer_world_m": [
-                  0.09294414336388498,
-                  1.556198016142618,
-                  2.409726213023464
-                ],
-                "right_world": [
-                  -0.06807374413362449,
-                  0.0037300664878152645,
-                  -0.9976733192601812
-                ],
-                "forward_world": [
-                  0.9406548841384884,
-                  -0.3329978004179688,
-                  -0.06542823444967738
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.15830294198241385,
-                  "forward_m": 0.6082237738432883,
-                  "up_m": -0.5761527500963398,
-                  "distance_m": 0.8527615876699083
-                }
-              },
-              {
-                "frame": 1,
-                "time_s": 0.033328,
-                "gazed_object_id": "3758151980953788",
-                "gazed_object_name": "WoodenFork",
-                "gaze_depth_m": 0.511755,
-                "gaze_hit_distance_m": 0.48470020824301224,
-                "gaze_hit_exit_distance_m": 0.5316063879080929,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09132618927960544,
-                  1.5558895271702473,
-                  2.4809310096513633
-                ],
-                "gaze_direction_world_unit": [
-                  0.6054643180171392,
-                  -0.7808184854481073,
-                  -0.1540631441668131
-                ],
-                "wearer_world_m": [
-                  0.09479439367884598,
-                  1.555573885269391,
-                  2.409126179525281
-                ],
-                "right_world": [
-                  -0.07380768663354215,
-                  0.004266179458579544,
-                  -0.9972633679758989
-                ],
-                "forward_world": [
-                  0.9386654730603963,
-                  -0.3374585457524975,
-                  -0.07091445256724588
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.16221175474984323,
-                  "forward_m": 0.6049643558836074,
-                  "up_m": -0.5755438255804846,
-                  "distance_m": 0.8507915743209589
-                }
-              },
-              {
-                "frame": 2,
-                "time_s": 0.066656,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.688866,
-                "gaze_hit_distance_m": 0.667754407092337,
-                "gaze_hit_exit_distance_m": 0.7256425976704167,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09347780932353389,
-                  1.555020728138328,
-                  2.4804221130946327
-                ],
-                "gaze_direction_world_unit": [
-                  0.5983198931946337,
-                  -0.7861090324356796,
-                  -0.1550673870631783
-                ],
-                "wearer_world_m": [
-                  0.096375077558708,
-                  1.5545846997168138,
-                  2.4085926106810067
-                ],
-                "right_world": [
-                  -0.08164142633436694,
-                  0.003806225121935264,
-                  -0.9966544988893656
-                ],
-                "forward_world": [
-                  0.9346782568744548,
-                  -0.3468570587310897,
-                  -0.0778892607138379
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.16728883478142134,
-                  "forward_m": 0.6015096302967261,
-                  "up_m": -0.5746808010328568,
-                  "distance_m": 0.8487293267370162
-                }
-              },
-              {
-                "frame": 3,
-                "time_s": 0.099984,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.682525,
-                "gaze_hit_distance_m": 0.6702909144536954,
-                "gaze_hit_exit_distance_m": 0.7165286565807623,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09563682779972428,
-                  1.5544664415227878,
-                  2.479888489300008
-                ],
-                "gaze_direction_world_unit": [
-                  0.6035317711996823,
-                  -0.7822671897896359,
-                  -0.15429661347936208
-                ],
-                "wearer_world_m": [
-                  0.097952227804526,
-                  1.5539178055701233,
-                  2.408038648504017
-                ],
-                "right_world": [
-                  -0.08962207841336711,
-                  0.003289328448570189,
-                  -0.9959704129035288
-                ],
-                "forward_world": [
-                  0.9310129134926104,
-                  -0.3549627956891025,
-                  -0.08494921180668763
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.1724414684230171,
-                  "forward_m": 0.5979836413870845,
-                  "up_m": -0.5741101929124113,
-                  "distance_m": 0.8468655057304721
-                }
-              },
-              {
-                "frame": 4,
-                "time_s": 0.133312,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.67864,
-                "gaze_hit_distance_m": 0.6652770644506122,
-                "gaze_hit_exit_distance_m": 0.7201303417691253,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09773855337972961,
-                  1.5542437849443476,
-                  2.4791753916499335
-                ],
-                "gaze_direction_world_unit": [
-                  0.5947570407570886,
-                  -0.787780962085677,
-                  -0.16020367737738084
-                ],
-                "wearer_world_m": [
-                  0.09953955288325998,
-                  1.553659334822725,
-                  2.407311099265999
-                ],
-                "right_world": [
-                  -0.09669715736180079,
-                  0.0033632229478973708,
-                  -0.9953081675991362
-                ],
-                "forward_world": [
-                  0.9287113250560447,
-                  -0.3593518521819993,
-                  -0.09144135304123646
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.17719737727656393,
-                  "forward_m": 0.5945773570264268,
-                  "up_m": -0.5738614198397187,
-                  "distance_m": 0.8452878892626864
-                }
-              },
-              {
-                "frame": 5,
-                "time_s": 0.16664,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.677456,
-                "gaze_hit_distance_m": 0.6640768788737663,
-                "gaze_hit_exit_distance_m": 0.7184590275601598,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09959226666474966,
-                  1.5540525360800044,
-                  2.478090118677842
-                ],
-                "gaze_direction_world_unit": [
-                  0.5938340336608854,
-                  -0.7888514715653012,
-                  -0.15834928567979512
-                ],
-                "wearer_world_m": [
-                  0.100952310898,
-                  1.5535321198149081,
-                  2.406215636783399
-                ],
-                "right_world": [
-                  -0.10278558754661588,
-                  0.0044226447912769085,
-                  -0.9946937032100627
-                ],
-                "forward_world": [
-                  0.9276211263323627,
-                  -0.36058423723446015,
-                  -0.09745795934617951
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.18171815019972895,
-                  "forward_m": 0.5914548988969424,
-                  "up_m": -0.5736606130503699,
-                  "distance_m": 0.8439760240655302
-                }
-              },
-              {
-                "frame": 6,
-                "time_s": 0.199968,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.834688,
-                "gaze_hit_distance_m": 0.7791438404876712,
-                "gaze_hit_exit_distance_m": 0.8487272541842286,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10108617292250882,
-                  1.5539419218377561,
-                  2.476417454286892
-                ],
-                "gaze_direction_world_unit": [
-                  0.5396469807084538,
-                  -0.7728211308732863,
-                  -0.3339590332480693
-                ],
-                "wearer_world_m": [
-                  0.10194453248383802,
-                  1.5535488535388449,
-                  2.404534421398902
-                ],
-                "right_world": [
-                  -0.1097177253240939,
-                  0.006265635335698627,
-                  -0.9939430378867533
-                ],
-                "forward_world": [
-                  0.9266751352796841,
-                  -0.36102452258805295,
-                  -0.10456810098901015
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.18733168843281278,
-                  "forward_m": 0.5883627205636374,
-                  "up_m": -0.5735508957946427,
-                  "distance_m": 0.8430666896183138
-                }
-              },
-              {
-                "frame": 7,
-                "time_s": 0.233296,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.859173,
-                "gaze_hit_distance_m": 0.832881019777606,
-                "gaze_hit_exit_distance_m": 0.9072872114553928,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.1021522623946074,
-                  1.5540035934045315,
-                  2.4739304450761934
-                ],
-                "gaze_direction_world_unit": [
-                  0.4988236469338033,
-                  -0.7218022989031072,
-                  -0.4797670377983981
-                ],
-                "wearer_world_m": [
-                  0.10229884090085499,
-                  1.553771470411918,
-                  2.402041737098808
-                ],
-                "right_world": [
-                  -0.11953085114715367,
-                  0.008723743475475193,
-                  -0.9927921594794207
-                ],
-                "forward_world": [
-                  0.9248947221370847,
-                  -0.36256019909397513,
-                  -0.11454193553411735
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.19548118494911193,
-                  "forward_m": 0.584904780892225,
-                  "up_m": -0.5736102972175006,
-                  "distance_m": 0.8426955366238966
-                }
-              },
-              {
-                "frame": 8,
-                "time_s": 0.266624,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.887084,
-                "gaze_hit_distance_m": 0.8307990210125115,
-                "gaze_hit_exit_distance_m": 0.905026927973266,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10275988599733142,
-                  1.5540018168112604,
-                  2.4703880715073736
-                ],
-                "gaze_direction_world_unit": [
-                  0.5322580031680376,
-                  -0.7238403016633426,
-                  -0.43904058554021463
-                ],
-                "wearer_world_m": [
-                  0.101967753308514,
-                  1.554029319519366,
-                  2.398503208911662
-                ],
-                "right_world": [
-                  -0.13247097889287174,
-                  0.012437505534690724,
-                  -0.991108847809987
-                ],
-                "forward_world": [
-                  0.922920110387254,
-                  -0.3631205635439354,
-                  -0.1279137450562442
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.20653836197695896,
-                  "forward_m": 0.5808827944358214,
-                  "up_m": -0.5736072451283288,
-                  "distance_m": 0.8427812950003036
-                }
-              },
-              {
-                "frame": 9,
-                "time_s": 0.299952,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.885885,
-                "gaze_hit_distance_m": 0.8317773483276952,
-                "gaze_hit_exit_distance_m": 0.9060932150995896,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10286554054573246,
-                  1.5537746769138308,
-                  2.4657354998086247
-                ],
-                "gaze_direction_world_unit": [
-                  0.5310468209901121,
-                  -0.7227122483776136,
-                  -0.44235311682101963
-                ],
-                "wearer_world_m": [
-                  0.100932054803879,
-                  1.5541465206241882,
-                  2.393873235259411
-                ],
-                "right_world": [
-                  -0.14820179619409235,
-                  0.017076527952535836,
-                  -0.9888096984748542
-                ],
-                "forward_world": [
-                  0.9210685342536655,
-                  -0.3616790376737454,
-                  -0.14429493724728443
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.220350210767649,
-                  "forward_m": 0.5762698648517315,
-                  "up_m": -0.573380859535859,
-                  "distance_m": 0.8432711521870173
-                }
-              },
-              {
-                "frame": 10,
-                "time_s": 0.33328,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.881225,
-                "gaze_hit_distance_m": 0.8248059936685557,
-                "gaze_hit_exit_distance_m": 0.8985287522744428,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10239795558086053,
-                  1.5534397064776526,
-                  2.460287844732705
-                ],
-                "gaze_direction_world_unit": [
-                  0.5330278215392132,
-                  -0.7285261056922196,
-                  -0.4302685844796126
-                ],
-                "wearer_world_m": [
-                  0.099170790190916,
-                  1.5540457051493248,
-                  2.3884736409137117
-                ],
-                "right_world": [
-                  -0.16598651025193006,
-                  0.020253908535998316,
-                  -0.9859200056816994
-                ],
-                "forward_world": [
-                  0.9184321459127256,
-                  -0.36086858058629134,
-                  -0.16203783786443604
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.23617468655611146,
-                  "forward_m": 0.5713603452093594,
-                  "up_m": -0.573036798709289,
-                  "distance_m": 0.8442401540358246
-                }
-              },
-              {
-                "frame": 11,
-                "time_s": 0.366608,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.870258,
-                "gaze_hit_distance_m": 0.8139807523935666,
-                "gaze_hit_exit_distance_m": 0.8867888583880656,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10153483460497872,
-                  1.5531288784682942,
-                  2.4543422197462146
-                ],
-                "gaze_direction_world_unit": [
-                  0.5257985974228399,
-                  -0.7378984894823786,
-                  -0.423133140001818
-                ],
-                "wearer_world_m": [
-                  0.09691365217095599,
-                  1.5537619803179439,
-                  2.382604464303495
-                ],
-                "right_world": [
-                  -0.18509251293959622,
-                  0.020718244977166594,
-                  -0.9825026798837606
-                ],
-                "forward_world": [
-                  0.9148348185569699,
-                  -0.3615090903718371,
-                  -0.17996786472690807
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.2532594305843536,
-                  "forward_m": 0.5662160595978998,
-                  "up_m": -0.5727107633166094,
-                  "distance_m": 0.8456169111737235
-                }
-              },
-              {
-                "frame": 12,
-                "time_s": 0.399936,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.873846,
-                "gaze_hit_distance_m": 0.8170962730318069,
-                "gaze_hit_exit_distance_m": 0.8902086868732516,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10073128379746674,
-                  1.5529478022300995,
-                  2.4481175812604454
-                ],
-                "gaze_direction_world_unit": [
-                  0.53512170326327,
-                  -0.7348297966311503,
-                  -0.4167372465710729
-                ],
-                "wearer_world_m": [
-                  0.09466790736692099,
-                  1.5534389317840893,
-                  2.3764861917791382
-                ],
-                "right_world": [
-                  -0.2048215629172645,
-                  0.018760824983387853,
-                  -0.9786195168757226
-                ],
-                "forward_world": [
-                  0.911082426948547,
-                  -0.3617658297783311,
-                  -0.1976215972770725
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.27089533607938016,
-                  "forward_m": 0.5605834774421863,
-                  "up_m": -0.5725291037195032,
-                  "distance_m": 0.8471480750313842
-                }
-              },
-              {
-                "frame": 13,
-                "time_s": 0.433264,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.872278,
-                "gaze_hit_distance_m": 0.8152702439992806,
-                "gaze_hit_exit_distance_m": 0.8882166694952887,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.1003518492335327,
-                  1.5529180002399117,
-                  2.441764762509366
-                ],
-                "gaze_direction_world_unit": [
-                  0.5379064322443345,
-                  -0.736445743779506,
-                  -0.41024911531802355
-                ],
-                "wearer_world_m": [
-                  0.092896270471214,
-                  1.5532261868968311,
-                  2.3702638459606717
-                ],
-                "right_world": [
-                  -0.22385508712113805,
-                  0.015891961495505563,
-                  -0.9744928658178125
-                ],
-                "forward_world": [
-                  0.9081776982844678,
-                  -0.359458028716023,
-                  -0.21448355165447214
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.2880821968446655,
-                  "forward_m": 0.554371715254259,
-                  "up_m": -0.5725041138267694,
-                  "distance_m": 0.8485579394496339
-                }
-              },
-              {
-                "frame": 14,
-                "time_s": 0.466592,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.87073,
-                "gaze_hit_distance_m": 0.8134205719351514,
-                "gaze_hit_exit_distance_m": 0.886204010244087,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10055736837088729,
-                  1.5529745755840971,
-                  2.4353764475397943
-                ],
-                "gaze_direction_world_unit": [
-                  0.5423662969292844,
-                  -0.7381846885062513,
-                  -0.40115105086506253
-                ],
-                "wearer_world_m": [
-                  0.091863678289445,
-                  1.553222414032751,
-                  2.364015253394298
-                ],
-                "right_world": [
-                  -0.2407874315587003,
-                  0.014242239886745722,
-                  -0.9704733749085408
-                ],
-                "forward_world": [
-                  0.9067415189494914,
-                  -0.35333573824557324,
-                  -0.23016010490878913
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3038711307608164,
-                  "forward_m": 0.5476751617712864,
-                  "up_m": -0.5725484157970478,
-                  "distance_m": 0.8496466848673969
-                }
-              },
-              {
-                "frame": 15,
-                "time_s": 0.49992,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.863839,
-                "gaze_hit_distance_m": 0.8065605996737601,
-                "gaze_hit_exit_distance_m": 0.8787636531408259,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10069589697527753,
-                  1.552858703197413,
-                  2.428958164460936
-                ],
-                "gaze_direction_world_unit": [
-                  0.5392342919008879,
-                  -0.7443255436131528,
-                  -0.3939617539344808
-                ],
-                "wearer_world_m": [
-                  0.09086740273293199,
-                  1.553193331440258,
-                  2.3577447498126602
-                ],
-                "right_world": [
-                  -0.2562481735047714,
-                  0.014916748528387258,
-                  -0.9664959204201589
-                ],
-                "forward_world": [
-                  0.9044066723517485,
-                  -0.34919535321980255,
-                  -0.24517580691278257
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.31876926056323174,
-                  "forward_m": 0.5408388828101686,
-                  "up_m": -0.5724287678410849,
-                  "distance_m": 0.85071992289408
-                }
-              },
-              {
-                "frame": 16,
-                "time_s": 0.533248,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.811732,
-                "gaze_hit_distance_m": 0.8046725367799894,
-                "gaze_hit_exit_distance_m": 0.8767792294732519,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10006215747126096,
-                  1.5523619817534178,
-                  2.4224641842076613
-                ],
-                "gaze_direction_world_unit": [
-                  0.49056710597651515,
-                  -0.7450700326468402,
-                  -0.45190105220663435
-                ],
-                "wearer_world_m": [
-                  0.089112354602364,
-                  1.552899931532499,
-                  2.3514157913464047
-                ],
-                "right_world": [
-                  -0.27140748141737275,
-                  0.01817563724806212,
-                  -0.9622928999225271
-                ],
-                "forward_world": [
-                  0.898984351301572,
-                  -0.3523065790053448,
-                  -0.26020609236611475
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.33368360304152145,
-                  "forward_m": 0.5340853581008814,
-                  "up_m": -0.5719589015913592,
-                  "distance_m": 0.8521659001583872
-                }
-              },
-              {
-                "frame": 17,
-                "time_s": 0.566576,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.794168,
-                "gaze_hit_distance_m": 0.7903073899439609,
-                "gaze_hit_exit_distance_m": 0.8611953345099672,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09884980265208938,
-                  1.551718697067949,
-                  2.41575794661093
-                ],
-                "gaze_direction_world_unit": [
-                  0.46701458070579543,
-                  -0.7578440075379238,
-                  -0.45559833367457414
-                ],
-                "wearer_world_m": [
-                  0.08677209917137099,
-                  1.552500085105434,
-                  2.344894837644651
-                ],
-                "right_world": [
-                  -0.2866068161091484,
-                  0.022142262440467186,
-                  -0.9577923852139325
-                ],
-                "forward_world": [
-                  0.8927785820185669,
-                  -0.35651705071301765,
-                  -0.27539425564054193
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.34891604883628485,
-                  "forward_m": 0.5272899018073814,
-                  "up_m": -0.5713187525253116,
-                  "distance_m": 0.8540027596906944
-                }
-              },
-              {
-                "frame": 18,
-                "time_s": 0.599904,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.795819,
-                "gaze_hit_distance_m": 0.7803451848179424,
-                "gaze_hit_exit_distance_m": 0.8503808061994892,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09725714457504485,
-                  1.5511724265482536,
-                  2.408828629277091
-                ],
-                "gaze_direction_world_unit": [
-                  0.4641376895785257,
-                  -0.7668942331751714,
-                  -0.44322617277793225
-                ],
-                "wearer_world_m": [
-                  0.08409351904447,
-                  1.5521724819118101,
-                  2.3381619429732843
-                ],
-                "right_world": [
-                  -0.30125064839957105,
-                  0.025293418223307357,
-                  -0.9532094679730259
-                ],
-                "forward_world": [
-                  0.8878603975921961,
-                  -0.35715601716604656,
-                  -0.29007497959926476
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36410607209597934,
-                  "forward_m": 0.5207191521357691,
-                  "up_m": -0.5707331832391178,
-                  "distance_m": 0.8562504019593555
-                }
-              },
-              {
-                "frame": 19,
-                "time_s": 0.633232,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.794618,
-                "gaze_hit_distance_m": 0.7787084374865434,
-                "gaze_hit_exit_distance_m": 0.8486369200891977,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09512183173713606,
-                  1.550805566654792,
-                  2.4019593105829764
-                ],
-                "gaze_direction_world_unit": [
-                  0.46985170035591284,
-                  -0.7680028176363327,
-                  -0.435213800074528
-                ],
-                "wearer_world_m": [
-                  0.081068803667651,
-                  1.5520100865102568,
-                  2.331467302277098
-                ],
-                "right_world": [
-                  -0.3132288785422464,
-                  0.028140101811639368,
-                  -0.949260661945494
-                ],
-                "forward_world": [
-                  0.883862610880186,
-                  -0.35699108158687737,
-                  -0.302232117346076
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3778918901423524,
-                  "forward_m": 0.5154100709269551,
-                  "up_m": -0.5703647436665962,
-                  "distance_m": 0.8590718495235139
-                }
-              },
-              {
-                "frame": 20,
-                "time_s": 0.66656,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.785005,
-                "gaze_hit_distance_m": 0.7806570368567515,
-                "gaze_hit_exit_distance_m": 0.8508065782252613,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09240866342765344,
-                  1.5506523521845965,
-                  2.3953382235892553
-                ],
-                "gaze_direction_world_unit": [
-                  0.47317070182557186,
-                  -0.7657969684251912,
-                  -0.4355048680378694
-                ],
-                "wearer_world_m": [
-                  0.07769481215207201,
-                  1.552039194778124,
-                  2.32498453890067
-                ],
-                "right_world": [
-                  -0.32210838696258925,
-                  0.030735188575501393,
-                  -0.9462037493223052
-                ],
-                "forward_world": [
-                  0.8805702433149967,
-                  -0.35727364712451726,
-                  -0.31137049901767094
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3899015130830385,
-                  "forward_m": 0.5117464577642403,
-                  "up_m": -0.5702581075495196,
-                  "distance_m": 0.8624695779120568
-                }
-              },
-              {
-                "frame": 21,
-                "time_s": 0.699888,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.788986,
-                "gaze_hit_distance_m": 0.7821972931098152,
-                "gaze_hit_exit_distance_m": 0.8525240183048636,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08928314133020751,
-                  1.550704465534027,
-                  2.3889968898337277
-                ],
-                "gaze_direction_world_unit": [
-                  0.4853863804577937,
-                  -0.7643788623017768,
-                  -0.4244113765349875
-                ],
-                "wearer_world_m": [
-                  0.074023042329065,
-                  1.552209034980383,
-                  2.318762088273131
-                ],
-                "right_world": [
-                  -0.3294520504017279,
-                  0.03230870607910086,
-                  -0.9436193586386366
-                ],
-                "forward_world": [
-                  0.8781480270375702,
-                  -0.3566774677126733,
-                  -0.31880593883442243
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.40092116152004964,
-                  "forward_m": 0.5091834873837467,
-                  "up_m": -0.5703289059589741,
-                  "distance_m": 0.866247237431564
-                }
-              },
-              {
-                "frame": 22,
-                "time_s": 0.733216,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.799387,
-                "gaze_hit_distance_m": 0.7732461034843667,
-                "gaze_hit_exit_distance_m": 0.8427802046890063,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08599676070151553,
-                  1.5508625431481995,
-                  2.3828899747032555
-                ],
-                "gaze_direction_world_unit": [
-                  0.4864247817890405,
-                  -0.7735899746646876,
-                  -0.40613973304734996
-                ],
-                "wearer_world_m": [
-                  0.070292358567181,
-                  1.5524519081137031,
-                  2.312755052064034
-                ],
-                "right_world": [
-                  -0.3354329537234498,
-                  0.03330114227726605,
-                  -0.9414753143228942
-                ],
-                "forward_world": [
-                  0.8765372506699126,
-                  -0.3551742694728833,
-                  -0.32485948730556524
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.41102725557634373,
-                  "forward_m": 0.5074061459193907,
-                  "up_m": -0.5704781011572964,
-                  "distance_m": 0.8701720587295556
-                }
-              },
-              {
-                "frame": 23,
-                "time_s": 0.766544,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.798087,
-                "gaze_hit_distance_m": 0.7714143262179143,
-                "gaze_hit_exit_distance_m": 0.8407568573492481,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08282472607131694,
-                  1.5509756537145418,
-                  2.376927572411002
-                ],
-                "gaze_direction_world_unit": [
-                  0.4887394720385913,
-                  -0.7756011380880709,
-                  -0.3994704032440056
-                ],
-                "wearer_world_m": [
-                  0.066820026459953,
-                  1.5526845417373571,
-                  2.306863380464791
-                ],
-                "right_world": [
-                  -0.339476704408663,
-                  0.03476039668768405,
-                  -0.9399719580848939
-                ],
-                "forward_world": [
-                  0.8755563224917747,
-                  -0.3535139309136267,
-                  -0.3292856310176248
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.41992455219504315,
-                  "forward_m": 0.5062691202987367,
-                  "up_m": -0.5706003123847532,
-                  "distance_m": 0.8740105192366857
-                }
-              },
-              {
-                "frame": 24,
-                "time_s": 0.799872,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.814585,
-                "gaze_hit_distance_m": 0.7671854501428086,
-                "gaze_hit_exit_distance_m": 0.8361377020833775,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.07987324036597745,
-                  1.550946599898336,
-                  2.3710215283488623
-                ],
-                "gaze_direction_world_unit": [
-                  0.49947857885351055,
-                  -0.7799044241835518,
-                  -0.37718727232689
-                ],
-                "wearer_world_m": [
-                  0.063631700180943,
-                  1.552765953212319,
-                  2.301014642780821
-                ],
-                "right_world": [
-                  -0.34267441224997786,
-                  0.03601821704309341,
-                  -0.9387635140066795
-                ],
-                "forward_world": [
-                  0.8750835035648898,
-                  -0.3512854507823322,
-                  -0.3329074854328915
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.42823901966610467,
-                  "forward_m": 0.5053090967228798,
-                  "up_m": -0.5705820770597014,
-                  "distance_m": 0.877623839529986
-                }
-              },
-              {
-                "frame": 25,
-                "time_s": 0.8332,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.809226,
-                "gaze_hit_distance_m": 0.7680049100879124,
-                "gaze_hit_exit_distance_m": 0.8370865076739203,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.07716536969490466,
-                  1.5507458875329354,
-                  2.3651264962816656
-                ],
-                "gaze_direction_world_unit": [
-                  0.502775762833741,
-                  -0.7786593422479867,
-                  -0.375374694188197
-                ],
-                "wearer_world_m": [
-                  0.06064817401839499,
-                  1.552601051645798,
-                  2.2951850756920162
-                ],
-                "right_world": [
-                  -0.34640508127752084,
-                  0.036113450205807224,
-                  -0.937389640640085
-                ],
-                "forward_world": [
-                  0.8748687434561113,
-                  -0.3481779470671176,
-                  -0.33671471440917494
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.4367332538448084,
-                  "forward_m": 0.5040256213366459,
-                  "up_m": -0.5703690581366763,
-                  "distance_m": 0.8809590426161406
-                }
-              },
-              {
-                "frame": 26,
-                "time_s": 0.866528,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.813853,
-                "gaze_hit_distance_m": 0.7725560505871457,
-                "gaze_hit_exit_distance_m": 0.8421068784861472,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0746664233977879,
-                  1.5505035827618683,
-                  2.359346363649057
-                ],
-                "gaze_direction_world_unit": [
-                  0.5172582779278764,
-                  -0.7736900509294118,
-                  -0.36585185390801567
-                ],
-                "wearer_world_m": [
-                  0.057824119256075994,
-                  1.5523339515885368,
-                  2.2894818644942183
-                ],
-                "right_world": [
-                  -0.3507900594943396,
-                  0.03545356858752896,
-                  -0.9357827625225673
-                ],
-                "forward_world": [
-                  0.874225305109509,
-                  -0.3457960733520524,
-                  -0.34081548022425295
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.44539423797587474,
-                  "forward_m": 0.5023266471092591,
-                  "up_m": -0.5701216005937243,
-                  "distance_m": 0.8841238256024331
-                }
-              },
-              {
-                "frame": 27,
-                "time_s": 0.899856,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.806502,
-                "gaze_hit_distance_m": 0.7740306647938339,
-                "gaze_hit_exit_distance_m": 0.843727241130679,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0723806939212878,
-                  1.5503737803862867,
-                  2.353786176876252
-                ],
-                "gaze_direction_world_unit": [
-                  0.5203628452678412,
-                  -0.7720651054634645,
-                  -0.36488077805009955
-                ],
-                "wearer_world_m": [
-                  0.055175730536069,
-                  1.552151766759452,
-                  2.28400874714163
-                ],
-                "right_world": [
-                  -0.3556587596610045,
-                  0.03460448921920839,
-                  -0.9339750403529387
-                ],
-                "forward_world": [
-                  0.8728613569969715,
-                  -0.34492499648485897,
-                  -0.34516633419458104
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0037,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.45403704621930563,
-                  "forward_m": 0.5002094676720639,
-                  "up_m": -0.5700104200381869,
-                  "distance_m": 0.8872009002931573
-                }
-              },
               {
                 "frame": 28,
                 "time_s": 0.933184,
@@ -68352,11666 +67691,6 @@ window.QA_DATA = {
                   "up_m": -0.4905115992835538,
                   "distance_m": 0.749395210631346
                 }
-              }
-            ],
-            "gaze_events": [
-              {
-                "object_id": "7379153972126671",
-                "object_name": "WhiteVase",
-                "start_index": 130,
-                "end_index": 137,
-                "start_time_s": 4.33264,
-                "end_time_s": 4.565936,
-                "state_count": 8,
-                "direct_hit_count": 8,
-                "merged_gap_count": 0,
-                "hit_support_ratio": 1.0,
-                "median_relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.039875423485767746,
-                  "forward_m": 0.6186565417383649,
-                  "up_m": -0.5870501768832009,
-                  "distance_m": 0.8539422598397226
-                }
-              }
-            ],
-            "transition": {
-              "start_frame": 85,
-              "end_frame": 133,
-              "start_relation": "left-front",
-              "end_relation": "front",
-              "wearer_turn_deg": 26.997370973738633,
-              "pre_gazed_object_id": "4508463855879675"
-            }
-          }
-        }
-      ],
-      "task5_media": {
-        "object_id": "7379153972126671",
-        "anchor_frames": [
-          85,
-          133
-        ]
-      },
-      "case_policy": "one annotation-derived question per unique gaze/object window"
-    },
-    {
-      "name": "task5_last_apartment_release_golden_skeleton_seq100_10s_sam_20_290_8c7549ef",
-      "title": "Task 5 · kitchen island",
-      "video_clip": "./task5_media/task5_last_apartment_release_golden_skeleton_seq100_10s_sam_20_290_8c7549ef.mp4",
-      "original_image": "./task5_media/task5_last_apartment_release_golden_skeleton_seq100_10s_sam_20_290_8c7549ef_gaze_evidence.jpg",
-      "original_caption": "ADT RGB anchor frames · green: target 2D box · red: measured gaze projection",
-      "video_window": {
-        "source_video": "site/qa_benchmark/task5_media/adt_seq100_rgb.mp4",
-        "source_sequence": "Apartment_release_golden_skeleton_seq100_10s_sample_M1292",
-        "start_sec": 0.66656,
-        "duration_sec": 8.99856
-      },
-      "qa": [
-        {
-          "task_id": "task5_human_state_grounded_spatial_reasoning",
-          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "last_gaze_annotated_object_relation_change",
-          "question_categories": [
-            "last_gaze_annotated_object"
-          ],
-          "question": "The kitchen island is the last gaze-annotated object in this window. How does its wearer-relative position evolve?",
-          "options": [
-            {
-              "label": "A",
-              "text": "The kitchen island follows: front → right-front → front → left-front."
-            },
-            {
-              "label": "B",
-              "text": "The kitchen island follows: front → right-front → right → right-front."
-            },
-            {
-              "label": "C",
-              "text": "The kitchen island follows: left-front → front → right-front → front."
-            },
-            {
-              "label": "D",
-              "text": "The kitchen island follows: right-front → right → right-behind → right."
-            }
-          ],
-          "correct_option": "C",
-          "correct_answer": "The kitchen island follows: left-front → front → right-front → front.",
-          "answer": "The kitchen island follows: left-front → front → right-front → front.",
-          "explanation": "Across the full window, the annotation-derived relation sequence is left-front → front → right-front → front.",
-          "status": "ok",
-          "method": "Uses measured ADT eye-gaze direction and fixation depth, same-time object 6DoF/3D boxes, and a gravity-aligned wearer frame; no answer label is inferred by an LLM.",
-          "result_json": {
-            "status": "ok",
-            "answer_type": "last_gaze_annotated_object_relation_change",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true,
-            "annotation_direct": true,
-            "annotation_source": "Aria Digital Twin v2",
-            "analysis_schema_version": 4,
-            "coordinate_frame": "gravity-aligned wearer CPF: +right and +forward, metric world positions",
-            "alignment_diagnostics": {
-              "maximum_allowed_wearer_skew_ms": 10.0,
-              "maximum_observed_wearer_skew_ms": 0.003,
-              "maximum_allowed_dynamic_object_skew_ms": 50.0,
-              "maximum_observed_dynamic_object_skew_ms": 0.0037,
-              "gaze_state_count": 300,
-              "wearer_state_count": 300
-            },
-            "maximum_internal_gaze_gap_states": 1,
-            "gaze_definition": "smallest eligible same-time object OBB containing the measured fixation depth along the gaze ray",
-            "gaze_grounding_method": "depth_consistent_ray_obb_intersection",
-            "maximum_gaze_depth_obb_residual_m": 0.05,
-            "object_id": "4671332369591132",
-            "object_name": "KitchIsland",
-            "timeline": [
-              {
-                "frame": 20,
-                "time_s": 0.66656,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.785005,
-                "gaze_hit_distance_m": 0.7806570368567515,
-                "gaze_hit_exit_distance_m": 0.8508065782252613,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09240866342765344,
-                  1.5506523521845965,
-                  2.3953382235892553
-                ],
-                "gaze_direction_world_unit": [
-                  0.47317070182557186,
-                  -0.7657969684251912,
-                  -0.4355048680378694
-                ],
-                "wearer_world_m": [
-                  0.07769481215207201,
-                  1.552039194778124,
-                  2.32498453890067
-                ],
-                "right_world": [
-                  -0.32210838696258925,
-                  0.030735188575501393,
-                  -0.9462037493223052
-                ],
-                "forward_world": [
-                  0.8805702433149967,
-                  -0.35727364712451726,
-                  -0.31137049901767094
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.22861557375822922,
-                  "forward_m": 0.5271641541079266,
-                  "up_m": -1.1037596292049745,
-                  "distance_m": 1.2455254633196933
-                }
-              },
-              {
-                "frame": 21,
-                "time_s": 0.699888,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.788986,
-                "gaze_hit_distance_m": 0.7821972931098152,
-                "gaze_hit_exit_distance_m": 0.8525240183048636,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08928314133020751,
-                  1.550704465534027,
-                  2.3889968898337277
-                ],
-                "gaze_direction_world_unit": [
-                  0.4853863804577937,
-                  -0.7643788623017768,
-                  -0.4244113765349875
-                ],
-                "wearer_world_m": [
-                  0.074023042329065,
-                  1.552209034980383,
-                  2.318762088273131
-                ],
-                "right_world": [
-                  -0.3294520504017279,
-                  0.03230870607910086,
-                  -0.9436193586386366
-                ],
-                "forward_world": [
-                  0.8781480270375702,
-                  -0.3566774677126733,
-                  -0.31880593883442243
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.23975302366054516,
-                  "forward_m": 0.5259545419520282,
-                  "up_m": -1.103811742554405,
-                  "distance_m": 1.2472665886820935
-                }
-              },
-              {
-                "frame": 22,
-                "time_s": 0.733216,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.799387,
-                "gaze_hit_distance_m": 0.7732461034843667,
-                "gaze_hit_exit_distance_m": 0.8427802046890063,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08599676070151553,
-                  1.5508625431481995,
-                  2.3828899747032555
-                ],
-                "gaze_direction_world_unit": [
-                  0.4864247817890405,
-                  -0.7735899746646876,
-                  -0.40613973304734996
-                ],
-                "wearer_world_m": [
-                  0.070292358567181,
-                  1.5524519081137031,
-                  2.312755052064034
-                ],
-                "right_world": [
-                  -0.3354329537234498,
-                  0.03330114227726605,
-                  -0.9414753143228942
-                ],
-                "forward_world": [
-                  0.8765372506699126,
-                  -0.3551742694728833,
-                  -0.32485948730556524
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.24996635732664368,
-                  "forward_m": 0.5252582965822443,
-                  "up_m": -1.1039698201685775,
-                  "distance_m": 1.2492029253932038
-                }
-              },
-              {
-                "frame": 23,
-                "time_s": 0.766544,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.798087,
-                "gaze_hit_distance_m": 0.7714143262179143,
-                "gaze_hit_exit_distance_m": 0.8407568573492481,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08282472607131694,
-                  1.5509756537145418,
-                  2.376927572411002
-                ],
-                "gaze_direction_world_unit": [
-                  0.4887394720385913,
-                  -0.7756011380880709,
-                  -0.3994704032440056
-                ],
-                "wearer_world_m": [
-                  0.066820026459953,
-                  1.5526845417373571,
-                  2.306863380464791
-                ],
-                "right_world": [
-                  -0.339476704408663,
-                  0.03476039668768405,
-                  -0.9399719580848939
-                ],
-                "forward_world": [
-                  0.8755563224917747,
-                  -0.3535139309136267,
-                  -0.3292856310176248
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.2589304415846644,
-                  "forward_m": 0.5248902312464957,
-                  "up_m": -1.1040829307349198,
-                  "distance_m": 1.251074174062736
-                }
-              },
-              {
-                "frame": 24,
-                "time_s": 0.799872,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.814585,
-                "gaze_hit_distance_m": 0.7671854501428086,
-                "gaze_hit_exit_distance_m": 0.8361377020833775,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.07987324036597745,
-                  1.550946599898336,
-                  2.3710215283488623
-                ],
-                "gaze_direction_world_unit": [
-                  0.49947857885351055,
-                  -0.7799044241835518,
-                  -0.37718727232689
-                ],
-                "wearer_world_m": [
-                  0.063631700180943,
-                  1.552765953212319,
-                  2.301014642780821
-                ],
-                "right_world": [
-                  -0.34267441224997786,
-                  0.03601821704309341,
-                  -0.9387635140066795
-                ],
-                "forward_world": [
-                  0.8750835035648898,
-                  -0.3512854507823322,
-                  -0.3329074854328915
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.26729602915177025,
-                  "forward_m": 0.5245351899064228,
-                  "up_m": -1.104053876918714,
-                  "distance_m": 1.2527471073195187
-                }
-              },
-              {
-                "frame": 25,
-                "time_s": 0.8332,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.809226,
-                "gaze_hit_distance_m": 0.7680049100879124,
-                "gaze_hit_exit_distance_m": 0.8370865076739203,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.07716536969490466,
-                  1.5507458875329354,
-                  2.3651264962816656
-                ],
-                "gaze_direction_world_unit": [
-                  0.502775762833741,
-                  -0.7786593422479867,
-                  -0.375374694188197
-                ],
-                "wearer_world_m": [
-                  0.06064817401839499,
-                  1.552601051645798,
-                  2.2951850756920162
-                ],
-                "right_world": [
-                  -0.34640508127752084,
-                  0.036113450205807224,
-                  -0.937389640640085
-                ],
-                "forward_world": [
-                  0.8748687434561113,
-                  -0.3481779470671176,
-                  -0.33671471440917494
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.27586336330419436,
-                  "forward_m": 0.5238769562342486,
-                  "up_m": -1.1038531645533134,
-                  "distance_m": 1.2541860979924497
-                }
-              },
-              {
-                "frame": 26,
-                "time_s": 0.866528,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.813853,
-                "gaze_hit_distance_m": 0.7725560505871457,
-                "gaze_hit_exit_distance_m": 0.8421068784861472,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0746664233977879,
-                  1.5505035827618683,
-                  2.359346363649057
-                ],
-                "gaze_direction_world_unit": [
-                  0.5172582779278764,
-                  -0.7736900509294118,
-                  -0.36585185390801567
-                ],
-                "wearer_world_m": [
-                  0.057824119256075994,
-                  1.5523339515885368,
-                  2.2894818644942183
-                ],
-                "right_world": [
-                  -0.3507900594943396,
-                  0.03545356858752896,
-                  -0.9357827625225673
-                ],
-                "forward_world": [
-                  0.874225305109509,
-                  -0.3457960733520524,
-                  -0.34081548022425295
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.28461548611248133,
-                  "forward_m": 0.5228772162141823,
-                  "up_m": -1.1036108597822463,
-                  "distance_m": 1.2555142555014367
-                }
-              },
-              {
-                "frame": 27,
-                "time_s": 0.899856,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.806502,
-                "gaze_hit_distance_m": 0.7740306647938339,
-                "gaze_hit_exit_distance_m": 0.843727241130679,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0723806939212878,
-                  1.5503737803862867,
-                  2.353786176876252
-                ],
-                "gaze_direction_world_unit": [
-                  0.5203628452678412,
-                  -0.7720651054634645,
-                  -0.36488077805009955
-                ],
-                "wearer_world_m": [
-                  0.055175730536069,
-                  1.552151766759452,
-                  2.28400874714163
-                ],
-                "right_world": [
-                  -0.3556587596610045,
-                  0.03460448921920839,
-                  -0.9339750403529387
-                ],
-                "forward_world": [
-                  0.8728613569969715,
-                  -0.34492499648485897,
-                  -0.34516633419458104
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.2933579880015342,
-                  "forward_m": 0.5215393206525807,
-                  "up_m": -1.1034810574066647,
-                  "distance_m": 1.2568550847419107
-                }
-              },
-              {
-                "frame": 28,
-                "time_s": 0.933184,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.81444,
-                "gaze_hit_distance_m": 0.7687873680539608,
-                "gaze_hit_exit_distance_m": 0.8379984470766181,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.07041059468150225,
-                  1.550486766243601,
-                  2.3484872138243102
-                ],
-                "gaze_direction_world_unit": [
-                  0.5217539017979448,
-                  -0.7776031248952107,
-                  -0.35086499698862006
-                ],
-                "wearer_world_m": [
-                  0.052822478830212995,
-                  1.5522185971534843,
-                  2.27880421271571
-                ],
-                "right_world": [
-                  -0.36079873003920393,
-                  0.03383123732255852,
-                  -0.9320298942541078
-                ],
-                "forward_world": [
-                  0.8713902600262967,
-                  -0.3439652031528204,
-                  -0.34980988229514365
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.30189501654232553,
-                  "forward_m": 0.5198339678947135,
-                  "up_m": -1.103594043263979,
-                  "distance_m": 1.2582670429692702
-                }
-              },
-              {
-                "frame": 29,
-                "time_s": 0.966512,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.811744,
-                "gaze_hit_distance_m": 0.7679674893623024,
-                "gaze_hit_exit_distance_m": 0.8370784913072834,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.06878178587664868,
-                  1.550833259302277,
-                  2.343424732796391
-                ],
-                "gaze_direction_world_unit": [
-                  0.5227044203388619,
-                  -0.7788736467791542,
-                  -0.3466063059310319
-                ],
-                "wearer_world_m": [
-                  0.05080414182962,
-                  1.55254571862578,
-                  2.2738407296161793
-                ],
-                "right_world": [
-                  -0.36602853963967047,
-                  0.033313545710264375,
-                  -0.9300071590269945
-                ],
-                "forward_world": [
-                  0.8701438407119181,
-                  -0.3420852814752208,
-                  -0.35472151988444595
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3101352830363949,
-                  "forward_m": 0.5177755971278832,
-                  "up_m": -1.1039405363226549,
-                  "distance_m": 1.259726761925702
-                }
-              },
-              {
-                "frame": 30,
-                "time_s": 0.99984,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.808655,
-                "gaze_hit_distance_m": 0.7687701954636006,
-                "gaze_hit_exit_distance_m": 0.8379094694745169,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.06742085186110612,
-                  1.5512529221532863,
-                  2.3385143275141904
-                ],
-                "gaze_direction_world_unit": [
-                  0.5255220308258464,
-                  -0.7785462587129681,
-                  -0.3430631401953853
-                ],
-                "wearer_world_m": [
-                  0.049055021809198,
-                  1.5529793457007268,
-                  2.269032117926129
-                ],
-                "right_world": [
-                  -0.37123991312576227,
-                  0.03319240599814752,
-                  -0.927943527961929
-                ],
-                "forward_world": [
-                  0.8690043083502977,
-                  -0.33965925144546455,
-                  -0.35980981778729604
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3181200995339032,
-                  "forward_m": 0.5154167914827644,
-                  "up_m": -1.1043601991736642,
-                  "distance_m": 1.2611314849584692
-                }
-              },
-              {
-                "frame": 31,
-                "time_s": 1.033168,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.755737,
-                "gaze_hit_distance_m": 0.7621743888948572,
-                "gaze_hit_exit_distance_m": 0.8306646796180222,
-                "gaze_depth_obb_residual_m": 0.006437388894857232,
-                "gaze_origin_world_m": [
-                  0.06627740698815698,
-                  1.5516594268593782,
-                  2.333760416159686
-                ],
-                "gaze_direction_world_unit": [
-                  0.4883484100729151,
-                  -0.7855678157650082,
-                  -0.3799987331734803
-                ],
-                "wearer_world_m": [
-                  0.047505185918366,
-                  1.553437780074065,
-                  2.26438821079651
-                ],
-                "right_world": [
-                  -0.3766885455347618,
-                  0.03359049039356124,
-                  -0.9257307484458027
-                ],
-                "forward_world": [
-                  0.8676957656178955,
-                  -0.3371280241807977,
-                  -0.3653063832466189
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.32600429575435863,
-                  "forward_m": 0.5126950400678221,
-                  "up_m": -1.1047667038797562,
-                  "distance_m": 1.2624269068472658
-                }
-              },
-              {
-                "frame": 32,
-                "time_s": 1.066496,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.859209,
-                "gaze_hit_distance_m": 0.802997395117334,
-                "gaze_hit_exit_distance_m": 0.8750974914301807,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.06532082695180444,
-                  1.5520282852580753,
-                  2.3292340347677776
-                ],
-                "gaze_direction_world_unit": [
-                  0.43712395448208813,
-                  -0.7449861170118983,
-                  -0.5039030996902829
-                ],
-                "wearer_world_m": [
-                  0.046096456234664004,
-                  1.5538997204797849,
-                  2.259988218997141
-                ],
-                "right_world": [
-                  -0.3827370577139079,
-                  0.03460461023066075,
-                  -0.9232090042906238
-                ],
-                "forward_world": [
-                  0.8659148298075641,
-                  -0.33489050140473,
-                  -0.371537157749027
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.33393255221832246,
-                  "forward_m": 0.5095091692885942,
-                  "up_m": -1.1051355622784533,
-                  "distance_m": 1.263597890958132
-                }
-              },
-              {
-                "frame": 33,
-                "time_s": 1.099824,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.853116,
-                "gaze_hit_distance_m": 0.7969593356933155,
-                "gaze_hit_exit_distance_m": 0.868462104936237,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.06452238979614311,
-                  1.552372593521724,
-                  2.3250307895919895
-                ],
-                "gaze_direction_world_unit": [
-                  0.4408858963682736,
-                  -0.751026907861526,
-                  -0.49150606308722045
-                ],
-                "wearer_world_m": [
-                  0.044836952589612,
-                  1.554378670178816,
-                  2.2559184106759544
-                ],
-                "right_world": [
-                  -0.38889206023954603,
-                  0.036256761811473276,
-                  -0.9205696131773999
-                ],
-                "forward_world": [
-                  0.8638037516102635,
-                  -0.33307166601387517,
-                  -0.37802955440385305
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3415496907846826,
-                  "forward_m": 0.5060889940741157,
-                  "up_m": -1.105479870542102,
-                  "distance_m": 1.2646582590544149
-                }
-              },
-              {
-                "frame": 34,
-                "time_s": 1.133152,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.853974,
-                "gaze_hit_distance_m": 0.7977783297511658,
-                "gaze_hit_exit_distance_m": 0.8693031055852585,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.06388066989640336,
-                  1.552709952907425,
-                  2.3212199387386163
-                ],
-                "gaze_direction_world_unit": [
-                  0.44135977766775364,
-                  -0.7507703014596825,
-                  -0.49147278775452985
-                ],
-                "wearer_world_m": [
-                  0.043783072960724,
-                  1.5548813982151082,
-                  2.2522312938491367
-                ],
-                "right_world": [
-                  -0.3943876609044281,
-                  0.03835169961533294,
-                  -0.9181435182273795
-                ],
-                "forward_world": [
-                  0.8618189704471603,
-                  -0.3313397749494511,
-                  -0.3840338731334049
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.34836691285892873,
-                  "forward_m": 0.5027900159362471,
-                  "up_m": -1.105817229927803,
-                  "distance_m": 1.2656142529641194
-                }
-              },
-              {
-                "frame": 35,
-                "time_s": 1.16648,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.853045,
-                "gaze_hit_distance_m": 0.7968507846542222,
-                "gaze_hit_exit_distance_m": 0.8682586334356316,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.06348703139282075,
-                  1.553023714357912,
-                  2.3177463889548084
-                ],
-                "gaze_direction_world_unit": [
-                  0.4417513961629806,
-                  -0.7521704747750138,
-                  -0.4889737016085711
-                ],
-                "wearer_world_m": [
-                  0.043069462128168,
-                  1.5553449914221982,
-                  2.248856649231727
-                ],
-                "right_world": [
-                  -0.3986670467331172,
-                  0.04003944038716431,
-                  -0.9162212773465688
-                ],
-                "forward_world": [
-                  0.8608490171993544,
-                  -0.32815379690106533,
-                  -0.3889139431369366
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.35408778795344875,
-                  "forward_m": 0.4998875432470476,
-                  "up_m": -1.10613099137829,
-                  "distance_m": 1.266409548658601
-                }
-              },
-              {
-                "frame": 36,
-                "time_s": 1.199808,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.85288,
-                "gaze_hit_distance_m": 0.7965928117461155,
-                "gaze_hit_exit_distance_m": 0.8679605233046344,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.06337571845427772,
-                  1.553301754309641,
-                  2.3145797101478536
-                ],
-                "gaze_direction_world_unit": [
-                  0.4456154080664605,
-                  -0.7527560230221465,
-                  -0.4845464661904401
-                ],
-                "wearer_world_m": [
-                  0.042754479296204996,
-                  1.5557095231966582,
-                  2.245753633363162
-                ],
-                "right_world": [
-                  -0.4014159484195113,
-                  0.04060683600720055,
-                  -0.9149952574871352
-                ],
-                "forward_world": [
-                  0.8612472247074563,
-                  -0.3231854905904716,
-                  -0.39217898542056057
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.358551582412422,
-                  "forward_m": 0.4976015507128506,
-                  "up_m": -1.106409031330019,
-                  "distance_m": 1.2670175411978568
-                }
-              },
-              {
-                "frame": 37,
-                "time_s": 1.233136,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.848622,
-                "gaze_hit_distance_m": 0.7924786472329874,
-                "gaze_hit_exit_distance_m": 0.8634410549555652,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.06343212050787234,
-                  1.553552252732654,
-                  2.3117892096862485
-                ],
-                "gaze_direction_world_unit": [
-                  0.4425884200486818,
-                  -0.7570433665664235,
-                  -0.4806254587270504
-                ],
-                "wearer_world_m": [
-                  0.04271752538995201,
-                  1.555952971232959,
-                  2.242990926271741
-                ],
-                "right_world": [
-                  -0.4026932555582126,
-                  0.03995757538878189,
-                  -0.9144624290242758
-                ],
-                "forward_world": [
-                  0.8621750950156586,
-                  -0.3189506967451165,
-                  -0.39360457134101595
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36177842382304815,
-                  "forward_m": 0.49603909340386404,
-                  "up_m": -1.106659529753032,
-                  "distance_m": 1.2674908132595275
-                }
-              },
-              {
-                "frame": 38,
-                "time_s": 1.266464,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.852113,
-                "gaze_hit_distance_m": 0.7958297576268664,
-                "gaze_hit_exit_distance_m": 0.8670406581345024,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0636299681710819,
-                  1.5537458713810455,
-                  2.309351658404806
-                ],
-                "gaze_direction_world_unit": [
-                  0.4479204283171351,
-                  -0.7542200006167333,
-                  -0.480124442791542
-                ],
-                "wearer_world_m": [
-                  0.04292297950371499,
-                  1.5561336287542908,
-                  2.2405506341678367
-                ],
-                "right_world": [
-                  -0.4026106519483617,
-                  0.03948692786027583,
-                  -0.9145192428078665
-                ],
-                "forward_world": [
-                  0.862995289108464,
-                  -0.31672652612917246,
-                  -0.39360314864434864
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36388025186558837,
-                  "forward_m": 0.4949803794134567,
-                  "up_m": -1.1068531484014235,
-                  "distance_m": 1.2678163521402703
-                }
-              },
-              {
-                "frame": 39,
-                "time_s": 1.299792,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.633071,
-                "gaze_hit_distance_m": 0.6332365112208271,
-                "gaze_hit_exit_distance_m": 0.6960175251129292,
-                "gaze_depth_obb_residual_m": 0.00016551122082708591,
-                "gaze_origin_world_m": [
-                  0.06405804876538207,
-                  1.5538082073658839,
-                  2.30712268298589
-                ],
-                "gaze_direction_world_unit": [
-                  0.5571371100955667,
-                  -0.7721057539116446,
-                  -0.3056974735435194
-                ],
-                "wearer_world_m": [
-                  0.043447841381946996,
-                  1.556377549573209,
-                  2.23829914389327
-                ],
-                "right_world": [
-                  -0.40132149009437124,
-                  0.0419436203021997,
-                  -0.9149763900256542
-                ],
-                "forward_world": [
-                  0.8634374548691522,
-                  -0.3160183441386599,
-                  -0.39320245128551734
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3650668173829211,
-                  "forward_m": 0.49388092087515434,
-                  "up_m": -1.1069154843862619,
-                  "distance_m": 1.2679002823791832
-                }
-              },
-              {
-                "frame": 40,
-                "time_s": 1.33312,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.834513,
-                "gaze_hit_distance_m": 0.7757949539218312,
-                "gaze_hit_exit_distance_m": 0.8452364073268583,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.06471566227867205,
-                  1.5536521466869007,
-                  2.304949094690124
-                ],
-                "gaze_direction_world_unit": [
-                  0.5700786675044939,
-                  -0.7746559050783165,
-                  -0.27371251630788723
-                ],
-                "wearer_world_m": [
-                  0.044263534715156,
-                  1.5565596713646699,
-                  2.236091862104332
-                ],
-                "right_world": [
-                  -0.3991969912712147,
-                  0.046801797508716186,
-                  -0.9156698935260259
-                ],
-                "forward_world": [
-                  0.8633962011700143,
-                  -0.3168742366377367,
-                  -0.3926037671246166
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3656844389045114,
-                  "forward_m": 0.4925894858036435,
-                  "up_m": -1.1067594237072786,
-                  "distance_m": 1.2676824722186575
-                }
-              },
-              {
-                "frame": 41,
-                "time_s": 1.366448,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.68131,
-                "gaze_hit_distance_m": 0.6763088220595642,
-                "gaze_hit_exit_distance_m": 0.7436565755204623,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0655594411035199,
-                  1.553212076211019,
-                  2.3026863467050536
-                ],
-                "gaze_direction_world_unit": [
-                  0.576201002978852,
-                  -0.772098816771327,
-                  -0.2680593615348692
-                ],
-                "wearer_world_m": [
-                  0.045287520090012995,
-                  1.5564187318406293,
-                  2.233789116868904
-                ],
-                "right_world": [
-                  -0.3967643955475009,
-                  0.05132242297129436,
-                  -0.9164846007032428
-                ],
-                "forward_world": [
-                  0.8629915281232979,
-                  -0.31934581842207543,
-                  -0.39148929824932616
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3661492598034696,
-                  "forward_m": 0.491219872763829,
-                  "up_m": -1.106319353231397,
-                  "distance_m": 1.2671420083914033
-                }
-              },
-              {
-                "frame": 42,
-                "time_s": 1.399776,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.685675,
-                "gaze_hit_distance_m": 0.6873217936139856,
-                "gaze_hit_exit_distance_m": 0.7558366016724555,
-                "gaze_depth_obb_residual_m": 0.0016467936139855643,
-                "gaze_origin_world_m": [
-                  0.06669437675170153,
-                  1.5526109368302494,
-                  2.3002535013636525
-                ],
-                "gaze_direction_world_unit": [
-                  0.5795951930054649,
-                  -0.771593440326903,
-                  -0.26213159880001435
-                ],
-                "wearer_world_m": [
-                  0.04658654500835201,
-                  1.5559415345729968,
-                  2.231314079243525
-                ],
-                "right_world": [
-                  -0.3945626708847961,
-                  0.05324070802628367,
-                  -0.9173253107557411
-                ],
-                "forward_world": [
-                  0.8632040475212497,
-                  -0.3207154502446131,
-                  -0.38989789986267853
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36676132943751305,
-                  "forward_m": 0.48979151543340405,
-                  "up_m": -1.1057182138506274,
-                  "distance_m": 1.2663461257757689
-                }
-              },
-              {
-                "frame": 43,
-                "time_s": 1.433104,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.684658,
-                "gaze_hit_distance_m": 0.688874919477663,
-                "gaze_hit_exit_distance_m": 0.7565306306566651,
-                "gaze_depth_obb_residual_m": 0.004216919477663006,
-                "gaze_origin_world_m": [
-                  0.06820129491031571,
-                  1.5520198263717198,
-                  2.297642014822539
-                ],
-                "gaze_direction_world_unit": [
-                  0.578601105048876,
-                  -0.7717032692917567,
-                  -0.2639977753706156
-                ],
-                "wearer_world_m": [
-                  0.04821770924573,
-                  1.5552341175428233,
-                  2.2286609570077043
-                ],
-                "right_world": [
-                  -0.3929325617285789,
-                  0.05135366809985245,
-                  -0.9181322359584743
-                ],
-                "forward_world": [
-                  0.8648082551786911,
-                  -0.3187611669585115,
-                  -0.3879407173964035
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36766570896288975,
-                  "forward_m": 0.48831477662331807,
-                  "up_m": -1.1051271033920977,
-                  "distance_m": 1.265408429119096
-                }
-              },
-              {
-                "frame": 44,
-                "time_s": 1.466432,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.701013,
-                "gaze_hit_distance_m": 0.7057020682744574,
-                "gaze_hit_exit_distance_m": 0.774293402506754,
-                "gaze_depth_obb_residual_m": 0.004689068274457364,
-                "gaze_origin_world_m": [
-                  0.06987231075860154,
-                  1.5515195536312314,
-                  2.295005967608587
-                ],
-                "gaze_direction_world_unit": [
-                  0.583664746646819,
-                  -0.769767713686061,
-                  -0.2584436698552298
-                ],
-                "wearer_world_m": [
-                  0.050000918557924004,
-                  1.554470954401044,
-                  2.2259807641934373
-                ],
-                "right_world": [
-                  -0.3914684595383954,
-                  0.04740701560785454,
-                  -0.918969542508234
-                ],
-                "forward_world": [
-                  0.8666172978762026,
-                  -0.31679155776685874,
-                  -0.3855094913869131
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36860561997014596,
-                  "forward_m": 0.48688762390764073,
-                  "up_m": -1.1046268306516094,
-                  "distance_m": 1.2644820949510844
-                }
-              },
-              {
-                "frame": 45,
-                "time_s": 1.49976,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.691664,
-                "gaze_hit_distance_m": 0.6954112621793936,
-                "gaze_hit_exit_distance_m": 0.7635263040455263,
-                "gaze_depth_obb_residual_m": 0.0037472621793936955,
-                "gaze_origin_world_m": [
-                  0.07149085943926606,
-                  1.551122027557066,
-                  2.292502126062743
-                ],
-                "gaze_direction_world_unit": [
-                  0.5777236431818944,
-                  -0.7748643811239815,
-                  -0.25655522402396674
-                ],
-                "wearer_world_m": [
-                  0.05171973125130099,
-                  1.5537785411813068,
-                  2.223436163921184
-                ],
-                "right_world": [
-                  -0.39014461994028077,
-                  0.043303508740075436,
-                  -0.9197347344003337
-                ],
-                "forward_world": [
-                  0.8676392580525556,
-                  -0.31706880185478636,
-                  -0.3829745328039201
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3695294916616936,
-                  "forward_m": 0.4854777980866919,
-                  "up_m": -1.104229304577444,
-                  "distance_m": 1.2636619832984695
-                }
-              },
-              {
-                "frame": 46,
-                "time_s": 1.533088,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.756739,
-                "gaze_hit_distance_m": 0.7238513603475059,
-                "gaze_hit_exit_distance_m": 0.7956405033065924,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.07295184326344194,
-                  1.5507470691061023,
-                  2.2902221786196217
-                ],
-                "gaze_direction_world_unit": [
-                  0.5817417424398832,
-                  -0.7710252567357475,
-                  -0.2590301113356967
-                ],
-                "wearer_world_m": [
-                  0.053197179313428995,
-                  1.553164571182355,
-                  2.221142726993734
-                ],
-                "right_world": [
-                  -0.38993309231213374,
-                  0.03999585649357379,
-                  -0.9199741925637062
-                ],
-                "forward_world": [
-                  0.8680560405675848,
-                  -0.31743126497462093,
-                  -0.3817277857986496
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3709168993972902,
-                  "forward_m": 0.4837419789654531,
-                  "up_m": -1.1038543461264803,
-                  "distance_m": 1.2629156735313993
-                }
-              },
-              {
-                "frame": 47,
-                "time_s": 1.566416,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.763816,
-                "gaze_hit_distance_m": 0.7310183286776091,
-                "gaze_hit_exit_distance_m": 0.8037848494249161,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.07425173486579123,
-                  1.5503815581052645,
-                  2.2881989944003336
-                ],
-                "gaze_direction_world_unit": [
-                  0.5802729705564551,
-                  -0.7727057241367832,
-                  -0.2573113746569264
-                ],
-                "wearer_world_m": [
-                  0.05443033193613701,
-                  1.552649075198342,
-                  2.219133575751542
-                ],
-                "right_world": [
-                  -0.390833905904124,
-                  0.03779991986589368,
-                  -0.9196847416663274
-                ],
-                "forward_world": [
-                  0.8682037306310597,
-                  -0.31673017460865005,
-                  -0.38197418579098347
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.37273125816503105,
-                  "forward_m": 0.4816712970337218,
-                  "up_m": -1.1034888351256424,
-                  "distance_m": 1.262227725038935
-                }
-              },
-              {
-                "frame": 48,
-                "time_s": 1.599744,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.771894,
-                "gaze_hit_distance_m": 0.7419160805046728,
-                "gaze_hit_exit_distance_m": 0.8126149154286075,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0754858743108902,
-                  1.5500968059729765,
-                  2.2864095444751587
-                ],
-                "gaze_direction_world_unit": [
-                  0.5799502649082316,
-                  -0.7729999753080137,
-                  -0.2571550668501058
-                ],
-                "wearer_world_m": [
-                  0.055603547036277,
-                  1.552278170324627,
-                  2.217358864444398
-                ],
-                "right_world": [
-                  -0.39165782956901674,
-                  0.03643800996685778,
-                  -0.9193891537139988
-                ],
-                "forward_world": [
-                  0.8684223237940942,
-                  -0.3155517685306216,
-                  -0.382452283184795
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.37431909168732214,
-                  "forward_m": 0.4796810057296698,
-                  "up_m": -1.1032040829933545,
-                  "distance_m": 1.261616911511709
-                }
-              },
-              {
-                "frame": 49,
-                "time_s": 1.633072,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.764593,
-                "gaze_hit_distance_m": 0.7326773132559817,
-                "gaze_hit_exit_distance_m": 0.802893589137758,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.07671394981901768,
-                  1.5498922901276058,
-                  2.2848731550173786
-                ],
-                "gaze_direction_world_unit": [
-                  0.57513174027748,
-                  -0.7776001939767918,
-                  -0.254089393034524
-                ],
-                "wearer_world_m": [
-                  0.056818032722185996,
-                  1.5520486889758984,
-                  2.215825605257209
-                ],
-                "right_world": [
-                  -0.3918496383136328,
-                  0.035916643639312906,
-                  -0.9193279369534908
-                ],
-                "forward_world": [
-                  0.8688336733166082,
-                  -0.3142330117075145,
-                  -0.38260379306064635
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.37534804475282657,
-                  "forward_m": 0.47794875311644663,
-                  "up_m": -1.1029995671479838,
-                  "distance_m": 1.2610512786192634
-                }
-              },
-              {
-                "frame": 50,
-                "time_s": 1.6664,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.774438,
-                "gaze_hit_distance_m": 0.745612744675336,
-                "gaze_hit_exit_distance_m": 0.8153794512386902,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0779521571985854,
-                  1.5497171476073401,
-                  2.2836311140546908
-                ],
-                "gaze_direction_world_unit": [
-                  0.5773183439977636,
-                  -0.777589436746616,
-                  -0.2491148280286834
-                ],
-                "wearer_world_m": [
-                  0.058095871175934996,
-                  1.55191101366196,
-                  2.214573337098572
-                ],
-                "right_world": [
-                  -0.3913294034496477,
-                  0.036283026004216956,
-                  -0.9195351216890637
-                ],
-                "forward_world": [
-                  0.86939308930386,
-                  -0.3130034675125764,
-                  -0.3823407977129757
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3757357138421614,
-                  "forward_m": 0.4765022738264924,
-                  "up_m": -1.1028244246277181,
-                  "distance_m": 1.260472670771035
-                }
-              },
-              {
-                "frame": 51,
-                "time_s": 1.699728,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.764165,
-                "gaze_hit_distance_m": 0.7331417011076791,
-                "gaze_hit_exit_distance_m": 0.7992739515329055,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.07911730160952041,
-                  1.5495343405691675,
-                  2.282666080497159
-                ],
-                "gaze_direction_world_unit": [
-                  0.5711531809863444,
-                  -0.7819373748319098,
-                  -0.249715809852243
-                ],
-                "wearer_world_m": [
-                  0.05936118216828201,
-                  1.5517408095408358,
-                  2.213579982472299
-                ],
-                "right_world": [
-                  -0.3899956469226747,
-                  0.036448363884490825,
-                  -0.9200950560412267
-                ],
-                "forward_world": [
-                  0.8699530640133943,
-                  -0.3129145864276297,
-                  -0.3811379383038796
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3754728501372555,
-                  "forward_m": 0.47558010852009003,
-                  "up_m": -1.1026416175895455,
-                  "distance_m": 1.259888844263665
-                }
-              },
-              {
-                "frame": 52,
-                "time_s": 1.733056,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.712004,
-                "gaze_hit_distance_m": 0.7165538676802898,
-                "gaze_hit_exit_distance_m": 0.7342209982021598,
-                "gaze_depth_obb_residual_m": 0.004549867680289865,
-                "gaze_origin_world_m": [
-                  0.08012056601537718,
-                  1.5493437523344644,
-                  2.281915008956721
-                ],
-                "gaze_direction_world_unit": [
-                  0.5571598463148699,
-                  -0.7833832311875724,
-                  -0.2754698145868417
-                ],
-                "wearer_world_m": [
-                  0.06052097912234901,
-                  1.551465135708926,
-                  2.2127816767124178
-                ],
-                "right_world": [
-                  -0.3879016963083397,
-                  0.03547322823851093,
-                  -0.9210178739196384
-                ],
-                "forward_world": [
-                  0.8704073353223128,
-                  -0.31460280010599984,
-                  -0.37870324633223634
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.37467539412388606,
-                  "forward_m": 0.4753277817953834,
-                  "up_m": -1.1024510293548424,
-                  "distance_m": 1.2593482534590816
-                }
-              },
-              {
-                "frame": 53,
-                "time_s": 1.766384,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.767092,
-                "gaze_hit_distance_m": 0.7624788917694317,
-                "gaze_hit_exit_distance_m": 0.8312083027196692,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.080991177973218,
-                  1.5492535187171053,
-                  2.281237788326303
-                ],
-                "gaze_direction_world_unit": [
-                  0.49318765166378353,
-                  -0.7816691308979684,
-                  -0.3817843763796224
-                ],
-                "wearer_world_m": [
-                  0.0615571981581,
-                  1.5512937237266782,
-                  2.212055278303433
-                ],
-                "right_world": [
-                  -0.3856870563412023,
-                  0.03453081085775264,
-                  -0.9219832523817151
-                ],
-                "forward_world": [
-                  0.8709522001381871,
-                  -0.3161194892031456,
-                  -0.3761791243814495
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.37380339767482407,
-                  "forward_m": 0.4752732334410957,
-                  "up_m": -1.1023607957374832,
-                  "distance_m": 1.2589490232269578
-                }
-              },
-              {
-                "frame": 54,
-                "time_s": 1.799712,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.767357,
-                "gaze_hit_distance_m": 0.764038135439457,
-                "gaze_hit_exit_distance_m": 0.832852193438768,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08177131319355993,
-                  1.5493089477805033,
-                  2.280543721357045
-                ],
-                "gaze_direction_world_unit": [
-                  0.490348150312522,
-                  -0.7802073143283254,
-                  -0.3883751255599024
-                ],
-                "wearer_world_m": [
-                  0.062478204354391,
-                  1.551339024260199,
-                  2.2113214963003007
-                ],
-                "right_world": [
-                  -0.38381045056313706,
-                  0.03437816549897632,
-                  -0.9227717376336617
-                ],
-                "forward_world": [
-                  0.871761692913609,
-                  -0.3160383935332459,
-                  -0.37436784661790024
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3731670344914068,
-                  "forward_m": 0.4750745862583653,
-                  "up_m": -1.1024162248008813,
-                  "distance_m": 1.2587224780336808
-                }
-              },
-              {
-                "frame": 55,
-                "time_s": 1.83304,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.793937,
-                "gaze_hit_distance_m": 0.7693268681458245,
-                "gaze_hit_exit_distance_m": 0.8386049612054943,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0824774713981262,
-                  1.549388272550709,
-                  2.279873496809785
-                ],
-                "gaze_direction_world_unit": [
-                  0.4909265590647639,
-                  -0.7749278312422598,
-                  -0.39809291625322635
-                ],
-                "wearer_world_m": [
-                  0.06331061880112099,
-                  1.551402326150897,
-                  2.2106157387561183
-                ],
-                "right_world": [
-                  -0.38213493888807915,
-                  0.03402877766626594,
-                  -0.9234797944576503
-                ],
-                "forward_world": [
-                  0.8727930050833648,
-                  -0.31507808926801906,
-                  -0.37277093226372093
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3726432328366569,
-                  "forward_m": 0.4749087606784814,
-                  "up_m": -1.102495549571087,
-                  "distance_m": 1.2585490391056569
-                }
-              },
-              {
-                "frame": 56,
-                "time_s": 1.866368,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.788997,
-                "gaze_hit_distance_m": 0.7698557088230918,
-                "gaze_hit_exit_distance_m": 0.8392211965750241,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08313787454888469,
-                  1.549451196133809,
-                  2.279308686365068
-                ],
-                "gaze_direction_world_unit": [
-                  0.4889379406768627,
-                  -0.7744566660761745,
-                  -0.4014430999990473
-                ],
-                "wearer_world_m": [
-                  0.06406983174408401,
-                  1.5513912939061718,
-                  2.2100215485599315
-                ],
-                "right_world": [
-                  -0.3808243231727154,
-                  0.032917134068610854,
-                  -0.9240613059558074
-                ],
-                "forward_world": [
-                  0.87364616005678,
-                  -0.3145080310593178,
-                  -0.3712507042649673
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.37222624269625176,
-                  "forward_m": 0.47476949040204086,
-                  "up_m": -1.102558473154187,
-                  "distance_m": 1.2583696694197188
-                }
-              },
-              {
-                "frame": 57,
-                "time_s": 1.899696,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.789039,
-                "gaze_hit_distance_m": 0.7668662924572768,
-                "gaze_hit_exit_distance_m": 0.8359993565281625,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0837967591556163,
-                  1.5495620675610655,
-                  2.278949848527737
-                ],
-                "gaze_direction_world_unit": [
-                  0.4852186944672195,
-                  -0.7774511228271072,
-                  -0.40016567838133943
-                ],
-                "wearer_world_m": [
-                  0.06476226323696299,
-                  1.5513697931725716,
-                  2.2096499077324068
-                ],
-                "right_world": [
-                  -0.3803729880527352,
-                  0.03122160332960175,
-                  -0.9243060107158036
-                ],
-                "forward_world": [
-                  0.8736458546123346,
-                  -0.3157556217435345,
-                  -0.3701909075815309
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3720626974211907,
-                  "forward_m": 0.4744105101740746,
-                  "up_m": -1.1026693445814435,
-                  "distance_m": 1.2582070578694602
-                }
-              },
-              {
-                "frame": 58,
-                "time_s": 1.933024,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.766227,
-                "gaze_hit_distance_m": 0.764402124500766,
-                "gaze_hit_exit_distance_m": 0.8333480191787439,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08448459647105391,
-                  1.5496263458137913,
-                  2.278765652358611
-                ],
-                "gaze_direction_world_unit": [
-                  0.48501191181674247,
-                  -0.7798258338158184,
-                  -0.395771543076725
-                ],
-                "wearer_world_m": [
-                  0.065479041185534,
-                  1.551279170036866,
-                  2.209453901974014
-                ],
-                "right_world": [
-                  -0.3799782945545006,
-                  0.029308199672070906,
-                  -0.9245309757382041
-                ],
-                "forward_world": [
-                  0.8734066162067959,
-                  -0.3177588586606411,
-                  -0.36903955141540223
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3717559321442585,
-                  "forward_m": 0.47408938310125076,
-                  "up_m": -1.1027336228341693,
-                  "distance_m": 1.257968082957177
-                }
-              },
-              {
-                "frame": 59,
-                "time_s": 1.966352,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.772597,
-                "gaze_hit_distance_m": 0.7371786785224784,
-                "gaze_hit_exit_distance_m": 0.8037300140085745,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08520920346478854,
-                  1.5494739192933011,
-                  2.2786509318383343
-                ],
-                "gaze_direction_world_unit": [
-                  0.5153382326290383,
-                  -0.8089117245383207,
-                  -0.2829988125332321
-                ],
-                "wearer_world_m": [
-                  0.066333855875801,
-                  1.5510015275500069,
-                  2.209300738129816
-                ],
-                "right_world": [
-                  -0.3782421407946946,
-                  0.02762227608622539,
-                  -0.9252944897657527
-                ],
-                "forward_world": [
-                  0.8741375797585286,
-                  -0.3183041268478558,
-                  -0.3668323520159136
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3706810544315057,
-                  "forward_m": 0.47429572454425234,
-                  "up_m": -1.1025811963136791,
-                  "distance_m": 1.2575134595269184
-                }
-              },
-              {
-                "frame": 60,
-                "time_s": 1.99968,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.780272,
-                "gaze_hit_distance_m": 0.7236810107904026,
-                "gaze_hit_exit_distance_m": 0.7890588920854779,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08589866952336198,
-                  1.549183781190678,
-                  2.278613265601068
-                ],
-                "gaze_direction_world_unit": [
-                  0.5118890313270211,
-                  -0.82385359784011,
-                  -0.243382145879665
-                ],
-                "wearer_world_m": [
-                  0.06720444265340401,
-                  1.550625630913755,
-                  2.2092121946287073
-                ],
-                "right_world": [
-                  -0.3758243845194551,
-                  0.02649072174310671,
-                  -0.9263121901724619
-                ],
-                "forward_world": [
-                  0.875058514556419,
-                  -0.3188551321019555,
-                  -0.36414832257551083
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36920184371549725,
-                  "forward_m": 0.4747630885653336,
-                  "up_m": -1.1022910582110559,
-                  "distance_m": 1.2569446567982099
-                }
-              },
-              {
-                "frame": 61,
-                "time_s": 2.033008,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.777344,
-                "gaze_hit_distance_m": 0.7207587657421924,
-                "gaze_hit_exit_distance_m": 0.7858608994868219,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08648994044953544,
-                  1.5488899138752787,
-                  2.278670773713658
-                ],
-                "gaze_direction_world_unit": [
-                  0.5119753810893828,
-                  -0.827037755150984,
-                  -0.23214168241227762
-                ],
-                "wearer_world_m": [
-                  0.067929271356888,
-                  1.550283902755376,
-                  2.209232887377484
-                ],
-                "right_world": [
-                  -0.3740255809936435,
-                  0.026124548083448523,
-                  -0.9270503614959671
-                ],
-                "forward_world": [
-                  0.8750498888854634,
-                  -0.3212059470035415,
-                  -0.3620972681077505
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3679967244616562,
-                  "forward_m": 0.47498322860736275,
-                  "up_m": -1.1019971908956567,
-                  "distance_m": 1.256405893865578
-                }
-              },
-              {
-                "frame": 62,
-                "time_s": 2.066336,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.778182,
-                "gaze_hit_distance_m": 0.7214925538796837,
-                "gaze_hit_exit_distance_m": 0.7866463375520012,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0870617184640018,
-                  1.5485670580082163,
-                  2.2787210884294584
-                ],
-                "gaze_direction_world_unit": [
-                  0.5150909167021617,
-                  -0.8259301692565231,
-                  -0.22917395803803237
-                ],
-                "wearer_world_m": [
-                  0.06854245002847201,
-                  1.5499715743314209,
-                  2.2092723610724314
-                ],
-                "right_world": [
-                  -0.3734572397074405,
-                  0.026522554380563917,
-                  -0.9272681619786318
-                ],
-                "forward_world": [
-                  0.8745935215328604,
-                  -0.3231326726994377,
-                  -0.3614850590645041
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36744522412052183,
-                  "forward_m": 0.47462785089096343,
-                  "up_m": -1.1016743350285942,
-                  "distance_m": 1.2558517614694744
-                }
-              },
-              {
-                "frame": 63,
-                "time_s": 2.099664,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.776677,
-                "gaze_hit_distance_m": 0.7201340536823887,
-                "gaze_hit_exit_distance_m": 0.7851906233529657,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08765096876169519,
-                  1.5481905020297462,
-                  2.278729765552247
-                ],
-                "gaze_direction_world_unit": [
-                  0.5114354239098424,
-                  -0.8269891728967305,
-                  -0.23350099589025536
-                ],
-                "wearer_world_m": [
-                  0.069082187735791,
-                  1.549653048442229,
-                  2.209295458252445
-                ],
-                "right_world": [
-                  -0.3741138331501554,
-                  0.02736935960394854,
-                  -0.926978833631366
-                ],
-                "forward_world": [
-                  0.8741466896356285,
-                  -0.32338450135057206,
-                  -0.36233966010542384
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3675594591671991,
-                  "forward_m": 0.47370924615093807,
-                  "up_m": -1.1012977790501242,
-                  "distance_m": 1.255247923419059
-                }
-              },
-              {
-                "frame": 64,
-                "time_s": 2.132992,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.775134,
-                "gaze_hit_distance_m": 0.7185781330580894,
-                "gaze_hit_exit_distance_m": 0.7835398103575079,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08815230856601264,
-                  1.5478074034431566,
-                  2.2788448960267904
-                ],
-                "gaze_direction_world_unit": [
-                  0.5112776456079933,
-                  -0.8282369667684263,
-                  -0.22938765437526032
-                ],
-                "wearer_world_m": [
-                  0.06950923524254901,
-                  1.5492933609082267,
-                  2.209430996493138
-                ],
-                "right_world": [
-                  -0.37509690397758316,
-                  0.027820484471553913,
-                  -0.9265680402810148
-                ],
-                "forward_world": [
-                  0.873394359726536,
-                  -0.32432834534535027,
-                  -0.3633089825526219
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36777296707435003,
-                  "forward_m": 0.47282476494452447,
-                  "up_m": -1.1009146804635346,
-                  "distance_m": 1.2546652858429195
-                }
-              },
-              {
-                "frame": 65,
-                "time_s": 2.16632,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.777414,
-                "gaze_hit_distance_m": 0.720728244225303,
-                "gaze_hit_exit_distance_m": 0.7859331056553156,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08850982371382571,
-                  1.5474572340730317,
-                  2.2790873410631116
-                ],
-                "gaze_direction_world_unit": [
-                  0.5144845055100704,
-                  -0.8251877348748173,
-                  -0.2331756758373963
-                ],
-                "wearer_world_m": [
-                  0.069784072259528,
-                  1.548913584521147,
-                  2.209695072208115
-                ],
-                "right_world": [
-                  -0.37618316861997575,
-                  0.02769382505982615,
-                  -0.9261313490540052
-                ],
-                "forward_world": [
-                  0.8722525612290977,
-                  -0.326548079664588,
-                  -0.3640629356260387
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3679714588642465,
-                  "forward_m": 0.4721409426108164,
-                  "up_m": -1.1005645110934097,
-                  "distance_m": 1.25416157419911
-                }
-              },
-              {
-                "frame": 66,
-                "time_s": 2.199648,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.777185,
-                "gaze_hit_distance_m": 0.720447479006496,
-                "gaze_hit_exit_distance_m": 0.7856730914093476,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08874370757133054,
-                  1.5471619241828571,
-                  2.279317275892901
-                ],
-                "gaze_direction_world_unit": [
-                  0.5151758889995398,
-                  -0.8250462226246956,
-                  -0.23214765543992655
-                ],
-                "wearer_world_m": [
-                  0.069883526660159,
-                  1.5485966789693548,
-                  2.20996097296591
-                ],
-                "right_world": [
-                  -0.37796409998978325,
-                  0.027601659443733106,
-                  -0.9254087137664448
-                ],
-                "forward_world": [
-                  0.8710257654537603,
-                  -0.32816793196201544,
-                  -0.36554059192853694
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3685840745801217,
-                  "forward_m": 0.4712892752698549,
-                  "up_m": -1.1002692012032351,
-                  "distance_m": 1.2537647504741694
-                }
-              },
-              {
-                "frame": 67,
-                "time_s": 2.232976,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.773326,
-                "gaze_hit_distance_m": 0.7167830583418522,
-                "gaze_hit_exit_distance_m": 0.7817168033779819,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08886478358499535,
-                  1.5469660313311921,
-                  2.279555109747149
-                ],
-                "gaze_direction_world_unit": [
-                  0.5091527692774048,
-                  -0.8289688128605618,
-                  -0.23146093588703154
-                ],
-                "wearer_world_m": [
-                  0.069863286265358,
-                  1.5483917937985519,
-                  2.2102372043979646
-                ],
-                "right_world": [
-                  -0.3798448784405594,
-                  0.0275489215032039,
-                  -0.9246398894956283
-                ],
-                "forward_world": [
-                  0.8701002441499229,
-                  -0.3287318890026978,
-                  -0.36723413550889134
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3692824957157482,
-                  "forward_m": 0.4705107796012584,
-                  "up_m": -1.1000733083515701,
-                  "distance_m": 1.253506277773698
-                }
-              },
-              {
-                "frame": 68,
-                "time_s": 2.266304,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.773578,
-                "gaze_hit_distance_m": 0.7170307497503604,
-                "gaze_hit_exit_distance_m": 0.7820167920134425,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08888090229540017,
-                  1.5469190711104832,
-                  2.27991883933724
-                ],
-                "gaze_direction_world_unit": [
-                  0.5088825819017195,
-                  -0.8285537835696981,
-                  -0.2335318941159389
-                ],
-                "wearer_world_m": [
-                  0.06981751920209199,
-                  1.5483186554908583,
-                  2.210617394261398
-                ],
-                "right_world": [
-                  -0.3806713903040482,
-                  0.027184045839007936,
-                  -0.9243107271128075
-                ],
-                "forward_world": [
-                  0.869813823714968,
-                  -0.3287500929885949,
-                  -0.36789575756501636
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3693617781151278,
-                  "forward_m": 0.47035213415327487,
-                  "up_m": -1.1000263481308612,
-                  "distance_m": 1.2534108276286084
-                }
-              },
-              {
-                "frame": 69,
-                "time_s": 2.299632,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.774687,
-                "gaze_hit_distance_m": 0.7180932508797073,
-                "gaze_hit_exit_distance_m": 0.7831807296701432,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08884211838254084,
-                  1.546993572173394,
-                  2.28040143944069
-                ],
-                "gaze_direction_world_unit": [
-                  0.5099174044793067,
-                  -0.8274199688030253,
-                  -0.23528798489316816
-                ],
-                "wearer_world_m": [
-                  0.06974276406935401,
-                  1.5483691139353961,
-                  2.211109417889285
-                ],
-                "right_world": [
-                  -0.38115852663167754,
-                  0.026753059484433905,
-                  -0.9241225305035001
-                ],
-                "forward_world": [
-                  0.8699157582568817,
-                  -0.32803024394302116,
-                  -0.36829707111927606
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36917787024507465,
-                  "forward_m": 0.470445419451641,
-                  "up_m": -1.100100849193772,
-                  "distance_m": 1.253432198621824
-                }
-              },
-              {
-                "frame": 70,
-                "time_s": 2.33296,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.775787,
-                "gaze_hit_distance_m": 0.7191900858180061,
-                "gaze_hit_exit_distance_m": 0.784346866654258,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08878822926232419,
-                  1.5471368875853122,
-                  2.280985062035013
-                ],
-                "gaze_direction_world_unit": [
-                  0.509482395444584,
-                  -0.8264244565811343,
-                  -0.23968793523376553
-                ],
-                "wearer_world_m": [
-                  0.069595747276228,
-                  1.548505337960675,
-                  2.211718636692113
-                ],
-                "right_world": [
-                  -0.3824142826328409,
-                  0.02644741942463122,
-                  -0.923612391885356
-                ],
-                "forward_world": [
-                  0.8699781861314032,
-                  -0.32644590812784563,
-                  -0.3695551714184232
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3693014613501295,
-                  "forward_m": 0.470274602858304,
-                  "up_m": -1.1002441646056902,
-                  "distance_m": 1.2535082370276556
-                }
-              },
-              {
-                "frame": 71,
-                "time_s": 2.366288,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.776294,
-                "gaze_hit_distance_m": 0.7196822392775926,
-                "gaze_hit_exit_distance_m": 0.7848383667219759,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08866298562189796,
-                  1.5473164771254622,
-                  2.281792273334987
-                ],
-                "gaze_direction_world_unit": [
-                  0.5093282815448141,
-                  -0.8262056590700211,
-                  -0.2407673369443583
-                ],
-                "wearer_world_m": [
-                  0.06933176542574701,
-                  1.5486242977810791,
-                  2.2125632676230698
-                ],
-                "right_world": [
-                  -0.38427771826896595,
-                  0.025424637944425427,
-                  -0.9228673918973367
-                ],
-                "forward_world": [
-                  0.8698004152822898,
-                  -0.32512142182994286,
-                  -0.37113784318233095
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36955448642712274,
-                  "forward_m": 0.47010301659688436,
-                  "up_m": -1.1004237541458401,
-                  "distance_m": 1.2536209443558572
-                }
-              },
-              {
-                "frame": 72,
-                "time_s": 2.399616,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.776383,
-                "gaze_hit_distance_m": 0.719646600490109,
-                "gaze_hit_exit_distance_m": 0.7847593377393228,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08842852830620945,
-                  1.5475342234934182,
-                  2.282839201767185
-                ],
-                "gaze_direction_world_unit": [
-                  0.5117706983351913,
-                  -0.826636387609549,
-                  -0.23401503157990988
-                ],
-                "wearer_world_m": [
-                  0.06896018524875099,
-                  1.548722766261469,
-                  2.2136464804325993
-                ],
-                "right_world": [
-                  -0.38611404385108694,
-                  0.023696985077237054,
-                  -0.922146625021862
-                ],
-                "forward_world": [
-                  0.869424790390633,
-                  -0.32470224641864587,
-                  -0.37238284738275523
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36961248113825906,
-                  "forward_m": 0.47021962780711585,
-                  "up_m": -1.1006415005137962,
-                  "distance_m": 1.2537878889202096
-                }
-              },
-              {
-                "frame": 73,
-                "time_s": 2.432944,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.777953,
-                "gaze_hit_distance_m": 0.721206545265717,
-                "gaze_hit_exit_distance_m": 0.7864317798824204,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08812439096837688,
-                  1.5478480044806664,
-                  2.2838737700238396
-                ],
-                "gaze_direction_world_unit": [
-                  0.5116197117761256,
-                  -0.8252439769330093,
-                  -0.23920210922545138
-                ],
-                "wearer_world_m": [
-                  0.06859480791787001,
-                  1.54901568543306,
-                  2.2146979533819904
-                ],
-                "right_world": [
-                  -0.3869340486336457,
-                  0.023355938276049343,
-                  -0.9218115545789287
-                ],
-                "forward_world": [
-                  0.8692594936594198,
-                  -0.3243297744479138,
-                  -0.3730926561720755
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36919541982058834,
-                  "forward_m": 0.4706237349640555,
-                  "up_m": -1.1009552815010444,
-                  "distance_m": 1.254073827649177
-                }
-              },
-              {
-                "frame": 74,
-                "time_s": 2.466272,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.78054,
-                "gaze_hit_distance_m": 0.7236990442680044,
-                "gaze_hit_exit_distance_m": 0.7891272846786807,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08776083504567901,
-                  1.5482051559894108,
-                  2.284814175525864
-                ],
-                "gaze_direction_world_unit": [
-                  0.5149607986257141,
-                  -0.8228426946940061,
-                  -0.2403024670440848
-                ],
-                "wearer_world_m": [
-                  0.068268824853598,
-                  1.54945492321476,
-                  2.2156291965090698
-                ],
-                "right_world": [
-                  -0.3864372396768004,
-                  0.024386360241346605,
-                  -0.9219932566050335
-                ],
-                "forward_world": [
-                  0.8696276246459516,
-                  -0.32339883206113107,
-                  -0.3730428794041466
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3682182662969887,
-                  "forward_m": 0.47140383117170065,
-                  "up_m": -1.1013124330097888,
-                  "distance_m": 1.2544379732664062
-                }
-              },
-              {
-                "frame": 75,
-                "time_s": 2.4996,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.778974,
-                "gaze_hit_distance_m": 0.7222837213361275,
-                "gaze_hit_exit_distance_m": 0.7875519496855906,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08730723511071212,
-                  1.5484376651225098,
-                  2.285808490737475
-                ],
-                "gaze_direction_world_unit": [
-                  0.5113161439794937,
-                  -0.824826413097609,
-                  -0.24128238469161972
-                ],
-                "wearer_world_m": [
-                  0.06790997845742701,
-                  1.5496909060818058,
-                  2.216596948907918
-                ],
-                "right_world": [
-                  -0.38518628697933116,
-                  0.02423516809730039,
-                  -0.922520558551609
-                ],
-                "forward_world": [
-                  0.870651266113639,
-                  -0.32186017609498274,
-                  -0.37198440808564054
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.36683082301561937,
-                  "forward_m": 0.47275210638647797,
-                  "up_m": -1.1015449421428878,
-                  "distance_m": 1.2547284749728422
-                }
-              },
-              {
-                "frame": 76,
-                "time_s": 2.532928,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.733045,
-                "gaze_hit_distance_m": 0.7251623124580222,
-                "gaze_hit_exit_distance_m": 0.7482327406958884,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08678091754917598,
-                  1.5486514756974197,
-                  2.286924914886662
-                ],
-                "gaze_direction_world_unit": [
-                  0.5204279166488398,
-                  -0.8181321623666016,
-                  -0.24457012997072414
-                ],
-                "wearer_world_m": [
-                  0.067480130022442,
-                  1.549832397797865,
-                  2.217685137844556
-                ],
-                "right_world": [
-                  -0.38391551860093676,
-                  0.023011060535263222,
-                  -0.9230814512654972
-                ],
-                "forward_world": [
-                  0.8718414987856778,
-                  -0.32024541955251745,
-                  -0.37058773893745467
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3653408227890128,
-                  "forward_m": 0.4743580476303411,
-                  "up_m": -1.1017587527177977,
-                  "distance_m": 1.2550221499348415
-                }
-              },
-              {
-                "frame": 77,
-                "time_s": 2.566256,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.735104,
-                "gaze_hit_distance_m": 0.7241530852445648,
-                "gaze_hit_exit_distance_m": 0.7472423131127922,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08624012044508067,
-                  1.5490914721460793,
-                  2.288165068284202
-                ],
-                "gaze_direction_world_unit": [
-                  0.5169781086281885,
-                  -0.8199597640925069,
-                  -0.24576334240195585
-                ],
-                "wearer_world_m": [
-                  0.066986822952352,
-                  1.550240827477057,
-                  2.218911539717207
-                ],
-                "right_world": [
-                  -0.3832905698542282,
-                  0.02244585369494101,
-                  -0.9233550361116389
-                ],
-                "forward_world": [
-                  0.8724671467883507,
-                  -0.31930221542212744,
-                  -0.3699286052760927
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3640770949608956,
-                  "forward_m": 0.4756713985636572,
-                  "up_m": -1.1021987491664573,
-                  "distance_m": 1.2555072052914547
-                }
-              },
-              {
-                "frame": 78,
-                "time_s": 2.599584,
-                "gazed_object_id": "4695377347159520",
-                "gazed_object_name": "WoodenSpoon",
-                "gaze_depth_m": 0.738537,
-                "gaze_hit_distance_m": 0.7297045160565728,
-                "gaze_hit_exit_distance_m": 0.7529951720028712,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08578181376332669,
-                  1.5496412191750049,
-                  2.2895197243449577
-                ],
-                "gaze_direction_world_unit": [
-                  0.5232633792288472,
-                  -0.8168958220557165,
-                  -0.24264511506709296
-                ],
-                "wearer_world_m": [
-                  0.066556699527105,
-                  1.550778563858181,
-                  2.220258168408956
-                ],
-                "right_world": [
-                  -0.38291997390791555,
-                  0.022193008116262847,
-                  -0.9235148964543634
-                ],
-                "forward_world": [
-                  0.8728556865045984,
-                  -0.3186520143924141,
-                  -0.3695725155639185
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3628081205456386,
-                  "forward_m": 0.47680755482501613,
-                  "up_m": -1.1027484961953828,
-                  "distance_m": 1.2560380027971305
-                }
-              },
-              {
-                "frame": 79,
-                "time_s": 2.632912,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.785013,
-                "gaze_hit_distance_m": 0.7281504996414926,
-                "gaze_hit_exit_distance_m": 0.7938068300067459,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08543755220652705,
-                  1.5500605646763443,
-                  2.290993127025485
-                ],
-                "gaze_direction_world_unit": [
-                  0.5160734981343348,
-                  -0.8202347873421858,
-                  -0.2467448847638184
-                ],
-                "wearer_world_m": [
-                  0.066285604403039,
-                  1.5511654723069068,
-                  2.221710778801277
-                ],
-                "right_world": [
-                  -0.381950952596689,
-                  0.021639975843500192,
-                  -0.9239292079244901
-                ],
-                "forward_world": [
-                  0.8735542078649936,
-                  -0.3178961671889823,
-                  -0.3685716657692484
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3610723504282517,
-                  "forward_m": 0.4781585130337642,
-                  "up_m": -1.1031678416967223,
-                  "distance_m": 1.2563889103198003
-                }
-              },
-              {
-                "frame": 80,
-                "time_s": 2.66624,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.784366,
-                "gaze_hit_distance_m": 0.7275521344668648,
-                "gaze_hit_exit_distance_m": 0.7931322072452628,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0849540450278056,
-                  1.550189702494458,
-                  2.2926496852776483
-                ],
-                "gaze_direction_world_unit": [
-                  0.5157735248751346,
-                  -0.8211199551189713,
-                  -0.24441704184303042
-                ],
-                "wearer_world_m": [
-                  0.06599186185794001,
-                  1.551333390182789,
-                  2.2233157881644465
-                ],
-                "right_world": [
-                  -0.37941629531235455,
-                  0.02222184970088953,
-                  -0.9249591689622412
-                ],
-                "forward_world": [
-                  0.8743947577880913,
-                  -0.3181886331432657,
-                  -0.3663192614252296
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.35840615442559565,
-                  "forward_m": 0.48016668860746414,
-                  "up_m": -1.103296979514836,
-                  "distance_m": 1.256529783359251
-                }
-              },
-              {
-                "frame": 81,
-                "time_s": 2.699568,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.781967,
-                "gaze_hit_distance_m": 0.7252778423559042,
-                "gaze_hit_exit_distance_m": 0.7906715377494856,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0842124790684625,
-                  1.550099880583541,
-                  2.294647207267786
-                ],
-                "gaze_direction_world_unit": [
-                  0.5140080371637978,
-                  -0.8235801387457532,
-                  -0.23981553910150655
-                ],
-                "wearer_world_m": [
-                  0.06560531299695,
-                  1.5513637901910249,
-                  2.22521927625806
-                ],
-                "right_world": [
-                  -0.374660884076835,
-                  0.024139309719853147,
-                  -0.9268476226807805
-                ],
-                "forward_world": [
-                  0.8754524345688773,
-                  -0.3199696530447561,
-                  -0.3622187956716828
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.35435627693923344,
-                  "forward_m": 0.4832121052487508,
-                  "up_m": -1.103207157603919,
-                  "distance_m": 1.2565608194581388
-                }
-              },
-              {
-                "frame": 82,
-                "time_s": 2.732896,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.777783,
-                "gaze_hit_distance_m": 0.7216299719767425,
-                "gaze_hit_exit_distance_m": 0.7866768366769223,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08348474805996714,
-                  1.5502746045676745,
-                  2.2973038546921956
-                ],
-                "gaze_direction_world_unit": [
-                  0.5076983533390224,
-                  -0.8280284550400457,
-                  -0.2379312078329362
-                ],
-                "wearer_world_m": [
-                  0.06540126929701699,
-                  1.551534146854693,
-                  2.227737605331912
-                ],
-                "right_world": [
-                  -0.367653960405994,
-                  0.024290473726153117,
-                  -0.9296453830810685
-                ],
-                "forward_world": [
-                  0.8776128468982423,
-                  -0.3216054774118828,
-                  -0.3554794056732919
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3484746222888724,
-                  "forward_m": 0.48753964973365793,
-                  "up_m": -1.1033818815880525,
-                  "distance_m": 1.256745752118905
-                }
-              },
-              {
-                "frame": 83,
-                "time_s": 2.766224,
-                "gazed_object_id": "4508384915897847",
-                "gazed_object_name": "WhiteFlatwareTray",
-                "gaze_depth_m": 0.787325,
-                "gaze_hit_distance_m": 0.734863066999831,
-                "gaze_hit_exit_distance_m": 0.8010298398272686,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08295029291727886,
-                  1.5508100052080689,
-                  2.3009148361068714
-                ],
-                "gaze_direction_world_unit": [
-                  0.5707223702631034,
-                  -0.8143048636715114,
-                  -0.10575237624841344
-                ],
-                "wearer_world_m": [
-                  0.06571787426446499,
-                  1.5518529709166131,
-                  2.2311293242085917
-                ],
-                "right_world": [
-                  -0.3562681699203944,
-                  0.02144683161476288,
-                  -0.9341375832902032
-                ],
-                "forward_world": [
-                  0.881744714056002,
-                  -0.32310006878133063,
-                  -0.34370424028195895
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.33926079048167773,
-                  "forward_m": 0.4939498573833766,
-                  "up_m": -1.1039172822284469,
-                  "distance_m": 1.2570567794050227
-                }
-              },
-              {
-                "frame": 84,
-                "time_s": 2.799552,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.690539,
-                "gaze_hit_distance_m": 0.660742173628705,
-                "gaze_hit_exit_distance_m": 0.7355156679881842,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08261957762184424,
-                  1.5513225476133856,
-                  2.3056831438287615
-                ],
-                "gaze_direction_world_unit": [
-                  0.6086896128085086,
-                  -0.7879016588829504,
-                  0.09331629647881806
-                ],
-                "wearer_world_m": [
-                  0.066886055498585,
-                  1.5520175427228582,
-                  2.235540182924657
-                ],
-                "right_world": [
-                  -0.33616213575087234,
-                  0.01699425803603205,
-                  -0.9416507917913188
-                ],
-                "forward_world": [
-                  0.8883296657900435,
-                  -0.32638963485425176,
-                  -0.32301735423512157
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.32414604810572334,
-                  "forward_m": 0.5036197536479309,
-                  "up_m": -1.1044298246337636,
-                  "distance_m": 1.2571385562812805
-                }
-              },
-              {
-                "frame": 85,
-                "time_s": 2.83288,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.774159,
-                "gaze_hit_distance_m": 0.6679136762323908,
-                "gaze_hit_exit_distance_m": 0.8286942100037371,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0823952462355022,
-                  1.5518272510125934,
-                  2.3113006421340883
-                ],
-                "gaze_direction_world_unit": [
-                  0.588849896278957,
-                  -0.782067617330529,
-                  0.20402461021948098
-                ],
-                "wearer_world_m": [
-                  0.068736807108185,
-                  1.5521644430779609,
-                  2.240721643535947
-                ],
-                "right_world": [
-                  -0.3082339573722969,
-                  0.012434647078883088,
-                  -0.9512293136119373
-                ],
-                "forward_world": [
-                  0.8967693932654579,
-                  -0.3299074601518692,
-                  -0.29489951345915366
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.3038041070927068,
-                  "forward_m": 0.5155007636416737,
-                  "up_m": -1.1049345280329714,
-                  "distance_m": 1.257094391843788
-                }
-              },
-              {
-                "frame": 86,
-                "time_s": 2.866208,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.772575,
-                "gaze_hit_distance_m": 0.6703204662280663,
-                "gaze_hit_exit_distance_m": 0.8221042069580673,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08212165792303046,
-                  1.5525548119635098,
-                  2.3171700417362664
-                ],
-                "gaze_direction_world_unit": [
-                  0.5934055081902785,
-                  -0.7803089185955494,
-                  0.1974535246828522
-                ],
-                "wearer_world_m": [
-                  0.070779531981211,
-                  1.5526457816797692,
-                  2.246181242587171
-                ],
-                "right_world": [
-                  -0.2769521973039175,
-                  0.009057449185520011,
-                  -0.9608410081916697
-                ],
-                "forward_world": [
-                  0.9060566386009798,
-                  -0.33048342005282183,
-                  -0.26427651563709514
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.2811654792817309,
-                  "forward_m": 0.5274845243635794,
-                  "up_m": -1.1056620889838877,
-                  "distance_m": 1.2572696578054694
-                }
-              },
-              {
-                "frame": 87,
-                "time_s": 2.899536,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.777779,
-                "gaze_hit_distance_m": 0.665711774516912,
-                "gaze_hit_exit_distance_m": 0.832958974919968,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08169227280465628,
-                  1.5532123849306685,
-                  2.32304626777484
-                ],
-                "gaze_direction_world_unit": [
-                  0.5817119388824812,
-                  -0.7868701627385245,
-                  0.20602564683415647
-                ],
-                "wearer_world_m": [
-                  0.07271014362157201,
-                  1.553071806109261,
-                  2.251720513001873
-                ],
-                "right_world": [
-                  -0.2449484440209932,
-                  0.005800537591283961,
-                  -0.9695187535758902
-                ],
-                "forward_world": [
-                  0.9146156040985279,
-                  -0.3303999957301476,
-                  -0.23305394131188578
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.25790006143042726,
-                  "forward_m": 0.5387416021143077,
-                  "up_m": -1.1063196619510465,
-                  "distance_m": 1.2574831539706695
-                }
-              },
-              {
-                "frame": 88,
-                "time_s": 2.932864,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.780172,
-                "gaze_hit_distance_m": 0.6598920656135028,
-                "gaze_hit_exit_distance_m": 0.8255235863421689,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08105025961416581,
-                  1.5534776389847769,
-                  2.328842447160284
-                ],
-                "gaze_direction_world_unit": [
-                  0.5703946856904862,
-                  -0.7943560641435249,
-                  0.20892186552503172
-                ],
-                "wearer_world_m": [
-                  0.074345374260383,
-                  1.552994016622009,
-                  2.2572682037287057
-                ],
-                "right_world": [
-                  -0.21392473878397367,
-                  0.001231140045170831,
-                  -0.9768493693658193
-                ],
-                "forward_world": [
-                  0.9212737369569624,
-                  -0.33223621364442096,
-                  -0.20217269829670992
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.23505565270977746,
-                  "forward_m": 0.5489778697561927,
-                  "up_m": -1.1065849160051549,
-                  "distance_m": 1.2574855963038294
-                }
-              },
-              {
-                "frame": 89,
-                "time_s": 2.966192,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.779381,
-                "gaze_hit_distance_m": 0.6647031886138366,
-                "gaze_hit_exit_distance_m": 0.8314099601873245,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08027543921372457,
-                  1.5536832534095248,
-                  2.334553048989344
-                ],
-                "gaze_direction_world_unit": [
-                  0.5758605516634456,
-                  -0.7891443583329709,
-                  0.21362538882145
-                ],
-                "wearer_world_m": [
-                  0.075692909388285,
-                  1.5528899847438193,
-                  2.2628144063605418
-                ],
-                "right_world": [
-                  -0.18491189569019612,
-                  -0.0031181488436032023,
-                  -0.9827501554210245
-                ],
-                "forward_world": [
-                  0.927147408522546,
-                  -0.3321619218026514,
-                  -0.17339590702867375
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.21322900577356058,
-                  "forward_m": 0.5578489412658834,
-                  "up_m": -1.1067905304299028,
-                  "distance_m": 1.257531918256899
-                }
-              },
-              {
-                "frame": 90,
-                "time_s": 2.99952,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.779522,
-                "gaze_hit_distance_m": 0.661775204951531,
-                "gaze_hit_exit_distance_m": 0.8276277974079168,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0794768334095679,
-                  1.5540873930288601,
-                  2.3401853799372896
-                ],
-                "gaze_direction_world_unit": [
-                  0.5733065419971838,
-                  -0.793274650170088,
-                  0.20502423832502464
-                ],
-                "wearer_world_m": [
-                  0.076852394168563,
-                  1.553148078534155,
-                  2.2683502095264783
-                ],
-                "right_world": [
-                  -0.15807473603473493,
-                  -0.005647891654580933,
-                  -0.9874109980891481
-                ],
-                "forward_world": [
-                  0.9329378350474803,
-                  -0.3284478538669599,
-                  -0.14747543262221213
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.19252706816579723,
-                  "forward_m": 0.5652718548678993,
-                  "up_m": -1.107194670049238,
-                  "distance_m": 1.2577968287452301
-                }
-              },
-              {
-                "frame": 91,
-                "time_s": 3.032848,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.778341,
-                "gaze_hit_distance_m": 0.6580289387549152,
-                "gaze_hit_exit_distance_m": 0.8227890546453004,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.078751594510467,
-                  1.5545053956574166,
-                  2.345715073425915
-                ],
-                "gaze_direction_world_unit": [
-                  0.574188697220702,
-                  -0.79825945525825,
-                  0.18190432120979255
-                ],
-                "wearer_world_m": [
-                  0.078005310115951,
-                  1.55352313957999,
-                  2.2738364261542747
-                ],
-                "right_world": [
-                  -0.132235306790072,
-                  -0.00655446662406306,
-                  -0.991196682099678
-                ],
-                "forward_world": [
-                  0.9373128313187592,
-                  -0.32610219069684326,
-                  -0.12289026596085917
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.17232478535569623,
-                  "forward_m": 0.5715680251698668,
-                  "up_m": -1.1076126726777946,
-                  "distance_m": 1.258073161965766
-                }
-              },
-              {
-                "frame": 92,
-                "time_s": 3.066176,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.777676,
-                "gaze_hit_distance_m": 0.6528297616111598,
-                "gaze_hit_exit_distance_m": 0.8161096383501091,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.07822681380410398,
-                  1.5548332796204065,
-                  2.3511592158333428
-                ],
-                "gaze_direction_world_unit": [
-                  0.5688490006490431,
-                  -0.8051239424559585,
-                  0.1678876164127644
-                ],
-                "wearer_world_m": [
-                  0.079263955186951,
-                  1.5537989044727298,
-                  2.279284908137158
-                ],
-                "right_world": [
-                  -0.107597218547694,
-                  -0.007148882735388912,
-                  -0.9941688649502336
-                ],
-                "forward_world": [
-                  0.9397357030644365,
-                  -0.3271477959225953,
-                  -0.0993535505604955
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.15274160094116926,
-                  "forward_m": 0.5767640501811604,
-                  "up_m": -1.1079405566407845,
-                  "distance_m": 1.2582071165565158
-                }
-              },
-              {
-                "frame": 93,
-                "time_s": 3.099504,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.778189,
-                "gaze_hit_distance_m": 0.6479449969140842,
-                "gaze_hit_exit_distance_m": 0.8098651423186463,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0780596836979419,
-                  1.5551280630139932,
-                  2.3565965230497414
-                ],
-                "gaze_direction_world_unit": [
-                  0.5584453384973782,
-                  -0.8118278578641148,
-                  0.17051197349837738
-                ],
-                "wearer_world_m": [
-                  0.080655347621983,
-                  1.553925639652355,
-                  2.284764229421786
-                ],
-                "right_world": [
-                  -0.08599652934988944,
-                  -0.009238618871047238,
-                  -0.9962526009306726
-                ],
-                "forward_world": [
-                  0.9410237669404617,
-                  -0.32918490448958226,
-                  -0.07817652275055637
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "left-front",
-                  "side": "left",
-                  "depth": "front",
-                  "right_m": -0.1347949881781944,
-                  "forward_m": 0.5806318752447843,
-                  "up_m": -1.1082353400343712,
-                  "distance_m": 1.2581685674601963
-                }
-              },
-              {
-                "frame": 94,
-                "time_s": 3.132832,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.776581,
-                "gaze_hit_distance_m": 0.6480975087641125,
-                "gaze_hit_exit_distance_m": 0.8099508562944427,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.07835703627078058,
-                  1.5554482757853307,
-                  2.3620758861907323
-                ],
-                "gaze_direction_world_unit": [
-                  0.5621865515496542,
-                  -0.8119877920244013,
-                  0.156914329683575
-                ],
-                "wearer_world_m": [
-                  0.08233356160880799,
-                  1.5540444805049831,
-                  2.290310446694782
-                ],
-                "right_world": [
-                  -0.0668141326754143,
-                  -0.011901062927636541,
-                  -0.9976944604316623
-                ],
-                "forward_world": [
-                  0.9419841982094259,
-                  -0.3304057966439165,
-                  -0.059142031313137555
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.11812191721337179,
-                  "forward_m": 0.5832429050738882,
-                  "up_m": -1.1085555528057087,
-                  "distance_m": 1.257955698663131
-                }
-              },
-              {
-                "frame": 95,
-                "time_s": 3.16616,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.775163,
-                "gaze_hit_distance_m": 0.6542669993561645,
-                "gaze_hit_exit_distance_m": 0.8175404326167711,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.07916424109073021,
-                  1.5558231241829885,
-                  2.367631198139835
-                ],
-                "gaze_direction_world_unit": [
-                  0.573187904653413,
-                  -0.8049609795459964,
-                  0.15327572334645828
-                ],
-                "wearer_world_m": [
-                  0.084493766764953,
-                  1.5543607004519562,
-                  2.29595470845236
-                ],
-                "right_world": [
-                  -0.04798626123073996,
-                  -0.01277369178298085,
-                  -0.998766314776049
-                ],
-                "forward_world": [
-                  0.9430822187128348,
-                  -0.33001139785474876,
-                  -0.04109021822322384
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.10152309662147399,
-                  "forward_m": 0.5847877300313131,
-                  "up_m": -1.1089304012033665,
-                  "distance_m": 1.2575718628023145
-                }
-              },
-              {
-                "frame": 96,
-                "time_s": 3.199488,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.772204,
-                "gaze_hit_distance_m": 0.656843774660054,
-                "gaze_hit_exit_distance_m": 0.8206124782651507,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08032157145960013,
-                  1.556123511240982,
-                  2.373348016134995
-                ],
-                "gaze_direction_world_unit": [
-                  0.580593940335151,
-                  -0.802222283555952,
-                  0.1391045801272438
-                ],
-                "wearer_world_m": [
-                  0.08695259065383099,
-                  1.554704913186353,
-                  2.3017793158184103
-                ],
-                "right_world": [
-                  -0.02983561205203722,
-                  -0.01224239247179515,
-                  -0.9994798447592866
-                ],
-                "forward_world": [
-                  0.9438902390049002,
-                  -0.3293757618106913,
-                  -0.02414175310326855
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.0851428025990683,
-                  "forward_m": 0.5854600067313943,
-                  "up_m": -1.10923078826136,
-                  "distance_m": 1.2569750349107451
-                }
-              },
-              {
-                "frame": 97,
-                "time_s": 3.232816,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.758231,
-                "gaze_hit_distance_m": 0.6614389127692344,
-                "gaze_hit_exit_distance_m": 0.8261957954859623,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08163304187023736,
-                  1.556228002122696,
-                  2.3793157642140446
-                ],
-                "gaze_direction_world_unit": [
-                  0.5502973710549669,
-                  -0.7985946776639767,
-                  0.24376083405002053
-                ],
-                "wearer_world_m": [
-                  0.08944717666405902,
-                  1.5548469779228582,
-                  2.3078658253016604
-                ],
-                "right_world": [
-                  -0.013292076826495636,
-                  -0.011649366427721353,
-                  -0.9998437942776224
-                ],
-                "forward_world": [
-                  0.9439798502626755,
-                  -0.32988824006540296,
-                  -0.008705823603102236
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.06946413819583944,
-                  "forward_m": 0.5854764626100967,
-                  "up_m": -1.109335279143074,
-                  "distance_m": 1.256147812882125
-                }
-              },
-              {
-                "frame": 98,
-                "time_s": 3.266144,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.703544,
-                "gaze_hit_distance_m": 0.6878494650519409,
-                "gaze_hit_exit_distance_m": 0.7482250522495115,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08307736620772307,
-                  1.5562737759319765,
-                  2.3855664390726963
-                ],
-                "gaze_direction_world_unit": [
-                  0.5609669137490083,
-                  -0.7691069412846337,
-                  0.30625256659611505
-                ],
-                "wearer_world_m": [
-                  0.091986464560339,
-                  1.554900879391818,
-                  2.314244599341563
-                ],
-                "right_world": [
-                  0.00204663110766673,
-                  -0.011507270910224798,
-                  -0.9999316946758456
-                ],
-                "forward_world": [
-                  0.9439267134675003,
-                  -0.3301053115342764,
-                  0.005730872472971271
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.05423158552673784,
-                  "forward_m": 0.5849516101766163,
-                  "up_m": -1.1093810529523545,
-                  "distance_m": 1.2552234951056966
-                }
-              },
-              {
-                "frame": 99,
-                "time_s": 3.299472,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.701472,
-                "gaze_hit_distance_m": 0.6851296203222834,
-                "gaze_hit_exit_distance_m": 0.746768947748303,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08462998940967177,
-                  1.5563852444340323,
-                  2.392104521477908
-                ],
-                "gaze_direction_world_unit": [
-                  0.5612521275553289,
-                  -0.7722983253002701,
-                  0.297575782033779
-                ],
-                "wearer_world_m": [
-                  0.094569342370777,
-                  1.5549868507987779,
-                  2.3209194425711916
-                ],
-                "right_world": [
-                  0.01649506303461562,
-                  -0.012002304722883855,
-                  -0.999791907137092
-                ],
-                "forward_world": [
-                  0.9441122146430658,
-                  -0.32904534605317753,
-                  0.019526556340276557
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.03926503656982004,
-                  "forward_m": 0.5839595298346036,
-                  "up_m": -1.1094925214544102,
-                  "distance_m": 1.2543278349184788
-                }
-              },
-              {
-                "frame": 100,
-                "time_s": 3.3328,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.703442,
-                "gaze_hit_distance_m": 0.6835991713235646,
-                "gaze_hit_exit_distance_m": 0.7505592789869767,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0861797984729425,
-                  1.5565416717646416,
-                  2.398899533566997
-                ],
-                "gaze_direction_world_unit": [
-                  0.5660093212630516,
-                  -0.7741847599940475,
-                  0.28332208815462817
-                ],
-                "wearer_world_m": [
-                  0.09705238162879198,
-                  1.5550719765279608,
-                  2.327852446135981
-                ],
-                "right_world": [
-                  0.029604061650191194,
-                  -0.013147959896397443,
-                  -0.9994752276491775
-                ],
-                "forward_world": [
-                  0.9441552208032458,
-                  -0.32791610590136433,
-                  0.03227919640356253
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.02485980262973029,
-                  "forward_m": 0.5826222061964564,
-                  "up_m": -1.1096489487850196,
-                  "distance_m": 1.2535000208864597
-                }
-              },
-              {
-                "frame": 101,
-                "time_s": 3.366128,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.708957,
-                "gaze_hit_distance_m": 0.670534870254173,
-                "gaze_hit_exit_distance_m": 0.76169642622024,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08761288481232801,
-                  1.5566438176428643,
-                  2.405907165029303
-                ],
-                "gaze_direction_world_unit": [
-                  0.5504898649045135,
-                  -0.7894210853145028,
-                  0.2716160133318415
-                ],
-                "wearer_world_m": [
-                  0.099325640135877,
-                  1.5550802749894979,
-                  2.334995752703065
-                ],
-                "right_world": [
-                  0.0414292386089431,
-                  -0.01451647859182334,
-                  -0.9990359803518472
-                ],
-                "forward_world": [
-                  0.9438302858743579,
-                  -0.3275016017970629,
-                  0.04389865928118558
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.011022203164830682,
-                  "forward_m": 0.5810941162199152,
-                  "up_m": -1.1097510946632423,
-                  "distance_m": 1.2527104388824721
-                }
-              },
-              {
-                "frame": 102,
-                "time_s": 3.399456,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.717093,
-                "gaze_hit_distance_m": 0.6608600365601018,
-                "gaze_hit_exit_distance_m": 0.7804300626220745,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0888323113828688,
-                  1.5565374539284564,
-                  2.413069858111319
-                ],
-                "gaze_direction_world_unit": [
-                  0.543203878018014,
-                  -0.8006700247221621,
-                  0.2526995417835243
-                ],
-                "wearer_world_m": [
-                  0.101340510399659,
-                  1.554920389748771,
-                  2.3422956271950093
-                ],
-                "right_world": [
-                  0.052646136866184856,
-                  -0.015230742785923679,
-                  -0.9984970749818229
-                ],
-                "forward_world": [
-                  0.9431694742129179,
-                  -0.3277744787135486,
-                  0.05472873118380672
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.002592712288797098,
-                  "forward_m": 0.5795164889515649,
-                  "up_m": -1.1096447309488344,
-                  "distance_m": 1.2518717080978656
-                }
-              },
-              {
-                "frame": 103,
-                "time_s": 3.432784,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.713396,
-                "gaze_hit_distance_m": 0.6559407180790743,
-                "gaze_hit_exit_distance_m": 0.7792542714195126,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08982799955983134,
-                  1.5562892406785471,
-                  2.420291576028941
-                ],
-                "gaze_direction_world_unit": [
-                  0.5381810896479782,
-                  -0.8063010592327391,
-                  0.24543780602319182
-                ],
-                "wearer_world_m": [
-                  0.10305699763166198,
-                  1.55463409731613,
-                  2.349649408653744
-                ],
-                "right_world": [
-                  0.06282933590623818,
-                  -0.01564599030949579,
-                  -0.997901637205199
-                ],
-                "forward_world": [
-                  0.9422365458704453,
-                  -0.3286835597367837,
-                  0.0644779744167604
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.015649718231434556,
-                  "forward_m": 0.577940367650018,
-                  "up_m": -1.109396517698925,
-                  "distance_m": 1.2510511746874982
-                }
-              },
-              {
-                "frame": 104,
-                "time_s": 3.466112,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.715068,
-                "gaze_hit_distance_m": 0.6575655841314759,
-                "gaze_hit_exit_distance_m": 0.7828738284590887,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0906548764150214,
-                  1.5560993536137335,
-                  2.427464159853482
-                ],
-                "gaze_direction_world_unit": [
-                  0.5484733632046352,
-                  -0.8039211637173684,
-                  0.22997332971957507
-                ],
-                "wearer_world_m": [
-                  0.10446115814003099,
-                  1.554350387626104,
-                  2.3569348084889348
-                ],
-                "right_world": [
-                  0.07099974562165645,
-                  -0.016791199977122723,
-                  -0.9973349947359655
-                ],
-                "forward_world": [
-                  0.9411940337528812,
-                  -0.3299833670591279,
-                  0.07255872306139988
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.027479646280157567,
-                  "forward_m": 0.57638122067628,
-                  "up_m": -1.1092066306341115,
-                  "distance_m": 1.2504028285929363
-                }
-              },
-              {
-                "frame": 105,
-                "time_s": 3.49944,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.7061,
-                "gaze_hit_distance_m": 0.6585869464918902,
-                "gaze_hit_exit_distance_m": 0.7677575143247285,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09140886365539956,
-                  1.5560124764716456,
-                  2.4345756855365535
-                ],
-                "gaze_direction_world_unit": [
-                  0.5509922994577444,
-                  -0.8026984490926548,
-                  0.228216313532828
-                ],
-                "wearer_world_m": [
-                  0.105694932044269,
-                  1.5541520513813418,
-                  2.364144806162007
-                ],
-                "right_world": [
-                  0.07778985277073852,
-                  -0.018326497701065647,
-                  -0.9968013233778938
-                ],
-                "forward_world": [
-                  0.9405657462641626,
-                  -0.33018224722753364,
-                  0.07947175957731484
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.03843779427049992,
-                  "forward_m": 0.5747886332728115,
-                  "up_m": -1.1091197534920236,
-                  "distance_m": 1.249921211096786
-                }
-              },
-              {
-                "frame": 106,
-                "time_s": 3.532768,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.707033,
-                "gaze_hit_distance_m": 0.6575691050195833,
-                "gaze_hit_exit_distance_m": 0.7722298271271646,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09214699401895196,
-                  1.5560365788267523,
-                  2.441629504002893
-                ],
-                "gaze_direction_world_unit": [
-                  0.5545592521257565,
-                  -0.8039419114853155,
-                  0.21480558381722537
-                ],
-                "wearer_world_m": [
-                  0.10688172149478899,
-                  1.5541158204374408,
-                  2.371292741250953
-                ],
-                "right_world": [
-                  0.08412618404394001,
-                  -0.01943379243331153,
-                  -0.996265583501641
-                ],
-                "forward_world": [
-                  0.9407125335031195,
-                  -0.3281646072378154,
-                  0.08583658815792322
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.04906101569331361,
-                  "forward_m": 0.5731174075461186,
-                  "up_m": -1.1091438558471303,
-                  "distance_m": 1.2495861243523714
-                }
-              },
-              {
-                "frame": 107,
-                "time_s": 3.566096,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.695906,
-                "gaze_hit_distance_m": 0.6630168951869321,
-                "gaze_hit_exit_distance_m": 0.754073855921516,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09272660271827723,
-                  1.5562781817704048,
-                  2.448539123579801
-                ],
-                "gaze_direction_world_unit": [
-                  0.5643645211085128,
-                  -0.7977871228360681,
-                  0.21219894898634112
-                ],
-                "wearer_world_m": [
-                  0.10784947398037899,
-                  1.554362903026424,
-                  2.3782846420635106
-                ],
-                "right_world": [
-                  0.08960797712978036,
-                  -0.019647530939582575,
-                  -0.9957833022112228
-                ],
-                "forward_world": [
-                  0.9409941027970097,
-                  -0.3259284429687149,
-                  0.09110844398429802
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.05904646846525106,
-                  "forward_m": 0.5715733440266334,
-                  "up_m": -1.1093854587907828,
-                  "distance_m": 1.2495563778454557
-                }
-              },
-              {
-                "frame": 108,
-                "time_s": 3.599424,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.689113,
-                "gaze_hit_distance_m": 0.6674717182207663,
-                "gaze_hit_exit_distance_m": 0.7455733434818417,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09307523338581408,
-                  1.5567847148468046,
-                  2.4552412937943298
-                ],
-                "gaze_direction_world_unit": [
-                  0.5735705125056973,
-                  -0.7931902375786477,
-                  0.2046121066649773
-                ],
-                "wearer_world_m": [
-                  0.108491830489419,
-                  1.5549267478398918,
-                  2.3850491418587585
-                ],
-                "right_world": [
-                  0.09376121202335497,
-                  -0.01902174006534943,
-                  -0.9954129839040669
-                ],
-                "forward_world": [
-                  0.9410956280667361,
-                  -0.32456592355441605,
-                  0.09484714071043204
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.06807134517386117,
-                  "forward_m": 0.5703031096397297,
-                  "up_m": -1.1098919918671826,
-                  "distance_m": 1.249904211560873
-                }
-              },
-              {
-                "frame": 109,
-                "time_s": 3.632752,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.689943,
-                "gaze_hit_distance_m": 0.6629146269751993,
-                "gaze_hit_exit_distance_m": 0.7483309182079122,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09335099616628374,
-                  1.5574426741029141,
-                  2.4617619587552646
-                ],
-                "gaze_direction_world_unit": [
-                  0.5674077254664216,
-                  -0.7996716025483818,
-                  0.19640214143110807
-                ],
-                "wearer_world_m": [
-                  0.108968166807587,
-                  1.5556522406078959,
-                  2.3916124040164046
-                ],
-                "right_world": [
-                  0.09658599781578275,
-                  -0.018414610708730794,
-                  -0.995154283082968
-                ],
-                "forward_world": [
-                  0.9417356357088772,
-                  -0.32195532427220025,
-                  0.09735893183873345
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.07615389021309626,
-                  "forward_m": 0.5691717224451941,
-                  "up_m": -1.1105499511232921,
-                  "distance_m": 1.250453104113314
-                }
-              },
-              {
-                "frame": 110,
-                "time_s": 3.66608,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.674569,
-                "gaze_hit_distance_m": 0.6684798566751327,
-                "gaze_hit_exit_distance_m": 0.7271690774180087,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09363649749792984,
-                  1.5581982394287377,
-                  2.468095536110861
-                ],
-                "gaze_direction_world_unit": [
-                  0.5746569945861911,
-                  -0.794309775261302,
-                  0.19708201211045778
-                ],
-                "wearer_world_m": [
-                  0.109375120363563,
-                  1.5564773469788993,
-                  2.397971389196482
-                ],
-                "right_world": [
-                  0.0982773610255181,
-                  -0.018021252829459655,
-                  -0.9949958767534253
-                ],
-                "forward_world": [
-                  0.9430947688571478,
-                  -0.3174757182014869,
-                  0.09890108850125534
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0833964941830023,
-                  "forward_m": 0.5681093805754527,
-                  "up_m": -1.1113055164491157,
-                  "distance_m": 1.2511143126223125
-                }
-              },
-              {
-                "frame": 111,
-                "time_s": 3.699408,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.67223,
-                "gaze_hit_distance_m": 0.6683921618561321,
-                "gaze_hit_exit_distance_m": 0.7260114965236818,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09389232144824786,
-                  1.5590815747186344,
-                  2.47419077896924
-                ],
-                "gaze_direction_world_unit": [
-                  0.5757370544390011,
-                  -0.7956207821820197,
-                  0.1884526866509832
-                ],
-                "wearer_world_m": [
-                  0.10969754445468198,
-                  1.5574616318392152,
-                  2.40407920780025
-                ],
-                "right_world": [
-                  0.099191596586375,
-                  -0.01722237698095075,
-                  -0.994919301701285
-                ],
-                "forward_world": [
-                  0.9446087610632117,
-                  -0.3127240043267824,
-                  0.09958908394220167
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.08995794930664583,
-                  "forward_m": 0.5671676932511825,
-                  "up_m": -1.1121888517390124,
-                  "distance_m": 1.2519285057978737
-                }
-              },
-              {
-                "frame": 112,
-                "time_s": 3.732736,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.670231,
-                "gaze_hit_distance_m": 0.6661592408109567,
-                "gaze_hit_exit_distance_m": 0.7258158442733427,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09408796930996736,
-                  1.5600061351654573,
-                  2.4800631575926513
-                ],
-                "gaze_direction_world_unit": [
-                  0.5719187526556329,
-                  -0.799901647981309,
-                  0.18184139770033336
-                ],
-                "wearer_world_m": [
-                  0.109930836175765,
-                  1.5584898567681853,
-                  2.409957764288751
-                ],
-                "right_world": [
-                  0.09970259671625042,
-                  -0.016278796246447208,
-                  -0.9948841103368797
-                ],
-                "forward_world": [
-                  0.9458748915069892,
-                  -0.3087910642632822,
-                  0.09984371912038947
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.09607221628502251,
-                  "forward_m": 0.5663448732041504,
-                  "up_m": -1.1131134121858353,
-                  "distance_m": 1.2528297102693726
-                }
-              },
-              {
-                "frame": 113,
-                "time_s": 3.766064,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.667183,
-                "gaze_hit_distance_m": 0.6664843065637793,
-                "gaze_hit_exit_distance_m": 0.7073222329856748,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09420326740307303,
-                  1.5608125214502826,
-                  2.4857571246071304
-                ],
-                "gaze_direction_world_unit": [
-                  0.5658355208673844,
-                  -0.8025783505873817,
-                  0.18893955248484473
-                ],
-                "wearer_world_m": [
-                  0.110094422991938,
-                  1.559349986844325,
-                  2.4156615194126756
-                ],
-                "right_world": [
-                  0.10037380609236585,
-                  -0.0158642807793207,
-                  -0.9948233127776442
-                ],
-                "forward_world": [
-                  0.946667396636228,
-                  -0.30617180756106044,
-                  0.10039753184605427
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.10210789464178652,
-                  "forward_m": 0.5655809948119435,
-                  "up_m": -1.1139197984706606,
-                  "distance_m": 1.2536838523603662
-                }
-              },
-              {
-                "frame": 114,
-                "time_s": 3.799392,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.882678,
-                "gaze_hit_distance_m": 0.882237262985174,
-                "gaze_hit_exit_distance_m": 1.669211786900425,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09421160943211397,
-                  1.5614252870624146,
-                  2.4911842425845716
-                ],
-                "gaze_direction_world_unit": [
-                  0.5781071943219247,
-                  -0.7560314982044394,
-                  0.3069339433754167
-                ],
-                "wearer_world_m": [
-                  0.110284182540241,
-                  1.5600341445941999,
-                  2.4211285588942597
-                ],
-                "right_world": [
-                  0.10293967909332585,
-                  -0.015094323695979073,
-                  -0.9945730661245179
-                ],
-                "forward_world": [
-                  0.9470021628021507,
-                  -0.3043892702837046,
-                  0.10263564577768702
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.10896459177297405,
-                  "forward_m": 0.5647450113433723,
-                  "up_m": -1.1145325640827926,
-                  "distance_m": 1.254429937291604
-                }
-              },
-              {
-                "frame": 115,
-                "time_s": 3.83272,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.923183,
-                "gaze_hit_distance_m": 0.9233703760477093,
-                "gaze_hit_exit_distance_m": 1.5639397002454418,
-                "gaze_depth_obb_residual_m": 0.00018737604770935334,
-                "gaze_origin_world_m": [
-                  0.09414857592593151,
-                  1.5618688779310457,
-                  2.496223589282976
-                ],
-                "gaze_direction_world_unit": [
-                  0.6172089717713105,
-                  -0.7230551764176392,
-                  0.3102326498301848
-                ],
-                "wearer_world_m": [
-                  0.110621631924736,
-                  1.5606357084012321,
-                  2.4262580304702928
-                ],
-                "right_world": [
-                  0.10861806923457817,
-                  -0.013106022051009247,
-                  -0.9939971565461099
-                ],
-                "forward_world": [
-                  0.9470233130630357,
-                  -0.30264807652602466,
-                  0.10747551484039902
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.11720579185821278,
-                  "forward_m": 0.5636686008540925,
-                  "up_m": -1.1149761549514237,
-                  "distance_m": 1.2550645399028444
-                }
-              },
-              {
-                "frame": 116,
-                "time_s": 3.866048,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.928772,
-                "gaze_hit_distance_m": 0.9297175402267328,
-                "gaze_hit_exit_distance_m": 1.5281206926662305,
-                "gaze_depth_obb_residual_m": 0.0009455402267327662,
-                "gaze_origin_world_m": [
-                  0.09428057422548353,
-                  1.5623992886531357,
-                  2.5008336341059754
-                ],
-                "gaze_direction_world_unit": [
-                  0.6317501167997218,
-                  -0.7186039852125206,
-                  0.290689013139853
-                ],
-                "wearer_world_m": [
-                  0.11120861924323899,
-                  1.5613050331158917,
-                  2.430974450044779
-                ],
-                "right_world": [
-                  0.1150739146777045,
-                  -0.011449156194192539,
-                  -0.9932909498143987
-                ],
-                "forward_world": [
-                  0.9470726276697073,
-                  -0.3004051491982136,
-                  0.11318208450985096
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.12543165007444712,
-                  "forward_m": 0.5622705384406232,
-                  "up_m": -1.1155065656735137,
-                  "distance_m": 1.2556867203771824
-                }
-              },
-              {
-                "frame": 117,
-                "time_s": 3.899376,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.92782,
-                "gaze_hit_distance_m": 0.9285302507868235,
-                "gaze_hit_exit_distance_m": 1.5458098455494111,
-                "gaze_depth_obb_residual_m": 0.0007102507868235186,
-                "gaze_origin_world_m": [
-                  0.09475443429631702,
-                  1.5631152202809098,
-                  2.5050315231867395
-                ],
-                "gaze_direction_world_unit": [
-                  0.6240991066370097,
-                  -0.7204144280441137,
-                  0.30249521807916036
-                ],
-                "wearer_world_m": [
-                  0.112051087336965,
-                  1.5620463467985002,
-                  2.435262296416837
-                ],
-                "right_world": [
-                  0.12030538538313729,
-                  -0.011449613364931582,
-                  -0.9926709024654691
-                ],
-                "forward_world": [
-                  0.947326712103392,
-                  -0.29764188631631927,
-                  0.11824300421352674
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.1325049697024569,
-                  "forward_m": 0.5606058051551558,
-                  "up_m": -1.1162224973012878,
-                  "distance_m": 1.2563135364625455
-                }
-              },
-              {
-                "frame": 118,
-                "time_s": 3.932704,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.922699,
-                "gaze_hit_distance_m": 0.9234456414877766,
-                "gaze_hit_exit_distance_m": 1.555213059942951,
-                "gaze_depth_obb_residual_m": 0.0007466414877765892,
-                "gaze_origin_world_m": [
-                  0.09537276909005545,
-                  1.5636958037477149,
-                  2.508917094334092
-                ],
-                "gaze_direction_world_unit": [
-                  0.6199098377866298,
-                  -0.7250064151087565,
-                  0.3001291239891657
-                ],
-                "wearer_world_m": [
-                  0.11297162508930901,
-                  1.5625482583061951,
-                  2.439224733863398
-                ],
-                "right_world": [
-                  0.1245982343394077,
-                  -0.012849133339142033,
-                  -0.992124074786987
-                ],
-                "forward_world": [
-                  0.9474679016819147,
-                  -0.2953321567860876,
-                  0.12281487064092489
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.13871022598269475,
-                  "forward_m": 0.5588506019973023,
-                  "up_m": -1.1168030807680929,
-                  "distance_m": 1.256751658156981
-                }
-              },
-              {
-                "frame": 119,
-                "time_s": 3.966032,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.920263,
-                "gaze_hit_distance_m": 0.9209877886217354,
-                "gaze_hit_exit_distance_m": 1.560969145667878,
-                "gaze_depth_obb_residual_m": 0.0007247886217353061,
-                "gaze_origin_world_m": [
-                  0.09597216192078867,
-                  1.5639669769636815,
-                  2.5125766513377505
-                ],
-                "gaze_direction_world_unit": [
-                  0.6172148821281036,
-                  -0.7272590147432985,
-                  0.300233433771454
-                ],
-                "wearer_world_m": [
-                  0.113832157016846,
-                  1.562687438040806,
-                  2.4429530557949057
-                ],
-                "right_world": [
-                  0.12831441936494692,
-                  -0.014809879862941883,
-                  -0.9916229511469985
-                ],
-                "forward_world": [
-                  0.9471913166525782,
-                  -0.2944639932255416,
-                  0.12696285421974285
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.14435944557364433,
-                  "forward_m": 0.5571532015105626,
-                  "up_m": -1.1170742539840595,
-                  "distance_m": 1.2569229409784026
-                }
-              },
-              {
-                "frame": 120,
-                "time_s": 3.99936,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.920605,
-                "gaze_hit_distance_m": 0.921477055820706,
-                "gaze_hit_exit_distance_m": 1.5541462278642866,
-                "gaze_depth_obb_residual_m": 0.0008720558207060414,
-                "gaze_origin_world_m": [
-                  0.09647968122413669,
-                  1.5639944355817106,
-                  2.516070930084307
-                ],
-                "gaze_direction_world_unit": [
-                  0.6196199453465845,
-                  -0.7269035959145622,
-                  0.2961119477075766
-                ],
-                "wearer_world_m": [
-                  0.11456968728411,
-                  1.5626097055370631,
-                  2.446508757142013
-                ],
-                "right_world": [
-                  0.13159638836662846,
-                  -0.016117884901332147,
-                  -0.9911723383726805
-                ],
-                "forward_world": [
-                  0.946316393724008,
-                  -0.29574991856005495,
-                  0.13045025351032852
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.14960383977379532,
-                  "forward_m": 0.5556199397179304,
-                  "up_m": -1.1171017126020886,
-                  "distance_m": 1.2569204508398015
-                }
-              },
-              {
-                "frame": 121,
-                "time_s": 4.032688,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.683381,
-                "gaze_hit_distance_m": 0.6709096057844143,
-                "gaze_hit_exit_distance_m": 0.7631978447875079,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09682448729612883,
-                  1.5639011003745167,
-                  2.5194955340670133
-                ],
-                "gaze_direction_world_unit": [
-                  0.6176005235790688,
-                  -0.7283887622053203,
-                  0.2966806437364281
-                ],
-                "wearer_world_m": [
-                  0.11514165499223199,
-                  1.56244753840609,
-                  2.449994237487764
-                ],
-                "right_world": [
-                  0.13484309382153314,
-                  -0.01678913817933811,
-                  -0.9907247170066125
-                ],
-                "forward_world": [
-                  0.9451497530798207,
-                  -0.2980248156143821,
-                  0.1336905139909606
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.15477355496343403,
-                  "forward_m": 0.5542576008197703,
-                  "up_m": -1.1170083773948947,
-                  "distance_m": 1.2568900648822132
-                }
-              },
-              {
-                "frame": 122,
-                "time_s": 4.066016,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.699713,
-                "gaze_hit_distance_m": 0.6473628697503749,
-                "gaze_hit_exit_distance_m": 0.778157685099248,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09693395494340236,
-                  1.5638256664368793,
-                  2.522954180188741
-                ],
-                "gaze_direction_world_unit": [
-                  0.618282717025882,
-                  -0.727677029590572,
-                  0.29700609831000957
-                ],
-                "wearer_world_m": [
-                  0.11551101958512401,
-                  1.562302773574078,
-                  2.453523386101206
-                ],
-                "right_world": [
-                  0.13855423183074173,
-                  -0.017605789824947343,
-                  -0.9901983442757483
-                ],
-                "forward_world": [
-                  0.9442322761658475,
-                  -0.29922388943340145,
-                  0.13744261580386985
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.16026344747215232,
-                  "forward_m": 0.5530114183493484,
-                  "up_m": -1.1169329434572572,
-                  "distance_m": 1.2569940818867047
-                }
-              },
-              {
-                "frame": 123,
-                "time_s": 4.099344,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.71138,
-                "gaze_hit_distance_m": 0.6329942256912108,
-                "gaze_hit_exit_distance_m": 0.7667324088490131,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09674169262432723,
-                  1.563811663296609,
-                  2.5264299305678835
-                ],
-                "gaze_direction_world_unit": [
-                  0.6171716656551238,
-                  -0.7282485521189919,
-                  0.2979147217729797
-                ],
-                "wearer_world_m": [
-                  0.11560438550136401,
-                  1.562209208501734,
-                  2.457077982815445
-                ],
-                "right_world": [
-                  0.142633223801313,
-                  -0.01860858065165069,
-                  -0.989600669055037
-                ],
-                "forward_world": [
-                  0.9433414120629722,
-                  -0.3000899091568769,
-                  0.14160870986367835
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.1660135597010298,
-                  "forward_m": 0.551952270825193,
-                  "up_m": -1.116918940316987,
-                  "distance_m": 1.2573003518529695
-                }
-              },
-              {
-                "frame": 124,
-                "time_s": 4.132672,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.717498,
-                "gaze_hit_distance_m": 0.6254256227285941,
-                "gaze_hit_exit_distance_m": 0.7581097445755901,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09622408991471496,
-                  1.5638536304512103,
-                  2.529871821624308
-                ],
-                "gaze_direction_world_unit": [
-                  0.6171012269642617,
-                  -0.7301963450564432,
-                  0.29325649753315647
-                ],
-                "wearer_world_m": [
-                  0.11538344314876199,
-                  1.562163042045474,
-                  2.460603338202947
-                ],
-                "right_world": [
-                  0.14687612403493755,
-                  -0.019618421096590427,
-                  -0.9889603236440532
-                ],
-                "forward_world": [
-                  0.9421295543088242,
-                  -0.3018320501762355,
-                  0.14590858913808524
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.17186563289750506,
-                  "forward_m": 0.551144213710905,
-                  "up_m": -1.1169609074715883,
-                  "distance_m": 1.2578112810122593
-                }
-              },
-              {
-                "frame": 125,
-                "time_s": 4.166,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.720641,
-                "gaze_hit_distance_m": 0.6275730895413112,
-                "gaze_hit_exit_distance_m": 0.7559979995925314,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09550239057285725,
-                  1.5639093614043664,
-                  2.5332867598673507
-                ],
-                "gaze_direction_world_unit": [
-                  0.6161696459301118,
-                  -0.7280343035651385,
-                  0.3005012816391709
-                ],
-                "wearer_world_m": [
-                  0.11499080691714801,
-                  1.5621267634400449,
-                  2.4641124461816393
-                ],
-                "right_world": [
-                  0.15158280869776614,
-                  -0.020736998430266523,
-                  -0.9882270128889412
-                ],
-                "forward_world": [
-                  0.940952328147494,
-                  -0.30315081192192195,
-                  0.1506927383283279
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.17797955649139657,
-                  "forward_m": 0.5504066900538401,
-                  "up_m": -1.1170166384247444,
-                  "distance_m": 1.2584346605100991
-                }
-              },
-              {
-                "frame": 126,
-                "time_s": 4.199328,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.719562,
-                "gaze_hit_distance_m": 0.6350834477258354,
-                "gaze_hit_exit_distance_m": 0.7514412188900896,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09467816619493136,
-                  1.563990920809493,
-                  2.536648143523901
-                ],
-                "gaze_direction_world_unit": [
-                  0.6181409378697172,
-                  -0.7227967583361055,
-                  0.3089767419537656
-                ],
-                "wearer_world_m": [
-                  0.11452733076261301,
-                  1.562123814326627,
-                  2.467578712656499
-                ],
-                "right_world": [
-                  0.15673945222953056,
-                  -0.021911697290389637,
-                  -0.9873968916482581
-                ],
-                "forward_world": [
-                  0.940072241006459,
-                  -0.3032192472641094,
-                  0.1559559866682939
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.18430776564076412,
-                  "forward_m": 0.5496440289152877,
-                  "up_m": -1.117098197829871,
-                  "distance_m": 1.2591329110481204
-                }
-              },
-              {
-                "frame": 127,
-                "time_s": 4.232656,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.715102,
-                "gaze_hit_distance_m": 0.6394873268462461,
-                "gaze_hit_exit_distance_m": 0.7575329810445557,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09374762028223653,
-                  1.5642353035402328,
-                  2.5398327123165023
-                ],
-                "gaze_direction_world_unit": [
-                  0.6152383512273193,
-                  -0.7246401037975945,
-                  0.31044885431790714
-                ],
-                "wearer_world_m": [
-                  0.11392654922968701,
-                  1.56231333957659,
-                  2.470860409309743
-                ],
-                "right_world": [
-                  0.16145607076745605,
-                  -0.02267124715887736,
-                  -0.9866194564089014
-                ],
-                "forward_world": [
-                  0.9392555444531668,
-                  -0.30328664608861833,
-                  0.16067430571906155
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.1902329861021822,
-                  "forward_m": 0.549071901759202,
-                  "up_m": -1.1173425805606108,
-                  "distance_m": 1.2600192204161207
-                }
-              },
-              {
-                "frame": 128,
-                "time_s": 4.265984,
-                "gazed_object_id": "4508463855879675",
-                "gazed_object_name": "WoodenBowl",
-                "gaze_depth_m": 0.696051,
-                "gaze_hit_distance_m": 0.6492091942226073,
-                "gaze_hit_exit_distance_m": 0.7528378687094509,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09274648938994771,
-                  1.5646738529837565,
-                  2.5427082112320463
-                ],
-                "gaze_direction_world_unit": [
-                  0.6199833220015235,
-                  -0.7204376752270636,
-                  0.31078969827421726
-                ],
-                "wearer_world_m": [
-                  0.11316064439004302,
-                  1.5627686311350302,
-                  2.4738046982131934
-                ],
-                "right_world": [
-                  0.16482011260718304,
-                  -0.022471519177020338,
-                  -0.9860676251180918
-                ],
-                "forward_world": [
-                  0.9387981770897045,
-                  -0.30301732762384975,
-                  0.16382454594091933
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.1951100715366188,
-                  "forward_m": 0.5489122646672939,
-                  "up_m": -1.1177811300041345,
-                  "distance_m": 1.2610929962654722
-                }
-              },
-              {
-                "frame": 129,
-                "time_s": 4.299312,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.961745,
-                "gaze_hit_distance_m": 0.9678961157086707,
-                "gaze_hit_exit_distance_m": 1.3691473785438133,
-                "gaze_depth_obb_residual_m": 0.0061511157086707735,
-                "gaze_origin_world_m": [
-                  0.09177027147117257,
-                  1.565199581760743,
-                  2.5451509597721294
-                ],
-                "gaze_direction_world_unit": [
-                  0.7079470078123308,
-                  -0.6924732100593082,
-                  0.13889523922627733
-                ],
-                "wearer_world_m": [
-                  0.112270352628266,
-                  1.563438075136487,
-                  2.476269137293588
-                ],
-                "right_world": [
-                  0.1660348164611961,
-                  -0.02083286537993695,
-                  -0.9858998080143635
-                ],
-                "forward_world": [
-                  0.9395979666432729,
-                  -0.3001157550066354,
-                  0.16457884030647496
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.19835557607571208,
-                  "forward_m": 0.549325922470349,
-                  "up_m": -1.118306858781121,
-                  "distance_m": 1.2622034416483237
-                }
-              },
-              {
-                "frame": 130,
-                "time_s": 4.33264,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.822953,
-                "gaze_hit_distance_m": 0.7560603504812837,
-                "gaze_hit_exit_distance_m": 0.9175837397917264,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09087825347378449,
-                  1.5657836803909844,
-                  2.54709623291966
-                ],
-                "gaze_direction_world_unit": [
-                  0.7443062105618357,
-                  -0.664719957916358,
-                  0.06446427279319211
-                ],
-                "wearer_world_m": [
-                  0.11127383254615301,
-                  1.5642146979899307,
-                  2.478178743488254
-                ],
-                "right_world": [
-                  0.1645186040093961,
-                  -0.018726442853764513,
-                  -0.9861962022198449
-                ],
-                "forward_world": [
-                  0.9413836102031639,
-                  -0.2955340193747646,
-                  0.1626546704925922
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.1995703322374488,
-                  "forward_m": 0.5503380603899936,
-                  "up_m": -1.1188909574113624,
-                  "distance_m": 1.2632899753541487
-                }
-              },
-              {
-                "frame": 131,
-                "time_s": 4.365968,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.820082,
-                "gaze_hit_distance_m": 0.7574870280021421,
-                "gaze_hit_exit_distance_m": 0.9178064390174967,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09010113721538673,
-                  1.566439491932849,
-                  2.548527091688721
-                ],
-                "gaze_direction_world_unit": [
-                  0.745127401103862,
-                  -0.6643286714696715,
-                  0.05875859415903112
-                ],
-                "wearer_world_m": [
-                  0.11018689713453399,
-                  1.56496341107122,
-                  2.47951662049224
-                ],
-                "right_world": [
-                  0.16007382670589976,
-                  -0.017858343294436085,
-                  -0.9869434885435477
-                ],
-                "forward_world": [
-                  0.943181580548897,
-                  -0.29216679685187447,
-                  0.15826265804225487
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.19861901322940526,
-                  "forward_m": 0.5518436892359484,
-                  "up_m": -1.119546768953227,
-                  "distance_m": 1.2643466134956294
-                }
-              },
-              {
-                "frame": 132,
-                "time_s": 4.399296,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.816917,
-                "gaze_hit_distance_m": 0.7616620815282094,
-                "gaze_hit_exit_distance_m": 0.9153473040458907,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08946780530970093,
-                  1.5670667316555773,
-                  2.5494664976187837
-                ],
-                "gaze_direction_world_unit": [
-                  0.7479123668036533,
-                  -0.6614968705891774,
-                  0.055217585811789704
-                ],
-                "wearer_world_m": [
-                  0.109124874291016,
-                  1.565610465987452,
-                  2.480332275771947
-                ],
-                "right_world": [
-                  0.15393801625844022,
-                  -0.017879855663494454,
-                  -0.9879187202962951
-                ],
-                "forward_world": [
-                  0.9448517607583727,
-                  -0.2898398590134789,
-                  0.15247296914158076
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.19620506625178524,
-                  "forward_m": 0.5535696416744202,
-                  "up_m": -1.1201740086759553,
-                  "distance_m": 1.265271569756723
-                }
-              },
-              {
-                "frame": 133,
-                "time_s": 4.432624,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.818713,
-                "gaze_hit_distance_m": 0.763468708214685,
-                "gaze_hit_exit_distance_m": 0.9150226140941788,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08900964347066076,
-                  1.5675655609507833,
-                  2.549963108839136
-                ],
-                "gaze_direction_world_unit": [
-                  0.7485778321607335,
-                  -0.6605862695805399,
-                  0.0570702167439644
-                ],
-                "wearer_world_m": [
-                  0.10822233641101402,
-                  1.5661386358194802,
-                  2.480703466798122
-                ],
-                "right_world": [
-                  0.1475833952497746,
-                  -0.017791431440457972,
-                  -0.9888895825186194
-                ],
-                "forward_world": [
-                  0.9465719733950272,
-                  -0.2873284278666096,
-                  0.14643726889950748
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.1931938350213092,
-                  "forward_m": 0.5552310170346897,
-                  "up_m": -1.1206728379711612,
-                  "distance_m": 1.265965240134463
-                }
-              },
-              {
-                "frame": 134,
-                "time_s": 4.465952,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.816233,
-                "gaze_hit_distance_m": 0.7691127807010998,
-                "gaze_hit_exit_distance_m": 0.9107623929043125,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08876942836126117,
-                  1.5680056311316117,
-                  2.550101591907975
-                ],
-                "gaze_direction_world_unit": [
-                  0.7522753077274583,
-                  -0.6562806496671587,
-                  0.05811686722466958
-                ],
-                "wearer_world_m": [
-                  0.10753707558248,
-                  1.5666404633005448,
-                  2.4807187883067012
-                ],
-                "right_world": [
-                  0.1412240905109035,
-                  -0.017314631793463126,
-                  -0.9898262270647438
-                ],
-                "forward_world": [
-                  0.9484148619666672,
-                  -0.2843031388080306,
-                  0.14028889786668658
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.18978468088533013,
-                  "forward_m": 0.5567370100060952,
-                  "up_m": -1.1211129081519897,
-                  "distance_m": 1.2664765341714792
-                }
-              },
-              {
-                "frame": 135,
-                "time_s": 4.49928,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.815339,
-                "gaze_hit_distance_m": 0.7671969170753143,
-                "gaze_hit_exit_distance_m": 0.9130026496732664,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08874904959978822,
-                  1.56845220079533,
-                  2.5499509766344297
-                ],
-                "gaze_direction_world_unit": [
-                  0.750583021198535,
-                  -0.658493609191618,
-                  0.054875267127148186
-                ],
-                "wearer_world_m": [
-                  0.10707064053032901,
-                  1.567179848517028,
-                  2.4804472923691057
-                ],
-                "right_world": [
-                  0.13485642739962472,
-                  -0.0164357769972088,
-                  -0.9907288272900452
-                ],
-                "forward_world": [
-                  0.9502994080823293,
-                  -0.28101772114814977,
-                  0.13401520585021337
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.18604691467654796,
-                  "forward_m": 0.5580666737401506,
-                  "up_m": -1.121559477815708,
-                  "distance_m": 1.266868214831248
-                }
-              },
-              {
-                "frame": 136,
-                "time_s": 4.532608,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.812267,
-                "gaze_hit_distance_m": 0.7694017015557979,
-                "gaze_hit_exit_distance_m": 0.9113736084499265,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0888633575336485,
-                  1.5688815795483502,
-                  2.549532032530648
-                ],
-                "gaze_direction_world_unit": [
-                  0.7518647301160214,
-                  -0.6571508037246304,
-                  0.053406448783218485
-                ],
-                "wearer_world_m": [
-                  0.106747637116963,
-                  1.5677104180544132,
-                  2.4799127634628033
-                ],
-                "right_world": [
-                  0.1286211390495549,
-                  -0.015345222202523129,
-                  -0.9915750736808339
-                ],
-                "forward_world": [
-                  0.9519073658292478,
-                  -0.2784660334401624,
-                  0.12778511298318346
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.18209536549596897,
-                  "forward_m": 0.5592531472731503,
-                  "up_m": -1.1219888565687282,
-                  "distance_m": 1.2671601883943444
-                }
-              },
-              {
-                "frame": 137,
-                "time_s": 4.565936,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.814173,
-                "gaze_hit_distance_m": 0.7688938547320437,
-                "gaze_hit_exit_distance_m": 0.9121854901289724,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.08909318763753704,
-                  1.5692523972689754,
-                  2.548860589199837
-                ],
-                "gaze_direction_world_unit": [
-                  0.7508851979660847,
-                  -0.65808222584165,
-                  0.0556704904481119
-                ],
-                "wearer_world_m": [
-                  0.106554281382022,
-                  1.5681757936317844,
-                  2.47913245405444
-                ],
-                "right_world": [
-                  0.12259356901942098,
-                  -0.014268017942192263,
-                  -0.9923543925932321
-                ],
-                "forward_world": [
-                  0.9532619672385699,
-                  -0.27653382573091445,
-                  0.12174015378286573
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.17799314506420494,
-                  "forward_m": 0.5602840803815978,
-                  "up_m": -1.1223596742893533,
-                  "distance_m": 1.2673262673702475
-                }
-              },
-              {
-                "frame": 138,
-                "time_s": 4.599264,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.957793,
-                "gaze_hit_distance_m": 0.9675034012437321,
-                "gaze_hit_exit_distance_m": 1.3601226644684297,
-                "gaze_depth_obb_residual_m": 0.009710401243732125,
-                "gaze_origin_world_m": [
-                  0.0895041016988234,
-                  1.5695188725697786,
-                  2.547947477865941
-                ],
-                "gaze_direction_world_unit": [
-                  0.7155355514377724,
-                  -0.6956419967917564,
-                  -0.0639616051097941
-                ],
-                "wearer_world_m": [
-                  0.106554337270493,
-                  1.5685267414268518,
-                  2.478116490161729
-                ],
-                "right_world": [
-                  0.11674603519075971,
-                  -0.013428575084082434,
-                  -0.9930710128880257
-                ],
-                "forward_world": [
-                  0.9547592083729308,
-                  -0.27384592207036135,
-                  0.11594509473249798
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.17372979135832317,
-                  "forward_m": 0.5610887157990424,
-                  "up_m": -1.1226261495901566,
-                  "distance_m": 1.267297360047097
-                }
-              },
-              {
-                "frame": 139,
-                "time_s": 4.632592,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.876745,
-                "gaze_hit_distance_m": 0.8544532175175693,
-                "gaze_hit_exit_distance_m": 0.9671308374268542,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09005997637257765,
-                  1.5696760089399997,
-                  2.5467348382175015
-                ],
-                "gaze_direction_world_unit": [
-                  0.7098824960474632,
-                  -0.6891009415906221,
-                  -0.14562532095875957
-                ],
-                "wearer_world_m": [
-                  0.10670951932514601,
-                  1.568762360646209,
-                  2.476806162645417
-                ],
-                "right_world": [
-                  0.11104852934648052,
-                  -0.012631950981346868,
-                  -0.9937347019926343
-                ],
-                "forward_world": [
-                  0.9561042219039222,
-                  -0.27147723357497217,
-                  0.11029428139289721
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.16923754869865726,
-                  "forward_m": 0.5617201055393373,
-                  "up_m": -1.1227832859603777,
-                  "distance_m": 1.2670812961197429
-                }
-              },
-              {
-                "frame": 140,
-                "time_s": 4.66592,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.956674,
-                "gaze_hit_distance_m": 0.8472613625384423,
-                "gaze_hit_exit_distance_m": 0.9634830788387708,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09066528543037435,
-                  1.5697501210446112,
-                  2.5451356816184374
-                ],
-                "gaze_direction_world_unit": [
-                  0.7053220629690956,
-                  -0.6951674658381775,
-                  -0.1387911449954396
-                ],
-                "wearer_world_m": [
-                  0.106920531356812,
-                  1.5689158707280333,
-                  2.4751133087131985
-                ],
-                "right_world": [
-                  0.10544732040800658,
-                  -0.011493463799711667,
-                  -0.9943584680127464
-                ],
-                "forward_world": [
-                  0.9566866100923137,
-                  -0.271681989750854,
-                  0.10459266950935853
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.16441139895064344,
-                  "forward_m": 0.5623019154696389,
-                  "up_m": -1.1228573980649892,
-                  "distance_m": 1.2667386741032802
-                }
-              },
-              {
-                "frame": 141,
-                "time_s": 4.699248,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.959509,
-                "gaze_hit_distance_m": 0.8497472572547808,
-                "gaze_hit_exit_distance_m": 0.9662644976212117,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09134042264268777,
-                  1.569787012597935,
-                  2.543186148479463
-                ],
-                "gaze_direction_world_unit": [
-                  0.7075210658223758,
-                  -0.6931514549457068,
-                  -0.13767716558754067
-                ],
-                "wearer_world_m": [
-                  0.10719073599366599,
-                  1.569013928637603,
-                  2.473070304272422
-                ],
-                "right_world": [
-                  0.09969944511908962,
-                  -0.010527184184752042,
-                  -0.9949619083342269
-                ],
-                "forward_world": [
-                  0.9570605487996342,
-                  -0.2725373388195625,
-                  0.09878514503959668
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.15914843668967293,
-                  "forward_m": 0.5628247292713453,
-                  "up_m": -1.122894289618313,
-                  "distance_m": 1.2663051615556429
-                }
-              },
-              {
-                "frame": 142,
-                "time_s": 4.732576,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.888229,
-                "gaze_hit_distance_m": 0.8478363097148304,
-                "gaze_hit_exit_distance_m": 0.9641667995627551,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0921124590018652,
-                  1.5698256512065119,
-                  2.540947871173564
-                ],
-                "gaze_direction_world_unit": [
-                  0.7060393410720283,
-                  -0.6946985463751701,
-                  -0.13748592118032193
-                ],
-                "wearer_world_m": [
-                  0.10752881744034698,
-                  1.569072832143856,
-                  2.470735116940767
-                ],
-                "right_world": [
-                  0.09354353301278773,
-                  -0.01036608852107021,
-                  -0.9955612244559645
-                ],
-                "forward_world": [
-                  0.9579288882134055,
-                  -0.2715765996120135,
-                  0.09283531477517015
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.1533605029067702,
-                  "forward_m": 0.5632651416805917,
-                  "up_m": -1.1229329282268898,
-                  "distance_m": 1.2658095165554049
-                }
-              },
-              {
-                "frame": 143,
-                "time_s": 4.765904,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.878254,
-                "gaze_hit_distance_m": 0.8501184594274277,
-                "gaze_hit_exit_distance_m": 0.9654004571013393,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09285417300052191,
-                  1.569852100835277,
-                  2.5383938217449415
-                ],
-                "gaze_direction_world_unit": [
-                  0.7082433393368187,
-                  -0.6927791068611133,
-                  -0.13582518684599482
-                ],
-                "wearer_world_m": [
-                  0.10780636945423999,
-                  1.5690917457683717,
-                  2.4680808401385437
-                ],
-                "right_world": [
-                  0.0869645893351616,
-                  -0.010588000791797697,
-                  -0.9961551357298721
-                ],
-                "forward_world": [
-                  0.9587721247841209,
-                  -0.27066635641980175,
-                  0.08657792004530152
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.14702435600959368,
-                  "forward_m": 0.5637599925900453,
-                  "up_m": -1.122959377855655,
-                  "distance_m": 1.2652967203575525
-                }
-              },
-              {
-                "frame": 144,
-                "time_s": 4.799232,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.961463,
-                "gaze_hit_distance_m": 0.8508949659709255,
-                "gaze_hit_exit_distance_m": 0.9605270422134595,
-                "gaze_depth_obb_residual_m": 0.0009359577865404312,
-                "gaze_origin_world_m": [
-                  0.09349260728086609,
-                  1.5698517759644366,
-                  2.535489587150842
-                ],
-                "gaze_direction_world_unit": [
-                  0.7109769594733989,
-                  -0.6921948046255896,
-                  -0.12400853013927282
-                ],
-                "wearer_world_m": [
-                  0.10797560534742501,
-                  1.569081252176204,
-                  2.465078574084022
-                ],
-                "right_world": [
-                  0.08032011711904119,
-                  -0.01067514660581978,
-                  -0.9967119543935095
-                ],
-                "forward_world": [
-                  0.9592043493654436,
-                  -0.27109923302500566,
-                  0.08020113472807144
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.1403128103606351,
-                  "forward_m": 0.5643404959410373,
-                  "up_m": -1.1229590529848146,
-                  "distance_m": 1.2647862099159068
-                }
-              },
-              {
-                "frame": 145,
-                "time_s": 4.83256,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.966192,
-                "gaze_hit_distance_m": 0.9768271435129364,
-                "gaze_hit_exit_distance_m": 1.3572267669321512,
-                "gaze_depth_obb_residual_m": 0.010635143512936374,
-                "gaze_origin_world_m": [
-                  0.09413643740580935,
-                  1.5698340089585976,
-                  2.5322251290907642
-                ],
-                "gaze_direction_world_unit": [
-                  0.7140972834570799,
-                  -0.6887140584163833,
-                  -0.12545124749819514
-                ],
-                "wearer_world_m": [
-                  0.10821521393124,
-                  1.569077214868546,
-                  2.4617320300295638
-                ],
-                "right_world": [
-                  0.07460013537323334,
-                  -0.010495455573603707,
-                  -0.9971582949635424
-                ],
-                "forward_world": [
-                  0.9596804127426948,
-                  -0.27100014527935096,
-                  0.0746486882442135
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.13376667423728394,
-                  "forward_m": 0.564764469602192,
-                  "up_m": -1.1229412859789756,
-                  "distance_m": 1.2642385011930155
-                }
-              },
-              {
-                "frame": 146,
-                "time_s": 4.865888,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.96457,
-                "gaze_hit_distance_m": 0.8534228375902564,
-                "gaze_hit_exit_distance_m": 0.9553713516787035,
-                "gaze_depth_obb_residual_m": 0.009198648321296576,
-                "gaze_origin_world_m": [
-                  0.09479644849489859,
-                  1.5698044748390811,
-                  2.5286024484457075
-                ],
-                "gaze_direction_world_unit": [
-                  0.713494351216808,
-                  -0.689944481695879,
-                  -0.12207548058111772
-                ],
-                "wearer_world_m": [
-                  0.10856814372988198,
-                  1.569058820771752,
-                  2.458048595883522
-                ],
-                "right_world": [
-                  0.07025734922493265,
-                  -0.01049054677725228,
-                  -0.9974737356483129
-                ],
-                "forward_world": [
-                  0.9603288384014375,
-                  -0.2698171046923694,
-                  0.07047873544532945
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.12764433086089053,
-                  "forward_m": 0.5649578147195997,
-                  "up_m": -1.1229117518594591,
-                  "distance_m": 1.2636566384765795
-                }
-              },
-              {
-                "frame": 147,
-                "time_s": 4.899216,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.964428,
-                "gaze_hit_distance_m": 0.9747365271872082,
-                "gaze_hit_exit_distance_m": 1.355480143653273,
-                "gaze_depth_obb_residual_m": 0.010308527187208205,
-                "gaze_origin_world_m": [
-                  0.09534615335624141,
-                  1.569765153087987,
-                  2.524632414930268
-                ],
-                "gaze_direction_world_unit": [
-                  0.7141085860064957,
-                  -0.6901247760804052,
-                  -0.11737427670394229
-                ],
-                "wearer_world_m": [
-                  0.108887184011329,
-                  1.568947974294272,
-                  2.4540347208559066
-                ],
-                "right_world": [
-                  0.06699693355122771,
-                  -0.011598325194071585,
-                  -0.9976857670366085
-                ],
-                "forward_world": [
-                  0.9607647432675908,
-                  -0.2689894190034743,
-                  0.06764466392949081
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "right-front",
-                  "side": "right",
-                  "depth": "front",
-                  "right_m": 0.12179848629639947,
-                  "forward_m": 0.5650695556292534,
-                  "up_m": -1.122872430108365,
-                  "distance_m": 1.2631034734811255
-                }
-              },
-              {
-                "frame": 148,
-                "time_s": 4.932544,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.960967,
-                "gaze_hit_distance_m": 0.849790679466012,
-                "gaze_hit_exit_distance_m": 0.9534764378012304,
-                "gaze_depth_obb_residual_m": 0.007490562198769646,
-                "gaze_origin_world_m": [
-                  0.09575386401789822,
-                  1.5697743992557252,
-                  2.520282916829374
-                ],
-                "gaze_direction_world_unit": [
-                  0.7136838160729333,
-                  -0.6930458816271329,
-                  -0.10169963930735265
-                ],
-                "wearer_world_m": [
-                  0.10911306496609001,
-                  1.5688296997779951,
-                  2.4496521799372633
-                ],
-                "right_world": [
-                  0.06442772567427663,
-                  -0.013386887842542328,
-                  -0.997832580846272
-                ],
-                "forward_world": [
-                  0.9609075663723294,
-                  -0.2689729563464889,
-                  0.06565209549311474
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.11597612227789765,
-                  "forward_m": 0.5652144794699808,
-                  "up_m": -1.1228816762761031,
-                  "distance_m": 1.2626464103851154
-                }
-              },
-              {
-                "frame": 149,
-                "time_s": 4.965872,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.960054,
-                "gaze_hit_distance_m": 0.8488267635506909,
-                "gaze_hit_exit_distance_m": 0.9531855984623802,
-                "gaze_depth_obb_residual_m": 0.006868401537619806,
-                "gaze_origin_world_m": [
-                  0.09609406907641335,
-                  1.5699290065593159,
-                  2.5154930059291063
-                ],
-                "gaze_direction_world_unit": [
-                  0.7135443709909851,
-                  -0.693994854489742,
-                  -0.09604984418957452
-                ],
-                "wearer_world_m": [
-                  0.10929744160291399,
-                  1.5689028666318232,
-                  2.4448341091660257
-                ],
-                "right_world": [
-                  0.062226561202016695,
-                  -0.014498046242614748,
-                  -0.9979567434193324
-                ],
-                "forward_world": [
-                  0.9609651461942567,
-                  -0.2692054972804027,
-                  0.0638309332053213
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.10992687971562949,
-                  "forward_m": 0.5654147437185587,
-                  "up_m": -1.1230362835796939,
-                  "distance_m": 1.2623381183969382
-                }
-              },
-              {
-                "frame": 150,
-                "time_s": 4.9992,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.968482,
-                "gaze_hit_distance_m": 0.9781950724534962,
-                "gaze_hit_exit_distance_m": 1.3424359454237453,
-                "gaze_depth_obb_residual_m": 0.009713072453496285,
-                "gaze_origin_world_m": [
-                  0.09666243827751593,
-                  1.5703133035501604,
-                  2.5102184520993207
-                ],
-                "gaze_direction_world_unit": [
-                  0.719956408605653,
-                  -0.6883606910957573,
-                  -0.0884439294797647
-                ],
-                "wearer_world_m": [
-                  0.10976348542750598,
-                  1.56933665750761,
-                  2.439539810155086
-                ],
-                "right_world": [
-                  0.06078168008196372,
-                  -0.014008356417412465,
-                  -0.9980527808271955
-                ],
-                "forward_world": [
-                  0.9615101165248692,
-                  -0.2676106694186232,
-                  0.06231232168398937
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.10380792976117001,
-                  "forward_m": 0.5653686288446632,
-                  "up_m": -1.1234205805705384,
-                  "distance_m": 1.2621225437118406
-                }
-              },
-              {
-                "frame": 151,
-                "time_s": 5.032528,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.972847,
-                "gaze_hit_distance_m": 0.980884304797962,
-                "gaze_hit_exit_distance_m": 1.328983149056907,
-                "gaze_depth_obb_residual_m": 0.008037304797961942,
-                "gaze_origin_world_m": [
-                  0.0977495784209704,
-                  1.570951405422579,
-                  2.5044821418534413
-                ],
-                "gaze_direction_world_unit": [
-                  0.7259335450289013,
-                  -0.6877596161284962,
-                  -0.002683025261787042
-                ],
-                "wearer_world_m": [
-                  0.11082090292221099,
-                  1.570175306082902,
-                  2.4337955105388978
-                ],
-                "right_world": [
-                  0.060365072766304206,
-                  -0.011862199234132648,
-                  -0.998105879262941
-                ],
-                "forward_world": [
-                  0.9630032799682235,
-                  -0.26241101342476725,
-                  0.06136075947891767
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.09777932915177906,
-                  "forward_m": 0.5647630506030341,
-                  "up_m": -1.124058682442957,
-                  "distance_m": 1.2618976753287923
-                }
-              },
-              {
-                "frame": 152,
-                "time_s": 5.065856,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.823077,
-                "gaze_hit_distance_m": 0.7488605980677063,
-                "gaze_hit_exit_distance_m": 0.9338011657269688,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.09929233989908606,
-                  1.5716624030414617,
-                  2.498528164943303
-                ],
-                "gaze_direction_world_unit": [
-                  0.7234115339770281,
-                  -0.6849082414723987,
-                  0.0870428243578365
-                ],
-                "wearer_world_m": [
-                  0.112321798659495,
-                  1.571048841194622,
-                  2.4278322071573664
-                ],
-                "right_world": [
-                  0.059784258353554,
-                  -0.010501316860321103,
-                  -0.9981560823825676
-                ],
-                "forward_world": [
-                  0.9649904730178929,
-                  -0.25521600557905133,
-                  0.060482869318320254
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.09141440903057158,
-                  "forward_m": 0.5636987229221667,
-                  "up_m": -1.1247696800618396,
-                  "distance_m": 1.2615497906728648
-                }
-              },
-              {
-                "frame": 153,
-                "time_s": 5.099184,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.823577,
-                "gaze_hit_distance_m": 0.7500353520373343,
-                "gaze_hit_exit_distance_m": 0.9358334833595269,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10106970428422696,
-                  1.5722038113967969,
-                  2.4926302961774405
-                ],
-                "gaze_direction_world_unit": [
-                  0.7196964708827633,
-                  -0.6869483968206451,
-                  0.10069205482281884
-                ],
-                "wearer_world_m": [
-                  0.11398769179010301,
-                  1.5715679526355892,
-                  2.421914081746563
-                ],
-                "right_world": [
-                  0.058226553483795074,
-                  -0.011688691819162628,
-                  -0.9982349638000847
-                ],
-                "forward_world": [
-                  0.9668582032788302,
-                  -0.24833089131468908,
-                  0.05930415812811779
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.08454331727594205,
-                  "forward_m": 0.5624093991986707,
-                  "up_m": -1.1253110884171749,
-                  "distance_m": 1.2609777297542466
-                }
-              },
-              {
-                "frame": 154,
-                "time_s": 5.132512,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.767634,
-                "gaze_hit_distance_m": 0.7528187160478611,
-                "gaze_hit_exit_distance_m": 0.939819239982052,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10270652197373392,
-                  1.572312812881069,
-                  2.4870154993721085
-                ],
-                "gaze_direction_world_unit": [
-                  0.7147597397896222,
-                  -0.6905120184364469,
-                  0.11095795046185547
-                ],
-                "wearer_world_m": [
-                  0.11548771405797999,
-                  1.571513632369814,
-                  2.416276089278328
-                ],
-                "right_world": [
-                  0.05630908608485219,
-                  -0.014545836623396285,
-                  -0.998307420317617
-                ],
-                "forward_world": [
-                  0.9680690519471274,
-                  -0.24384449783279583,
-                  0.058156440218274985
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.07776554798566684,
-                  "forward_m": 0.5612202292494329,
-                  "up_m": -1.125420089901447,
-                  "distance_m": 1.2601228412867571
-                }
-              },
-              {
-                "frame": 155,
-                "time_s": 5.16584,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.769205,
-                "gaze_hit_distance_m": 0.7551270209010033,
-                "gaze_hit_exit_distance_m": 0.9430602465657785,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10393065469204957,
-                  1.5719396623843214,
-                  2.48178671083224
-                ],
-                "gaze_direction_world_unit": [
-                  0.7109889560162508,
-                  -0.6934017362950047,
-                  0.11699887403729442
-                ],
-                "wearer_world_m": [
-                  0.11667118262767,
-                  1.570964328679021,
-                  2.411042174837684
-                ],
-                "right_world": [
-                  0.055737735372248354,
-                  -0.017125158150606862,
-                  -0.998298569474028
-                ],
-                "forward_world": [
-                  0.9682864381841629,
-                  -0.24296223656211297,
-                  0.058229934169318154
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.07215656106889068,
-                  "forward_m": 0.5603072162109994,
-                  "up_m": -1.1250469394046994,
-                  "distance_m": 1.2590608100255558
-                }
-              },
-              {
-                "frame": 156,
-                "time_s": 5.199168,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.768059,
-                "gaze_hit_distance_m": 0.7513752124781781,
-                "gaze_hit_exit_distance_m": 0.9385480921278835,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10463024958111049,
-                  1.571289807024356,
-                  2.4769063607882136
-                ],
-                "gaze_direction_world_unit": [
-                  0.7136540663997294,
-                  -0.6897017328054895,
-                  0.12251282902714983
-                ],
-                "wearer_world_m": [
-                  0.117607766083123,
-                  1.570308139962807,
-                  2.406205002270712
-                ],
-                "right_world": [
-                  0.0590738130646386,
-                  -0.016869938792088174,
-                  -0.9981110608420066
-                ],
-                "forward_world": [
-                  0.9674051932114924,
-                  -0.24567488187615813,
-                  0.061408831307644296
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.06911649655962745,
-                  "forward_m": 0.5596669522217761,
-                  "up_m": -1.124397084044734,
-                  "distance_m": 1.2580181374874542
-                }
-              },
-              {
-                "frame": 157,
-                "time_s": 5.232496,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.769437,
-                "gaze_hit_distance_m": 0.755533773173561,
-                "gaze_hit_exit_distance_m": 0.9437550398539514,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10485737467595707,
-                  1.5704800816706108,
-                  2.4723787759627776
-                ],
-                "gaze_direction_world_unit": [
-                  0.7093963149869518,
-                  -0.6927839774164323,
-                  0.12964269712560672
-                ],
-                "wearer_world_m": [
-                  0.118275005176747,
-                  1.569606223544685,
-                  2.4017582034309717
-                ],
-                "right_world": [
-                  0.06527834302074875,
-                  -0.014845497135718061,
-                  -0.9977566582825993
-                ],
-                "forward_world": [
-                  0.9660013197584696,
-                  -0.2497271409146264,
-                  0.06691640542872523
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.06806278308724525,
-                  "forward_m": 0.5593314557989917,
-                  "up_m": -1.1235873586909888,
-                  "distance_m": 1.2570715862554678
-                }
-              },
-              {
-                "frame": 158,
-                "time_s": 5.265824,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.768531,
-                "gaze_hit_distance_m": 0.7506968218851814,
-                "gaze_hit_exit_distance_m": 0.9376187921564941,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10475259474947954,
-                  1.5695523126533817,
-                  2.4682496284319315
-                ],
-                "gaze_direction_world_unit": [
-                  0.7141535351867989,
-                  -0.6871334603729855,
-                  0.13353776924917016
-                ],
-                "wearer_world_m": [
-                  0.11857499526665802,
-                  1.5686982674805332,
-                  2.397706921142053
-                ],
-                "right_world": [
-                  0.07099358168628944,
-                  -0.014269866877108989,
-                  -0.9973746950162022
-                ],
-                "forward_world": [
-                  0.9650037404278984,
-                  -0.25207356052614993,
-                  0.07229592688274356
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0671560626633643,
-                  "forward_m": 0.5593412609748326,
-                  "up_m": -1.1226595896737597,
-                  "distance_m": 1.2561929814711497
-                }
-              },
-              {
-                "frame": 159,
-                "time_s": 5.299152,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.821649,
-                "gaze_hit_distance_m": 0.7468754393764597,
-                "gaze_hit_exit_distance_m": 0.9326532709057704,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10432166070153484,
-                  1.568562162018658,
-                  2.4645880061616876
-                ],
-                "gaze_direction_world_unit": [
-                  0.7184243742720421,
-                  -0.6819940627394195,
-                  0.13693252659615113
-                ],
-                "wearer_world_m": [
-                  0.11843536746039598,
-                  1.5675969984548959,
-                  2.394104437567156
-                ],
-                "right_world": [
-                  0.07510716344545715,
-                  -0.01545880467903174,
-                  -0.9970556350360161
-                ],
-                "forward_world": [
-                  0.9639142966985712,
-                  -0.25496513450443076,
-                  0.07656375648592773
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.06584566569715243,
-                  "forward_m": 0.5597445844138691,
-                  "up_m": -1.121669439039036,
-                  "distance_m": 1.255427326053546
-                }
-              },
-              {
-                "frame": 160,
-                "time_s": 5.33248,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.821488,
-                "gaze_hit_distance_m": 0.746505074825973,
-                "gaze_hit_exit_distance_m": 0.9319254572301778,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.1036456882640307,
-                  1.5676729399917972,
-                  2.4614762040127443
-                ],
-                "gaze_direction_world_unit": [
-                  0.7197786293656862,
-                  -0.6802229345305386,
-                  0.1386199265874744
-                ],
-                "wearer_world_m": [
-                  0.11793990745885001,
-                  1.5665115806301082,
-                  2.3910319832203792
-                ],
-                "right_world": [
-                  0.07765214150562016,
-                  -0.017441127006303597,
-                  -0.9968279450378299
-                ],
-                "forward_world": [
-                  0.9620637547720139,
-                  -0.26098168158331986,
-                  0.07951033663566681
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.06422654803733838,
-                  "forward_m": 0.5604540669385591,
-                  "up_m": -1.1207802170121752,
-                  "distance_m": 1.2548819471420867
-                }
-              },
-              {
-                "frame": 161,
-                "time_s": 5.365808,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.824871,
-                "gaze_hit_distance_m": 0.7506196709683861,
-                "gaze_hit_exit_distance_m": 0.9368941406660493,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10328828865563594,
-                  1.5674091421381862,
-                  2.4590167547367496
-                ],
-                "gaze_direction_world_unit": [
-                  0.7163764718873354,
-                  -0.683429550679283,
-                  0.14045924599173581
-                ],
-                "wearer_world_m": [
-                  0.117703173480656,
-                  1.566100149872829,
-                  2.388599716061933
-                ],
-                "right_world": [
-                  0.07935634719627671,
-                  -0.018904533886492464,
-                  -0.9966670400681459
-                ],
-                "forward_world": [
-                  0.9605962482740287,
-                  -0.265722797031219,
-                  0.08152449288260727
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.06276307925236996,
-                  "forward_m": 0.5608691837561455,
-                  "up_m": -1.1205164191585641,
-                  "distance_m": 1.2547693295035656
-                }
-              },
-              {
-                "frame": 162,
-                "time_s": 5.399136,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.769918,
-                "gaze_hit_distance_m": 0.7476713537362911,
-                "gaze_hit_exit_distance_m": 0.9333072481243648,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10373186935506389,
-                  1.568021474068154,
-                  2.457321066545294
-                ],
-                "gaze_direction_world_unit": [
-                  0.7184685961500865,
-                  -0.6797270313302832,
-                  0.1475602901360798
-                ],
-                "wearer_world_m": [
-                  0.118238925799417,
-                  1.566691410169843,
-                  2.386923353909536
-                ],
-                "right_world": [
-                  0.08066114853098427,
-                  -0.01924026133450299,
-                  -0.9965558646967281
-                ],
-                "forward_world": [
-                  0.9605688884504968,
-                  -0.2654045306135613,
-                  0.08287246630076978
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.06177211579682366,
-                  "forward_m": 0.5604807850123793,
-                  "up_m": -1.121128751088532,
-                  "distance_m": 1.255093592800113
-                }
-              },
-              {
-                "frame": 163,
-                "time_s": 5.432464,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.831321,
-                "gaze_hit_distance_m": 0.7584584898027086,
-                "gaze_hit_exit_distance_m": 0.9472086165187084,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10506501868229517,
-                  1.5690341766622653,
-                  2.4565041606672833
-                ],
-                "gaze_direction_world_unit": [
-                  0.7066113469841837,
-                  -0.6925526508939446,
-                  0.14515932644156032
-                ],
-                "wearer_world_m": [
-                  0.11959903562885302,
-                  1.5677295808708418,
-                  2.386111532628417
-                ],
-                "right_world": [
-                  0.08104614675850835,
-                  -0.01946897075906015,
-                  -0.9965201860841462
-                ],
-                "forward_world": [
-                  0.9617876362780902,
-                  -0.26081189677986744,
-                  0.08331684824026692
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.06106669124398989,
-                  "forward_m": 0.5592004116309872,
-                  "up_m": -1.1221414536826433,
-                  "distance_m": 1.255389878331876
-                }
-              },
-              {
-                "frame": 164,
-                "time_s": 5.465792,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.776647,
-                "gaze_hit_distance_m": 0.7615115398963094,
-                "gaze_hit_exit_distance_m": 0.9518644517908561,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.10747316669200059,
-                  1.5700911229728283,
-                  2.456549339469677
-                ],
-                "gaze_direction_world_unit": [
-                  0.7004938366581008,
-                  -0.6979144394795709,
-                  0.14907655741239267
-                ],
-                "wearer_world_m": [
-                  0.121968724055974,
-                  1.5688420981393891,
-                  2.386147773757875
-                ],
-                "right_world": [
-                  0.08051331670391854,
-                  -0.01965496962599178,
-                  -0.9965597262594632
-                ],
-                "forward_world": [
-                  0.9638497031783693,
-                  -0.2532333379606435,
-                  0.08286510863010965
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.060618785038146765,
-                  "forward_m": 0.5568386801378901,
-                  "up_m": -1.1231983999932063,
-                  "distance_m": 1.2552586668509933
-                }
-              },
-              {
-                "frame": 165,
-                "time_s": 5.49912,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.792735,
-                "gaze_hit_distance_m": 0.7661066205460609,
-                "gaze_hit_exit_distance_m": 0.9525590329845689,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.11129682770288893,
-                  1.5710906001861302,
-                  2.4572874223177554
-                ],
-                "gaze_direction_world_unit": [
-                  0.6910808463321053,
-                  -0.7058901123735725,
-                  0.15532679448867315
-                ],
-                "wearer_world_m": [
-                  0.125731854719547,
-                  1.570000417671034,
-                  2.38687078225227
-                ],
-                "right_world": [
-                  0.07968151601945361,
-                  -0.01861362494930549,
-                  -0.9966465717450139
-                ],
-                "forward_world": [
-                  0.9663406298972632,
-                  -0.24391037866408197,
-                  0.08181389973412306
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.06058385463904792,
-                  "forward_m": 0.5530484421680408,
-                  "up_m": -1.1241978772065082,
-                  "distance_m": 1.2544618003995203
-                }
-              },
-              {
-                "frame": 166,
-                "time_s": 5.532448,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.817924,
-                "gaze_hit_distance_m": 0.768959995323451,
-                "gaze_hit_exit_distance_m": 0.9413226172042567,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.11659013608937027,
-                  1.5719552195589999,
-                  2.4586508476051274
-                ],
-                "gaze_direction_world_unit": [
-                  0.6816489663116972,
-                  -0.7153262572851014,
-                  0.15382793102906744
-                ],
-                "wearer_world_m": [
-                  0.13084662751557302,
-                  1.57102673422205,
-                  2.3881955279465403
-                ],
-                "right_world": [
-                  0.07719294672983418,
-                  -0.01756645910781071,
-                  -0.9968614088676413
-                ],
-                "forward_world": [
-                  0.9689381568261665,
-                  -0.23429180665978838,
-                  0.07915931769794071
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.060152024519942594,
-                  "forward_m": 0.5478454194305118,
-                  "up_m": -1.1250624965793778,
-                  "distance_m": 1.2529177974328414
-                }
-              },
-              {
-                "frame": 167,
-                "time_s": 5.565776,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.895638,
-                "gaze_hit_distance_m": 0.9014205233884197,
-                "gaze_hit_exit_distance_m": 1.4199065551813634,
-                "gaze_depth_obb_residual_m": 0.005782523388419669,
-                "gaze_origin_world_m": [
-                  0.12322142273063677,
-                  1.572611047907181,
-                  2.460632010511642
-                ],
-                "gaze_direction_world_unit": [
-                  0.6615591769444676,
-                  -0.749857023153086,
-                  0.007341677502540334
-                ],
-                "wearer_world_m": [
-                  0.137012163709236,
-                  1.5716603353716883,
-                  2.390084343576895
-                ],
-                "right_world": [
-                  0.07064992254297692,
-                  -0.018979286640743886,
-                  -0.997320597964005
-                ],
-                "forward_world": [
-                  0.9714802040727073,
-                  -0.22556783121299814,
-                  0.07311201417493068
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.05806271720512628,
-                  "forward_m": 0.5414727052590415,
-                  "up_m": -1.125718324927559,
-                  "distance_m": 1.2506349640802108
-                }
-              },
-              {
-                "frame": 168,
-                "time_s": 5.599104,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.839164,
-                "gaze_hit_distance_m": 0.7873207036974524,
-                "gaze_hit_exit_distance_m": 0.8949334950570933,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.13123619901915914,
-                  1.5729738771416648,
-                  2.463088128189933
-                ],
-                "gaze_direction_world_unit": [
-                  0.6532778269999807,
-                  -0.7518987422513607,
-                  -0.08874887126608988
-                ],
-                "wearer_world_m": [
-                  0.144275673380304,
-                  1.5719414114706751,
-                  2.392398894044815
-                ],
-                "right_world": [
-                  0.060095353357369985,
-                  -0.021321581462813766,
-                  -0.9979648985153627
-                ],
-                "forward_world": [
-                  0.9743268034647523,
-                  -0.21605995151887328,
-                  0.06328805100348939
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.05429995259980207,
-                  "forward_m": 0.533906789841485,
-                  "up_m": -1.1260811541620428,
-                  "distance_m": 1.2475350753816554
-                }
-              },
-              {
-                "frame": 169,
-                "time_s": 5.632432,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.830773,
-                "gaze_hit_distance_m": 0.7832885702541695,
-                "gaze_hit_exit_distance_m": 0.8903707782135996,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.1406620836546692,
-                  1.5729913738794778,
-                  2.465842049997652
-                ],
-                "gaze_direction_world_unit": [
-                  0.6485129908551546,
-                  -0.7557779265731905,
-                  -0.09072279976296543
-                ],
-                "wearer_world_m": [
-                  0.15276120668363902,
-                  1.5719960090332368,
-                  2.394985277761311
-                ],
-                "right_world": [
-                  0.046923221182481045,
-                  -0.02231716659853733,
-                  -0.998649165317267
-                ],
-                "forward_world": [
-                  0.9776697536061361,
-                  -0.20399018570760116,
-                  0.050496108946092966
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.04955656297647945,
-                  "forward_m": 0.5250579276192795,
-                  "up_m": -1.1260986508998558,
-                  "distance_m": 1.2435786809354923
-                }
-              },
-              {
-                "frame": 170,
-                "time_s": 5.66576,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.807985,
-                "gaze_hit_distance_m": 0.7864156066757773,
-                "gaze_hit_exit_distance_m": 0.8939561021962892,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.15118084493387907,
-                  1.5727330794004464,
-                  2.4688068744859737
-                ],
-                "gaze_direction_world_unit": [
-                  0.6520732653742558,
-                  -0.7524022878149047,
-                  -0.09322689459084582
-                ],
-                "wearer_world_m": [
-                  0.162344276877832,
-                  1.5717960023322108,
-                  2.397795879740083
-                ],
-                "right_world": [
-                  0.033858538085930534,
-                  -0.023020244263520867,
-                  -0.9991614823204167
-                ],
-                "forward_world": [
-                  0.9807026308217586,
-                  -0.1918452433259761,
-                  0.03765305449069012
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.04528951486906564,
-                  "forward_m": 0.5150750764667239,
-                  "up_m": -1.1258403564208244,
-                  "distance_m": 1.2389856345200312
-                }
-              },
-              {
-                "frame": 171,
-                "time_s": 5.699088,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.796701,
-                "gaze_hit_distance_m": 0.7828963397037301,
-                "gaze_hit_exit_distance_m": 0.8900080196092873,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.16231026094048112,
-                  1.5721026349973597,
-                  2.471839292174075
-                ],
-                "gaze_direction_world_unit": [
-                  0.6489310900022267,
-                  -0.7550425519902486,
-                  -0.09380397173134408
-                ],
-                "wearer_world_m": [
-                  0.17268248787326002,
-                  1.571119113267327,
-                  2.400709050402649
-                ],
-                "right_world": [
-                  0.022828883572816705,
-                  -0.02479868212174549,
-                  -0.9994317722785506
-                ],
-                "forward_world": [
-                  0.9827795280913025,
-                  -0.18280110961938187,
-                  0.0269843192717521
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.04237762196676695,
-                  "forward_m": 0.5043559904849003,
-                  "up_m": -1.1252099120177377,
-                  "distance_m": 1.2338844317489062
-                }
-              },
-              {
-                "frame": 172,
-                "time_s": 5.732416,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.877454,
-                "gaze_hit_distance_m": 0.7862918560367321,
-                "gaze_hit_exit_distance_m": 0.894124481604484,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.17340188830865888,
-                  1.570622523753314,
-                  2.474630453163035
-                ],
-                "gaze_direction_world_unit": [
-                  0.6532691547794901,
-                  -0.7497460025877212,
-                  -0.10545303702323405
-                ],
-                "wearer_world_m": [
-                  0.18310044659322103,
-                  1.5694233224509349,
-                  2.403408535297554
-                ],
-                "right_world": [
-                  0.01340907003550268,
-                  -0.028265593342251788,
-                  -0.9995105067350689
-                ],
-                "forward_world": [
-                  0.9836409333990237,
-                  -0.17921197992885227,
-                  0.01826418330718177
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.040263463996359265,
-                  "forward_m": 0.49359172047304645,
-                  "up_m": -1.123729800773692,
-                  "distance_m": 1.2281017253921678
-                }
-              },
-              {
-                "frame": 173,
-                "time_s": 5.765744,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.871336,
-                "gaze_hit_distance_m": 0.7808763018868858,
-                "gaze_hit_exit_distance_m": 0.8884337205384459,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.1838748724852421,
-                  1.5683073067207625,
-                  2.4769576907676276
-                ],
-                "gaze_direction_world_unit": [
-                  0.6499319225543716,
-                  -0.7519240511669305,
-                  -0.11044780360645295
-                ],
-                "wearer_world_m": [
-                  0.19297474630568304,
-                  1.566760328543085,
-                  2.405663505478995
-                ],
-                "right_world": [
-                  0.004989725269494094,
-                  -0.032904399685361324,
-                  -0.9994460481302041
-                ],
-                "forward_world": [
-                  0.9834114569092726,
-                  -0.18106278880981838,
-                  0.010870737233210914
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.03837798774907532,
-                  "forward_m": 0.4834012905473992,
-                  "up_m": -1.1214145837411404,
-                  "distance_m": 1.221864921784608
-                }
-              },
-              {
-                "frame": 174,
-                "time_s": 5.799072,
-                "gazed_object_id": "4433484210031167",
-                "gazed_object_name": "BlackCeramicMug",
-                "gaze_depth_m": 0.862661,
-                "gaze_hit_distance_m": 0.7728208005762999,
-                "gaze_hit_exit_distance_m": 0.879736872581079,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.1932782038459683,
-                  1.5658070944248916,
-                  2.4787345862968886
-                ],
-                "gaze_direction_world_unit": [
-                  0.6446578142559399,
-                  -0.7565537963790405,
-                  -0.1097390345465803
-                ],
-                "wearer_world_m": [
-                  0.201824957621672,
-                  1.5639186392478368,
-                  2.4073802000410898
-                ],
-                "right_world": [
-                  -0.002811336063854919,
-                  -0.037119200522485726,
-                  -0.9993068904706447
-                ],
-                "forward_world": [
-                  0.9826161828356867,
-                  -0.18560275263037307,
-                  0.004129823900978824
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.036405015526803086,
-                  "forward_m": 0.4742622259037669,
-                  "up_m": -1.1189143714452696,
-                  "distance_m": 1.215924659301352
-                }
-              },
-              {
-                "frame": 175,
-                "time_s": 5.8324,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.908501,
-                "gaze_hit_distance_m": 0.9123812209844077,
-                "gaze_hit_exit_distance_m": 1.2685154540659445,
-                "gaze_depth_obb_residual_m": 0.0038802209844076563,
-                "gaze_origin_world_m": [
-                  0.2014743493443171,
-                  1.5634831005318868,
-                  2.4799751690836835
-                ],
-                "gaze_direction_world_unit": [
-                  0.6784489334537717,
-                  -0.7315622355099718,
-                  0.06725875609236781
-                ],
-                "wearer_world_m": [
-                  0.20955151059426602,
-                  1.56124836826314,
-                  2.4085760994901
-                ],
-                "right_world": [
-                  -0.009437044102995118,
-                  -0.04135437148997492,
-                  -0.9990999740552833
-                ],
-                "forward_world": [
-                  0.9816848114161258,
-                  -0.1905072357300301,
-                  -0.0013871443285513596
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0345751072583117,
-                  "forward_m": 0.46628350023083365,
-                  "up_m": -1.1165903775522648,
-                  "distance_m": 1.210645662124098
-                }
-              },
-              {
-                "frame": 176,
-                "time_s": 5.865728,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.726119,
-                "gaze_hit_distance_m": 0.6850762067454426,
-                "gaze_hit_exit_distance_m": 0.836849961656277,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.208541988243925,
-                  1.5614459985748228,
-                  2.480753572010102
-                ],
-                "gaze_direction_world_unit": [
-                  0.6767622202603489,
-                  -0.7268276405048029,
-                  0.11710883069394884
-                ],
-                "wearer_world_m": [
-                  0.21629701500935603,
-                  1.558757438363252,
-                  2.4093344365850897
-                ],
-                "right_world": [
-                  -0.013979939857250268,
-                  -0.04724930538164862,
-                  -0.9987852944564914
-                ],
-                "forward_world": [
-                  0.9809592052966484,
-                  -0.19416070062548804,
-                  -0.004545313673210538
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.03332872061884804,
-                  "forward_m": 0.4593405397778345,
-                  "up_m": -1.1145532755952008,
-                  "distance_m": 1.2060840848403043
-                }
-              },
-              {
-                "frame": 177,
-                "time_s": 5.899056,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.730711,
-                "gaze_hit_distance_m": 0.6719106992394804,
-                "gaze_hit_exit_distance_m": 0.8433876504867114,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.21452409853192841,
-                  1.5597098097054047,
-                  2.4811023857199257
-                ],
-                "gaze_direction_world_unit": [
-                  0.6645794294039211,
-                  -0.7385307457804995,
-                  0.1136068640094321
-                ],
-                "wearer_world_m": [
-                  0.222025229029948,
-                  1.556496900774607,
-                  2.409677796407462
-                ],
-                "right_world": [
-                  -0.01755468093545015,
-                  -0.054259396758723655,
-                  -0.9983725512255603
-                ],
-                "forward_world": [
-                  0.9804274765171634,
-                  -0.19677176098860058,
-                  -0.006545026175041269
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.032134301888839034,
-                  "forward_m": 0.4534367788031999,
-                  "up_m": -1.1128170867257827,
-                  "distance_m": 1.2022236987395187
-                }
-              },
-              {
-                "frame": 178,
-                "time_s": 5.932384,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.719256,
-                "gaze_hit_distance_m": 0.6727609444639653,
-                "gaze_hit_exit_distance_m": 0.8327226879330111,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.21949940807964213,
-                  1.558252445642214,
-                  2.481053376225311
-                ],
-                "gaze_direction_world_unit": [
-                  0.666913738622054,
-                  -0.7355165855652382,
-                  0.11933741071268567
-                ],
-                "wearer_world_m": [
-                  0.226710486399505,
-                  1.5545259327568561,
-                  2.4096238644519548
-                ],
-                "right_world": [
-                  -0.0216272485553079,
-                  -0.06118031004207908,
-                  -0.9978923948918953
-                ],
-                "forward_world": [
-                  0.9799823842349981,
-                  -0.19887860035078395,
-                  -0.00904593342898019
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.030337630008368366,
-                  "forward_m": 0.448554487060504,
-                  "up_m": -1.111359722662592,
-                  "distance_m": 1.199004503030514
-                }
-              },
-              {
-                "frame": 179,
-                "time_s": 5.965712,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.711194,
-                "gaze_hit_distance_m": 0.672063274490247,
-                "gaze_hit_exit_distance_m": 0.8265836459748126,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.22374071898546166,
-                  1.5570613404651694,
-                  2.480699069653878
-                ],
-                "gaze_direction_world_unit": [
-                  0.6664655688513875,
-                  -0.7345816207589437,
-                  0.12733219537399
-                ],
-                "wearer_world_m": [
-                  0.2306547474346,
-                  1.5528507327876206,
-                  2.4092670831590994
-                ],
-                "right_world": [
-                  -0.025780139795911594,
-                  -0.06788503253273484,
-                  -0.9973600186242344
-                ],
-                "forward_world": [
-                  0.9798477400895207,
-                  -0.19939964127126358,
-                  -0.011755394606325964
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.02821919925535858,
-                  "forward_m": 0.4444068742241849,
-                  "up_m": -1.1101686174855474,
-                  "distance_m": 1.1963082834264351
-                }
-              },
-              {
-                "frame": 180,
-                "time_s": 5.99904,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.689458,
-                "gaze_hit_distance_m": 0.6735791914230185,
-                "gaze_hit_exit_distance_m": 0.8150664655333104,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.22756327307920565,
-                  1.5560814977246311,
-                  2.480094957321147
-                ],
-                "gaze_direction_world_unit": [
-                  0.6716017222759703,
-                  -0.7313880038962937,
-                  0.11841754258785087
-                ],
-                "wearer_world_m": [
-                  0.234196253718029,
-                  1.551433847178123,
-                  2.408663419375765
-                ],
-                "right_world": [
-                  -0.029681164989278697,
-                  -0.07427572731539311,
-                  -0.9967959393861161
-                ],
-                "forward_world": [
-                  0.9802648037688908,
-                  -0.19715660091132914,
-                  -0.014497903608062301
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.025982848897426122,
-                  "forward_m": 0.440670052584178,
-                  "up_m": -1.109188774745009,
-                  "distance_m": 1.19396471950137
-                }
-              },
-              {
-                "frame": 181,
-                "time_s": 6.032368,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.761604,
-                "gaze_hit_distance_m": 0.6792897463928199,
-                "gaze_hit_exit_distance_m": 0.7988137262186324,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.23127345993354426,
-                  1.5551608830976158,
-                  2.4791916130219733
-                ],
-                "gaze_direction_world_unit": [
-                  0.6809335733564778,
-                  -0.7238415519395451,
-                  0.11127837328847523
-                ],
-                "wearer_world_m": [
-                  0.237583940229935,
-                  1.5501689608381297,
-                  2.407754086108004
-                ],
-                "right_world": [
-                  -0.034124105578355046,
-                  -0.07977648908014791,
-                  -0.9962285165605949
-                ],
-                "forward_world": [
-                  0.9812953411501438,
-                  -0.1916397483116017,
-                  -0.018266370851617697
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.023234097247390416,
-                  "forward_m": 0.4370650772714317,
-                  "up_m": -1.1082681601179938,
-                  "distance_m": 1.1917165202822955
-                }
-              },
-              {
-                "frame": 182,
-                "time_s": 6.065696,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.884441,
-                "gaze_hit_distance_m": 0.8881659939616949,
-                "gaze_hit_exit_distance_m": 1.2310094168018364,
-                "gaze_depth_obb_residual_m": 0.0037249939616949,
-                "gaze_origin_world_m": [
-                  0.2350331586747798,
-                  1.554009656474581,
-                  2.4779841193097774
-                ],
-                "gaze_direction_world_unit": [
-                  0.6722964351101208,
-                  -0.7402817379809374,
-                  -0.0006721236088206295
-                ],
-                "wearer_world_m": [
-                  0.240912161809409,
-                  1.5487885415539249,
-                  2.406526166763344
-                ],
-                "right_world": [
-                  -0.04006214373650352,
-                  -0.08385039551667754,
-                  -0.9956727051651728
-                ],
-                "forward_world": [
-                  0.9825119817295542,
-                  -0.1846484412622985,
-                  -0.02398247062476544
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.01956453047330227,
-                  "forward_m": 0.43344385550546055,
-                  "up_m": -1.1071169334949589,
-                  "distance_m": 1.1892348438619065
-                }
-              },
-              {
-                "frame": 183,
-                "time_s": 6.099024,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.893397,
-                "gaze_hit_distance_m": 0.8976111165222336,
-                "gaze_hit_exit_distance_m": 1.2071089563586686,
-                "gaze_depth_obb_residual_m": 0.00421411652223358,
-                "gaze_origin_world_m": [
-                  0.23882338308183132,
-                  1.5522128138516993,
-                  2.4765454071194895
-                ],
-                "gaze_direction_world_unit": [
-                  0.6826444737651131,
-                  -0.7302937771722678,
-                  -0.025836436701182797
-                ],
-                "wearer_world_m": [
-                  0.244105967956411,
-                  1.546863783760513,
-                  2.4050503452261918
-                ],
-                "right_world": [
-                  -0.04831824385892003,
-                  -0.08616289664759703,
-                  -0.9951086888132805
-                ],
-                "forward_world": [
-                  0.9830642044645144,
-                  -0.1804263202368304,
-                  -0.03211094620762095
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.014708764009499227,
-                  "forward_m": 0.42981185196725347,
-                  "up_m": -1.1053200908720773,
-                  "distance_m": 1.1861426056242843
-                }
-              },
-              {
-                "frame": 184,
-                "time_s": 6.132352,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.890154,
-                "gaze_hit_distance_m": 0.8941831420510716,
-                "gaze_hit_exit_distance_m": 1.2016451791567366,
-                "gaze_depth_obb_residual_m": 0.0040291420510716325,
-                "gaze_origin_world_m": [
-                  0.2425674095050666,
-                  1.5497898087466913,
-                  2.4750187675318895
-                ],
-                "gaze_direction_world_unit": [
-                  0.6826261859321987,
-                  -0.7303907898570925,
-                  -0.02346879569964616
-                ],
-                "wearer_world_m": [
-                  0.247191487132996,
-                  1.5443448189453608,
-                  2.403485336933642
-                ],
-                "right_world": [
-                  -0.057463802674842135,
-                  -0.08764828601377038,
-                  -0.9944926793802934
-                ],
-                "forward_world": [
-                  0.9829464919219737,
-                  -0.17926349235081823,
-                  -0.040997491733922975
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.009443073500986405,
-                  "forward_m": 0.4261843872479216,
-                  "up_m": -1.1028970857670692,
-                  "distance_m": 1.1824889372089384
-                }
-              },
-              {
-                "frame": 185,
-                "time_s": 6.16568,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.881088,
-                "gaze_hit_distance_m": 0.8848610615695865,
-                "gaze_hit_exit_distance_m": 1.2052000564488174,
-                "gaze_depth_obb_residual_m": 0.0037730615695865666,
-                "gaze_origin_world_m": [
-                  0.24612340078275635,
-                  1.547090379045169,
-                  2.4735830754618133
-                ],
-                "gaze_direction_world_unit": [
-                  0.6776588703954373,
-                  -0.7350238787342478,
-                  -0.02276736842152105
-                ],
-                "wearer_world_m": [
-                  0.250230612101435,
-                  1.5414855216886152,
-                  2.402030450840515
-                ],
-                "right_world": [
-                  -0.06464069929351074,
-                  -0.08992596558251094,
-                  -0.9938485300632586
-                ],
-                "forward_world": [
-                  0.9827070130276738,
-                  -0.17891055723934962,
-                  -0.04772775978958599
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.005157556644400537,
-                  "forward_m": 0.4226643727998117,
-                  "up_m": -1.100197656065547,
-                  "distance_m": 1.178654503610321
-                }
-              },
-              {
-                "frame": 186,
-                "time_s": 6.199008,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.884135,
-                "gaze_hit_distance_m": 0.8878876703425614,
-                "gaze_hit_exit_distance_m": 1.1904947383301785,
-                "gaze_depth_obb_residual_m": 0.003752670342561437,
-                "gaze_origin_world_m": [
-                  0.2491317596769683,
-                  1.5445046325814418,
-                  2.4723433490071267
-                ],
-                "gaze_direction_world_unit": [
-                  0.683511486300028,
-                  -0.7296086407537259,
-                  -0.021983617387207055
-                ],
-                "wearer_world_m": [
-                  0.252956948435741,
-                  1.5386865744923741,
-                  2.400792109800304
-                ],
-                "right_world": [
-                  -0.0685702139366195,
-                  -0.09275214645252312,
-                  -0.9933253067797762
-                ],
-                "forward_world": [
-                  0.9823185631776108,
-                  -0.1801396147346236,
-                  -0.05098979937139919
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0024483920614610973,
-                  "forward_m": 0.41963375642333955,
-                  "up_m": -1.0976119096018198,
-                  "distance_m": 1.1751326391380281
-                }
-              },
-              {
-                "frame": 187,
-                "time_s": 6.232336,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.883902,
-                "gaze_hit_distance_m": 0.8875435038956679,
-                "gaze_hit_exit_distance_m": 1.183554775849707,
-                "gaze_depth_obb_residual_m": 0.0036415038956679746,
-                "gaze_origin_world_m": [
-                  0.25117897862139793,
-                  1.5424371983129435,
-                  2.4713243007806267
-                ],
-                "gaze_direction_world_unit": [
-                  0.6857746433586533,
-                  -0.7275858943259007,
-                  -0.018218257443872843
-                ],
-                "wearer_world_m": [
-                  0.254968398770232,
-                  1.5364040667901149,
-                  2.399788971607107
-                ],
-                "right_world": [
-                  -0.06911662568507365,
-                  -0.09522036995949024,
-                  -0.9930538621840652
-                ],
-                "forward_world": [
-                  0.9815358586583318,
-                  -0.18445636985924985,
-                  -0.050628112607515374
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0013362143741393363,
-                  "forward_m": 0.41753360528035066,
-                  "up_m": -1.0955444753333214,
-                  "distance_m": 1.172446176187513
-                }
-              },
-              {
-                "frame": 188,
-                "time_s": 6.265664,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.871304,
-                "gaze_hit_distance_m": 0.8745445023164901,
-                "gaze_hit_exit_distance_m": 1.199913268668531,
-                "gaze_depth_obb_residual_m": 0.0032405023164900904,
-                "gaze_origin_world_m": [
-                  0.2519902557330099,
-                  1.5412973625567976,
-                  2.470368147092387
-                ],
-                "gaze_direction_world_unit": [
-                  0.6756747894287015,
-                  -0.7371630579411654,
-                  -0.00736240024106577
-                ],
-                "wearer_world_m": [
-                  0.255877425858952,
-                  1.53507870149344,
-                  2.3988539536480706
-                ],
-                "right_world": [
-                  -0.06783569595363353,
-                  -0.09695586403653148,
-                  -0.992974258872513
-                ],
-                "forward_world": [
-                  0.9803360078032675,
-                  -0.19133581893335644,
-                  -0.04828991817609318
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0009714411922989788,
-                  "forward_m": 0.41665469049951104,
-                  "up_m": -1.0944046395771756,
-                  "distance_m": 1.171068569087881
-                }
-              },
-              {
-                "frame": 189,
-                "time_s": 6.298992,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.862597,
-                "gaze_hit_distance_m": 0.8656764218535903,
-                "gaze_hit_exit_distance_m": 1.216085169016589,
-                "gaze_depth_obb_residual_m": 0.003079421853590336,
-                "gaze_origin_world_m": [
-                  0.251315337658968,
-                  1.5414028967033453,
-                  2.4693646532999725
-                ],
-                "gaze_direction_world_unit": [
-                  0.6672299547517413,
-                  -0.7448262318824675,
-                  -0.006170233525066904
-                ],
-                "wearer_world_m": [
-                  0.255353079955121,
-                  1.5350791954272869,
-                  2.397868016034147
-                ],
-                "right_world": [
-                  -0.0658226307670371,
-                  -0.09747627154008842,
-                  -0.9930587886754487
-                ],
-                "forward_world": [
-                  0.9789636890682281,
-                  -0.19892807352036632,
-                  -0.045362066216181385
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0007689131457076295,
-                  "forward_m": 0.4172547651575349,
-                  "up_m": -1.0945101737237233,
-                  "distance_m": 1.1713821979209842
-                }
-              },
-              {
-                "frame": 190,
-                "time_s": 6.33232,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.862584,
-                "gaze_hit_distance_m": 0.8655736164991222,
-                "gaze_hit_exit_distance_m": 1.2233388106390477,
-                "gaze_depth_obb_residual_m": 0.0029896164991222163,
-                "gaze_origin_world_m": [
-                  0.24889150949315939,
-                  1.5428713229359974,
-                  2.4683934792233204
-                ],
-                "gaze_direction_world_unit": [
-                  0.6652174415219908,
-                  -0.746649645569301,
-                  0.0002495319097216009
-                ],
-                "wearer_world_m": [
-                  0.253179882670976,
-                  1.5366214165367131,
-                  2.396904947090621
-                ],
-                "right_world": [
-                  -0.06238601972008895,
-                  -0.09585714021793836,
-                  -0.9934381677853552
-                ],
-                "forward_world": [
-                  0.9781547790033251,
-                  -0.2036366524119317,
-                  -0.04177729176739836
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0010960102961564064,
-                  "forward_m": 0.4195993981263335,
-                  "up_m": -1.0959785999563754,
-                  "distance_m": 1.1735940712487634
-                }
-              },
-              {
-                "frame": 191,
-                "time_s": 6.365648,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.862475,
-                "gaze_hit_distance_m": 0.8655129422626038,
-                "gaze_hit_exit_distance_m": 1.2365984700748336,
-                "gaze_depth_obb_residual_m": 0.0030379422626037877,
-                "gaze_origin_world_m": [
-                  0.2446434245310478,
-                  1.5456688115645814,
-                  2.4675677781923264
-                ],
-                "gaze_direction_world_unit": [
-                  0.661504094434511,
-                  -0.7499376852479108,
-                  0.0024085870096682838
-                ],
-                "wearer_world_m": [
-                  0.24935294338299901,
-                  1.539659635028479,
-                  2.396085109449889
-                ],
-                "right_world": [
-                  -0.05652755159612882,
-                  -0.09256262166101407,
-                  -0.9941009993867767
-                ],
-                "forward_world": [
-                  0.9784713255918838,
-                  -0.2030882944038775,
-                  -0.03672886699295547
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0025125417964479597,
-                  "forward_m": 0.42375884390444346,
-                  "up_m": -1.0987760885849593,
-                  "distance_m": 1.177707358642617
-                }
-              },
-              {
-                "frame": 192,
-                "time_s": 6.398976,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.880098,
-                "gaze_hit_distance_m": 0.8834140148485901,
-                "gaze_hit_exit_distance_m": 1.223578690996359,
-                "gaze_depth_obb_residual_m": 0.00331601484859001,
-                "gaze_origin_world_m": [
-                  0.23873043717452766,
-                  1.549595641420769,
-                  2.4669913733526068
-                ],
-                "gaze_direction_world_unit": [
-                  0.6733476039872585,
-                  -0.7392558763841198,
-                  0.010185943067057668
-                ],
-                "wearer_world_m": [
-                  0.24409613759844395,
-                  1.5438483238732783,
-                  2.395533418575206
-                ],
-                "right_world": [
-                  -0.04733845175433338,
-                  -0.08968620937713005,
-                  -0.9948444375042078
-                ],
-                "forward_world": [
-                  0.9800127565759874,
-                  -0.1968259196959424,
-                  -0.028888653208140713
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.005578184232097633,
-                  "forward_m": 0.42955253449388625,
-                  "up_m": -1.102702918441147,
-                  "distance_m": 1.183489422306091
-                }
-              },
-              {
-                "frame": 193,
-                "time_s": 6.432304,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.898748,
-                "gaze_hit_distance_m": 0.9024887224330237,
-                "gaze_hit_exit_distance_m": 1.2141991874255127,
-                "gaze_depth_obb_residual_m": 0.003740722433023702,
-                "gaze_origin_world_m": [
-                  0.23135042677304568,
-                  1.554245997577265,
-                  2.4664715706366893
-                ],
-                "gaze_direction_world_unit": [
-                  0.6846405996764662,
-                  -0.728798983014052,
-                  0.010922070881126178
-                ],
-                "wearer_world_m": [
-                  0.237495412222215,
-                  1.5487468832533682,
-                  2.395056862092285
-                ],
-                "right_world": [
-                  -0.03637769981001626,
-                  -0.08747460535468743,
-                  -0.9955023135957919
-                ],
-                "forward_world": [
-                  0.9822154569240489,
-                  -0.18674369457250287,
-                  -0.019483036644563856
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.009525251606501375,
-                  "forward_m": 0.43677224405111703,
-                  "up_m": -1.1073532745976429,
-                  "distance_m": 1.1904974242100412
-                }
-              },
-              {
-                "frame": 194,
-                "time_s": 6.465632,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.932366,
-                "gaze_hit_distance_m": 0.9369428328264139,
-                "gaze_hit_exit_distance_m": 1.18807271027146,
-                "gaze_depth_obb_residual_m": 0.004576832826413857,
-                "gaze_origin_world_m": [
-                  0.22270799516621292,
-                  1.5591022868488398,
-                  2.4656398716883796
-                ],
-                "gaze_direction_world_unit": [
-                  0.7070467112764814,
-                  -0.707153184675419,
-                  0.004395620152504276
-                ],
-                "wearer_world_m": [
-                  0.22954412272392602,
-                  1.553873657012305,
-                  2.394267674783372
-                ],
-                "right_world": [
-                  -0.02661780493861332,
-                  -0.08498611602813472,
-                  -0.9960265320475667
-                ],
-                "forward_world": [
-                  0.9842625854140586,
-                  -0.17635323672123376,
-                  -0.011256058456546425
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.012748537597877453,
-                  "forward_m": 0.44524796776021114,
-                  "up_m": -1.1122095638692178,
-                  "distance_m": 1.1981812300648926
-                }
-              },
-              {
-                "frame": 195,
-                "time_s": 6.49896,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.965053,
-                "gaze_hit_distance_m": 0.9702626895621754,
-                "gaze_hit_exit_distance_m": 1.17083177248224,
-                "gaze_depth_obb_residual_m": 0.005209689562175379,
-                "gaze_origin_world_m": [
-                  0.21294094062148308,
-                  1.5638807767992315,
-                  2.4644254708787203
-                ],
-                "gaze_direction_world_unit": [
-                  0.7258046513319542,
-                  -0.6878433770785561,
-                  0.008893633344554674
-                ],
-                "wearer_world_m": [
-                  0.22036190441005601,
-                  1.558915359477633,
-                  2.393092900279652
-                ],
-                "right_world": [
-                  -0.018358615806659373,
-                  -0.08222898383666996,
-                  -0.9964443564207952
-                ],
-                "forward_world": [
-                  0.9856205240214706,
-                  -0.16892122187544756,
-                  -0.004219410829425452
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.015049585850678233,
-                  "forward_m": 0.45485843240872076,
-                  "up_m": -1.1169880538196095,
-                  "distance_m": 1.206242121640725
-                }
-              },
-              {
-                "frame": 196,
-                "time_s": 6.532288,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.683901,
-                "gaze_hit_distance_m": 0.6856223760782337,
-                "gaze_hit_exit_distance_m": 0.7313865677608451,
-                "gaze_depth_obb_residual_m": 0.0017213760782337495,
-                "gaze_origin_world_m": [
-                  0.20226419367403906,
-                  1.5684756215471016,
-                  2.4628866534657154
-                ],
-                "gaze_direction_world_unit": [
-                  0.7401586727810392,
-                  -0.649672379588409,
-                  0.1734673983979254
-                ],
-                "wearer_world_m": [
-                  0.210212453232002,
-                  1.563722536715487,
-                  2.391596436355773
-                ],
-                "right_world": [
-                  -0.010943797041123193,
-                  -0.07968873726954973,
-                  -0.9967597195205615
-                ],
-                "forward_world": [
-                  0.9862122297855815,
-                  -0.1654680450154183,
-                  0.002400812389011464
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.01678067967537055,
-                  "forward_m": 0.4653843689406121,
-                  "up_m": -1.1215828985674796,
-                  "distance_m": 1.2145208748746676
-                }
-              },
-              {
-                "frame": 197,
-                "time_s": 6.565616,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.652765,
-                "gaze_hit_distance_m": 0.6483560763165284,
-                "gaze_hit_exit_distance_m": 0.7243594878241141,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.19128655155990432,
-                  1.5730785407380425,
-                  2.46108838137555
-                ],
-                "gaze_direction_world_unit": [
-                  0.7664153705926218,
-                  -0.609251449671367,
-                  0.2035194113413058
-                ],
-                "wearer_world_m": [
-                  0.199691178825786,
-                  1.5684940217878134,
-                  2.389839478734761
-                ],
-                "right_world": [
-                  -0.004471893547773442,
-                  -0.07812679744817874,
-                  -0.9969334008290576
-                ],
-                "forward_world": [
-                  0.9872387969698375,
-                  -0.15904398734965772,
-                  0.008035411966410555
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.01795642917675458,
-                  "forward_m": 0.47623736082000995,
-                  "up_m": -1.1261858177584205,
-                  "distance_m": 1.2229763312742914
-                }
-              },
-              {
-                "frame": 198,
-                "time_s": 6.598944,
-                "gazed_object_id": "7379153972126671",
-                "gazed_object_name": "WhiteVase",
-                "gaze_depth_m": 0.652232,
-                "gaze_hit_distance_m": 0.6445339078458051,
-                "gaze_hit_exit_distance_m": 0.7018494417785869,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.18046379642398122,
-                  1.5776350225022593,
-                  2.459076367438428
-                ],
-                "gaze_direction_world_unit": [
-                  0.7975702367661309,
-                  -0.5668933598006187,
-                  0.2061883508804131
-                ],
-                "wearer_world_m": [
-                  0.18924856231201398,
-                  1.5731964134621268,
-                  2.387864090834732
-                ],
-                "right_world": [
-                  0.0010384398191004562,
-                  -0.07765534857237544,
-                  -0.9969797232044617
-                ],
-                "forward_world": [
-                  0.9891581859878847,
-                  -0.1463271431813869,
-                  0.012427801958945772
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.018589125566859887,
-                  "forward_m": 0.48697382636157843,
-                  "up_m": -1.1307422995226373,
-                  "distance_m": 1.231384328187703
-                }
-              },
-              {
-                "frame": 199,
-                "time_s": 6.632272,
-                "gazed_object_id": "4418602414882545",
-                "gazed_object_name": "Apartment_CabinetDrawerD",
-                "gaze_depth_m": 2.63625,
-                "gaze_hit_distance_m": 2.5451289124862604,
-                "gaze_hit_exit_distance_m": 2.7325534738538795,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.16973767520063573,
-                  1.581424830863781,
-                  2.456847003461658
-                ],
-                "gaze_direction_world_unit": [
-                  0.8235763820652635,
-                  -0.5293828106681231,
-                  0.20365604011030225
-                ],
-                "wearer_world_m": [
-                  0.178872042130314,
-                  1.577121975827685,
-                  2.385670388760393
-                ],
-                "right_world": [
-                  0.006111332086398802,
-                  -0.07709001878255904,
-                  -0.997005406517053
-                ],
-                "forward_world": [
-                  0.9906408928344864,
-                  -0.13548716516463866,
-                  0.016548399310544637
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.018904288421376054,
-                  "forward_m": 0.4976313247552537,
-                  "up_m": -1.134532107884159,
-                  "distance_m": 1.23910616849847
-                }
-              },
-              {
-                "frame": 200,
-                "time_s": 6.6656,
-                "gazed_object_id": "4418602414882545",
-                "gazed_object_name": "Apartment_CabinetDrawerD",
-                "gaze_depth_m": 2.58688,
-                "gaze_hit_distance_m": 2.496564913136603,
-                "gaze_hit_exit_distance_m": 2.6794906780930696,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.15918522407126084,
-                  1.5843035680676698,
-                  2.4544408343614994
-                ],
-                "gaze_direction_world_unit": [
-                  0.8436190561384239,
-                  -0.4989494315005123,
-                  0.19838435655421605
-                ],
-                "wearer_world_m": [
-                  0.168616370283002,
-                  1.5801270963221241,
-                  2.3832954039678933
-                ],
-                "right_world": [
-                  0.01037915926923555,
-                  -0.07609655551364206,
-                  -0.9970464318635437
-                ],
-                "forward_world": [
-                  0.9914156855818039,
-                  -0.1291809217212658,
-                  0.020179887155437226
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.018738710155758745,
-                  "forward_m": 0.5081390676999822,
-                  "up_m": -1.1374108450880478,
-                  "distance_m": 1.2459834651261554
-                }
-              },
-              {
-                "frame": 201,
-                "time_s": 6.698928,
-                "gazed_object_id": "4418602414882545",
-                "gazed_object_name": "Apartment_CabinetDrawerD",
-                "gaze_depth_m": 2.51458,
-                "gaze_hit_distance_m": 2.4272009510576744,
-                "gaze_hit_exit_distance_m": 2.604196379091068,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.14911046411302736,
-                  1.5869115212154112,
-                  2.451962672556622
-                ],
-                "gaze_direction_world_unit": [
-                  0.8715637273111596,
-                  -0.44812448985933284,
-                  0.19889975068810828
-                ],
-                "wearer_world_m": [
-                  0.158680808378966,
-                  1.5828484779979508,
-                  2.38082926344779
-                ],
-                "right_world": [
-                  0.012463980808781083,
-                  -0.07541157104680561,
-                  -0.9970745930644566
-                ],
-                "forward_world": [
-                  0.9923165481976601,
-                  -0.12182167589032002,
-                  0.021618220471516847
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.017449270709776858,
-                  "forward_m": 0.5182308625267495,
-                  "up_m": -1.1400187982357892,
-                  "distance_m": 1.2524781905510558
-                }
-              },
-              {
-                "frame": 202,
-                "time_s": 6.732256,
-                "gazed_object_id": "4418602414882545",
-                "gazed_object_name": "Apartment_CabinetDrawerD",
-                "gaze_depth_m": 2.46495,
-                "gaze_hit_distance_m": 2.388862339237458,
-                "gaze_hit_exit_distance_m": 2.5622746554921405,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.13951700272453219,
-                  1.5892371572188948,
-                  2.449522069109543
-                ],
-                "gaze_direction_world_unit": [
-                  0.8893096057920574,
-                  -0.3969548996125889,
-                  0.22705777396850985
-                ],
-                "wearer_world_m": [
-                  0.149131309165785,
-                  1.585296814974654,
-                  2.3783876856114627
-                ],
-                "right_world": [
-                  0.013237102000473344,
-                  -0.07469783569850699,
-                  -0.9971183542953106
-                ],
-                "forward_world": [
-                  0.9932872788262801,
-                  -0.1136203330703282,
-                  0.021697963841597834
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.015537827324357855,
-                  "forward_m": 0.5278740236348579,
-                  "up_m": -1.1423444342392728,
-                  "distance_m": 1.2585722933635688
-                }
-              },
-              {
-                "frame": 203,
-                "time_s": 6.765584,
-                "gazed_object_id": "4418602414882545",
-                "gazed_object_name": "Apartment_CabinetDrawerD",
-                "gaze_depth_m": 2.45203,
-                "gaze_hit_distance_m": 2.369031915209718,
-                "gaze_hit_exit_distance_m": 2.5402535234941923,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.13020881276821383,
-                  1.5908333268907615,
-                  2.4472283028338704
-                ],
-                "gaze_direction_world_unit": [
-                  0.9005298651202539,
-                  -0.3679646018144368,
-                  0.2316204089410961
-                ],
-                "wearer_world_m": [
-                  0.139937012239608,
-                  1.5870582282159382,
-                  2.37610044284891
-                ],
-                "right_world": [
-                  0.014931185121470958,
-                  -0.072980503445523,
-                  -0.9972215931415185
-                ],
-                "forward_world": [
-                  0.9938059300754176,
-                  -0.10875724800787206,
-                  0.02283931594179134
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.014279757605505282,
-                  "forward_m": 0.5372093175034232,
-                  "up_m": -1.1439406039111395,
-                  "distance_m": 1.263937979631925
-                }
-              },
-              {
-                "frame": 204,
-                "time_s": 6.798912,
-                "gazed_object_id": "4418602414882545",
-                "gazed_object_name": "Apartment_CabinetDrawerD",
-                "gaze_depth_m": 2.42884,
-                "gaze_hit_distance_m": 2.349688044785293,
-                "gaze_hit_exit_distance_m": 2.5187968021797458,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.1212044133974502,
-                  1.5918311963357719,
-                  2.4451783045395956
-                ],
-                "gaze_direction_world_unit": [
-                  0.9116249321803191,
-                  -0.33977125209897874,
-                  0.23129089751721899
-                ],
-                "wearer_world_m": [
-                  0.13111552946431299,
-                  1.588241566229373,
-                  2.374066097183837
-                ],
-                "right_world": [
-                  0.01753790735713856,
-                  -0.07063125819679321,
-                  -0.9973483078499055
-                ],
-                "forward_world": [
-                  0.9939700457930609,
-                  -0.10675489427172623,
-                  0.0250387822222341
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.013791367303308356,
-                  "forward_m": 0.5462201542891856,
-                  "up_m": -1.1449384733561498,
-                  "distance_m": 1.268685371480622
-                }
-              },
-              {
-                "frame": 205,
-                "time_s": 6.83224,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.37167,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.11259158283213773,
-                  1.5925635611780928,
-                  2.4434023468122406
-                ],
-                "gaze_direction_world_unit": [
-                  0.9271382697546147,
-                  -0.2856620509962237,
-                  0.24251148710329218
-                ],
-                "wearer_world_m": [
-                  0.122685071299873,
-                  1.5891549585085818,
-                  2.372306885498644
-                ],
-                "right_world": [
-                  0.020125208776820225,
-                  -0.06826536417916007,
-                  -0.9974641928536467
-                ],
-                "forward_world": [
-                  0.994056272854473,
-                  -0.10539682268355857,
-                  0.027269693193803235
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.01360498376042315,
-                  "forward_m": 0.5548368709794925,
-                  "up_m": -1.1456708381984708,
-                  "distance_m": 1.2730736083301941
-                }
-              },
-              {
-                "frame": 206,
-                "time_s": 6.865568,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.44519,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.10436792295286458,
-                  1.5931710123295468,
-                  2.4417022210857104
-                ],
-                "gaze_direction_world_unit": [
-                  0.9349522789435527,
-                  -0.25516848934284103,
-                  0.2464818008388237
-                ],
-                "wearer_world_m": [
-                  0.114587296565136,
-                  1.589995085388027,
-                  2.370613968947717
-                ],
-                "right_world": [
-                  0.021931186678862624,
-                  -0.06523446689093933,
-                  -0.9976289327101097
-                ],
-                "forward_world": [
-                  0.9942104908273054,
-                  -0.10356605487043444,
-                  0.028628171571069283
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.013088300609991773,
-                  "forward_m": 0.5630815500167139,
-                  "up_m": -1.1462782893499248,
-                  "distance_m": 1.277223978291618
-                }
-              },
-              {
-                "frame": 207,
-                "time_s": 6.898896,
-                "gazed_object_id": "4683494318379368",
-                "gazed_object_name": "FryingPan",
-                "gaze_depth_m": 2.56513,
-                "gaze_hit_distance_m": 2.5727218402852143,
-                "gaze_hit_exit_distance_m": 2.666241210256645,
-                "gaze_depth_obb_residual_m": 0.007591840285214424,
-                "gaze_origin_world_m": [
-                  0.09652877398383558,
-                  1.5936556010097267,
-                  2.4399284378477972
-                ],
-                "gaze_direction_world_unit": [
-                  0.9405575161351236,
-                  -0.23076059653562014,
-                  0.24920093484626304
-                ],
-                "wearer_world_m": [
-                  0.10679973122695,
-                  1.59078866861825,
-                  2.3688344870715685
-                ],
-                "right_world": [
-                  0.02271330637336494,
-                  -0.06123691418893973,
-                  -0.9978647934736482
-                ],
-                "forward_world": [
-                  0.9944784761695881,
-                  -0.10090332251868236,
-                  0.028828457123206697
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.011931634298393692,
-                  "forward_m": 0.570965520581908,
-                  "up_m": -1.1467628780301047,
-                  "distance_m": 1.2811348485143128
-                }
-              },
-              {
-                "frame": 208,
-                "time_s": 6.932224,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.78303,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.08910863503048497,
-                  1.5938284929576905,
-                  2.43814661458599
-                ],
-                "gaze_direction_world_unit": [
-                  0.9483988135180799,
-                  -0.20402461379193554,
-                  0.24272133710193267
-                ],
-                "wearer_world_m": [
-                  0.099411935502051,
-                  1.591265400193537,
-                  2.3670457407807053
-                ],
-                "right_world": [
-                  0.023229084360718466,
-                  -0.057326355458698214,
-                  -0.9980852161061129
-                ],
-                "forward_world": [
-                  0.9947589714755067,
-                  -0.09811170220886653,
-                  0.028786846973410163
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.010615013941090913,
-                  "forward_m": 0.5784348692004462,
-                  "up_m": -1.1469357699780685,
-                  "distance_m": 1.2846172515941114
-                }
-              },
-              {
-                "frame": 209,
-                "time_s": 6.965552,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 3.02796,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.08210142496276199,
-                  1.593730911728416,
-                  2.4363666730313285
-                ],
-                "gaze_direction_world_unit": [
-                  0.9529686852435184,
-                  -0.18097488734290296,
-                  0.24310239631987024
-                ],
-                "wearer_world_m": [
-                  0.09241551420508501,
-                  1.5913958374735218,
-                  2.365259509592435
-                ],
-                "right_world": [
-                  0.02342531541181403,
-                  -0.05437854713606308,
-                  -0.9982455751012514
-                ],
-                "forward_world": [
-                  0.9949592031275305,
-                  -0.09612036076366184,
-                  0.02858426767459271
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.009111447668011738,
-                  "forward_m": 0.5854931981611585,
-                  "up_m": -1.146838188748794,
-                  "distance_m": 1.287706771658282
-                }
-              },
-              {
-                "frame": 210,
-                "time_s": 6.99888,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.94793,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.07544853737294649,
-                  1.5937041035685935,
-                  2.4345069121844833
-                ],
-                "gaze_direction_world_unit": [
-                  0.9770539284353712,
-                  -0.20032763056300884,
-                  0.07234957748334803
-                ],
-                "wearer_world_m": [
-                  0.08567142592681899,
-                  1.5914849863604092,
-                  2.3633828672388293
-                ],
-                "right_world": [
-                  0.022152896919367504,
-                  -0.05279473936667688,
-                  -0.9983596369311436
-                ],
-                "forward_world": [
-                  0.9950300278253567,
-                  -0.09580385328094518,
-                  0.027145265192898282
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.006652255744781093,
-                  "forward_m": 0.5922113565641516,
-                  "up_m": -1.1468113805889715,
-                  "distance_m": 1.2907300496506804
-                }
-              },
-              {
-                "frame": 211,
-                "time_s": 7.032208,
-                "gazed_object_id": "4213328128795167",
-                "gazed_object_name": "LargePot",
-                "gaze_depth_m": 2.71479,
-                "gaze_hit_distance_m": 2.7043000561148696,
-                "gaze_hit_exit_distance_m": 2.961711277147442,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.06914868518373929,
-                  1.5938797613523357,
-                  2.432642981340661
-                ],
-                "gaze_direction_world_unit": [
-                  0.9646465571120209,
-                  -0.2217133176291208,
-                  -0.1424788568097482
-                ],
-                "wearer_world_m": [
-                  0.079166294055435,
-                  1.5916914790763919,
-                  2.3614887781325966
-                ],
-                "right_world": [
-                  0.019271649322007423,
-                  -0.05236056912932829,
-                  -0.9984422739111474
-                ],
-                "forward_world": [
-                  0.9951030269039691,
-                  -0.09582665991563538,
-                  0.024232562719855244
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": 0.0032007817349319987,
-                  "forward_m": 0.5985804738625483,
-                  "up_m": -1.1469870383727137,
-                  "distance_m": 1.2937992760849397
-                }
-              },
-              {
-                "frame": 212,
-                "time_s": 7.065536,
-                "gazed_object_id": "4213328128795167",
-                "gazed_object_name": "LargePot",
-                "gaze_depth_m": 2.71934,
-                "gaze_hit_distance_m": 2.7115560441862274,
-                "gaze_hit_exit_distance_m": 2.969056824970795,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.06324333186314257,
-                  1.5942172530446153,
-                  2.4309616912446694
-                ],
-                "gaze_direction_world_unit": [
-                  0.9644646793254195,
-                  -0.22107762007820858,
-                  -0.144680918694452
-                ],
-                "wearer_world_m": [
-                  0.072993869879932,
-                  1.59204159190915,
-                  2.35977001189935
-                ],
-                "right_world": [
-                  0.015573280853237892,
-                  -0.05245228570597203,
-                  -0.9985019933118238
-                ],
-                "forward_world": [
-                  0.9953983549767015,
-                  -0.09361736743464276,
-                  0.020442686327469095
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.0006054221811176725,
-                  "forward_m": 0.6045384768831293,
-                  "up_m": -1.1473245300649932,
-                  "distance_m": 1.2968523483635688
-                }
-              },
-              {
-                "frame": 213,
-                "time_s": 7.098864,
-                "gazed_object_id": "4213328128795167",
-                "gazed_object_name": "LargePot",
-                "gaze_depth_m": 2.72155,
-                "gaze_hit_distance_m": 2.707992753058664,
-                "gaze_hit_exit_distance_m": 2.964601674051184,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.057760638703714895,
-                  1.5946414594764757,
-                  2.4295935286854338
-                ],
-                "gaze_direction_world_unit": [
-                  0.9672867813208677,
-                  -0.2127442838580376,
-                  -0.1381888286644266
-                ],
-                "wearer_world_m": [
-                  0.067310428821918,
-                  1.5924970121158033,
-                  2.358373696087936
-                ],
-                "right_world": [
-                  0.012854856589494146,
-                  -0.052541768946565426,
-                  -0.9985359859204024
-                ],
-                "forward_world": [
-                  0.9958524503902255,
-                  -0.0892805224486435,
-                  0.017518143825196564
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.003548690316517094,
-                  "forward_m": 0.6100487742902032,
-                  "up_m": -1.1477487364968537,
-                  "distance_m": 1.2998027235336416
-                }
-              },
-              {
-                "frame": 214,
-                "time_s": 7.132192,
-                "gazed_object_id": "4213328128795167",
-                "gazed_object_name": "LargePot",
-                "gaze_depth_m": 2.73058,
-                "gaze_hit_distance_m": 2.7069284357484835,
-                "gaze_hit_exit_distance_m": 2.9629324607833745,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.052725812291273266,
-                  1.5950657585666468,
-                  2.4286162430186047
-                ],
-                "gaze_direction_world_unit": [
-                  0.9690201952264126,
-                  -0.20948533240295733,
-                  -0.1308272018786164
-                ],
-                "wearer_world_m": [
-                  0.062253443205116,
-                  1.5929840293503583,
-                  2.3573915818846993
-                ],
-                "right_world": [
-                  0.012665240596386462,
-                  -0.05230484125594819,
-                  -0.9985508476095881
-                ],
-                "forward_world": [
-                  0.9963206041707331,
-                  -0.08399408947993624,
-                  0.01703662634744124
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.004577981564502209,
-                  "forward_m": 0.615099169819585,
-                  "up_m": -1.1481730355870248,
-                  "distance_m": 1.3025558632328462
-                }
-              },
-              {
-                "frame": 215,
-                "time_s": 7.16552,
-                "gazed_object_id": "4213328128795167",
-                "gazed_object_name": "LargePot",
-                "gaze_depth_m": 2.75417,
-                "gaze_hit_distance_m": 2.704200710553542,
-                "gaze_hit_exit_distance_m": 2.9594952998420316,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.048176630543970735,
-                  1.5954100610710622,
-                  2.4280000685308964
-                ],
-                "gaze_direction_world_unit": [
-                  0.9708833354395638,
-                  -0.2076698112412464,
-                  -0.11941021088990866
-                ],
-                "wearer_world_m": [
-                  0.057792663263557004,
-                  1.5933875304997922,
-                  2.356785582744477
-                ],
-                "right_world": [
-                  0.014030897802069786,
-                  -0.05212545883827336,
-                  -0.9985419723014991
-                ],
-                "forward_world": [
-                  0.9967392616466436,
-                  -0.07863118686958785,
-                  0.018110238639612808
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.004289034588507729,
-                  "forward_m": 0.6196604347355262,
-                  "up_m": -1.1485173380914402,
-                  "distance_m": 1.3050188314986417
-                }
-              },
-              {
-                "frame": 216,
-                "time_s": 7.198848,
-                "gazed_object_id": "4213328128795167",
-                "gazed_object_name": "LargePot",
-                "gaze_depth_m": 2.98216,
-                "gaze_hit_distance_m": 2.702027558610542,
-                "gaze_hit_exit_distance_m": 2.9567184601692387,
-                "gaze_depth_obb_residual_m": 0.02544153983076125,
-                "gaze_origin_world_m": [
-                  0.04413079618990641,
-                  1.5956336768919885,
-                  2.4276531172284854
-                ],
-                "gaze_direction_world_unit": [
-                  0.9722323949152516,
-                  -0.2086619625583166,
-                  -0.1059450596236845
-                ],
-                "wearer_world_m": [
-                  0.053847815196156,
-                  1.59364919018711,
-                  2.356451269955045
-                ],
-                "right_world": [
-                  0.015561453483951604,
-                  -0.052166632087065214,
-                  -0.9985171423977459
-                ],
-                "forward_world": [
-                  0.9970780747198,
-                  -0.07388496872195574,
-                  0.019399080133154833
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.003623072170921374,
-                  "forward_m": 0.6237139750795155,
-                  "up_m": -1.1487409539123665,
-                  "distance_m": 1.307144354723265
-                }
-              },
-              {
-                "frame": 217,
-                "time_s": 7.232176,
-                "gazed_object_id": "4213328128795167",
-                "gazed_object_name": "LargePot",
-                "gaze_depth_m": 2.98195,
-                "gaze_hit_distance_m": 2.6993538270446775,
-                "gaze_hit_exit_distance_m": 2.9534424477954904,
-                "gaze_depth_obb_residual_m": 0.028507552204509512,
-                "gaze_origin_world_m": [
-                  0.04055686617403708,
-                  1.5957766395887296,
-                  2.427410287923639
-                ],
-                "gaze_direction_world_unit": [
-                  0.9738091993187497,
-                  -0.20613994241954148,
-                  -0.09592688601973759
-                ],
-                "wearer_world_m": [
-                  0.05031719231974,
-                  1.5938524745513982,
-                  2.356212708446254
-                ],
-                "right_world": [
-                  0.016259386675570697,
-                  -0.05176574830876073,
-                  -0.9985268847892724
-                ],
-                "forward_world": [
-                  0.9973338717880029,
-                  -0.07021349381921686,
-                  0.01987997661090407
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.003371939642986776,
-                  "forward_m": 0.627292540519099,
-                  "up_m": -1.1488839166091076,
-                  "distance_m": 1.3089810383102454
-                }
-              },
-              {
-                "frame": 218,
-                "time_s": 7.265504,
-                "gazed_object_id": "4213328128795167",
-                "gazed_object_name": "LargePot",
-                "gaze_depth_m": 2.98352,
-                "gaze_hit_distance_m": 2.699120256572907,
-                "gaze_hit_exit_distance_m": 2.952879501846713,
-                "gaze_depth_obb_residual_m": 0.030640498153287066,
-                "gaze_origin_world_m": [
-                  0.03741042878352037,
-                  1.5958707134644556,
-                  2.427220646042117
-                ],
-                "gaze_direction_world_unit": [
-                  0.9741703066980025,
-                  -0.21009026215184046,
-                  -0.08279067155719178
-                ],
-                "wearer_world_m": [
-                  0.047137151658378,
-                  1.594045750115881,
-                  2.356015856372516
-                ],
-                "right_world": [
-                  0.01584886526006979,
-                  -0.050668377420312036,
-                  -0.9985897701256317
-                ],
-                "forward_world": [
-                  0.9975125364077997,
-                  -0.06780357813847702,
-                  0.019272117187726034
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.003770079532647878,
-                  "forward_m": 0.6304412726089411,
-                  "up_m": -1.1489779904848336,
-                  "distance_m": 1.3105758922665098
-                }
-              },
-              {
-                "frame": 219,
-                "time_s": 7.298832,
-                "gazed_object_id": "4213328128795167",
-                "gazed_object_name": "LargePot",
-                "gaze_depth_m": 2.98531,
-                "gaze_hit_distance_m": 2.699860686213096,
-                "gaze_hit_exit_distance_m": 2.95342057006762,
-                "gaze_depth_obb_residual_m": 0.031889429932379976,
-                "gaze_origin_world_m": [
-                  0.03464307752656706,
-                  1.5959239838899661,
-                  2.427180854534015
-                ],
-                "gaze_direction_world_unit": [
-                  0.9744256437251214,
-                  -0.21168169476230683,
-                  -0.07540242007680964
-                ],
-                "wearer_world_m": [
-                  0.04429835784135099,
-                  1.5942110370733518,
-                  2.3559635597507502
-                ],
-                "right_world": [
-                  0.01488028292886634,
-                  -0.04925705451247754,
-                  -0.9986752824420521
-                ],
-                "forward_world": [
-                  0.9976208114379573,
-                  -0.06650922356240974,
-                  0.018144965334685514
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.004380782825591078,
-                  "forward_m": 0.6332066798457368,
-                  "up_m": -1.1490312609103441,
-                  "distance_m": 1.3119561061630094
-                }
-              },
-              {
-                "frame": 220,
-                "time_s": 7.33216,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.98521,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.032266778118565105,
-                  1.5959330425313187,
-                  2.4273031120154687
-                ],
-                "gaze_direction_world_unit": [
-                  0.9772590033007846,
-                  -0.21079244589035323,
-                  -0.023051794357926092
-                ],
-                "wearer_world_m": [
-                  0.04183903533317299,
-                  1.594315726572085,
-                  2.3560723750972996
-                ],
-                "right_world": [
-                  0.013736380537226422,
-                  -0.04801264998454899,
-                  -0.9987522702308108
-                ],
-                "forward_world": [
-                  0.9976945314724006,
-                  -0.06573149503370407,
-                  0.016881718831370074
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.004951651585129691,
-                  "forward_m": 0.6355771489999085,
-                  "up_m": -1.1490403195516967,
-                  "distance_m": 1.3131110413457627
-                }
-              },
-              {
-                "frame": 221,
-                "time_s": 7.365488,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.96559,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.030320044359380433,
-                  1.5958874530086435,
-                  2.4275327801876605
-                ],
-                "gaze_direction_world_unit": [
-                  0.9866411534330903,
-                  -0.13762906898664545,
-                  0.0871634884690265
-                ],
-                "wearer_world_m": [
-                  0.039808369277808,
-                  1.594327655555849,
-                  2.356289531924063
-                ],
-                "right_world": [
-                  0.012584356247065442,
-                  -0.047323590770215654,
-                  -0.998800336270699
-                ],
-                "forward_world": [
-                  0.9977776254878823,
-                  -0.06477029121019336,
-                  0.015640314968371816
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.005430830920620413,
-                  "forward_m": 0.6375158912498096,
-                  "up_m": -1.1489947300290215,
-                  "distance_m": 1.3140119654126516
-                }
-              },
-              {
-                "frame": 222,
-                "time_s": 7.398816,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.96892,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.02871402188997862,
-                  1.5957794604210187,
-                  2.427831953239047
-                ],
-                "gaze_direction_world_unit": [
-                  0.9861583985698839,
-                  -0.13850130875126382,
-                  0.09115371854328702
-                ],
-                "wearer_world_m": [
-                  0.038104433890712996,
-                  1.5942731445700091,
-                  2.356574582560545
-                ],
-                "right_world": [
-                  0.0112203533471385,
-                  -0.04661447275851179,
-                  -0.9988499359764766
-                ],
-                "forward_world": [
-                  0.9978200388136982,
-                  -0.06444429784305739,
-                  0.01421628001078068
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.005984462767454435,
-                  "forward_m": 0.6391118851733153,
-                  "up_m": -1.1488867374413967,
-                  "distance_m": 1.3146943403081155
-                }
-              },
-              {
-                "frame": 223,
-                "time_s": 7.432144,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.97221,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.027339024774756582,
-                  1.5956002803798608,
-                  2.4281746570828435
-                ],
-                "gaze_direction_world_unit": [
-                  0.9854491217346746,
-                  -0.14624786440601148,
-                  0.0866117233926198
-                ],
-                "wearer_world_m": [
-                  0.036599814532833,
-                  1.5941852656184232,
-                  2.3568984534291584
-                ],
-                "right_world": [
-                  0.009370834452622212,
-                  -0.04517988919528822,
-                  -0.9989349153343094
-                ],
-                "forward_world": [
-                  0.9977601028496614,
-                  -0.06574696853929635,
-                  0.012333421639030173
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.00681263146636441,
-                  "forward_m": 0.6404737509956766,
-                  "up_m": -1.1487075574002388,
-                  "distance_m": 1.315203303006384
-                }
-              },
-              {
-                "frame": 224,
-                "time_s": 7.465472,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.97604,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.026215167985168254,
-                  1.5953326967145987,
-                  2.4285499904995245
-                ],
-                "gaze_direction_world_unit": [
-                  0.9844987859266046,
-                  -0.15348951089242321,
-                  0.08487114088455722
-                ],
-                "wearer_world_m": [
-                  0.035317059403800005,
-                  1.59402680618655,
-                  2.3572512392935447
-                ],
-                "right_world": [
-                  0.007091121361687103,
-                  -0.04339764325046415,
-                  -0.9990327124564737
-                ],
-                "forward_world": [
-                  0.9976442129685561,
-                  -0.06786338416694926,
-                  0.010029228273371493
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.007891270074805681,
-                  "forward_m": 0.6415807541011521,
-                  "up_m": -1.1484399737349766,
-                  "distance_m": 1.3155136581337605
-                }
-              },
-              {
-                "frame": 225,
-                "time_s": 7.4988,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.97631,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.025348494964056938,
-                  1.5949956879345841,
-                  2.4289577862348057
-                ],
-                "gaze_direction_world_unit": [
-                  0.9845347652351519,
-                  -0.15659115999482137,
-                  0.07855255982360526
-                ],
-                "wearer_world_m": [
-                  0.03427426837927,
-                  1.59379730892851,
-                  2.3576348855808216
-                ],
-                "right_world": [
-                  0.004573020394828875,
-                  -0.041647120117754004,
-                  -0.9991219169202359
-                ],
-                "forward_world": [
-                  0.9975258348350989,
-                  -0.06990183231922369,
-                  0.007479483602115922
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.009096768934792724,
-                  "forward_m": 0.6424269347279967,
-                  "up_m": -1.1481029649549621,
-                  "distance_m": 1.3156385970309128
-                }
-              },
-              {
-                "frame": 226,
-                "time_s": 7.532128,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.97653,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.024650870663840103,
-                  1.5946891567006158,
-                  2.429412328978983
-                ],
-                "gaze_direction_world_unit": [
-                  0.9845657885382777,
-                  -0.15899419705987963,
-                  0.07315089433003552
-                ],
-                "wearer_world_m": [
-                  0.033405699977671004,
-                  1.5936098363012998,
-                  2.358066342881927
-                ],
-                "right_world": [
-                  0.002133782205127832,
-                  -0.03976113590013233,
-                  -0.9992069350467068
-                ],
-                "forward_world": [
-                  0.9974122382943996,
-                  -0.07172159501266454,
-                  0.00498394516376055
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.010209158414017535,
-                  "forward_m": 0.6431022112667129,
-                  "up_m": -1.1477964337209938,
-                  "distance_m": 1.31570785068274
-                }
-              },
-              {
-                "frame": 227,
-                "time_s": 7.565456,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.97848,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.024097425501159696,
-                  1.5944793244166124,
-                  2.429893952971585
-                ],
-                "gaze_direction_world_unit": [
-                  0.983993367087638,
-                  -0.16501726550199933,
-                  0.0672781956786565
-                ],
-                "wearer_world_m": [
-                  0.032693526843971,
-                  1.593526867932732,
-                  2.3585268627314018
-                ],
-                "right_world": [
-                  -0.00012563449878572053,
-                  -0.03780472861164097,
-                  -0.9992851378413339
-                ],
-                "forward_world": [
-                  0.9973124574847918,
-                  -0.073217951013362,
-                  0.0026445784258740668
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.011181697295274894,
-                  "forward_m": 0.6436329824105879,
-                  "up_m": -1.1475866014369904,
-                  "distance_m": 1.3157912725274032
-                }
-              },
-              {
-                "frame": 228,
-                "time_s": 7.598784,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.98016,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.023751827126856813,
-                  1.5943720956991847,
-                  2.4303438088661453
-                ],
-                "gaze_direction_world_unit": [
-                  0.9826555870893079,
-                  -0.18410183436259436,
-                  0.022237620072649844
-                ],
-                "wearer_world_m": [
-                  0.032190166997278,
-                  1.5935270042199718,
-                  2.358956541502679
-                ],
-                "right_world": [
-                  -0.0023588934389605076,
-                  -0.03618051178437285,
-                  -0.9993424869326659
-                ],
-                "forward_world": [
-                  0.9972416610055352,
-                  -0.07422235855329273,
-                  0.0003332352136047323
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.012170902823474631,
-                  "forward_m": 0.6439549307792695,
-                  "up_m": -1.1474793727195627,
-                  "distance_m": 1.3158631267828522
-                }
-              },
-              {
-                "frame": 229,
-                "time_s": 7.632112,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.85366,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.023602247644311382,
-                  1.5942992412417183,
-                  2.4307787197329227
-                ],
-                "gaze_direction_world_unit": [
-                  0.9792678998464784,
-                  -0.20255531351423375,
-                  0.0023927593731994934
-                ],
-                "wearer_world_m": [
-                  0.031909632276875,
-                  1.593552103107483,
-                  2.359375002419501
-                ],
-                "right_world": [
-                  -0.00420403322529761,
-                  -0.03474954991261131,
-                  -0.9993872096867724
-                ],
-                "forward_world": [
-                  0.9972035116126807,
-                  -0.07471684151494062,
-                  -0.001596878633425336
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.012925381618919624,
-                  "forward_m": 0.6440838018251812,
-                  "up_m": -1.1474065182620963,
-                  "distance_m": 1.3158693577679808
-                }
-              },
-              {
-                "frame": 230,
-                "time_s": 7.66544,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.99186,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.02358924700475358,
-                  1.5941640467147944,
-                  2.431262309939002
-                ],
-                "gaze_direction_world_unit": [
-                  0.9785004474391283,
-                  -0.2062422939816284,
-                  -0.000995256058260674
-                ],
-                "wearer_world_m": [
-                  0.031835322728368996,
-                  1.59353488086453,
-                  2.35985034955075
-                ],
-                "right_world": [
-                  -0.005065175039027425,
-                  -0.03308319042565786,
-                  -0.9994397663256575
-                ],
-                "forward_world": [
-                  0.9971922650603806,
-                  -0.07483948367596793,
-                  -0.002576467904365942
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.012996635479939286,
-                  "forward_m": 0.6440866920579632,
-                  "up_m": -1.1472713237351724,
-                  "distance_m": 1.315754171407847
-                }
-              },
-              {
-                "frame": 231,
-                "time_s": 7.698768,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.99645,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.023740666190694946,
-                  1.594034514464434,
-                  2.4317807044216915
-                ],
-                "gaze_direction_world_unit": [
-                  0.9770810481142259,
-                  -0.2128588016129777,
-                  -0.0019380381555965664
-                ],
-                "wearer_world_m": [
-                  0.031957609274794,
-                  1.593506321132677,
-                  2.360364567875691
-                ],
-                "right_world": [
-                  -0.0054774934586908075,
-                  -0.03164722095036203,
-                  -0.9994840921553128
-                ],
-                "forward_world": [
-                  0.9971769155806913,
-                  -0.07502436397086917,
-                  -0.003089311208891554
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.012742959095299652,
-                  "forward_m": 0.6439309327938622,
-                  "up_m": -1.1471417914848119,
-                  "distance_m": 1.3155633689956008
-                }
-              },
-              {
-                "frame": 232,
-                "time_s": 7.732096,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.99947,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.02409591815778066,
-                  1.594008501052414,
-                  2.432297306489621
-                ],
-                "gaze_direction_world_unit": [
-                  0.9760699143045133,
-                  -0.2174054563980795,
-                  -0.00473179859284123
-                ],
-                "wearer_world_m": [
-                  0.032255989756597,
-                  1.593519723924298,
-                  2.360874368791559
-                ],
-                "right_world": [
-                  -0.0062912155001219605,
-                  -0.0310069020022624,
-                  -0.999499371003181
-                ],
-                "forward_world": [
-                  0.9971186348844033,
-                  -0.07575627903603327,
-                  -0.0039260862037165944
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.012748274817769484,
-                  "forward_m": 0.6435680823822449,
-                  "up_m": -1.147115778072792,
-                  "distance_m": 1.315363307814981
-                }
-              },
-              {
-                "frame": 233,
-                "time_s": 7.765424,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.93968,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.02459359339843201,
-                  1.5940264997108589,
-                  2.432818046692434
-                ],
-                "gaze_direction_world_unit": [
-                  0.9748985809787922,
-                  -0.22260841551978808,
-                  -0.0042720188794280745
-                ],
-                "wearer_world_m": [
-                  0.032656286305781004,
-                  1.593552229963366,
-                  2.361383952925603
-                ],
-                "right_world": [
-                  -0.00768955541565608,
-                  -0.03062515591986896,
-                  -0.9995013609607513
-                ],
-                "forward_world": [
-                  0.9969989138900062,
-                  -0.07723363956567009,
-                  -0.005303830840863222
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.013123992676864673,
-                  "forward_m": 0.6430570438077153,
-                  "up_m": -1.1471337767312368,
-                  "distance_m": 1.3151322255799998
-                }
-              },
-              {
-                "frame": 234,
-                "time_s": 7.798752,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.87701,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.025184979842098207,
-                  1.594014123562023,
-                  2.4333743401566617
-                ],
-                "gaze_direction_world_unit": [
-                  0.9737559875995089,
-                  -0.22753670071632834,
-                  -0.005130929860439004
-                ],
-                "wearer_world_m": [
-                  0.033135779129281,
-                  1.5935751894825059,
-                  2.3619274799837418
-                ],
-                "right_world": [
-                  -0.009303002812187988,
-                  -0.02988856506676131,
-                  -0.9995099438309389
-                ],
-                "forward_world": [
-                  0.9968321924704737,
-                  -0.0792328787280662,
-                  -0.0069087613196470166
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.013600083986444274,
-                  "forward_m": 0.6424500103471706,
-                  "up_m": -1.147121400582401,
-                  "distance_m": 1.3148289949623226
-                }
-              },
-              {
-                "frame": 235,
-                "time_s": 7.83208,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.87519,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.02589862912647381,
-                  1.5939463219273917,
-                  2.4340279410303234
-                ],
-                "gaze_direction_world_unit": [
-                  0.9737320489783058,
-                  -0.22765774512380205,
-                  -0.004224674858067545
-                ],
-                "wearer_world_m": [
-                  0.033806174960965,
-                  1.593585892463538,
-                  2.362575841617661
-                ],
-                "right_world": [
-                  -0.009945568973822594,
-                  -0.028599312771128017,
-                  -0.9995414773618986
-                ],
-                "forward_world": [
-                  0.9967010598989166,
-                  -0.0808031938958801,
-                  -0.007605330538594357
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.013352171554103693,
-                  "forward_m": 0.641732763483026,
-                  "up_m": -1.1470535989477697,
-                  "distance_m": 1.3144176074942406
-                }
-              },
-              {
-                "frame": 236,
-                "time_s": 7.865408,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.88623,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.02671126014080138,
-                  1.5938326009682635,
-                  2.4347652783385887
-                ],
-                "gaze_direction_world_unit": [
-                  0.9739558865354677,
-                  -0.22665906722355805,
-                  -0.005966433462066545
-                ],
-                "wearer_world_m": [
-                  0.034671404844649,
-                  1.593586002895577,
-                  2.363318536028779
-                ],
-                "right_world": [
-                  -0.009234860687868995,
-                  -0.02687776655105871,
-                  -0.9995960699268993
-                ],
-                "forward_world": [
-                  0.996619424971839,
-                  -0.08185739515497224,
-                  -0.00700632765742859
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.012150800151547115,
-                  "forward_m": 0.6409323430343591,
-                  "up_m": -1.1469398779886415,
-                  "distance_m": 1.3139180344985948
-                }
-              },
-              {
-                "frame": 237,
-                "time_s": 7.898736,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.86664,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.027525307246297225,
-                  1.5937154669906102,
-                  2.4354784632254245
-                ],
-                "gaze_direction_world_unit": [
-                  0.9736093966014124,
-                  -0.2281828395832513,
-                  -0.004163480414026699
-                ],
-                "wearer_world_m": [
-                  0.035583569555882995,
-                  1.593578104609477,
-                  2.364042427213296
-                ],
-                "right_world": [
-                  -0.007899047258247194,
-                  -0.02515764608212675,
-                  -0.9996522884963649
-                ],
-                "forward_world": [
-                  0.9964969196858906,
-                  -0.08342987703371774,
-                  -0.005774484796998658
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.010574494691075142,
-                  "forward_m": 0.6401352143070673,
-                  "up_m": -1.1468227440109882,
-                  "distance_m": 1.3134156289296566
-                }
-              },
-              {
-                "frame": 238,
-                "time_s": 7.932064,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.84815,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.02828653557235575,
-                  1.5936020366859058,
-                  2.436123438996006
-                ],
-                "gaze_direction_world_unit": [
-                  0.9731094227562918,
-                  -0.23033405971896476,
-                  -0.0020669485472227245
-                ],
-                "wearer_world_m": [
-                  0.036460779236823,
-                  1.593549331832207,
-                  2.364700468855355
-                ],
-                "right_world": [
-                  -0.006324990385826457,
-                  -0.023716184139136745,
-                  -0.9996987231693848
-                ],
-                "forward_world": [
-                  0.9963254434995075,
-                  -0.08554145677340408,
-                  -0.004274319664402115
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.008916639255902697,
-                  "forward_m": 0.6393899170435701,
-                  "up_m": -1.1467093137062838,
-                  "distance_m": 1.312943142285032
-                }
-              },
-              {
-                "frame": 239,
-                "time_s": 7.965392,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.84786,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.028980434496429397,
-                  1.5934728091540802,
-                  2.4366990362121665
-                ],
-                "gaze_direction_world_unit": [
-                  0.9732068370967836,
-                  -0.229865698964443,
-                  -0.005496605103421814
-                ],
-                "wearer_world_m": [
-                  0.037278876695428,
-                  1.5934791445971719,
-                  2.36529037064606
-                ],
-                "right_world": [
-                  -0.004630849683579352,
-                  -0.022654852531941605,
-                  -0.9997326206981368
-                ],
-                "forward_world": [
-                  0.9961632294004361,
-                  -0.08747509760317838,
-                  -0.002632050495069038
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.007254239732827307,
-                  "forward_m": 0.6387092207813949,
-                  "up_m": -1.1465800861744582,
-                  "distance_m": 1.3124904428703523
-                }
-              },
-              {
-                "frame": 240,
-                "time_s": 7.99872,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.84751,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.02962110810535954,
-                  1.5933182397139722,
-                  2.4371404832742516
-                ],
-                "gaze_direction_world_unit": [
-                  0.9727805959959384,
-                  -0.23170105534739832,
-                  -0.0035401983968800232
-                ],
-                "wearer_world_m": [
-                  0.038026436106591004,
-                  1.5933747048221383,
-                  2.365744342104835
-                ],
-                "right_world": [
-                  -0.0031686752874243718,
-                  -0.02176947942288529,
-                  -0.9997579953481643
-                ],
-                "forward_world": [
-                  0.9960321436278928,
-                  -0.08898585482155419,
-                  -0.001219221760866085
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.00587658511486313,
-                  "forward_m": 0.6380769307300758,
-                  "up_m": -1.1464255167343502,
-                  "distance_m": 1.3120423472750575
-                }
-              },
-              {
-                "frame": 241,
-                "time_s": 8.032048,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.84741,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.030232576721673704,
-                  1.5931506064852823,
-                  2.4373876053461077
-                ],
-                "gaze_direction_world_unit": [
-                  0.9726290404298159,
-                  -0.23235255212773742,
-                  -0.0022452688707807478
-                ],
-                "wearer_world_m": [
-                  0.038701705999517,
-                  1.593258928420163,
-                  2.365999064132313
-                ],
-                "right_world": [
-                  -0.0022996931279986033,
-                  -0.020911714385953767,
-                  -0.9997786813154985
-                ],
-                "forward_world": [
-                  0.9959354313077642,
-                  -0.0900691460444461,
-                  -0.0004069356727081086
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.0050734260635963944,
-                  "forward_m": 0.6374691309837021,
-                  "up_m": -1.1462578835056603,
-                  "distance_m": 1.3115978754003603
-                }
-              },
-              {
-                "frame": 242,
-                "time_s": 8.065376,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.84766,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.030831003201686736,
-                  1.5930478113201187,
-                  2.4375047968695043
-                ],
-                "gaze_direction_world_unit": [
-                  0.9723521929921886,
-                  -0.2335150136434128,
-                  -0.0013968487385535022
-                ],
-                "wearer_world_m": [
-                  0.039320783580662,
-                  1.5931685253473542,
-                  2.366118728493102
-                ],
-                "right_world": [
-                  -0.0020275633116128566,
-                  -0.020645838733476654,
-                  -0.9997847960086255
-                ],
-                "forward_world": [
-                  0.9958664507115107,
-                  -0.09082946450340287,
-                  -0.00014396278370898408
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.004781503438769841,
-                  "forward_m": 0.6368717204154939,
-                  "up_m": -1.1461550883404967,
-                  "distance_m": 1.3112169559379134
-                }
-              },
-              {
-                "frame": 243,
-                "time_s": 8.098704,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.84909,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.03144712043265922,
-                  1.5930579541648435,
-                  2.437534002308722
-                ],
-                "gaze_direction_world_unit": [
-                  0.9716962271351576,
-                  -0.2362334465711221,
-                  0.0004482102510433572
-                ],
-                "wearer_world_m": [
-                  0.039927013661135005,
-                  1.593139586050663,
-                  2.36614670338189
-                ],
-                "right_world": [
-                  -0.0021741662330334033,
-                  -0.021149117140273344,
-                  -0.9997739683775425
-                ],
-                "forward_world": [
-                  0.9958332567037851,
-                  -0.09119248270017632,
-                  -0.0002365200025187253
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.004844358959593957,
-                  "forward_m": 0.6362552744426189,
-                  "up_m": -1.1461652311852215,
-                  "distance_m": 1.310926602399877
-                }
-              },
-              {
-                "frame": 244,
-                "time_s": 8.132032,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.8487,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.03214607578286598,
-                  1.593131666160031,
-                  2.437406236406931
-                ],
-                "gaze_direction_world_unit": [
-                  0.9716334216002694,
-                  -0.23648162053178398,
-                  0.0022219766007711694
-                ],
-                "wearer_world_m": [
-                  0.040611110924105,
-                  1.5931981087851632,
-                  2.3660171583456817
-                ],
-                "right_world": [
-                  -0.0023705018900870845,
-                  -0.021425472964921158,
-                  -0.9997676379184411
-                ],
-                "forward_world": [
-                  0.995881038637892,
-                  -0.0906685280260435,
-                  -0.0004182189666314673
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.005095422289924237,
-                  "forward_m": 0.635555595968234,
-                  "up_m": -1.146238943180409,
-                  "distance_m": 1.3106523164151032
-                }
-              },
-              {
-                "frame": 245,
-                "time_s": 8.16536,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.85093,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.032961187858844304,
-                  1.5932296102087546,
-                  2.437103680402243
-                ],
-                "gaze_direction_world_unit": [
-                  0.9705780694467929,
-                  -0.2407857640263767,
-                  0.0006534150065321542
-                ],
-                "wearer_world_m": [
-                  0.041391467818614996,
-                  1.5933077645857718,
-                  2.365710501647594
-                ],
-                "right_world": [
-                  -0.0028337709706477976,
-                  -0.021387899040392747,
-                  -0.999767236668978
-                ],
-                "forward_world": [
-                  0.9959749915256214,
-                  -0.08962698291459248,
-                  -0.0009056429570755142
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.005690162516388782,
-                  "forward_m": 0.6347382463626438,
-                  "up_m": -1.1463368872291326,
-                  "distance_m": 1.3103437966591203
-                }
-              },
-              {
-                "frame": 246,
-                "time_s": 8.198688,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.85078,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.03387979554779209,
-                  1.5933365551222938,
-                  2.436687604059596
-                ],
-                "gaze_direction_world_unit": [
-                  0.9703160335830685,
-                  -0.24183545923769467,
-                  0.0015510083542253916
-                ],
-                "wearer_world_m": [
-                  0.04219400786729,
-                  1.593358729174811,
-                  2.365280776075028
-                ],
-                "right_world": [
-                  -0.004455690434430559,
-                  -0.022189374820912544,
-                  -0.9997438564291408
-                ],
-                "forward_world": [
-                  0.995985323356325,
-                  -0.0894830662753546,
-                  -0.0024528572640221125
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.007131903127596833,
-                  "forward_m": 0.6338109098081954,
-                  "up_m": -1.1464438321426718,
-                  "distance_m": 1.309993955611652
-                }
-              },
-              {
-                "frame": 247,
-                "time_s": 8.232016,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.84781,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.03488196653933721,
-                  1.5933768174928238,
-                  2.4361734388203633
-                ],
-                "gaze_direction_world_unit": [
-                  0.970924823683577,
-                  -0.23938442382781683,
-                  0.00029048862120062413
-                ],
-                "wearer_world_m": [
-                  0.04302728669463401,
-                  1.593287098040112,
-                  2.364747201267294
-                ],
-                "right_world": [
-                  -0.006836338307112111,
-                  -0.023667337665746135,
-                  -0.9996965147515354
-                ],
-                "forward_world": [
-                  0.9959111937550494,
-                  -0.09021663987739437,
-                  -0.00467461684255599
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.009148574296224624,
-                  "forward_m": 0.6327916672585531,
-                  "up_m": -1.1464840945132018,
-                  "distance_m": 1.3095464029154182
-                }
-              },
-              {
-                "frame": 248,
-                "time_s": 8.265344,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 2.84751,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.03593902920263811,
-                  1.5932475606764338,
-                  2.4355492511173265
-                ],
-                "gaze_direction_world_unit": [
-                  0.9705761140096685,
-                  -0.2407742393975935,
-                  -0.0031261088274642246
-                ],
-                "wearer_world_m": [
-                  0.043947630653337996,
-                  1.593068955073781,
-                  2.364107721851482
-                ],
-                "right_world": [
-                  -0.008765823018972385,
-                  -0.02482380224110519,
-                  -0.999653409532071
-                ],
-                "forward_world": [
-                  0.9958349815864724,
-                  -0.0909438120834463,
-                  -0.006473985820251438
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.01098491325327546,
-                  "forward_m": 0.6317154549401371,
-                  "up_m": -1.1463548376968118,
-                  "distance_m": 1.3089251615867143
-                }
-              },
-              {
-                "frame": 249,
-                "time_s": 8.298672,
-                "gazed_object_id": "4403249623136829",
-                "gazed_object_name": "Apartment_CabinetDrawerC",
-                "gaze_depth_m": 2.86489,
-                "gaze_hit_distance_m": 2.7195759835873337,
-                "gaze_hit_exit_distance_m": 2.9841913274841305,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.03698524548705303,
-                  1.59298238575635,
-                  2.4348793231006503
-                ],
-                "gaze_direction_world_unit": [
-                  0.9648873310549666,
-                  -0.2620190485979422,
-                  0.018397188411603316
-                ],
-                "wearer_world_m": [
-                  0.044882624037612,
-                  1.5926991957646561,
-                  2.363425751346274
-                ],
-                "right_world": [
-                  -0.010359569024786852,
-                  -0.026082522325145754,
-                  -0.9996061131059475
-                ],
-                "forward_world": [
-                  0.995668460482608,
-                  -0.09263844820278805,
-                  -0.007901564071287004
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.012651272131634863,
-                  "forward_m": 0.6306495992007214,
-                  "up_m": -1.146089662776728,
-                  "distance_m": 1.308191153991803
-                }
-              },
-              {
-                "frame": 250,
-                "time_s": 8.332,
-                "gazed_object_id": "4403249623136829",
-                "gazed_object_name": "Apartment_CabinetDrawerC",
-                "gaze_depth_m": 2.47567,
-                "gaze_hit_distance_m": 2.40363760824374,
-                "gaze_hit_exit_distance_m": 3.0952434778923097,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.037972335981012795,
-                  1.5926631979451562,
-                  2.4342375502571505
-                ],
-                "gaze_direction_world_unit": [
-                  0.9293230165981097,
-                  -0.36315536337892973,
-                  0.06690973673619799
-                ],
-                "wearer_world_m": [
-                  0.045745161235633,
-                  1.5922012593389643,
-                  2.362771253996009
-                ],
-                "right_world": [
-                  -0.012180796749786449,
-                  -0.028146888685535304,
-                  -0.9995295797763394
-                ],
-                "forward_world": [
-                  0.9953128959905884,
-                  -0.09624718217527843,
-                  -0.009419076289493566
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.014430345864247986,
-                  "forward_m": 0.6296387591441369,
-                  "up_m": -1.1457704749655342,
-                  "distance_m": 1.3074389644365207
-                }
-              },
-              {
-                "frame": 251,
-                "time_s": 8.365328,
-                "gazed_object_id": "4403249623136829",
-                "gazed_object_name": "Apartment_CabinetDrawerC",
-                "gaze_depth_m": 2.55964,
-                "gaze_hit_distance_m": 2.481841694980293,
-                "gaze_hit_exit_distance_m": 3.1962715906474424,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.03897977436579721,
-                  1.5923260655544325,
-                  2.4336054944288583
-                ],
-                "gaze_direction_world_unit": [
-                  0.8991991796639075,
-                  -0.4281263610403314,
-                  0.09026989683232911
-                ],
-                "wearer_world_m": [
-                  0.046609912025071996,
-                  1.5916745526698217,
-                  2.3621252997504603
-                ],
-                "right_world": [
-                  -0.014245070819265626,
-                  -0.030410137510149947,
-                  -0.9994359916942996
-                ],
-                "forward_world": [
-                  0.9949787955929776,
-                  -0.09946234700693678,
-                  -0.011155171366628636
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.01634884287686977,
-                  "forward_m": 0.6286011108183708,
-                  "up_m": -1.1454333425748104,
-                  "distance_m": 1.3066619045521306
-                }
-              },
-              {
-                "frame": 252,
-                "time_s": 8.398656,
-                "gazed_object_id": "4403249623136829",
-                "gazed_object_name": "Apartment_CabinetDrawerC",
-                "gaze_depth_m": 2.5614,
-                "gaze_hit_distance_m": 2.4837245483842154,
-                "gaze_hit_exit_distance_m": 3.1990435095956906,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.04006368862791016,
-                  1.5920213305044408,
-                  2.4330126777784584
-                ],
-                "gaze_direction_world_unit": [
-                  0.8980594468722145,
-                  -0.43140726800769497,
-                  0.0858894579893758
-                ],
-                "wearer_world_m": [
-                  0.047534517320675006,
-                  1.5912169278864383,
-                  2.361517213893877
-                ],
-                "right_world": [
-                  -0.016499139185604805,
-                  -0.03239393040897965,
-                  -0.9993389873705482
-                ],
-                "forward_world": [
-                  0.9948247243063975,
-                  -0.10075026121530462,
-                  -0.013158752742867819
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.018341917854968366,
-                  "forward_m": 0.6274790766882319,
-                  "up_m": -1.1451286075248188,
-                  "distance_m": 1.305876962380307
-                }
-              },
-              {
-                "frame": 253,
-                "time_s": 8.431984,
-                "gazed_object_id": "4403249623136829",
-                "gazed_object_name": "Apartment_CabinetDrawerC",
-                "gaze_depth_m": 2.56128,
-                "gaze_hit_distance_m": 2.4837321634417533,
-                "gaze_hit_exit_distance_m": 3.199406500404568,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.04116647122542569,
-                  1.5918545737182028,
-                  2.432638448335743
-                ],
-                "gaze_direction_world_unit": [
-                  0.8976060198558538,
-                  -0.4324948001866403,
-                  0.0851568020186928
-                ],
-                "wearer_world_m": [
-                  0.04845731987866599,
-                  1.590886876692484,
-                  2.361126429839675
-                ],
-                "right_world": [
-                  -0.01903825929112174,
-                  -0.03453916914483235,
-                  -0.9992219925912109
-                ],
-                "forward_world": [
-                  0.9946742772906451,
-                  -0.1019069442757689,
-                  -0.015429089561884879
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.020290059357422133,
-                  "forward_m": 0.626331796151915,
-                  "up_m": -1.1449618507385808,
-                  "distance_m": 1.3052033493790114
-                }
-              },
-              {
-                "frame": 254,
-                "time_s": 8.465312,
-                "gazed_object_id": "4403249623136829",
-                "gazed_object_name": "Apartment_CabinetDrawerC",
-                "gaze_depth_m": 2.56016,
-                "gaze_hit_distance_m": 2.482627093008209,
-                "gaze_hit_exit_distance_m": 3.198352551624184,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.0423205514475253,
-                  1.5918274728904824,
-                  2.432577191570127
-                ],
-                "gaze_direction_world_unit": [
-                  0.8975429594861789,
-                  -0.432304257972976,
-                  0.08677363894194173
-                ],
-                "wearer_world_m": [
-                  0.049453492975324996,
-                  1.5906961196543983,
-                  2.361051651474185
-                ],
-                "right_world": [
-                  -0.021280857910398465,
-                  -0.03661431568432487,
-                  -0.9991028560531525
-                ],
-                "forward_world": [
-                  0.9944588989326142,
-                  -0.10367907547050904,
-                  -0.017382394636910214
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.021733242890852426,
-                  "forward_m": 0.6251400606238523,
-                  "up_m": -1.1449347499108604,
-                  "distance_m": 1.3046263592209044
-                }
-              },
-              {
-                "frame": 255,
-                "time_s": 8.49864,
-                "gazed_object_id": "4403249623136829",
-                "gazed_object_name": "Apartment_CabinetDrawerC",
-                "gaze_depth_m": 2.55234,
-                "gaze_hit_distance_m": 2.475115656329037,
-                "gaze_hit_exit_distance_m": 3.189110634996561,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.043681765037814825,
-                  1.5918013862376852,
-                  2.4327907720059647
-                ],
-                "gaze_direction_world_unit": [
-                  0.8997514386782235,
-                  -0.42754946694917084,
-                  0.08745742911809795
-                ],
-                "wearer_world_m": [
-                  0.050774479280254005,
-                  1.5905953740269099,
-                  2.361262451459327
-                ],
-                "right_world": [
-                  -0.021871093095121974,
-                  -0.03749178772406282,
-                  -0.9990575664795696
-                ],
-                "forward_world": [
-                  0.9943066801764137,
-                  -0.10505477857156714,
-                  -0.017824681086583416
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.021859630105213135,
-                  "forward_m": 0.6237741769033982,
-                  "up_m": -1.1449086632580632,
-                  "distance_m": 1.3039501320537832
-                }
-              },
-              {
-                "frame": 256,
-                "time_s": 8.531968,
-                "gazed_object_id": "4403249623136829",
-                "gazed_object_name": "Apartment_CabinetDrawerC",
-                "gaze_depth_m": 2.67258,
-                "gaze_hit_distance_m": 2.6009312395786663,
-                "gaze_hit_exit_distance_m": 2.92633539255125,
-                "gaze_depth_obb_residual_m": 0.0,
-                "gaze_origin_world_m": [
-                  0.04528941733162779,
-                  1.5916470276452832,
-                  2.4332336716067187
-                ],
-                "gaze_direction_world_unit": [
-                  0.8550645852230274,
-                  -0.5029728150458621,
-                  0.1260273875878299
-                ],
-                "wearer_world_m": [
-                  0.05243743173038401,
-                  1.590442828837446,
-                  2.361710825631559
-                ],
-                "right_world": [
-                  -0.0211323312061944,
-                  -0.037268239989512245,
-                  -0.9990818299147854
-                ],
-                "forward_world": [
-                  0.9941471549495118,
-                  -0.10668075306403818,
-                  -0.017048496458082096
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.020921525002241127,
-                  "forward_m": 0.6221892429328675,
-                  "up_m": -1.1447543046656612,
-                  "distance_m": 1.3030432119769968
-                }
-              },
-              {
-                "frame": 257,
-                "time_s": 8.565296,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 1.16252,
-                "gaze_hit_distance_m": 1.1690561356656195,
-                "gaze_hit_exit_distance_m": 1.2872509046959149,
-                "gaze_depth_obb_residual_m": 0.006536135665619502,
-                "gaze_origin_world_m": [
-                  0.047093857275624346,
-                  1.5912710410111408,
-                  2.4338694706939497
-                ],
-                "gaze_direction_world_unit": [
-                  0.7882895343637634,
-                  -0.5953025978997231,
-                  0.15560985491414697
-                ],
-                "wearer_world_m": [
-                  0.054290389951802,
-                  1.5900639424078848,
-                  2.3623515391564482
-                ],
-                "right_world": [
-                  -0.02052724355654101,
-                  -0.03687391572708078,
-                  -0.9991090764330606
-                ],
-                "forward_world": [
-                  0.9937697837243851,
-                  -0.11024671074202019,
-                  -0.016348691903457835
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.01987182882026893,
-                  "forward_m": 0.6204082100428956,
-                  "up_m": -1.1443783180315188,
-                  "distance_m": 1.3018481108000208
-                }
-              },
-              {
-                "frame": 258,
-                "time_s": 8.598624,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 1.16522,
-                "gaze_hit_distance_m": 1.1721401920751355,
-                "gaze_hit_exit_distance_m": 1.278293145391295,
-                "gaze_depth_obb_residual_m": 0.006920192075135612,
-                "gaze_origin_world_m": [
-                  0.049074747062135785,
-                  1.5907336329645347,
-                  2.4347202790304117
-                ],
-                "gaze_direction_world_unit": [
-                  0.7923501666920818,
-                  -0.5931886717124533,
-                  0.14250758960506527
-                ],
-                "wearer_world_m": [
-                  0.056288951613372,
-                  1.589515940554461,
-                  2.363204307535316
-                ],
-                "right_world": [
-                  -0.02038292835261446,
-                  -0.03639115928939324,
-                  -0.9991297311947764
-                ],
-                "forward_world": [
-                  0.993187615589717,
-                  -0.11541447704997573,
-                  -0.016057980149840556
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.01889096702075027,
-                  "forward_m": 0.6184462133813803,
-                  "up_m": -1.1438409099849127,
-                  "distance_m": 1.3004278534185412
-                }
-              },
-              {
-                "frame": 259,
-                "time_s": 8.631952,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 1.16046,
-                "gaze_hit_distance_m": 1.1674120960169585,
-                "gaze_hit_exit_distance_m": 1.2766081467818373,
-                "gaze_depth_obb_residual_m": 0.006952096016958453,
-                "gaze_origin_world_m": [
-                  0.05122027833202597,
-                  1.590152704554883,
-                  2.4358238092633626
-                ],
-                "gaze_direction_world_unit": [
-                  0.791737135543964,
-                  -0.5950597800559678,
-                  0.13804407397777713
-                ],
-                "wearer_world_m": [
-                  0.05843548344817599,
-                  1.588944534226255,
-                  2.36430777721048
-                ],
-                "right_world": [
-                  -0.02047720848921214,
-                  -0.03556863971550951,
-                  -0.9991574229325817
-                ],
-                "forward_world": [
-                  0.9925169277922293,
-                  -0.12105009843004139,
-                  -0.0160318968295044
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.017801681549100515,
-                  "forward_m": 0.6163190344445773,
-                  "up_m": -1.1432599815752609,
-                  "distance_m": 1.2988923587105325
-                }
-              },
-              {
-                "frame": 260,
-                "time_s": 8.66528,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 1.14142,
-                "gaze_hit_distance_m": 1.1478991851907323,
-                "gaze_hit_exit_distance_m": 1.2865967535868936,
-                "gaze_depth_obb_residual_m": 0.006479185190732206,
-                "gaze_origin_world_m": [
-                  0.05349969550170909,
-                  1.5896133267825334,
-                  2.4371799571178325
-                ],
-                "gaze_direction_world_unit": [
-                  0.7837740448449377,
-                  -0.6047099073391956,
-                  0.14150680051936404
-                ],
-                "wearer_world_m": [
-                  0.060725500448936,
-                  1.58844641480826,
-                  2.3656643101564234
-                ],
-                "right_world": [
-                  -0.020428444181024852,
-                  -0.0343357852406094,
-                  -0.9992015474969272
-                ],
-                "forward_world": [
-                  0.9918513800720216,
-                  -0.12639986670159203,
-                  -0.015934664949280586
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.01636860479722465,
-                  "forward_m": 0.6140630121231405,
-                  "up_m": -1.1427206038029114,
-                  "distance_m": 1.2973322313631144
-                }
-              },
-              {
-                "frame": 261,
-                "time_s": 8.698608,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 1.13364,
-                "gaze_hit_distance_m": 1.1402234251112058,
-                "gaze_hit_exit_distance_m": 1.2858643389573299,
-                "gaze_depth_obb_residual_m": 0.006583425111205798,
-                "gaze_origin_world_m": [
-                  0.05588634582901863,
-                  1.589158291295333,
-                  2.4387517929749003
-                ],
-                "gaze_direction_world_unit": [
-                  0.7824039563593117,
-                  -0.6083177366937408,
-                  0.1333925796178358
-                ],
-                "wearer_world_m": [
-                  0.06315487153348401,
-                  1.588075424449608,
-                  2.367239153291569
-                ],
-                "right_world": [
-                  -0.019914731805853736,
-                  -0.032592104355465015,
-                  -0.9992703128737412
-                ],
-                "forward_world": [
-                  0.991258441715072,
-                  -0.13102297858692755,
-                  -0.015481628170744888
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.014433140860150451,
-                  "forward_m": 0.6117072570181401,
-                  "up_m": -1.142265568315711,
-                  "distance_m": 1.2957991993147784
-                }
-              },
-              {
-                "frame": 262,
-                "time_s": 8.731936,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 1.12831,
-                "gaze_hit_distance_m": 1.1349446640934313,
-                "gaze_hit_exit_distance_m": 1.285189888692074,
-                "gaze_depth_obb_residual_m": 0.006634664093431386,
-                "gaze_origin_world_m": [
-                  0.05837248359428648,
-                  1.5887578425826139,
-                  2.44044432697261
-                ],
-                "gaze_direction_world_unit": [
-                  0.7808851103422143,
-                  -0.6107803309442262,
-                  0.1310184406008904
-                ],
-                "wearer_world_m": [
-                  0.06572301101781501,
-                  1.587819354028172,
-                  2.368938028740712
-                ],
-                "right_world": [
-                  -0.018837789672183747,
-                  -0.030087382413367655,
-                  -0.9993697449391683
-                ],
-                "forward_world": [
-                  0.9907435045911827,
-                  -0.1349584945458281,
-                  -0.014612079260140742
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.012033952184403346,
-                  "forward_m": 0.6092563739767567,
-                  "up_m": -1.1418651196029919,
-                  "distance_m": 1.2942720806119108
-                }
-              },
-              {
-                "frame": 263,
-                "time_s": 8.765264,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 1.04335,
-                "gaze_hit_distance_m": 1.0481070531459211,
-                "gaze_hit_exit_distance_m": 1.358972818637142,
-                "gaze_depth_obb_residual_m": 0.00475705314592112,
-                "gaze_origin_world_m": [
-                  0.06094963570598394,
-                  1.588412867734543,
-                  2.4422162141113404
-                ],
-                "gaze_direction_world_unit": [
-                  0.7363996757512286,
-                  -0.661012942163482,
-                  0.14414370553674088
-                ],
-                "wearer_world_m": [
-                  0.068392153693569,
-                  1.5876521494573117,
-                  2.370717319471583
-                ],
-                "right_world": [
-                  -0.017612380303604624,
-                  -0.027164230128644287,
-                  -0.9994758169468435
-                ],
-                "forward_world": [
-                  0.9902694504571561,
-                  -0.1384886361809013,
-                  -0.013686239075657802
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.009469028944244584,
-                  "forward_m": 0.6067125387859831,
-                  "up_m": -1.141520144754921,
-                  "distance_m": 1.2927566139391404
-                }
-              },
-              {
-                "frame": 264,
-                "time_s": 8.798592,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 1.03886,
-                "gaze_hit_distance_m": 1.0432906359126393,
-                "gaze_hit_exit_distance_m": 1.3645455662789217,
-                "gaze_depth_obb_residual_m": 0.004430635912639369,
-                "gaze_origin_world_m": [
-                  0.06360531602458852,
-                  1.5881693034931508,
-                  2.4440981060939206
-                ],
-                "gaze_direction_world_unit": [
-                  0.7313584947870624,
-                  -0.6639290824024243,
-                  0.1559260261889509
-                ],
-                "wearer_world_m": [
-                  0.07108147701011501,
-                  1.587544817596264,
-                  2.372601401727334
-                ],
-                "right_world": [
-                  -0.017201312896685528,
-                  -0.024817685470051976,
-                  -0.9995439946908491
-                ],
-                "forward_world": [
-                  0.9897667331248972,
-                  -0.1420542229540466,
-                  -0.013505989048957001
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.007291565646077296,
-                  "forward_m": 0.604084027659887,
-                  "up_m": -1.1412765805135288,
-                  "distance_m": 1.291300181829535
-                }
-              },
-              {
-                "frame": 265,
-                "time_s": 8.83192,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 1.03083,
-                "gaze_hit_distance_m": 1.0351368637625211,
-                "gaze_hit_exit_distance_m": 1.3699186683042304,
-                "gaze_depth_obb_residual_m": 0.004306863762521207,
-                "gaze_origin_world_m": [
-                  0.06633082508925334,
-                  1.587996369335354,
-                  2.4460424158194427
-                ],
-                "gaze_direction_world_unit": [
-                  0.7264754025768532,
-                  -0.6690004414132809,
-                  0.15707290931167822
-                ],
-                "wearer_world_m": [
-                  0.07378581255680901,
-                  1.5875197988086107,
-                  2.3745423616698713
-                ],
-                "right_world": [
-                  -0.017547997842052354,
-                  -0.022361615857553613,
-                  -0.9995959313182379
-                ],
-                "forward_world": [
-                  0.9893050889138915,
-                  -0.1451760183096445,
-                  -0.014119658524029632
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.005508616397554478,
-                  "forward_m": 0.6013832044044901,
-                  "up_m": -1.141103646355732,
-                  "distance_m": 1.28988053166136
-                }
-              },
-              {
-                "frame": 266,
-                "time_s": 8.865248,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 1.02272,
-                "gaze_hit_distance_m": 1.0271199425873487,
-                "gaze_hit_exit_distance_m": 1.3722872357100806,
-                "gaze_depth_obb_residual_m": 0.00439994258734866,
-                "gaze_origin_world_m": [
-                  0.06911479236547526,
-                  1.5878121021355305,
-                  2.4479492970542958
-                ],
-                "gaze_direction_world_unit": [
-                  0.7232170826491964,
-                  -0.6739925783911941,
-                  0.15063550590075275
-                ],
-                "wearer_world_m": [
-                  0.076542971621787,
-                  1.5876182535898617,
-                  2.3764451274089007
-                ],
-                "right_world": [
-                  -0.01795217703884433,
-                  -0.018179367302100125,
-                  -0.9996735616910459
-                ],
-                "forward_world": [
-                  0.9890242801644453,
-                  -0.14698069275926243,
-                  -0.015088048290208766
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.0037942993304648292,
-                  "forward_m": 0.5986248827678935,
-                  "up_m": -1.1409193791559085,
-                  "distance_m": 1.2884306419357223
-                }
-              },
-              {
-                "frame": 267,
-                "time_s": 8.898576,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 1.01526,
-                "gaze_hit_distance_m": 1.0196285780234933,
-                "gaze_hit_exit_distance_m": 1.3766120185257902,
-                "gaze_depth_obb_residual_m": 0.004368578023493219,
-                "gaze_origin_world_m": [
-                  0.07190385503728437,
-                  1.5875944365536458,
-                  2.4497924677786886
-                ],
-                "gaze_direction_world_unit": [
-                  0.7189066074684596,
-                  -0.6787268627455988,
-                  0.15001045138825103
-                ],
-                "wearer_world_m": [
-                  0.07927110310212401,
-                  1.5877385227369367,
-                  2.37828187698178
-                ],
-                "right_world": [
-                  -0.018832669031301652,
-                  -0.013227634163515772,
-                  -0.9997351450617282
-                ],
-                "forward_world": [
-                  0.9887349114561608,
-                  -0.14874746212361142,
-                  -0.016657352117391555
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.0024253004769930805,
-                  "forward_m": 0.5958630416573908,
-                  "up_m": -1.1407017135740238,
-                  "distance_m": 1.2869555937872093
-                }
-              },
-              {
-                "frame": 268,
-                "time_s": 8.931904,
-                "gazed_object_id": null,
-                "gazed_object_name": null,
-                "gaze_depth_m": 0.76594,
-                "gaze_hit_distance_m": null,
-                "gaze_hit_exit_distance_m": null,
-                "gaze_depth_obb_residual_m": null,
-                "gaze_origin_world_m": [
-                  0.07464285946070265,
-                  1.587333223517401,
-                  2.451570684569073
-                ],
-                "gaze_direction_world_unit": [
-                  0.7149802406414475,
-                  -0.6821624793002167,
-                  0.15315876510105142
-                ],
-                "wearer_world_m": [
-                  0.08187833434148101,
-                  1.587741116983296,
-                  2.380047658716064
-                ],
-                "right_world": [
-                  -0.02072645328559536,
-                  -0.009120658612275762,
-                  -0.999743580984984
-                ],
-                "forward_world": [
-                  0.9881842644297142,
-                  -0.152075874737725,
-                  -0.01909942031216083
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.0017188703827884025,
-                  "forward_m": 0.5931540050900002,
-                  "up_m": -1.140440500537779,
-                  "distance_m": 1.2854715067947928
-                }
-              },
-              {
-                "frame": 269,
-                "time_s": 8.965232,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 1.00652,
-                "gaze_hit_distance_m": 1.0108301527939494,
-                "gaze_hit_exit_distance_m": 1.377755550858106,
-                "gaze_depth_obb_residual_m": 0.004310152793949307,
-                "gaze_origin_world_m": [
-                  0.07734131070154021,
-                  1.586963567146949,
-                  2.4532518056130574
-                ],
-                "gaze_direction_world_unit": [
-                  0.7143563592336748,
-                  -0.684005639380134,
-                  0.14775411100400293
-                ],
-                "wearer_world_m": [
-                  0.084437864675074,
-                  1.5875843898800892,
-                  2.381716393390615
-                ],
-                "right_world": [
-                  -0.022729160672940674,
-                  -0.005633649224123127,
-                  -0.9997257860291107
-                ],
-                "forward_world": [
-                  0.9874980622791136,
-                  -0.1561481953072712,
-                  -0.02157123309590253
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.001164738375797664,
-                  "forward_m": 0.5904888052342889,
-                  "up_m": -1.140070844167327,
-                  "distance_m": 1.283915482786398
-                }
-              },
-              {
-                "frame": 270,
-                "time_s": 8.99856,
-                "gazed_object_id": "4671332369591132",
-                "gazed_object_name": "KitchIsland",
-                "gaze_depth_m": 0.993759,
-                "gaze_hit_distance_m": 0.9979649661206104,
-                "gaze_hit_exit_distance_m": 1.3878136215089847,
-                "gaze_depth_obb_residual_m": 0.004205966120610416,
-                "gaze_origin_world_m": [
-                  0.08003671161051092,
-                  1.5864865138838364,
-                  2.454825914963898
-                ],
-                "gaze_direction_world_unit": [
-                  0.7072405099610536,
-                  -0.6922981999445318,
-                  0.14329711589417982
-                ],
-                "wearer_world_m": [
-                  0.08704717522255101,
-                  1.587297128627144,
-                  2.383283913281794
-                ],
-                "right_world": [
-                  -0.02398583569092111,
-                  -0.0025171080024109505,
-                  -0.9997091296239684
-                ],
-                "forward_world": [
-                  0.9868685879526521,
-                  -0.15983945164422309,
-                  -0.023275304732968793
-                ],
-                "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
-                "relation": {
-                  "label": "front",
-                  "side": "center",
-                  "depth": "front",
-                  "right_m": -0.0002685150509789628,
-                  "forward_m": 0.5878292636454103,
-                  "up_m": -1.1395937909042144,
-                  "distance_m": 1.2822703507070312
-                }
               },
               {
                 "frame": 271,
@@ -80048,15 +67727,15 @@ window.QA_DATA = {
                   -0.024099895247819914
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.0010235550694714258,
-                  "forward_m": 0.5851134148190277,
-                  "up_m": -1.1391777188668968,
-                  "distance_m": 1.2806579214655465
+                  "right_m": -0.20974827374311267,
+                  "forward_m": 0.5214586551173838,
+                  "up_m": -0.5021705047095586,
+                  "distance_m": 0.7537069756474415
                 }
               },
               {
@@ -80094,15 +67773,15 @@ window.QA_DATA = {
                   -0.023899669288555525
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.002834606531511505,
-                  "forward_m": 0.5823713489927729,
-                  "up_m": -1.1388125312121886,
-                  "distance_m": 1.2790848110225062
+                  "right_m": -0.20845525261285108,
+                  "forward_m": 0.5166303395102579,
+                  "up_m": -0.5124930841565964,
+                  "distance_m": 0.7569937161085303
                 }
               },
               {
@@ -80140,15 +67819,15 @@ window.QA_DATA = {
                   -0.02244414712504872
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.005406476137200364,
-                  "forward_m": 0.5797411402363999,
-                  "up_m": -1.1382563381669821,
-                  "distance_m": 1.277401303906087
+                  "right_m": -0.20607259998400074,
+                  "forward_m": 0.5126712642878641,
+                  "up_m": -0.522186085636482,
+                  "distance_m": 0.7603021914840687
                 }
               },
               {
@@ -80186,15 +67865,15 @@ window.QA_DATA = {
                   -0.020380734508692544
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.008341182497091643,
-                  "forward_m": 0.5772033710638911,
-                  "up_m": -1.1375800085772008,
-                  "distance_m": 1.2756625030683184
+                  "right_m": -0.2033430312136192,
+                  "forward_m": 0.5096087318117186,
+                  "up_m": -0.5314884323551712,
+                  "distance_m": 0.7639887418474539
                 }
               },
               {
@@ -80232,15 +67911,15 @@ window.QA_DATA = {
                   -0.018887471213008433
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.010828074138929934,
-                  "forward_m": 0.5746329526607276,
-                  "up_m": -1.1370593686724046,
-                  "distance_m": 1.2740535312419012
+                  "right_m": -0.20156437087632842,
+                  "forward_m": 0.506828190582486,
+                  "up_m": -0.5402374781604995,
+                  "distance_m": 0.7678282200969113
                 }
               },
               {
@@ -80278,15 +67957,15 @@ window.QA_DATA = {
                   -0.0182935939915021
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.01258790938955919,
-                  "forward_m": 0.5719635454259755,
-                  "up_m": -1.1366822051662606,
-                  "distance_m": 1.2725295620819566
+                  "right_m": -0.20100867052442906,
+                  "forward_m": 0.5039782599921014,
+                  "up_m": -0.5480244043694016,
+                  "distance_m": 0.7713341593657483
                 }
               },
               {
@@ -80324,15 +68003,15 @@ window.QA_DATA = {
                   -0.01841331449602046
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.013701849971787885,
-                  "forward_m": 0.5691708581043831,
-                  "up_m": -1.136327675354901,
-                  "distance_m": 1.2709706804650198
+                  "right_m": -0.20136071749714368,
+                  "forward_m": 0.5009202476043743,
+                  "up_m": -0.5545323886762208,
+                  "distance_m": 0.774082189128215
                 }
               },
               {
@@ -80370,15 +68049,15 @@ window.QA_DATA = {
                   -0.018500317821661616
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.014722037616645759,
-                  "forward_m": 0.5663045931609609,
-                  "up_m": -1.1359493082790029,
-                  "distance_m": 1.2693623432023802
+                  "right_m": -0.20179557373491833,
+                  "forward_m": 0.4978901851101273,
+                  "up_m": -0.5602084990984353,
+                  "distance_m": 0.7763168703300615
                 }
               },
               {
@@ -80416,15 +68095,15 @@ window.QA_DATA = {
                   -0.017968175616686843
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.016082910591175677,
-                  "forward_m": 0.5634297435400342,
-                  "up_m": -1.135544212723765,
-                  "distance_m": 1.2677361454535472
+                  "right_m": -0.20165191864387882,
+                  "forward_m": 0.49508454939908364,
+                  "up_m": -0.5656383139968613,
+                  "distance_m": 0.7784053675009937
                 }
               },
               {
@@ -80462,15 +68141,15 @@ window.QA_DATA = {
                   -0.016882903744097233
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.017720648035623142,
-                  "forward_m": 0.5606082491283482,
-                  "up_m": -1.1351644791617066,
-                  "distance_m": 1.2661670994564047
+                  "right_m": -0.20088922327730088,
+                  "forward_m": 0.49241806527774745,
+                  "up_m": -0.571285511222827,
+                  "distance_m": 0.7806084263386401
                 }
               },
               {
@@ -80508,15 +68187,15 @@ window.QA_DATA = {
                   -0.015685993511920515
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.019369658981914138,
-                  "forward_m": 0.55784756127876,
-                  "up_m": -1.134847700194475,
-                  "distance_m": 1.2646895533383833
+                  "right_m": -0.19980243456926858,
+                  "forward_m": 0.4897627009111332,
+                  "up_m": -0.5770441444622012,
+                  "distance_m": 0.7828460622496858
                 }
               },
               {
@@ -80554,15 +68233,15 @@ window.QA_DATA = {
                   -0.015142453222597774
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.02062212341590571,
-                  "forward_m": 0.5550935674382242,
-                  "up_m": -1.1345998801897588,
-                  "distance_m": 1.2632779176868532
+                  "right_m": -0.19896905048375949,
+                  "forward_m": 0.4870024676231301,
+                  "up_m": -0.5821608496598915,
+                  "distance_m": 0.7846469019321158
                 }
               },
               {
@@ -80600,15 +68279,15 @@ window.QA_DATA = {
                   -0.015283183837671965
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.021462395198989778,
-                  "forward_m": 0.5523492106825247,
-                  "up_m": -1.1343749554051166,
-                  "distance_m": 1.26188987972961
+                  "right_m": -0.19841493243188485,
+                  "forward_m": 0.484237253486254,
+                  "up_m": -0.5866897881212911,
+                  "distance_m": 0.7861199671074169
                 }
               },
               {
@@ -80646,15 +68325,15 @@ window.QA_DATA = {
                   -0.0156214659207492
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.022144017496758157,
-                  "forward_m": 0.5496672556015524,
-                  "up_m": -1.1341023133233088,
-                  "distance_m": 1.2604877109331694
+                  "right_m": -0.19778404305687958,
+                  "forward_m": 0.48173097398853504,
+                  "up_m": -0.5911406770539119,
+                  "distance_m": 0.7877185874606436
                 }
               },
               {
@@ -80692,15 +68371,15 @@ window.QA_DATA = {
                   -0.016068374131494423
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.022734896541895554,
-                  "forward_m": 0.5471504205143027,
-                  "up_m": -1.1338057515387914,
-                  "distance_m": 1.2591377197250273
+                  "right_m": -0.19702425719617647,
+                  "forward_m": 0.4797713958687475,
+                  "up_m": -0.5946771136758682,
+                  "distance_m": 0.7889713914102251
                 }
               },
               {
@@ -80738,15 +68417,15 @@ window.QA_DATA = {
                   -0.016691135426482595
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.023221829250204176,
-                  "forward_m": 0.5449032334745408,
-                  "up_m": -1.1335399795411525,
-                  "distance_m": 1.2579334585485076
+                  "right_m": -0.19616279957018834,
+                  "forward_m": 0.47856916710064495,
+                  "up_m": -0.5963114624558876,
+                  "distance_m": 0.7892484786339496
                 }
               },
               {
@@ -80784,15 +68463,15 @@ window.QA_DATA = {
                   -0.017467328122949766
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.023601861615383392,
-                  "forward_m": 0.5429502104479286,
-                  "up_m": -1.1333164828512168,
-                  "distance_m": 1.2568956537456581
+                  "right_m": -0.19499967935300522,
+                  "forward_m": 0.47799983741313923,
+                  "up_m": -0.5968103030180043,
+                  "distance_m": 0.7889785710322758
                 }
               },
               {
@@ -80830,15 +68509,15 @@ window.QA_DATA = {
                   -0.018459714393825766
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.023815367661309882,
-                  "forward_m": 0.5413024349372192,
-                  "up_m": -1.1331105029460637,
-                  "distance_m": 1.256004583705632
+                  "right_m": -0.19346797136728405,
+                  "forward_m": 0.4778113353482802,
+                  "up_m": -0.5970651131087943,
+                  "distance_m": 0.7886635291249028
                 }
               },
               {
@@ -80876,15 +68555,15 @@ window.QA_DATA = {
                   -0.019959454793052778
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.02368235575522496,
-                  "forward_m": 0.5399835838241467,
-                  "up_m": -1.1328425585006232,
-                  "distance_m": 1.2551916193909949
+                  "right_m": -0.19190267930737562,
+                  "forward_m": 0.4776647546865086,
+                  "up_m": -0.5972957854553607,
+                  "distance_m": 0.7883757725195043
                 }
               },
               {
@@ -80922,61 +68601,428 @@ window.QA_DATA = {
                   -0.021786132781152212
                 ],
                 "wearer_timestamp_skew_ms": 0.003,
-                "object_pose_skew_ms": 0.0,
+                "object_pose_skew_ms": 0.0037,
                 "relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.023255236589482406,
-                  "forward_m": 0.5390055948758117,
-                  "up_m": -1.1325099662332048,
-                  "distance_m": 1.2544595937086491
+                  "right_m": -0.19044667133856802,
+                  "forward_m": 0.4775464412059543,
+                  "up_m": -0.5976261685814999,
+                  "distance_m": 0.7882374302792758
+                }
+              },
+              {
+                "frame": 291,
+                "time_s": 9.698448,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 0.787984,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.13003644231741374,
+                  1.5791088386461747,
+                  2.4769553254795995
+                ],
+                "gaze_direction_world_unit": [
+                  0.6373002218582977,
+                  -0.7546836274814399,
+                  0.15588793933726747
+                ],
+                "wearer_world_m": [
+                  0.137059778326305,
+                  1.5794562285251867,
+                  2.405410837413934
+                ],
+                "right_world": [
+                  -0.02433671139173782,
+                  -0.003015614976677572,
+                  -0.9996992700532238
+                ],
+                "forward_world": [
+                  0.9778750185175377,
+                  -0.2079019371751415,
+                  -0.023178280310429955
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.18897941207575333,
+                  "forward_m": 0.4778334777068413,
+                  "up_m": -0.5981494229928028,
+                  "distance_m": 0.7884828044776684
+                }
+              },
+              {
+                "frame": 292,
+                "time_s": 9.731776,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 0.788522,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.13031419186055532,
+                  1.5789288573545246,
+                  2.4770562722253033
+                ],
+                "gaze_direction_world_unit": [
+                  0.635431366589173,
+                  -0.7567656834393455,
+                  0.1534036463816829
+                ],
+                "wearer_world_m": [
+                  0.13725578348957598,
+                  1.579283304330975,
+                  2.405503841281297
+                ],
+                "right_world": [
+                  -0.02549547565329341,
+                  -0.0026539474225245052,
+                  -0.9996714146579821
+                ],
+                "forward_world": [
+                  0.9773988089419958,
+                  -0.20999446245145753,
+                  -0.02436994087992994
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.18795624558911223,
+                  "forward_m": 0.4783976444712017,
+                  "up_m": -0.5986588676534842,
+                  "distance_m": 0.788975203072897
+                }
+              },
+              {
+                "frame": 293,
+                "time_s": 9.765104,
+                "gazed_object_id": "7379153972126671",
+                "gazed_object_name": "WhiteVase",
+                "gaze_depth_m": 0.70761,
+                "gaze_hit_distance_m": 0.6886750010622207,
+                "gaze_hit_exit_distance_m": 0.8752115790001739,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.13014129404999797,
+                  1.578901686754081,
+                  2.4769870132823666
+                ],
+                "gaze_direction_world_unit": [
+                  0.6292630037757486,
+                  -0.7498300866219934,
+                  0.20440869178089344
+                ],
+                "wearer_world_m": [
+                  0.136946729385128,
+                  1.5792385528699062,
+                  2.40542141908991
+                ],
+                "right_world": [
+                  -0.027408986576486438,
+                  -0.0027125232529091325,
+                  -0.9996206228727244
+                ],
+                "forward_world": [
+                  0.9770286846130745,
+                  -0.21148921850151858,
+                  -0.026215642293540065
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.18814177774201069,
+                  "forward_m": 0.47878653436260626,
+                  "up_m": -0.5988017038134643,
+                  "distance_m": 0.7893615783428938
+                }
+              },
+              {
+                "frame": 294,
+                "time_s": 9.798432,
+                "gazed_object_id": "7379153972126671",
+                "gazed_object_name": "WhiteVase",
+                "gaze_depth_m": 0.707943,
+                "gaze_hit_distance_m": 0.6927158152636849,
+                "gaze_hit_exit_distance_m": 0.8707474862483849,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.1295660907531844,
+                  1.5789985235401556,
+                  2.4766924074928203
+                ],
+                "gaze_direction_world_unit": [
+                  0.632655114013206,
+                  -0.7454234357473485,
+                  0.2099795422215136
+                ],
+                "wearer_world_m": [
+                  0.13621129843511098,
+                  1.5793159704553799,
+                  2.405111668859302
+                ],
+                "right_world": [
+                  -0.029648829137647437,
+                  -0.002948833789457095,
+                  -0.9995560270990558
+                ],
+                "forward_world": [
+                  0.9769072584608938,
+                  -0.2117743088799887,
+                  -0.02835225678536324
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.18927042732866947,
+                  "forward_m": 0.4791274667977349,
+                  "up_m": -0.5987978673652163,
+                  "distance_m": 0.7898287956655867
+                }
+              },
+              {
+                "frame": 295,
+                "time_s": 9.83176,
+                "gazed_object_id": "7379153972126671",
+                "gazed_object_name": "WhiteVase",
+                "gaze_depth_m": 0.710975,
+                "gaze_hit_distance_m": 0.6949764807516344,
+                "gaze_hit_exit_distance_m": 0.8689674116438524,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.12863631828329852,
+                  1.5791713881360758,
+                  2.476125938934019
+                ],
+                "gaze_direction_world_unit": [
+                  0.6352535989947488,
+                  -0.7432605129168122,
+                  0.20980151310907236
+                ],
+                "wearer_world_m": [
+                  0.135153801207486,
+                  1.579472601572854,
+                  2.40453338773071
+                ],
+                "right_world": [
+                  -0.031424094894219934,
+                  -0.003308494729332312,
+                  -0.9995006653938282
+                ],
+                "forward_world": [
+                  0.9770848111856483,
+                  -0.2107224760686121,
+                  -0.030021822559918365
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.19071207388653236,
+                  "forward_m": 0.4797794293511975,
+                  "up_m": -0.5990065935409444,
+                  "distance_m": 0.7907198725282385
+                }
+              },
+              {
+                "frame": 296,
+                "time_s": 9.865088,
+                "gazed_object_id": "7379153972126671",
+                "gazed_object_name": "WhiteVase",
+                "gaze_depth_m": 0.716917,
+                "gaze_hit_distance_m": 0.6993260625139016,
+                "gaze_hit_exit_distance_m": 0.8657928795195844,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.1272235069848674,
+                  1.5794128585453235,
+                  2.475312286154692
+                ],
+                "gaze_direction_world_unit": [
+                  0.6390814221795775,
+                  -0.7390966458489507,
+                  0.21286400334429256
+                ],
+                "wearer_world_m": [
+                  0.133651434076321,
+                  1.579657990017855,
+                  2.4037114246733653
+                ],
+                "right_world": [
+                  -0.03266671463663906,
+                  -0.004213655224646784,
+                  -0.9994574182347624
+                ],
+                "forward_world": [
+                  0.9772567378091956,
+                  -0.2097730902665639,
+                  -0.031056706305483572
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.192214044398512,
+                  "forward_m": 0.48097458345335864,
+                  "up_m": -0.5993270150566801,
+                  "distance_m": 0.7920282336394202
+                }
+              },
+              {
+                "frame": 297,
+                "time_s": 9.898416,
+                "gazed_object_id": "7379153972126671",
+                "gazed_object_name": "WhiteVase",
+                "gaze_depth_m": 0.716319,
+                "gaze_hit_distance_m": 0.6995539132086067,
+                "gaze_hit_exit_distance_m": 0.8691658898528593,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.12519190648767042,
+                  1.5797218679131657,
+                  2.474208339410165
+                ],
+                "gaze_direction_world_unit": [
+                  0.639047154434504,
+                  -0.7392841722689821,
+                  0.2123149713084997
+                ],
+                "wearer_world_m": [
+                  0.131531810650342,
+                  1.579847930528176,
+                  2.4025993216510497
+                ],
+                "right_world": [
+                  -0.03389645825780374,
+                  -0.005857031204168417,
+                  -0.999408187530526
+                ],
+                "forward_world": [
+                  0.9771862304444631,
+                  -0.2099730489101936,
+                  -0.03191221962035973
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.19397081369469119,
+                  "forward_m": 0.48278275358637274,
+                  "up_m": -0.599622068992432,
+                  "distance_m": 0.7937350482054473
+                }
+              },
+              {
+                "frame": 298,
+                "time_s": 9.931744,
+                "gazed_object_id": "7379153972126671",
+                "gazed_object_name": "WhiteVase",
+                "gaze_depth_m": 0.720033,
+                "gaze_hit_distance_m": 0.6993547563327174,
+                "gaze_hit_exit_distance_m": 0.8731369454595356,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.12248616961131896,
+                  1.5800914580870558,
+                  2.4725851184155787
+                ],
+                "gaze_direction_world_unit": [
+                  0.6400235945768225,
+                  -0.7399145451544418,
+                  0.20711413339957907
+                ],
+                "wearer_world_m": [
+                  0.128638817595239,
+                  1.580080856453931,
+                  2.400959658477151
+                ],
+                "right_world": [
+                  -0.0365142544902165,
+                  -0.007686543350114483,
+                  -0.9993035706282405
+                ],
+                "forward_world": [
+                  0.976966711449458,
+                  -0.2106531550308889,
+                  -0.0340777492678655
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.19694819736996538,
+                  "forward_m": 0.48498051370628603,
+                  "up_m": -0.5999275543727177,
+                  "distance_m": 0.7959849778126925
                 }
               }
             ],
             "gaze_events": [
               {
-                "object_id": "4671332369591132",
-                "object_name": "KitchIsland",
-                "start_index": 257,
-                "end_index": 290,
-                "start_time_s": 8.565296,
-                "end_time_s": 9.66512,
-                "state_count": 34,
-                "direct_hit_count": 33,
-                "merged_gap_count": 1,
-                "hit_support_ratio": 0.9705882352941176,
+                "object_id": "7379153972126671",
+                "object_name": "WhiteVase",
+                "start_index": 293,
+                "end_index": 298,
+                "start_time_s": 9.765104,
+                "end_time_s": 9.931744,
+                "state_count": 6,
+                "direct_hit_count": 6,
+                "merged_gap_count": 0,
+                "hit_support_ratio": 1.0,
                 "median_relation": {
-                  "label": "front",
-                  "side": "center",
+                  "label": "left-front",
+                  "side": "left",
                   "depth": "front",
-                  "right_m": 0.008341182497091643,
-                  "forward_m": 0.5772033710638911,
-                  "up_m": -1.1375800085772008,
-                  "distance_m": 1.2756625030683184
+                  "right_m": -0.192214044398512,
+                  "forward_m": 0.48097458345335864,
+                  "up_m": -0.5993270150566801,
+                  "distance_m": 0.7920282336394202
                 }
               }
             ],
             "transition": {
-              "start_frame": 20,
-              "end_frame": 290,
+              "start_frame": 28,
+              "end_frame": 298,
               "relation_sequence": [
                 "left-front",
                 "front",
-                "right-front",
-                "front"
+                "left-front"
               ],
-              "last_supported_event_end_frame": 290,
-              "last_supported_event_object_id": "4671332369591132"
+              "last_supported_event_end_frame": 298,
+              "last_supported_event_object_id": "7379153972126671"
             }
           }
         }
       ],
       "task5_media": {
-        "object_id": "4671332369591132",
+        "object_id": "7379153972126671",
         "anchor_frames": [
-          20,
-          290
+          28,
+          298
         ]
       },
       "case_policy": "one annotation-derived question per unique gaze/object window"

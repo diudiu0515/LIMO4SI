@@ -10,6 +10,7 @@ from limo4si.task5_scaling import (
     _expanded_window,
     generate_task5_candidates,
     select_balanced_candidates,
+    sustained_relation_sequence,
 )
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,7 +21,10 @@ class Task5ScalingTests(unittest.TestCase):
     def setUpClass(cls):
         cls.analysis = json.loads((ROOT / "outputs/qa/task5_adt_analysis.json").read_text())
         cls.sample_only_policy = Task5CandidatePolicy(
-            min_event_gap_sec=0.30, max_repeated_window_sec=6.0,
+            min_event_gap_sec=0.30, min_repeated_event_direct_hits=4, min_onset_event_direct_hits=4,
+            min_repeated_event_duration_sec=0.0, min_onset_event_duration_sec=0.0,
+            min_last_event_duration_sec=0.0, min_lateral_shift_m=0.05, min_relation_run_states=1,
+            excluded_target_categories=(), max_repeated_window_sec=6.0,
             target_window_sec=4.0, min_window_sec=0.5, max_window_sec=6.0,
         )
 
@@ -77,8 +81,12 @@ class Task5ScalingTests(unittest.TestCase):
     def test_published_correct_option_positions_are_balanced(self):
         rows = [json.loads(line) for line in (ROOT / "outputs/qa/task5_scaled_qa.jsonl").read_text().splitlines()]
         counts = Counter(row["correct_option"] for row in rows)
-        self.assertGreaterEqual(len(counts), 3)
+        self.assertEqual(len(counts), min(len(rows), 4))
         self.assertLessEqual(max(counts.values()) / len(rows), 0.5)
+
+    def test_relation_sequence_ignores_brief_boundary_flicker(self):
+        labels = ["left-front"] * 10 + ["front"] * 2 + ["left-front"] * 8 + ["front"] * 6
+        self.assertEqual(sustained_relation_sequence(labels, minimum_run=6), ["left-front", "front"])
 
     def test_selection_reports_category_deficits(self):
         candidates, _ = generate_task5_candidates(self.analysis, self.sample_only_policy)
