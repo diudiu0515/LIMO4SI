@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "generated_by": "scripts/scale_task5_egoexo.py",
+  "release_status": "signed_semantic_gt_egoexo_primary",
+  "minimum_boundary_margin_px": 10.0,
+  "window_duration_sec": 15.0,
+  "cases": [
+    {
+      "id": "task5_egoexo_indiana_cooking_16_3_278f27b09b",
+      "take_uid": "2041eb29-6086-4e5e-9881-0f14d9e6a8d8",
+      "anchor_frames": [
+        5280,
+        5370,
+        5610
+      ],
+      "target_object_id": "Recipe sheet_0"
+    },
+    {
+      "id": "task5_egoexo_iiith_cooking_125_2_49a1e4f29d",
+      "take_uid": "4356d71a-56a5-413b-a407-14f144112d91",
+      "anchor_frames": [
+        60,
+        150,
+        480
+      ],
+      "target_object_id": "pancake pan_0"
+    },
+    {
+      "id": "task5_egoexo_iiith_cooking_145_2_c92a5c063f",
+      "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+      "anchor_frames": [
+        10890,
+        11190,
+        11310
+      ],
+      "target_object_id": "White chopping board_0"
+    },
+    {
+      "id": "task5_egoexo_minnesota_cooking_060_4_655a676809",
+      "take_uid": "4c075527-7526-4c00-9681-53258fe70881",
+      "anchor_frames": [
+        14280,
+        14340,
+        14580
+      ],
+      "target_object_id": "Glass bowl_1"
+    },
+    {
+      "id": "task5_egoexo_uniandes_cooking_006_6_13837ab534",
+      "take_uid": "e420250d-b67f-4c46-bc40-31b8c9003d7e",
+      "anchor_frames": [
+        5040,
+        5250,
+        5460
+      ],
+      "target_object_id": "frying pan_0"
+    },
+    {
+      "id": "task5_egoexo_sfu_cooking_010_3_dab0e9e401",
+      "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+      "anchor_frames": [
+        5100,
+        5340,
+        5460
+      ],
+      "target_object_id": "chopping board_0"
+    },
+    {
+      "id": "task5_egoexo_iiith_cooking_32_1_06aeff1d04",
+      "take_uid": "35bfade9-8ead-46a4-b2f0-cdcfb86df1d6",
+      "anchor_frames": [
+        930,
+        1170,
+        1260
+      ],
+      "target_object_id": "tawa pan_0"
+    },
+    {
+      "id": "task5_egoexo_sfu_cooking_007_3_60ab95d4a7",
+      "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
+      "anchor_frames": [
+        15840,
+        15930,
+        16170
+      ],
+      "target_object_id": "pink frying pan_0"
+    },
+    {
+      "id": "task5_egoexo_uniandes_cooking_001_5_8854e96840",
+      "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+      "anchor_frames": [
+        14400,
+        14520,
+        14760
+      ],
+      "target_object_id": "alluminuim skiilet_0"
+    },
+    {
+      "id": "task5_egoexo_minnesota_cooking_010_2_a60293338e",
+      "take_uid": "d77bb04d-c881-48be-9cc2-d781c69207cd",
+      "anchor_frames": [
+        3960,
+        4050,
+        4290
+      ],
+      "target_object_id": "egg carton_0"
+    },
+    {
+      "id": "task5_egoexo_sfu_cooking_007_1_4ec66ba784",
+      "take_uid": "6eb10b39-5171-4293-afba-4084f5825748",
+      "anchor_frames": [
+        7650,
+        7710,
+        7980
+      ],
+      "target_object_id": "non-stick pan_0"
+    },
+    {
+      "id": "task5_egoexo_sfu_cooking_010_1_718f6f57a3",
+      "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+      "anchor_frames": [
+        6510,
+        6660,
+        6900
+      ],
+      "target_object_id": "white bowl_0"
+    }
+  ]
+}

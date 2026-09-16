@@ -18,9 +18,12 @@ HOI-M3 style data can be converted into it:
 from __future__ import annotations
 
 import math
+from collections import Counter
 from dataclasses import dataclass
 from itertools import combinations
 from typing import Any, Mapping, Sequence
+
+from .semantic_gt import LanguageRealizer, seal_deterministic_question
 
 Vec = Sequence[float]
 
@@ -76,7 +79,10 @@ def facing_label(score: float) -> str:
 
 def horizontal_side(anchor: Mapping[str, Any], target: Mapping[str, Any]) -> str:
     f = horizontal_unit(anchor.get('forward', [0, 0, 1]))
-    right = [f[2], 0.0, -f[0]]
+    right_sign = int(anchor.get('right_sign', 1))
+    if right_sign not in (-1, 1):
+        raise ValueError('person right_sign must be -1 or 1')
+    right = [right_sign * f[2], 0.0, -right_sign * f[0]]
     v = sub(target['pelvis'], anchor['pelvis'])
     lateral = dot(v, right)
     forward = dot(v, f)
@@ -153,6 +159,21 @@ def pair_timeline(scene: Mapping[str, Any], a_id: str = 'A', b_id: str = 'B') ->
         a = person(fr, a_id); b = person(fr, b_id)
         if not a or not b:
             continue
+        frame_policy = scene.get('human_coordinate_frame') or {}
+        right_sign = int(frame_policy.get('right_sign', 1))
+        forward_signs = frame_policy.get('forward_signs') or {}
+        if not isinstance(forward_signs, Mapping):
+            raise ValueError('human_coordinate_frame.forward_signs must be a mapping')
+
+        def calibrated_person(value: Mapping[str, Any], person_id: str) -> dict[str, Any]:
+            forward_sign = int(forward_signs.get(person_id, 1))
+            if forward_sign not in (-1, 1):
+                raise ValueError(f'forward_sign for {person_id} must be -1 or 1')
+            forward = [forward_sign * float(axis) for axis in value.get('forward', [0, 0, 1])]
+            return {**value, 'forward': forward, 'right_sign': right_sign}
+
+        a = calibrated_person(a, a_id)
+        b = calibrated_person(b, b_id)
         d = dist(a['pelvis'], b['pelvis'])
         score = facing_score(a, b)
         los = line_blocked(a.get('head', a['pelvis']), b.get('head', b['pelvis']), blockers)
@@ -180,6 +201,11 @@ def pair_timeline(scene: Mapping[str, Any], a_id: str = 'A', b_id: str = 'B') ->
     evaluated_los = [r['line_of_sight_blocked'] for r in rows if r['line_of_sight_status'] == 'evaluated']
     return {
         'status': 'ok',
+        'coordinate_frame': scene.get('human_coordinate_frame') or {
+            'forward_axis': 'projected face/body-forward direction',
+            'right_axis': 'scene-up cross forward',
+            'right_sign': 1,
+        },
         'pair': [a_id, b_id],
         'states': rows,
         'distance_change_m': rows[-1]['distance_m'] - rows[0]['distance_m'],
@@ -187,6 +213,42 @@ def pair_timeline(scene: Mapping[str, Any], a_id: str = 'A', b_id: str = 'B') ->
         'los_changed': len(set(evaluated_los)) > 1 if evaluated_los else None,
         'line_of_sight_evidence_status': 'evaluated' if evaluated_los else 'missing_blocker_geometry',
     }
+
+
+def derive_task4_answer_semantics(question_type: str, result: Mapping[str, Any]) -> dict[str, Any]:
+    """Derive the code-owned answer key from evidence, never from wording."""
+    if question_type in {"visible_pair_topology_change_2d", "visible_pair_topology_consistency_2d"}:
+        start = {row["pair"]: float(row["distance"]) for row in result.get("start_pair_distances_normalized", [])}
+        end = {row["pair"]: float(row["distance"]) for row in result.get("end_pair_distances_normalized", [])}
+        return {"kind": "image_plane_closest_pair", "start_pair": min(start, key=start.get), "end_pair": min(end, key=end.get)}
+    states = (result.get("pair_timeline") or {}).get("states") or []
+    if not states:
+        raise ValueError("Task 4 metric answer semantics require a non-empty pair timeline")
+    relations = [state["b_relative_to_a"] for state in states]
+    distances = [float(state["distance_m"]) for state in states]
+    facing = [state["facing_state"] for state in states]
+    fields: dict[str, Any] = {"kind": question_type, "state_count": len(states)}
+    if question_type == "position_consistency_between_people":
+        if len(set(relations)) != 1:
+            raise ValueError("position-consistency relation is not constant")
+        fields["relation"] = relations[0]
+    elif question_type == "dominant_body_centric_position":
+        fields["dominant_relation"] = Counter(relations).most_common(1)[0][0]
+        fields["relation_counts"] = dict(Counter(relations))
+    elif question_type in {"body_centric_relation_change_over_video", "coupled_distance_relation_change"}:
+        fields.update({"start_relation": relations[0], "end_relation": relations[-1]})
+    elif question_type in {"dominant_facing_relation_over_video", "approach_while_facing"}:
+        fields["dominant_facing"] = Counter(facing).most_common(1)[0][0]
+        fields["facing_counts"] = dict(Counter(facing))
+    elif question_type == "body_forward_visibility_consistency":
+        visibility = [state["body_forward_field"]["state"] for state in states]
+        if len(set(visibility)) != 1:
+            raise ValueError("body-forward visibility consistency is not constant")
+        fields["field_state"] = visibility[0]
+    elif question_type == "body_forward_field_transition_over_video":
+        fields["field_sequence"] = [state["body_forward_field"]["state"] for state in states]
+    fields.update({"start_distance_m": distances[0], "end_distance_m": distances[-1], "minimum_distance_m": min(distances), "maximum_distance_m": max(distances), "maximum_distance_index": distances.index(max(distances))})
+    return fields
 
 
 def multi_person_metric_timeline(scene: Mapping[str, Any], min_people: int = 3) -> dict[str, Any]:
@@ -245,7 +307,9 @@ def multi_person_metric_timeline(scene: Mapping[str, Any], min_people: int = 3) 
     }
 
 
-def multihuman_qas(scene: Mapping[str, Any]) -> list[dict[str, Any]]:
+def multihuman_qas(
+    scene: Mapping[str, Any], *, language_realizer: LanguageRealizer | None = None,
+) -> list[dict[str, Any]]:
     tl = pair_timeline(scene)
     if tl['status'] != 'ok':
         return []
@@ -273,5 +337,10 @@ def multihuman_qas(scene: Mapping[str, Any]) -> list[dict[str, Any]]:
         specs = [spec for spec in specs if spec[0] != 'line_of_sight_change']
     for qtype, question, correct, distractors in specs:
         opts, lab = mcq(correct, distractors, qtype)
-        rows.append({'task_id':'task4_multi_human_relational_dynamics','task_name':'Task 4 · Multi-Human Relational Dynamics','question_type':qtype,'question':question,'options':opts,'correct_option':lab,'correct_answer':correct,'answer':correct,'explanation':correct,'status':'ok','method':'Uses two tracked human pelvis/head/forward trajectories over the video window; computes distance, body-centric relative position, facing score, and simple line-of-sight blocker geometry.','result_json':{'scene_id':scene.get('scene_id'),'answer_type':qtype,'pair_timeline':tl,'T_Q':True,'H_Q':True,'S_Q':True}})
+        raw = {'task_id':'task4_multi_human_relational_dynamics','task_name':'Task 4 · Multi-Human Relational Dynamics','question_type':qtype,'question':question,'options':opts,'correct_option':lab,'correct_answer':correct,'answer':correct,'explanation':correct,'status':'ok','method':'Uses two tracked human pelvis/head/forward trajectories over the video window; computes distance, body-centric relative position, facing score, and simple line-of-sight blocker geometry.','result_json':{'scene_id':scene.get('scene_id'),'answer_type':qtype,'pair_timeline':tl,'T_Q':True,'H_Q':True,'S_Q':True}}
+        rows.append(seal_deterministic_question(
+            raw, case_id=f"{scene.get('scene_id')}::{qtype}",
+            realizer=language_realizer,
+            provenance={"generator": "limo4si.multihuman.multihuman_qas"},
+        ))
     return rows

@@ -49,11 +49,17 @@ def _mat_vec(matrix: Sequence[Sequence[float]], vector: Vec3) -> list[float]:
 
 
 def body_relative_vector(human_translation: Vec3, root_axis_angle: Vec3, object_center: Vec3) -> list[float]:
-    """Object center in the fitted SMPL-H root frame (+X right, +Z front)."""
+    """Object center in raw fitted SMPL-H local axes.
+
+    These axes are model coordinates, not an egocentric camera/image frame.
+    A dataset-specific, validated anatomical-axis mapping is required before
+    presenting the components as human left/right/front/behind.
+    """
     return _mat_vec(_transpose(rodrigues(root_axis_angle)), _sub(object_center, human_translation))
 
 
 def relation_label(relative: Vec3, deadband_m: float = 0.15) -> str:
+    """Label axes only after the caller has mapped them to right/up/front."""
     right, _, front = (float(value) for value in relative)
     side = "left" if right < -deadband_m else "right" if right > deadband_m else "center"
     depth = "behind" if front < -deadband_m else "front" if front > deadband_m else "level"

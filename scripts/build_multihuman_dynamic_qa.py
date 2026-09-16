@@ -11,6 +11,7 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
 from limo4si.multihuman import multihuman_qas  # noqa: E402
+from limo4si.semantic_gt import load_language_realizer  # noqa: E402
 
 
 def demo_scenes() -> list[dict[str, Any]]:
@@ -93,12 +94,14 @@ def main():
     ap.add_argument('--scenes-json', type=Path, help='Canonical/converted multihuman scenes JSON, e.g. outputs/qa/hoim3_multihuman_scenes.json')
     ap.add_argument('--source-label', default='multihuman adapter demo scene')
     ap.add_argument('--replace-prefix', default='mh_demo_')
+    ap.add_argument('--language-client-factory', help='Optional module:function language-only client factory.')
     args=ap.parse_args()
+    language_realizer=load_language_realizer(args.language_client_factory)
     media_dir=ROOT/'site/qa_benchmark/multihuman_media'; media_dir.mkdir(parents=True, exist_ok=True)
     scenes = load_scene_file(ROOT/args.scenes_json if args.scenes_json and not args.scenes_json.is_absolute() else args.scenes_json) if args.scenes_json else demo_scenes()
     groups=[]; rows=[]
     for scene in scenes:
-        qas=multihuman_qas(scene)
+        qas=multihuman_qas(scene, language_realizer=language_realizer)
         img=write_svg(scene, media_dir/f"{scene['scene_id']}.svg")
         group={'name':scene['scene_id'],'title':scene.get('title', scene['scene_id']),'original_image':img,'topdown_image':img,'summary_path':str(args.scenes_json or 'examples/multihuman_demo_scenes.json'),'raw_summary_path':str(args.scenes_json or 'examples/multihuman_demo_scenes.json'),'dynamic_timeline':{'duration_sec':scene.get('duration_sec'),'frames':[f.get('t') for f in scene['frames']]},'qa':qas,'video_clip':scene.get('video_clip'),'original_video':('./hoim3_data/'+scene.get('source_video','').split('data/HOI-M3/',1)[1]) if scene.get('source_video','').startswith('data/HOI-M3/') else None,'video_window':{'duration_sec':scene.get('duration_sec'),'source':scene.get('source_video') or args.source_label}}
         groups.append(group)

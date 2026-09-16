@@ -16,6 +16,10 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from limo4si.scale_quality import TASK5_ID, ScaleQualityPolicy, require_release_quality
+from limo4si.semantic_gt import (
+    LanguageRealizer, compute_result_evidence_signature, load_language_realizer,
+    make_semantic_gt, realize_question,
+)
 from limo4si.task5_human_state import circular_yaw_change_deg
 from limo4si.task5_scaling import CATEGORY_BY_TYPE, sustained_relation_sequence
 
@@ -140,8 +144,32 @@ def compact_state(state: dict[str, Any], object_id: str) -> dict[str, Any]:
     }
 
 
-def build_question(spec: dict[str, Any], analysis: dict[str, Any]) -> tuple[dict[str, Any], dict[str, Any]]:
+def _semantic_options(texts: list[str], correct_text: str, prefix: str) -> tuple[list[dict[str, Any]], str]:
+    options = []
+    correct_id = ""
+    for index, value in enumerate(texts):
+        option_id = f"{prefix}_{index + 1}"
+        options.append({"id": option_id, "statement": value})
+        if value == correct_text:
+            correct_id = option_id
+    if not correct_id:
+        raise ValueError("code-computed correct answer is absent from semantic options")
+    return options, correct_id
+
+
+def _ordinal(index: int) -> str:
+    words = ["first", "second", "third", "fourth"]
+    if not 0 <= index < len(words):
+        raise ValueError(f"unsupported evidence-anchor index {index}")
+    return words[index]
+
+
+def build_question(
+    spec: dict[str, Any], analysis: dict[str, Any], realizer: LanguageRealizer | None = None,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    """Compute signed GT first, then perform constrained language realization."""
     states, events = analysis["states"], analysis["gaze_events"]
+    states_by_frame = {int(state["frame_index"]): state for state in states}
     object_id = str(spec.get("object_id") or next(
         uid for uid, row in analysis["objects"].items() if row["instance_name"] == spec["object_name"]
     ))
@@ -150,34 +178,70 @@ def build_question(spec: dict[str, Any], analysis: dict[str, Any]) -> tuple[dict
     canonical_object_name = analysis["objects"][object_id]["instance_name"]
     display = shown_name(canonical_object_name)
     lo, hi = (int(value) for value in spec["window_frames"])
-    timeline = [compact_state(state, object_id) for state in states[lo:hi + 1]]
-    qtype = spec["question_type"]
+    timeline = [compact_state(state, object_id) for state in states if lo <= int(state["frame_index"]) <= hi]
+    qtype = str(spec["question_type"])
     correct_index = spec.get("_correct_option_index")
     event_evidence: list[dict[str, Any]] = []
+    semantic_facts: list[dict[str, Any]] = []
+    evidence_refs: list[dict[str, Any]] = []
+    anchor_frames: list[int]
+
     if qtype == "relation_change_between_gazes":
         selected = [event_by_start(events, object_id, int(frame)) for frame in spec["event_start_frames"]]
         anchor_frames = [(int(event["start_index"]) + int(event["end_index"])) // 2 for event in selected]
-        start, end = (states[frame]["object_relations"][object_id]["label"] for frame in anchor_frames)
-        options, correct_option, correct = transition_options(display, start, end, spec["id"], correct_index)
-        question = f"Between the two sustained gazes at the {display}, how does its wearer-relative position change?"
-        explanation = f"At the first gaze event the {display} is {start}; at the later event it is {end}."
+        start_relation, end_relation = (
+            states_by_frame[frame]["object_relations"][object_id]["label"] for frame in anchor_frames
+        )
+        rendered, _, correct_text = transition_options(display, start_relation, end_relation, spec["id"], 0)
+        option_specs, correct_option_id = _semantic_options(
+            [option["text"] for option in rendered], correct_text, "relation_pair",
+        )
+        question_focus = f"Between the two sustained gazes at the {display}, how does its wearer-relative position change?"
+        evidence_statement = (
+            f"At the first gaze event the {display} is {start_relation}; "
+            f"at the later event it is {end_relation}."
+        )
         event_evidence = selected
-        transition = {"start_frame": anchor_frames[0], "end_frame": anchor_frames[1], "start_relation": start, "end_relation": end}
+        transition = {
+            "start_frame": anchor_frames[0], "end_frame": anchor_frames[1],
+            "start_relation": start_relation, "end_relation": end_relation,
+        }
+        semantic_facts = [
+            {"id": "first_relation", "value": start_relation, "frame": anchor_frames[0]},
+            {"id": "second_relation", "value": end_relation, "frame": anchor_frames[1]},
+        ]
+        evidence_refs = [{"kind": "gaze_event", "start_index": int(event["start_index"])} for event in selected]
     elif qtype == "gaze_onset_side_change":
         selected = [event_by_start(events, object_id, int(spec["event_start_frames"][0]))]
         before = int(spec["pre_frame"])
         after = (int(selected[0]["start_index"]) + int(selected[0]["end_index"])) // 2
-        start = states[before]["object_relations"][object_id]["label"]
-        end = states[after]["object_relations"][object_id]["label"]
-        options, correct_option, correct = transition_options(display, start, end, spec["id"], correct_index)
-        question = f"As gaze turns to the {display}, how does it shift in the wearer's body-relative view?"
-        explanation = f"Immediately before the gaze onset the {display} is {start}; during the sustained gaze it is {end}."
+        anchor_frames = [before, after]
+        start_relation = states_by_frame[before]["object_relations"][object_id]["label"]
+        end_relation = states_by_frame[after]["object_relations"][object_id]["label"]
+        rendered, _, correct_text = transition_options(display, start_relation, end_relation, spec["id"], 0)
+        option_specs, correct_option_id = _semantic_options(
+            [option["text"] for option in rendered], correct_text, "relation_pair",
+        )
+        question_focus = f"As gaze turns to the {display}, how does it shift in the wearer's body-relative view?"
+        evidence_statement = (
+            f"Immediately before the gaze onset the {display} is {start_relation}; "
+            f"during the sustained gaze it is {end_relation}."
+        )
         event_evidence = selected
         transition = {
-            "start_frame": before, "end_frame": after, "start_relation": start, "end_relation": end,
-            "wearer_turn_deg": circular_yaw_change_deg(states[before]["forward_world"], states[after]["forward_world"]),
-            "pre_gazed_object_id": states[before]["gazed_object_id"],
+            "start_frame": before, "end_frame": after,
+            "start_relation": start_relation, "end_relation": end_relation,
+            "wearer_turn_deg": circular_yaw_change_deg(
+                states_by_frame[before]["forward_world"], states_by_frame[after]["forward_world"],
+            ),
+            "pre_gazed_object_id": states_by_frame[before]["gazed_object_id"],
         }
+        semantic_facts = [
+            {"id": "pre_onset_relation", "value": start_relation, "frame": before},
+            {"id": "sustained_gaze_relation", "value": end_relation, "frame": after},
+            {"id": "wearer_turn_deg", "value": transition["wearer_turn_deg"]},
+        ]
+        evidence_refs = [{"kind": "gaze_event", "start_index": int(selected[0]["start_index"])}]
     elif qtype == "last_gaze_annotated_object_relation_change":
         in_window = [event for event in events if int(event["start_index"]) >= lo and int(event["end_index"]) <= hi]
         if not in_window:
@@ -188,17 +252,95 @@ def build_question(spec: dict[str, Any], analysis: dict[str, Any]) -> tuple[dict
         relation_sequence = sustained_relation_sequence(
             [row["relation"]["label"] for row in timeline], ScaleQualityPolicy().min_task5_relation_run_states,
         )
-        options, correct_option, correct = sequence_options(display, relation_sequence, spec["id"], correct_index)
-        question = f"The {display} is the last gaze-annotated object in this window. How does its wearer-relative position evolve?"
-        explanation = f"Across the full window, the annotation-derived relation sequence is {' → '.join(relation_sequence)}."
+        rendered, _, correct_text = sequence_options(display, relation_sequence, spec["id"], 0)
+        option_specs, correct_option_id = _semantic_options(
+            [option["text"] for option in rendered], correct_text, "relation_sequence",
+        )
+        question_focus = (
+            f"The {display} is the last gaze-annotated object in this window. "
+            "How does its wearer-relative position evolve?"
+        )
+        evidence_statement = (
+            f"Across the full window, the annotation-derived relation sequence is {' → '.join(relation_sequence)}."
+        )
         event_evidence = [last_event]
+        anchor_frames = [lo, hi]
         transition = {
             "start_frame": lo, "end_frame": hi, "relation_sequence": relation_sequence,
             "last_supported_event_end_frame": int(last_event["end_index"]),
             "last_supported_event_object_id": str(last_event["object_id"]),
         }
+        semantic_facts = [{"id": "relation_sequence", "value": relation_sequence, "window_frames": [lo, hi]}]
+        evidence_refs = [{"kind": "gaze_event", "start_index": int(last_event["start_index"])}]
+    elif qtype == "gaze_target_at_evidence_anchor":
+        anchor_frames = [int(frame) for frame in spec["anchor_frames"]]
+        if len(anchor_frames) not in {2, 3} or len(set(anchor_frames)) != len(anchor_frames):
+            raise ValueError(f"{spec['id']} requires two or three unique evidence anchors")
+        if anchor_frames != sorted(anchor_frames) or anchor_frames[0] < lo or anchor_frames[-1] > hi:
+            raise ValueError(f"{spec['id']} evidence anchors must be ordered inside the public window")
+        anchor_targets = []
+        for frame in anchor_frames:
+            state = states_by_frame.get(frame)
+            if state is None or not state.get("gazed_object_name"):
+                raise ValueError(f"{spec['id']} frame {frame} has no annotation-grounded gaze target")
+            anchor_targets.append({
+                "frame": frame,
+                "time_s": float(state["time_s"]),
+                "gaze_target": str(state["gazed_object_name"]),
+                "gaze_target_id": str(state["gazed_object_id"]),
+            })
+        hit_indices = [index for index, anchor in enumerate(anchor_targets) if anchor["gaze_target_id"] == object_id]
+        if len(hit_indices) != 1:
+            raise ValueError(f"{spec['id']} must have exactly one anchor whose measured gaze hits the target")
+        target_anchor = hit_indices[0]
+        containing_events = [
+            event for event in events
+            if str(event["object_id"]) == object_id
+            and int(event["start_index"]) <= anchor_frames[target_anchor] <= int(event["end_index"])
+        ]
+        if len(containing_events) != 1:
+            raise ValueError(f"{spec['id']} target anchor does not resolve to one supported gaze event")
+        supporting_event = containing_events[0]
+        if len(anchor_frames) == 2:
+            option_specs = [
+                {"id": "anchor_1", "statement": "Only at the first marked anchor."},
+                {"id": "anchor_2", "statement": "Only at the second marked anchor."},
+                {"id": "multiple_anchors", "statement": "At each of the two marked anchors."},
+                {"id": "no_anchor", "statement": "At neither of the two marked anchors."},
+            ]
+        else:
+            option_specs = [
+                {"id": "anchor_1", "statement": "Only at the first marked anchor."},
+                {"id": "anchor_2", "statement": "Only at the second marked anchor."},
+                {"id": "anchor_3", "statement": "Only at the third marked anchor."},
+                {"id": "no_anchor", "statement": "At none of the three marked anchors."},
+            ]
+        correct_option_id = f"anchor_{target_anchor + 1}"
+        question_focus = f"At which marked evidence anchor is the wearer looking at the {display}?"
+        other_targets = ", ".join(
+            f"{_ordinal(index)}: {shown_name(anchor['gaze_target'])}"
+            for index, anchor in enumerate(anchor_targets) if index != target_anchor
+        )
+        evidence_statement = (
+            f"The measured gaze ray hits the {display} at the {_ordinal(target_anchor)} marked anchor "
+            f"({anchor_targets[target_anchor]['time_s']:.1f} s); the other annotated targets are {other_targets}."
+        )
+        event_evidence = [supporting_event]
+        transition = {
+            "start_frame": anchor_frames[0], "end_frame": anchor_frames[-1],
+            "target_anchor_index": target_anchor,
+        }
+        semantic_facts = [
+            {"id": f"anchor_{index + 1}_gaze_target", "frame": anchor["frame"], "value": anchor["gaze_target"]}
+            for index, anchor in enumerate(anchor_targets)
+        ]
+        evidence_refs = [
+            {"kind": "annotated_gaze_anchor", "frame": anchor["frame"], "gaze_target_id": anchor["gaze_target_id"]}
+            for anchor in anchor_targets
+        ]
     else:
         raise ValueError(f"unsupported Task 5 question type {qtype}")
+
     result = {
         "status": "ok", "answer_type": qtype, "T_Q": True, "H_Q": True, "S_Q": True,
         "annotation_direct": True,
@@ -214,15 +356,49 @@ def build_question(spec: dict[str, Any], analysis: dict[str, Any]) -> tuple[dict
         "object_category": analysis["objects"][object_id].get("category"),
         "timeline": timeline, "gaze_events": event_evidence, "transition": transition,
     }
-    return {
+    if qtype == "gaze_target_at_evidence_anchor":
+        result.update({
+            "anchor_gaze_targets": anchor_targets,
+            "supporting_gaze_event": event_evidence[0],
+            "answer_provenance": "measured gaze ray/depth intersection with annotated 3D objects; no LLM target judgment",
+            "claim_limits": ["gaze target only at the displayed anchors", "no body-axis direction claim"],
+        })
+    evidence_signature = compute_result_evidence_signature(result)
+    semantic_facts.append({"id": "result_evidence_signature", "value": evidence_signature})
+    evidence_refs.append({"kind": "result_json_sha256", "sha256": evidence_signature})
+    semantic_gt = make_semantic_gt(
+        case_id=spec["id"], task_id=TASK5_ID, question_type=qtype,
+        question_focus=question_focus, options=option_specs, correct_option_id=correct_option_id,
+        evidence_statement=evidence_statement, semantic_facts=semantic_facts, evidence_refs=evidence_refs,
+        provenance={
+            "dataset": analysis["dataset"], "sequence_name": analysis["sequence_name"],
+            "analysis_schema_version": analysis.get("schema_version"),
+            "coordinate_frame": analysis["coordinate_frame"],
+            "computation": "deterministic_annotation_geometry",
+        },
+    )
+    language = realize_question(
+        semantic_gt, realizer=realizer, variant_key=str(spec.get("language_variant", "default")),
+        correct_index=int(correct_index) if correct_index is not None else None,
+        fallback_on_error=False,
+    )
+    result.update({
+        "semantic_gt_id": semantic_gt["semantic_gt_id"],
+        "answer_signature": semantic_gt["answer_signature"],
+        "evidence_signature": evidence_signature,
+        "reasoning_owner": "deterministic_code",
+        "language_model_role": "wording_only",
+    })
+    question = {
         "task_id": TASK5_ID, "task_name": TASK5_NAME, "question_type": qtype,
-        "question_categories": [CATEGORY_BY_TYPE[qtype]], "question": question,
-        "options": options, "correct_option": correct_option, "correct_answer": correct, "answer": correct,
-        "explanation": explanation, "status": "ok",
-        "method": "Uses measured ADT eye-gaze direction and fixation depth, same-time object 6DoF/3D boxes, and a gravity-aligned wearer frame; no answer label is inferred by an LLM.",
+        "question_categories": [CATEGORY_BY_TYPE[qtype]], **language, "status": "ok",
+        "method": (
+            "Deterministic ADT gaze/object computation produces signed semantic GT; "
+            "the language layer cannot choose or modify the answer."
+        ),
         "result_json": result,
-    }, {"object_id": object_id, "anchor_frames": [transition["start_frame"], transition["end_frame"]]}
-
+    }
+    return question, {"object_id": object_id, "anchor_frames": anchor_frames}
 
 def media_url(prefix: str, filename: str) -> str:
     return f"{prefix.rstrip('/')}/{filename}"
@@ -246,10 +422,15 @@ def main() -> None:
     parser.add_argument("--quality-output", type=Path, default=Path("outputs/qa/task5_scale_quality.json"))
     parser.add_argument("--media-output-dir", type=Path, default=Path("site/qa_benchmark/task5_media"))
     parser.add_argument("--media-url-prefix", default="./task5_media")
+    parser.add_argument(
+        "--language-client-factory",
+        help="Optional module:function returning a StructuredOutputClient; omitted means deterministic templates",
+    )
     args = parser.parse_args()
     resolve = lambda path: path if path.is_absolute() else ROOT / path
     config = json.loads(resolve(args.config).read_text(encoding="utf-8"))
     analysis_cache: dict[Path, dict[str, Any]] = {}
+    language_realizer = load_language_realizer(args.language_client_factory)
     groups = []
     for case_index, raw_spec in enumerate(config["cases"]):
         spec = dict(raw_spec, _correct_option_index=case_index % 4)
@@ -262,7 +443,7 @@ def main() -> None:
             analysis_path, json.loads(analysis_path.read_text(encoding="utf-8")),
         )
         source_media = resolve(Path(media_value))
-        question, media = build_question(spec, analysis)
+        question, media = build_question(spec, analysis, language_realizer)
         states_by_frame = {int(state["frame_index"]): state for state in analysis["states"]}
         lo, hi = (int(value) for value in spec["window_frames"])
         start_s, end_s = float(states_by_frame[lo]["time_s"]), float(states_by_frame[hi]["time_s"])
@@ -310,6 +491,9 @@ def main() -> None:
         }),
         "answer_provenance": "directly computed from gaze ray + fixation depth / same-time 3D OBB / wearer pose annotations",
         "coordinate_policy": next(iter(coordinate_frames)),
+        "semantic_gt_schema": "limo4si.semantic_gt.v1",
+        "reasoning_owner": "deterministic_code",
+        "language_realizer": language_realizer.name if language_realizer else "deterministic_template",
     }
     data_path = resolve(args.site_data)
     data = load_js(data_path)
@@ -317,12 +501,14 @@ def main() -> None:
     data["groups"].extend(groups)
     task = {"id": TASK5_ID, "name": TASK5_NAME, "description": "How gaze-anchored object relations change with the wearer's spatial state."}
     data["tasks"] = [row for row in data.get("tasks", []) if row.get("id") != TASK5_ID] + [task]
-    data["title"] = "Humans in Space · Task 1 + Task 3 + Task 4 + Task 5 QA"
+    data["title"] = "Task 4 + Task 5 Spatial QA"
     data["subtitle"] = "One evidence-grounded temporal question per unique video window."
     policy = data.setdefault("release_policy", {})
     policy["task_scope"] = [row["id"] for row in data["tasks"]]
     policy["task5_scope"] = "measured gaze rays + same-time object 3D boxes + gravity-aligned wearer coordinates"
-    require_release_quality(data, ScaleQualityPolicy())
+    # This builder owns only the groups generated above.  Unrelated site groups
+    # are validated by the combined-release command, not allowed to block or
+    # weaken this batch's fail-closed Task 5 gate.
     save_js(data_path, data)
     output = resolve(args.output_jsonl); output.parent.mkdir(parents=True, exist_ok=True)
     rows_out = [{"case_index": i, "case_id": group["name"], "video_clip": group["video_clip"], **group["qa"][0]} for i, group in enumerate(groups, 1)]

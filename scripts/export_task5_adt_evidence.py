@@ -61,7 +61,9 @@ def main() -> None:
             uid = matches[0]
         if uid not in box_times:
             raise ValueError(f"{spec['id']} target has no RGB 2D bounding-box annotation")
-        if spec["question_type"] == "relation_change_between_gazes":
+        if spec["question_type"] == "gaze_target_at_evidence_anchor":
+            frame_ids = [int(frame) for frame in spec["anchor_frames"]]
+        elif spec["question_type"] == "relation_change_between_gazes":
             events = [next(event for event in analysis["gaze_events"] if str(event["object_id"]) == uid and event["start_index"] == frame) for frame in spec["event_start_frames"]]
             frame_ids = [(event["start_index"] + event["end_index"]) // 2 for event in events]
         elif spec["question_type"] == "gaze_onset_side_change":
@@ -97,7 +99,7 @@ def main() -> None:
             if len(frame_ids) < 2:
                 raise ValueError(f"{spec['id']} has fewer than two sustained relation evidence stages")
         panels = []
-        for frame_index in frame_ids:
+        for panel_index, frame_index in enumerate(frame_ids):
             image, _ = provider.get_image_data_by_index(stream, int(frame_index))
             rgb = image.to_numpy_array()
             canvas = cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
@@ -122,9 +124,16 @@ def main() -> None:
                 cv2.drawMarker(canvas, (px, py), (20, 20, 240), cv2.MARKER_CROSS, 55, 8)
                 cv2.circle(canvas, (px, py), 18, (20, 20, 240), 5)
             canvas = cv2.rotate(canvas, cv2.ROTATE_90_CLOCKWISE)
-            relation = state["object_relations"][uid]["label"]
             target_name = analysis["objects"][uid]["instance_name"]
-            label = f"t={state['time_s']:.1f}s  {target_name}  {relation}"
+            if spec["question_type"] == "gaze_target_at_evidence_anchor":
+                gaze_target = state.get("gazed_object_name") or "no annotated object"
+                label = (
+                    f"anchor {panel_index + 1}  t={state['time_s']:.1f}s  "
+                    f"gaze -> {gaze_target}  target: {target_name}"
+                )
+            else:
+                relation = state["object_relations"][uid]["label"]
+                label = f"t={state['time_s']:.1f}s  {target_name}  {relation}"
             cv2.rectangle(canvas, (0, 0), (1408, 80), (15, 23, 42), -1)
             cv2.putText(canvas, label, (24, 54), cv2.FONT_HERSHEY_SIMPLEX, 1.25, (255, 255, 255), 3, cv2.LINE_AA)
             panels.append(cv2.resize(canvas, (448, 448), interpolation=cv2.INTER_AREA))

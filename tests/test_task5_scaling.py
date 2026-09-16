@@ -33,8 +33,9 @@ class Task5ScalingTests(unittest.TestCase):
         selected, report = select_balanced_candidates(candidates, target_per_category=2)
         self.assertEqual(report["status"], "ok")
         self.assertEqual(Counter(row["category"] for row in selected), Counter({value: 2 for value in CATEGORY_BY_TYPE.values()}))
-        self.assertGreaterEqual(diagnostics["candidate_count"], 6)
-        self.assertEqual(len({(row["sequence_name"], *row["window_frames"]) for row in selected}), 6)
+        expected = 2 * len(CATEGORY_BY_TYPE)
+        self.assertGreaterEqual(diagnostics["candidate_count"], expected)
+        self.assertEqual(len({(row["sequence_name"], *row["window_frames"]) for row in selected}), expected)
 
     def test_window_expansion_uses_real_nine_second_annotation_span(self):
         states = {

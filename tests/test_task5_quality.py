@@ -13,13 +13,23 @@ ROOT = Path(__file__).resolve().parents[1]
 class Task5QualityTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        rows = [json.loads(line) for line in (ROOT / "outputs/qa/task5_scaled_qa.jsonl").read_text().splitlines()]
-        cls.group = {
-            "name": rows[0]["case_id"],
-            "video_window": {"duration_sec": rows[0]["result_json"]["timeline"][-1]["time_s"] - rows[0]["result_json"]["timeline"][0]["time_s"]},
-            "qa": [{key: value for key, value in rows[0].items() if key not in {"case_index", "case_id", "video_clip"}}],
-        }
+        # ADT remains a compatibility path, but the main Task 5 JSONL is now
+        # EgoExo4D. Build the legacy 3D-ray fixture directly from its retained
+        # analysis/config instead of assuming ownership of the main output.
         analysis = json.loads((ROOT / "outputs/qa/task5_adt_analysis.json").read_text())
+        config = json.loads((ROOT / "configs/task5_release_cases.json").read_text())
+        spec = dict(config["cases"][0], _correct_option_index=0)
+        question, _ = build_question(spec, analysis)
+        lo, hi = (int(value) for value in spec["window_frames"])
+        cls.group = {
+            "name": spec["id"],
+            "video_window": {
+                "duration_sec": (
+                    analysis["states"][hi]["time_s"] - analysis["states"][lo]["time_s"]
+                )
+            },
+            "qa": [question],
+        }
         repeated_question, _ = build_question({
             "id": "test_repeated_kitchen_island",
             "question_type": "relation_change_between_gazes",
@@ -32,6 +42,22 @@ class Task5QualityTests(unittest.TestCase):
             "name": "test_repeated_kitchen_island",
             "video_window": {"duration_sec": analysis["states"][256]["time_s"] - analysis["states"][0]["time_s"]},
             "qa": [repeated_question],
+        }
+        onset_question, _ = build_question({
+            "id": "test_onset_wooden_bowl",
+            "question_type": "gaze_onset_side_change",
+            "object_name": "WoodenBowl",
+            "event_start_frames": [84],
+            "pre_frame": 58,
+            "window_frames": [0, 270],
+            "_correct_option_index": 0,
+        }, analysis)
+        cls.onset_group = {
+            "name": "test_onset_wooden_bowl",
+            "video_window": {
+                "duration_sec": analysis["states"][270]["time_s"] - analysis["states"][0]["time_s"]
+            },
+            "qa": [onset_question],
         }
 
     def validate_current(self, data):
@@ -60,7 +86,7 @@ class Task5QualityTests(unittest.TestCase):
         self.assertTrue(any("large scene/support object" in error for error in errors))
 
     def test_rejects_short_gaze_onset_event(self):
-        group = copy.deepcopy(self.group)
+        group = copy.deepcopy(self.onset_group)
         event = group["qa"][0]["result_json"]["gaze_events"][0]
         event["end_time_s"] = event["start_time_s"] + 0.1
         errors = self.validate_current({"groups": [group]})["cases"][0]["errors"]
@@ -96,7 +122,7 @@ class Task5QualityTests(unittest.TestCase):
         errors = self.validate_current({"groups": [group]})["cases"][0]["errors"]
         self.assertTrue(any("consecutive support" in error for error in errors))
 
-    def test_accepts_one_internal_missing_gaze_state(self):
+    def test_rejects_post_release_internal_gaze_mutation(self):
         group = copy.deepcopy(self.group)
         result = group["qa"][0]["result_json"]
         event = result["gaze_events"][0]
@@ -106,7 +132,12 @@ class Task5QualityTests(unittest.TestCase):
         state["gazed_object_id"] = None
         event["direct_hit_count"] -= 1
         event["hit_support_ratio"] = event["direct_hit_count"] / event["state_count"]
-        self.assertEqual(self.validate_current({"groups": [group]})["status"], "ok")
+        report = self.validate_current({"groups": [group]})
+        self.assertEqual(report["status"], "failed")
+        self.assertTrue(any(
+            "evidence signature is stale" in error
+            for error in report["cases"][0]["errors"]
+        ))
 
     def test_rejects_hidden_third_repeated_gaze(self):
         group = copy.deepcopy(self.repeated_group)
@@ -153,6 +184,18 @@ class Task5QualityTests(unittest.TestCase):
         group["qa"][0]["options"][0]["text"] += " It is 1.23 m away."
         errors = self.validate_current({"groups": [group]})["cases"][0]["errors"]
         self.assertTrue(any("numeric detail" in error or "precision" in error for error in errors))
+
+    def test_rejects_tampered_result_signature(self):
+        group = copy.deepcopy(self.group)
+        group["qa"][0]["result_json"]["answer_signature"] = "sha256:tampered"
+        errors = self.validate_current({"groups": [group]})["cases"][0]["errors"]
+        self.assertTrue(any("result_json answer signature" in error for error in errors))
+
+    def test_rejects_tampered_semantic_fact(self):
+        group = copy.deepcopy(self.group)
+        group["qa"][0]["semantic_gt"]["semantic_facts"][0]["value"] = "tampered"
+        errors = self.validate_current({"groups": [group]})["cases"][0]["errors"]
+        self.assertTrue(any("answer signature is stale" in error for error in errors))
 
 
 if __name__ == "__main__":

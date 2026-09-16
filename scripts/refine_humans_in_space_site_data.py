@@ -7,11 +7,14 @@ or whose geometry is only an unsupported proxy. It can merge freshly rebuilt
 Ego-Exo groups with the already verified HOI-M3 groups.
 """
 from __future__ import annotations
-import argparse, json, re
+import argparse, json, re, sys
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'src'))
+from limo4si.semantic_gt import load_language_realizer, seal_task_questions_in_groups  # noqa: E402
+
 _ALIAS_PATH = ROOT / 'configs/object_display_aliases.json'
 DISPLAY_ALIASES = json.loads(_ALIAS_PATH.read_text(encoding='utf-8')) if _ALIAS_PATH.exists() else {}
 
@@ -187,7 +190,7 @@ def keep_qa(q: dict[str, Any]) -> tuple[bool, str]:
         return (d <= 1.5, f'mid distance={d:.3f}m' if d <= 1.5 else f'mid distance too far={d:.3f}m')
     return True, 'not rejected by semantic gate'
 
-def refine(data: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+def refine(data: dict[str, Any], language_realizer: Any = None) -> tuple[dict[str, Any], list[dict[str, Any]]]:
     audit=[]; kept=[]
     for g in data.get('groups', []):
         nq=[]
@@ -200,13 +203,33 @@ def refine(data: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str, Any]]]:
             ng=dict(g); ng['qa']=nq; kept.append(ng)
     out=dict(data); out['groups']=kept
     out['semantic_quality_gate']={'status':'applied','policy':'keep only robust temporal change, meaningful path side, or substantial multi-human relation change','kept_groups':len(kept),'kept_qas':sum(len(g.get('qa',[])) for g in kept)}
+    seal_task_questions_in_groups(
+        out,
+        task_ids={
+            'task1_dynamic_human_referenced_relations',
+            'task4_multi_human_relational_dynamics',
+        },
+        realizer=language_realizer,
+        provenance={'generator': 'scripts/refine_humans_in_space_site_data.py'},
+    )
     return out,audit
 
 def main():
-    ap=argparse.ArgumentParser(); ap.add_argument('--input',type=Path,default=Path('site/qa_benchmark/data.js')); ap.add_argument('--ego-data',type=Path); ap.add_argument('--output',type=Path,default=Path('site/qa_benchmark/data.js')); ap.add_argument('--audit-output',type=Path,default=Path('outputs/qa/semantic_quality_audit.json'))
-    a=ap.parse_args(); inp=ROOT/a.input if not a.input.is_absolute() else a.input; outp=ROOT/a.output if not a.output.is_absolute() else a.output
+    ap=argparse.ArgumentParser()
+    ap.add_argument('--input',type=Path,default=Path('site/qa_benchmark/data.js'))
+    ap.add_argument('--ego-data',type=Path)
+    ap.add_argument('--output',type=Path,default=Path('site/qa_benchmark/data.js'))
+    ap.add_argument('--audit-output',type=Path,default=Path('outputs/qa/semantic_quality_audit.json'))
+    ap.add_argument('--language-client-factory',help='Optional module:function language-only client factory.')
+    a=ap.parse_args()
+    inp=ROOT/a.input if not a.input.is_absolute() else a.input
+    outp=ROOT/a.output if not a.output.is_absolute() else a.output
     data=load(inp); ego=load(ROOT/a.ego_data) if a.ego_data and not a.ego_data.is_absolute() else (load(a.ego_data) if a.ego_data else None)
-    refined,audit=refine(merge(data,ego)); write(outp,refined)
+    refined,audit=refine(
+        merge(data,ego),
+        load_language_realizer(a.language_client_factory),
+    )
+    write(outp,refined)
     apath=ROOT/a.audit_output if not a.audit_output.is_absolute() else a.audit_output; apath.parent.mkdir(parents=True,exist_ok=True); apath.write_text(json.dumps({'status':'ok','kept_groups':len(refined['groups']),'kept_qas':sum(len(g.get('qa',[])) for g in refined['groups']),'decisions':audit},ensure_ascii=False,indent=2)+'\n')
     print(json.dumps({'kept_groups':len(refined['groups']),'kept_qas':sum(len(g.get('qa',[])) for g in refined['groups']),'rejected_qas':sum(not x['kept'] for x in audit)},ensure_ascii=False))
 if __name__=='__main__': main()

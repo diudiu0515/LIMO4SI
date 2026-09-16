@@ -89,10 +89,20 @@ def main() -> None:
                 if len(visible) < 6:
                     continue
                 lo, hi = visible.min(0), visible.max(0)
+                bbox_center = (lo + hi) / 2.0
                 margin = args.bbox_margin * max(*(hi - lo), 1.0)
                 if np.all(uv >= lo - margin) and np.all(uv <= hi + margin):
                     hits.append(frame)
-                    evidence[frame] = {"timestamp": timestamp, "gaze_skew_ms": skew_ms, "gaze_uv": uv.tolist(), "bbox_xyxy": [*lo.tolist(), *hi.tolist()]}
+                    evidence[frame] = {
+                        "timestamp": timestamp, "gaze_skew_ms": skew_ms,
+                        "gaze_uv": uv.tolist(), "bbox_xyxy": [*lo.tolist(), *hi.tolist()],
+                        "bbox_center_uv": bbox_center.tolist(),
+                        "optical_center_uv": [cx, cy],
+                        "bbox_center_bearing_deg": float(
+                            np.degrees(np.arctan2(bbox_center[0] - cx, fx))
+                        ),
+                        "image_axis_definition": "negative bearing = image left; positive bearing = image right",
+                    }
             for run in runs(hits):
                 if len(run) < args.minimum_run:
                     continue
@@ -102,7 +112,7 @@ def main() -> None:
                     "scene_name": info[recording]["scene_name"], "start_frame": run[0], "end_frame": run[-1],
                     "direct_hit_count": len(run), "duration_s": (run[-1] - run[0]) / 30.0,
                     "start_evidence": evidence[run[0]], "end_evidence": evidence[run[-1]],
-                    "gaze_definition": "measured HoloLens gaze projects inside the visible interactee keypoint box",
+                    "gaze_definition": "measured HoloLens gaze projects inside the padded visible-interactee support box",
                 })
         except Exception as exc:
             rejected[recording] = f"{type(exc).__name__}: {exc}"

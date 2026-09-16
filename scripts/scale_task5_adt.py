@@ -77,8 +77,13 @@ def main() -> None:
     parser.add_argument("--site-index", type=Path, default=Path("site/qa_benchmark/index.html"))
     parser.add_argument("--reuse-analysis", action="store_true")
     parser.add_argument("--reuse-media", action="store_true")
+    parser.add_argument("--language-client-factory", help="Optional module:function language-only client factory.")
     parser.add_argument("--plan-only", action="store_true", help="Mine/select/write config, but do not export media or update the site")
     args = parser.parse_args()
+    language_args = (
+        ["--language-client-factory", args.language_client_factory]
+        if args.language_client_factory else []
+    )
 
     dataset_root = args.dataset_root.resolve()
     output_root = resolve(args.output_root)
@@ -226,7 +231,7 @@ def main() -> None:
             "--site-data", str(resolve(args.site_data)),
             "--media-output-dir", str(media_dir), "--media-url-prefix", media_url_prefix,
             "--output-jsonl", str(task5_jsonl), "--audit-output", str(task5_audit),
-            "--quality-output", str(task5_quality),
+            "--quality-output", str(task5_quality), *language_args,
         )
         report["task5_outputs"] = {
             "qa_jsonl": portable(task5_jsonl), "audit": portable(task5_audit),

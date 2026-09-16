@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate a Task 1/3/4/5 release and emit per-case accept/reject reasons."""
+"""Validate the public Task 4 + Task 5 release and emit per-case reasons."""
 from __future__ import annotations
 
 import argparse
@@ -11,7 +11,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from limo4si.scale_quality import ScaleQualityPolicy, validate_release  # noqa: E402
+from limo4si.scale_quality import TASK4_ID, TASK5_ID, ScaleQualityPolicy, validate_release  # noqa: E402
 
 
 def load_release(path: Path) -> dict:
@@ -27,7 +27,11 @@ def main() -> None:
     parser.add_argument("--output", type=Path, help="Write the full per-case report")
     args = parser.parse_args()
     overrides = json.loads(args.policy.read_text(encoding="utf-8")) if args.policy else {}
-    report = validate_release(load_release(args.input), ScaleQualityPolicy(**overrides))
+    release = load_release(args.input)
+    task_ids = {question.get("task_id") for group in release.get("groups", []) for question in (group.get("qa") or [])}
+    if task_ids != {TASK4_ID, TASK5_ID}:
+        raise ValueError(f"public release must contain only Task 4 and Task 5, got {sorted(task_ids)}")
+    report = validate_release(release, ScaleQualityPolicy(**overrides))
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         args.output.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

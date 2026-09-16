@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Build the curated Task 1 + Task 4 benchmark slice.
+"""Build the curated Task 4 benchmark slice.
 
 Policy:
 * exactly one temporal question per case;
-* Task 1 and Task 4 only;
+* Task 4 only;
 * metric multi-human QA requires visually aligned A/B SMPL-X tracks;
 * missing blocker geometry is never interpreted as a clear line of sight;
 * answers and distractors are derived from stored evidence, not guessed labels.
@@ -25,25 +25,19 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from build_multihuman_dynamic_qa import write_svg  # noqa: E402
 from limo4si.multihuman import pair_timeline  # noqa: E402
+from limo4si.semantic_gt import load_language_realizer, seal_release_questions
 
-TASK1_ID = "task1_dynamic_human_referenced_relations"
 TASK4_ID = "task4_multi_human_relational_dynamics"
-TASK1_NAME = "Task 1 · Dynamic Human-Referenced Relations"
 TASK4_NAME = "Task 4 · Multi-Human Relational Dynamics"
 
-TASKS = [
-    {
-        "id": TASK1_ID,
-        "name": TASK1_NAME,
-        "description": "How object relations and body-forward visibility change or remain stable as the human moves or turns.",
-    },
-    {
-        "id": TASK4_ID,
-        "name": TASK4_NAME,
-        "description": "Temporal position, orientation, distance, topology, visibility and relation change between people.",
-    },
-]
-
+TASKS = [{
+    "id": TASK4_ID,
+    "name": TASK4_NAME,
+    "description": (
+        "Temporal position, orientation, distance, topology, visibility "
+        "and relation change between people."
+    ),
+}]
 
 def load_js(path: Path) -> dict[str, Any]:
     match = re.search(r"window\.QA_DATA\s*=\s*(.*);\s*$", path.read_text(encoding="utf-8"), re.S)
@@ -51,10 +45,8 @@ def load_js(path: Path) -> dict[str, Any]:
         raise ValueError(f"Cannot parse {path}")
     return json.loads(match.group(1))
 
-
 def save_js(path: Path, data: dict[str, Any]) -> None:
     path.write_text("window.QA_DATA = " + json.dumps(data, ensure_ascii=False, indent=2) + ";\n", encoding="utf-8")
-
 
 def options(correct: str, distractors: list[str], seed: str) -> tuple[list[dict[str, str]], str]:
     values: list[str] = []
@@ -68,7 +60,6 @@ def options(correct: str, distractors: list[str], seed: str) -> tuple[list[dict[
     ordered.insert(correct_index, values[0])
     labels = list("ABCD")
     return ([{"label": label, "text": text} for label, text in zip(labels, ordered)], labels[correct_index])
-
 
 def qa(
     *, task_id: str, task_name: str, qtype: str, question: str,
@@ -94,119 +85,8 @@ def qa(
         "result_json": result,
     }
 
-
 def source_qa(group: dict[str, Any], qtype: str) -> dict[str, Any]:
     return next(q for q in group.get("qa", []) if q.get("question_type") == qtype)
-
-
-def task1_groups(ego: dict[str, Any]) -> list[dict[str, Any]]:
-    by_name = {g["name"]: g for g in ego["groups"]}
-    specs = []
-
-    # General human-referenced relation change.
-    group = copy.deepcopy(by_name["query_04_iiith145_frame11250"])
-    old = source_qa(group, "relation_change_over_video")
-    result = copy.deepcopy(old["result_json"])
-    track = result["object_track"]
-    sample_count = len(track["states"])
-    q = qa(
-        task_id=TASK1_ID, task_name=TASK1_NAME,
-        qtype="relation_change_over_video",
-        question="Across the 15-second clip, what is the large steel bowl's overall left/right transition relative to the person?",
-        correct="It begins on the person's left and ends on the person's right.",
-        distractors=[
-            "It begins on the person's right and ends on the person's left.",
-            "It stays on the person's left for the entire clip.",
-            "It stays centered relative to the person for the entire clip.",
-        ],
-        explanation=f"Across {sample_count} valid 3D body-pose samples, the scene-fixed bowl is left at the first sample and right at the final sample in the person's body-centric frame.",
-        method="Rebuilds the person's body-centric frame at every valid pose sample and transforms the fixed 3D object center into that changing frame.",
-        result=result,
-    )
-    specs.append((group, q, "Task 1 · overall relation change"))
-
-    # Rotation-dominant relation change.
-    group = copy.deepcopy(by_name["query_02_iiith30_frame4440"])
-    old = source_qa(group, "relation_change_over_video")
-    result = copy.deepcopy(old["result_json"])
-    motion = result["human_motion"]
-    q = qa(
-        task_id=TASK1_ID, task_name=TASK1_NAME,
-        qtype="turn_induced_relation_change_over_video",
-        question="The person turns substantially during the clip while moving little overall. How does the paprika container's lateral position relative to the person change?",
-        correct="It changes from the person's right side to the person's left side.",
-        distractors=[
-            "It changes from the person's left side to the person's right side.",
-            "It remains on the person's right side throughout.",
-            "It remains on the person's left side throughout.",
-        ],
-        explanation=f"The body-centric relation changes right → left while the measured body turn is {motion['body_turn_deg']:.1f}° and net displacement is {motion['displacement_m']:.2f} m.",
-        method="Uses all valid poses in the clip; the rotation-dominant label requires body turn ≥45° and net displacement <0.35 m.",
-        result=result,
-    )
-    specs.append((group, q, "Task 1 · turn-induced relation change"))
-
-    # Relation consistency requires every sampled instant.
-    group = copy.deepcopy(by_name["query_01_iiith32_frame5280"])
-    old = source_qa(group, "relation_consistency_over_video")
-    result = copy.deepcopy(old["result_json"])
-    relation_track = source_qa(group, "relation_change_over_video")["result_json"]["object_track"]
-    result["sampled_frame_count"] = len(relation_track["states"])
-    result["consistency_track"] = [
-        {
-            "frame": x["frame"],
-            "time_s": x["t_sec_from_center"],
-            "lateral_relation": x["relation"]["lateral_relation"],
-        }
-        for x in relation_track["states"]
-    ]
-    correct_obj = "stainless salt container"
-    q = qa(
-        task_id=TASK1_ID, task_name=TASK1_NAME,
-        qtype="relation_consistency_over_video",
-        question="Which listed object stays on the person's left side at every valid sampled time in the entire clip?",
-        correct=f"The {correct_obj} stays on the person's left throughout.",
-        distractors=[
-            "The plastic bowl stays on the person's left throughout.",
-            "The tawa pan stays on the person's left throughout.",
-            "No listed object stays on the person's left throughout.",
-        ],
-        explanation=f"The {correct_obj} is classified left in all {result['sampled_frame_count']} valid body-centric pose samples.",
-        method="Applies an all-samples consistency gate: a candidate is accepted only if its lateral label is left at every valid pose sample.",
-        result=result,
-    )
-    specs.append((group, q, "Task 1 · relation consistency"))
-
-    # Body-forward visibility change. This is deliberately not dense occlusion.
-    group = copy.deepcopy(by_name["sfu0083_cam04_3450"])
-    old = source_qa(group, "visibility_change_cause_over_video")
-    result = copy.deepcopy(old["result_json"])
-    result["visibility_scope"] = "body/head-forward FOV proxy plus listed-object blocker test; not gaze ground truth or dense ray casting"
-    q = qa(
-        task_id=TASK1_ID, task_name=TASK1_NAME,
-        qtype="body_forward_visibility_change_cause_over_video",
-        question="Near the end of the clip, the knife enters the person's central body/head-forward field. Which measured change best explains this?",
-        correct="The person's body/head direction changes; no listed blocker is detected on the final sightline.",
-        distractors=[
-            "A listed object moves into the sightline and blocks the knife.",
-            "The knife remains outside the person's forward field for the whole clip.",
-            "The camera viewpoint alone determines the person's visibility state.",
-        ],
-        explanation="The first samples place the knife outside the forward field, the final four samples place it in the central zone, body turn is about 74.6°, and the listed-object blocker field remains empty.",
-        method="Compares the target direction with the person's body/head-forward direction over the full pose timeline and checks only explicitly listed blocker geometry.",
-        result=result,
-        quality="audited_proxy",
-    )
-    specs.append((group, q, "Task 1 · body-forward visibility change"))
-
-    out = []
-    for group, question, title in specs:
-        group["qa"] = [question]
-        group["title"] = title + " · " + str(group.get("title") or group["name"])
-        group["case_policy"] = "one temporal question per unique video window"
-        out.append(group)
-    return out
-
 
 def compact_metric_timeline(timeline: dict[str, Any]) -> dict[str, Any]:
     out = copy.deepcopy(timeline)
@@ -218,7 +98,6 @@ def compact_metric_timeline(timeline: dict[str, Any]) -> dict[str, Any]:
             "head uses pelvis + 1.6 m when fitted joints are not loaded",
         ])
     return out
-
 
 def metric_group(scene: dict[str, Any], audit: dict[str, Any], question: dict[str, Any]) -> dict[str, Any]:
     sid = scene["scene_id"]
@@ -253,7 +132,6 @@ def metric_group(scene: dict[str, Any], audit: dict[str, Any], question: dict[st
         "case_policy": "one temporal question per unique video window",
         "qa": [question],
     }
-
 
 def task4_groups(
     dense: dict[str, Any], candidate_audits: dict[str, Any],
@@ -409,162 +287,6 @@ def task4_groups(
 
     return out
 
-
-
-def task1_expansion_groups(expansion: dict[str, Any]) -> list[dict[str, Any]]:
-    """Select six additional high-signal Ego-Exo4D temporal windows."""
-    by_name = {g["name"]: copy.deepcopy(g) for g in expansion["groups"]}
-    out: list[dict[str, Any]] = []
-
-    def relation_data(group: dict[str, Any]) -> tuple[dict[str, Any], list[dict[str, Any]]]:
-        relation_q = source_qa(group, "relation_change_over_video")
-        consistency_q = source_qa(group, "relation_consistency_over_video")
-        return copy.deepcopy(relation_q["result_json"]), copy.deepcopy(consistency_q["result_json"]["object_tracks"])
-
-    def nearest_sequence(tracks: list[dict[str, Any]]) -> list[str]:
-        n = min(len(track["states"]) for track in tracks)
-        return [
-            min(tracks, key=lambda track: track["states"][i]["relation"]["distance_m"])["object_id"]
-            for i in range(n)
-        ]
-
-    def finish(group: dict[str, Any], question: dict[str, Any], title: str) -> None:
-        group["qa"] = [question]
-        group["title"] = title + " · " + str(group.get("title") or group["name"])
-        group["case_policy"] = "one temporal question per unique video window"
-        out.append(group)
-
-    group = by_name["diverse_iiith_145_2_frame7380"]
-    result, tracks = relation_data(group)
-    sequence = nearest_sequence(tracks)
-    result.update({"nearest_sequence": sequence, "sampled_frame_count": len(sequence)})
-    question = qa(
-        task_id=TASK1_ID, task_name=TASK1_NAME,
-        qtype="nearest_object_consistency_over_video",
-        question="Which listed object remains nearest to the person at every valid sampled time in this clip?",
-        correct=f"The white chopping board remains nearest in all {len(sequence)} samples.",
-        distractors=[
-            "The steel tomato bowl remains nearest throughout.",
-            "The small steel bowl remains nearest throughout.",
-            "The nearest listed object changes during the clip.",
-        ],
-        explanation=f"Per-sample pelvis-to-object 3D distances select the white chopping board {Counter(sequence)['White chopping board_0']}/{len(sequence)} times.",
-        method="Ranks every listed scene-fixed 3D object by distance from the changing human pelvis at every valid pose sample; all-samples agreement is required.",
-        result=result,
-    )
-    finish(group, question, "Task 1 · nearest-object consistency")
-
-    group = by_name["query_03_iiith29_frame4350"]
-    result, tracks = relation_data(group)
-    n = min(len(track["states"]) for track in tracks)
-    front_counts = {
-        track["object_id"]: sum(state["relation"]["longitudinal_relation"] == "front" for state in track["states"])
-        for track in tracks
-    }
-    result.update({"front_counts": front_counts, "sampled_frame_count": n, "object_tracks": tracks})
-    question = qa(
-        task_id=TASK1_ID, task_name=TASK1_NAME,
-        qtype="multi_object_front_consistency_over_video",
-        question="Which statement about the three listed objects remains true across every valid time sample?",
-        correct=f"The steel bowl, oil container and steel plate all remain in front of the person in all {n} samples.",
-        distractors=[
-            "All three objects remain behind the person throughout.",
-            "Only the oil container remains in front throughout.",
-            "At least one listed object crosses from front to behind during the clip.",
-        ],
-        explanation=f"The front counts are {front_counts}; each equals the {n}-sample timeline length.",
-        method="Checks the longitudinal body-centric relation of every listed object at every valid human pose, not only the endpoints.",
-        result=result,
-    )
-    finish(group, question, "Task 1 · multi-object relation consistency")
-
-    group = by_name["diverse_iiith_31_3_frame1620"]
-    result, tracks = relation_data(group)
-    sequence = nearest_sequence(tracks)
-    tomato = next(track for track in tracks if track["object_id"] == "Chopped tomato_0")
-    below_count = sum(state["relation"]["vertical_relation"] == "below" for state in tomato["states"])
-    result.update({"nearest_sequence": sequence, "below_count": below_count, "sampled_frame_count": len(sequence), "object_tracks": tracks})
-    question = qa(
-        task_id=TASK1_ID, task_name=TASK1_NAME,
-        qtype="nearest_and_vertical_consistency_over_video",
-        question="Which object stays both nearest to the person and below the person's body origin throughout the clip?",
-        correct=f"The chopped tomato is nearest and below the body origin in all {len(sequence)} samples.",
-        distractors=[
-            "The chopping board is nearest and below throughout.",
-            "The knife is nearest and below throughout.",
-            "No object satisfies both conditions for the whole clip.",
-        ],
-        explanation=f"The chopped tomato wins all {len(sequence)} distance rankings and has below in {below_count}/{len(sequence)} vertical-relation samples.",
-        method="Combines the all-samples nearest-distance ranking with the all-samples vertical body-centric relation.",
-        result=result,
-    )
-    finish(group, question, "Task 1 · nearest plus vertical consistency")
-
-    group = by_name["sfu0101_cam05_5460"]
-    result, _ = relation_data(group)
-    track = result["object_track"]
-    n = len(track["states"])
-    result["sampled_frame_count"] = n
-    question = qa(
-        task_id=TASK1_ID, task_name=TASK1_NAME,
-        qtype="relation_change_over_video",
-        question="As the person moves across the scene, how does the white plate's lateral relation to the person change over the clip?",
-        correct="The white plate changes from the person's left side to the person's right side.",
-        distractors=[
-            "It changes from the person's right side to the person's left side.",
-            "It remains on the person's left throughout.",
-            "It remains centered relative to the person throughout.",
-        ],
-        explanation=f"The first body-centric sample is left and the final sample is right; {n} valid poses cover the 15-second window.",
-        method="Transforms the fixed white-plate 3D center into the person's changing body-centric frame across the full timeline.",
-        result=result,
-    )
-    finish(group, question, "Task 1 · lateral relation change")
-
-    group = by_name["val_3"]
-    result, _ = relation_data(group)
-    track = result["object_track"]
-    n = len(track["states"])
-    result["sampled_frame_count"] = n
-    question = qa(
-        task_id=TASK1_ID, task_name=TASK1_NAME,
-        qtype="relation_change_over_video",
-        question="How does the oyster-sauce bottle change relative to the moving person from the beginning to the end?",
-        correct="It begins behind the person and ends on the person's right-and-front side.",
-        distractors=[
-            "It begins on the person's left and ends behind the person.",
-            "It remains behind the person throughout.",
-            "It remains on the person's left throughout.",
-        ],
-        explanation=f"Across {n} valid poses, the corrected body-centric labels change from right-behind at the first sample to right-front at the final sample.",
-        method="Uses the full body-frame timeline, the validated scene-fixed bottle center, and the take-level audited forward-sign calibration at every sample.",
-        result=result,
-    )
-    finish(group, question, "Task 1 · longitudinal relation change")
-
-    group = by_name["val_12_replacement_egg_whisk"]
-    result, _ = relation_data(group)
-    track = result["object_track"]
-    distances = [state["relation"]["distance_m"] for state in track["states"]]
-    result.update({"distance_series_m": distances, "sampled_frame_count": len(distances)})
-    question = qa(
-        task_id=TASK1_ID, task_name=TASK1_NAME,
-        qtype="human_object_distance_pattern_over_video",
-        question="How does the person's 3D distance to the egg whisk change over this clip?",
-        correct=f"The egg whisk is very close to the person at the beginning and about {distances[-1]:.2f} m away at the end.",
-        distractors=[
-            "The distance stays nearly constant throughout.",
-            "The person moves steadily closer and ends within 0.3 m.",
-            "The distance increases briefly but returns to its starting value by the end.",
-        ],
-        explanation=f"The pelvis-to-object Euclidean distance changes by {distances[-1]-distances[0]:+.2f} m across {len(distances)} valid pose samples.",
-        method="Computes Euclidean distance from the human pelvis origin to the fixed 3D object center at every valid pose sample.",
-        result=result,
-    )
-    finish(group, question, "Task 1 · human-object distance change")
-    return out
-
-
 def task4_expansion_groups(dense: dict[str, Any], expansion_audits: dict[str, Any]) -> list[dict[str, Any]]:
     """Add six distinct, identity-gated HOI-M3 temporal windows."""
     scenes = {x["scene_id"]: x for x in dense["scenes"]}
@@ -698,8 +420,8 @@ def validate(data: dict[str, Any]) -> dict[str, Any]:
     if len(names) != len(set(names)):
         errors.append("duplicate case/window names")
     qas = [g["qa"][0] for g in groups]
-    if any(q.get("task_id") not in {TASK1_ID, TASK4_ID} for q in qas):
-        errors.append("non Task1/Task4 question present")
+    if any(q.get("task_id") != TASK4_ID for q in qas):
+        errors.append("non-Task4 question present")
     if any(len(q.get("options", [])) != 4 or len({x["text"] for x in q["options"]}) != 4 for q in qas):
         errors.append("all questions need four unique options")
     for g in groups:
@@ -723,7 +445,6 @@ def validate(data: dict[str, Any]) -> dict[str, Any]:
         "task_counts": dict(task_counts),
         "question_type_counts": dict(type_counts),
         "hard_gates": [
-            "Task 1 answers come from multi-frame 3D body/object timelines",
             "metric Task 4 requires complete_and_identity_aligned visual-person audit",
             "metric Task 4 uses 16 pose samples over 15 seconds",
             "three-person topology includes all three visible tracks and remains explicitly 2D",
@@ -731,52 +452,56 @@ def validate(data: dict[str, Any]) -> dict[str, Any]:
             "four unique options and exactly one question per case",
         ],
         "honest_limitations": [
-            "Task 1 visibility and Task 4 body-forward visibility are directional FOV proxies, not gaze ground truth",
+            "Task 4 body-forward visibility is a directional FOV proxy, not gaze ground truth",
             "no physical occlusion/partition QA is released because the local subset lacks blocker geometry",
             "SMPL-X transl/global_orient are pelvis/root and body-forward proxies; fitted head joints are not loaded",
             "three-person topology is image-plane topology, not metric 3D distance",
         ],
     }
 
-
 def main() -> None:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--ego-data", type=Path, default=Path("outputs/qa/ego_new_data.js"))
     ap.add_argument("--dense-scenes", type=Path, default=Path("outputs/qa/hoim3_multihuman_scenes_dense_all.json"))
     ap.add_argument("--candidate-audits", type=Path, default=Path("outputs/qa/multihuman_curated_candidate_calibration.json"))
     ap.add_argument("--existing-audits", type=Path, default=Path("outputs/qa/multihuman_visual_calibration.json"))
-    ap.add_argument("--ego-expansion-data", type=Path, default=Path("outputs/qa/ego_temporal_expansion_candidates.js"))
     ap.add_argument("--expansion-audits", type=Path, default=Path("outputs/qa/multihuman_expansion_candidate_calibration.json"))
     ap.add_argument("--site-data", type=Path, default=Path("site/qa_benchmark/data.js"))
-    ap.add_argument("--output-jsonl", type=Path, default=Path("outputs/qa/task1_task4_curated_qa.jsonl"))
-    ap.add_argument("--audit-output", type=Path, default=Path("outputs/qa/task1_task4_curated_audit.json"))
+    ap.add_argument("--output-jsonl", type=Path, default=Path("outputs/qa/task4_curated_qa.jsonl"))
+    ap.add_argument("--audit-output", type=Path, default=Path("outputs/qa/task4_curated_audit.json"))
+    ap.add_argument(
+        "--language-client-factory",
+        help="Optional module:function returning a StructuredOutputClient; omitted means deterministic templates",
+    )
     args = ap.parse_args()
 
     resolve = lambda p: p if p.is_absolute() else ROOT / p
-    ego = load_js(resolve(args.ego_data))
     dense = json.loads(resolve(args.dense_scenes).read_text(encoding="utf-8"))
     candidate_audits = json.loads(resolve(args.candidate_audits).read_text(encoding="utf-8"))
     existing_audits = json.loads(resolve(args.existing_audits).read_text(encoding="utf-8"))
-    ego_expansion = load_js(resolve(args.ego_expansion_data))
     expansion_audits = json.loads(resolve(args.expansion_audits).read_text(encoding="utf-8"))
     base_site = load_js(resolve(args.site_data))
+    language_realizer = load_language_realizer(args.language_client_factory)
 
-    core_task1 = task1_groups(ego)
-    extra_task1 = task1_expansion_groups(ego_expansion)
     core_task4 = task4_groups(dense, candidate_audits, existing_audits, base_site)
     extra_task4 = task4_expansion_groups(dense, expansion_audits)
     data = {
-        "title": "Humans in Space · Task 1 + Task 4 Curated QA",
+        "title": "Humans in Space · Task 4 Curated QA",
         "subtitle": "One evidence-grounded temporal question per unique case.",
         "tasks": TASKS,
-        "groups": [*core_task1, *extra_task1, *core_task4, *extra_task4],
+        "groups": [*core_task4, *extra_task4],
         "release_policy": {
-            "task_scope": [TASK1_ID, TASK4_ID],
+            "task_scope": [TASK4_ID],
             "one_question_per_case": True,
             "no_guessed_answers": True,
         },
     }
+    seal_release_questions(data, realizer=language_realizer)
     audit = validate(data)
+    audit.update({
+        "semantic_gt_schema": "limo4si.semantic_gt.v1",
+        "reasoning_owner": "deterministic_code",
+        "language_realizer": language_realizer.name if language_realizer else "deterministic_template",
+    })
     output_js = resolve(args.site_data)
     save_js(output_js, data)
     jsonl = resolve(args.output_jsonl)
@@ -793,7 +518,6 @@ def main() -> None:
     audit_path = resolve(args.audit_output)
     audit_path.write_text(json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(audit, ensure_ascii=False, indent=2))
-
 
 if __name__ == "__main__":
     main()

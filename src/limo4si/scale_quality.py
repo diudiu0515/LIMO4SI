@@ -11,6 +11,9 @@ import re
 from dataclasses import asdict, dataclass
 from typing import Any, Iterable, Mapping, Sequence
 
+from .semantic_gt import LanguageRealizationError, SemanticGTError, validate_sealed_question
+from .multihuman import derive_task4_answer_semantics
+
 TASK1_ID = "task1_dynamic_human_referenced_relations"
 TASK3_ID = "task3_human_scene_topological_reasoning"
 TASK4_ID = "task4_multi_human_relational_dynamics"
@@ -49,8 +52,15 @@ class ScaleQualityPolicy:
     min_task3_local_travel_m: float = 0.35
     min_task3_grounding_inliers: int = 12
     min_task5_span_ratio: float = 0.85
+    # Legacy ADT pilot windows remain readable for compatibility tests.
     min_task5_window_sec: float = 8.5
     max_task5_window_sec: float = 10.0
+    # Current EgoExo4D release windows follow the shared Task 1/4 15 s policy.
+    min_task5_egoexo_window_sec: float = 14.5
+    max_task5_egoexo_window_sec: float = 15.5
+    min_task5_egoexo_anchor_span_ratio: float = 0.65
+    min_task5_egoexo_boundary_margin_px: float = 10.0
+    max_task5_egoexo_alignment_skew_ms: float = 1.0
     min_task5_gaze_run_states: int = 4
     min_task5_repeated_event_hits: int = 10
     min_task5_onset_event_hits: int = 10
@@ -192,6 +202,8 @@ def _distance_decimal_places(text: str) -> list[int]:
     return [len(match.group(1) or "") for match in re.finditer(r"\b\d+(?:\.(\d+))?\s*m\b", text)]
 
 def _validate_common(case_id: str, question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], metrics: dict[str, Any]) -> None:
+    if question.get("release_eligible") is False:
+        errors.append("question is explicitly marked non-release")
     options = question.get("options") or []
     if len(options) != 4:
         errors.append("question must have exactly four options")
@@ -231,6 +243,12 @@ def _validate_common(case_id: str, question: Mapping[str, Any], policy: ScaleQua
             errors.append("correct option text is stale or differs from correct_answer")
         if question.get("answer") != correct:
             errors.append("answer differs from correct_answer")
+    if question.get("task_id") in {TASK1_ID, TASK4_ID, TASK5_ID}:
+        try:
+            validate_sealed_question(question)
+        except (SemanticGTError, LanguageRealizationError, KeyError, TypeError) as exc:
+            errors.append(f"semantic GT/language boundary failed: {exc}")
+
     result = question.get("result_json")
     if not isinstance(result, Mapping):
         errors.append("result_json is missing")
@@ -336,11 +354,60 @@ def _validate_identity_audit(group: Mapping[str, Any], errors: list[str], metric
     metrics["identity_mapping"] = mapping
 
 
+def _validate_person_attribute_audit(
+    group: Mapping[str, Any], required_ids: Sequence[str], errors: list[str],
+) -> None:
+    """Fail closed unless public person descriptions come from reviewed attributes."""
+    audit = group.get("person_display_alias_status") or {}
+    aliases = group.get("person_display_aliases") or {}
+    if audit.get("status") != "complete":
+        errors.append("person attribute audit is missing or incomplete")
+        return
+    if audit.get("schema_version") != "limo4si.person_attributes.v1":
+        errors.append("person attribute audit schema is missing or unsupported")
+    if audit.get("source") != "manual_visual_review":
+        errors.append("person gender/clothing attributes lack manual visual review provenance")
+    if audit.get("audit_status") != "verified_from_original_and_localized_six_frame_sheets":
+        errors.append("person attribute audit lacks completed original/localized visual verification")
+    evidence_refs = audit.get("evidence_refs") or []
+    evidence_paths = {str(ref.get("path", "")) for ref in evidence_refs if isinstance(ref, Mapping)}
+    if len(evidence_refs) < 2 or not any("_original.jpg" in path for path in evidence_paths) or not any("_localized.jpg" in path for path in evidence_paths):
+        errors.append("person attribute audit must cite original and localized visual evidence")
+    for ref in evidence_refs:
+        digest = ref.get("sha256") if isinstance(ref, Mapping) else None
+        if not isinstance(digest, str) or re.fullmatch(r"[0-9a-f]{64}", digest) is None:
+            errors.append("person attribute audit contains an invalid evidence hash")
+            break
+    reviewed = set(audit.get("reviewed_attributes") or [])
+    if not {"gender_term", "upper_body", "lower_body"}.issubset(reviewed):
+        errors.append("person attribute audit does not cover gender and clothing fields")
+    configured = audit.get("configured_descriptors") or {}
+    metric_to_visible = audit.get("metric_to_visible") or {}
+    for person_id in required_ids:
+        expected = configured.get(person_id)
+        if expected is None and person_id in metric_to_visible:
+            expected = configured.get(metric_to_visible[person_id])
+        if not isinstance(expected, str) or aliases.get(person_id) != expected:
+            errors.append(f"public description for {person_id} differs from its reviewed person attributes")
+
+
+def _validate_task4_answer_semantics(question: Mapping[str, Any], errors: list[str]) -> None:
+    result = question.get("result_json") or {}
+    try:
+        recomputed = derive_task4_answer_semantics(str(question.get("question_type")), result)
+    except (KeyError, TypeError, ValueError) as exc:
+        errors.append(f"Task 4 answer semantics cannot be recomputed: {exc}")
+        return
+    if result.get("answer_semantics") != recomputed:
+        errors.append("Task 4 stored answer semantics are stale or differ from recomputed evidence")
+
+
 def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], warnings: list[str], metrics: dict[str, Any]) -> None:
     _validate_identity_audit(group, errors, metrics, policy)
     audit = group.get("visual_person_audit") or {}
     aliases = group.get("person_display_aliases") or {}
     pair_descriptions = _validate_person_descriptions(aliases, ("A", "B"), errors)
+    _validate_person_attribute_audit(group, ("A", "B"), errors)
     persistent_count = int(audit.get("persistent_visible_person_count") or 0)
     metric_count = int(audit.get("metric_3d_track_count") or 0)
     max_visible_count = int(audit.get("max_visible_person_count") or persistent_count)
@@ -357,6 +424,21 @@ def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any]
             warnings.append("an intermittent extra person is excluded; the question explicitly names the annotated pair")
     result = question["result_json"]
     timeline = result.get("pair_timeline") or {}
+    coordinate_frame = timeline.get("coordinate_frame") or result.get("human_coordinate_frame") or {}
+    right_sign = coordinate_frame.get("right_sign")
+    orientation_calibration = coordinate_frame.get("orientation_calibration") or {}
+    calibrated_negative = (
+        right_sign == -1
+        and isinstance(orientation_calibration.get("source"), str)
+        and bool(orientation_calibration.get("source"))
+    )
+    if (
+        right_sign not in (1, -1)
+        or (right_sign == -1 and not calibrated_negative)
+        or "forward" not in str(coordinate_frame.get("forward_axis", "")).lower()
+        or "scene-up cross forward" not in str(coordinate_frame.get("right_axis", "")).lower()
+    ):
+        errors.append("metric Task 4 lacks a validated face-forward human coordinate frame and lateral calibration")
     if timeline.get("status") != "ok":
         errors.append("pair_timeline status is not ok")
     states = timeline.get("states") or []
@@ -528,8 +610,107 @@ def _task5_relation_label(relation: Mapping[str, Any], deadband_m: float = 0.12)
     return depth if side == "center" else side if depth == "level" else f"{side}-{depth}"
 
 
+def _validate_task5_egoexo(
+    group: Mapping[str, Any],
+    question: Mapping[str, Any],
+    policy: ScaleQualityPolicy,
+    errors: list[str],
+    metrics: dict[str, Any],
+) -> None:
+    """Independently audit EgoExo4D synchronized 2D gaze/mask claims."""
+    from .task5_egoexo import GAZE_GROUNDING_METHOD, validate_review_result
+
+    result = question["result_json"]
+    duration = (group.get("video_window") or {}).get("duration_sec")
+    if (
+        not _finite(duration)
+        or not policy.min_task5_egoexo_window_sec
+        <= float(duration)
+        <= policy.max_task5_egoexo_window_sec
+    ):
+        errors.append(
+            "EgoExo4D Task 5 public video must be about 15 seconds "
+            f"({policy.min_task5_egoexo_window_sec:g}–"
+            f"{policy.max_task5_egoexo_window_sec:g} s)"
+        )
+    if result.get("annotation_direct") is not True:
+        errors.append("EgoExo4D Task 5 answer is not directly annotation-derived")
+    if result.get("gaze_grounding_method") != GAZE_GROUNDING_METHOD:
+        errors.append("EgoExo4D Task 5 gaze is not synchronized 2D point-in-mask evidence")
+    coordinate_frame = str(result.get("coordinate_frame", "")).lower()
+    if (
+        "annotation plane" not in coordinate_frame
+        or "containment" not in coordinate_frame
+        or "directional claim" not in coordinate_frame
+    ):
+        errors.append("EgoExo4D Task 5 must remain an evidence-closed image-plane containment claim")
+
+    try:
+        validate_review_result(
+            result,
+            minimum_boundary_margin_px=policy.min_task5_egoexo_boundary_margin_px,
+        )
+    except (KeyError, TypeError, ValueError) as exc:
+        errors.append(f"EgoExo4D Task 5 deterministic evidence failed: {exc}")
+
+    anchor_statements = {
+        "anchor_1": "Only at the first marked anchor.",
+        "anchor_2": "Only at the second marked anchor.",
+        "anchor_3": "Only at the third marked anchor.",
+    }
+    expected_statement = anchor_statements.get(str(result.get("correct_semantic_option_id")))
+    semantic_gt = question.get("semantic_gt") or {}
+    semantic_options = {option.get("id"): option.get("statement") for option in semantic_gt.get("options") or []}
+    locked_correct = semantic_options.get(semantic_gt.get("correct_option_id"))
+    if expected_statement is None or locked_correct != expected_statement:
+        errors.append("EgoExo4D Task 5 locked correct option differs from the recomputed target anchor")
+
+    window = result.get("source_window") or {}
+    video_window = group.get("video_window") or {}
+    if not isinstance(window, Mapping) or not window:
+        errors.append("EgoExo4D Task 5 source window is missing from signed evidence")
+    elif _finite(duration):
+        source_duration = window.get("duration_sec")
+        if not _finite(source_duration) or abs(float(source_duration) - float(duration)) > 1e-6:
+            errors.append("EgoExo4D Task 5 signed source duration differs from the public clip")
+        public_start = video_window.get("start_sec")
+        if (
+            not _finite(public_start)
+            or not _finite(window.get("start_sec"))
+            or abs(float(public_start) - float(window["start_sec"])) > 1e-6
+        ):
+            errors.append("EgoExo4D Task 5 signed source start differs from the public clip")
+
+    anchors = result.get("anchors") or []
+    if len(anchors) == 3 and _finite(duration) and float(duration) > 0:
+        anchor_span = float(anchors[-1]["time_s"]) - float(anchors[0]["time_s"])
+        ratio = anchor_span / float(duration)
+        metrics["anchor_span_sec"] = round(anchor_span, 6)
+        metrics["anchor_span_ratio"] = round(ratio, 6)
+        if ratio < policy.min_task5_egoexo_anchor_span_ratio:
+            errors.append(
+                f"EgoExo4D Task 5 anchor span ratio {ratio:.3f} is below "
+                f"{policy.min_task5_egoexo_anchor_span_ratio:.3f}"
+            )
+
+    alignment = result.get("alignment_diagnostics") or {}
+    skew = alignment.get("maximum_anchor_skew_ms")
+    if not _finite(skew) or float(skew) > policy.max_task5_egoexo_alignment_skew_ms:
+        errors.append("EgoExo4D Task 5 gaze/video alignment is missing or too stale")
+    source = result.get("source_evidence") or {}
+    if not isinstance(source, Mapping) or not all(source.get(key) for key in ("relations", "gaze", "video")):
+        errors.append("EgoExo4D Task 5 source provenance is incomplete")
+    if "ego-exo4d" not in str(result.get("annotation_source", "")).lower():
+        errors.append("EgoExo4D Task 5 annotation source is missing")
+    if result.get("release_status") != "signed_semantic_gt_egoexo_primary":
+        errors.append("EgoExo4D Task 5 result is not marked as the primary signed release path")
+
+
 def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], metrics: dict[str, Any]) -> None:
     """Independently audit annotation-derived gaze/object/wearer claims."""
+    if question.get("question_type") == "gaze_point_inside_relation_mask_at_anchor":
+        _validate_task5_egoexo(group, question, policy, errors, metrics)
+        return
     result = question["result_json"]
     if result.get("annotation_direct") is not True:
         errors.append("Task 5 answer is not marked as directly annotation-derived")
@@ -711,6 +892,28 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
             errors.append("last-gaze-object QA contains no spatial relation change")
         if events and int(transition.get("last_supported_event_end_frame", -1)) != int(events[0].get("end_index", -2)):
             errors.append("last gaze event endpoint is inconsistent")
+    elif qtype == "gaze_target_at_evidence_anchor":
+        anchors = result.get("anchor_gaze_targets") or []
+        indexed = {state.get("frame"): state for state in states}
+        if len(anchors) not in {2, 3}:
+            errors.append("gaze-anchor Task 5 QA must expose two or three audited anchors")
+        else:
+            target_name = str(result.get("object_name"))
+            target_hits = 0
+            for anchor in anchors:
+                frame = anchor.get("frame")
+                expected = str(anchor.get("gaze_target"))
+                state = indexed.get(frame)
+                if state is None or str(state.get("gazed_object_name")) != expected:
+                    errors.append("gaze-anchor target is stale or outside the evidence timeline")
+                if expected == target_name:
+                    target_hits += 1
+            if target_hits != 1:
+                errors.append("gaze-anchor QA must contain exactly one displayed target hit")
+        supporting = result.get("supporting_gaze_event") or {}
+        if str(supporting.get("object_name")) != str(result.get("object_name")):
+            errors.append("gaze-anchor supporting event differs from the question target")
+        return
     else:
         errors.append(f"unsupported Task 5 question type {qtype!r}")
     start_frame, end_frame = transition.get("start_frame"), transition.get("end_frame")
@@ -758,7 +961,11 @@ def _validate_topology(group: Mapping[str, Any], question: Mapping[str, Any], po
     if len(start_map) < 3 or set(start_map) != set(end_map):
         errors.append("topology start/end evidence must contain the same three or more pairs")
     topology_ids = sorted({person_id for pair in start_map for person_id in re.split(r"[–-]", pair)})
-    _validate_person_descriptions(group.get("person_display_aliases") or {}, topology_ids, errors)
+    topology_descriptions = _validate_person_descriptions(group.get("person_display_aliases") or {}, topology_ids, errors)
+    _validate_person_attribute_audit(group, topology_ids, errors)
+    public_question = str(question.get("question", "")).lower()
+    if not all(description.lower() in public_question for description in topology_descriptions):
+        errors.append("three-person topology question must define every clothing identity in the question")
     for label, values in (("start", start_map), ("end", end_map)):
         ordered = sorted(values.values())
         if len(ordered) >= 2:
@@ -814,6 +1021,7 @@ def validate_release(data: Mapping[str, Any], policy: ScaleQualityPolicy | None 
                 elif task_id == TASK3_ID:
                     _validate_task3(group, question, policy, errors, metrics)
                 elif task_id == TASK4_ID:
+                    _validate_task4_answer_semantics(question, errors)
                     if question.get("question_type") in TOPOLOGY_TYPES:
                         _validate_topology(group, question, policy, errors, metrics)
                     else:

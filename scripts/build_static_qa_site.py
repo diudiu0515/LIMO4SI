@@ -57,7 +57,43 @@ def evidence_payload(group: dict[str, Any], qa: dict[str, Any]) -> dict[str, Any
     r = qa.get('result_json') or {}
     qtype = qa.get('question_type', '')
     out: dict[str, Any] = {'T/H/S': {'T': r.get('T_Q'), 'H': r.get('H_Q'), 'S': r.get('S_Q')}}
-    if qtype in {'relation_change_over_video', 'turn_induced_relation_change_over_video'}:
+    if qtype == 'gaze_point_inside_relation_mask_at_anchor':
+        out['annotation_source'] = r.get('annotation_source')
+        out['answer_provenance'] = 'direct synchronized gaze-point / Relations-mask containment; no LLM label judgment'
+        out['gaze_grounding_method'] = r.get('gaze_grounding_method')
+        out['coordinate_frame'] = r.get('coordinate_frame')
+        out['target_object'] = {
+            'id': r.get('target_object_id'),
+            'name': r.get('target_object_name'),
+            'anchor_index': r.get('target_anchor_index'),
+        }
+        out['anchors'] = [
+            {
+                'video_frame': anchor.get('video_frame'),
+                'time_s': anchor.get('time_s'),
+                'object_id': anchor.get('object_id'),
+                'object_name': anchor.get('object_name'),
+                'gaze_pixel_xy': anchor.get('gaze_pixel_xy'),
+                'boundary_margin_px': anchor.get('boundary_margin_px'),
+                'annotated_mask_count': anchor.get('annotated_mask_count'),
+                'alignment_skew_ms': anchor.get('alignment_skew_ms'),
+                'unique_annotated_mask_hit': anchor.get('unique_annotated_mask_hit'),
+            }
+            for anchor in (r.get('anchors') or [])
+        ]
+        out['source_window'] = r.get('source_window')
+        out['source_evidence'] = r.get('source_evidence')
+        out['claim_limits'] = r.get('claim_limits')
+        out['answer_signature'] = r.get('answer_signature')
+        out['evidence_signature'] = r.get('evidence_signature')
+    elif qtype == 'gaze_target_at_evidence_anchor':
+        out['annotation_source'] = r.get('annotation_source')
+        out['answer_provenance'] = r.get('answer_provenance')
+        out['gaze_grounding_method'] = r.get('gaze_grounding_method')
+        out['anchor_gaze_targets'] = r.get('anchor_gaze_targets')
+        out['supporting_gaze_event'] = r.get('supporting_gaze_event')
+        out['claim_limits'] = r.get('claim_limits')
+    elif qtype in {'relation_change_over_video', 'turn_induced_relation_change_over_video'}:
         track = r.get('object_track') or {}
         out['object'] = track.get('object_id')
         out['relation_timeline'] = [
@@ -156,6 +192,23 @@ def evidence_payload(group: dict[str, Any], qa: dict[str, Any]) -> dict[str, Any
             }
             for state in selected
         ]
+    elif qtype == 'gaze_grounded_interactee_image_bearing_change':
+        out['annotation_source'] = r.get('annotation_source')
+        out['answer_provenance'] = 'EgoBody keypoints and calibrated PV intrinsics; no LLM direction judgment'
+        out['gaze_grounding_method'] = r.get('gaze_grounding_method') or 'measured HoloLens gaze projected into the padded visible-interactee support box'
+        out['coordinate_frame'] = r.get('coordinate_frame') or 'HoloLens PV image plane relative to the calibrated optical center'
+        out['axis_definition'] = r.get('axis_definition') or 'negative bearing = image left; positive bearing = image right'
+        out['gaze_supported_samples'] = r.get('gaze_supported_samples')
+        out['gaze_interval_sec'] = r.get('gaze_interval_sec')
+        out['event_measurements'] = r.get('measurements')
+    elif qtype == 'human_object_endpoint_displacement_comparison':
+        out['annotation_source'] = r.get('annotation_source')
+        out['answer_provenance'] = 'exact-time fitted endpoints; no LLM label judgment'
+        out['object_category'] = r.get('object_category')
+        out['object_displacement_m'] = r.get('object_displacement_m')
+        out['human_root_displacement_m'] = r.get('human_displacement_m')
+        out['claim_limits'] = r.get('claim_limits') or ['no gaze claim', 'no contact claim']
+
     elif qtype == 'objects_along_human_path_sides':
         out['path_start_world_m'] = r.get('path_start_world_m')
         out['path_end_world_m'] = r.get('path_end_world_m')
@@ -227,7 +280,7 @@ def build_static_html(data: dict[str, Any]) -> str:
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Humans in Space QA</title>
+<title>Task 4 + Task 5 Spatial QA</title>
 <link rel="stylesheet" href="styles.css" />
 <style>
 body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px}.caseNav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px}.caseNav a{padding:8px 10px;border:1px solid #dbe3ef;border-radius:999px;background:white;color:#2456d6;text-decoration:none;font-weight:750;font-size:13px}.staticCase{margin:28px 0;padding:18px;border-radius:18px;background:white;box-shadow:0 12px 30px rgba(15,23,42,.08)}.mediaGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.mediaGrid img{width:100%;border-radius:14px;border:1px solid #dbe3ef;background:#f8fafc}.videoPanel{margin:10px auto 16px;max-width:860px}.inlineVideo{display:block;width:100%;max-height:360px;border-radius:14px;border:1px solid #dbe3ef;background:#0f172a}.originalVideoBox{margin:12px 0 16px;border:1px solid #dbe3ef;border-radius:14px;background:#f8fafc;padding:10px}.originalVideoBox summary{cursor:pointer;font-weight:850;color:#2456d6}.originalVideoBox .inlineVideo{margin:10px auto 0}.visualEvidenceBox{margin:14px 0;padding:12px 14px;border:1px solid #dbe3ef;border-radius:14px;background:#f8fafc}.visualEvidenceBox summary,.questionEvidence summary{cursor:pointer;font-weight:850;color:#2456d6}.questionEvidence{margin-top:12px;padding:10px 12px;border:1px solid #dbe3ef;border-radius:10px;background:#f8fafc}.qaList{display:grid;gap:14px}.answerBox{display:block}.answerBox.hidden{display:none}.option{cursor:pointer;text-align:left;width:100%;font:inherit}.option.selected{outline:3px solid #7c3aed;background:#f3e8ff}.option.correctChoice{border-color:#16a34a;background:#dcfce7}.option.wrongChoice{border-color:#dc2626;background:#fee2e2}.submitAnswer{margin-top:10px;padding:9px 14px;border:0;border-radius:9px;background:#2456d6;color:#fff;font-weight:800;cursor:pointer}.submitAnswer:disabled{opacity:.45;cursor:not-allowed}.feedback{margin-top:10px;padding:10px;border-radius:10px;background:#f8fafc;border:1px solid #dbe3ef}.jsonBlock{white-space:pre-wrap}.topNote{padding:14px;border-radius:14px;background:white;border:1px solid #dbe3ef;color:#475569}.metaGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:14px 0}.metaBox{background:#f8fafc;border:1px solid #dbe3ef;border-radius:12px;padding:10px}.metaBox strong{display:block;color:#0f172a}.metaBox span{color:#64748b;font-size:13px}.coverageNotice{margin:12px 0;padding:12px 14px;border-radius:12px;border:1px solid #f59e0b;background:#fffbeb;color:#92400e;line-height:1.5}.coverageNotice.ok{border-color:#86efac;background:#f0fdf4;color:#166534}@media(max-width:900px){.mediaGrid{grid-template-columns:1fr}.staticShell{padding:14px}}
@@ -235,8 +288,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </head>
 <body>
 <main class="staticShell">
-<h1>Humans in Space QA Benchmark</h1>
-<p class="topNote">This site shows Task 1, Task 3, Task 4, and Task 5. Each case contains one question grounded in its full evidence clip. Submit an answer first; localization views, trajectory/top-down views, gaze views, and computed evidence are collapsed by default and can be expanded when needed.</p>
+<h1>Task 4 + Task 5 · Spatial QA</h1>
+<p class="topNote">This site contains only Task 4 multi-human reasoning and Task 5 gaze-grounded reasoning. Every answer is computed and signed before any optional language API call. Submit an answer first; localization, gaze/mask, and computed evidence remain collapsed until requested.</p>
 <nav class="caseNav">
 ''')
     for i, _ in enumerate(data.get('groups', []), 1):
@@ -262,7 +315,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         if group.get('video_clip'):
             duration_label = vw.get("duration_sec", "evidence")
             parts.append(f'<div class="videoPanel"><div class="taskName">{esc(duration_label)}-second evidence video</div>')
-            parts.append(f'<video class="inlineVideo" controls muted playsinline preload="metadata"><source src="{esc(group["video_clip"])}" type="video/mp4">Your browser cannot play this video.</video></div>')
+            parts.append(f'<video class="inlineVideo" controls muted playsinline preload="none"><source src="{esc(group["video_clip"])}" type="video/mp4">Your browser cannot play this video.</video></div>')
         if group.get('localization_video'):
             parts.append('<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>')
             parts.append(f'<video class="inlineVideo" controls muted playsinline preload="none"><source src="{esc(group["localization_video"])}" type="video/mp4">Your browser cannot play this video.</video></details>')

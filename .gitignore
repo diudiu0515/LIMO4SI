@@ -15,5 +15,10 @@ __pycache__/
 /outputs/qa/task5_behave_pilot_qa.jsonl
 /outputs/qa/task5_egobody_candidates.json
 /outputs/qa/task5_egobody_pilot/
+/outputs/qa/task5_egoexo_review.jsonl
+/outputs/qa/task5_egoexo_review_audit.json
+/outputs/qa/task5_egoexo_scale/
 /site/qa_benchmark/hoim3_data
 /site/qa_benchmark/task5_media/task5c_behave_backpack_24_33_blurred.mp4
+/site/task5_review/
+/site/qa_benchmark/task5_media/task5_egoexo_*

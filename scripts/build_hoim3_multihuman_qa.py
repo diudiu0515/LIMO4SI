@@ -45,7 +45,12 @@ def main() -> None:
     ap.add_argument('--exclude-sequences', default='bedroom_data04', help='Comma-separated HOI-M3 sequences to skip; default excludes bedroom_data04 because the visible video contains an untracked third person in the current local subset.')
     ap.add_argument('--windows-per-sequence', type=int, default=2, help='Keep a small verified set by default; exported clips currently exist for the first two windows.')
     ap.add_argument('--samples-per-window', type=int, default=16, help='Metric pose samples in each 15-second window.')
+    ap.add_argument('--language-client-factory', help='Optional module:function language-only client factory.')
     args = ap.parse_args()
+    language_args = (
+        ['--language-client-factory', args.language_client_factory]
+        if args.language_client_factory else []
+    )
 
     run([sys.executable, 'scripts/convert_hoim3_to_multihuman.py', '--input', str(args.hoi_m3_root), '--output', str(args.converted_scenes), '--exclude-sequences', args.exclude_sequences, '--windows-per-sequence', str(args.windows_per_sequence), '--samples-per-window', str(args.samples_per_window)])
     converted = ROOT / args.converted_scenes if not args.converted_scenes.is_absolute() else args.converted_scenes
@@ -58,7 +63,7 @@ def main() -> None:
     run([sys.executable, 'scripts/build_multihuman_dynamic_qa.py', '--scenes-json', str(args.converted_scenes), '--source-label', 'HOI-M3 converted multihuman trajectory', '--replace-prefix', 'hoi_m3_', '--output-jsonl', str(args.output_jsonl), '--site-data', str(args.site_data)])
     run([sys.executable, 'scripts/calibrate_multihuman_video_evidence.py', '--site-data', str(args.site_data)])
     run([sys.executable, 'scripts/apply_precision_gate.py', '--input', str(args.site_data), '--output', str(args.site_data)])
-    run([sys.executable, 'scripts/refine_humans_in_space_site_data.py', '--input', str(args.site_data), '--output', str(args.site_data)])
+    run([sys.executable, 'scripts/refine_humans_in_space_site_data.py', '--input', str(args.site_data), '--output', str(args.site_data), *language_args])
     run([sys.executable, 'scripts/build_static_qa_site.py', '--data-js', str(args.site_data)])
 
 

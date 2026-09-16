@@ -14,6 +14,7 @@ CATEGORY_BY_TYPE = {
     "relation_change_between_gazes": "between_repeated_gaze_events",
     "gaze_onset_side_change": "after_gaze_turns_to_object",
     "last_gaze_annotated_object_relation_change": "last_gaze_annotated_object",
+    "gaze_target_at_evidence_anchor": "gaze_target_at_anchor",
 }
 
 
@@ -102,6 +103,7 @@ def _case_id(sequence: str, category: str, object_id: str, start: int, end: int)
         "between_repeated_gaze_events": "repeated",
         "after_gaze_turns_to_object": "onset",
         "last_gaze_annotated_object": "last",
+        "gaze_target_at_anchor": "anchor",
     }[category]
     digest = hashlib.sha1(f"{sequence}|{category}|{object_id}|{start}|{end}".encode()).hexdigest()[:8]
     return f"task5_{category_slug}_{_slug(sequence)}_{start}_{end}_{digest}"
@@ -354,6 +356,43 @@ def generate_task5_candidates(
             analysis, "last_gaze_annotated_object", object_id, start, end, score,
             expected_relation_sequence=sequence,
         ))
+
+    # 4. Ask which audited anchor contains the target gaze hit.  This is the
+    # default scalable family because it avoids visually ambiguous body axes.
+    for target_event in events:
+        target_id = str(target_event["object_id"])
+        target_anchor = _anchor(target_event)
+        alternatives = [
+            event for event in events
+            if str(event["object_id"]) != target_id
+            and abs(float(event["start_time_s"]) - float(target_event["start_time_s"])) <= policy.target_window_sec
+        ]
+        alternatives.sort(key=lambda event: (
+            abs(float(event["start_time_s"]) - float(target_event["start_time_s"])),
+            int(event["start_index"]),
+        ))
+        for other_event in alternatives[:2]:
+            event_pair = sorted([target_event, other_event], key=lambda event: int(event["start_index"]))
+            anchors = [_anchor(event) for event in event_pair]
+            if any(str(states.get(frame, {}).get("gazed_object_id")) != str(event["object_id"])
+                   for frame, event in zip(anchors, event_pair)):
+                rejection_counts["anchor_state_target_mismatch"] += 1
+                continue
+            window = _expanded_window(
+                states, int(event_pair[0]["start_index"]), int(event_pair[-1]["end_index"]), policy,
+            )
+            if window is None:
+                rejection_counts["anchor_no_target_duration_annotation_window"] += 1
+                continue
+            score = (
+                min(int(target_event.get("direct_hit_count") or 0), 30) / 30.0
+                + abs(float(target_event["start_time_s"]) - float(other_event["start_time_s"])) * 0.02
+            )
+            candidates.append(_candidate(
+                analysis, "gaze_target_at_anchor", target_id, window[0], window[1], score,
+                anchor_frames=anchors,
+                event_start_frames=[int(target_event["start_index"])],
+            ))
 
     # Bound highly repetitive candidates before cross-sequence balancing.
     kept: list[dict[str, Any]] = []

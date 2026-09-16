@@ -16,6 +16,7 @@ import json
 import math
 import re
 import subprocess
+import sys
 import tempfile
 from collections import Counter
 from pathlib import Path
@@ -24,13 +25,19 @@ from typing import Any
 import cv2
 import numpy as np
 import torch
-from scipy.optimize import linear_sum_assignment
 from PIL import Image
 from transformers import AutoModelForZeroShotObjectDetection, AutoProcessor
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'src'))
+from limo4si.semantic_gt import load_language_realizer, seal_task_questions_in_groups  # noqa: E402
+from limo4si.visual_tracking import (  # noqa: E402
+    appearance_hist, associate, box_at, center, nearest_box, nms,
+)
+
 SITE = ROOT / 'site/qa_benchmark'
 COLORS = [(37, 99, 235), (220, 38, 38), (22, 163, 74), (217, 119, 6), (147, 51, 234), (8, 145, 178)]
+IDENTITY_OVERRIDES = json.loads((ROOT / 'configs/multihuman_identity_overrides.json').read_text(encoding='utf-8')).get('entries', {})
 
 
 def load_site(path: Path) -> dict[str, Any]:
@@ -47,37 +54,6 @@ def save_site(path: Path, data: dict[str, Any]) -> None:
 
 def site_path(value: str) -> Path:
     return SITE / value[2:] if value.startswith('./') else ROOT / value
-
-
-def iou(a: np.ndarray, b: np.ndarray) -> float:
-    x1, y1 = np.maximum(a[:2], b[:2]); x2, y2 = np.minimum(a[2:], b[2:])
-    inter = max(0.0, float(x2-x1)) * max(0.0, float(y2-y1))
-    aa = max(0.0, float(a[2]-a[0])) * max(0.0, float(a[3]-a[1]))
-    bb = max(0.0, float(b[2]-b[0])) * max(0.0, float(b[3]-b[1]))
-    return inter / max(1e-6, aa + bb - inter)
-
-
-def nms(boxes: np.ndarray, scores: np.ndarray, threshold: float = 0.55) -> list[int]:
-    order = list(np.argsort(-scores))
-    keep: list[int] = []
-    while order:
-        idx = order.pop(0); keep.append(idx)
-        order = [j for j in order if iou(boxes[idx], boxes[j]) < threshold]
-    return keep
-
-
-def appearance_hist(frame: np.ndarray, box: np.ndarray) -> np.ndarray:
-    h, w = frame.shape[:2]
-    x1, y1, x2, y2 = [int(round(x)) for x in box]
-    x1=max(0,min(w-1,x1)); x2=max(x1+1,min(w,x2)); y1=max(0,min(h-1,y1)); y2=max(y1+1,min(h,y2))
-    crop = frame[y1:y2, x1:x2]
-    hsv = cv2.cvtColor(crop, cv2.COLOR_BGR2HSV)
-    hist = cv2.calcHist([hsv], [0, 1], None, [18, 16], [0, 180, 0, 256])
-    return cv2.normalize(hist, hist).flatten()
-
-
-def center(box: np.ndarray) -> np.ndarray:
-    return np.array([(box[0]+box[2])/2.0, (box[1]+box[3])/2.0], dtype=np.float32)
 
 
 def detect_clip(video: Path, processor: Any, model: Any, device: str, sample_fps: float, box_threshold: float) -> tuple[list[dict[str, Any]], dict[str, Any]]:
@@ -121,53 +97,6 @@ def detect_clip(video: Path, processor: Any, model: Any, device: str, sample_fps
                 good.append({'box': b, 'score': float(scores[j]), 'hist': appearance_hist(frame,b)})
             detections.append({'t': float(times[start+local]), 'frame': frame, 'detections': good})
     return detections, {'fps':fps,'frame_count':frame_count,'width':width,'height':height,'duration_sec':duration}
-
-
-def associate(detected: list[dict[str, Any]], width: int, height: int) -> list[dict[str, Any]]:
-    tracks: list[dict[str, Any]]=[]; diag=math.hypot(width,height)
-    for row in detected:
-        t=float(row['t']); dets=row['detections']
-        active=[tr for tr in tracks if t-tr['obs'][-1]['t'] <= 1.6]
-        assigned_t=set(); assigned_d=set()
-        if active and dets:
-            costs=np.full((len(active),len(dets)),10.0,dtype=np.float32)
-            for i,tr in enumerate(active):
-                last=tr['obs'][-1]; pred=center(last['box'])
-                if len(tr['obs'])>=2:
-                    prev=tr['obs'][-2]; dt=max(1e-3,last['t']-prev['t'])
-                    pred=pred+(center(last['box'])-center(prev['box']))*((t-last['t'])/dt)
-                for j,d in enumerate(dets):
-                    cd=float(np.linalg.norm(pred-center(d['box']))/diag)
-                    ov=iou(last['box'],d['box'])
-                    hd=float(cv2.compareHist(tr['hist'].astype(np.float32),d['hist'].astype(np.float32),cv2.HISTCMP_BHATTACHARYYA))
-                    costs[i,j]=0.52*cd+0.28*(1.0-ov)+0.20*hd
-            rr,cc=linear_sum_assignment(costs)
-            for i,j in zip(rr.tolist(),cc.tolist()):
-                tr=active[i]; d=dets[j]; cd=float(np.linalg.norm(center(tr['obs'][-1]['box'])-center(d['box']))/diag)
-                if costs[i,j] > 0.62 or (cd>0.28 and iou(tr['obs'][-1]['box'],d['box'])<0.02):
-                    continue
-                tr['obs'].append({'t':t,'box':d['box'],'score':d['score']})
-                tr['hist']=0.82*tr['hist']+0.18*d['hist']; assigned_t.add(id(tr)); assigned_d.add(j)
-        for j,d in enumerate(dets):
-            if j not in assigned_d:
-                tracks.append({'raw_id':len(tracks)+1,'obs':[{'t':t,'box':d['box'],'score':d['score']}],'hist':d['hist']})
-    min_hits=max(4,int(round(len(detected)*0.25)))
-    reliable=[tr for tr in tracks if len(tr['obs'])>=min_hits and tr['obs'][-1]['t']-tr['obs'][0]['t']>=detected[-1]['t']*0.35]
-    reliable.sort(key=lambda tr:(tr['obs'][0]['t'],float(center(tr['obs'][0]['box'])[0])))
-    for i,tr in enumerate(reliable,1): tr['id']=f'V{i}'
-    return reliable
-
-
-def box_at(track: dict[str, Any], t: float, max_gap: float = 1.25) -> np.ndarray | None:
-    obs=track['obs']
-    before=[x for x in obs if x['t']<=t]; after=[x for x in obs if x['t']>=t]
-    if before and after:
-        a=before[-1]; b=after[0]
-        if b['t']-a['t']<=max_gap:
-            if abs(b['t']-a['t'])<1e-6: return a['box']
-            u=(t-a['t'])/(b['t']-a['t']); return (1-u)*a['box']+u*b['box']
-    nearest=min(obs,key=lambda x:abs(x['t']-t))
-    return nearest['box'] if abs(nearest['t']-t)<=max_gap/2 else None
 
 
 def draw_person(frame: np.ndarray, box: np.ndarray, label: str, color_rgb: tuple[int,int,int]) -> None:
@@ -219,10 +148,6 @@ def compact_track(track: dict[str, Any], duration: float, diag: float) -> dict[s
     displacement=float(np.linalg.norm(centers[-1]-centers[0]))/diag
     raw_coverage = len(obs) / max(1, round(duration / (obs[1]['t'] - obs[0]['t'])) if len(obs) > 1 else len(obs))
     return {'id':track['id'],'first_seen_sec':round(obs[0]['t'],3),'last_seen_sec':round(obs[-1]['t'],3),'coverage':round(min(1.0,raw_coverage),3),'observations':len(obs),'mean_score':round(float(np.mean([x['score'] for x in obs])),3),'normalized_path_length':round(path,4),'normalized_displacement':round(displacement,4)}
-
-
-def nearest_box(track: dict[str, Any], t: float) -> np.ndarray:
-    return min(track['obs'],key=lambda x:abs(x['t']-t))['box']
 
 
 def mcq(correct: str, distractors: list[str], seed: str) -> tuple[list[dict[str,str]],str]:
@@ -303,15 +228,19 @@ def main() -> None:
     ap.add_argument('--audit-output',type=Path,default=Path('outputs/qa/multihuman_visual_calibration.json'))
     ap.add_argument('--sample-fps',type=float,default=2.0)
     ap.add_argument('--box-threshold',type=float,default=0.30)
+    ap.add_argument('--scene-id', action='append', help='Limit calibration to exact scene IDs.')
+    ap.add_argument('--language-client-factory',help='Optional module:function language-only client factory.')
     args=ap.parse_args()
     site_data=args.site_data if args.site_data.is_absolute() else ROOT/args.site_data
     model_path=args.model if args.model.is_absolute() else ROOT/args.model
     device='cuda' if torch.cuda.is_available() else 'cpu'
     processor=AutoProcessor.from_pretrained(str(model_path),local_files_only=True)
     model=AutoModelForZeroShotObjectDetection.from_pretrained(str(model_path),local_files_only=True).to(device).eval()
+    language_realizer=load_language_realizer(args.language_client_factory)
     data=load_site(site_data); audits=[]
     for group in data.get('groups',[]):
         if not str(group.get('name','')).startswith('hoi_m3_') or not group.get('video_clip'): continue
+        if args.scene_id and group.get('name') not in set(args.scene_id): continue
         video=site_path(group['video_clip'])
         if not video.exists(): continue
         detected,meta=detect_clip(video,processor,model,device,args.sample_fps,args.box_threshold)
@@ -324,6 +253,9 @@ def main() -> None:
             title=str(group.get('title','')); m=re.search(r'(\d+) metric 3D tracks',title); tracked_3d=int(m.group(1)) if m else 2
         persistent=len(tracks); mismatch=persistent>tracked_3d; diag=math.hypot(meta['width'],meta['height'])
         identity=metric_identity_alignment(group,tracks,diag) if not mismatch else {'status':'unavailable','reason':'visible count exceeds metric track count'}
+        override = IDENTITY_OVERRIDES.get(group['name']) if not mismatch else None
+        if override:
+            identity = {'status': 'aligned', 'mapping': override['mapping'], 'best_cost': None, 'alternative_cost': None, 'margin': 1.0, 'criterion': 'evidence-backed manual cross-window identity lock', 'override_provenance': override}
         if identity.get('status')=='aligned':
             for metric_id,visible_id in identity['mapping'].items():
                 next(x for x in tracks if x['id']==visible_id)['id']=metric_id
@@ -340,6 +272,12 @@ def main() -> None:
             group['metric_topdown_image']=group.get('topdown_image')
             group['topdown_image']=None
             group['qa']=mismatch_qas(group['name'],tracks,audit,meta['width'],meta['height'])
+        seal_task_questions_in_groups(
+            {'groups': [group]},
+            task_ids={'task4_multi_human_relational_dynamics'},
+            realizer=language_realizer,
+            provenance={'generator': 'scripts/calibrate_multihuman_video_evidence.py'},
+        )
         audits.append(audit); print(group['name'],audit['status'],persistent,tracked_3d,flush=True)
     data['multihuman_visual_calibration']={'status':'applied','audited_groups':len(audits),'coverage_mismatches':sum(x['status']=='coverage_mismatch' for x in audits),'identity_unresolved':sum(x['status']=='identity_unresolved' for x in audits),'policy':'2D localization covers every persistent visible person; metric 3D QA is never extended to unannotated people.'}
     save_site(site_data,data)

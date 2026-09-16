@@ -5,10 +5,15 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import sys
 from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from limo4si.semantic_gt import load_language_realizer, seal_release_questions
+
 TASK_ID = "task5_human_state_grounded_spatial_reasoning"
 
 
@@ -94,11 +99,19 @@ def behave_group(media: Path, qa_path: Path) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--site-data", type=Path, default=ROOT / "site/qa_benchmark/data.js")
+    parser.add_argument(
+        "--language-client-factory",
+        help="Optional module:function returning a StructuredOutputClient; omitted means deterministic templates",
+    )
     args = parser.parse_args()
     data = read_site(args.site_data)
     media = ROOT / "site/qa_benchmark/task5_media"
     media.mkdir(parents=True, exist_ok=True)
     replacements = [ego_group(media, ROOT / "outputs/qa/task5_egobody_pilot/qa.json"), behave_group(media, ROOT / "outputs/qa/task5_behave_pilot_qa.jsonl")]
+    seal_release_questions(
+        {"groups": replacements},
+        realizer=load_language_realizer(args.language_client_factory),
+    )
     names = {x["name"] for x in replacements}
     data["groups"] = [x for x in data["groups"] if x.get("name") not in names] + replacements
     data["release_policy"]["task5_scope"] = "ADT gaze-object, EgoBody gaze-human, and BEHAVE human-object relations; public real-data additions use annotation-derived schematics only"

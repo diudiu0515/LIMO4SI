@@ -1,60 +1,463 @@
 {
-  "hoi_m3_bedroom_data02_win08": {
-    "A": "the man in a dark top and long trousers",
-    "B": "the man in a gray T-shirt and black shorts"
-  },
-  "hoi_m3_bedroom_data01_win06": {
-    "A": "the man in a dark top and long trousers",
-    "B": "the man in a gray T-shirt and black shorts"
-  },
-  "hoi_m3_bedroom_data03_win04": {
-    "A": "the man in a dark top and long trousers",
-    "B": "the man in a gray T-shirt and black shorts"
-  },
-  "hoi_m3_bedroom_data02_win05": {
-    "A": "the man in a dark top and long trousers",
-    "B": "the man in a gray T-shirt and black shorts"
-  },
-  "hoi_m3_bedroom_data03_win03": {
-    "A": "the man in a gray T-shirt and black shorts",
-    "B": "the man in a dark top and long trousers"
-  },
-  "hoi_m3_bedroom_data01_win02": {
-    "A": "the man in a dark top and long trousers",
-    "B": "the man in a gray T-shirt and black shorts"
-  },
-  "hoi_m3_bedroom_data01_win04": {
-    "A": "the man in a gray T-shirt and black shorts",
-    "B": "the man in a dark top and long trousers"
-  },
-  "hoi_m3_bedroom_data02_win04": {
-    "A": "the man in a dark top and long trousers",
-    "B": "the man in a gray T-shirt and black shorts"
-  },
-  "hoi_m3_bedroom_data02_win06": {
-    "A": "the man in a dark top and long trousers",
-    "B": "the man in a gray T-shirt and black shorts"
-  },
-  "hoi_m3_bedroom_data03_win09": {
-    "A": "the man in a gray T-shirt and black shorts",
-    "B": "the man in a dark top and long trousers"
-  },
-  "hoi_m3_bedroom_data03_win08": {
-    "A": "the man in a gray T-shirt and black shorts",
-    "B": "the man in a dark top and long trousers"
-  },
-  "hoi_m3_bedroom_data01_win01": {
-    "A": "the man in a gray T-shirt and black shorts",
-    "B": "the man in a dark top and long trousers"
-  },
-  "hoi_m3_bedroom_data05_win02": {
-    "V1": "the man in a black top and light-colored trousers",
-    "V2": "the woman in a gray printed T-shirt",
-    "V3": "the man in a black top with red trim and dark trousers"
-  },
-  "hoi_m3_bedroom_data05_win_extra_90s": {
-    "V1": "the man in a gray T-shirt and black shorts",
-    "V2": "the woman in a gray printed T-shirt",
-    "V3": "the man in a dark top and long trousers"
+  "schema_version": "limo4si.person_attributes.v1",
+  "entries": {
+    "hoi_m3_bedroom_data02_win08": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "A": {
+          "gender_term": "woman",
+          "upper_body": "gray printed T-shirt",
+          "lower_body": "blue jeans"
+        },
+        "B": {
+          "gender_term": "man",
+          "upper_body": "gray T-shirt",
+          "lower_body": "dark gray shorts"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/case12_original.jpg",
+          "sha256": "80773b3425e4eb74b958b51025df7da414de1b1b8cf632f62f71d0509d90d0d3"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/case12_localized.jpg",
+          "sha256": "76d2b7098cc7b0d4b56d075401bbecb6f7520960647b80d6a96161d975bba285"
+        }
+      ]
+    },
+    "hoi_m3_bedroom_data01_win06": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "A": {
+          "gender_term": "man",
+          "upper_body": "dark navy short-sleeve T-shirt",
+          "lower_body": "light gray trousers"
+        },
+        "B": {
+          "gender_term": "woman",
+          "upper_body": "gray printed T-shirt",
+          "lower_body": "blue jeans"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/case13_original.jpg",
+          "sha256": "bb14fe349f4af1376408475a472acc715050616e607532cfefe81d22d58ac8af"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/case13_localized.jpg",
+          "sha256": "f95aefa3e6c340672697e5f9da4602f861423d94352219d941c7abaf26d08c2c"
+        }
+      ]
+    },
+    "hoi_m3_bedroom_data03_win04": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "A": {
+          "gender_term": "man",
+          "upper_body": "gray T-shirt",
+          "lower_body": "bright orange shorts"
+        },
+        "B": {
+          "gender_term": "man",
+          "upper_body": "black long-sleeve top",
+          "lower_body": "black trousers"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/data03_win04_original.jpg",
+          "sha256": "3f78a5c5cc6655be5d44a9ad2841c9ff09a302fecc98bdb17a15fb7e974f336d"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/data03_win04_localized.jpg",
+          "sha256": "4a573f71df1a179ec9ae75d3f7c4d897b562cdca6ad4568948e75393b967d1c7"
+        }
+      ]
+    },
+    "hoi_m3_bedroom_data02_win05": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "A": {
+          "gender_term": "woman",
+          "upper_body": "gray printed T-shirt",
+          "lower_body": "blue jeans"
+        },
+        "B": {
+          "gender_term": "man",
+          "upper_body": "gray T-shirt",
+          "lower_body": "dark gray shorts"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/case14_original.jpg",
+          "sha256": "69572a3c63f6fff1007e25490f9d22287b6eed14f4144aa3f3f3891b7783c365"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/case14_localized.jpg",
+          "sha256": "46f412c71357ed030ed10a3c7b7041f752cf5addf975640229bd52ac5fe74eca"
+        }
+      ]
+    },
+    "hoi_m3_bedroom_data03_win03": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "A": {
+          "gender_term": "man",
+          "upper_body": "gray T-shirt",
+          "lower_body": "bright orange shorts"
+        },
+        "B": {
+          "gender_term": "man",
+          "upper_body": "black long-sleeve top",
+          "lower_body": "black trousers"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/case15_original.jpg",
+          "sha256": "be2af06a8219a2c300beec84a6fb0d233b1b8b617321e070938c9f9f29ba4b59"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/case15_localized.jpg",
+          "sha256": "8e63d1aa5902b37ea43f1e1cc9bdff388d2b22523bce8f8f1f2defb9477980b7"
+        }
+      ]
+    },
+    "hoi_m3_bedroom_data01_win02": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "A": {
+          "gender_term": "man",
+          "upper_body": "dark navy short-sleeve T-shirt",
+          "lower_body": "light gray trousers"
+        },
+        "B": {
+          "gender_term": "woman",
+          "upper_body": "gray printed T-shirt",
+          "lower_body": "blue jeans"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/case17_original.jpg",
+          "sha256": "efef58878caad836657f59c3cfd96e1dbcd0b4d34107566304d04a12b604f564"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/case17_localized.jpg",
+          "sha256": "a440c796e6ad45eeaba169527032e90b097dad64b608cb89c6f2f39b71f90a9c"
+        }
+      ]
+    },
+    "hoi_m3_bedroom_data01_win04": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "A": {
+          "gender_term": "man",
+          "upper_body": "dark navy short-sleeve T-shirt",
+          "lower_body": "light gray trousers"
+        },
+        "B": {
+          "gender_term": "woman",
+          "upper_body": "gray printed T-shirt",
+          "lower_body": "blue jeans"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/case18_original.jpg",
+          "sha256": "a6823722401a4054fda2510fde60c4c9b738ef4bae0f1d02c73873827d402184"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/case18_localized.jpg",
+          "sha256": "ac53aba8e3d82c0e91d9cf87445fc90448991ee7a5c02cdf8ac356e21fc15d88"
+        }
+      ]
+    },
+    "hoi_m3_bedroom_data02_win04": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "A": {
+          "gender_term": "woman",
+          "upper_body": "gray printed T-shirt",
+          "lower_body": "blue jeans"
+        },
+        "B": {
+          "gender_term": "man",
+          "upper_body": "gray T-shirt",
+          "lower_body": "dark gray shorts"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/case19_original.jpg",
+          "sha256": "54300c41a26264aca60b1d1f1ffaa48cd29830353378d714bf5bd53a98753597"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/case19_localized.jpg",
+          "sha256": "08cb1d58af751de9c78c6eb1e75fa415fb2f552b3cbe3b55f4af08fb03c8505d"
+        }
+      ]
+    },
+    "hoi_m3_bedroom_data02_win06": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "A": {
+          "gender_term": "woman",
+          "upper_body": "gray printed T-shirt",
+          "lower_body": "blue jeans"
+        },
+        "B": {
+          "gender_term": "man",
+          "upper_body": "gray T-shirt",
+          "lower_body": "dark gray shorts"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/case20_original.jpg",
+          "sha256": "04539f983bc2427fdb93d2cb192eecadf0537aa04431cebdc445708b4722ef78"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/case20_localized.jpg",
+          "sha256": "53c8c6ea0a20d7cb2fa1a5f8c8015aaa4b54abdb8e3961b9282d32130bedde4b"
+        }
+      ]
+    },
+    "hoi_m3_bedroom_data03_win09": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "A": {
+          "gender_term": "man",
+          "upper_body": "gray T-shirt",
+          "lower_body": "bright orange shorts"
+        },
+        "B": {
+          "gender_term": "man",
+          "upper_body": "black long-sleeve top",
+          "lower_body": "black trousers"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/case21_original.jpg",
+          "sha256": "bdaf32ade5cc1b0b06b68950db456cf76156948f77baf21d45b689b8fdd04315"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/case21_localized.jpg",
+          "sha256": "129111f6f15d583d125963ad142e69db7d5db33a30ae3a10c2f596d597043ae5"
+        }
+      ]
+    },
+    "hoi_m3_bedroom_data03_win08": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "A": {
+          "gender_term": "man",
+          "upper_body": "gray T-shirt",
+          "lower_body": "bright orange shorts"
+        },
+        "B": {
+          "gender_term": "man",
+          "upper_body": "black long-sleeve top",
+          "lower_body": "black trousers"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/case22_original.jpg",
+          "sha256": "d7483d565a4e94a3054f426e64907af401d7fd8e76f95463351f1b2addafc09a"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/case22_localized.jpg",
+          "sha256": "31f137ecf829f314640cd2c90a8eb4c886302589dcd49919b3d0fb5fdffe468b"
+        }
+      ]
+    },
+    "hoi_m3_bedroom_data01_win01": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "A": {
+          "gender_term": "man",
+          "upper_body": "dark navy short-sleeve T-shirt",
+          "lower_body": "light gray trousers"
+        },
+        "B": {
+          "gender_term": "woman",
+          "upper_body": "gray printed T-shirt",
+          "lower_body": "blue jeans"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/case23_original.jpg",
+          "sha256": "f9162534107ef49f94c96927a723ece38617210634ed1cb9d841d0f15f6dac5f"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/case23_localized.jpg",
+          "sha256": "74aa62698248923b84425cc566ba1f6aa87482faa04f0f9af1bb22a801ead6fa"
+        }
+      ]
+    },
+    "hoi_m3_bedroom_data05_win02": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "V1": {
+          "gender_term": "man",
+          "upper_body": "black long-sleeve top",
+          "lower_body": "black trousers"
+        },
+        "V2": {
+          "gender_term": "woman",
+          "upper_body": "gray printed T-shirt",
+          "lower_body": "blue jeans"
+        },
+        "V3": {
+          "gender_term": "man",
+          "upper_body": "dark navy short-sleeve T-shirt",
+          "lower_body": "light gray trousers"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/case16_original.jpg",
+          "sha256": "1a58e6bd749f60803ad607ce3f7c07807e770cb976320f5cd104465ec21ec7f4"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/case16_localized.jpg",
+          "sha256": "7a82808fe98fe716665433639a51bf05431e59d7c97fc0452f723144dc52e16c"
+        }
+      ]
+    },
+    "hoi_m3_bedroom_data05_win_extra_90s": {
+      "source": "manual_visual_review",
+      "reviewed_attributes": [
+        "gender_term",
+        "upper_body",
+        "lower_body"
+      ],
+      "people": {
+        "V1": {
+          "gender_term": "woman",
+          "upper_body": "gray printed T-shirt",
+          "lower_body": "blue jeans"
+        },
+        "V2": {
+          "gender_term": "man",
+          "upper_body": "dark navy short-sleeve T-shirt",
+          "lower_body": "light gray trousers"
+        },
+        "V3": {
+          "gender_term": "man",
+          "upper_body": "black long-sleeve top",
+          "lower_body": "black trousers"
+        }
+      },
+      "audit_status": "verified_from_original_and_localized_six_frame_sheets",
+      "reviewed_at": "2026-09-15",
+      "evidence_refs": [
+        {
+          "path": "outputs/audit/multihuman_visual/case24_original.jpg",
+          "sha256": "3ca36f8aa4a5a175a16a63fa3b65e44d3d06608fc0a9d8a829f147596ae8237a"
+        },
+        {
+          "path": "outputs/audit/multihuman_visual/case24_localized.jpg",
+          "sha256": "6c4b98e75b2fce3b8b91c29eb9fc6017fdec616790487cc1abcad2f661cf4297"
+        }
+      ]
+    }
   }
 }
