@@ -35,6 +35,12 @@ The face/body-forward direction is forward. The right axis must be declared as
 scene-up cross forward. Missing calibration is rejected; it is never inferred
 by GPT or silently defaulted by the release generator.
 
+When metric annotation identities must be bound to visible video tracks, each
+metric state must also provide camera-calibrated `projected_xy` evidence. The
+pipeline solves one global one-to-one assignment across the complete window and
+requires a best/second-best margin. Missing projection, low coverage, or an
+ambiguous assignment is rejected; there is no case-specific identity override.
+
 Raw HOI-M3 directories are normalized automatically. They must include
 `human_coordinate_frames.json`, keyed by sequence id or `default`, to be
 release-eligible. This sidecar is annotation metadata, not a case patch.

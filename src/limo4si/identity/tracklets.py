@@ -9,7 +9,6 @@ import cv2
 import numpy as np
 from scipy.optimize import linear_sum_assignment
 
-_HISTOGRAM_SIZE_PER_BODY_HALF = 12 * 8 * 8
 _MAX_ASSOCIATION_COST = 0.85
 _MAX_TRACK_GAP_SEC = 1.6
 
@@ -125,71 +124,8 @@ def center(box: np.ndarray) -> np.ndarray:
     )
 
 
-def _upper_body_value(
-    observation: dict[str, Any],
-) -> float:
-    """Estimate upper-body brightness from the HSV value bins."""
-
-    upper = observation["hist"][
-        :_HISTOGRAM_SIZE_PER_BODY_HALF
-    ].reshape(12, 8, 8)
-    weights = np.arange(8, dtype=np.float32) + 0.5
-    weighted = (
-        upper * weights[None, None, :]
-    ).sum()
-    return float(weighted / max(1e-6, upper.sum()))
 
 
-def _preserve_pair_appearance_order(
-    tracks: list[dict[str, Any]],
-) -> None:
-    """Prevent an identity swap when two stable-clothing tracks cross."""
-
-    if len(tracks) != 2:
-        return
-
-    observations_by_time = [
-        {
-            round(float(observation["t"]), 3): observation
-            for observation in track["obs"]
-        }
-        for track in tracks
-    ]
-    common_times = sorted(
-        set(observations_by_time[0])
-        & set(observations_by_time[1])
-    )
-    if not common_times:
-        return
-
-    first_time = common_times[0]
-    initial_order = (
-        _upper_body_value(
-            observations_by_time[0][first_time]
-        )
-        <= _upper_body_value(
-            observations_by_time[1][first_time]
-        )
-    )
-    for timestamp in common_times[1:]:
-        current_order = (
-            _upper_body_value(
-                observations_by_time[0][timestamp]
-            )
-            <= _upper_body_value(
-                observations_by_time[1][timestamp]
-            )
-        )
-        if current_order == initial_order:
-            continue
-
-        left = observations_by_time[0][timestamp]
-        right = observations_by_time[1][timestamp]
-        for field in ("box", "score", "hist"):
-            left[field], right[field] = (
-                right[field],
-                left[field],
-            )
 
 
 def _predicted_center(
@@ -378,7 +314,6 @@ def associate(
             float(center(track["obs"][0]["box"])[0]),
         )
     )
-    _preserve_pair_appearance_order(reliable)
     for index, track in enumerate(reliable, 1):
         track["id"] = f"V{index}"
     return reliable

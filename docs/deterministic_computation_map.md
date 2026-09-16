@@ -12,8 +12,14 @@ ground truth.
 - `src/limo4si/multihuman_release.py`: applies audited HOI-M3 orientation
   calibration before recomputing timelines; binds reviewed attributes to metric
   and visible identities.
-- `src/limo4si/visual_tracking.py`: deterministic detection association using
-  motion, overlap, upper/lower HSV appearance anchors, and crossing continuity.
+- `src/limo4si/identity/tracklets.py`: deterministic short tracklets using
+  motion, overlap, and upper/lower appearance anchors.
+- `src/limo4si/identity/global_assignment.py`: full-window one-to-one assignment
+  for two or more people, including exact best/second-best assignment margin.
+- `src/limo4si/identity/quality.py`: fail-closed coverage, uniqueness, and margin
+  checks before metric identities can enter QA.
+- `src/limo4si/identity/public_names.py`: binds reviewed public descriptions only
+  after identity is locked; descriptions never decide identity.
 - `src/limo4si/task5_egoexo.py`: exact Ego-Exo4D 2D gaze/mask containment,
   frame alignment, boundary margin, and evidence validation.
 
@@ -21,7 +27,6 @@ ground truth.
 
 - `configs/multihuman_orientation_overrides.json`: audited forward/right signs
   and expected endpoint relations.
-- `configs/multihuman_identity_overrides.json`: evidence-backed identity locks.
 - `configs/person_display_aliases.json`: reviewed gender/clothing attributes
   with original/localized evidence hashes.
 - `src/limo4si/scale_quality.py`: independently recomputes and rejects stale,

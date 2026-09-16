@@ -31,14 +31,15 @@ from transformers import AutoModelForZeroShotObjectDetection, AutoProcessor
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
 from limo4si.semantic_gt import load_language_realizer, seal_task_questions_in_groups  # noqa: E402
-from limo4si.visual_tracking import (  # noqa: E402
+from limo4si.identity.global_assignment import (  # noqa: E402
+    AssignmentPolicy, assign_global_identities,
+)
+from limo4si.identity.tracklets import (  # noqa: E402
     appearance_hist, associate, box_at, center, nearest_box, nms,
 )
 
 SITE = ROOT / 'site/qa_benchmark'
 COLORS = [(37, 99, 235), (220, 38, 38), (22, 163, 74), (217, 119, 6), (147, 51, 234), (8, 145, 178)]
-IDENTITY_OVERRIDES = json.loads((ROOT / 'configs/multihuman_identity_overrides.json').read_text(encoding='utf-8')).get('entries', {})
-
 
 def load_site(path: Path) -> dict[str, Any]:
     text = path.read_text(encoding='utf-8')
@@ -159,40 +160,53 @@ def mcq(correct: str, distractors: list[str], seed: str) -> tuple[list[dict[str,
     return [{'label':a,'text':b} for a,b in zip(labels,ordered)],labels[offset]
 
 
-def metric_identity_alignment(group: dict[str, Any], tracks: list[dict[str, Any]], diag: float) -> dict[str, Any]:
-    """Associate two visible tracks with metric A/B by temporal motion profile.
+def metric_identity_alignment(
+    group: dict[str, Any], tracks: list[dict[str, Any]], diag: float,
+) -> dict[str, Any]:
+    """Globally bind metric people to visible tracks using projected evidence."""
 
-    This does not pretend to be camera calibration.  It is only accepted when
-    the correct assignment has a clearly lower error than the swapped one.
-    """
-    states=[]
-    for q in group.get('qa',[]):
-        states=((q.get('result_json') or {}).get('pair_timeline') or {}).get('states') or []
-        if states: break
-    if len(states)<3 or len(tracks)!=2:
-        return {'status':'unavailable','reason':'requires exactly two visible and two metric tracks'}
-    times=[float(x.get('t') or 0) for x in states]
-    def profile(points: list[np.ndarray]) -> list[float]:
-        seg=[float(np.linalg.norm(b-a)) for a,b in zip(points,points[1:])]
-        total=sum(seg)
-        return [x/max(total,1e-6) for x in seg]+[total]
-    metric={}
-    for pid,key in [('A','person_a'),('B','person_b')]:
-        pts=[np.asarray((x.get('evidence') or {}).get(key,{}).get('pelvis_xyz_m'),np.float32) for x in states]
-        metric[pid]=profile(pts)
-    visual={}
-    for tr in tracks:
-        pts=[center(nearest_box(tr,t)) for t in times]
-        row=profile(pts); row[-1]/=diag; visual[tr['id']]=row
-    def shape_cost(a: list[float],b: list[float]) -> float:
-        return sum(abs(x-y) for x,y in zip(a[:-1],b[:-1]))
-    ids=[tracks[0]['id'],tracks[1]['id']]
-    direct=shape_cost(metric['A'],visual[ids[0]])+shape_cost(metric['B'],visual[ids[1]])
-    swapped=shape_cost(metric['A'],visual[ids[1]])+shape_cost(metric['B'],visual[ids[0]])
-    best=min(direct,swapped); alternative=max(direct,swapped); margin=alternative-best
-    mapping={'A':ids[0],'B':ids[1]} if direct<=swapped else {'A':ids[1],'B':ids[0]}
-    reliable=margin>=0.18
-    return {'status':'aligned' if reliable else 'unresolved','mapping':mapping if reliable else None,'best_cost':round(best,4),'alternative_cost':round(alternative,4),'margin':round(margin,4),'metric_motion_profiles':metric,'visual_motion_profiles':visual,'criterion':'all available temporal segment-motion profiles; accept only when assignment margin >= 0.18'}
+    states = []
+    for question in group.get("qa", []):
+        states = (
+            ((question.get("result_json") or {}).get("pair_timeline") or {})
+            .get("states") or []
+        )
+        if states:
+            break
+    if len(states) < 3:
+        return {"status": "unavailable", "reason": "fewer than three metric states"}
+
+    metric_profiles = {}
+    for person_id, evidence_key in (("A", "person_a"), ("B", "person_b")):
+        projected = [
+            ((state.get("evidence") or {}).get(evidence_key) or {}).get("projected_xy")
+            for state in states
+        ]
+        if any(point is None for point in projected):
+            return {
+                "status": "unavailable",
+                "reason": "camera-calibrated metric projected_xy evidence is required",
+            }
+        metric_profiles[person_id] = {"points": projected}
+
+    times = [float(state.get("t") or 0.0) for state in states]
+    visible_profiles = {
+        track["id"]: {
+            "points": [(center(nearest_box(track, timestamp)) / diag).tolist() for timestamp in times],
+            "coverage": len(track["obs"]) / max(1, len(times)),
+        }
+        for track in tracks
+    }
+    result = assign_global_identities(
+        metric_profiles,
+        visible_profiles,
+        policy=AssignmentPolicy(min_margin=0.20, min_coverage=0.80),
+    ).as_dict()
+    result["criterion"] = (
+        "global one-to-one full-window assignment using calibrated metric "
+        "reprojection; accepted only with an exact second-best margin"
+    )
+    return result
 
 
 def mismatch_qas(scene_id: str, tracks: list[dict[str, Any]], audit: dict[str, Any], width: int, height: int) -> list[dict[str, Any]]:
@@ -253,14 +267,11 @@ def main() -> None:
             title=str(group.get('title','')); m=re.search(r'(\d+) metric 3D tracks',title); tracked_3d=int(m.group(1)) if m else 2
         persistent=len(tracks); mismatch=persistent>tracked_3d; diag=math.hypot(meta['width'],meta['height'])
         identity=metric_identity_alignment(group,tracks,diag) if not mismatch else {'status':'unavailable','reason':'visible count exceeds metric track count'}
-        override = IDENTITY_OVERRIDES.get(group['name']) if not mismatch else None
-        if override:
-            identity = {'status': 'aligned', 'mapping': override['mapping'], 'best_cost': None, 'alternative_cost': None, 'margin': 1.0, 'criterion': 'evidence-backed manual cross-window identity lock', 'override_provenance': override}
         if identity.get('status')=='aligned':
             for metric_id,visible_id in identity['mapping'].items():
                 next(x for x in tracks if x['id']==visible_id)['id']=metric_id
         status='coverage_mismatch' if mismatch else ('complete_and_identity_aligned' if identity.get('status')=='aligned' else 'identity_unresolved')
-        audit={'scene_id':group['name'],'status':status,'detector':'IDEA Research Grounding DINO tiny (local weights)','tracking':'motion + box overlap + HSV appearance Hungarian association','sample_fps':args.sample_fps,'box_threshold':args.box_threshold,'duration_sec':round(meta['duration_sec'],3),'sample_count':len(detected),'sampled_visible_counts':counts,'mode_visible_person_count':Counter(counts).most_common(1)[0][0] if counts else 0,'max_visible_person_count':max(counts) if counts else 0,'persistent_visible_person_count':persistent,'metric_3d_track_count':tracked_3d,'metric_identity_alignment':identity,'geometry_scope':'all visible people have 2D localization; metric distance/orientation applies only to visually aligned SMPL-X tracks','visible_2d_tracks':[compact_track(x,meta['duration_sec'],diag) for x in tracks]}
+        audit={'scene_id':group['name'],'status':status,'detector':'IDEA Research Grounding DINO tiny (local weights)','tracking':'tracklets followed by global metric-to-visible assignment; appearance is secondary','sample_fps':args.sample_fps,'box_threshold':args.box_threshold,'duration_sec':round(meta['duration_sec'],3),'sample_count':len(detected),'sampled_visible_counts':counts,'mode_visible_person_count':Counter(counts).most_common(1)[0][0] if counts else 0,'max_visible_person_count':max(counts) if counts else 0,'persistent_visible_person_count':persistent,'metric_3d_track_count':tracked_3d,'metric_identity_alignment':identity,'geometry_scope':'all visible people have 2D localization; metric distance/orientation applies only to visually aligned SMPL-X tracks','visible_2d_tracks':[compact_track(x,meta['duration_sec'],diag) for x in tracks]}
         out_dir=SITE/'multihuman_media'; out_video=out_dir/f"{group['name']}_localized.mp4"; out_image=out_dir/f"{group['name']}_localized.jpg"
         render_evidence(video,tracks,meta,out_video,out_image)
         group['localization_video']='./'+str(out_video.relative_to(SITE)); group['localization_image']='./'+str(out_image.relative_to(SITE)); group['original_image']=group['localization_image']; group['visual_person_audit']=audit

@@ -7,7 +7,7 @@ from limo4si.multihuman_release import (
     recompute_hoim3_pair_timelines,
     resolve_person_aliases,
 )
-from limo4si.visual_tracking import associate
+from limo4si.identity.tracklets import associate
 
 
 class MultihumanReleaseTests(unittest.TestCase):
@@ -77,6 +77,23 @@ class VisualTrackingTests(unittest.TestCase):
         for offset in (0, 768):
             hist[offset + value_bin] = 1.0
         return hist
+
+    def test_short_occlusion_recovers_existing_track(self):
+        dark, light = self.signature(0), self.signature(7)
+        detected = []
+        for index in range(7):
+            detections = [
+                {"box": np.array([80 - index * 5, 0, 90 - index * 5, 20], np.float32), "score": 0.9, "hist": light},
+            ]
+            if index != 3:
+                detections.append({
+                    "box": np.array([10 + index * 5, 0, 20 + index * 5, 20], np.float32),
+                    "score": 0.9, "hist": dark,
+                })
+            detected.append({"t": index * 0.25, "detections": detections})
+        tracks = associate(detected, 120, 80)
+        self.assertEqual(len(tracks), 2)
+        self.assertTrue(all(len(track["obs"]) >= 6 for track in tracks))
 
     def test_crossing_tracks_keep_appearance_identity(self):
         dark, light = self.signature(0), self.signature(7)
