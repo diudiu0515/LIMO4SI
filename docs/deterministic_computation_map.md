@@ -14,12 +14,8 @@ ground truth.
   and visible identities.
 - `src/limo4si/visual_tracking.py`: deterministic detection association using
   motion, overlap, upper/lower HSV appearance anchors, and crossing continuity.
-- `src/limo4si/task5_human_state.py`: Task 5 3D wearer-frame relations, gaze
-  ray/object intersection, sustained gaze events, and temporal transitions.
 - `src/limo4si/task5_egoexo.py`: exact Ego-Exo4D 2D gaze/mask containment,
   frame alignment, boundary margin, and evidence validation.
-- `src/limo4si/task5_scaling.py`: deterministic Task 5 candidate construction
-  and balancing.
 
 ## 2. Reviewed configuration and fail-closed validation
 

@@ -25,10 +25,6 @@ The release path is:
   distractors, and published-number rounding are complete.
 - build_task5_egoexo.py constructs the primary 15-second EgoExo4D gaze/mask
   release and binds each synchronized point-in-mask claim to a full result_json
-  evidence digest. build_task5_scaled.py retains the legacy ADT path for
-  compatibility tests only.
-- `publish_task5_realdata_examples.py` applies the same contract to EgoBody and
-  BEHAVE examples.
 - `limo4si.multihuman.multihuman_qas` seals its direct Task 4 output so callers
   cannot bypass the release-layer contract.
 - `build_multihuman_dynamic_qa.py --language-client-factory module:create_client`
