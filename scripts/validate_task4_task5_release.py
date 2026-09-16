@@ -25,12 +25,16 @@ def main() -> None:
     parser.add_argument("input", type=Path, help="QA_DATA JavaScript or JSON release")
     parser.add_argument("--policy", type=Path, help="JSON overrides for ScaleQualityPolicy")
     parser.add_argument("--output", type=Path, help="Write the full per-case report")
+    parser.add_argument("--allow-subset", action="store_true", help="Allow a single Task 4 or Task 5 annotation release")
     args = parser.parse_args()
     overrides = json.loads(args.policy.read_text(encoding="utf-8")) if args.policy else {}
     release = load_release(args.input)
     task_ids = {question.get("task_id") for group in release.get("groups", []) for question in (group.get("qa") or [])}
-    if task_ids != {TASK4_ID, TASK5_ID}:
-        raise ValueError(f"public release must contain only Task 4 and Task 5, got {sorted(task_ids)}")
+    allowed = {TASK4_ID, TASK5_ID}
+    if not task_ids or not task_ids.issubset(allowed):
+        raise ValueError(f"release contains unsupported tasks: {sorted(task_ids)}")
+    if not args.allow_subset and task_ids != allowed:
+        raise ValueError(f"public release must contain Task 4 and Task 5, got {sorted(task_ids)}")
     report = validate_release(release, ScaleQualityPolicy(**overrides))
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)

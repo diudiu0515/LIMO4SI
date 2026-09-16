@@ -153,6 +153,8 @@ def normalize_scene(raw: dict[str, Any], source: Path) -> dict[str, Any] | None:
         'frames': frames,
         'blockers': blockers,
         'objects': objects,
+        'human_coordinate_frame': raw.get('human_coordinate_frame'),
+        'person_identities': raw.get('person_identities'),
     }
 
 
@@ -216,6 +218,11 @@ def scenes_from_smplx_npz(
         seq = name.split('_person')[0]
         by_seq.setdefault(seq, []).append(f)
     scenes = []
+    frame_policy_path = root / 'human_coordinate_frames.json'
+    frame_policies = (
+        json.loads(frame_policy_path.read_text(encoding='utf-8'))
+        if frame_policy_path.is_file() else {}
+    )
     exclude_sequences = exclude_sequences or set()
     for seq, seq_files in sorted(by_seq.items()):
         if seq in exclude_sequences:
@@ -258,7 +265,8 @@ def scenes_from_smplx_npz(
                 frames.append({'t': (idx - start_idx) / source_fps, 'frame_id': int(arrays[0]['frame_ids'][idx]) if 'frame_ids' in arrays[0].files else idx, 'source_index': idx, 'people': people})
             scene_id = f'hoi_m3_{seq}_win{wi:02d}'
             rel_clip = f'./outputs/hoim3/{seq}/win{wi:02d}_view0_15s.mp4' if video.exists() else None
-            scenes.append({'scene_id': scene_id, 'title': f'HOI-M3 · {seq} · window {wi:02d} · {len(chosen)} metric 3D tracks', 'dataset': 'HOI-M3', 'duration_sec': duration_sec, 'source_fps': source_fps, 'start_sec': start_idx/source_fps, 'end_sec': end_idx/source_fps, 'start_frame': int(arrays[0]['frame_ids'][start_idx]) if 'frame_ids' in arrays[0].files else start_idx, 'source_start_index': start_idx, 'source_end_index': end_idx, 'tracked_person_count': len(chosen), 'source_smplx_files': [str(f.relative_to(root)) for f in chosen], 'video_clip': rel_clip, 'source_video': str(video.relative_to(Path.cwd())) if video.exists() else None, 'frames': frames, 'blockers': [], 'objects': []})
+            frame_policy = frame_policies.get(seq) or frame_policies.get('default')
+            scenes.append({'scene_id': scene_id, 'title': f'HOI-M3 · {seq} · window {wi:02d} · {len(chosen)} metric 3D tracks', 'dataset': 'HOI-M3', 'duration_sec': duration_sec, 'source_fps': source_fps, 'start_sec': start_idx/source_fps, 'end_sec': end_idx/source_fps, 'start_frame': int(arrays[0]['frame_ids'][start_idx]) if 'frame_ids' in arrays[0].files else start_idx, 'source_start_index': start_idx, 'source_end_index': end_idx, 'tracked_person_count': len(chosen), 'source_smplx_files': [str(f.relative_to(root)) for f in chosen], 'video_clip': rel_clip, 'source_video': str(video.relative_to(Path.cwd())) if video.exists() else None, 'frames': frames, 'blockers': [], 'objects': [], 'human_coordinate_frame': frame_policy})
     return scenes
 
 

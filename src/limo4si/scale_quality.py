@@ -308,14 +308,19 @@ def _validate_task1(group: Mapping[str, Any], question: Mapping[str, Any], polic
         warnings.append("orientation audit metadata is absent but this QA is not front/behind-sensitive")
 
 
-def _validate_person_descriptions(aliases: Mapping[str, Any], person_ids: Sequence[str], errors: list[str]) -> list[str]:
+def _validate_person_descriptions(
+    aliases: Mapping[str, Any], person_ids: Sequence[str], errors: list[str],
+    *, annotation_identity: bool = False,
+) -> list[str]:
     descriptions = [str(aliases.get(person_id, "")).strip() for person_id in person_ids]
     if any(not value for value in descriptions) or len(set(value.lower() for value in descriptions)) != len(descriptions):
         errors.append("public person descriptions must be present and pairwise distinct")
         return descriptions
+    if annotation_identity:
+        return descriptions
     gender_words = [re.findall(r"\b(?:man|woman)\b", value.lower()) for value in descriptions]
     if any(not words for words in gender_words):
-        errors.append("each public person description must include an unambiguous man/woman noun")
+        errors.append("each visually described person must include an unambiguous man/woman noun")
         return descriptions
     genders = [words[-1] for words in gender_words]
     if len(set(genders)) < len(genders):
@@ -329,7 +334,8 @@ def _validate_person_descriptions(aliases: Mapping[str, Any], person_ids: Sequen
 
 def _validate_identity_audit(group: Mapping[str, Any], errors: list[str], metrics: dict[str, Any], policy: ScaleQualityPolicy) -> None:
     audit = group.get("visual_person_audit") or {}
-    if audit.get("status") != "complete_and_identity_aligned":
+    allowed_statuses = {"complete_and_identity_aligned", "complete_annotation_identity"}
+    if audit.get("status") not in allowed_statuses:
         errors.append(f"metric Task 4 identity status is {audit.get('status')!r}")
         return
     alignment = audit.get("metric_identity_alignment") or {}
@@ -361,7 +367,15 @@ def _validate_person_attribute_audit(
     audit = group.get("person_display_alias_status") or {}
     aliases = group.get("person_display_aliases") or {}
     if audit.get("status") != "complete":
-        errors.append("person attribute audit is missing or incomplete")
+        errors.append("person identity/attribute audit is missing or incomplete")
+        return
+    if audit.get("source") == "annotation_identity":
+        if audit.get("schema_version") != "limo4si.annotation_identity.v1":
+            errors.append("annotation identity schema is missing or unsupported")
+        configured = audit.get("configured_descriptors") or {}
+        for person_id in required_ids:
+            if aliases.get(person_id) != configured.get(person_id):
+                errors.append(f"public description for {person_id} differs from annotation identity")
         return
     if audit.get("schema_version") != "limo4si.person_attributes.v1":
         errors.append("person attribute audit schema is missing or unsupported")
@@ -406,7 +420,11 @@ def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any]
     _validate_identity_audit(group, errors, metrics, policy)
     audit = group.get("visual_person_audit") or {}
     aliases = group.get("person_display_aliases") or {}
-    pair_descriptions = _validate_person_descriptions(aliases, ("A", "B"), errors)
+    identity_status = group.get("person_display_alias_status") or {}
+    pair_descriptions = _validate_person_descriptions(
+        aliases, ("A", "B"), errors,
+        annotation_identity=identity_status.get("source") == "annotation_identity",
+    )
     _validate_person_attribute_audit(group, ("A", "B"), errors)
     persistent_count = int(audit.get("persistent_visible_person_count") or 0)
     metric_count = int(audit.get("metric_3d_track_count") or 0)
