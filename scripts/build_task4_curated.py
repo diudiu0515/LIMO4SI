@@ -25,6 +25,9 @@ sys.path.insert(0, str(ROOT / "scripts"))
 
 from build_multihuman_dynamic_qa import write_svg  # noqa: E402
 from limo4si.multihuman import pair_timeline  # noqa: E402
+from limo4si.task4_dynamics import (  # noqa: E402
+    passing_side_and_final_position, relation_change_cause, reunion_relation_restoration,
+)
 from limo4si.semantic_gt import load_language_realizer, seal_release_questions
 
 TASK4_ID = "task4_multi_human_relational_dynamics"
@@ -230,25 +233,31 @@ def task4_groups(
     )
     out.append(metric_group(scenes[sid], audits[sid], q))
 
-    # Relation change: robust side crossing sustained after the transition.
+    # Causal relation change: compare translation-only and turn-only counterfactuals.
     sid = "hoi_m3_bedroom_data03_win03"
     tl = timeline(sid)
-    relations = [x["b_relative_to_a"] for x in tl["states"]]
-    left_prefix = sum(x.startswith("left_") for x in relations[:4])
-    right_suffix = sum(x.startswith("right_") for x in relations[4:])
+    cause = relation_change_cause(
+        tl["states"], right_sign=int(tl["coordinate_frame"].get("right_sign", 1)),
+    )
+    cause_words = {
+        "position_movement": "the people's position changes",
+        "anchor_body_turn": "the reference person's body turn",
+        "combined_motion": "their combined movement and body turn",
+        "either_component_suffices": "either component independently",
+    }
     q = qa(
         task_id=TASK4_ID, task_name=TASK4_NAME,
-        qtype="body_centric_relation_change_over_video",
-        question="How does B's left/right relation in A's body-centric frame change and then persist over the clip?",
-        correct=f"B is left-front for the first four samples, then moves to A's right-front side for the remaining twelve samples.",
+        qtype="relation_change_cause",
+        question="What primarily causes B's body-centered relation to A to change over the clip?",
+        correct=f"The change is explained by {cause_words[cause['cause']]}; the translation-only counterfactual reaches {cause['translation_only_relation']} and the turn-only counterfactual reaches {cause['rotation_only_relation']}.",
         distractors=[
-            "B starts right-front and then remains left-front for the rest of the clip.",
-            "B alternates left and right at nearly every sampled second.",
-            "B remains directly behind A throughout the clip.",
+            "The change is explained only by the reference person's body turn.",
+            "The change requires both position movement and the reference person's body turn.",
+            "No body-centered relation change occurs.",
         ],
-        explanation=f"The lateral sequence has {left_prefix}/4 left samples before the transition and {right_suffix}/12 right samples after it.",
-        method="Transforms B's pelvis into A's ground-plane body frame at each of 16 samples and requires the new side to persist after the crossing.",
-        result={"scene_id": sid, "pair_timeline": tl, "relation_sequence": relations, "visual_person_audit": audits[sid]},
+        explanation="Code recomputes the final relation twice: once with the starting body orientation and once with the starting positions.",
+        method="Deterministic translation-only and anchor-rotation-only counterfactual decomposition in the calibrated human frame.",
+        result={"scene_id": sid, "pair_timeline": tl, "causal_decomposition": cause, "visual_person_audit": audits[sid]},
     )
     out.append(metric_group(scenes[sid], audits[sid], q))
 
@@ -404,11 +413,33 @@ def task4_expansion_groups(dense: dict[str, Any], expansion_audits: dict[str, An
             "They move steadily closer from start to finish.",
             "Their distance remains almost unchanged throughout.",
         ],
-        explanation=f"The 16-sample series has an interior maximum near t={tl['states'][max_i]['t']:.1f} s and low values at both the early and final phases.",
+        explanation=f"The distance curve has an interior maximum and lower distances on both sides.",
         method="Uses the full metric distance curve and requires a middle maximum with lower distances on both sides.",
         result={"scene_id": sid, "pair_timeline": tl, "distance_series_m": distances, "peak_sample_index": max_i, "visual_person_audit": audits[sid]},
     )
     add_metric(sid, question)
+
+    # A geometric passing candidate exists in win05, but its visual identity
+    # audit reports coverage_mismatch.  It remains rejected rather than being
+    # converted into release QA.  The generic analyzer is exercised by the
+    # annotation pipeline and becomes publishable only after the identity gate.
+    sid = "hoi_m3_bedroom_data03_win05"
+    if audits[sid].get("status") == "complete_and_identity_aligned":
+        tl = timeline(sid); passing = passing_side_and_final_position(tl["states"])
+        question = qa(
+            task_id=TASK4_ID, task_name=TASK4_NAME, qtype="passing_side_and_final_position",
+            question="As A passes B, on which side of B does A pass, and where is A relative to B at the end?",
+            correct=f"A passes on B's {passing['passing_side']} side and ends {passing['final_relation']} relative to B.",
+            distractors=[
+                f"A passes on B's {passing['passing_side']} side and ends {passing['start_relation']} relative to B.",
+                f"A passes on B's {'left' if passing['passing_side']=='right' else 'right'} side and ends {passing['final_relation']} relative to B.",
+                f"A passes on B's {'left' if passing['passing_side']=='right' else 'right'} side and ends {passing['start_relation']} relative to B.",
+            ],
+            explanation="The trajectory contains an interior closest approach and a sustained side crossing.",
+            method="Uses signed A-in-B relations plus metric distance; endpoint-only crossings are rejected.",
+            result={"scene_id": sid, "pair_timeline": tl, "passing_analysis": passing, "visual_person_audit": audits[sid]},
+        )
+        add_metric(sid, question)
     return out
 
 def validate(data: dict[str, Any]) -> dict[str, Any]:

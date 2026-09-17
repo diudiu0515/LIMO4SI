@@ -237,6 +237,12 @@ def derive_task4_answer_semantics(question_type: str, result: Mapping[str, Any])
         fields["relation_counts"] = dict(Counter(relations))
     elif question_type in {"body_centric_relation_change_over_video", "coupled_distance_relation_change"}:
         fields.update({"start_relation": relations[0], "end_relation": relations[-1]})
+    elif question_type == "passing_side_and_final_position":
+        fields.update(dict(result["passing_analysis"]))
+    elif question_type == "reunion_relation_restoration":
+        fields.update(dict(result["reunion_analysis"]))
+    elif question_type == "relation_change_cause":
+        fields.update(dict(result["causal_decomposition"]))
     elif question_type in {"dominant_facing_relation_over_video", "approach_while_facing"}:
         fields["dominant_facing"] = Counter(facing).most_common(1)[0][0]
         fields["facing_counts"] = dict(Counter(facing))

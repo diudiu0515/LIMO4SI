@@ -47,6 +47,21 @@ class Task4AnnotationGenerationTests(unittest.TestCase):
         report = validate_release({"groups": [group]})
         self.assertEqual(report["status"], "ok", report)
 
+    def test_annotation_only_pipeline_generates_balanced_passing_question(self):
+        value = scene()
+        xs = [-3.0, -2.0, -1.0, -0.3, 0.3, 1.0, 2.0, 3.0]
+        for frame, x in zip(value["frames"], xs):
+            frame["people"][0]["pelvis"] = [x, 0.0, 0.3]
+            frame["people"][0]["head"] = [x, 1.6, 0.3]
+            frame["people"][1]["pelvis"] = [0.0, 0.0, 0.0]
+            frame["people"][1]["head"] = [0.0, 1.6, 0.0]
+        group = generate_task4_group(value)
+        question = group["qa"][0]
+        self.assertEqual(question["question_type"], "passing_side_and_final_position")
+        parts = question["result_json"]["compound_option_parts"]
+        self.assertEqual(sorted([row[0] for row in parts.values()]), ["left", "left", "right", "right"])
+        self.assertEqual(validate_release({"groups": [group]})["status"], "ok")
+
     def test_missing_coordinate_calibration_fails_closed(self):
         with self.assertRaisesRegex(AnnotationEvidenceError, "human_coordinate_frame"):
             generate_task4_group(scene(calibrated=False))

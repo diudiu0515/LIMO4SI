@@ -8,6 +8,7 @@ from typing import Any, Mapping, Sequence
 from .multihuman import derive_task4_answer_semantics, pair_timeline
 from .scale_quality import TASK4_ID
 from .semantic_gt import LanguageRealizer, seal_deterministic_question
+from .task4_dynamics import passing_side_and_final_position, relation_change_cause, reunion_relation_restoration
 
 TASK4_NAME = "Task 4 · Multi-Human Relational Dynamics"
 
@@ -113,35 +114,96 @@ def generate_task4_group(
     times = [float(state["t"]) for state in states]
     if duration <= 0 or (times[-1] - times[0]) / duration < policy.min_span_ratio:
         raise AnnotationEvidenceError("annotation time coverage is below threshold")
-    facing = [str(state["facing_state"]) for state in states]
-    winner, dominance, margin = _dominant(facing)
-    if dominance < policy.min_dominance_ratio or margin < policy.min_dominance_margin:
-        raise AnnotationEvidenceError("no unambiguous Task 4 facing relation")
-
     aliases, identity_audit, alias_status = _identity_evidence(scene)
     a, b = aliases["A"], aliases["B"]
-    correct = _facing_text(winner, a, b)
-    alternatives = [_facing_text(value, a, b) for value in (
-        "facing_each_other", "back_to_back_or_away", "side_by_side_or_oblique"
-    ) if value != winner]
-    alternatives.append(f"For most of the clip, {a} and {b} have no dominant facing relation.")
-    options, label = _options(correct, alternatives, str(scene["scene_id"]))
+    qtype = ""
+    analysis: dict[str, Any] = {}
+    question_text = explanation = method = ""
+    correct = ""
+    alternatives: list[str] = []
+    compound_parts_by_text: dict[str, list[str]] = {}
+
+    # Prefer the rarer seven-capability events; fall back to dominant facing.
+    try:
+        analysis = passing_side_and_final_position(states)
+        qtype = "passing_side_and_final_position"
+        side = analysis["passing_side"]; other_side = "left" if side == "right" else "right"
+        final_rel = str(analysis["final_relation"]).replace("_", "-")
+        other_rel = str(analysis["start_relation"]).replace("_", "-")
+        def passing_text(pass_side: str, relation: str) -> str:
+            return f"{a.capitalize()} passes on {b}'s {pass_side} side and finishes {relation} relative to {b}."
+        correct = passing_text(side, final_rel)
+        alternatives = [passing_text(side, other_rel), passing_text(other_side, final_rel), passing_text(other_side, other_rel)]
+        for pass_side, relation in ((side, final_rel), (side, other_rel), (other_side, final_rel), (other_side, other_rel)):
+            compound_parts_by_text[passing_text(pass_side, relation)] = [pass_side, relation]
+        question_text = f"As {a} passes {b}, which side does {a} pass on, and where does {a} finish?"
+        explanation = "The signed body-frame sequence crosses sides around an interior closest approach."
+        method = "Requires approach, an interior distance minimum, side crossing, and later separation."
+    except ValueError:
+        try:
+            analysis = reunion_relation_restoration(states)
+            qtype = "reunion_relation_restoration"
+            start_rel = str(analysis["start_relation"]).replace("_", "-")
+            end_rel = str(analysis["end_relation"]).replace("_", "-")
+            if analysis["restored"]:
+                correct = f"Yes. The relation begins {start_rel} and returns to {end_rel} after the reunion."
+                opposite = f"No. The relation begins {start_rel} but changes to {end_rel} after the reunion."
+            else:
+                correct = f"No. The relation begins {start_rel} but changes to {end_rel} after the reunion."
+                opposite = f"Yes. The relation begins {start_rel} and returns to {start_rel} after the reunion."
+            alternatives = [opposite, f"Yes. The relation begins {end_rel} and returns to {end_rel} after the reunion.", f"No. The relation begins {end_rel} but changes to {start_rel} after the reunion."]
+            question_text = f"After {a} and {b} separate and come close again, is their final body-centered relation restored?"
+            explanation = f"The distance peaks inside the window, and the signed relation changes from {start_rel} to {end_rel}."
+            method = "Detects a separation peak followed by reunion, then compares signed endpoint relations."
+        except ValueError:
+            try:
+                analysis = relation_change_cause(states, right_sign=int(timeline["coordinate_frame"].get("right_sign", 1)))
+                qtype = "relation_change_cause"
+                labels = {
+                    "position_movement": "The relation change is caused mainly by position movement.",
+                    "anchor_body_turn": "The relation change is caused mainly by the reference person's body turn.",
+                    "combined_motion": "The relation change requires both position movement and the body turn.",
+                    "either_component_suffices": "Either component independently reproduces the final relation.",
+                }
+                correct = labels[str(analysis["cause"])]
+                alternatives = [text for key, text in labels.items() if key != analysis["cause"]]
+                question_text = "Is the body-centered relation change caused mainly by position movement, a body turn, or both?"
+                explanation = "Two deterministic counterfactuals separately hold the starting orientation and starting positions fixed."
+                method = "Compares translation-only and anchor-rotation-only counterfactual relations."
+            except ValueError:
+                facing = [str(state["facing_state"]) for state in states]
+                winner, dominance, margin = _dominant(facing)
+                if dominance < policy.min_dominance_ratio or margin < policy.min_dominance_margin:
+                    raise AnnotationEvidenceError("no unambiguous supported Task 4 capability")
+                qtype = "dominant_facing_relation_over_video"
+                correct = _facing_text(winner, a, b)
+                alternatives = [_facing_text(value, a, b) for value in ("facing_each_other", "back_to_back_or_away", "side_by_side_or_oblique") if value != winner]
+                alternatives.append(f"For most of the clip, {a} and {b} have no dominant facing relation.")
+                analysis = {"facing_counts": dict(Counter(facing))}
+                question_text = f"What body-facing relation dominates between {a} and {b} over the annotated time window?"
+                explanation = "The deterministic timeline aggregates the annotation-provided body-forward vectors over the complete window."
+                method = "Projects annotated body-forward vectors and applies temporal dominance gates."
+
+    options, label = _options(correct, alternatives, str(scene["scene_id"]) + qtype)
     result = {
-        "scene_id": scene["scene_id"], "answer_type": "dominant_facing_relation_over_video",
+        "scene_id": scene["scene_id"], "answer_type": qtype,
         "T_Q": True, "H_Q": True, "S_Q": True, "pair_timeline": timeline,
-        "facing_counts": dict(Counter(facing)),
     }
-    result["answer_semantics"] = derive_task4_answer_semantics(
-        "dominant_facing_relation_over_video", result,
-    )
+    if qtype == "passing_side_and_final_position": result["passing_analysis"] = analysis
+    elif qtype == "reunion_relation_restoration": result["reunion_analysis"] = analysis
+    elif qtype == "relation_change_cause": result["causal_decomposition"] = analysis
+    else: result.update(analysis)
+    if compound_parts_by_text:
+        result["compound_option_parts"] = {option["label"]: compound_parts_by_text[option["text"]] for option in options}
+    result["answer_semantics"] = derive_task4_answer_semantics(qtype, result)
     question = seal_deterministic_question({
         "task_id": TASK4_ID, "task_name": TASK4_NAME,
-        "question_type": "dominant_facing_relation_over_video",
-        "question": f"What body-facing relation dominates between {a} and {b} over the annotated time window?",
+        "question_type": qtype,
+        "question": question_text,
         "options": options, "correct_option": label, "correct_answer": correct,
         "answer": correct,
-        "explanation": "The deterministic timeline aggregates the annotation-provided body-forward vectors over the complete window.",
-        "method": "Projects annotated body-forward vectors and the between-person direction onto the ground plane, then applies dominance gates.",
+        "explanation": explanation,
+        "method": method,
         "status": "ok", "release_eligible": True, "result_json": result,
     }, case_id=str(scene["scene_id"]), realizer=realizer, provenance={
         "generator": "limo4si.task4_annotation.generate_task4_group",

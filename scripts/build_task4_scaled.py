@@ -35,12 +35,12 @@ from limo4si.multihuman_release import (
 from limo4si.scale_quality import ScaleQualityPolicy, require_release_quality, validate_release
 from limo4si.semantic_gt import load_language_realizer, seal_release_questions
 from limo4si.task4_contract import TASK4_CAPABILITIES, capability_for
+from limo4si.task4_dynamics import reunion_relation_restoration
 
 REQUIRED_CATEGORIES = {
     "body_centric_position",
     "body_orientation",
     "metric_distance",
-    "body_forward_visibility",
     "relation_change",
     "image_plane_topology",
 }
@@ -62,6 +62,9 @@ def categories(group: dict[str, Any], question: dict[str, Any]) -> list[str]:
         "body_forward_field_transition_over_video": ["body_forward_visibility"],
         "body_centric_relation_change_over_video": ["relation_change"],
         "coupled_distance_relation_change": ["relation_change", "metric_distance"],
+        "relation_change_cause": ["relation_change"],
+        "passing_side_and_final_position": ["relation_change"],
+        "reunion_relation_restoration": ["metric_distance", "relation_change"],
         "visible_pair_topology_change_2d": ["image_plane_topology"],
         "visible_pair_topology_consistency_2d": ["image_plane_topology"],
     }
@@ -69,28 +72,27 @@ def categories(group: dict[str, Any], question: dict[str, Any]) -> list[str]:
     canonical = capability_for(question["question_type"])
     return [*legacy, *([canonical] if canonical else [])]
 
-def add_task4_visibility(data: dict[str, Any], dense: dict[str, Any], audits: dict[str, Any]) -> None:
+def add_task4_reunion(data: dict[str, Any], dense: dict[str, Any], audits: dict[str, Any]) -> None:
     sid = "hoi_m3_bedroom_data01_win01"
     if any(g["name"] == sid for g in data["groups"]):
         return
     scene = next(x for x in dense["scenes"] if x["scene_id"] == sid)
     audit = next(x for x in audits["groups"] if x["scene_id"] == sid)
     timeline = compact_metric_timeline(pair_timeline(scene))
-    sequence = [x["body_forward_field"]["state"] for x in timeline["states"]]
+    reunion = reunion_relation_restoration(timeline["states"])
+    start_rel, end_rel = reunion["start_relation"], reunion["end_relation"]
     q = qa(
-        task_id=TASK4_ID, task_name=TASK4_NAME,
-        qtype="body_forward_field_transition_over_video",
-        question="Ignoring physical occlusion, how does the one-sided body-forward field relation change over this clip?",
-        correct="Early, only B keeps A inside the ±60° body-forward field; later, only A keeps B inside the field for most samples.",
+        task_id=TASK4_ID, task_name=TASK4_NAME, qtype="reunion_relation_restoration",
+        question="After the two people separate and come close again, is their final body-centered relation restored?",
+        correct=f"No. The relation begins {start_rel} but changes to {end_rel} after the reunion.",
         distractors=[
-            "The relation stays mutual for all 16 samples.",
-            "Neither person enters the other's body-forward field at any time.",
-            "Only A contains B early, then only B contains A later.",
+            f"Yes. The relation begins {start_rel} and returns to {start_rel} after the reunion.",
+            f"Yes. The relation begins {end_rel} and returns to {end_rel} after the reunion.",
+            f"No. The relation begins {end_rel} but changes to {start_rel} after the reunion.",
         ],
-        explanation=f"The 16-sample state sequence is {sequence}; the first six are B-only and the final segment is predominantly A-only.",
-        method="Uses ground-plane SMPL-X root-forward directions at all 16 samples. It does not claim eye gaze or an unobstructed physical sightline.",
-        result={"scene_id": sid, "pair_timeline": timeline, "body_forward_field_sequence": sequence, "visual_person_audit": audit},
-        quality="audited_proxy",
+        explanation=f"The distance has an interior maximum, while the signed relation changes from {start_rel} to {end_rel}.",
+        method="Requires an interior separation peak followed by reunion, then compares signed start/end body-frame relations.",
+        result={"scene_id": sid, "pair_timeline": timeline, "reunion_analysis": reunion, "visual_person_audit": audit},
     )
     data["groups"].append(metric_group(scene, audit, q))
 
@@ -211,6 +213,9 @@ MULTIHUMAN_GENERIC_QUESTIONS = {
     "coupled_distance_relation_change": "As the two people in the video approach each other, how does their lateral relation change in a body-centric frame?",
     "distance_out_and_back_over_video": "Which temporal distance pattern occurs between the two people in the video?",
     "body_forward_field_transition_over_video": "Ignoring physical occlusion, how does the one-sided body-forward field relation between the two people in the video change?",
+    "relation_change_cause": "Is the body-centered relation change caused mainly by position movement, a body turn, or both?",
+    "reunion_relation_restoration": "After the two people separate and come close again, is their final body-centered relation restored?",
+    "passing_side_and_final_position": "As one person passes the other, which side do they pass on, and where do they finish?",
 }
 
 def _cap(text: str) -> str:
@@ -307,6 +312,13 @@ def apply_multihuman_copy_edits(data: dict[str, Any]) -> None:
                 [f"{B} is {_relation_words(reverse[0])} at the start and {_relation_words(reverse[1])} at the end relative to {a}.",
                  f"{B} is {_relation_words(start_relation)} at the start and {_relation_words(start_relation)} at the end relative to {a}.",
                  f"{B} is {_relation_words(end_relation)} at the start and {_relation_words(end_relation)} at the end relative to {a}."])
+        elif qtype == "passing_side_and_final_position":
+            pattern = re.compile(r"'s (left|right) side and finishes ([a-z-]+) relative")
+            for option in q["options"]:
+                match = pattern.search(option["text"])
+                if not match:
+                    raise ValueError(f"cannot parse passing compound option: {option['text']}")
+                compound_parts[option["label"]] = list(match.groups())
         elif qtype == "visible_pair_topology_change_2d":
             starts = {row["pair"]: row["distance"] for row in result["start_pair_distances_normalized"]}
             ends = {row["pair"]: row["distance"] for row in result["end_pair_distances_normalized"]}
@@ -355,6 +367,39 @@ def apply_multihuman_copy_edits(data: dict[str, Any]) -> None:
                 [f"{B} approaches from {values[0]:.3f} m to {values[-1]:.3f} m and changes from {end_rel} to {start_rel} relative to {a}.",
                  f"{B} separates from {values[-1]:.3f} m to {values[0]:.3f} m and changes from {start_rel} to {end_rel} relative to {a}.",
                  f"{B} separates from {values[-1]:.3f} m to {values[0]:.3f} m and changes from {end_rel} to {start_rel} relative to {a}."])
+        elif qtype == "relation_change_cause":
+            analysis = result["causal_decomposition"]
+            labels = {
+                "position_movement": "The relation change is caused mainly by the people's position movement.",
+                "anchor_body_turn": "The relation change is caused mainly by the reference person's body turn.",
+                "combined_motion": "The relation change requires both position movement and the reference person's body turn.",
+                "either_component_suffices": "Either position movement or the body turn independently reproduces the final relation.",
+            }
+            correct = labels[analysis["cause"]]
+            _set_options(group, correct, [text for key, text in labels.items() if key != analysis["cause"]])
+        elif qtype == "reunion_relation_restoration":
+            analysis = result["reunion_analysis"]
+            start_rel, end_rel = _relation_words(analysis["start_relation"]), _relation_words(analysis["end_relation"] )
+            if analysis["restored"]:
+                correct = f"Yes. The relation begins {start_rel} and returns to {end_rel} after the reunion."
+                opposite = f"No. The relation begins {start_rel} but changes to {end_rel} after the reunion."
+            else:
+                correct = f"No. The relation begins {start_rel} but changes to {end_rel} after the reunion."
+                opposite = f"Yes. The relation begins {start_rel} and returns to {start_rel} after the reunion."
+            _set_options(group, correct, [
+                opposite,
+                f"Yes. The relation begins {end_rel} and returns to {end_rel} after the reunion.",
+                f"No. The relation begins {end_rel} but changes to {start_rel} after the reunion.",
+            ])
+        elif qtype == "passing_side_and_final_position":
+            analysis = result["passing_analysis"]
+            side = analysis["passing_side"]; other_side = "left" if side == "right" else "right"
+            final_rel = _relation_words(analysis["final_relation"]); other_rel = _relation_words(analysis["start_relation"] )
+            _set_options(group,
+                f"{_cap(a)} passes on {b}'s {side} side and finishes {final_rel} relative to {b}.",
+                [f"{_cap(a)} passes on {b}'s {side} side and finishes {other_rel} relative to {b}.",
+                 f"{_cap(a)} passes on {b}'s {other_side} side and finishes {final_rel} relative to {b}.",
+                 f"{_cap(a)} passes on {b}'s {other_side} side and finishes {other_rel} relative to {b}."])
         elif qtype == "distance_out_and_back_over_video":
             values = _distance_values(q); start, peak, end = values[0], max(values), values[-1]
             _set_options(group,
@@ -405,6 +450,13 @@ def apply_multihuman_copy_edits(data: dict[str, Any]) -> None:
                 match = pattern.search(option["text"])
                 if not match:
                     raise ValueError(f"cannot parse compound relation option: {option['text']}")
+                compound_parts[option["label"]] = list(match.groups())
+        elif qtype == "passing_side_and_final_position":
+            pattern = re.compile(r"'s (left|right) side and finishes ([a-z-]+) relative")
+            for option in q["options"]:
+                match = pattern.search(option["text"])
+                if not match:
+                    raise ValueError(f"cannot parse passing compound option: {option['text']}")
                 compound_parts[option["label"]] = list(match.groups())
         elif qtype == "visible_pair_topology_change_2d":
             pattern = re.compile(r"changes from (.+) at the start to (.+) at the end")
@@ -484,10 +536,18 @@ def validate_scale(data: dict[str, Any]) -> dict[str, Any]:
         "category_counts": dict(counts),
         "task4_capability_contract": list(TASK4_CAPABILITIES),
         "task4_capability_coverage": {name: counts[name] for name in TASK4_CAPABILITIES},
+        "missing_canonical_capabilities": {
+            name: (
+                "no identity-complete passing window" if name == "passing_side_and_final_position" else
+                "no blocker geometry in local annotations" if name == "physical_visibility_occlusion_timeline" else
+                "no accepted evidence"
+            )
+            for name in TASK4_CAPABILITIES if counts[name] == 0
+        },
         "hard_gates": [
             "one question per unique video window",
             "four unique options",
-            "at least two independent cases per capability category",
+            "legacy scale categories retain at least two independent cases",
             "metric Task 4 uses temporally covered, identity-aligned timelines",
             "2D topology requires real observations near both endpoints; nearest-time substitution is forbidden",
             "body-forward visibility is labeled as a directional proxy, never gaze or physical occlusion",
@@ -519,7 +579,7 @@ def main() -> None:
     policy = ScaleQualityPolicy(**policy_values)
     language_realizer = load_language_realizer(args.language_client_factory)
 
-    add_task4_visibility(data, dense, audits)
+    add_task4_reunion(data, dense, audits)
     add_task4_topology(data, evidence)
     recompute_hoim3_pair_timelines(
         data, dense, ORIENTATION_OVERRIDES, compact_timeline=compact_metric_timeline,
