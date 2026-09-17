@@ -13,6 +13,7 @@ from typing import Any, Iterable, Mapping, Sequence
 
 from .semantic_gt import LanguageRealizationError, SemanticGTError, validate_sealed_question
 from .multihuman import derive_task4_answer_semantics
+from .task4_contract import validate_compound_option_parts
 
 TASK1_ID = "task1_dynamic_human_referenced_relations"
 TASK3_ID = "task3_human_scene_topological_reasoning"
@@ -270,6 +271,9 @@ def _validate_common(case_id: str, question: Mapping[str, Any], policy: ScaleQua
             errors.append("published Task 4 answer/options contain sample-count wording")
         if any(re.search(r"\b(?:A|B|V1|V2|V3)\b", str(value)) for value in published):
             errors.append("published Task 4 text leaks an internal person ID")
+        compound = (question.get("result_json") or {}).get("compound_option_parts")
+        if compound:
+            errors.extend(validate_compound_option_parts(options, str(question.get("correct_option")), compound))
 
 
 def _validate_task1(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], warnings: list[str], metrics: dict[str, Any]) -> None:

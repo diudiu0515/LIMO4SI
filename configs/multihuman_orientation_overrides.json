@@ -20,5 +20,15 @@
         "end": "right_front"
       }
     }
+  },
+  "hoi_m3_bedroom_data02": {
+    "right_sign": -1,
+    "source": "visual_review_body_frame_case1_2026_09_17",
+    "expected_relations": {
+      "hoi_m3_bedroom_data02_win08": {
+        "start": "left_front",
+        "end": "left_front"
+      }
+    }
   }
 }

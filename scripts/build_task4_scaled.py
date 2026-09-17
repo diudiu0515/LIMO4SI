@@ -34,6 +34,7 @@ from limo4si.multihuman_release import (
 )
 from limo4si.scale_quality import ScaleQualityPolicy, require_release_quality, validate_release
 from limo4si.semantic_gt import load_language_realizer, seal_release_questions
+from limo4si.task4_contract import TASK4_CAPABILITIES, capability_for
 
 REQUIRED_CATEGORIES = {
     "body_centric_position",
@@ -64,7 +65,9 @@ def categories(group: dict[str, Any], question: dict[str, Any]) -> list[str]:
         "visible_pair_topology_change_2d": ["image_plane_topology"],
         "visible_pair_topology_consistency_2d": ["image_plane_topology"],
     }
-    return mapping[question["question_type"]]
+    legacy = mapping.get(question["question_type"], [])
+    canonical = capability_for(question["question_type"])
+    return [*legacy, *([canonical] if canonical else [])]
 
 def add_task4_visibility(data: dict[str, Any], dense: dict[str, Any], audits: dict[str, Any]) -> None:
     sid = "hoi_m3_bedroom_data01_win01"
@@ -309,12 +312,12 @@ def apply_multihuman_copy_edits(data: dict[str, Any]) -> None:
             ends = {row["pair"]: row["distance"] for row in result["end_pair_distances_normalized"]}
             start_pair, end_pair = min(starts, key=starts.get), min(ends, key=ends.get)
             other = next(pair for pair in starts if pair not in {start_pair, end_pair})
-            sp, ep, op = (_pair_name(group, value) for value in (start_pair, end_pair, other))
+            sp, ep = (_pair_name(group, value) for value in (start_pair, end_pair))
             _set_options(group,
                 f"The closest pair changes from {sp} at the start to {ep} at the end.",
                 [f"The closest pair changes from {ep} at the start to {sp} at the end.",
                  f"The closest pair changes from {sp} at the start to {sp} at the end.",
-                 f"The closest pair changes from {op} at the start to {sp} at the end."])
+                 f"The closest pair changes from {ep} at the start to {ep} at the end."])
         elif qtype == "metric_separation_over_video":
             values = _distance_values(q); start, end = values[0], values[-1]
             _set_options(group,
@@ -351,7 +354,7 @@ def apply_multihuman_copy_edits(data: dict[str, Any]) -> None:
                 f"{B} approaches from {values[0]:.3f} m to {values[-1]:.3f} m and changes from {start_rel} to {end_rel} relative to {a}.",
                 [f"{B} approaches from {values[0]:.3f} m to {values[-1]:.3f} m and changes from {end_rel} to {start_rel} relative to {a}.",
                  f"{B} separates from {values[-1]:.3f} m to {values[0]:.3f} m and changes from {start_rel} to {end_rel} relative to {a}.",
-                 f"{B} approaches from {values[0]:.3f} m to {values[-1]:.3f} m and changes from {start_rel} to {start_rel} relative to {a}."])
+                 f"{B} separates from {values[-1]:.3f} m to {values[0]:.3f} m and changes from {end_rel} to {start_rel} relative to {a}."])
         elif qtype == "distance_out_and_back_over_video":
             values = _distance_values(q); start, peak, end = values[0], max(values), values[-1]
             _set_options(group,
@@ -374,6 +377,44 @@ def apply_multihuman_copy_edits(data: dict[str, Any]) -> None:
                 f"At the start, {cp} are closest; at the end, {cp} are closest.",
                 [f"At the start, {pair} are closest; at the end, {pair} are closest." for pair in alternatives] +
                 [f"At the start, {cp} are closest; at the end, {alternatives[0]} are closest."])
+
+        # Compound questions publish code-owned option parts.  The release gate
+        # requires a full 2x2 grid so either clause alone remains ambiguous.
+        compound_parts = {}
+        if qtype == "approach_while_facing":
+            for option in q["options"]:
+                text = option["text"].lower()
+                compound_parts[option["label"]] = [
+                    "closer" if "move closer" in text else "farther",
+                    "facing_each_other" if "facing each other" in text else "facing_away",
+                ]
+        elif qtype == "coupled_distance_relation_change":
+            pattern = re.compile(r"changes from ([a-z-]+) to ([a-z-]+) relative")
+            for option in q["options"]:
+                text = option["text"]
+                match = pattern.search(text)
+                if not match:
+                    raise ValueError(f"cannot parse compound relation option: {text}")
+                compound_parts[option["label"]] = [
+                    "approach" if " approaches " in text else "separate",
+                    f"{match.group(1)}->{match.group(2)}",
+                ]
+        elif qtype == "body_centric_relation_change_over_video":
+            pattern = re.compile(r"is ([a-z-]+) at the start and ([a-z-]+) at the end")
+            for option in q["options"]:
+                match = pattern.search(option["text"])
+                if not match:
+                    raise ValueError(f"cannot parse compound relation option: {option['text']}")
+                compound_parts[option["label"]] = list(match.groups())
+        elif qtype == "visible_pair_topology_change_2d":
+            pattern = re.compile(r"changes from (.+) at the start to (.+) at the end")
+            for option in q["options"]:
+                match = pattern.search(option["text"])
+                if not match:
+                    raise ValueError(f"cannot parse compound topology option: {option['text']}")
+                compound_parts[option["label"]] = list(match.groups())
+        if compound_parts:
+            result["compound_option_parts"] = compound_parts
 
         if qtype in {"visible_pair_topology_change_2d", "visible_pair_topology_consistency_2d"}:
             rows = result.get("start_pair_distances_normalized") or []
@@ -441,6 +482,8 @@ def validate_scale(data: dict[str, Any]) -> dict[str, Any]:
         "unique_case_windows": len(names),
         "minimum_examples_per_category": 2,
         "category_counts": dict(counts),
+        "task4_capability_contract": list(TASK4_CAPABILITIES),
+        "task4_capability_coverage": {name: counts[name] for name in TASK4_CAPABILITIES},
         "hard_gates": [
             "one question per unique video window",
             "four unique options",
