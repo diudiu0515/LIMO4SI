@@ -67,6 +67,8 @@ def detect_kind(path: Path) -> str:
         path / "annotations" / "relations_val.json"
     ).is_file():
         return "task5"
+    if path.is_dir() and (path / "smplx_camera_wearer_val").is_dir() and (path / "smplx_interactee_val").is_dir():
+        return "task4_egobody"
     if path.is_dir():
         return "task4_raw"
     raise ValueError(f"unsupported annotation input: {path}")
@@ -76,6 +78,10 @@ def normalized_task4(path: Path, output_dir: Path) -> Path:
     kind = detect_kind(path)
     if kind == "task4":
         return path
+    if kind == "task4_egobody":
+        normalized = output_dir / "normalized_task4_annotations.json"
+        run_script("convert_egobody_to_multihuman.py", "--dataset-root", str(path), "--output", str(normalized))
+        return normalized
     if kind != "task4_raw":
         raise ValueError(f"not a Task 4 annotation source: {path}")
     normalized = output_dir / "normalized_task4_annotations.json"
@@ -186,7 +192,7 @@ def main() -> None:
     task4_source = task5_source = None
     if kind == "bundle":
         task4_source, task5_source = bundle_sources(annotations)
-    elif kind in {"task4", "task4_raw"} or args.task == "task4":
+    elif kind in {"task4", "task4_raw", "task4_egobody"} or args.task == "task4":
         task4_source = annotations
     elif kind == "task5" or args.task == "task5":
         task5_source = annotations

@@ -160,10 +160,10 @@ def generate_task4_group(
                 analysis = relation_change_cause(states, right_sign=int(timeline["coordinate_frame"].get("right_sign", 1)))
                 qtype = "relation_change_cause"
                 labels = {
-                    "position_movement": "The relation change is caused mainly by position movement.",
-                    "anchor_body_turn": "The relation change is caused mainly by the reference person's body turn.",
-                    "combined_motion": "The relation change requires both position movement and the body turn.",
-                    "either_component_suffices": "Either component independently reproduces the final relation.",
+                    "position_movement": "Position movement alone is sufficient to produce the final relation.",
+                    "anchor_body_turn": "Reference body rotation alone is sufficient to produce the final relation.",
+                    "combined_motion": "Both position movement and body rotation are required for the final relation.",
+                    "either_component_suffices": "Either position movement or body rotation is sufficient for the final relation.",
                 }
                 correct = labels[str(analysis["cause"])]
                 alternatives = [text for key, text in labels.items() if key != analysis["cause"]]
