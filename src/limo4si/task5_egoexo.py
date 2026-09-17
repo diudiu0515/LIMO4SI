@@ -164,10 +164,10 @@ def unique_encoded_mask_hit(
 
 def anchor_options() -> list[dict[str, str]]:
     return [
-        {"id": "anchor_1", "statement": "Only at the first marked anchor."},
-        {"id": "anchor_2", "statement": "Only at the second marked anchor."},
-        {"id": "anchor_3", "statement": "Only at the third marked anchor."},
-        {"id": "no_anchor", "statement": "At none of the three marked anchors."},
+        {"id": "anchor_1", "statement": "The gaze lands there at the first marked moment."},
+        {"id": "anchor_2", "statement": "The gaze lands there at the second marked moment."},
+        {"id": "anchor_3", "statement": "The gaze lands there at the third marked moment."},
+        {"id": "no_anchor", "statement": "The gaze does not land there at any marked moment."},
     ]
 
 

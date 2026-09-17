@@ -675,16 +675,18 @@ def _validate_task5_egoexo(
     except (KeyError, TypeError, ValueError) as exc:
         errors.append(f"EgoExo4D Task 5 deterministic evidence failed: {exc}")
 
-    anchor_statements = {
-        "anchor_1": "Only at the first marked anchor.",
-        "anchor_2": "Only at the second marked anchor.",
-        "anchor_3": "Only at the third marked anchor.",
-    }
-    expected_statement = anchor_statements.get(str(result.get("correct_semantic_option_id")))
+    expected_option_id = str(result.get("correct_semantic_option_id"))
     semantic_gt = question.get("semantic_gt") or {}
-    semantic_options = {option.get("id"): option.get("statement") for option in semantic_gt.get("options") or []}
-    locked_correct = semantic_options.get(semantic_gt.get("correct_option_id"))
-    if expected_statement is None or locked_correct != expected_statement:
+    semantic_options = {str(option.get("id")): option.get("statement") for option in semantic_gt.get("options") or []}
+    target_index = int(result.get("target_anchor_index", -1))
+    legacy_option_id = f"option_{target_index + 1}"
+    locked_option_id = str(semantic_gt.get("correct_option_id"))
+    valid_locked_ids = {expected_option_id, legacy_option_id}
+    if (
+        expected_option_id not in {"anchor_1", "anchor_2", "anchor_3"}
+        or locked_option_id not in valid_locked_ids
+        or locked_option_id not in semantic_options
+    ):
         errors.append("EgoExo4D Task 5 locked correct option differs from the recomputed target anchor")
 
     window = result.get("source_window") or {}

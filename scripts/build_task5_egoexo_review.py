@@ -294,16 +294,17 @@ def build_case(
         task_id=TASK_ID,
         question_type=QUESTION_TYPE,
         question_focus=(
-            f"At which marked anchor does the synchronized 2D gaze point fall inside "
-            f"the Relations mask for the {target_name}?"
+            f"At which of the three marked moments does the camera wearer's gaze "
+            f"land on the {target_name}?"
         ),
         options=anchor_options(),
         correct_option_id=correct_semantic_option_id,
         evidence_statement=(
-            f"The gaze point is inside the {target_name} mask only at the {ORDINALS[target_index]} marked anchor. "
-            f"The unique annotated-mask hits at the three anchors are "
-            + ", ".join(f"{ORDINALS[index]}: {anchor['object_name']}" for index, anchor in enumerate(anchors))
-            + "."
+            f"The synchronized gaze point lands inside the annotated {target_name} region "
+            f"only at the {ORDINALS[target_index]} marked moment. "
+            + "At the first, second, and third moments, it lands on "
+            + ", ".join(anchor["object_name"] for anchor in anchors)
+            + ", respectively."
         ),
         semantic_facts=[
             {"id": "target_object_id", "value": target_object_id},
