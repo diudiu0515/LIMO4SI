@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Publish EgoBody passing cases with deterministic trajectory-evidence videos."""
+"""Publish selected deterministic EgoBody Task 4 cases with auditable media."""
 from __future__ import annotations
 
 import argparse
@@ -65,22 +65,38 @@ def main() -> None:
     parser.add_argument("--annotations", type=Path, required=True)
     parser.add_argument("--site-data", type=Path, default=Path("site/qa_benchmark/data.js"))
     parser.add_argument("--media-dir", type=Path, default=Path("site/qa_benchmark/multihuman_media"))
+    parser.add_argument("--question-type", action="append", dest="question_types")
+    parser.add_argument("--case-id", action="append", dest="case_ids")
+    parser.add_argument("--media-map", type=Path, help="JSON mapping from case ID to site-relative original-video URL")
     args = parser.parse_args()
     payload = json.loads(args.annotations.read_text())
     data, _ = generate_task4_release(payload["scenes"])
-    passing = [group for group in data["groups"] if group["qa"][0]["question_type"] == "passing_side_and_final_position"]
+    question_types = set(args.question_types or ["passing_side_and_final_position"])
+    selected = [group for group in data["groups"] if group["qa"][0]["question_type"] in question_types]
+    if args.case_ids:
+        requested = set(args.case_ids)
+        selected = [group for group in selected if group["name"] in requested]
+        missing = requested - {group["name"] for group in selected}
+        if missing:
+            raise ValueError(f"requested cases are unavailable for selected question types: {sorted(missing)}")
+    media_map = json.loads(args.media_map.read_text()) if args.media_map else {}
     scenes = {scene["scene_id"]: scene for scene in payload["scenes"]}
     site = load_site(args.site_data)
-    names = {group["name"] for group in passing}
+    names = {group["name"] for group in selected}
     site["groups"] = [group for group in site["groups"] if group.get("name") not in names]
-    for group in passing:
-        filename = group["name"] + "_trajectory.mp4"
-        render(scenes[group["name"]], args.media_dir / filename)
-        group["video_clip"] = "./multihuman_media/" + filename
-        group["media_scope"] = "deterministic annotation trajectory; not raw camera video"
+    for group in selected:
+        original_url = media_map.get(group["name"])
+        if original_url:
+            group["video_clip"] = original_url
+            group["media_scope"] = "original EgoBody HoloLens PV RGB; official synchronized frame window"
+        else:
+            filename = group["name"] + "_trajectory.mp4"
+            render(scenes[group["name"]], args.media_dir / filename)
+            group["video_clip"] = "./multihuman_media/" + filename
+            group["media_scope"] = "deterministic annotation trajectory; not raw camera video"
         site["groups"].append(group)
     args.site_data.write_text("window.QA_DATA = " + json.dumps(site, ensure_ascii=False, indent=2) + ";\n")
-    print(json.dumps({"published": len(passing), "case_ids": sorted(names)}))
+    print(json.dumps({"published": len(selected), "case_ids": sorted(names)}))
 
 
 if __name__ == "__main__":

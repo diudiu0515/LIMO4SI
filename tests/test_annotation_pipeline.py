@@ -1,3 +1,4 @@
+import math
 import unittest
 
 from limo4si.scale_quality import validate_release
@@ -61,6 +62,27 @@ class Task4AnnotationGenerationTests(unittest.TestCase):
         parts = question["result_json"]["compound_option_parts"]
         self.assertEqual(sorted([row[0] for row in parts.values()]), ["left", "left", "right", "right"])
         self.assertEqual(validate_release({"groups": [group]})["status"], "ok")
+
+    def test_causal_question_names_people_and_endpoint_relations(self):
+        value = scene()
+        for index, frame in enumerate(value["frames"]):
+            angle = index * math.pi / 2.0 / 7.0
+            frame["people"][0]["forward"] = [math.sin(angle), 0.0, math.cos(angle)]
+            frame["people"][1]["pelvis"] = [1.0, 0.0, 1.0]
+            frame["people"][1]["head"] = [1.0, 1.6, 1.0]
+        value["person_identities"] = {
+            "A": "the camera wearer",
+            "B": "the interaction partner",
+        }
+
+        question = generate_task4_group(value)["qa"][0]
+
+        self.assertEqual(question["question_type"], "relation_change_cause")
+        self.assertIn("interaction partner", question["question"].lower())
+        self.assertIn("camera wearer", question["question"].lower())
+        self.assertIn("right-front", question["question"])
+        self.assertIn("left-front", question["question"])
+        self.assertIn("camera wearer\x27s body turn", question["answer"].lower())
 
     def test_missing_coordinate_calibration_fails_closed(self):
         with self.assertRaisesRegex(AnnotationEvidenceError, "human_coordinate_frame"):

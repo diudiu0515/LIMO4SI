@@ -160,14 +160,19 @@ def generate_task4_group(
                 analysis = relation_change_cause(states, right_sign=int(timeline["coordinate_frame"].get("right_sign", 1)))
                 qtype = "relation_change_cause"
                 labels = {
-                    "position_movement": "Position movement alone is sufficient to produce the final relation.",
-                    "anchor_body_turn": "Reference body rotation alone is sufficient to produce the final relation.",
-                    "combined_motion": "Both position movement and body rotation are required for the final relation.",
-                    "either_component_suffices": "Either position movement or body rotation is sufficient for the final relation.",
+                    "position_movement": "Relative position movement alone is independently sufficient to produce the change.",
+                    "anchor_body_turn": f"{a.capitalize()}\x27s body turn alone is sufficient to produce the change.",
+                    "combined_motion": f"Both relative position movement and {a}\x27s body turn are required.",
+                    "either_component_suffices": f"Either relative position movement or {a}\x27s body turn is sufficient.",
                 }
                 correct = labels[str(analysis["cause"])]
                 alternatives = [text for key, text in labels.items() if key != analysis["cause"]]
-                question_text = "Is the body-centered relation change caused mainly by position movement, a body turn, or both?"
+                start_rel = str(analysis["start_relation"]).replace("_", "-")
+                end_rel = str(analysis["end_relation"]).replace("_", "-")
+                question_text = (
+                    f"{b.capitalize()} changes from {start_rel} to {end_rel} relative to {a}. "
+                    f"Is this change produced by their relative position movement, {a}\x27s body turn, or both?"
+                )
                 explanation = "Two deterministic counterfactuals separately hold the starting orientation and starting positions fixed."
                 method = "Compares translation-only and anchor-rotation-only counterfactual relations."
             except ValueError:
