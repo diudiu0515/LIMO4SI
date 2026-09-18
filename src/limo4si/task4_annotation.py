@@ -43,7 +43,8 @@ def _validate_frame(scene: Mapping[str, Any]) -> None:
         raise AnnotationEvidenceError("orientation calibration provenance is missing")
     if "forward" not in str(frame.get("forward_axis", "")).lower():
         raise AnnotationEvidenceError("forward axis is not explicit")
-    if "scene-up cross forward" not in str(frame.get("right_axis", "")).lower():
+    right_axis = str(frame.get("right_axis", "")).lower()
+    if "scene-up cross forward" not in right_axis and not ("explicit" in right_axis and "+x" in right_axis):
         raise AnnotationEvidenceError("right axis is not explicit")
 
 

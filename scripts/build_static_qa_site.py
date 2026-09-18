@@ -231,10 +231,13 @@ def evidence_payload(group: dict[str, Any], qa: dict[str, Any]) -> dict[str, Any
         'metric_separation_over_video', 'dominant_body_centric_position',
         'nonmonotonic_distance_pattern', 'approach_while_facing',
         'coupled_distance_relation_change', 'distance_out_and_back_over_video',
+        'passing_side_and_final_position', 'reunion_relation_restoration',
+        'relation_change_cause',
     }:
         pair = r.get('pair_timeline') or {}
         states = pair.get('states') or []
         out['pair'] = pair.get('pair')
+        out['coordinate_frame'] = pair.get('coordinate_frame')
         out['timeline'] = [
             {
                 k: x.get(k)
@@ -250,6 +253,12 @@ def evidence_payload(group: dict[str, Any], qa: dict[str, Any]) -> dict[str, Any
         ]
         out['computed_from'] = ((states[0].get('evidence') or {}).get('computed_from') if states else None)
         out['visual_person_audit'] = r.get('visual_person_audit') or group.get('visual_person_audit')
+        if qtype == 'relation_change_cause':
+            out['causal_decomposition'] = r.get('causal_decomposition')
+        elif qtype == 'passing_side_and_final_position':
+            out['passing_analysis'] = r.get('passing_analysis')
+        elif qtype == 'reunion_relation_restoration':
+            out['reunion_analysis'] = r.get('reunion_analysis')
         for key in ('distance_series_m', 'relation_sequence', 'relation_counts', 'facing_counts', 'body_forward_field_counts', 'peak_sample_index'):
             if key in r:
                 out[key] = r[key]
@@ -319,6 +328,9 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         if group.get('localization_video'):
             parts.append('<details class="originalVideoBox"><summary>Original-video person localization evidence (2D)</summary>')
             parts.append(f'<video class="inlineVideo" controls muted playsinline preload="none"><source src="{esc(group["localization_video"])}" type="video/mp4">Your browser cannot play this video.</video></details>')
+        if group.get('metric_evidence_video'):
+            parts.append('<details class="originalVideoBox"><summary>Metric 3D face-frame trajectory evidence</summary>')
+            parts.append(f'<video class="inlineVideo" controls muted playsinline preload="none"><source src="{esc(group["metric_evidence_video"])}" type="video/mp4">Your browser cannot play this video.</video></details>')
         if group.get('original_video'):
             parts.append('<details class="originalVideoBox"><summary>Show original full video on this page</summary>')
             parts.append(f'<video class="inlineVideo" controls muted playsinline preload="none"><source src="{esc(group["original_video"])}" type="video/mp4">Your browser cannot play this video.</video></details>')
@@ -328,7 +340,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
             original_caption = group.get('original_caption') or ('Original-video localization: boxes + head/pelvis points + persistent 2D IDs' if group.get('localization_image') else 'Photo / skeleton evidence')
             parts.append(f'<figure><img src="{esc(group["original_image"])}" loading="lazy" alt="original"><figcaption>{esc(original_caption)}</figcaption></figure>')
         if group.get('topdown_image'):
-            topdown_caption = 'Metric 3D top-down map (SMPL-X tracks only)' if group.get('visual_person_audit') else 'Top-down human-centered map'
+            topdown_caption = 'Metric 3D top-down map (annotation tracks + calibrated face/body axes)' if group.get('visual_person_audit') else 'Top-down human-centered map'
             parts.append(f'<figure><img src="{esc(group["topdown_image"])}" loading="lazy" alt="topdown"><figcaption>{esc(topdown_caption)}</figcaption></figure>')
         parts.append('</div></details><div class="qaList">')
         for qi, q in enumerate(qa, 1):

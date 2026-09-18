@@ -26,3 +26,26 @@ def smplx_forward(global_orient: Sequence[float]) -> list[float]:
     if length < 1e-6:
         raise ValueError("SMPL-X forward is vertical and cannot define a human ground frame")
     return (horizontal / length).tolist()
+
+
+def pv_face_axes(
+    pv2world: Sequence[float] | np.ndarray,
+    holo_to_kinect: Sequence[Sequence[float]] | np.ndarray,
+) -> tuple[list[float], list[float]]:
+    """Return PV face-forward and human-right axes in master-Kinect space."""
+    pose = np.asarray(pv2world, dtype=float).reshape(4, 4)
+    calibration = np.asarray(holo_to_kinect, dtype=float).reshape(4, 4)
+    rotation = (calibration @ pose)[:3, :3]
+
+    def horizontal(axis: np.ndarray, name: str) -> np.ndarray:
+        value = np.array([axis[0], 0.0, axis[2]])
+        length = float(np.linalg.norm(value))
+        if length < 1e-6:
+            raise ValueError(f"PV {name} axis is vertical")
+        return value / length
+
+    forward = horizontal(-rotation[:, 2], "forward")
+    right = horizontal(rotation[:, 0], "right")
+    if abs(float(np.dot(forward, right))) > 0.15:
+        raise ValueError("projected PV face axes are not sufficiently orthogonal")
+    return forward.tolist(), right.tolist()

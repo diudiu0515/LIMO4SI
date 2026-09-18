@@ -46,6 +46,10 @@ def render(scene: dict, output: Path) -> None:
                 trail.append(pixel(person["pelvis"]))
             if len(trail) > 1:
                 cv2.polylines(canvas, [np.asarray(trail, np.int32)], False, colors[pid], 3)
+            start_person = next(value for value in frames[0]["people"] if value["id"] == pid)
+            start_center = pixel(start_person["pelvis"])
+            cv2.circle(canvas, start_center, 10, colors[pid], 2)
+            cv2.putText(canvas, f"{pid} start", (start_center[0] + 12, start_center[1] + 18), cv2.FONT_HERSHEY_SIMPLEX, .42, colors[pid], 1)
             person = next(value for value in frame["people"] if value["id"] == pid)
             center = pixel(person["pelvis"])
             tip3 = [person["pelvis"][0] + person["forward"][0] * .45, 0, person["pelvis"][2] + person["forward"][2] * .45]
@@ -56,8 +60,30 @@ def render(scene: dict, output: Path) -> None:
         for _ in range(8):
             writer.write(canvas)
     writer.release()
+    cv2.imwrite(str(output.with_suffix(".jpg")), canvas)
     if not output.is_file() or output.stat().st_size == 0:
         raise RuntimeError(f"failed to render {output}")
+
+
+def render_endpoint_sheet(video: Path, output: Path, scene: dict) -> None:
+    capture = cv2.VideoCapture(str(video))
+    count = int(capture.get(cv2.CAP_PROP_FRAME_COUNT))
+    images = []
+    endpoint_times = (float(scene["frames"][0]["t"]), float(scene["frames"][-1]["t"]))
+    for label, time_sec in zip(("START", "END"), endpoint_times):
+        capture.set(cv2.CAP_PROP_POS_MSEC, max(0.0, time_sec) * 1000.0)
+        ok, image = capture.read()
+        if not ok:
+            capture.release()
+            raise RuntimeError(f"cannot read {label} frame from {video}")
+        image = cv2.resize(image, (480, 270))
+        cv2.rectangle(image, (0, 0), (125, 32), (255, 255, 255), -1)
+        cv2.putText(image, label, (8, 23), cv2.FONT_HERSHEY_SIMPLEX, .65, (0, 0, 0), 2)
+        images.append(image)
+    capture.release()
+    output.parent.mkdir(parents=True, exist_ok=True)
+    if not cv2.imwrite(str(output), cv2.hconcat(images)):
+        raise RuntimeError(f"cannot write endpoint sheet {output}")
 
 
 def main() -> None:
@@ -68,6 +94,7 @@ def main() -> None:
     parser.add_argument("--question-type", action="append", dest="question_types")
     parser.add_argument("--case-id", action="append", dest="case_ids")
     parser.add_argument("--media-map", type=Path, help="JSON mapping from case ID to site-relative original-video URL")
+    parser.add_argument("--replace-selected-types", action="store_true")
     args = parser.parse_args()
     payload = json.loads(args.annotations.read_text())
     data, _ = generate_task4_release(payload["scenes"])
@@ -83,16 +110,32 @@ def main() -> None:
     scenes = {scene["scene_id"]: scene for scene in payload["scenes"]}
     site = load_site(args.site_data)
     names = {group["name"] for group in selected}
-    site["groups"] = [group for group in site["groups"] if group.get("name") not in names]
+    if args.replace_selected_types:
+        site["groups"] = [
+            group for group in site["groups"]
+            if not (
+                group.get("dataset") == "EgoBody"
+                and (group.get("qa") or [{}])[0].get("question_type") in question_types
+            )
+        ]
+    else:
+        site["groups"] = [group for group in site["groups"] if group.get("name") not in names]
     for group in selected:
+        filename = group["name"] + "_trajectory.mp4"
+        render(scenes[group["name"]], args.media_dir / filename)
+        group["metric_evidence_video"] = "./multihuman_media/" + filename
+        group["topdown_image"] = "./multihuman_media/" + Path(filename).with_suffix(".jpg").name
         original_url = media_map.get(group["name"])
         if original_url:
             group["video_clip"] = original_url
             group["media_scope"] = "original EgoBody HoloLens PV RGB; official synchronized frame window"
+            endpoint_name = group["name"] + "_endpoints.jpg"
+            original_path = args.site_data.parent / original_url.removeprefix("./")
+            render_endpoint_sheet(original_path, args.media_dir / endpoint_name, scenes[group["name"]])
+            group["original_image"] = "./multihuman_media/" + endpoint_name
+            group["original_caption"] = "Original HoloLens PV start and end frames used to audit left/right claims"
         else:
-            filename = group["name"] + "_trajectory.mp4"
-            render(scenes[group["name"]], args.media_dir / filename)
-            group["video_clip"] = "./multihuman_media/" + filename
+            group["video_clip"] = group["metric_evidence_video"]
             group["media_scope"] = "deterministic annotation trajectory; not raw camera video"
         site["groups"].append(group)
     args.site_data.write_text("window.QA_DATA = " + json.dumps(site, ensure_ascii=False, indent=2) + ";\n")

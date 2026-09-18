@@ -56,14 +56,14 @@ def relation_change_cause(states: Sequence[Mapping[str, Any]], *, right_sign: in
     first, last = states[0], states[-1]
     def person(row: Mapping[str, Any], key: str) -> dict[str, Any]:
         evidence = row["evidence"][key]
-        return {"pelvis": evidence["pelvis_xyz_m"], "forward": evidence["forward_unit"], "right_sign": right_sign}
+        return {"pelvis": evidence["pelvis_xyz_m"], "forward": evidence["forward_unit"], "right": evidence.get("right_unit"), "right_sign": right_sign}
     a0, b0 = person(first, "person_a"), person(first, "person_b")
     a1, b1 = person(last, "person_a"), person(last, "person_b")
     start = horizontal_side(a0, b0); end = horizontal_side(a1, b1)
     if start == end:
         raise ValueError("relation does not change")
     translation_only = horizontal_side({**a0, "pelvis": a1["pelvis"]}, {**b0, "pelvis": b1["pelvis"]})
-    rotation_only = horizontal_side({**a0, "forward": a1["forward"]}, b0)
+    rotation_only = horizontal_side({**a0, "forward": a1["forward"], "right": a1.get("right")}, b0)
     translation_matches = translation_only == end
     rotation_matches = rotation_only == end
     if translation_matches and rotation_matches:

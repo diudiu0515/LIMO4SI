@@ -458,7 +458,10 @@ def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any]
         right_sign not in (1, -1)
         or (right_sign == -1 and not calibrated_negative)
         or "forward" not in str(coordinate_frame.get("forward_axis", "")).lower()
-        or "scene-up cross forward" not in str(coordinate_frame.get("right_axis", "")).lower()
+        or (
+            "scene-up cross forward" not in str(coordinate_frame.get("right_axis", "")).lower()
+            and not ("explicit" in str(coordinate_frame.get("right_axis", "")).lower() and "+x" in str(coordinate_frame.get("right_axis", "")).lower())
+        )
     ):
         errors.append("metric Task 4 lacks a validated face-forward human coordinate frame and lateral calibration")
     if timeline.get("status") != "ok":

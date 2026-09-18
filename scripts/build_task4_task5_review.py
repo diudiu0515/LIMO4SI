@@ -20,6 +20,7 @@ REVIEW_TASK_IDS = {TASK4_ID, TASK5_ID}
 MEDIA_FIELDS = (
     "video_clip",
     "localization_video",
+    "metric_evidence_video",
     "original_video",
     "original_image",
     "localization_image",

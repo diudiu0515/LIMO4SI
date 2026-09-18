@@ -79,10 +79,15 @@ def facing_label(score: float) -> str:
 
 def horizontal_side(anchor: Mapping[str, Any], target: Mapping[str, Any]) -> str:
     f = horizontal_unit(anchor.get('forward', [0, 0, 1]))
-    right_sign = int(anchor.get('right_sign', 1))
-    if right_sign not in (-1, 1):
-        raise ValueError('person right_sign must be -1 or 1')
-    right = [right_sign * f[2], 0.0, -right_sign * f[0]]
+    if anchor.get('right') is not None:
+        right = horizontal_unit(anchor['right'])
+        if abs(dot(f, right)) > 0.15:
+            raise ValueError('person forward/right axes must be orthogonal')
+    else:
+        right_sign = int(anchor.get('right_sign', 1))
+        if right_sign not in (-1, 1):
+            raise ValueError('person right_sign must be -1 or 1')
+        right = [right_sign * f[2], 0.0, -right_sign * f[0]]
     v = sub(target['pelvis'], anchor['pelvis'])
     lateral = dot(v, right)
     forward = dot(v, f)
@@ -170,7 +175,10 @@ def pair_timeline(scene: Mapping[str, Any], a_id: str = 'A', b_id: str = 'B') ->
             if forward_sign not in (-1, 1):
                 raise ValueError(f'forward_sign for {person_id} must be -1 or 1')
             forward = [forward_sign * float(axis) for axis in value.get('forward', [0, 0, 1])]
-            return {**value, 'forward': forward, 'right_sign': right_sign}
+            right = value.get('right')
+            if right is not None:
+                right = [forward_sign * float(axis) for axis in right]
+            return {**value, 'forward': forward, 'right': right, 'right_sign': right_sign}
 
         a = calibrated_person(a, a_id)
         b = calibrated_person(b, b_id)
@@ -191,8 +199,8 @@ def pair_timeline(scene: Mapping[str, Any], a_id: str = 'A', b_id: str = 'B') ->
             'blocker': los['blocker'],
             'body_forward_field': forward_field,
             'evidence': {
-                'person_a': {'id': a.get('id'), 'pelvis_xyz_m': a.get('pelvis'), 'head_xyz_m': a.get('head'), 'forward_unit': unit(a.get('forward', [0, 0, 1]))},
-                'person_b': {'id': b.get('id'), 'pelvis_xyz_m': b.get('pelvis'), 'head_xyz_m': b.get('head'), 'forward_unit': unit(b.get('forward', [0, 0, 1]))},
+                'person_a': {'id': a.get('id'), 'pelvis_xyz_m': a.get('pelvis'), 'head_xyz_m': a.get('head'), 'forward_unit': unit(a.get('forward', [0, 0, 1])), 'right_unit': unit(a['right']) if a.get('right') is not None else None},
+                'person_b': {'id': b.get('id'), 'pelvis_xyz_m': b.get('pelvis'), 'head_xyz_m': b.get('head'), 'forward_unit': unit(b.get('forward', [0, 0, 1])), 'right_unit': unit(b['right']) if b.get('right') is not None else None},
                 'computed_from': scene.get('evidence_source') or ['SMPL-X transl as pelvis/root proxy', 'SMPL-X global_orient-derived body forward', 'head = pelvis + 1.6m proxy when fitted head joints are not loaded'],
             },
         })
