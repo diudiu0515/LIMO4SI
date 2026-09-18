@@ -65,6 +65,11 @@ def filter_public_data(
         if questions[0].get("task_id") in PUBLIC_TASK_IDS:
             groups.append(group)
 
+    task_order = {TASK4_ID: 0, TASK5_ID: 1}
+    groups.sort(
+        key=lambda group: task_order[group["qa"][0]["task_id"]]
+    )
+
     result.update(
         {
             "title": "Task 4 + Task 5 Spatial QA",

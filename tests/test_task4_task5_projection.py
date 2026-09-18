@@ -27,5 +27,24 @@ class Task4Task5ProjectionTests(unittest.TestCase):
         self.assertEqual({row["id"] for row in public["tasks"]}, {TASK4_ID, TASK5_ID})
 
 
+    def test_orders_task4_before_task5_without_reordering_within_tasks(self):
+        data = {
+            "tasks": [{"id": TASK4_ID}, {"id": TASK5_ID}],
+            "groups": [
+                group("task4-first", TASK4_ID),
+                group("task5-first", TASK5_ID),
+                group("task4-second", TASK4_ID),
+                group("task5-second", TASK5_ID),
+            ],
+        }
+
+        public = filter_public_data(data)
+
+        self.assertEqual(
+            [row["name"] for row in public["groups"]],
+            ["task4-first", "task4-second", "task5-first", "task5-second"],
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
