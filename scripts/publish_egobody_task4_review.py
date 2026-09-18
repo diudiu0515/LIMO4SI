@@ -194,7 +194,16 @@ def main() -> None:
             group["media_scope"] = "deterministic annotation trajectory; not raw camera video"
         site["groups"].append(group)
     args.site_data.write_text("window.QA_DATA = " + json.dumps(site, ensure_ascii=False, indent=2) + ";\n")
-    print(json.dumps({"published": len(selected), "case_ids": sorted(names)}))
+    referenced = {
+        Path(value).name
+        for item in site.get("groups", [])
+        for key in ("video_clip", "metric_evidence_video", "topdown_image", "original_image")
+        for value in [item.get(key)] if isinstance(value, str)
+    }
+    stale = [path for path in args.media_dir.glob("egobody_*") if path.name not in referenced]
+    for path in stale:
+        path.unlink()
+    print(json.dumps({"published": len(selected), "case_ids": sorted(names), "pruned_stale_egobody_media": len(stale)}))
 
 
 if __name__ == "__main__":
