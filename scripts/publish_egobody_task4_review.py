@@ -24,6 +24,45 @@ def load_site(path: Path) -> dict:
     return json.loads(match.group(1))
 
 
+def recording_id(case_id: str) -> str:
+    match = re.match(r"egobody_(recording_.*)_\d+_\d+$", case_id)
+    if not match:
+        raise ValueError(f"cannot parse EgoBody recording from {case_id}")
+    return match.group(1)
+
+
+def render_pv_clip(scene: dict, pv_root: Path, output: Path) -> None:
+    """Build a time-faithful 30 fps clip from synchronized local PV frames."""
+    recording = recording_id(str(scene["scene_id"]))
+    indexed = {}
+    for path in (pv_root / recording / "PV").glob("*_frame_*.jpg"):
+        match = re.search(r"_frame_(\d+)\.jpg$", path.name)
+        if match:
+            indexed[int(match.group(1))] = path
+    start = int(scene["frames"][0]["frame_id"]); end = int(scene["frames"][-1]["frame_id"])
+    available = sorted(indexed)
+    if not available:
+        raise ValueError(f"no raw PV frames for {recording}")
+    first = cv2.imread(str(indexed[min(available, key=lambda value: abs(value - start))]))
+    if first is None:
+        raise ValueError(f"cannot read raw PV frames for {recording}")
+    height, width = first.shape[:2]
+    output.parent.mkdir(parents=True, exist_ok=True)
+    writer = cv2.VideoWriter(str(output), cv2.VideoWriter_fourcc(*"mp4v"), 30, (width, height))
+    for frame_id in range(start, end + 1):
+        nearest = min(available, key=lambda value: abs(value - frame_id))
+        if abs(nearest - frame_id) > 15:
+            writer.release()
+            raise ValueError(f"raw PV evidence gap exceeds 0.5 s at frame {frame_id}")
+        image = cv2.imread(str(indexed[nearest]))
+        if image is None:
+            writer.release(); raise ValueError(f"cannot read {indexed[nearest]}")
+        writer.write(image)
+    writer.release()
+    if not output.is_file() or output.stat().st_size == 0:
+        raise RuntimeError(f"failed to render raw PV clip {output}")
+
+
 def render(scene: dict, output: Path) -> None:
     frames = scene["frames"]
     points = [person["pelvis"] for frame in frames for person in frame["people"]]
@@ -91,6 +130,8 @@ def main() -> None:
     parser.add_argument("--annotations", type=Path, required=True)
     parser.add_argument("--site-data", type=Path, default=Path("site/qa_benchmark/data.js"))
     parser.add_argument("--media-dir", type=Path, default=Path("site/qa_benchmark/multihuman_media"))
+    parser.add_argument("--pv-root", type=Path, default=Path("data/EgoBody/media"))
+    parser.add_argument("--max-per-recording", type=int, default=1)
     parser.add_argument("--question-type", action="append", dest="question_types")
     parser.add_argument("--case-id", action="append", dest="case_ids")
     parser.add_argument("--media-map", type=Path, help="JSON mapping from case ID to site-relative original-video URL")
@@ -100,6 +141,16 @@ def main() -> None:
     data, _ = generate_task4_release(payload["scenes"])
     question_types = set(args.question_types or ["passing_side_and_final_position"])
     selected = [group for group in data["groups"] if group["qa"][0]["question_type"] in question_types]
+    if args.max_per_recording < 1:
+        raise ValueError("--max-per-recording must be positive")
+    selected_by_recording = []
+    recording_counts = {}
+    for group in selected:
+        source = recording_id(group["name"])
+        if recording_counts.get(source, 0) < args.max_per_recording:
+            selected_by_recording.append(group)
+            recording_counts[source] = recording_counts.get(source, 0) + 1
+    selected = selected_by_recording
     if args.case_ids:
         requested = set(args.case_ids)
         selected = [group for group in selected if group["name"] in requested]
@@ -126,6 +177,10 @@ def main() -> None:
         group["metric_evidence_video"] = "./multihuman_media/" + filename
         group["topdown_image"] = "./multihuman_media/" + Path(filename).with_suffix(".jpg").name
         original_url = media_map.get(group["name"])
+        if not original_url:
+            original_name = group["name"] + "_original.mp4"
+            render_pv_clip(scenes[group["name"]], args.pv_root, args.media_dir / original_name)
+            original_url = "./multihuman_media/" + original_name
         if original_url:
             group["video_clip"] = original_url
             group["media_scope"] = "original EgoBody HoloLens PV RGB; official synchronized frame window"

@@ -22816,14 +22816,14 @@ window.QA_DATA = {
       "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
     },
     {
-      "name": "egobody_recording_20211002_S03_S18_02_4711_5110",
-      "title": "EgoBody recording_20211002_S03_S18_02",
+      "name": "egobody_recording_20211002_S03_S18_03_1853_2300",
+      "title": "EgoBody recording_20211002_S03_S18_03",
       "dataset": "EgoBody",
-      "video_clip": "./multihuman_media/egobody_recording_20211002_S03_S18_02_4711_5110_original.mp4",
+      "video_clip": "./multihuman_media/egobody_recording_20211002_S03_S18_03_1853_2300_original.mp4",
       "video_window": {
         "start_sec": 0.0,
-        "duration_sec": 13.3,
-        "metric_sample_count": 27,
+        "duration_sec": 14.9,
+        "metric_sample_count": 30,
         "source": "data/EgoBody/extracted"
       },
       "visual_person_audit": {
@@ -22871,40 +22871,40 @@ window.QA_DATA = {
         {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
-          "question_type": "relation_change_cause",
-          "question": "The interaction partner changes from center-front to left-front relative to the camera wearer. Is this change produced by their relative position movement, the camera wearer's body turn, or both?",
+          "question_type": "passing_side_and_final_position",
+          "question": "As the camera wearer passes the interaction partner, which side does the camera wearer pass on, and where does the camera wearer finish?",
           "options": [
             {
               "label": "A",
-              "text": "The camera wearer's body turn alone is sufficient to produce the change.",
+              "text": "The camera wearer passes on the interaction partner's right side and finishes right-front relative to the interaction partner.",
               "semantic_option_id": "option_1"
             },
             {
               "label": "B",
-              "text": "Both relative position movement and the camera wearer's body turn are required.",
+              "text": "The camera wearer passes on the interaction partner's left side and finishes left-front relative to the interaction partner.",
               "semantic_option_id": "option_2"
             },
             {
               "label": "C",
-              "text": "Relative position movement alone is independently sufficient to produce the change.",
+              "text": "The camera wearer passes on the interaction partner's right side and finishes left-front relative to the interaction partner.",
               "semantic_option_id": "option_3"
             },
             {
               "label": "D",
-              "text": "Either relative position movement or the camera wearer's body turn is sufficient.",
+              "text": "The camera wearer passes on the interaction partner's left side and finishes right-front relative to the interaction partner.",
               "semantic_option_id": "option_4"
             }
           ],
           "correct_option": "C",
-          "correct_answer": "Relative position movement alone is independently sufficient to produce the change.",
-          "answer": "Relative position movement alone is independently sufficient to produce the change.",
-          "explanation": "Two deterministic counterfactuals separately hold the starting orientation and starting positions fixed.",
-          "method": "Compares translation-only and anchor-rotation-only counterfactual relations.",
+          "correct_answer": "The camera wearer passes on the interaction partner's right side and finishes left-front relative to the interaction partner.",
+          "answer": "The camera wearer passes on the interaction partner's right side and finishes left-front relative to the interaction partner.",
+          "explanation": "The signed body-frame sequence crosses sides around an interior closest approach.",
+          "method": "Requires approach, an interior distance minimum, side crossing, and later separation.",
           "status": "ok",
           "release_eligible": true,
           "result_json": {
-            "scene_id": "egobody_recording_20211002_S03_S18_02_4711_5110",
-            "answer_type": "relation_change_cause",
+            "scene_id": "egobody_recording_20211002_S03_S18_03_1853_2300",
+            "answer_type": "passing_side_and_final_position",
             "T_Q": true,
             "H_Q": true,
             "S_Q": true,
@@ -22926,12 +22926,12 @@ window.QA_DATA = {
               "states": [
                 {
                   "t": 0.0,
-                  "frame_id": 4711,
-                  "distance_m": 1.785765034269895,
-                  "facing_score": 0.9874148624538315,
+                  "frame_id": 1853,
+                  "distance_m": 2.709355328629993,
+                  "facing_score": 0.8842985586588812,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "left_front",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "right_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -22939,8 +22939,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 1.0429054362623582,
-                    "b_to_a_angle_deg": 12.839759573333101,
+                    "a_to_b_angle_deg": 36.12260948447067,
+                    "b_to_a_angle_deg": 16.08746544920323,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -22948,42 +22948,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.0336663722991943,
-                        0.3545399606227875,
-                        2.763758897781372
+                        0.09886404126882553,
+                        0.09259374439716339,
+                        4.125838279724121
                       ],
                       "head_xyz_m": [
-                        2.0336663722991943,
-                        -1.2454600393772126,
-                        2.763758897781372
+                        0.09886404126882553,
+                        -1.5074062556028367,
+                        4.125838279724121
                       ],
                       "forward_unit": [
-                        -0.997903966455425,
+                        0.9959065378863999,
                         0.0,
-                        0.06471223788844038
+                        -0.09038898049610254
                       ],
                       "right_unit": [
-                        0.04540316295242267,
+                        -0.09038898049610258,
                         0.0,
-                        0.9989687446531627
+                        -0.9959065378863999
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        0.2516098916530609,
-                        0.434154212474823,
-                        2.84678316116333
+                        2.115520477294922,
+                        0.457241028547287,
+                        2.353626251220703
                       ],
                       "head_xyz_m": [
-                        0.2516098916530609,
-                        -1.165845787525177,
-                        2.84678316116333
+                        2.115520477294922,
+                        -1.142758971452713,
+                        2.353626251220703
                       ],
                       "forward_unit": [
-                        0.9635969337132476,
+                        -0.904669973996244,
                         0.0,
-                        -0.2673592140518578
+                        0.4261129406033513
                       ],
                       "right_unit": null
                     },
@@ -22997,12 +22997,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 0.5,
-                  "frame_id": 4726,
-                  "distance_m": 1.633134311344589,
-                  "facing_score": 0.9818973057357476,
+                  "frame_id": 1868,
+                  "distance_m": 2.4614607472912193,
+                  "facing_score": 0.9558288033080555,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -23010,8 +23010,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 3.4051513241531786,
-                    "b_to_a_angle_deg": 15.080745583380175,
+                    "a_to_b_angle_deg": 23.559105771154712,
+                    "b_to_a_angle_deg": 5.726592528666837,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23019,42 +23019,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.0885956287384033,
-                        0.4179289937019348,
-                        2.5549416542053223
+                        0.05983329936861992,
+                        0.1365019530057907,
+                        4.017518043518066
                       ],
                       "head_xyz_m": [
-                        2.0885956287384033,
-                        -1.1820710062980653,
-                        2.5549416542053223
+                        0.05983329936861992,
+                        -1.4634980469942094,
+                        4.017518043518066
                       ],
                       "forward_unit": [
-                        -0.9914283600089832,
+                        0.9735224484375844,
                         0.0,
-                        0.13065147136522492
+                        -0.22859143113443914
                       ],
                       "right_unit": [
-                        0.1285806885508381,
+                        -0.22859143113443908,
                         0.0,
-                        0.9916990503836295
+                        -0.9735224484375843
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        0.4850368797779083,
-                        0.40570905804634094,
-                        2.864098072052002
+                        2.016845464706421,
+                        0.4359501898288727,
+                        2.5549097061157227
                       ],
                       "head_xyz_m": [
-                        0.4850368797779083,
-                        -1.1942909419536591,
-                        2.864098072052002
+                        2.016845464706421,
+                        -1.1640498101711274,
+                        2.5549097061157227
                       ],
                       "forward_unit": [
-                        0.9973547761521736,
+                        -0.7372790360503494,
                         0.0,
-                        0.07268734749904975
+                        0.6755883532156751
                       ],
                       "right_unit": null
                     },
@@ -23068,12 +23068,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 1.0,
-                  "frame_id": 4741,
-                  "distance_m": 1.594250880759976,
-                  "facing_score": 0.8906208870484766,
+                  "frame_id": 1883,
+                  "distance_m": 2.29612984246159,
+                  "facing_score": 0.7304470474952394,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -23081,8 +23081,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 4.942189528286828,
-                    "b_to_a_angle_deg": 38.28305397975756,
+                    "a_to_b_angle_deg": 28.942753343475523,
+                    "b_to_a_angle_deg": 54.141150049687745,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23090,42 +23090,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.1966545581817627,
-                        0.43959444761276245,
-                        2.364961862564087
+                        -0.08974386751651764,
+                        0.1692267209291458,
+                        3.8069469928741455
                       ],
                       "head_xyz_m": [
-                        2.1966545581817627,
-                        -1.1604055523872376,
-                        2.364961862564087
+                        -0.08974386751651764,
+                        -1.4307732790708543,
+                        3.8069469928741455
                       ],
                       "forward_unit": [
-                        -0.9149169097734142,
+                        0.9973787380988415,
                         0.0,
-                        0.4036422279824871
+                        0.07235781083174671
                       ],
                       "right_unit": [
-                        0.4003293667915964,
+                        0.07235781083174672,
                         0.0,
-                        0.916371321072544
+                        -0.9973787380988414
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        0.6882507801055908,
-                        0.41243812441825867,
-                        2.8803417682647705
+                        1.9887129068374634,
+                        0.3437553346157074,
+                        2.8468587398529053
                       ],
                       "head_xyz_m": [
-                        0.6882507801055908,
-                        -1.1875618755817414,
-                        2.8803417682647705
+                        1.9887129068374634,
+                        -1.2562446653842927,
+                        2.8468587398529053
                       ],
                       "forward_unit": [
-                        0.9431114510756587,
+                        -0.19193139990627242,
                         0.0,
-                        0.33247675234513097
+                        0.9814083440291399
                       ],
                       "right_unit": null
                     },
@@ -23139,21 +23139,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 1.5,
-                  "frame_id": 4756,
-                  "distance_m": 1.6023362470282518,
-                  "facing_score": 0.9130965929365038,
+                  "frame_id": 1898,
+                  "distance_m": 2.304266161995481,
+                  "facing_score": 0.5989521803983302,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "mutual_body_forward_field",
+                    "state": "a_only_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": true,
-                    "a_to_b_angle_deg": 11.000329013902249,
-                    "b_to_a_angle_deg": 32.374416348985534,
+                    "b_contains_a": false,
+                    "a_to_b_angle_deg": 25.29476349820104,
+                    "b_to_a_angle_deg": 72.91543950169212,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23161,42 +23161,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.2973928451538086,
-                        0.43834784626960754,
-                        2.361790418624878
+                        -0.22668637335300446,
+                        0.3368850648403168,
+                        3.8087940216064453
                       ],
                       "head_xyz_m": [
-                        2.2973928451538086,
-                        -1.1616521537303925,
-                        2.361790418624878
+                        -0.22668637335300446,
+                        -1.2631149351596833,
+                        3.8087940216064453
                       ],
                       "forward_unit": [
-                        -0.8508147656418472,
+                        0.9865659056452382,
                         0.0,
-                        0.5254657311050918
+                        0.16336374695259356
                       ],
                       "right_unit": [
-                        0.5266851806691866,
+                        0.16336374695259356,
                         0.0,
-                        0.8500604216545236
+                        -0.9865659056452382
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        0.7991228699684143,
-                        0.39178165793418884,
-                        2.927917718887329
+                        1.9893815517425537,
+                        0.31271862983703613,
+                        3.1778411865234375
                       ],
                       "head_xyz_m": [
-                        0.7991228699684143,
-                        -1.2082183420658112,
-                        2.927917718887329
+                        1.9893815517425537,
+                        -1.287281370162964,
+                        3.1778411865234375
                       ],
                       "forward_unit": [
-                        0.9793106913665766,
+                        -0.02080267349784162,
                         0.0,
-                        0.20236247126163964
+                        0.9997836009734018
                       ],
                       "right_unit": null
                     },
@@ -23210,21 +23210,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 2.0,
-                  "frame_id": 4771,
-                  "distance_m": 1.6961798160165122,
-                  "facing_score": 0.8743472336815657,
+                  "frame_id": 1913,
+                  "distance_m": 2.376172990147803,
+                  "facing_score": 0.6243669866862201,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "mutual_body_forward_field",
+                    "state": "a_only_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": true,
-                    "a_to_b_angle_deg": 5.806767238833901,
-                    "b_to_a_angle_deg": 41.07713233425594,
+                    "b_contains_a": false,
+                    "a_to_b_angle_deg": 23.667043000251528,
+                    "b_to_a_angle_deg": 70.5587372051357,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23232,42 +23232,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.363530397415161,
-                        0.43587085604667664,
-                        2.3625528812408447
+                        -0.3302876353263855,
+                        0.5068328976631165,
+                        3.8825254440307617
                       ],
                       "head_xyz_m": [
-                        2.363530397415161,
-                        -1.1641291439533235,
-                        2.3625528812408447
+                        -0.3302876353263855,
+                        -1.0931671023368836,
+                        3.8825254440307617
                       ],
                       "forward_unit": [
-                        -0.836041178675849,
+                        0.983764236841195,
                         0.0,
-                        0.5486666998809908
+                        0.17946566889592355
                       ],
                       "right_unit": [
-                        0.5549374213037634,
+                        0.17946566889592358,
                         0.0,
-                        0.8318920954286857
+                        -0.983764236841195
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        0.8601866364479065,
-                        0.35738372802734375,
-                        3.1441047191619873
+                        1.977199912071228,
+                        0.35568469762802124,
+                        3.335850477218628
                       ],
                       "head_xyz_m": [
-                        0.8601866364479065,
-                        -1.2426162719726563,
-                        3.1441047191619873
+                        1.977199912071228,
+                        -1.2443153023719788,
+                        3.335850477218628
                       ],
                       "forward_unit": [
-                        0.9719268919938899,
+                        -0.10648721035865225,
                         0.0,
-                        0.23528305637911437
+                        0.9943140721271284
                       ],
                       "right_unit": null
                     },
@@ -23281,12 +23281,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 2.5,
-                  "frame_id": 4786,
-                  "distance_m": 1.755131866751712,
-                  "facing_score": 0.6877065595821523,
+                  "frame_id": 1928,
+                  "distance_m": 2.4980676138787294,
+                  "facing_score": 0.6749501091969783,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -23294,8 +23294,8 @@ window.QA_DATA = {
                     "state": "a_only_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": false,
-                    "a_to_b_angle_deg": 5.97818489131723,
-                    "b_to_a_angle_deg": 67.61356367621674,
+                    "a_to_b_angle_deg": 9.997508444166758,
+                    "b_to_a_angle_deg": 68.58719138524218,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23303,42 +23303,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.3170363903045654,
-                        0.4450106918811798,
-                        2.368302822113037
+                        -0.3815329372882843,
+                        0.5068126320838928,
+                        3.8572027683258057
                       ],
                       "head_xyz_m": [
-                        2.3170363903045654,
-                        -1.1549893081188203,
-                        2.368302822113037
+                        -0.3815329372882843,
+                        -1.0931873679161073,
+                        3.8572027683258057
                       ],
                       "forward_unit": [
-                        -0.7603953591461182,
+                        0.9993258660217116,
                         0.0,
-                        0.6494604666868076
+                        0.03671257958733234
                       ],
                       "right_unit": [
-                        0.6534211700284989,
+                        0.036712579587332345,
                         0.0,
-                        0.7569945670601526
+                        -0.9993258660217116
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        0.8757023215293884,
-                        0.3032994568347931,
-                        3.3597471714019775
+                        2.086674690246582,
+                        0.6834073066711426,
+                        3.51499342918396
                       ],
                       "head_xyz_m": [
-                        0.8757023215293884,
-                        -1.296700543165207,
-                        3.3597471714019775
+                        2.086674690246582,
+                        -0.9165926933288575,
+                        3.51499342918396
                       ],
                       "forward_unit": [
-                        0.8378062711146727,
+                        -0.23377202380162027,
                         0.0,
-                        0.5459676291511499
+                        0.9722914382466271
                       ],
                       "right_unit": null
                     },
@@ -23352,21 +23352,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 3.0,
-                  "frame_id": 4801,
-                  "distance_m": 1.7201248862417595,
-                  "facing_score": 0.46629803260244096,
-                  "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_same_depth",
+                  "frame_id": 1943,
+                  "distance_m": 2.5280521674400482,
+                  "facing_score": 0.7456705069896006,
+                  "facing_state": "facing_each_other",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 1.93953493811572,
-                    "b_to_a_angle_deg": 93.83199240511871,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 9.207105829142021,
+                    "b_to_a_angle_deg": 59.72010789420725,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23374,42 +23374,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.1965391635894775,
-                        0.45467862486839294,
-                        2.350595474243164
+                        -0.3736197054386139,
+                        0.49253013730049133,
+                        3.8634979724884033
                       ],
                       "head_xyz_m": [
-                        2.1965391635894775,
-                        -1.1453213751316071,
-                        2.350595474243164
+                        -0.3736197054386139,
+                        -1.1074698626995088,
+                        3.8634979724884033
                       ],
                       "forward_unit": [
-                        -0.6922003409739158,
+                        0.9993948000694797,
                         0.0,
-                        0.7217054024708383
+                        0.03478553713951891
                       ],
                       "right_unit": [
-                        0.7295021762142039,
+                        0.03478553713951893,
                         0.0,
-                        0.6839784900848422
+                        -0.9993948000694797
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        0.9731743931770325,
-                        0.2513214647769928,
-                        3.5425913333892822
+                        2.1206471920013428,
+                        0.7571286559104919,
+                        3.547795534133911
                       ],
                       "head_xyz_m": [
-                        0.9731743931770325,
-                        -1.3486785352230073,
-                        3.5425913333892822
+                        2.1206471920013428,
+                        -0.8428713440895081,
+                        3.547795534133911
                       ],
                       "forward_unit": [
-                        0.6484379645537067,
+                        -0.3917952756742143,
                         0.0,
-                        0.7612674997170481
+                        0.9200524234843178
                       ],
                       "right_unit": null
                     },
@@ -23423,21 +23423,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 3.5,
-                  "frame_id": 4816,
-                  "distance_m": 1.6809316793501923,
-                  "facing_score": 0.5586547657934656,
+                  "frame_id": 1958,
+                  "distance_m": 2.5654567552877703,
+                  "facing_score": 0.8877366393998052,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 1.91866739588084,
-                    "b_to_a_angle_deg": 83.2308000224268,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 3.705165347512793,
+                    "b_to_a_angle_deg": 38.96197168717185,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23445,42 +23445,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.090970754623413,
-                        0.4393370747566223,
-                        2.369328260421753
+                        -0.3323482871055603,
+                        0.4761306047439575,
+                        3.8880395889282227
                       ],
                       "head_xyz_m": [
-                        2.090970754623413,
-                        -1.1606629252433778,
-                        2.369328260421753
+                        -0.3323482871055603,
+                        -1.1238693952560426,
+                        3.8880395889282227
                       ],
                       "forward_unit": [
-                        -0.6413806552942772,
+                        0.9984398614130017,
                         0.0,
-                        0.7672228196647201
+                        -0.05583764985729725
                       ],
                       "right_unit": [
-                        0.7726539113503621,
+                        -0.05583764985729726,
                         0.0,
-                        0.6348274830810232
+                        -0.9984398614130017
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.066421627998352,
-                        0.20866996049880981,
-                        3.6818156242370605
+                        2.2055270671844482,
+                        0.6912309527397156,
+                        3.5806491374969482
                       ],
                       "head_xyz_m": [
-                        1.066421627998352,
-                        -1.3913300395011903,
-                        3.6818156242370605
+                        2.2055270671844482,
+                        -0.9087690472602845,
+                        3.5806491374969482
                       ],
                       "forward_unit": [
-                        0.8553011337403779,
+                        -0.6963129698096968,
                         0.0,
-                        0.5181312291518669
+                        0.7177382866162291
                       ],
                       "right_unit": null
                     },
@@ -23494,21 +23494,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 4.0,
-                  "frame_id": 4831,
-                  "distance_m": 1.7919425834745886,
-                  "facing_score": 0.6899705616471876,
+                  "frame_id": 1973,
+                  "distance_m": 2.6023028514353124,
+                  "facing_score": 0.9880317917219585,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "right_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "center_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 22.838394883390595,
-                    "b_to_a_angle_deg": 62.7200954812317,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 1.4834500435297542,
+                    "b_to_a_angle_deg": 12.472775714775915,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23516,42 +23516,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.051325559616089,
-                        0.432258665561676,
-                        2.395699977874756
+                        -0.3268079161643982,
+                        0.48016610741615295,
+                        3.8853557109832764
                       ],
                       "head_xyz_m": [
-                        2.051325559616089,
-                        -1.167741334438324,
-                        2.395699977874756
+                        -0.3268079161643982,
+                        -1.1198338925838471,
+                        3.8853557109832764
                       ],
                       "forward_unit": [
-                        -0.8199535792540374,
+                        0.9978609727221547,
                         0.0,
-                        0.572430020062272
+                        -0.06537185264313089
                       ],
                       "right_unit": [
-                        0.5752187810643435,
+                        -0.06537185264313089,
                         0.0,
-                        0.8179996050798868
+                        -0.9978609727221548
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.1060024499893188,
-                        0.1653365194797516,
-                        3.8944244384765625
+                        2.2640914916992188,
+                        0.534393310546875,
+                        3.6481220722198486
                       ],
                       "head_xyz_m": [
-                        1.1060024499893188,
-                        -1.4346634805202485,
-                        3.8944244384765625
+                        2.2640914916992188,
+                        -1.065606689453125,
+                        3.6481220722198486
                       ],
                       "forward_unit": [
-                        0.9962525127410968,
+                        -0.9526379716897412,
                         0.0,
-                        0.08649237456013516
+                        0.30410671629356706
                       ],
                       "right_unit": null
                     },
@@ -23565,12 +23565,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 4.5,
-                  "frame_id": 4846,
-                  "distance_m": 1.8948739781879234,
-                  "facing_score": 0.917364548450154,
+                  "frame_id": 1988,
+                  "distance_m": 2.773512346120912,
+                  "facing_score": 0.9874067887598044,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "right_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "center_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -23578,8 +23578,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 16.93116347766639,
-                    "b_to_a_angle_deg": 28.58913082904596,
+                    "a_to_b_angle_deg": 0.793346408293186,
+                    "b_to_a_angle_deg": 12.861898592435235,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23587,42 +23587,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.055422306060791,
-                        0.4398689866065979,
-                        2.4514002799987793
+                        -0.3283279240131378,
+                        0.4896962344646454,
+                        3.8754324913024902
                       ],
                       "head_xyz_m": [
-                        2.055422306060791,
-                        -1.1601310133934022,
-                        2.4514002799987793
+                        -0.3283279240131378,
+                        -1.1103037655353547,
+                        3.8754324913024902
                       ],
                       "forward_unit": [
-                        -0.7462715662798163,
+                        0.9965870884946331,
                         0.0,
-                        0.6656416072949991
+                        -0.08254801660724775
                       ],
                       "right_unit": [
-                        0.6761511566562652,
+                        -0.08254801660724777,
                         0.0,
-                        0.7367629288668063
+                        -0.9965870884946331
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.082266926765442,
-                        0.14117196202278137,
-                        4.049616813659668
+                        2.4382801055908203,
+                        0.44598686695098877,
+                        3.6848013401031494
                       ],
                       "head_xyz_m": [
-                        1.082266926765442,
-                        -1.4588280379772187,
-                        4.049616813659668
+                        2.4382801055908203,
+                        -1.1540131330490113,
+                        3.6848013401031494
                       ],
                       "forward_unit": [
-                        0.8653824148818435,
+                        -0.957301369911818,
                         0.0,
-                        -0.5011120393816826
+                        0.28909183171607694
                       ],
                       "right_unit": null
                     },
@@ -23636,12 +23636,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 5.0,
-                  "frame_id": 4861,
-                  "distance_m": 1.9993793590371667,
-                  "facing_score": 0.9987307770856684,
+                  "frame_id": 2003,
+                  "distance_m": 2.933461475492907,
+                  "facing_score": 0.9959355354180235,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "center_front",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -23649,8 +23649,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 0.9372956133760466,
-                    "b_to_a_angle_deg": 3.974201825632618,
+                    "a_to_b_angle_deg": 5.760005715966445,
+                    "b_to_a_angle_deg": 4.49800584307627,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23658,42 +23658,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.0838863849639893,
-                        0.4416434168815613,
-                        2.415681838989258
+                        -0.34165918827056885,
+                        0.49784529209136963,
+                        3.8781113624572754
                       ],
                       "head_xyz_m": [
-                        2.0838863849639893,
-                        -1.1583565831184388,
-                        2.415681838989258
+                        -0.34165918827056885,
+                        -1.1021547079086305,
+                        3.8781113624572754
                       ],
                       "forward_unit": [
-                        -0.5212977185525901,
+                        0.9866476201979536,
                         0.0,
-                        0.8533748816504179
+                        -0.16286949854934354
                       ],
                       "right_unit": [
-                        0.8499915006586364,
+                        -0.16286949854934357,
                         0.0,
-                        0.5267964016658423
+                        -0.9866476201979537
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.0807956457138062,
-                        0.1462387889623642,
-                        4.119812965393066
+                        2.5858190059661865,
+                        0.46801936626434326,
+                        3.6932382583618164
                       ],
                       "head_xyz_m": [
-                        1.0807956457138062,
-                        -1.453761211037636,
-                        4.119812965393066
+                        2.5858190059661865,
+                        -1.1319806337356568,
+                        3.6932382583618164
                       ],
                       "forward_unit": [
-                        0.4463203095295282,
+                        -0.9899953774408176,
                         0.0,
-                        -0.8948732766718795
+                        0.14109979676035433
                       ],
                       "right_unit": null
                     },
@@ -23707,11 +23707,11 @@ window.QA_DATA = {
                 },
                 {
                   "t": 5.5,
-                  "frame_id": 4876,
-                  "distance_m": 2.136842587092076,
-                  "facing_score": 0.9964001468409271,
+                  "frame_id": 2018,
+                  "distance_m": 2.965178274652926,
+                  "facing_score": 0.9888895105788418,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "center_front",
+                  "b_relative_to_a": "left_front",
                   "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -23720,8 +23720,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 3.02427622570821,
-                    "b_to_a_angle_deg": 6.177646554133361,
+                    "a_to_b_angle_deg": 3.380743420055722,
+                    "b_to_a_angle_deg": 11.61592674524739,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23729,42 +23729,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.1053357124328613,
-                        0.4494064152240753,
-                        2.3581180572509766
+                        -0.3574722707271576,
+                        0.4950096905231476,
+                        3.8942205905914307
                       ],
                       "head_xyz_m": [
-                        2.1053357124328613,
-                        -1.1505935847759248,
-                        2.3581180572509766
+                        -0.3574722707271576,
+                        -1.1049903094768525,
+                        3.8942205905914307
                       ],
                       "forward_unit": [
-                        -0.42141369805258383,
+                        0.9940309554179487,
                         0.0,
-                        0.9068685103661092
+                        -0.10909839444684846
                       ],
                       "right_unit": [
-                        0.9075918666274788,
+                        -0.10909839444684846,
                         0.0,
-                        0.4198535502191791
+                        -0.9940309554179487
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.1157892942428589,
-                        0.12052758783102036,
-                        4.223254203796387
+                        2.6038811206817627,
+                        0.47419461607933044,
+                        3.7451064586639404
                       ],
                       "head_xyz_m": [
-                        1.1157892942428589,
-                        -1.4794724121689797,
-                        4.223254203796387
+                        2.6038811206817627,
+                        -1.1258053839206696,
+                        3.7451064586639404
                       ],
                       "forward_unit": [
-                        0.37088976799632406,
+                        -0.9681540730445093,
                         0.0,
-                        -0.9286768975244474
+                        0.2503551294607862
                       ],
                       "right_unit": null
                     },
@@ -23778,12 +23778,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 6.0,
-                  "frame_id": 4891,
-                  "distance_m": 2.1990739611757735,
-                  "facing_score": 0.9995740780019797,
+                  "frame_id": 2033,
+                  "distance_m": 3.033618269037813,
+                  "facing_score": 0.8973745427106622,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "center_front",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -23791,8 +23791,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 1.120982383717344,
-                    "b_to_a_angle_deg": 2.082496998300824,
+                    "a_to_b_angle_deg": 7.600157598285476,
+                    "b_to_a_angle_deg": 36.53109663051102,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23800,42 +23800,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.1031885147094727,
-                        0.4437989890575409,
-                        2.4030511379241943
+                        -0.4011530578136444,
+                        0.49601319432258606,
+                        3.874415159225464
                       ],
                       "head_xyz_m": [
-                        2.1031885147094727,
-                        -1.1562010109424592,
-                        2.4030511379241943
+                        -0.4011530578136444,
+                        -1.103986805677414,
+                        3.874415159225464
                       ],
                       "forward_unit": [
-                        -0.4258137704428386,
+                        0.9895897766890601,
                         0.0,
-                        0.9048108271352933
+                        -0.1439168991901098
                       ],
                       "right_unit": [
-                        0.9057039752868732,
+                        -0.1439168991901098,
                         0.0,
-                        0.42391073252461436
+                        -0.9895897766890601
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.1412652730941772,
-                        0.08292067795991898,
-                        4.347375392913818
+                        2.632236957550049,
+                        0.4855317175388336,
+                        3.8387086391448975
                       ],
                       "head_xyz_m": [
-                        1.1412652730941772,
-                        -1.5170793220400811,
-                        4.347375392913818
+                        2.632236957550049,
+                        -1.1144682824611665,
+                        3.8387086391448975
                       ],
                       "forward_unit": [
-                        0.41057035568111566,
+                        -0.7964718423121924,
                         0.0,
-                        -0.9118289220220437
+                        0.6046756191577616
                       ],
                       "right_unit": null
                     },
@@ -23849,12 +23849,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 6.5,
-                  "frame_id": 4906,
-                  "distance_m": 2.12004477589311,
-                  "facing_score": 0.985497741768528,
+                  "frame_id": 2048,
+                  "distance_m": 3.0487238346264833,
+                  "facing_score": 0.9474470405949968,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "right_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -23862,8 +23862,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 12.042892001075662,
-                    "b_to_a_angle_deg": 6.781444866804546,
+                    "a_to_b_angle_deg": 4.4992770777341535,
+                    "b_to_a_angle_deg": 26.10674776412126,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23871,42 +23871,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.0952529907226562,
-                        0.428756982088089,
-                        2.5667564868927
+                        -0.3652683198451996,
+                        0.5118764042854309,
+                        3.8593716621398926
                       ],
                       "head_xyz_m": [
-                        2.0952529907226562,
-                        -1.171243017911911,
-                        2.5667564868927
+                        -0.3652683198451996,
+                        -1.0881235957145692,
+                        3.8593716621398926
                       ],
                       "forward_unit": [
-                        -0.6178940692835359,
+                        0.999419673791654,
                         0.0,
-                        0.7862613554946174
+                        -0.034063406144778624
                       ],
                       "right_unit": [
-                        0.7958148804845558,
+                        -0.03406340614477861,
                         0.0,
-                        0.6055399871184001
+                        -0.9994196737916539
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.1764979362487793,
-                        0.05539778620004654,
-                        4.440544605255127
+                        2.679445266723633,
+                        0.43383893370628357,
+                        3.9948203563690186
                       ],
                       "head_xyz_m": [
-                        1.1764979362487793,
-                        -1.5446022137999535,
-                        4.440544605255127
+                        2.679445266723633,
+                        -1.1661610662937165,
+                        3.9948203563690186
                       ],
                       "forward_unit": [
-                        0.5431900372419576,
+                        -0.9166452275198611,
                         0.0,
-                        -0.8396097804582083
+                        0.39970179742535816
                       ],
                       "right_unit": null
                     },
@@ -23920,12 +23920,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 7.0,
-                  "frame_id": 4921,
-                  "distance_m": 2.036504275438022,
-                  "facing_score": 0.9267508406006272,
+                  "frame_id": 2063,
+                  "distance_m": 3.056186245137817,
+                  "facing_score": 0.9776805392290768,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "right_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -23933,8 +23933,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 28.10461669005004,
-                    "b_to_a_angle_deg": 13.732946751397709,
+                    "a_to_b_angle_deg": 3.702775116220589,
+                    "b_to_a_angle_deg": 16.774391194119392,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -23942,42 +23942,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.1318752765655518,
-                        0.3682020902633667,
-                        2.7667112350463867
+                        -0.3285907506942749,
+                        0.5043330192565918,
+                        3.8527121543884277
                       ],
                       "head_xyz_m": [
-                        2.1318752765655518,
-                        -1.2317979097366334,
-                        2.7667112350463867
+                        -0.3285907506942749,
+                        -1.0956669807434083,
+                        3.8527121543884277
                       ],
                       "forward_unit": [
-                        -0.8073594129992253,
+                        0.9996793352657235,
                         0.0,
-                        0.59005997851197
+                        0.02532245333061552
                       ],
                       "right_unit": [
-                        0.5864838355373295,
+                        0.025322453330615523,
                         0.0,
-                        0.8099609315599258
+                        -0.9996793352657235
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.2617385387420654,
-                        0.005914133507758379,
-                        4.571969985961914
+                        2.7134411334991455,
+                        0.3992828130722046,
+                        4.1270856857299805
                       ],
                       "head_xyz_m": [
-                        1.2617385387420654,
-                        -1.5940858664922417,
-                        4.571969985961914
+                        2.7134411334991455,
+                        -1.2007171869277955,
+                        4.1270856857299805
                       ],
                       "forward_unit": [
-                        0.6356345733139986,
+                        -0.9795029218448235,
                         0.0,
-                        -0.7719900836202049
+                        0.20142995332733846
                       ],
                       "right_unit": null
                     },
@@ -23991,12 +23991,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 7.5,
-                  "frame_id": 4936,
-                  "distance_m": 2.081867144861796,
-                  "facing_score": 0.9425262455131486,
+                  "frame_id": 2078,
+                  "distance_m": 3.1102608761265724,
+                  "facing_score": 0.9752402769020267,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "right_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -24004,8 +24004,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 27.303656963737055,
-                    "b_to_a_angle_deg": 4.819355909581621,
+                    "a_to_b_angle_deg": 3.8745790367079285,
+                    "b_to_a_angle_deg": 17.6802555544002,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -24013,42 +24013,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.163339853286743,
-                        0.3555854260921478,
-                        2.7813475131988525
+                        -0.3194509744644165,
+                        0.5128457546234131,
+                        3.83941912651062
                       ],
                       "head_xyz_m": [
-                        2.163339853286743,
-                        -1.2444145739078523,
-                        2.7813475131988525
+                        -0.3194509744644165,
+                        -1.087154245376587,
+                        3.83941912651062
                       ],
                       "forward_unit": [
-                        -0.810227702218013,
+                        0.9984802453951303,
                         0.0,
-                        0.5861152365862187
+                        0.05511079345900083
                       ],
                       "right_unit": [
-                        0.5768894499586653,
+                        0.055110793459000836,
                         0.0,
-                        0.8168222343486914
+                        -0.9984802453951303
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.2381370067596436,
-                        -0.0017254919512197375,
-                        4.6117844581604
+                        2.7648518085479736,
+                        0.38643547892570496,
+                        4.219970703125
                       ],
                       "head_xyz_m": [
-                        1.2381370067596436,
-                        -1.6017254919512198,
-                        4.6117844581604
+                        2.7648518085479736,
+                        -1.2135645210742951,
+                        4.219970703125
                       ],
                       "forward_unit": [
-                        0.5244895067210299,
+                        -0.9827858633104881,
                         0.0,
-                        -0.8514169115888707
+                        0.18474833389521683
                       ],
                       "right_unit": null
                     },
@@ -24062,12 +24062,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 8.0,
-                  "frame_id": 4951,
-                  "distance_m": 1.9686517078867865,
-                  "facing_score": 0.9946528252584224,
+                  "frame_id": 2093,
+                  "distance_m": 3.1446170373937767,
+                  "facing_score": 0.9503046679081337,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "right_front",
-                  "a_relative_to_b": "center_front",
+                  "b_relative_to_a": "left_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -24075,8 +24075,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 7.733037227482515,
-                    "b_to_a_angle_deg": 3.241699629223234,
+                    "a_to_b_angle_deg": 3.017048412147552,
+                    "b_to_a_angle_deg": 25.578391629420803,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -24084,42 +24084,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.1866931915283203,
-                        0.35872116684913635,
-                        2.8948309421539307
+                        -0.34244540333747864,
+                        0.5093115568161011,
+                        3.8517770767211914
                       ],
                       "head_xyz_m": [
-                        2.1866931915283203,
-                        -1.2412788331508637,
-                        2.8948309421539307
+                        -0.34244540333747864,
+                        -1.090688443183899,
+                        3.8517770767211914
                       ],
                       "forward_unit": [
-                        -0.5911781232717197,
+                        0.9978070740990248,
                         0.0,
-                        0.8065410259651566
+                        0.06618944687745414
                       ],
                       "right_unit": [
-                        0.8055032551138764,
+                        0.06618944687745412,
                         0.0,
-                        0.5925913482332908
+                        -0.9978070740990248
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.2613670825958252,
-                        0.017000649124383926,
-                        4.59852933883667
+                        2.777135133743286,
+                        0.37530678510665894,
+                        4.224438190460205
                       ],
                       "head_xyz_m": [
-                        1.2613670825958252,
-                        -1.5829993508756162,
-                        4.59852933883667
+                        2.777135133743286,
+                        -1.2246932148933412,
+                        4.224438190460205
                       ],
                       "forward_unit": [
-                        0.42682001928461005,
+                        -0.9468392477899563,
                         0.0,
-                        -0.9043365917278174
+                        0.32170706993249293
                       ],
                       "right_unit": null
                     },
@@ -24133,11 +24133,11 @@ window.QA_DATA = {
                 },
                 {
                   "t": 8.5,
-                  "frame_id": 4966,
-                  "distance_m": 1.6573789836636392,
-                  "facing_score": 0.9835433945325311,
+                  "frame_id": 2108,
+                  "distance_m": 3.1739134048606585,
+                  "facing_score": 0.9359472260037749,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "center_front",
+                  "b_relative_to_a": "left_front",
                   "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -24146,8 +24146,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 0.040173552078523744,
-                    "b_to_a_angle_deg": 14.740748902056328,
+                    "a_to_b_angle_deg": 6.501891407899651,
+                    "b_to_a_angle_deg": 28.558875531110612,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -24155,42 +24155,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.19901442527771,
-                        0.28453996777534485,
-                        3.1427202224731445
+                        -0.38867494463920593,
+                        0.49902597069740295,
+                        3.8754537105560303
                       ],
                       "head_xyz_m": [
-                        2.19901442527771,
-                        -1.3154600322246552,
-                        3.1427202224731445
+                        -0.38867494463920593,
+                        -1.1009740293025971,
+                        3.8754537105560303
                       ],
                       "forward_unit": [
-                        -0.6148953908413632,
+                        0.9999957867954002,
                         0.0,
-                        0.7886086851677752
+                        0.00290282473612273
                       ],
                       "right_unit": [
-                        0.7907528246692722,
+                        0.0029028247361227453,
                         0.0,
-                        0.6121355816137202
+                        -0.9999957867954001
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.1894400119781494,
-                        0.06928979605436325,
-                        4.439382076263428
+                        2.7603378295898438,
+                        0.35101136565208435,
+                        4.2436065673828125
                       ],
                       "head_xyz_m": [
-                        1.1894400119781494,
-                        -1.5307102039456368,
-                        4.439382076263428
+                        2.7603378295898438,
+                        -1.2489886343479157,
+                        4.2436065673828125
                       ],
                       "forward_unit": [
-                        0.3933546484530125,
+                        -0.9278970158344152,
                         0.0,
-                        -0.9193868176890546
+                        0.37283659692362153
                       ],
                       "right_unit": null
                     },
@@ -24204,9 +24204,9 @@ window.QA_DATA = {
                 },
                 {
                   "t": 9.0,
-                  "frame_id": 4981,
-                  "distance_m": 1.5951165824277351,
-                  "facing_score": 0.8427057543097694,
+                  "frame_id": 2123,
+                  "distance_m": 2.9108129974535712,
+                  "facing_score": 0.932109166144407,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "left_front",
                   "a_relative_to_b": "left_front",
@@ -24217,8 +24217,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 12.120504772545834,
-                    "b_to_a_angle_deg": 44.951640375748454,
+                    "a_to_b_angle_deg": 14.223204650817117,
+                    "b_to_a_angle_deg": 26.507953929725755,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -24226,42 +24226,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.3432722091674805,
-                        0.32034990191459656,
-                        3.289902448654175
+                        -0.3922347128391266,
+                        0.4927786886692047,
+                        3.871943950653076
                       ],
                       "head_xyz_m": [
-                        2.3432722091674805,
-                        -1.2796500980854035,
-                        3.289902448654175
+                        -0.3922347128391266,
+                        -1.1072213113307954,
+                        3.871943950653076
                       ],
                       "forward_unit": [
-                        -0.6167343726220764,
+                        0.9934592821571225,
                         0.0,
-                        0.7871713368933437
+                        -0.11418692874342005
                       ],
                       "right_unit": [
-                        0.7869179641290137,
+                        -0.11418692874342004,
                         0.0,
-                        0.6170576291814633
+                        -0.9934592821571225
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.1299861669540405,
-                        0.09592325985431671,
-                        4.300826072692871
+                        2.465022325515747,
+                        0.09154733270406723,
+                        4.256557941436768
                       ],
                       "head_xyz_m": [
-                        1.1299861669540405,
-                        -1.5040767401456834,
-                        4.300826072692871
+                        2.465022325515747,
+                        -1.5084526672959329,
+                        4.256557941436768
                       ],
                       "forward_unit": [
-                        0.09144801250349816,
+                        -0.946415704564928,
                         0.0,
-                        -0.9958098518337525
+                        0.32295094697627236
                       ],
                       "right_unit": null
                     },
@@ -24275,21 +24275,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 9.5,
-                  "frame_id": 4996,
-                  "distance_m": 1.7144908175279416,
-                  "facing_score": 0.713726437543901,
+                  "frame_id": 2138,
+                  "distance_m": 2.7011375630726118,
+                  "facing_score": 0.9719450837754171,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_front",
+                  "a_relative_to_b": "right_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 16.767544132583176,
-                    "b_to_a_angle_deg": 61.96766342440391,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 16.25913731615662,
+                    "b_to_a_angle_deg": 10.300027711237787,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -24297,42 +24297,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.584725856781006,
-                        0.5722603797912598,
-                        3.3565144538879395
+                        -0.36690810322761536,
+                        0.4920249283313751,
+                        3.853680372238159
                       ],
                       "head_xyz_m": [
-                        2.584725856781006,
-                        -1.0277396202087403,
-                        3.3565144538879395
+                        -0.36690810322761536,
+                        -1.107975071668625,
+                        3.853680372238159
                       ],
                       "forward_unit": [
-                        -0.708181600702939,
+                        0.9906187806022256,
                         0.0,
-                        0.706030325429314
+                        -0.13665442370505046
                       ],
                       "right_unit": [
-                        0.7196212646318856,
+                        -0.13665442370505046,
                         0.0,
-                        0.6943667874326981
+                        -0.9906187806022256
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.121873140335083,
-                        0.13969463109970093,
-                        4.139091968536377
+                        2.265850782394409,
+                        0.030067799612879753,
+                        4.242679595947266
                       ],
                       "head_xyz_m": [
-                        1.121873140335083,
-                        -1.4603053689002992,
-                        4.139091968536377
+                        2.265850782394409,
+                        -1.5699322003871203,
+                        4.242679595947266
                       ],
                       "forward_unit": [
-                        -0.001971557340929204,
+                        -0.9471830401515866,
                         0.0,
-                        -0.9999980564789371
+                        -0.32069344933939326
                       ],
                       "right_unit": null
                     },
@@ -24346,12 +24346,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 10.0,
-                  "frame_id": 5011,
-                  "distance_m": 1.670421062848521,
-                  "facing_score": 0.7621383659961571,
+                  "frame_id": 2153,
+                  "distance_m": 2.5083646042256382,
+                  "facing_score": 0.8519537658527252,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_front",
+                  "a_relative_to_b": "right_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -24359,8 +24359,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 9.341921176915509,
-                    "b_to_a_angle_deg": 57.483700184957385,
+                    "a_to_b_angle_deg": 5.773134605937523,
+                    "b_to_a_angle_deg": 44.84805090998095,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -24368,42 +24368,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.6016807556152344,
-                        0.5633375644683838,
-                        3.341519832611084
+                        -0.2910943925380707,
+                        0.4402902126312256,
+                        3.8372390270233154
                       ],
                       "head_xyz_m": [
-                        2.6016807556152344,
-                        -1.0366624355316163,
-                        3.341519832611084
+                        -0.2910943925380707,
+                        -1.1597097873687745,
+                        3.8372390270233154
                       ],
                       "forward_unit": [
-                        -0.8465682988631796,
+                        0.9999513521829911,
                         0.0,
-                        0.5322801098668841
+                        0.009863734962357328
                       ],
                       "right_unit": [
-                        0.5426485206826335,
+                        0.009863734962357333,
                         0.0,
-                        0.839959869875311
+                        -0.9999513521829912
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.1069592237472534,
-                        0.16253814101219177,
-                        3.9703869819641113
+                        2.179100751876831,
+                        0.10155323892831802,
+                        4.111622333526611
                       ],
                       "head_xyz_m": [
-                        1.1069592237472534,
-                        -1.4374618589878083,
-                        3.9703869819641113
+                        2.179100751876831,
+                        -1.498446761071682,
+                        4.111622333526611
                       ],
                       "forward_unit": [
-                        0.1684649241237872,
+                        -0.626789528189567,
                         0.0,
-                        -0.9857076490217405
+                        -0.7791886083304221
                       ],
                       "right_unit": null
                     },
@@ -24417,12 +24417,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 10.5,
-                  "frame_id": 5026,
-                  "distance_m": 1.6802657182153364,
-                  "facing_score": 0.8156699252493951,
+                  "frame_id": 2168,
+                  "distance_m": 2.258127273331696,
+                  "facing_score": 0.8416102163914991,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_front",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "right_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -24430,8 +24430,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 19.989505322448615,
-                    "b_to_a_angle_deg": 46.24432515106251,
+                    "a_to_b_angle_deg": 7.7962407616764935,
+                    "b_to_a_angle_deg": 46.17455091987573,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -24439,42 +24439,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.605114698410034,
-                        0.5771503448486328,
-                        3.359375
+                        -0.15912297368049622,
+                        0.2041003406047821,
+                        3.63547945022583
                       ],
                       "head_xyz_m": [
-                        2.605114698410034,
-                        -1.0228496551513673,
-                        3.359375
+                        -0.15912297368049622,
+                        -1.395899659395218,
+                        3.63547945022583
                       ],
                       "forward_unit": [
-                        -0.8038136802986453,
+                        0.9747911967234958,
                         0.0,
-                        0.5948811371734252
+                        0.2231190776029139
                       ],
                       "right_unit": [
-                        0.6054898310578555,
+                        0.22311907760291388,
                         0.0,
-                        0.7958530420156285
+                        -0.9747911967234958
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.0367639064788818,
-                        0.1933002769947052,
-                        3.82437801361084
+                        2.0893354415893555,
+                        0.1460673063993454,
+                        3.8359930515289307
                       ],
                       "head_xyz_m": [
-                        1.0367639064788818,
-                        -1.4066997230052949,
-                        3.82437801361084
+                        2.0893354415893555,
+                        -1.4539326936006547,
+                        3.8359930515289307
                       ],
                       "forward_unit": [
-                        0.45773458992684657,
+                        -0.6256429257784198,
                         0.0,
-                        -0.8890888848616327
+                        -0.7801095624483901
                       ],
                       "right_unit": null
                     },
@@ -24488,12 +24488,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 11.0,
-                  "frame_id": 5041,
-                  "distance_m": 1.7127672061236692,
-                  "facing_score": 0.7645825559860409,
+                  "frame_id": 2183,
+                  "distance_m": 2.22733655994932,
+                  "facing_score": 0.6685325362702544,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_front",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "right_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -24501,8 +24501,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 26.492056963616246,
-                    "b_to_a_angle_deg": 50.64162932540614,
+                    "a_to_b_angle_deg": 44.47626030025642,
+                    "b_to_a_angle_deg": 51.426045218986985,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -24510,42 +24510,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.597668170928955,
-                        0.5674911737442017,
-                        3.3656938076019287
+                        -0.1360204815864563,
+                        0.19883882999420166,
+                        3.7208220958709717
                       ],
                       "head_xyz_m": [
-                        2.597668170928955,
-                        -1.0325088262557984,
-                        3.3656938076019287
+                        -0.1360204815864563,
+                        -1.4011611700057984,
+                        3.7208220958709717
                       ],
                       "forward_unit": [
-                        -0.794114754214526,
+                        0.7941551424504661,
                         0.0,
-                        0.6077678480627311
+                        0.6077150728091906
                       ],
                       "right_unit": [
-                        0.6111109065411879,
+                        0.6077150728091906,
                         0.0,
-                        0.7915449828698351
+                        -0.7941551424504661
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        0.9498147368431091,
-                        0.22577856481075287,
-                        3.684100866317749
+                        2.0741827487945557,
+                        0.23459430038928986,
+                        3.4474151134490967
                       ],
                       "head_xyz_m": [
-                        0.9498147368431091,
-                        -1.3742214351892472,
-                        3.684100866317749
+                        2.0741827487945557,
+                        -1.3654056996107102,
+                        3.4474151134490967
                       ],
                       "forward_unit": [
-                        0.47596422770343555,
+                        -0.7147869844609762,
                         0.0,
-                        -0.8794646405323367
+                        -0.6993422387109077
                       ],
                       "right_unit": null
                     },
@@ -24559,21 +24559,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 11.5,
-                  "frame_id": 5056,
-                  "distance_m": 1.7013070387929412,
-                  "facing_score": 0.7247944594159259,
+                  "frame_id": 2198,
+                  "distance_m": 2.131451875153223,
+                  "facing_score": 0.6348873947627376,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "right_front",
-                  "a_relative_to_b": "left_front",
+                  "a_relative_to_b": "right_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 5.485496898449354,
-                    "b_to_a_angle_deg": 62.98855375423338,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 48.01546122658685,
+                    "b_to_a_angle_deg": 53.069577988636205,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -24581,42 +24581,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.5825703144073486,
-                        0.5669429898262024,
-                        3.3554606437683105
+                        0.004590103402733803,
+                        0.17237553000450134,
+                        3.9321742057800293
                       ],
                       "head_xyz_m": [
-                        2.5825703144073486,
-                        -1.0330570101737977,
-                        3.3554606437683105
+                        0.004590103402733803,
+                        -1.4276244699954987,
+                        3.9321742057800293
                       ],
                       "forward_unit": [
-                        -0.9990150395492381,
+                        0.8771511139829465,
                         0.0,
-                        0.0443728605617709
+                        0.4802144554659679
                       ],
                       "right_unit": [
-                        0.022721364567489816,
+                        0.4802144554659679,
                         0.0,
-                        0.999741836471892
+                        -0.8771511139829465
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        0.924995481967926,
-                        0.26325398683547974,
-                        3.5892646312713623
+                        2.012850284576416,
+                        0.29271942377090454,
+                        3.228259801864624
                       ],
                       "head_xyz_m": [
-                        0.924995481967926,
-                        -1.3367460131645204,
-                        3.5892646312713623
+                        2.012850284576416,
+                        -1.3072805762290955,
+                        3.228259801864624
                       ],
                       "forward_unit": [
-                        0.32528325308444467,
+                        -0.8314354194484891,
                         0.0,
-                        -0.9456166270020855
+                        -0.5556214028333637
                       ],
                       "right_unit": null
                     },
@@ -24630,21 +24630,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 12.0,
-                  "frame_id": 5071,
-                  "distance_m": 1.6507047083975295,
-                  "facing_score": 0.6442675780664106,
+                  "frame_id": 2213,
+                  "distance_m": 2.1264069847554223,
+                  "facing_score": 0.9974446725759292,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "right_front",
-                  "a_relative_to_b": "left_front",
+                  "a_relative_to_b": "center_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 12.33550605619314,
-                    "b_to_a_angle_deg": 71.84300608321516,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 5.188413164365414,
+                    "b_to_a_angle_deg": 2.5796247206399827,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -24652,42 +24652,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.5781807899475098,
-                        0.5675951838493347,
-                        3.3548340797424316
+                        0.0911657065153122,
+                        0.11180102825164795,
+                        4.084698677062988
                       ],
                       "head_xyz_m": [
-                        2.5781807899475098,
-                        -1.0324048161506654,
-                        3.3548340797424316
+                        0.0911657065153122,
+                        -1.4881989717483521,
+                        4.084698677062988
                       ],
                       "forward_unit": [
-                        -0.9873451355391026,
+                        0.9046408829311401,
                         0.0,
-                        -0.15858620156643877
+                        -0.4261746976646635
                       ],
                       "right_unit": [
-                        -0.1867038716596975,
+                        -0.42617469766466354,
                         0.0,
-                        0.9824162378072134
+                        -0.9046408829311401
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        0.9537782669067383,
-                        0.28859812021255493,
-                        3.445955514907837
+                        1.9162646532058716,
+                        0.31872668862342834,
+                        3.013343334197998
                       ],
                       "head_xyz_m": [
-                        0.9537782669067383,
-                        -1.3114018797874452,
-                        3.445955514907837
+                        1.9162646532058716,
+                        -1.2812733113765717,
+                        3.013343334197998
                       ],
                       "forward_unit": [
-                        0.2579141599007678,
+                        -0.8843054530529368,
                         0.0,
-                        -0.9661678353798998
+                        0.4669088408895682
                       ],
                       "right_unit": null
                     },
@@ -24701,21 +24701,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 12.5,
-                  "frame_id": 5086,
-                  "distance_m": 1.6263980672309715,
-                  "facing_score": 0.7164946858570662,
+                  "frame_id": 2228,
+                  "distance_m": 2.374372906278786,
+                  "facing_score": 0.9558391469801124,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
+                  "b_relative_to_a": "center_front",
                   "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 17.18294596812837,
-                    "b_to_a_angle_deg": 61.46972659822233,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 3.0382912800004456,
+                    "b_to_a_angle_deg": 24.064927354625397,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -24723,42 +24723,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.5807762145996094,
-                        0.5414884090423584,
-                        3.3844544887542725
+                        0.09770334511995316,
+                        0.08314280211925507,
+                        4.2297797203063965
                       ],
                       "head_xyz_m": [
-                        2.5807762145996094,
-                        -1.0585115909576417,
-                        3.3844544887542725
+                        0.09770334511995316,
+                        -1.516857197880745,
+                        4.2297797203063965
                       ],
                       "forward_unit": [
-                        -0.968889062415782,
+                        0.8160017591004697,
                         0.0,
-                        0.2474954236568164
+                        -0.5780494175630136
                       ],
                       "right_unit": [
-                        0.25035788463298964,
+                        -0.5780494175630135,
                         0.0,
-                        0.9681533605798694
+                        -0.8160017591004696
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        0.9751681089401245,
-                        0.2949361205101013,
-                        3.3044216632843018
+                        1.9459892511367798,
+                        0.3710121810436249,
+                        2.767378568649292
                       ],
                       "head_xyz_m": [
-                        0.9751681089401245,
-                        -1.3050638794898988,
-                        3.3044216632843018
+                        1.9459892511367798,
+                        -1.2289878189563752,
+                        2.767378568649292
                       ],
                       "forward_unit": [
-                        0.5207692550270853,
+                        -0.46303795622047716,
                         0.0,
-                        -0.8536974774582239
+                        0.8863384517774029
                       ],
                       "right_unit": null
                     },
@@ -24772,11 +24772,11 @@ window.QA_DATA = {
                 },
                 {
                   "t": 13.0,
-                  "frame_id": 5101,
-                  "distance_m": 1.4275211847928357,
-                  "facing_score": 0.8743172594655051,
+                  "frame_id": 2243,
+                  "distance_m": 2.548302933131407,
+                  "facing_score": 0.8966973974954073,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
+                  "b_relative_to_a": "center_front",
                   "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -24785,8 +24785,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 9.655972800528243,
-                    "b_to_a_angle_deg": 40.28816888184447,
+                    "a_to_b_angle_deg": 2.82854459227985,
+                    "b_to_a_angle_deg": 37.38127103192441,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -24794,42 +24794,255 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        2.3427884578704834,
-                        0.23564569652080536,
-                        3.410403251647949
+                        0.0729629397392273,
+                        0.07720448076725006,
+                        4.257508277893066
                       ],
                       "head_xyz_m": [
-                        2.3427884578704834,
-                        -1.3643543034791947,
-                        3.410403251647949
+                        0.0729629397392273,
+                        -1.52279551923275,
+                        4.257508277893066
                       ],
                       "forward_unit": [
-                        -0.9998589753060521,
+                        0.8189750905068426,
                         0.0,
-                        -0.01679373394846362
+                        -0.5738290696098527
                       ],
                       "right_unit": [
-                        -0.0027559724593425616,
+                        -0.5738290696098527,
                         0.0,
-                        0.9999962023006904
+                        -0.8189750905068426
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        0.9433637857437134,
-                        0.33858561515808105,
-                        3.1480472087860107
+                        2.0706584453582764,
+                        0.3836000859737396,
+                        2.7053542137145996
                       ],
                       "head_xyz_m": [
-                        0.9433637857437134,
-                        -1.261414384841919,
-                        3.1480472087860107
+                        2.0706584453582764,
+                        -1.2163999140262605,
+                        2.7053542137145996
                       ],
                       "forward_unit": [
-                        0.8688913286269571,
+                        -0.25498188871665983,
                         0.0,
-                        -0.4950028879076176
+                        0.9669458291065146
+                      ],
+                      "right_unit": null
+                    },
+                    "computed_from": [
+                      "EgoBody paired camera-wearer/interactee SMPL-X transl",
+                      "EgoBody paired SMPL-X global_orient for interaction-partner body orientation",
+                      "EgoBody per-frame PV camera-to-world pose for camera-wearer face orientation",
+                      "PV image timestamp synchronized to official PV pose"
+                    ]
+                  }
+                },
+                {
+                  "t": 13.5,
+                  "frame_id": 2258,
+                  "distance_m": 2.58333678768331,
+                  "facing_score": 0.6507644464720649,
+                  "facing_state": "facing_each_other",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "left_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "a_only_body_forward_field",
+                    "a_contains_b": true,
+                    "b_contains_a": false,
+                    "a_to_b_angle_deg": 3.754103593154267,
+                    "b_to_a_angle_deg": 72.32155417036944,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        0.04992032051086426,
+                        0.12553928792476654,
+                        4.1407976150512695
+                      ],
+                      "head_xyz_m": [
+                        0.04992032051086426,
+                        -1.4744607120752335,
+                        4.1407976150512695
+                      ],
+                      "forward_unit": [
+                        0.8614490373946166,
+                        0.0,
+                        -0.5078440272090325
+                      ],
+                      "right_unit": [
+                        -0.5078440272090325,
+                        0.0,
+                        -0.8614490373946165
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        2.18428111076355,
+                        0.1742008477449417,
+                        2.6862306594848633
+                      ],
+                      "head_xyz_m": [
+                        2.18428111076355,
+                        -1.4257991522550584,
+                        2.6862306594848633
+                      ],
+                      "forward_unit": [
+                        0.28562122319313227,
+                        0.0,
+                        0.9583425884628414
+                      ],
+                      "right_unit": null
+                    },
+                    "computed_from": [
+                      "EgoBody paired camera-wearer/interactee SMPL-X transl",
+                      "EgoBody paired SMPL-X global_orient for interaction-partner body orientation",
+                      "EgoBody per-frame PV camera-to-world pose for camera-wearer face orientation",
+                      "PV image timestamp synchronized to official PV pose"
+                    ]
+                  }
+                },
+                {
+                  "t": 14.0,
+                  "frame_id": 2273,
+                  "distance_m": 2.6038283644066285,
+                  "facing_score": 0.6207056897372072,
+                  "facing_state": "facing_each_other",
+                  "b_relative_to_a": "right_front",
+                  "a_relative_to_b": "left_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "a_only_body_forward_field",
+                    "a_contains_b": true,
+                    "b_contains_a": false,
+                    "a_to_b_angle_deg": 7.935885130205616,
+                    "b_to_a_angle_deg": 75.46400389426839,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        0.008036596700549126,
+                        0.14030127227306366,
+                        3.9398319721221924
+                      ],
+                      "head_xyz_m": [
+                        0.008036596700549126,
+                        -1.4596987277269364,
+                        3.9398319721221924
+                      ],
+                      "forward_unit": [
+                        0.9458214253375651,
+                        0.0,
+                        -0.3246872824309828
+                      ],
+                      "right_unit": [
+                        -0.32468728243098277,
+                        0.0,
+                        -0.9458214253375651
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        2.3200790882110596,
+                        -0.10589434951543808,
+                        2.7677528858184814
+                      ],
+                      "head_xyz_m": [
+                        2.3200790882110596,
+                        -1.7058943495154382,
+                        2.7677528858184814
+                      ],
+                      "forward_unit": [
+                        0.21382359210821514,
+                        0.0,
+                        0.9768722902498257
+                      ],
+                      "right_unit": null
+                    },
+                    "computed_from": [
+                      "EgoBody paired camera-wearer/interactee SMPL-X transl",
+                      "EgoBody paired SMPL-X global_orient for interaction-partner body orientation",
+                      "EgoBody per-frame PV camera-to-world pose for camera-wearer face orientation",
+                      "PV image timestamp synchronized to official PV pose"
+                    ]
+                  }
+                },
+                {
+                  "t": 14.5,
+                  "frame_id": 2288,
+                  "distance_m": 2.543684276693635,
+                  "facing_score": 0.6175671133491487,
+                  "facing_state": "facing_each_other",
+                  "b_relative_to_a": "center_front",
+                  "a_relative_to_b": "left_front",
+                  "line_of_sight_blocked": null,
+                  "line_of_sight_status": "not_evaluated_no_blocker_geometry",
+                  "blocker": null,
+                  "body_forward_field": {
+                    "state": "a_only_body_forward_field",
+                    "a_contains_b": true,
+                    "b_contains_a": false,
+                    "a_to_b_angle_deg": 0.17980564704002225,
+                    "b_to_a_angle_deg": 76.40017462095676,
+                    "half_angle_deg": 60.0,
+                    "scope": "body-forward field only; does not prove gaze or absence of occlusion"
+                  },
+                  "evidence": {
+                    "person_a": {
+                      "id": "A",
+                      "pelvis_xyz_m": [
+                        0.00927377212792635,
+                        0.1800096482038498,
+                        3.812323808670044
+                      ],
+                      "head_xyz_m": [
+                        0.00927377212792635,
+                        -1.4199903517961503,
+                        3.812323808670044
+                      ],
+                      "forward_unit": [
+                        0.9374073910715353,
+                        0.0,
+                        -0.34823466680452386
+                      ],
+                      "right_unit": [
+                        -0.34823466680452386,
+                        0.0,
+                        -0.9374073910715353
+                      ]
+                    },
+                    "person_b": {
+                      "id": "B",
+                      "pelvis_xyz_m": [
+                        2.3765335083007812,
+                        -0.14837488532066345,
+                        2.941361904144287
+                      ],
+                      "head_xyz_m": [
+                        2.3765335083007812,
+                        -1.7483748853206635,
+                        2.941361904144287
+                      ],
+                      "forward_unit": [
+                        0.11493275331181131,
+                        0.0,
+                        0.9933732743617408
                       ],
                       "right_unit": null
                     },
@@ -24842,84 +25055,102 @@ window.QA_DATA = {
                   }
                 }
               ],
-              "distance_change_m": -0.35824384947705923,
+              "distance_change_m": -0.165671051936358,
               "facing_changed": false,
               "los_changed": null,
               "line_of_sight_evidence_status": "missing_blocker_geometry"
             },
-            "causal_decomposition": {
-              "kind": "relation_change_cause",
-              "cause": "position_movement",
-              "start_relation": "center_front",
-              "end_relation": "left_front",
-              "translation_only_relation": "left_front",
-              "rotation_only_relation": "center_front"
+            "passing_analysis": {
+              "kind": "passing_side_and_final_position",
+              "passing_side": "right",
+              "final_relation": "left_front",
+              "start_relation": "right_front",
+              "closest_index": 24,
+              "closest_distance_m": 2.1264069847554223
+            },
+            "compound_option_parts": {
+              "A": [
+                "right",
+                "right-front"
+              ],
+              "B": [
+                "left",
+                "left-front"
+              ],
+              "C": [
+                "right",
+                "left-front"
+              ],
+              "D": [
+                "left",
+                "right-front"
+              ]
             },
             "answer_semantics": {
-              "kind": "relation_change_cause",
-              "state_count": 27,
-              "cause": "position_movement",
-              "start_relation": "center_front",
-              "end_relation": "left_front",
-              "translation_only_relation": "left_front",
-              "rotation_only_relation": "center_front",
-              "start_distance_m": 1.785765034269895,
-              "end_distance_m": 1.4275211847928357,
-              "minimum_distance_m": 1.4275211847928357,
-              "maximum_distance_m": 2.1990739611757735,
-              "maximum_distance_index": 12
+              "kind": "passing_side_and_final_position",
+              "state_count": 30,
+              "passing_side": "right",
+              "final_relation": "left_front",
+              "start_relation": "right_front",
+              "closest_index": 24,
+              "closest_distance_m": 2.1264069847554223,
+              "start_distance_m": 2.709355328629993,
+              "end_distance_m": 2.543684276693635,
+              "minimum_distance_m": 2.1264069847554223,
+              "maximum_distance_m": 3.1739134048606585,
+              "maximum_distance_index": 17
             },
-            "semantic_gt_id": "egobody_recording_20211002_S03_S18_02_4711_5110",
-            "answer_signature": "sha256:75e9fa507eb64a0a406902ac8a861e817f09de845edc8b80237dc71e7325f411",
-            "evidence_signature": "sha256:bfb67596142ce928f026f77dad2e8d53cac7b8fcd81620225fe14a8fff051956",
+            "semantic_gt_id": "egobody_recording_20211002_S03_S18_03_1853_2300",
+            "answer_signature": "sha256:1b1b78ed0b0243d6a3dbaf2fdefc977090bb730eeb4c6cbceaebd3ac2d79f126",
+            "evidence_signature": "sha256:3d3ce04bd0042723d7d1073c837df5a53a4bfd8b3aa7dfe7712cde2e01d2cd1a",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           },
           "semantic_gt": {
             "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "egobody_recording_20211002_S03_S18_02_4711_5110",
+            "semantic_gt_id": "egobody_recording_20211002_S03_S18_03_1853_2300",
             "task_id": "task4_multi_human_relational_dynamics",
-            "question_type": "relation_change_cause",
-            "question_focus": "The interaction partner changes from center-front to left-front relative to the camera wearer. Is this change produced by their relative position movement, the camera wearer's body turn, or both?",
+            "question_type": "passing_side_and_final_position",
+            "question_focus": "As the camera wearer passes the interaction partner, which side does the camera wearer pass on, and where does the camera wearer finish?",
             "options": [
               {
                 "id": "option_1",
-                "statement": "The camera wearer's body turn alone is sufficient to produce the change."
+                "statement": "The camera wearer passes on the interaction partner's right side and finishes right-front relative to the interaction partner."
               },
               {
                 "id": "option_2",
-                "statement": "Both relative position movement and the camera wearer's body turn are required."
+                "statement": "The camera wearer passes on the interaction partner's left side and finishes left-front relative to the interaction partner."
               },
               {
                 "id": "option_3",
-                "statement": "Relative position movement alone is independently sufficient to produce the change."
+                "statement": "The camera wearer passes on the interaction partner's right side and finishes left-front relative to the interaction partner."
               },
               {
                 "id": "option_4",
-                "statement": "Either relative position movement or the camera wearer's body turn is sufficient."
+                "statement": "The camera wearer passes on the interaction partner's left side and finishes right-front relative to the interaction partner."
               }
             ],
             "correct_option_id": "option_3",
-            "evidence_statement": "Two deterministic counterfactuals separately hold the starting orientation and starting positions fixed.",
+            "evidence_statement": "The signed body-frame sequence crosses sides around an interior closest approach.",
             "semantic_facts": [
               {
                 "id": "correct_answer_semantics",
-                "value": "Relative position movement alone is independently sufficient to produce the change."
+                "value": "The camera wearer passes on the interaction partner's right side and finishes left-front relative to the interaction partner."
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:bfb67596142ce928f026f77dad2e8d53cac7b8fcd81620225fe14a8fff051956"
+                "value": "sha256:3d3ce04bd0042723d7d1073c837df5a53a4bfd8b3aa7dfe7712cde2e01d2cd1a"
               }
             ],
             "evidence_refs": [
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:bfb67596142ce928f026f77dad2e8d53cac7b8fcd81620225fe14a8fff051956"
+                "sha256": "sha256:3d3ce04bd0042723d7d1073c837df5a53a4bfd8b3aa7dfe7712cde2e01d2cd1a"
               }
             ],
             "provenance": {
               "computation": "deterministic_task_generator",
-              "result_evidence_signature": "sha256:bfb67596142ce928f026f77dad2e8d53cac7b8fcd81620225fe14a8fff051956",
+              "result_evidence_signature": "sha256:3d3ce04bd0042723d7d1073c837df5a53a4bfd8b3aa7dfe7712cde2e01d2cd1a",
               "generator": "limo4si.task4_annotation.generate_task4_group",
               "reasoning_owner": "deterministic_code"
             },
@@ -24938,9 +25169,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:75e9fa507eb64a0a406902ac8a861e817f09de845edc8b80237dc71e7325f411"
+            "answer_signature": "sha256:1b1b78ed0b0243d6a3dbaf2fdefc977090bb730eeb4c6cbceaebd3ac2d79f126"
           },
-          "answer_signature": "sha256:75e9fa507eb64a0a406902ac8a861e817f09de845edc8b80237dc71e7325f411",
+          "answer_signature": "sha256:1b1b78ed0b0243d6a3dbaf2fdefc977090bb730eeb4c6cbceaebd3ac2d79f126",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -24948,8 +25179,8 @@ window.QA_DATA = {
             "semantic_fields_mutable": false,
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "egobody_recording_20211002_S03_S18_02_4711_5110",
-              "answer_signature": "sha256:75e9fa507eb64a0a406902ac8a861e817f09de845edc8b80237dc71e7325f411",
+              "semantic_gt_id": "egobody_recording_20211002_S03_S18_03_1853_2300",
+              "answer_signature": "sha256:1b1b78ed0b0243d6a3dbaf2fdefc977090bb730eeb4c6cbceaebd3ac2d79f126",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -24957,20 +25188,20 @@ window.QA_DATA = {
           }
         }
       ],
-      "metric_evidence_video": "./multihuman_media/egobody_recording_20211002_S03_S18_02_4711_5110_trajectory.mp4",
-      "topdown_image": "./multihuman_media/egobody_recording_20211002_S03_S18_02_4711_5110_trajectory.jpg",
+      "metric_evidence_video": "./multihuman_media/egobody_recording_20211002_S03_S18_03_1853_2300_trajectory.mp4",
+      "topdown_image": "./multihuman_media/egobody_recording_20211002_S03_S18_03_1853_2300_trajectory.jpg",
       "media_scope": "original EgoBody HoloLens PV RGB; official synchronized frame window",
-      "original_image": "./multihuman_media/egobody_recording_20211002_S03_S18_02_4711_5110_endpoints.jpg",
+      "original_image": "./multihuman_media/egobody_recording_20211002_S03_S18_03_1853_2300_endpoints.jpg",
       "original_caption": "Original HoloLens PV start and end frames used to audit left/right claims"
     },
     {
-      "name": "egobody_recording_20211002_S03_S18_04_3601_4050",
+      "name": "egobody_recording_20211002_S03_S18_04_3601_4049",
       "title": "EgoBody recording_20211002_S03_S18_04",
       "dataset": "EgoBody",
-      "video_clip": "./multihuman_media/egobody_recording_20211002_S03_S18_04_3601_4050_original.mp4",
+      "video_clip": "./multihuman_media/egobody_recording_20211002_S03_S18_04_3601_4049_original.mp4",
       "video_window": {
         "start_sec": 0.0,
-        "duration_sec": 14.966666666666667,
+        "duration_sec": 14.933333333333334,
         "metric_sample_count": 30,
         "source": "data/EgoBody/extracted"
       },
@@ -25020,7 +25251,7 @@ window.QA_DATA = {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
           "question_type": "relation_change_cause",
-          "question": "The interaction partner changes from right-front to center-front relative to the camera wearer. Is this change produced by their relative position movement, the camera wearer's body turn, or both?",
+          "question": "The interaction partner changes from right-front to left-front relative to the camera wearer. Is this change produced by their relative position movement, the camera wearer's body turn, or both?",
           "options": [
             {
               "label": "A",
@@ -25051,7 +25282,7 @@ window.QA_DATA = {
           "status": "ok",
           "release_eligible": true,
           "result_json": {
-            "scene_id": "egobody_recording_20211002_S03_S18_04_3601_4050",
+            "scene_id": "egobody_recording_20211002_S03_S18_04_3601_4049",
             "answer_type": "relation_change_cause",
             "T_Q": true,
             "H_Q": true,
@@ -25111,9 +25342,9 @@ window.QA_DATA = {
                         0.061916168515356536
                       ],
                       "right_unit": [
-                        -0.08622086549033384,
+                        0.06191616851535652,
                         0.0,
-                        -0.9962760472650629
+                        -0.99808135343587
                       ]
                     },
                     "person_b": {
@@ -25182,9 +25413,9 @@ window.QA_DATA = {
                         -0.02203696098487872
                       ],
                       "right_unit": [
-                        -0.10355371756257589,
+                        -0.022036960984878718,
                         0.0,
-                        -0.9946238623615313
+                        -0.9997571566888386
                       ]
                     },
                     "person_b": {
@@ -25253,9 +25484,9 @@ window.QA_DATA = {
                         -0.04191722068991072
                       ],
                       "right_unit": [
-                        -0.11487252334728612,
+                        -0.04191722068991072,
                         0.0,
-                        -0.993380241085873
+                        -0.9991210870608394
                       ]
                     },
                     "person_b": {
@@ -25324,9 +25555,9 @@ window.QA_DATA = {
                         0.10550867467632535
                       ],
                       "right_unit": [
-                        0.036239910544362715,
+                        0.10550867467632535,
                         0.0,
-                        -0.9993431186953441
+                        -0.9944183825573849
                       ]
                     },
                     "person_b": {
@@ -25395,9 +25626,9 @@ window.QA_DATA = {
                         0.08488458404952566
                       ],
                       "right_unit": [
-                        0.02304384430734878,
+                        0.08488458404952566,
                         0.0,
-                        -0.9997344553627923
+                        -0.9963907904987576
                       ]
                     },
                     "person_b": {
@@ -25466,9 +25697,9 @@ window.QA_DATA = {
                         0.19126561042763757
                       ],
                       "right_unit": [
-                        0.1492384038041344,
+                        0.19126561042763757,
                         0.0,
-                        -0.9888012433396279
+                        -0.9815383162504372
                       ]
                     },
                     "person_b": {
@@ -25504,7 +25735,7 @@ window.QA_DATA = {
                   "distance_m": 2.7119850850063973,
                   "facing_score": 0.8085519594280552,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "center_front",
+                  "b_relative_to_a": "right_front",
                   "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -25537,9 +25768,9 @@ window.QA_DATA = {
                         0.35762898596091186
                       ],
                       "right_unit": [
-                        0.31078170597144045,
+                        0.35762898596091186,
                         0.0,
-                        -0.9504813155625318
+                        -0.9338637525895145
                       ]
                     },
                     "person_b": {
@@ -25575,7 +25806,7 @@ window.QA_DATA = {
                   "distance_m": 2.7704356282149973,
                   "facing_score": 0.9998170779653408,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
+                  "b_relative_to_a": "center_front",
                   "a_relative_to_b": "center_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -25608,9 +25839,9 @@ window.QA_DATA = {
                         0.3297488808071586
                       ],
                       "right_unit": [
-                        0.25480971955488824,
+                        0.32974888080715864,
                         0.0,
-                        -0.9669912134142478
+                        -0.9440686816150753
                       ]
                     },
                     "person_b": {
@@ -25679,9 +25910,9 @@ window.QA_DATA = {
                         0.12429195593100831
                       ],
                       "right_unit": [
-                        0.023443280573254576,
+                        0.12429195593100831,
                         0.0,
-                        -0.9997251685318139
+                        -0.9922456901850693
                       ]
                     },
                     "person_b": {
@@ -25750,9 +25981,9 @@ window.QA_DATA = {
                         0.03536724712606521
                       ],
                       "right_unit": [
-                        -0.05897329928723308,
+                        0.03536724712606519,
                         0.0,
-                        -0.9982595604206245
+                        -0.9993743832171824
                       ]
                     },
                     "person_b": {
@@ -25788,7 +26019,7 @@ window.QA_DATA = {
                   "distance_m": 2.5627971840827803,
                   "facing_score": 0.6571750811523225,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "center_front",
+                  "b_relative_to_a": "right_front",
                   "a_relative_to_b": "right_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -25821,9 +26052,9 @@ window.QA_DATA = {
                         0.17260421239921042
                       ],
                       "right_unit": [
-                        0.07827218075626244,
+                        0.17260421239921042,
                         0.0,
-                        -0.9969320266295285
+                        -0.9849912618201485
                       ]
                     },
                     "person_b": {
@@ -25859,7 +26090,7 @@ window.QA_DATA = {
                   "distance_m": 2.539970747164171,
                   "facing_score": 0.621772408764677,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "center_front",
+                  "b_relative_to_a": "right_front",
                   "a_relative_to_b": "right_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -25892,9 +26123,9 @@ window.QA_DATA = {
                         0.00210974755523711
                       ],
                       "right_unit": [
-                        -0.09426300513463459,
+                        0.0021097475552371123,
                         0.0,
-                        -0.9955473297955191
+                        -0.9999977744801501
                       ]
                     },
                     "person_b": {
@@ -25930,7 +26161,7 @@ window.QA_DATA = {
                   "distance_m": 2.567376443123621,
                   "facing_score": 0.5209778003649855,
                   "facing_state": "side_by_side_or_oblique",
-                  "b_relative_to_a": "left_front",
+                  "b_relative_to_a": "center_front",
                   "a_relative_to_b": "right_same_depth",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -25963,9 +26194,9 @@ window.QA_DATA = {
                         -0.2230236123754172
                       ],
                       "right_unit": [
-                        -0.3269011780220989,
+                        -0.22302361237541718,
                         0.0,
-                        -0.9450585271864194
+                        -0.9748130427538502
                       ]
                     },
                     "person_b": {
@@ -26034,9 +26265,9 @@ window.QA_DATA = {
                         -0.5021153954710329
                       ],
                       "right_unit": [
-                        -0.6001452124800699,
+                        -0.5021153954710329,
                         0.0,
-                        -0.7998910700446978
+                        -0.8648006299899234
                       ]
                     },
                     "person_b": {
@@ -26105,9 +26336,9 @@ window.QA_DATA = {
                         -0.566349193353222
                       ],
                       "right_unit": [
-                        -0.6198010881201415,
+                        -0.5663491933532221,
                         0.0,
-                        -0.784758950993927
+                        -0.8241653906760188
                       ]
                     },
                     "person_b": {
@@ -26176,9 +26407,9 @@ window.QA_DATA = {
                         -0.4553110440685659
                       ],
                       "right_unit": [
-                        -0.5220218915526177,
+                        -0.4553110440685659,
                         0.0,
-                        -0.8529320868274491
+                        -0.8903324396814891
                       ]
                     },
                     "person_b": {
@@ -26214,7 +26445,7 @@ window.QA_DATA = {
                   "distance_m": 2.6324734401736176,
                   "facing_score": 0.7711228260668928,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "center_front",
+                  "b_relative_to_a": "right_front",
                   "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -26247,9 +26478,9 @@ window.QA_DATA = {
                         -0.2395757027666498
                       ],
                       "right_unit": [
-                        -0.3256072239282049,
+                        -0.23957570276664977,
                         0.0,
-                        -0.9455051219986954
+                        -0.9708776867576399
                       ]
                     },
                     "person_b": {
@@ -26318,9 +26549,9 @@ window.QA_DATA = {
                         -0.08835124844231343
                       ],
                       "right_unit": [
-                        -0.1382897881440566,
+                        -0.08835124844231344,
                         0.0,
-                        -0.9903918085763189
+                        -0.9960893819827037
                       ]
                     },
                     "person_b": {
@@ -26389,9 +26620,9 @@ window.QA_DATA = {
                         -0.005155225534729807
                       ],
                       "right_unit": [
-                        -0.06455636315798234,
+                        -0.00515522553472981,
                         0.0,
-                        -0.9979140624201138
+                        -0.9999867117365541
                       ]
                     },
                     "person_b": {
@@ -26460,9 +26691,9 @@ window.QA_DATA = {
                         -0.08064617886506133
                       ],
                       "right_unit": [
-                        -0.13935433486626983,
+                        -0.08064617886506133,
                         0.0,
-                        -0.9902425810648517
+                        -0.9967427922159581
                       ]
                     },
                     "person_b": {
@@ -26531,9 +26762,9 @@ window.QA_DATA = {
                         -0.25156874551687824
                       ],
                       "right_unit": [
-                        -0.30493223027936,
+                        -0.25156874551687824,
                         0.0,
-                        -0.9523740520073274
+                        -0.9678394320748996
                       ]
                     },
                     "person_b": {
@@ -26602,9 +26833,9 @@ window.QA_DATA = {
                         -0.3316076879222561
                       ],
                       "right_unit": [
-                        -0.38447943234454623,
+                        -0.33160768792225603,
                         0.0,
-                        -0.923133558107393
+                        -0.9434173738652769
                       ]
                     },
                     "person_b": {
@@ -26673,9 +26904,9 @@ window.QA_DATA = {
                         -0.09786919134646165
                       ],
                       "right_unit": [
-                        -0.15012527534474343,
+                        -0.09786919134646165,
                         0.0,
-                        -0.9886669822051635
+                        -0.9951992872712428
                       ]
                     },
                     "person_b": {
@@ -26744,9 +26975,9 @@ window.QA_DATA = {
                         5.30524597650212e-05
                       ],
                       "right_unit": [
-                        -0.04953812268080909,
+                        5.3052459765026885e-05,
                         0.0,
-                        -0.9987722334953356
+                        -0.9999999985927183
                       ]
                     },
                     "person_b": {
@@ -26815,9 +27046,9 @@ window.QA_DATA = {
                         -0.00408902025675718
                       ],
                       "right_unit": [
-                        -0.07400014167359165,
+                        -0.004089020256757168,
                         0.0,
-                        -0.9972582308671554
+                        -0.9999916399217245
                       ]
                     },
                     "person_b": {
@@ -26886,9 +27117,9 @@ window.QA_DATA = {
                         -0.07164554737101257
                       ],
                       "right_unit": [
-                        -0.1980812089841085,
+                        -0.07164554737101259,
                         0.0,
-                        -0.9801856123446181
+                        -0.9974301557211452
                       ]
                     },
                     "person_b": {
@@ -26957,9 +27188,9 @@ window.QA_DATA = {
                         -0.0747324877582856
                       ],
                       "right_unit": [
-                        -0.1599036772464072,
+                        -0.0747324877582856,
                         0.0,
-                        -0.9871326222970634
+                        -0.9972036177599125
                       ]
                     },
                     "person_b": {
@@ -27028,9 +27259,9 @@ window.QA_DATA = {
                         -0.028282641266735138
                       ],
                       "right_unit": [
-                        -0.11752671015786065,
+                        -0.02828264126673515,
                         0.0,
-                        -0.9930697218219224
+                        -0.9995999660879232
                       ]
                     },
                     "person_b": {
@@ -27099,9 +27330,9 @@ window.QA_DATA = {
                         0.04044495020487424
                       ],
                       "right_unit": [
-                        -0.024600663551845814,
+                        0.040444950204874236,
                         0.0,
-                        -0.9996973578802782
+                        -0.9991817682498642
                       ]
                     },
                     "person_b": {
@@ -27137,7 +27368,7 @@ window.QA_DATA = {
                   "distance_m": 2.5407943635928056,
                   "facing_score": 0.7091772204264465,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "center_front",
+                  "b_relative_to_a": "left_front",
                   "a_relative_to_b": "right_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -27170,9 +27401,9 @@ window.QA_DATA = {
                         -0.018757348127896485
                       ],
                       "right_unit": [
-                        0.01240238919079283,
+                        -0.018757348127896485,
                         0.0,
-                        -0.9999230874134071
+                        -0.9998240654691248
                       ]
                     },
                     "person_b": {
@@ -27212,8 +27443,8 @@ window.QA_DATA = {
               "kind": "relation_change_cause",
               "cause": "combined_motion",
               "start_relation": "right_front",
-              "end_relation": "center_front",
-              "translation_only_relation": "left_front",
+              "end_relation": "left_front",
+              "translation_only_relation": "center_front",
               "rotation_only_relation": "right_front"
             },
             "answer_semantics": {
@@ -27221,8 +27452,8 @@ window.QA_DATA = {
               "state_count": 30,
               "cause": "combined_motion",
               "start_relation": "right_front",
-              "end_relation": "center_front",
-              "translation_only_relation": "left_front",
+              "end_relation": "left_front",
+              "translation_only_relation": "center_front",
               "rotation_only_relation": "right_front",
               "start_distance_m": 2.763744842741987,
               "end_distance_m": 2.5407943635928056,
@@ -27230,18 +27461,18 @@ window.QA_DATA = {
               "maximum_distance_m": 2.7777051665887162,
               "maximum_distance_index": 25
             },
-            "semantic_gt_id": "egobody_recording_20211002_S03_S18_04_3601_4050",
-            "answer_signature": "sha256:85faa28e9dd70db0c8c21463de8eb1c5ab1841fedc41fac69b87f20cf738efac",
-            "evidence_signature": "sha256:1782294a69839733ef819124554cac42b7e12dea7d76972e9398ba4cd85b6ae8",
+            "semantic_gt_id": "egobody_recording_20211002_S03_S18_04_3601_4049",
+            "answer_signature": "sha256:7e135ae799d324a161c88cd9ed28b3935fec9fab4446f3f88fcf79d3f529f883",
+            "evidence_signature": "sha256:f3b292949cfad29f8df9c2ddc3c955e0e4299140ee482df4ac2433eb692adcbb",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           },
           "semantic_gt": {
             "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "egobody_recording_20211002_S03_S18_04_3601_4050",
+            "semantic_gt_id": "egobody_recording_20211002_S03_S18_04_3601_4049",
             "task_id": "task4_multi_human_relational_dynamics",
             "question_type": "relation_change_cause",
-            "question_focus": "The interaction partner changes from right-front to center-front relative to the camera wearer. Is this change produced by their relative position movement, the camera wearer's body turn, or both?",
+            "question_focus": "The interaction partner changes from right-front to left-front relative to the camera wearer. Is this change produced by their relative position movement, the camera wearer's body turn, or both?",
             "options": [
               {
                 "id": "option_1",
@@ -27269,18 +27500,18 @@ window.QA_DATA = {
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:1782294a69839733ef819124554cac42b7e12dea7d76972e9398ba4cd85b6ae8"
+                "value": "sha256:f3b292949cfad29f8df9c2ddc3c955e0e4299140ee482df4ac2433eb692adcbb"
               }
             ],
             "evidence_refs": [
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:1782294a69839733ef819124554cac42b7e12dea7d76972e9398ba4cd85b6ae8"
+                "sha256": "sha256:f3b292949cfad29f8df9c2ddc3c955e0e4299140ee482df4ac2433eb692adcbb"
               }
             ],
             "provenance": {
               "computation": "deterministic_task_generator",
-              "result_evidence_signature": "sha256:1782294a69839733ef819124554cac42b7e12dea7d76972e9398ba4cd85b6ae8",
+              "result_evidence_signature": "sha256:f3b292949cfad29f8df9c2ddc3c955e0e4299140ee482df4ac2433eb692adcbb",
               "generator": "limo4si.task4_annotation.generate_task4_group",
               "reasoning_owner": "deterministic_code"
             },
@@ -27299,9 +27530,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:85faa28e9dd70db0c8c21463de8eb1c5ab1841fedc41fac69b87f20cf738efac"
+            "answer_signature": "sha256:7e135ae799d324a161c88cd9ed28b3935fec9fab4446f3f88fcf79d3f529f883"
           },
-          "answer_signature": "sha256:85faa28e9dd70db0c8c21463de8eb1c5ab1841fedc41fac69b87f20cf738efac",
+          "answer_signature": "sha256:7e135ae799d324a161c88cd9ed28b3935fec9fab4446f3f88fcf79d3f529f883",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -27309,8 +27540,8 @@ window.QA_DATA = {
             "semantic_fields_mutable": false,
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "egobody_recording_20211002_S03_S18_04_3601_4050",
-              "answer_signature": "sha256:85faa28e9dd70db0c8c21463de8eb1c5ab1841fedc41fac69b87f20cf738efac",
+              "semantic_gt_id": "egobody_recording_20211002_S03_S18_04_3601_4049",
+              "answer_signature": "sha256:7e135ae799d324a161c88cd9ed28b3935fec9fab4446f3f88fcf79d3f529f883",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -27318,17 +27549,17 @@ window.QA_DATA = {
           }
         }
       ],
-      "metric_evidence_video": "./multihuman_media/egobody_recording_20211002_S03_S18_04_3601_4050_trajectory.mp4",
-      "topdown_image": "./multihuman_media/egobody_recording_20211002_S03_S18_04_3601_4050_trajectory.jpg",
+      "metric_evidence_video": "./multihuman_media/egobody_recording_20211002_S03_S18_04_3601_4049_trajectory.mp4",
+      "topdown_image": "./multihuman_media/egobody_recording_20211002_S03_S18_04_3601_4049_trajectory.jpg",
       "media_scope": "original EgoBody HoloLens PV RGB; official synchronized frame window",
-      "original_image": "./multihuman_media/egobody_recording_20211002_S03_S18_04_3601_4050_endpoints.jpg",
+      "original_image": "./multihuman_media/egobody_recording_20211002_S03_S18_04_3601_4049_endpoints.jpg",
       "original_caption": "Original HoloLens PV start and end frames used to audit left/right claims"
     },
     {
-      "name": "egobody_recording_20211002_S03_S18_04_4951_5400",
-      "title": "EgoBody recording_20211002_S03_S18_04",
+      "name": "egobody_recording_20220315_S21_S30_01_2835_3284",
+      "title": "EgoBody recording_20220315_S21_S30_01",
       "dataset": "EgoBody",
-      "video_clip": "./multihuman_media/egobody_recording_20211002_S03_S18_04_4951_5400_original.mp4",
+      "video_clip": "./multihuman_media/egobody_recording_20220315_S21_S30_01_2835_3284_original.mp4",
       "video_window": {
         "start_sec": 0.0,
         "duration_sec": 14.966666666666667,
@@ -27380,40 +27611,40 @@ window.QA_DATA = {
         {
           "task_id": "task4_multi_human_relational_dynamics",
           "task_name": "Task 4 · Multi-Human Relational Dynamics",
-          "question_type": "passing_side_and_final_position",
-          "question": "As the camera wearer passes the interaction partner, which side does the camera wearer pass on, and where does the camera wearer finish?",
+          "question_type": "dominant_facing_relation_over_video",
+          "question": "What body-facing relation dominates between the camera wearer and the interaction partner over the annotated time window?",
           "options": [
             {
               "label": "A",
-              "text": "The camera wearer passes on the interaction partner's right side and finishes right-front relative to the interaction partner.",
+              "text": "For most of the clip, the camera wearer and the interaction partner face away from each other.",
               "semantic_option_id": "option_1"
             },
             {
               "label": "B",
-              "text": "The camera wearer passes on the interaction partner's right side and finishes left-front relative to the interaction partner.",
+              "text": "For most of the clip, the camera wearer and the interaction partner face each other.",
               "semantic_option_id": "option_2"
             },
             {
               "label": "C",
-              "text": "The camera wearer passes on the interaction partner's left side and finishes left-front relative to the interaction partner.",
+              "text": "For most of the clip, the camera wearer and the interaction partner remain side-by-side or oblique.",
               "semantic_option_id": "option_3"
             },
             {
               "label": "D",
-              "text": "The camera wearer passes on the interaction partner's left side and finishes right-front relative to the interaction partner.",
+              "text": "For most of the clip, the camera wearer and the interaction partner have no dominant facing relation.",
               "semantic_option_id": "option_4"
             }
           ],
           "correct_option": "B",
-          "correct_answer": "The camera wearer passes on the interaction partner's right side and finishes left-front relative to the interaction partner.",
-          "answer": "The camera wearer passes on the interaction partner's right side and finishes left-front relative to the interaction partner.",
-          "explanation": "The signed body-frame sequence crosses sides around an interior closest approach.",
-          "method": "Requires approach, an interior distance minimum, side crossing, and later separation.",
+          "correct_answer": "For most of the clip, the camera wearer and the interaction partner face each other.",
+          "answer": "For most of the clip, the camera wearer and the interaction partner face each other.",
+          "explanation": "The deterministic timeline aggregates the annotation-provided body-forward vectors over the complete window.",
+          "method": "Projects annotated body-forward vectors and applies temporal dominance gates.",
           "status": "ok",
           "release_eligible": true,
           "result_json": {
-            "scene_id": "egobody_recording_20211002_S03_S18_04_4951_5400",
-            "answer_type": "passing_side_and_final_position",
+            "scene_id": "egobody_recording_20220315_S21_S30_01_2835_3284",
+            "answer_type": "dominant_facing_relation_over_video",
             "T_Q": true,
             "H_Q": true,
             "S_Q": true,
@@ -27435,12 +27666,12 @@ window.QA_DATA = {
               "states": [
                 {
                   "t": 0.0,
-                  "frame_id": 4951,
-                  "distance_m": 2.023288648301425,
-                  "facing_score": 0.968477105354115,
+                  "frame_id": 2835,
+                  "distance_m": 1.9285804369074222,
+                  "facing_score": 0.9772365083818049,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -27448,8 +27679,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 0.992703695668549,
-                    "b_to_a_angle_deg": 20.42918714332416,
+                    "a_to_b_angle_deg": 3.4889995041854736,
+                    "b_to_a_angle_deg": 16.995735241509703,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -27457,42 +27688,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6332141160964966,
-                        0.46125704050064087,
-                        4.053432941436768
+                        0.9773241877555847,
+                        0.765731692314148,
+                        2.7989003658294678
                       ],
                       "head_xyz_m": [
-                        0.6332141160964966,
-                        -1.1387429594993592,
-                        4.053432941436768
+                        0.9773241877555847,
+                        -0.8342683076858521,
+                        2.7989003658294678
                       ],
                       "forward_unit": [
-                        0.6282828013135799,
+                        -0.9832642046973462,
                         0.0,
-                        -0.7779850394278547
+                        0.18218535550613138
                       ],
                       "right_unit": [
-                        -0.7901046681968679,
+                        0.18218535550613135,
                         0.0,
-                        -0.6129719514737338
+                        0.9832642046973461
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.9314392805099487,
-                        0.44302546977996826,
-                        2.5016674995422363
+                        -0.9366317987442017,
+                        0.7947003841400146,
+                        3.0341784954071045
                       ],
                       "head_xyz_m": [
-                        1.9314392805099487,
-                        -1.1569745302200318,
-                        2.5016674995422363
+                        -0.9366317987442017,
+                        -0.8052996158599854,
+                        3.0341784954071045
                       ],
                       "forward_unit": [
-                        -0.8690241343233327,
+                        0.9135183927304775,
                         0.0,
-                        0.4947696979035622
+                        -0.40679742642146244
                       ],
                       "right_unit": null
                     },
@@ -27506,12 +27737,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 0.5,
-                  "frame_id": 4966,
-                  "distance_m": 2.15485937577372,
-                  "facing_score": 0.9691679612264973,
+                  "frame_id": 2850,
+                  "distance_m": 1.9288523329455955,
+                  "facing_score": 0.9777191346469697,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -27519,8 +27750,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 0.8993186220525411,
-                    "b_to_a_angle_deg": 20.20562755787453,
+                    "a_to_b_angle_deg": 1.696607769677331,
+                    "b_to_a_angle_deg": 17.083694683420198,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -27528,42 +27759,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6333045363426208,
-                        0.46208518743515015,
-                        4.055989742279053
+                        0.9784873127937317,
+                        0.7683497667312622,
+                        2.7971997261047363
                       ],
                       "head_xyz_m": [
-                        0.6333045363426208,
-                        -1.13791481256485,
-                        4.055989742279053
+                        0.9784873127937317,
+                        -0.8316502332687379,
+                        2.7971997261047363
                       ],
                       "forward_unit": [
-                        0.6391699257218849,
+                        -0.9883106062453815,
                         0.0,
-                        -0.7690655408043453
+                        0.1524537489958402
                       ],
                       "right_unit": [
-                        -0.781060271538205,
+                        0.15245374899584022,
                         0.0,
-                        -0.6244556447215971
+                        0.9883106062453815
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.0364668369293213,
-                        0.4608021676540375,
-                        2.420583724975586
+                        -0.9354566931724548,
+                        0.7983662486076355,
+                        3.0346627235412598
                       ],
                       "head_xyz_m": [
-                        2.0364668369293213,
-                        -1.1391978323459626,
-                        2.420583724975586
+                        -0.9354566931724548,
+                        -0.8016337513923646,
+                        3.0346627235412598
                       ],
                       "forward_unit": [
-                        -0.8732190543514774,
+                        0.9124329406540227,
                         0.0,
-                        0.4873279010250816
+                        -0.40922625625618503
                       ],
                       "right_unit": null
                     },
@@ -27577,12 +27808,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 1.0,
-                  "frame_id": 4981,
-                  "distance_m": 2.4124666300767377,
-                  "facing_score": 0.9498030687725516,
+                  "frame_id": 2865,
+                  "distance_m": 1.919996551780072,
+                  "facing_score": 0.9770375002681632,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -27590,8 +27821,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 1.4398564663102553,
-                    "b_to_a_angle_deg": 25.852198691270456,
+                    "a_to_b_angle_deg": 0.8321411499387305,
+                    "b_to_a_angle_deg": 17.411465871027886,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -27599,42 +27830,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6301372051239014,
-                        0.4590030312538147,
-                        4.058051586151123
+                        0.969785749912262,
+                        0.7679013609886169,
+                        2.7947845458984375
                       ],
                       "head_xyz_m": [
-                        0.6301372051239014,
-                        -1.1409969687461854,
-                        4.058051586151123
+                        0.969785749912262,
+                        -0.8320986390113831,
+                        2.7947845458984375
                       ],
                       "forward_unit": [
-                        0.6182248918593658,
+                        -0.9901904534635012,
                         0.0,
-                        -0.7860012615037432
+                        0.1397242493976833
                       ],
                       "right_unit": [
-                        -0.7970210568421946,
+                        0.13972424939768327,
                         0.0,
-                        -0.6039515170526117
+                        0.9901904534635012
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.16821551322937,
-                        0.523189127445221,
-                        2.20058274269104
+                        -0.934817910194397,
+                        0.7992672324180603,
+                        3.035383462905884
                       ],
                       "head_xyz_m": [
-                        2.16821551322937,
-                        -1.0768108725547791,
-                        2.20058274269104
+                        -0.934817910194397,
+                        -0.8007327675819398,
+                        3.035383462905884
                       ],
                       "forward_unit": [
-                        -0.9098068798865412,
+                        0.9091546109110505,
                         0.0,
-                        0.41503185577870616
+                        -0.4164587536109384
                       ],
                       "right_unit": null
                     },
@@ -27648,12 +27879,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 1.5,
-                  "frame_id": 4996,
-                  "distance_m": 2.4926564883916242,
-                  "facing_score": 0.9394957775097961,
+                  "frame_id": 2880,
+                  "distance_m": 1.9187587065554836,
+                  "facing_score": 0.9762247383226021,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -27661,8 +27892,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 1.5745113000929805,
-                    "b_to_a_angle_deg": 28.433646135900393,
+                    "a_to_b_angle_deg": 1.6823285806784998,
+                    "b_to_a_angle_deg": 17.658675989246504,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -27670,42 +27901,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6308671832084656,
-                        0.4638194143772125,
-                        4.054018497467041
+                        0.9691730737686157,
+                        0.7663894891738892,
+                        2.7995378971099854
                       ],
                       "head_xyz_m": [
-                        0.6308671832084656,
-                        -1.1361805856227876,
-                        4.054018497467041
+                        0.9691730737686157,
+                        -0.8336105108261109,
+                        2.7995378971099854
                       ],
                       "forward_unit": [
-                        0.6126273522252508,
+                        -0.9881653929833673,
                         0.0,
-                        -0.7903718917734097
+                        0.1533921644349128
                       ],
                       "right_unit": [
-                        -0.8016523650909286,
+                        0.15339216443491277,
                         0.0,
-                        -0.5977905030561464
+                        0.9881653929833673
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.211146116256714,
-                        0.5160539150238037,
-                        2.127019166946411
+                        -0.9344031810760498,
+                        0.8003446459770203,
+                        3.038032054901123
                       ],
                       "head_xyz_m": [
-                        2.211146116256714,
-                        -1.0839460849761964,
-                        2.127019166946411
+                        -0.9344031810760498,
+                        -0.7996553540229798,
+                        3.038032054901123
                       ],
                       "forward_unit": [
-                        -0.9257906279847716,
+                        0.9077781640136853,
                         0.0,
-                        0.37803665580940987
+                        -0.4194505989266708
                       ],
                       "right_unit": null
                     },
@@ -27719,12 +27950,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 2.0,
-                  "frame_id": 5011,
-                  "distance_m": 2.404429555165282,
-                  "facing_score": 0.954673823656979,
+                  "frame_id": 2895,
+                  "distance_m": 1.916114724345195,
+                  "facing_score": 0.9771222075140928,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -27732,8 +27963,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 1.9885154185108176,
-                    "b_to_a_angle_deg": 24.501578601956265,
+                    "a_to_b_angle_deg": 2.594082158404223,
+                    "b_to_a_angle_deg": 17.20178188469489,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -27741,42 +27972,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6358522176742554,
-                        0.4634544551372528,
-                        4.047688961029053
+                        0.9664992094039917,
+                        0.7665758728981018,
+                        2.799372673034668
                       ],
                       "head_xyz_m": [
-                        0.6358522176742554,
-                        -1.1365455448627473,
-                        4.047688961029053
+                        0.9664992094039917,
+                        -0.8334241271018983,
+                        2.799372673034668
                       ],
                       "forward_unit": [
-                        0.6115780765185036,
+                        -0.9856219355651585,
                         0.0,
-                        -0.7911840849776538
+                        0.1689656773809122
                       ],
                       "right_unit": [
-                        -0.8017353979283239,
+                        0.16896567738091217,
                         0.0,
-                        -0.5976791377559637
+                        0.9856219355651585
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.171118974685669,
-                        0.5150771141052246,
-                        2.19793963432312
+                        -0.9344772696495056,
+                        0.8009589910507202,
+                        3.0372841358184814
                       ],
                       "head_xyz_m": [
-                        2.171118974685669,
-                        -1.0849228858947755,
-                        2.19793963432312
+                        -0.9344772696495056,
+                        -0.7990410089492799,
+                        3.0372841358184814
                       ],
                       "forward_unit": [
-                        -0.900271592590803,
+                        0.911148946811695,
                         0.0,
-                        0.4353286799350799
+                        -0.4120771732624109
                       ],
                       "right_unit": null
                     },
@@ -27790,12 +28021,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 2.5,
-                  "frame_id": 5026,
-                  "distance_m": 2.133534820150144,
-                  "facing_score": 0.987940358192428,
+                  "frame_id": 2910,
+                  "distance_m": 1.920786367644352,
+                  "facing_score": 0.9780742902134004,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -27803,8 +28034,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 0.046890172530828354,
-                    "b_to_a_angle_deg": 12.609376051459384,
+                    "a_to_b_angle_deg": 1.9260979951133321,
+                    "b_to_a_angle_deg": 16.919701022259297,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -27812,42 +28043,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6331685781478882,
-                        0.4649770259857178,
-                        4.048727989196777
+                        0.96922767162323,
+                        0.7670114040374756,
+                        2.795328378677368
                       ],
                       "head_xyz_m": [
-                        0.6331685781478882,
-                        -1.1350229740142823,
-                        4.048727989196777
+                        0.96922767162323,
+                        -0.8329885959625245,
+                        2.795328378677368
                       ],
                       "forward_unit": [
-                        0.6474413239085128,
+                        -0.9871903241567157,
                         0.0,
-                        -0.7621153010506955
+                        0.15954705854812432
                       ],
                       "right_unit": [
-                        -0.7756694848073292,
+                        0.15954705854812432,
                         0.0,
-                        -0.631139327200209
+                        0.9871903241567157
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.015821695327759,
-                        0.4548010230064392,
-                        2.4238779544830322
+                        -0.9358803629875183,
+                        0.8012347221374512,
+                        3.0378410816192627
                       ],
                       "head_xyz_m": [
-                        2.015821695327759,
-                        -1.1451989769935609,
-                        2.4238779544830322
+                        -0.9358803629875183,
+                        -0.7987652778625489,
+                        3.0378410816192627
                       ],
                       "forward_unit": [
-                        -0.7986904568057642,
+                        0.912304539250377,
                         0.0,
-                        0.6017420994141924
+                        -0.4095124267505901
                       ],
                       "right_unit": null
                     },
@@ -27861,9 +28092,9 @@ window.QA_DATA = {
                 },
                 {
                   "t": 3.0,
-                  "frame_id": 5041,
-                  "distance_m": 1.964475393289795,
-                  "facing_score": 0.9764239583126172,
+                  "frame_id": 2925,
+                  "distance_m": 1.9243462151122563,
+                  "facing_score": 0.976765257028657,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
                   "a_relative_to_b": "left_front",
@@ -27874,8 +28105,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 1.76846516024273,
-                    "b_to_a_angle_deg": 17.574675756714424,
+                    "a_to_b_angle_deg": 1.9711916629293915,
+                    "b_to_a_angle_deg": 17.422606396959214,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -27883,42 +28114,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6350839734077454,
-                        0.46488630771636963,
-                        4.052716255187988
+                        0.9713668823242188,
+                        0.7727684378623962,
+                        2.793654441833496
                       ],
                       "head_xyz_m": [
-                        0.6350839734077454,
-                        -1.1351136922836305,
-                        4.052716255187988
+                        0.9713668823242188,
+                        -0.8272315621376038,
+                        2.793654441833496
                       ],
                       "forward_unit": [
-                        0.6480381341213488,
+                        -0.9870418625876985,
                         0.0,
-                        -0.7616078890902593
+                        0.16046295989856024
                       ],
                       "right_unit": [
-                        -0.7748862996960406,
+                        0.16046295989856024,
                         0.0,
-                        -0.6321006427329259
+                        0.9870418625876985
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.953360915184021,
-                        0.42000889778137207,
-                        2.5969362258911133
+                        -0.9373565316200256,
+                        0.7995010018348694,
+                        3.036900520324707
                       ],
                       "head_xyz_m": [
-                        1.953360915184021,
-                        -1.179991102218628,
-                        2.5969362258911133
+                        -0.9373565316200256,
+                        -0.8004989981651307,
+                        3.036900520324707
                       ],
                       "forward_unit": [
-                        -0.41608460469369235,
+                        0.9086162038979858,
                         0.0,
-                        0.9093259051280205
+                        -0.41763212761234497
                       ],
                       "right_unit": null
                     },
@@ -27932,11 +28163,11 @@ window.QA_DATA = {
                 },
                 {
                   "t": 3.5,
-                  "frame_id": 5056,
-                  "distance_m": 1.7949866912234325,
-                  "facing_score": 0.9619857826038125,
+                  "frame_id": 2940,
+                  "distance_m": 1.9163082612935205,
+                  "facing_score": 0.9751256877788315,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
+                  "b_relative_to_a": "center_front",
                   "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -27945,8 +28176,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 4.477868314166608,
-                    "b_to_a_angle_deg": 22.02443682412983,
+                    "a_to_b_angle_deg": 1.7036564414642394,
+                    "b_to_a_angle_deg": 18.067203232456816,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -27954,42 +28185,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6367296576499939,
-                        0.4666964113712311,
-                        4.051675796508789
+                        0.9697275757789612,
+                        0.7749873995780945,
+                        2.7929182052612305
                       ],
                       "head_xyz_m": [
-                        0.6367296576499939,
-                        -1.133303588628769,
-                        4.051675796508789
+                        0.9697275757789612,
+                        -0.8250126004219056,
+                        2.7929182052612305
                       ],
                       "forward_unit": [
-                        0.6514914546964488,
+                        -0.9876368106203077,
                         0.0,
-                        -0.7586559723995489
+                        0.1567594664055301
                       ],
                       "right_unit": [
-                        -0.772401357167647,
+                        0.1567594664055301,
                         0.0,
-                        -0.6351347443224762
+                        0.9876368106203077
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.9077428579330444,
-                        0.3902209401130676,
-                        2.786506175994873
+                        -0.9308245182037354,
+                        0.7997556328773499,
+                        3.0368969440460205
                       ],
                       "head_xyz_m": [
-                        1.9077428579330444,
-                        -1.2097790598869325,
-                        2.786506175994873
+                        -0.9308245182037354,
+                        -0.8002443671226502,
+                        3.0368969440460205
                       ],
                       "forward_unit": [
-                        -0.3924587579340648,
+                        0.9034670051313776,
                         0.0,
-                        0.9197696033903552
+                        -0.4286576380270617
                       ],
                       "right_unit": null
                     },
@@ -28003,11 +28234,11 @@ window.QA_DATA = {
                 },
                 {
                   "t": 4.0,
-                  "frame_id": 5071,
-                  "distance_m": 1.681082251693207,
-                  "facing_score": 0.9134813792262736,
+                  "frame_id": 2955,
+                  "distance_m": 1.920163690279598,
+                  "facing_score": 0.9748223356347009,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
+                  "b_relative_to_a": "center_front",
                   "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -28016,8 +28247,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 9.794933228001058,
-                    "b_to_a_angle_deg": 32.69692106952533,
+                    "a_to_b_angle_deg": 1.2258801637169379,
+                    "b_to_a_angle_deg": 18.218060915721406,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28025,42 +28256,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6435859799385071,
-                        0.4549078345298767,
-                        4.041784286499023
+                        0.9707911610603333,
+                        0.7756243348121643,
+                        2.790816307067871
                       ],
                       "head_xyz_m": [
-                        0.6435859799385071,
-                        -1.1450921654701234,
-                        4.041784286499023
+                        0.9707911610603333,
+                        -0.8243756651878358,
+                        2.790816307067871
                       ],
                       "forward_unit": [
-                        0.6558180735515611,
+                        -0.9886800485505376,
                         0.0,
-                        -0.7549189720778775
+                        0.15003920020483522
                       ],
                       "right_unit": [
-                        -0.768591288298902,
+                        0.15003920020483522,
                         0.0,
-                        -0.6397401281387891
+                        0.9886800485505376
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.9421031475067139,
-                        0.32666394114494324,
-                        2.9818577766418457
+                        -0.9331983327865601,
+                        0.80106520652771,
+                        3.0382134914398193
                       ],
                       "head_xyz_m": [
-                        1.9421031475067139,
-                        -1.2733360588550569,
-                        2.9818577766418457
+                        -0.9331983327865601,
+                        -0.7989347934722901,
+                        3.0382134914398193
                       ],
                       "forward_unit": [
-                        -0.3103400044316341,
+                        0.9016712375743862,
                         0.0,
-                        0.9506256264425935
+                        -0.43242222344726317
                       ],
                       "right_unit": null
                     },
@@ -28074,11 +28305,11 @@ window.QA_DATA = {
                 },
                 {
                   "t": 4.5,
-                  "frame_id": 5086,
-                  "distance_m": 1.6784479890840607,
-                  "facing_score": 0.7747788735600407,
+                  "frame_id": 2970,
+                  "distance_m": 1.9230226251843079,
+                  "facing_score": 0.9768637204418327,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
+                  "b_relative_to_a": "center_front",
                   "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -28087,8 +28318,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 19.248589443316273,
-                    "b_to_a_angle_deg": 52.738005660614085,
+                    "a_to_b_angle_deg": 1.19748082727644,
+                    "b_to_a_angle_deg": 17.456335665009025,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28096,42 +28327,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6375802755355835,
-                        0.47000235319137573,
-                        4.044697284698486
+                        0.9716548323631287,
+                        0.7749460935592651,
+                        2.7920334339141846
                       ],
                       "head_xyz_m": [
-                        0.6375802755355835,
-                        -1.1299976468086244,
-                        4.044697284698486
+                        0.9716548323631287,
+                        -0.825053906440735,
+                        2.7920334339141846
                       ],
                       "forward_unit": [
-                        0.6712679236187804,
+                        -0.9888970485135863,
                         0.0,
-                        -0.7412147966146733
+                        0.1486022457472226
                       ],
                       "right_unit": [
-                        -0.7557688926303692,
+                        0.1486022457472226,
                         0.0,
-                        -0.6548384388017137
+                        0.9888970485135863
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.1003577709198,
-                        0.26474729180336,
-                        3.247615098953247
+                        -0.9353783130645752,
+                        0.80244380235672,
+                        3.0379693508148193
                       ],
                       "head_xyz_m": [
-                        2.1003577709198,
-                        -1.33525270819664,
-                        3.247615098953247
+                        -0.9353783130645752,
+                        -0.7975561976432801,
+                        3.0379693508148193
                       ],
                       "forward_unit": [
-                        -0.15083955489000647,
+                        0.9077424219623993,
                         0.0,
-                        0.9885582576057845
+                        -0.41952794349105926
                       ],
                       "right_unit": null
                     },
@@ -28145,21 +28376,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 5.0,
-                  "frame_id": 5101,
-                  "distance_m": 1.6833505678531724,
-                  "facing_score": 0.6931095387732217,
+                  "frame_id": 2985,
+                  "distance_m": 1.9222149646764177,
+                  "facing_score": 0.9775331472180133,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
+                  "b_relative_to_a": "center_front",
                   "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 14.110539141673376,
-                    "b_to_a_angle_deg": 65.39299895528028,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 1.5068816404633987,
+                    "b_to_a_angle_deg": 17.174064248319784,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28167,42 +28398,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6383473873138428,
-                        0.467939168214798,
-                        4.047245025634766
+                        0.9701011776924133,
+                        0.7752301096916199,
+                        2.791565418243408
                       ],
                       "head_xyz_m": [
-                        0.6383473873138428,
-                        -1.1320608317852021,
-                        4.047245025634766
+                        0.9701011776924133,
+                        -0.8247698903083802,
+                        2.791565418243408
                       ],
                       "forward_unit": [
-                        0.8392220755823495,
+                        -0.9881832550113149,
                         0.0,
-                        -0.5437888449161618
+                        0.15327705149578882
                       ],
                       "right_unit": [
-                        -0.5607942791163402,
+                        0.15327705149578885,
                         0.0,
-                        -0.8279551778389844
+                        0.9881832550113149
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.220432758331299,
-                        0.26904940605163574,
-                        3.5076916217803955
+                        -0.9362953901290894,
+                        0.8027285933494568,
+                        3.036118745803833
                       ],
                       "head_xyz_m": [
-                        2.220432758331299,
-                        -1.3309505939483643,
-                        3.5076916217803955
+                        -0.9362953901290894,
+                        -0.7972714066505433,
+                        3.036118745803833
                       ],
                       "forward_unit": [
-                        -0.10063267471942527,
+                        0.9100765538781939,
                         0.0,
-                        0.994923647713137
+                        -0.41444018396047316
                       ],
                       "right_unit": null
                     },
@@ -28216,21 +28447,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 5.5,
-                  "frame_id": 5116,
-                  "distance_m": 1.6218491250711546,
-                  "facing_score": 0.7338357899427866,
+                  "frame_id": 3000,
+                  "distance_m": 1.9231310641534072,
+                  "facing_score": 0.9780871129778645,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
+                  "b_relative_to_a": "center_front",
                   "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 8.967828114212246,
-                    "b_to_a_angle_deg": 61.32141915118823,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 1.9735821773808766,
+                    "b_to_a_angle_deg": 16.909097526915644,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28238,42 +28469,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6373152136802673,
-                        0.4693504571914673,
-                        4.049947738647461
+                        0.9708406925201416,
+                        0.7742187976837158,
+                        2.79270076751709
                       ],
                       "head_xyz_m": [
-                        0.6373152136802673,
-                        -1.1306495428085328,
-                        4.049947738647461
+                        0.9708406925201416,
+                        -0.8257812023162843,
+                        2.79270076751709
                       ],
                       "forward_unit": [
-                        0.9444497452527995,
+                        -0.9871078741615635,
                         0.0,
-                        -0.32865586666286994
+                        0.16005637996730704
                       ],
                       "right_unit": [
-                        -0.33000643469286894,
+                        0.16005637996730704,
                         0.0,
-                        -0.9439786825248234
+                        0.9871078741615635
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.2057137489318848,
-                        0.1683943122625351,
-                        3.767200469970703
+                        -0.93678879737854,
+                        0.8008410930633545,
+                        3.0349280834198
                       ],
                       "head_xyz_m": [
-                        2.2057137489318848,
-                        -1.431605687737465,
-                        3.767200469970703
+                        -0.93678879737854,
+                        -0.7991589069366456,
+                        3.0349280834198
                       ],
                       "forward_unit": [
-                        -0.31662922377616165,
+                        0.9125083098697317,
                         0.0,
-                        0.9485493844027866
+                        -0.4090581675247247
                       ],
                       "right_unit": null
                     },
@@ -28287,9 +28518,9 @@ window.QA_DATA = {
                 },
                 {
                   "t": 6.0,
-                  "frame_id": 5131,
-                  "distance_m": 1.640796102385527,
-                  "facing_score": 0.9224552092370192,
+                  "frame_id": 3015,
+                  "distance_m": 1.9160230468719677,
+                  "facing_score": 0.9814973325403231,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
                   "a_relative_to_b": "left_front",
@@ -28300,8 +28531,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 5.144863745591231,
-                    "b_to_a_angle_deg": 31.903515304000354,
+                    "a_to_b_angle_deg": 2.3284377338405298,
+                    "b_to_a_angle_deg": 15.459242146100939,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28309,42 +28540,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6382244825363159,
-                        0.4704795777797699,
-                        4.045320510864258
+                        0.9718470573425293,
+                        0.7777320742607117,
+                        2.7920663356781006
                       ],
                       "head_xyz_m": [
-                        0.6382244825363159,
-                        -1.1295204222202302,
-                        4.045320510864258
+                        0.9718470573425293,
+                        -0.8222679257392884,
+                        2.7920663356781006
                       ],
                       "forward_unit": [
-                        0.9871396934042398,
+                        -0.9859702558015342,
                         0.0,
-                        -0.15986001909728267
+                        0.16692110314354258
                       ],
                       "right_unit": [
-                        -0.13966658652066946,
+                        0.16692110314354258,
                         0.0,
-                        -0.9901985884708503
+                        0.9859702558015342
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.2376182079315186,
-                        0.12219419330358505,
-                        3.9319677352905273
+                        -0.9284689426422119,
+                        0.8094065189361572,
+                        3.0348422527313232
                       ],
                       "head_xyz_m": [
-                        2.2376182079315186,
-                        -1.477805806696415,
-                        3.9319677352905273
+                        -0.9284689426422119,
+                        -0.7905934810638429,
+                        3.0348422527313232
                       ],
                       "forward_unit": [
-                        -0.8094535605635581,
+                        0.9222707594693715,
                         0.0,
-                        0.5871839007423297
+                        -0.3865444944993896
                       ],
                       "right_unit": null
                     },
@@ -28358,11 +28589,11 @@ window.QA_DATA = {
                 },
                 {
                   "t": 6.5,
-                  "frame_id": 5146,
-                  "distance_m": 1.7973527395913658,
-                  "facing_score": 0.9343940863364828,
+                  "frame_id": 3030,
+                  "distance_m": 1.920808679292911,
+                  "facing_score": 0.9795876158295935,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
+                  "b_relative_to_a": "center_front",
                   "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -28371,8 +28602,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 6.039366455462503,
-                    "b_to_a_angle_deg": 29.0332362279466,
+                    "a_to_b_angle_deg": 2.4149546028117173,
+                    "b_to_a_angle_deg": 16.24723334568189,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28380,42 +28611,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6370783448219299,
-                        0.46513402462005615,
-                        4.043651580810547
+                        0.9723873138427734,
+                        0.7763991951942444,
+                        2.7922098636627197
                       ],
                       "head_xyz_m": [
-                        0.6370783448219299,
-                        -1.134865975379944,
-                        4.043651580810547
+                        0.9723873138427734,
+                        -0.8236008048057557,
+                        2.7922098636627197
                       ],
                       "forward_unit": [
-                        0.9983521130412375,
+                        -0.9858039107307911,
                         0.0,
-                        -0.0573851756649427
+                        0.1679007134823387
                       ],
                       "right_unit": [
-                        -0.03747682957161944,
+                        0.1679007134823387,
                         0.0,
-                        -0.9992974968673042
+                        0.9858039107307911
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.411186695098877,
-                        0.18989498913288116,
-                        4.128856658935547
+                        -0.9327158331871033,
+                        0.8129525780677795,
+                        3.034597635269165
                       ],
                       "head_xyz_m": [
-                        2.411186695098877,
-                        -1.410105010867119,
-                        4.128856658935547
+                        -0.9327158331871033,
+                        -0.7870474219322205,
+                        3.034597635269165
                       ],
                       "forward_unit": [
-                        -0.8966131741095753,
+                        0.9170735528731511,
                         0.0,
-                        0.44281465198562747
+                        -0.39871806909220425
                       ],
                       "right_unit": null
                     },
@@ -28429,11 +28660,11 @@ window.QA_DATA = {
                 },
                 {
                   "t": 7.0,
-                  "frame_id": 5161,
-                  "distance_m": 1.831041061539501,
-                  "facing_score": 0.9381706008988995,
+                  "frame_id": 3045,
+                  "distance_m": 1.9246374602624015,
+                  "facing_score": 0.9802216463495639,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
+                  "b_relative_to_a": "center_front",
                   "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -28442,8 +28673,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 7.114543573309915,
-                    "b_to_a_angle_deg": 27.866303950305664,
+                    "a_to_b_angle_deg": 2.6659276608616316,
+                    "b_to_a_angle_deg": 15.945055170030376,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28451,42 +28682,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6382469534873962,
-                        0.4677930474281311,
-                        4.046868324279785
+                        0.9717260003089905,
+                        0.7774434685707092,
+                        2.7920100688934326
                       ],
                       "head_xyz_m": [
-                        0.6382469534873962,
-                        -1.132206952571869,
-                        4.046868324279785
+                        0.9717260003089905,
+                        -0.8225565314292909,
+                        2.7920100688934326
                       ],
                       "forward_unit": [
-                        0.9989210528081884,
+                        -0.9858392512821923,
                         0.0,
-                        -0.046440609993629686
+                        0.16769308462595137
                       ],
                       "right_unit": [
-                        -0.028386007768713698,
+                        0.1676930846259514,
                         0.0,
-                        -0.9995970360915216
+                        0.9858392512821923
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.430495262145996,
-                        0.11982918530702591,
-                        4.186433792114258
+                        -0.9383810758590698,
+                        0.8075907230377197,
+                        3.0261285305023193
                       ],
                       "head_xyz_m": [
-                        2.430495262145996,
-                        -1.4801708146929742,
-                        4.186433792114258
+                        -0.9383810758590698,
+                        -0.7924092769622804,
+                        3.0261285305023193
                       ],
                       "forward_unit": [
-                        -0.9176605478928755,
+                        0.9209621901099961,
                         0.0,
-                        0.3973652209755498
+                        -0.38965195288590465
                       ],
                       "right_unit": null
                     },
@@ -28500,9 +28731,9 @@ window.QA_DATA = {
                 },
                 {
                   "t": 7.5,
-                  "frame_id": 5176,
-                  "distance_m": 1.8174684645516566,
-                  "facing_score": 0.979851596755868,
+                  "frame_id": 3060,
+                  "distance_m": 1.9261552871665621,
+                  "facing_score": 0.985228704864489,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
                   "a_relative_to_b": "left_front",
@@ -28513,8 +28744,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 5.638036595503193,
-                    "b_to_a_angle_deg": 15.303609189757374,
+                    "a_to_b_angle_deg": 2.3042307761642795,
+                    "b_to_a_angle_deg": 13.768329807419764,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28522,42 +28753,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6372662782669067,
-                        0.46890562772750854,
-                        4.05124044418335
+                        0.9720626473426819,
+                        0.778099536895752,
+                        2.791771411895752
                       ],
                       "head_xyz_m": [
-                        0.6372662782669067,
-                        -1.1310943722724915,
-                        4.05124044418335
+                        0.9720626473426819,
+                        -0.8219004631042481,
+                        2.791771411895752
                       ],
                       "forward_unit": [
-                        0.9988242433717834,
+                        -0.9864968010508589,
                         0.0,
-                        -0.048478148198795194
+                        0.16378052850208455
                       ],
                       "right_unit": [
-                        -0.028563134957669056,
+                        0.16378052850208452,
                         0.0,
-                        -0.9995919904247883
+                        0.9864968010508589
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.4102182388305664,
-                        0.07904496043920517,
-                        4.139793395996094
+                        -0.9390119910240173,
+                        0.807224452495575,
+                        3.0305593013763428
                       ],
                       "head_xyz_m": [
-                        2.4102182388305664,
-                        -1.520955039560795,
-                        4.139793395996094
+                        -0.9390119910240173,
+                        -0.7927755475044251,
+                        3.0305593013763428
                       ],
                       "forward_unit": [
-                        -0.9765061264646695,
+                        0.9342636155366848,
                         0.0,
-                        0.2154896400687674
+                        -0.35658308524707333
                       ],
                       "right_unit": null
                     },
@@ -28571,12 +28802,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 8.0,
-                  "frame_id": 5191,
-                  "distance_m": 1.767019325619853,
-                  "facing_score": 0.9988883172343992,
+                  "frame_id": 3075,
+                  "distance_m": 1.9316296399441453,
+                  "facing_score": 0.980094136318169,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "center_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -28584,8 +28815,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 2.73652004303073,
-                    "b_to_a_angle_deg": 2.66681876106241,
+                    "a_to_b_angle_deg": 2.762220621244602,
+                    "b_to_a_angle_deg": 15.981604698785953,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28593,42 +28824,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6352939605712891,
-                        0.46814197301864624,
-                        4.049952030181885
+                        0.9719139337539673,
+                        0.7775871753692627,
+                        2.79121470451355
                       ],
                       "head_xyz_m": [
-                        0.6352939605712891,
-                        -1.1318580269813538,
-                        4.049952030181885
+                        0.9719139337539673,
+                        -0.8224128246307374,
+                        2.79121470451355
                       ],
                       "forward_unit": [
-                        0.997397682328338,
+                        -0.9849379355687968,
                         0.0,
-                        -0.0720962085415029
+                        0.17290825046097927
                       ],
                       "right_unit": [
-                        -0.055243807011261734,
+                        0.17290825046097927,
                         0.0,
-                        -0.9984728948684098
+                        0.9849379355687968
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.3669631481170654,
-                        0.11900950223207474,
-                        4.007695198059082
+                        -0.9442492127418518,
+                        0.8092366456985474,
+                        3.0331034660339355
                       ],
                       "head_xyz_m": [
-                        2.3669631481170654,
-                        -1.4809904977679254,
-                        4.007695198059082
+                        -0.9442492127418518,
+                        -0.7907633543014527,
+                        3.0331034660339355
                       ],
                       "forward_unit": [
-                        -0.9974846505292232,
+                        0.9192979494682518,
                         0.0,
-                        0.07088280439283988
+                        -0.39356229507343254
                       ],
                       "right_unit": null
                     },
@@ -28642,12 +28873,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 8.5,
-                  "frame_id": 5206,
-                  "distance_m": 1.7328329878181694,
-                  "facing_score": 0.8680288415664825,
+                  "frame_id": 3090,
+                  "distance_m": 1.9289539356484826,
+                  "facing_score": 0.9807385948580292,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -28655,8 +28886,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 1.6601384708422942,
-                    "b_to_a_angle_deg": 42.56779549285158,
+                    "a_to_b_angle_deg": 2.5918472842365765,
+                    "b_to_a_angle_deg": 15.740511509465534,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28664,42 +28895,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6362334489822388,
-                        0.46806231141090393,
-                        4.052867889404297
+                        0.970747709274292,
+                        0.7784867882728577,
+                        2.7932465076446533
                       ],
                       "head_xyz_m": [
-                        0.6362334489822388,
-                        -1.1319376885890962,
-                        4.052867889404297
+                        0.970747709274292,
+                        -0.8215132117271424,
+                        2.7932465076446533
                       ],
                       "forward_unit": [
-                        0.987284711487528,
+                        -0.9854430502824827,
                         0.0,
-                        -0.15896194029700472
+                        0.17000586651629485
                       ],
                       "right_unit": [
-                        -0.15135801905873403,
+                        0.17000586651629485,
                         0.0,
-                        -0.988479008409696
+                        0.9854430502824827
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.310072422027588,
-                        0.15359720587730408,
-                        3.733360528945923
+                        -0.942826509475708,
+                        0.8052996397018433,
+                        3.0348620414733887
                       ],
                       "head_xyz_m": [
-                        2.310072422027588,
-                        -1.446402794122696,
-                        3.733360528945923
+                        -0.942826509475708,
+                        -0.7947003602981568,
+                        3.0348620414733887
                       ],
                       "forward_unit": [
-                        -0.8502511067765169,
+                        0.920935122807704,
                         0.0,
-                        -0.526377293797242
+                        -0.38971592163928753
                       ],
                       "right_unit": null
                     },
@@ -28713,21 +28944,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 9.0,
-                  "frame_id": 5221,
-                  "distance_m": 1.651784871331625,
-                  "facing_score": 0.5862398571781618,
+                  "frame_id": 3105,
+                  "distance_m": 1.9321334026561268,
+                  "facing_score": 0.9822338333950764,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "center_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 6.233256056285393,
-                    "b_to_a_angle_deg": 79.72391073269328,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 2.178693966992147,
+                    "b_to_a_angle_deg": 15.161918531561387,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28735,42 +28966,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.630684494972229,
-                        0.4650377929210663,
-                        4.053338050842285
+                        0.9715510606765747,
+                        0.7785311937332153,
+                        2.7940375804901123
                       ],
                       "head_xyz_m": [
-                        0.630684494972229,
-                        -1.1349622070789338,
-                        4.053338050842285
+                        0.9715510606765747,
+                        -0.8214688062667848,
+                        2.7940375804901123
                       ],
                       "forward_unit": [
-                        0.9172157803153801,
+                        -0.9867017713201173,
                         0.0,
-                        -0.3983907784329959
+                        0.1625411162559894
                       ],
                       "right_unit": [
-                        -0.3984240605076898,
+                        0.1625411162559894,
                         0.0,
-                        -0.9172013235972596
+                        0.9867017713201173
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.191945791244507,
-                        0.2283867448568344,
-                        3.5687220096588135
+                        -0.9452658295631409,
+                        0.8052623867988586,
+                        3.035362958908081
                       ],
                       "head_xyz_m": [
-                        2.191945791244507,
-                        -1.3716132551431657,
-                        3.5687220096588135
+                        -0.9452658295631409,
+                        -0.7947376132011414,
+                        3.035362958908081
                       ],
                       "forward_unit": [
-                        -0.46206517488211135,
+                        0.9249601906529376,
                         0.0,
-                        -0.8868459698060108
+                        -0.3800640021197501
                       ],
                       "right_unit": null
                     },
@@ -28784,21 +29015,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 9.5,
-                  "frame_id": 5236,
-                  "distance_m": 1.6043372049639453,
-                  "facing_score": 0.5915235695774355,
+                  "frame_id": 3120,
+                  "distance_m": 1.93782501741827,
+                  "facing_score": 0.9818488722210972,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "center_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 12.105789030927207,
-                    "b_to_a_angle_deg": 78.15381173906302,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 1.1838966202144128,
+                    "b_to_a_angle_deg": 15.439690461303643,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28806,42 +29037,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6239950060844421,
-                        0.4580802917480469,
-                        4.056789875030518
+                        0.9767401814460754,
+                        0.7676208019256592,
+                        2.7957444190979004
                       ],
                       "head_xyz_m": [
-                        0.6239950060844421,
-                        -1.1419197082519532,
-                        4.056789875030518
+                        0.9767401814460754,
+                        -0.8323791980743409,
+                        2.7957444190979004
                       ],
                       "forward_unit": [
-                        0.7952171012168602,
+                        -0.9895620322673425,
                         0.0,
-                        -0.6063247990411196
+                        0.14410754419851518
                       ],
                       "right_unit": [
-                        -0.6355156676699442,
+                        0.14410754419851518,
                         0.0,
-                        -0.7720879717661876
+                        0.9895620322673425
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.0629489421844482,
-                        0.24819739162921906,
-                        3.379103660583496
+                        -0.9458402395248413,
+                        0.8060470223426819,
+                        3.0352725982666016
                       ],
                       "head_xyz_m": [
-                        2.0629489421844482,
-                        -1.351802608370781,
-                        3.379103660583496
+                        -0.9458402395248413,
+                        -0.7939529776573182,
+                        3.0352725982666016
                       ],
                       "forward_unit": [
-                        -0.6027155480124013,
+                        0.9236028018619064,
                         0.0,
-                        -0.7979561192096409
+                        -0.3833508372142107
                       ],
                       "right_unit": null
                     },
@@ -28855,21 +29086,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 10.0,
-                  "frame_id": 5251,
-                  "distance_m": 1.6400881250515293,
-                  "facing_score": 0.691447437521548,
+                  "frame_id": 3135,
+                  "distance_m": 1.9327716839051707,
+                  "facing_score": 0.9718398415603728,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "center_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 10.867530941725088,
-                    "b_to_a_angle_deg": 66.36997641654469,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 2.592650461422718,
+                    "b_to_a_angle_deg": 19.1429596594683,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28877,42 +29108,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.621643602848053,
-                        0.4558109641075134,
-                        4.0638628005981445
+                        0.9769428372383118,
+                        0.7636454701423645,
+                        2.795675754547119
                       ],
                       "head_xyz_m": [
-                        0.621643602848053,
-                        -1.1441890358924867,
-                        4.0638628005981445
+                        0.9769428372383118,
+                        -0.8363545298576356,
+                        2.795675754547119
                       ],
                       "forward_unit": [
-                        0.723563284818133,
+                        -0.9865848245991841,
                         0.0,
-                        -0.6902580480249348
+                        0.1632494528952465
                       ],
                       "right_unit": [
-                        -0.7312619310498125,
+                        0.16324945289524653,
                         0.0,
-                        -0.6820967586767287
+                        0.9865848245991841
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.9950854778289795,
-                        0.31047022342681885,
-                        3.179316282272339
+                        -0.9417580962181091,
+                        0.806101381778717,
+                        3.0245656967163086
                       ],
                       "head_xyz_m": [
-                        1.9950854778289795,
-                        -1.2895297765731812,
-                        3.179316282272339
+                        -0.9417580962181091,
+                        -0.793898618221283,
+                        3.0245656967163086
                       ],
                       "forward_unit": [
-                        -0.8330470860743645,
+                        0.899207826145875,
                         0.0,
-                        -0.5532020900023882
+                        -0.437521754199731
                       ],
                       "right_unit": null
                     },
@@ -28926,21 +29157,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 10.5,
-                  "frame_id": 5266,
-                  "distance_m": 1.8013803240765593,
-                  "facing_score": 0.712210847088729,
+                  "frame_id": 3150,
+                  "distance_m": 1.8566362767977318,
+                  "facing_score": 0.9573594880631042,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "right_front",
+                  "b_relative_to_a": "center_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 5.411671556938693,
-                    "b_to_a_angle_deg": 64.60356534229304,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 1.3204379030271731,
+                    "b_to_a_angle_deg": 23.796470768467273,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -28948,42 +29179,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6272217035293579,
-                        0.4534427523612976,
-                        4.060731887817383
+                        0.9798178672790527,
+                        0.7644612193107605,
+                        2.7963998317718506
                       ],
                       "head_xyz_m": [
-                        0.6272217035293579,
-                        -1.1465572476387025,
-                        4.060731887817383
+                        0.9798178672790527,
+                        -0.8355387806892396,
+                        2.7963998317718506
                       ],
                       "forward_unit": [
-                        0.7037677506335537,
+                        -0.9895407985191943,
                         0.0,
-                        -0.7104301184269908
+                        0.1442532774878808
                       ],
                       "right_unit": [
-                        -0.7381337772532712,
+                        0.14425327748788078,
                         0.0,
-                        -0.6746543758679835
+                        0.9895407985191942
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.0074901580810547,
-                        0.3445376753807068,
-                        2.908356189727783
+                        -0.8629924654960632,
+                        0.7460200190544128,
+                        3.0218067169189453
                       ],
                       "head_xyz_m": [
-                        2.0074901580810547,
-                        -1.2554623246192933,
-                        2.908356189727783
+                        -0.8629924654960632,
+                        -0.8539799809455872,
+                        3.0218067169189453
                       ],
                       "forward_unit": [
-                        -0.9081774027882444,
+                        0.8592272287439116,
                         0.0,
-                        -0.4185854811920727
+                        -0.5115941451825441
                       ],
                       "right_unit": null
                     },
@@ -28997,21 +29228,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 11.0,
-                  "frame_id": 5281,
-                  "distance_m": 1.8484211708463472,
-                  "facing_score": 0.5406532241153081,
-                  "facing_state": "side_by_side_or_oblique",
+                  "frame_id": 3165,
+                  "distance_m": 1.6856229608439939,
+                  "facing_score": 0.9699271606343646,
+                  "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 0.6116768311277301,
-                    "b_to_a_angle_deg": 85.33305974975603,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 1.9395896561041184,
+                    "b_to_a_angle_deg": 19.876567787923957,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -29019,42 +29250,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6281835436820984,
-                        0.45733195543289185,
-                        4.052018642425537
+                        0.9781935811042786,
+                        0.7659640908241272,
+                        2.7980754375457764
                       ],
                       "head_xyz_m": [
-                        0.6281835436820984,
-                        -1.1426680445671082,
-                        4.052018642425537
+                        0.9781935811042786,
+                        -0.8340359091758729,
+                        2.7980754375457764
                       ],
                       "forward_unit": [
-                        0.7183489389822153,
+                        -0.9967201612343757,
                         0.0,
-                        -0.6956829751137551
+                        0.08092539891109687
                       ],
                       "right_unit": [
-                        -0.7304520162798529,
+                        0.08092539891109687,
                         0.0,
-                        -0.6829640194861641
+                        0.9967201612343757
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.9418092966079712,
-                        0.4127594232559204,
-                        2.7523796558380127
+                        -0.6905580163002014,
+                        0.5414873957633972,
+                        2.8768351078033447
                       ],
                       "head_xyz_m": [
-                        1.9418092966079712,
-                        -1.1872405767440797,
-                        2.7523796558380127
+                        -0.6905580163002014,
+                        -1.0585126042366029,
+                        2.8768351078033447
                       ],
                       "forward_unit": [
-                        -0.7588200199429679,
+                        0.9233527637902319,
                         0.0,
-                        -0.6513003741237632
+                        -0.38395269708772745
                       ],
                       "right_unit": null
                     },
@@ -29068,21 +29299,21 @@ window.QA_DATA = {
                 },
                 {
                   "t": 11.5,
-                  "frame_id": 5296,
-                  "distance_m": 1.921193220014473,
-                  "facing_score": 0.6296664152451035,
+                  "frame_id": 3180,
+                  "distance_m": 1.622086844149143,
+                  "facing_score": 0.9768899354237818,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
                   "body_forward_field": {
-                    "state": "a_only_body_forward_field",
+                    "state": "mutual_body_forward_field",
                     "a_contains_b": true,
-                    "b_contains_a": false,
-                    "a_to_b_angle_deg": 4.578125776482653,
-                    "b_to_a_angle_deg": 74.7801550021024,
+                    "b_contains_a": true,
+                    "a_to_b_angle_deg": 0.5857652032785098,
+                    "b_to_a_angle_deg": 17.47804053630671,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -29090,42 +29321,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6347060203552246,
-                        0.4519510567188263,
-                        4.047994613647461
+                        0.9762721061706543,
+                        0.770284116268158,
+                        2.7977402210235596
                       ],
                       "head_xyz_m": [
-                        0.6347060203552246,
-                        -1.1480489432811738,
-                        4.047994613647461
+                        0.9762721061706543,
+                        -0.8297158837318421,
+                        2.7977402210235596
                       ],
                       "forward_unit": [
-                        0.6898569772034466,
+                        -0.9999462289363592,
                         0.0,
-                        -0.7239456823572631
+                        0.010370112629785138
                       ],
                       "right_unit": [
-                        -0.7603938637051117,
+                        0.01037011262978514,
                         0.0,
-                        -0.6494622175612773
+                        0.9999462289363592
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.8446528911590576,
-                        0.42085668444633484,
-                        2.5560009479522705
+                        -0.6254545450210571,
+                        0.514086127281189,
+                        2.7979753017425537
                       ],
                       "head_xyz_m": [
-                        1.8446528911590576,
-                        -1.1791433155536652,
-                        2.5560009479522705
+                        -0.6254545450210571,
+                        -1.0859138727188111,
+                        2.7979753017425537
                       ],
                       "forward_unit": [
-                        -0.9148129845928992,
+                        0.9537880403603033,
                         0.0,
-                        -0.40387770824871244
+                        -0.3004802390601626
                       ],
                       "right_unit": null
                     },
@@ -29139,12 +29370,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 12.0,
-                  "frame_id": 5311,
-                  "distance_m": 2.1181092010040556,
-                  "facing_score": 0.9395403102295234,
+                  "frame_id": 3195,
+                  "distance_m": 1.6442516485237886,
+                  "facing_score": 0.9961181643834547,
                   "facing_state": "facing_each_other",
                   "b_relative_to_a": "center_front",
-                  "a_relative_to_b": "right_front",
+                  "a_relative_to_b": "left_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -29152,8 +29383,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 0.4804528488757815,
-                    "b_to_a_angle_deg": 28.46411642150461,
+                    "a_to_b_angle_deg": 1.0841938362470565,
+                    "b_to_a_angle_deg": 7.061224726792203,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -29161,42 +29392,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6186252236366272,
-                        0.45175814628601074,
-                        4.059924125671387
+                        0.9785311222076416,
+                        0.7706210017204285,
+                        2.7952613830566406
                       ],
                       "head_xyz_m": [
-                        0.6186252236366272,
-                        -1.1482418537139893,
-                        4.059924125671387
+                        0.9785311222076416,
+                        -0.8293789982795716,
+                        2.7952613830566406
                       ],
                       "forward_unit": [
-                        0.5903865191222188,
+                        -0.9967172151061512,
                         0.0,
-                        -0.8071206589096515
+                        -0.08096167680476044
                       ],
                       "right_unit": [
-                        -0.836381569573735,
+                        -0.08096167680476045,
                         0.0,
-                        -0.5481476717795813
+                        0.9967172151061512
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        1.8833204507827759,
-                        0.4783029556274414,
-                        2.3610339164733887
+                        -0.6374046206474304,
+                        0.513634979724884,
+                        2.6331708431243896
                       ],
                       "head_xyz_m": [
-                        1.8833204507827759,
-                        -1.1216970443725587,
-                        2.3610339164733887
+                        -0.6374046206474304,
+                        -1.086365020275116,
+                        2.6331708431243896
                       ],
                       "forward_unit": [
-                        -0.9072570830366674,
+                        0.9997293010871507,
                         0.0,
-                        0.42057649159195487
+                        -0.023266382353026423
                       ],
                       "right_unit": null
                     },
@@ -29210,11 +29441,11 @@ window.QA_DATA = {
                 },
                 {
                   "t": 12.5,
-                  "frame_id": 5326,
-                  "distance_m": 2.3675092928302677,
-                  "facing_score": 0.9833307954467372,
+                  "frame_id": 3210,
+                  "distance_m": 1.6523836519042712,
+                  "facing_score": 0.9981756199977462,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
+                  "b_relative_to_a": "center_front",
                   "a_relative_to_b": "center_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
@@ -29223,8 +29454,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 14.830233139300084,
-                    "b_to_a_angle_deg": 0.42004279940639994,
+                    "a_to_b_angle_deg": 1.3868265668388025,
+                    "b_to_a_angle_deg": 4.695262008339223,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -29232,42 +29463,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.5929114818572998,
-                        0.4406094253063202,
-                        4.078294277191162
+                        0.9811273217201233,
+                        0.7704980373382568,
+                        2.7932040691375732
                       ],
                       "head_xyz_m": [
-                        0.5929114818572998,
-                        -1.15939057469368,
-                        4.078294277191162
+                        0.9811273217201233,
+                        -0.8295019626617433,
+                        2.7932040691375732
                       ],
                       "forward_unit": [
-                        0.3730451130808121,
+                        -0.9916384550038985,
                         0.0,
-                        -0.9278132051261849
+                        -0.12904717957972323
                       ],
                       "right_unit": [
-                        -0.9416073337612147,
+                        -0.12904717957972325,
                         0.0,
-                        -0.33671297718843013
+                        0.9916384550038985
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.008496046066284,
-                        0.49807560443878174,
-                        2.181476354598999
+                        -0.6439260244369507,
+                        0.5252866148948669,
+                        2.6216094493865967
                       ],
                       "head_xyz_m": [
-                        2.008496046066284,
-                        -1.1019243955612184,
-                        2.181476354598999
+                        -0.6439260244369507,
+                        -1.0747133851051331,
+                        2.6216094493865967
                       ],
                       "forward_unit": [
-                        -0.5922062986540051,
+                        0.9825382789233433,
                         0.0,
-                        0.8057863859823665
+                        0.18606055586919662
                       ],
                       "right_unit": null
                     },
@@ -29281,12 +29512,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 13.0,
-                  "frame_id": 5341,
-                  "distance_m": 2.377431455390419,
-                  "facing_score": 0.8957448306168991,
+                  "frame_id": 3225,
+                  "distance_m": 1.636340956317856,
+                  "facing_score": 0.9991224311107354,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_front",
+                  "b_relative_to_a": "center_front",
+                  "a_relative_to_b": "center_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -29294,8 +29525,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 36.53730836990989,
-                    "b_to_a_angle_deg": 8.877593573586424,
+                    "a_to_b_angle_deg": 0.8344329799074818,
+                    "b_to_a_angle_deg": 3.2909369440825684,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -29303,42 +29534,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.5949612259864807,
-                        0.4457899332046509,
-                        4.071008682250977
+                        0.9821072220802307,
+                        0.7708963751792908,
+                        2.796144723892212
                       ],
                       "head_xyz_m": [
-                        0.5949612259864807,
-                        -1.1542100667953492,
-                        4.071008682250977
+                        0.9821072220802307,
+                        -0.8291036248207093,
+                        2.796144723892212
                       ],
                       "forward_unit": [
-                        0.07033390077011419,
+                        -0.9933526760531948,
                         0.0,
-                        -0.9975235046867115
+                        -0.1151106466750873
                       ],
                       "right_unit": [
-                        -0.9984646557240788,
+                        -0.1151106466750873,
                         0.0,
-                        -0.055392519980559905
+                        0.9933526760531948
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.140897274017334,
-                        0.49297887086868286,
-                        2.2654519081115723
+                        -0.6280837059020996,
+                        0.5292927622795105,
+                        2.6332809925079346
                       ],
                       "head_xyz_m": [
-                        2.140897274017334,
-                        -1.1070211291313172,
-                        2.2654519081115723
+                        -0.6280837059020996,
+                        -1.0707072377204896,
+                        2.6332809925079346
                       ],
                       "forward_unit": [
-                        -0.5253659246719433,
+                        0.999059881477873,
                         0.0,
-                        0.8508763983056493
+                        0.043351507717938574
                       ],
                       "right_unit": null
                     },
@@ -29352,12 +29583,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 13.5,
-                  "frame_id": 5356,
-                  "distance_m": 2.4364754806556492,
-                  "facing_score": 0.8125733021177357,
+                  "frame_id": 3240,
+                  "distance_m": 1.6539389765650163,
+                  "facing_score": 0.999976643831249,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_front",
+                  "b_relative_to_a": "center_front",
+                  "a_relative_to_b": "center_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -29365,8 +29596,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 45.32214823180254,
-                    "b_to_a_angle_deg": 22.77580353423888,
+                    "a_to_b_angle_deg": 0.39865684239661214,
+                    "b_to_a_angle_deg": 0.38440738002807656,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -29374,42 +29605,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.5978276133537292,
-                        0.4362751245498657,
-                        4.079200267791748
+                        0.9811543822288513,
+                        0.7688068747520447,
+                        2.7969703674316406
                       ],
                       "head_xyz_m": [
-                        0.5978276133537292,
-                        -1.1637248754501344,
-                        4.079200267791748
+                        0.9811543822288513,
+                        -0.8311931252479554,
+                        2.7969703674316406
                       ],
                       "forward_unit": [
-                        -0.028525333358762534,
+                        -0.9945393285482497,
                         0.0,
-                        -0.9995930698823254
+                        -0.10436246437679023
                       ],
                       "right_unit": [
-                        -0.9987544660445598,
+                        -0.10436246437679023,
                         0.0,
-                        0.04989505542682864
+                        0.9945393285482497
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.2806196212768555,
-                        0.46804797649383545,
-                        2.3174924850463867
+                        -0.6471908092498779,
+                        0.5267535448074341,
+                        2.637545585632324
                       ],
                       "head_xyz_m": [
-                        2.2806196212768555,
-                        -1.1319520235061646,
-                        2.3174924850463867
+                        -0.6471908092498779,
+                        -1.073246455192566,
+                        2.637545585632324
                       ],
                       "forward_unit": [
-                        -0.35692944053075687,
+                        0.9958727283799172,
                         0.0,
-                        0.9341313475536516
+                        0.0907607231633793
                       ],
                       "right_unit": null
                     },
@@ -29423,12 +29654,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 14.0,
-                  "frame_id": 5371,
-                  "distance_m": 2.3101832556829414,
-                  "facing_score": 0.7891141236920467,
+                  "frame_id": 3255,
+                  "distance_m": 1.64834344561263,
+                  "facing_score": 0.9999503012483736,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_front",
+                  "b_relative_to_a": "center_front",
+                  "a_relative_to_b": "center_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -29436,8 +29667,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 49.27324798421951,
-                    "b_to_a_angle_deg": 22.21434851224494,
+                    "a_to_b_angle_deg": 0.22553822200912893,
+                    "b_to_a_angle_deg": 0.7757237121376058,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -29445,42 +29676,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6010775566101074,
-                        0.4388166069984436,
-                        4.052688121795654
+                        0.9807485342025757,
+                        0.766303539276123,
+                        2.7968907356262207
                       ],
                       "head_xyz_m": [
-                        0.6010775566101074,
-                        -1.1611833930015565,
-                        4.052688121795654
+                        0.9807485342025757,
+                        -0.833696460723877,
+                        2.7968907356262207
                       ],
                       "forward_unit": [
-                        -0.08052453360907665,
+                        -0.9958077409570698,
                         0.0,
-                        -0.9967526270279105
+                        -0.09147099567610191
                       ],
                       "right_unit": [
-                        -0.9965704050790302,
+                        -0.09147099567610192,
                         0.0,
-                        0.08274918561906153
+                        0.9958077409570698
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.2246129512786865,
-                        0.4682340919971466,
-                        2.4094552993774414
+                        -0.6429397463798523,
+                        0.5286837220191956,
+                        2.6412973403930664
                       ],
                       "head_xyz_m": [
-                        2.2246129512786865,
-                        -1.1317659080028535,
-                        2.4094552993774414
+                        -0.6429397463798523,
+                        -1.0713162779808045,
+                        2.6412973403930664
                       ],
                       "forward_unit": [
-                        -0.38171868882839827,
+                        0.9966401712801479,
                         0.0,
-                        0.92427855249331
+                        0.0819046335116487
                       ],
                       "right_unit": null
                     },
@@ -29494,12 +29725,12 @@ window.QA_DATA = {
                 },
                 {
                   "t": 14.5,
-                  "frame_id": 5386,
-                  "distance_m": 2.0557345806869205,
-                  "facing_score": 0.8020063893793817,
+                  "frame_id": 3270,
+                  "distance_m": 1.6488527552032988,
+                  "facing_score": 0.9992633655874327,
                   "facing_state": "facing_each_other",
-                  "b_relative_to_a": "left_front",
-                  "a_relative_to_b": "left_front",
+                  "b_relative_to_a": "center_front",
+                  "a_relative_to_b": "center_front",
                   "line_of_sight_blocked": null,
                   "line_of_sight_status": "not_evaluated_no_blocker_geometry",
                   "blocker": null,
@@ -29507,8 +29738,8 @@ window.QA_DATA = {
                     "state": "mutual_body_forward_field",
                     "a_contains_b": true,
                     "b_contains_a": true,
-                    "a_to_b_angle_deg": 52.16724993124372,
-                    "b_to_a_angle_deg": 7.8394439820327335,
+                    "a_to_b_angle_deg": 1.0175955523531983,
+                    "b_to_a_angle_deg": 2.9392743194604645,
                     "half_angle_deg": 60.0,
                     "scope": "body-forward field only; does not prove gaze or absence of occlusion"
                   },
@@ -29516,42 +29747,42 @@ window.QA_DATA = {
                     "person_a": {
                       "id": "A",
                       "pelvis_xyz_m": [
-                        0.6305605173110962,
-                        0.4439064562320709,
-                        4.008601665496826
+                        0.9801077246665955,
+                        0.7661619782447815,
+                        2.7969307899475098
                       ],
                       "head_xyz_m": [
-                        0.6305605173110962,
-                        -1.1560935437679292,
-                        4.008601665496826
+                        0.9801077246665955,
+                        -0.8338380217552186,
+                        2.7969307899475098
                       ],
                       "forward_unit": [
-                        -0.168427310277544,
+                        -0.9967063449192565,
                         0.0,
-                        -0.9857140767751427
+                        -0.08109538826404544
                       ],
                       "right_unit": [
-                        -0.9880950271990221,
+                        -0.08109538826404546,
                         0.0,
-                        0.15384478289680145
+                        0.9967063449192565
                       ]
                     },
                     "person_b": {
                       "id": "B",
                       "pelvis_xyz_m": [
-                        2.018622875213623,
-                        0.44181931018829346,
-                        2.4922497272491455
+                        -0.6431924700737,
+                        0.5260689854621887,
+                        2.63578724861145
                       ],
                       "head_xyz_m": [
-                        2.018622875213623,
-                        -1.1581806898117066,
-                        2.4922497272491455
+                        -0.6431924700737,
+                        -1.0739310145378114,
+                        2.63578724861145
                       ],
                       "forward_unit": [
-                        -0.5682949644123301,
+                        0.9988651956138804,
                         0.0,
-                        0.822824910551199
+                        0.047626893571221865
                       ],
                       "right_unit": null
                     },
@@ -29564,102 +29795,78 @@ window.QA_DATA = {
                   }
                 }
               ],
-              "distance_change_m": 0.032445932385495535,
+              "distance_change_m": -0.27972768170412343,
               "facing_changed": false,
               "los_changed": null,
               "line_of_sight_evidence_status": "missing_blocker_geometry"
             },
-            "passing_analysis": {
-              "kind": "passing_side_and_final_position",
-              "passing_side": "right",
-              "final_relation": "left_front",
-              "start_relation": "right_front",
-              "closest_index": 19,
-              "closest_distance_m": 1.6043372049639453
-            },
-            "compound_option_parts": {
-              "A": [
-                "right",
-                "right-front"
-              ],
-              "B": [
-                "right",
-                "left-front"
-              ],
-              "C": [
-                "left",
-                "left-front"
-              ],
-              "D": [
-                "left",
-                "right-front"
-              ]
+            "facing_counts": {
+              "facing_each_other": 30
             },
             "answer_semantics": {
-              "kind": "passing_side_and_final_position",
+              "kind": "dominant_facing_relation_over_video",
               "state_count": 30,
-              "passing_side": "right",
-              "final_relation": "left_front",
-              "start_relation": "right_front",
-              "closest_index": 19,
-              "closest_distance_m": 1.6043372049639453,
-              "start_distance_m": 2.023288648301425,
-              "end_distance_m": 2.0557345806869205,
-              "minimum_distance_m": 1.6043372049639453,
-              "maximum_distance_m": 2.4926564883916242,
-              "maximum_distance_index": 3
+              "dominant_facing": "facing_each_other",
+              "facing_counts": {
+                "facing_each_other": 30
+              },
+              "start_distance_m": 1.9285804369074222,
+              "end_distance_m": 1.6488527552032988,
+              "minimum_distance_m": 1.622086844149143,
+              "maximum_distance_m": 1.93782501741827,
+              "maximum_distance_index": 19
             },
-            "semantic_gt_id": "egobody_recording_20211002_S03_S18_04_4951_5400",
-            "answer_signature": "sha256:a99056806090ff368cabb57665d32f6249080550b06cbf0adc4fbfee5729e05d",
-            "evidence_signature": "sha256:f11e191759cc224c8b6ef3251d7e5eafc9b62a5eee740c2718d902c9ecd770fa",
+            "semantic_gt_id": "egobody_recording_20220315_S21_S30_01_2835_3284",
+            "answer_signature": "sha256:3ca7382efaa4f38703a51e09e53b07ee4605c4b77b14ff47ed990c61807ebc9d",
+            "evidence_signature": "sha256:d619bd02b72db2ef28a15cb272134552cf22f0df158aa5dbffd7ec1d1d11c22d",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           },
           "semantic_gt": {
             "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "egobody_recording_20211002_S03_S18_04_4951_5400",
+            "semantic_gt_id": "egobody_recording_20220315_S21_S30_01_2835_3284",
             "task_id": "task4_multi_human_relational_dynamics",
-            "question_type": "passing_side_and_final_position",
-            "question_focus": "As the camera wearer passes the interaction partner, which side does the camera wearer pass on, and where does the camera wearer finish?",
+            "question_type": "dominant_facing_relation_over_video",
+            "question_focus": "What body-facing relation dominates between the camera wearer and the interaction partner over the annotated time window?",
             "options": [
               {
                 "id": "option_1",
-                "statement": "The camera wearer passes on the interaction partner's right side and finishes right-front relative to the interaction partner."
+                "statement": "For most of the clip, the camera wearer and the interaction partner face away from each other."
               },
               {
                 "id": "option_2",
-                "statement": "The camera wearer passes on the interaction partner's right side and finishes left-front relative to the interaction partner."
+                "statement": "For most of the clip, the camera wearer and the interaction partner face each other."
               },
               {
                 "id": "option_3",
-                "statement": "The camera wearer passes on the interaction partner's left side and finishes left-front relative to the interaction partner."
+                "statement": "For most of the clip, the camera wearer and the interaction partner remain side-by-side or oblique."
               },
               {
                 "id": "option_4",
-                "statement": "The camera wearer passes on the interaction partner's left side and finishes right-front relative to the interaction partner."
+                "statement": "For most of the clip, the camera wearer and the interaction partner have no dominant facing relation."
               }
             ],
             "correct_option_id": "option_2",
-            "evidence_statement": "The signed body-frame sequence crosses sides around an interior closest approach.",
+            "evidence_statement": "The deterministic timeline aggregates the annotation-provided body-forward vectors over the complete window.",
             "semantic_facts": [
               {
                 "id": "correct_answer_semantics",
-                "value": "The camera wearer passes on the interaction partner's right side and finishes left-front relative to the interaction partner."
+                "value": "For most of the clip, the camera wearer and the interaction partner face each other."
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:f11e191759cc224c8b6ef3251d7e5eafc9b62a5eee740c2718d902c9ecd770fa"
+                "value": "sha256:d619bd02b72db2ef28a15cb272134552cf22f0df158aa5dbffd7ec1d1d11c22d"
               }
             ],
             "evidence_refs": [
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:f11e191759cc224c8b6ef3251d7e5eafc9b62a5eee740c2718d902c9ecd770fa"
+                "sha256": "sha256:d619bd02b72db2ef28a15cb272134552cf22f0df158aa5dbffd7ec1d1d11c22d"
               }
             ],
             "provenance": {
               "computation": "deterministic_task_generator",
-              "result_evidence_signature": "sha256:f11e191759cc224c8b6ef3251d7e5eafc9b62a5eee740c2718d902c9ecd770fa",
+              "result_evidence_signature": "sha256:d619bd02b72db2ef28a15cb272134552cf22f0df158aa5dbffd7ec1d1d11c22d",
               "generator": "limo4si.task4_annotation.generate_task4_group",
               "reasoning_owner": "deterministic_code"
             },
@@ -29678,9 +29885,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:a99056806090ff368cabb57665d32f6249080550b06cbf0adc4fbfee5729e05d"
+            "answer_signature": "sha256:3ca7382efaa4f38703a51e09e53b07ee4605c4b77b14ff47ed990c61807ebc9d"
           },
-          "answer_signature": "sha256:a99056806090ff368cabb57665d32f6249080550b06cbf0adc4fbfee5729e05d",
+          "answer_signature": "sha256:3ca7382efaa4f38703a51e09e53b07ee4605c4b77b14ff47ed990c61807ebc9d",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -29688,8 +29895,8 @@ window.QA_DATA = {
             "semantic_fields_mutable": false,
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "egobody_recording_20211002_S03_S18_04_4951_5400",
-              "answer_signature": "sha256:a99056806090ff368cabb57665d32f6249080550b06cbf0adc4fbfee5729e05d",
+              "semantic_gt_id": "egobody_recording_20220315_S21_S30_01_2835_3284",
+              "answer_signature": "sha256:3ca7382efaa4f38703a51e09e53b07ee4605c4b77b14ff47ed990c61807ebc9d",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -29697,10 +29904,10 @@ window.QA_DATA = {
           }
         }
       ],
-      "metric_evidence_video": "./multihuman_media/egobody_recording_20211002_S03_S18_04_4951_5400_trajectory.mp4",
-      "topdown_image": "./multihuman_media/egobody_recording_20211002_S03_S18_04_4951_5400_trajectory.jpg",
+      "metric_evidence_video": "./multihuman_media/egobody_recording_20220315_S21_S30_01_2835_3284_trajectory.mp4",
+      "topdown_image": "./multihuman_media/egobody_recording_20220315_S21_S30_01_2835_3284_trajectory.jpg",
       "media_scope": "original EgoBody HoloLens PV RGB; official synchronized frame window",
-      "original_image": "./multihuman_media/egobody_recording_20211002_S03_S18_04_4951_5400_endpoints.jpg",
+      "original_image": "./multihuman_media/egobody_recording_20220315_S21_S30_01_2835_3284_endpoints.jpg",
       "original_caption": "Original HoloLens PV start and end frames used to audit left/right claims"
     }
   ],

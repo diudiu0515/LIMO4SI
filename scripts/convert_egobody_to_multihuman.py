@@ -65,15 +65,14 @@ def _pv_poses(root: Path, recording: str) -> tuple[list[int], list[np.ndarray]]:
 
 
 def _timestamp_for_frame(frame: int, pv_timestamps: dict[int, int]) -> int:
-    frames = sorted(pv_timestamps)
-    if not frames:
-        raise ValueError("no synchronized PV timestamps")
-    index = bisect.bisect_left(frames, frame)
-    candidates = [value for value in (index - 1, index) if 0 <= value < len(frames)]
-    anchor = min((frames[value] for value in candidates), key=lambda value: abs(value - frame))
-    if abs(anchor - frame) > 15:
-        raise ValueError("nearest PV timestamp is more than 15 frames away")
-    return int(round(pv_timestamps[anchor] + (frame - anchor) * 1e7 / 30.0))
+    """Interpolate the official PV clock from all locally retained frame anchors."""
+    if len(pv_timestamps) < 2:
+        raise ValueError("at least two synchronized PV timestamps are required")
+    frames = np.asarray(sorted(pv_timestamps), dtype=float)
+    timestamps = np.asarray([pv_timestamps[int(value)] for value in frames], dtype=float)
+    if frame < frames[0] or frame > frames[-1]:
+        raise ValueError("frame lies outside synchronized PV timestamp anchors")
+    return int(round(float(np.interp(frame, frames, timestamps))))
 
 
 def _nearest_pv_pose(timestamp: int, timestamps: list[int], poses: list[np.ndarray]) -> np.ndarray:
@@ -83,6 +82,24 @@ def _nearest_pv_pose(timestamp: int, timestamps: list[int], poses: list[np.ndarr
     if abs(timestamps[best] - timestamp) > 500_000:
         raise ValueError("nearest PV pose is more than 50 ms from the PV timestamp")
     return poses[best]
+
+
+def _evidence_windows(common: list[int], pv_timestamps: dict[int, int], window_frames: int):
+    """Yield windows contained in contiguous raw-PV evidence segments."""
+    anchors = sorted(pv_timestamps)
+    segment_start = anchors[0]
+    segments: list[tuple[int, int]] = []
+    for previous, current in zip(anchors, anchors[1:]):
+        if current - previous > 15:
+            segments.append((segment_start, previous))
+            segment_start = current
+    segments.append((segment_start, anchors[-1]))
+    for segment_start, segment_end in segments:
+        eligible = [frame for frame in common if segment_start <= frame <= segment_end]
+        for start_pos in range(0, len(eligible), window_frames):
+            window = eligible[start_pos:start_pos + window_frames]
+            if len(window) >= window_frames * 0.85:
+                yield window
 
 
 def main() -> None:
@@ -114,10 +131,7 @@ def main() -> None:
         common = sorted(set(wearer) & set(partner))
         if len(common) < 8:
             continue
-        for start_pos in range(0, len(common), args.window_frames):
-            window = common[start_pos:start_pos + args.window_frames]
-            if len(window) < args.window_frames * 0.85:
-                continue
+        for window in _evidence_windows(common, pv_timestamps, args.window_frames):
             sampled = window[::args.sample_stride]
             first = sampled[0]
             frames = []

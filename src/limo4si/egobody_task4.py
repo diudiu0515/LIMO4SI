@@ -45,7 +45,10 @@ def pv_face_axes(
         return value / length
 
     forward = horizontal(-rotation[:, 2], "forward")
-    right = horizontal(rotation[:, 0], "right")
-    if abs(float(np.dot(forward, right))) > 0.15:
-        raise ValueError("projected PV face axes are not sufficiently orthogonal")
+    right_projected = horizontal(rotation[:, 0], "right")
+    right = right_projected - float(np.dot(right_projected, forward)) * forward
+    right_length = float(np.linalg.norm(right))
+    if right_length < 1e-6:
+        raise ValueError("projected PV right axis is parallel to face-forward")
+    right = right / right_length
     return forward.tolist(), right.tolist()
