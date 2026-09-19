@@ -13,9 +13,10 @@ from typing import Any
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from limo4si.task4_contract import TASK4_CAPABILITIES, capability_for
+from limo4si.task4_contract import TASK4_CAPABILITIES, capability_for as task4_capability_for
+from limo4si.task5_contract import TASK5_CAPABILITIES, capability_for as task5_capability_for, is_auxiliary as is_task5_auxiliary
 
-CAPABILITY_LABELS = {
+TASK4_CAPABILITY_LABELS = {
     "distance_evolution": "1 · Distance evolution",
     "passing_side_and_final_position": "2 · Passing side + final position",
     "dominant_interaction_relation": "3 · Dominant interaction relation",
@@ -23,6 +24,12 @@ CAPABILITY_LABELS = {
     "relation_change_cause": "5 · Cause of relation change",
     "group_reorganization": "6 · Group reorganization",
     "physical_visibility_occlusion_timeline": "7 · Physical visibility/occlusion timeline",
+}
+
+TASK5_CAPABILITY_LABELS = {
+    "relation_change_between_gazes": "1 · Relation change between two gazes at X",
+    "gaze_onset_side_change": "2 · Body-side change when gaze turns to X",
+    "last_gaze_annotated_object_relation_change": "3 · Full-clip relation change of the last gaze-annotated object",
 }
 
 
@@ -323,7 +330,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         for question in group.get('qa', []):
             if question.get('task_id') != 'task4_multi_human_relational_dynamics':
                 continue
-            capability = capability_for(str(question.get('question_type')))
+            capability = task4_capability_for(str(question.get('question_type')))
             if capability:
                 capability_counts[capability] += 1
                 capability_first_case.setdefault(capability, index)
@@ -332,7 +339,18 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         count = capability_counts[capability]
         cls = 'capabilityItem' if count else 'capabilityItem missing'
         link = f'<a href="#case-{capability_first_case[capability]}">{count} published case(s)</a>' if count else '0 published · blocked: no physical blocker geometry'
-        parts.append(f'<div class="{cls}"><strong>{esc(CAPABILITY_LABELS[capability])}</strong><br>{link}</div>')
+        parts.append(f'<div class="{cls}"><strong>{esc(TASK4_CAPABILITY_LABELS[capability])}</strong><br>{link}</div>')
+    parts.append('</div>')
+    task5_questions = [q for group in data.get('groups', []) for q in group.get('qa', []) if q.get('task_id') == 'task5_human_state_grounded_spatial_reasoning']
+    parts.append('<h2>Task 5 · Three requested categories</h2>')
+    parts.append('<div class="coverageNotice">Only metric object geometry in a validated wearer body frame counts below. Image-plane gaze/mask questions are auxiliary and do not satisfy these categories.</div><div class="capabilityGrid">')
+    for capability in TASK5_CAPABILITIES:
+        matches = [q for q in task5_questions if task5_capability_for(str(q.get('question_type'))) == capability]
+        cls = 'capabilityItem' if matches else 'capabilityItem missing'
+        status = f'{len(matches)} published case(s)' if matches else '0 published · current subset lacks object-linked metric 3D pose/OBB'
+        parts.append(f'<div class="{cls}"><strong>{esc(TASK5_CAPABILITY_LABELS[capability])}</strong><br>{status}</div>')
+    auxiliary_count = sum(is_task5_auxiliary(str(q.get('question_type'))) for q in task5_questions)
+    parts.append(f'<div class="capabilityItem"><strong>Auxiliary evidence-closed gaze questions</strong><br>{auxiliary_count} published · not counted toward the three categories</div>')
     parts.append('</div>')
     for i, _ in enumerate(data.get('groups', []), 1):
         parts.append(f'<a href="#case-{i}">Case {i}</a>')
@@ -381,9 +399,9 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
             parts.append(f'<article class="card {esc(q.get("task_id"))}">')
             parts.append('<div class="cardHead"><div>')
             parts.append(f'<div class="taskName">{esc(q.get("task_name"))}</div>')
-            capability = capability_for(str(q.get("question_type"))) if q.get("task_id") == "task4_multi_human_relational_dynamics" else None
+            capability = task4_capability_for(str(q.get("question_type"))) if q.get("task_id") == "task4_multi_human_relational_dynamics" else None
             if capability:
-                parts.append(f'<div class="capabilityBadge">{esc(CAPABILITY_LABELS[capability])}</div>')
+                parts.append(f'<div class="capabilityBadge">{esc(TASK4_CAPABILITY_LABELS[capability])}</div>')
             parts.append(f'<div class="questionType">{esc(q.get("question_type"))}</div>')
             parts.append(f'<div class="question">Q{qi}. {display_text(group, q.get("question"))}</div>')
             parts.append(f'</div><span class="pill {status_class}">{esc(q.get("status"))}</span></div>')
