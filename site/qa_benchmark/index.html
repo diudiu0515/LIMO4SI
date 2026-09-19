@@ -27,8 +27,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <h2>Task 5 · Three requested categories</h2>
 <div class="coverageNotice">Only metric object geometry in a validated wearer body frame counts below. Image-plane gaze/mask questions are auxiliary and do not satisfy these categories.</div><div class="capabilityGrid">
 <div class="capabilityItem missing"><strong>1 · Relation change between two gazes at X</strong><br>0 published · current subset lacks object-linked metric 3D pose/OBB</div>
-<div class="capabilityItem missing"><strong>2 · Body-side change when gaze turns to X</strong><br>0 published · current subset lacks object-linked metric 3D pose/OBB</div>
-<div class="capabilityItem missing"><strong>3 · Full-clip relation change of the last gaze-annotated object</strong><br>0 published · current subset lacks object-linked metric 3D pose/OBB</div>
+<div class="capabilityItem"><strong>2 · Body-side change when gaze turns to X</strong><br>1 published case(s)</div>
+<div class="capabilityItem"><strong>3 · Full-clip relation change of the last gaze-annotated object</strong><br>1 published case(s)</div>
 <div class="capabilityItem"><strong>Auxiliary evidence-closed gaze questions</strong><br>12 published · not counted toward the three categories</div>
 </div>
 <a href="#case-1">Case 1</a>
@@ -59,6 +59,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <a href="#case-26">Case 26</a>
 <a href="#case-27">Case 27</a>
 <a href="#case-28">Case 28</a>
+<a href="#case-29">Case 29</a>
+<a href="#case-30">Case 30</a>
 </nav>
 <section class="staticCase" id="case-1">
 <p class="eyebrow">Case 1</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 08</h2>
@@ -9707,6 +9709,227 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
   &quot;facing_counts&quot;: {
     &quot;facing_each_other&quot;: 30
   }
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-29">
+<p class="eyebrow">Case 29</p><h2>Task 5 · wooden bowl</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>8.99856s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">8.99856-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_onset_apartment_release_golden_skeleton_seq100_10s_sam_0_270_c2f0b522.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_onset_apartment_release_golden_skeleton_seq100_10s_sam_0_270_c2f0b522_gaze_evidence.jpg" loading="lazy" alt="original"><figcaption>ADT RGB anchor frames · green: target 2D box · red: measured gaze projection</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_onset_side_change</div>
+<div class="question">Q1. As gaze turns to the wooden bowl, how does it shift in the wearer's body-relative view?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The wooden bowl changes from left-front to front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The wooden bowl changes from front to left-front.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The wooden bowl changes from left-front to behind.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The wooden bowl changes from right-front to front.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The wooden bowl changes from left-front to front.</div><div class="explanation">Immediately before the gaze onset the wooden bowl is left-front; during the sustained gaze it is front.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Deterministic ADT gaze/object computation produces signed semantic GT; the language layer cannot choose or modify the answer.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Aria Digital Twin v2&quot;,
+  &quot;answer_provenance&quot;: &quot;direct computation from annotations; no LLM label judgment&quot;,
+  &quot;coordinate_frame&quot;: &quot;gravity-aligned wearer CPF: +right and +forward, metric world positions&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;depth_consistent_ray_obb_intersection&quot;,
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;4508463855879675&quot;,
+    &quot;name&quot;: &quot;WoodenBowl&quot;
+  },
+  &quot;gaze_events&quot;: [
+    {
+      &quot;object_id&quot;: &quot;4508463855879675&quot;,
+      &quot;object_name&quot;: &quot;WoodenBowl&quot;,
+      &quot;start_index&quot;: 84,
+      &quot;end_index&quot;: 113,
+      &quot;start_time_s&quot;: 2.799552,
+      &quot;end_time_s&quot;: 3.766064,
+      &quot;state_count&quot;: 30,
+      &quot;direct_hit_count&quot;: 30,
+      &quot;merged_gap_count&quot;: 0,
+      &quot;hit_support_ratio&quot;: 1.0,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.09632152977530736,
+        &quot;forward_m&quot;: 0.34353407574347794,
+        &quot;up_m&quot;: -0.5933230529981411,
+        &quot;distance_m&quot;: 0.6921352255106716
+      }
+    }
+  ],
+  &quot;transition&quot;: {
+    &quot;start_frame&quot;: 58,
+    &quot;end_frame&quot;: 98,
+    &quot;start_relation&quot;: &quot;left-front&quot;,
+    &quot;end_relation&quot;: &quot;front&quot;,
+    &quot;wearer_turn_deg&quot;: 23.253319854666923,
+    &quot;pre_gazed_object_id&quot;: &quot;4508384915897847&quot;
+  },
+  &quot;anchor_states&quot;: [
+    {
+      &quot;frame&quot;: 58,
+      &quot;time_s&quot;: 1.933024,
+      &quot;gazed_object_name&quot;: &quot;WhiteFlatwareTray&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.764402124500766,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.32893713049444795,
+        &quot;forward_m&quot;: 0.23087966468392565,
+        &quot;up_m&quot;: -0.5863973602377929,
+        &quot;distance_m&quot;: 0.7119516568229657
+      }
+    },
+    {
+      &quot;frame&quot;: 98,
+      &quot;time_s&quot;: 3.266144,
+      &quot;gazed_object_name&quot;: &quot;WoodenBowl&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.6878494650519409,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.10782135873052968,
+        &quot;forward_m&quot;: 0.3437139551343175,
+        &quot;up_m&quot;: -0.593252864649064,
+        &quot;distance_m&quot;: 0.6938425587017901
+      }
+    }
+  ]
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-30">
+<p class="eyebrow">Case 30</p><h2>Task 5 · white vase</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>8.99856s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">8.99856-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_last_apartment_release_golden_skeleton_seq100_10s_sam_28_298_4ef37b82.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_last_apartment_release_golden_skeleton_seq100_10s_sam_28_298_4ef37b82_gaze_evidence.jpg" loading="lazy" alt="original"><figcaption>ADT RGB anchor frames · green: target 2D box · red: measured gaze projection</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">last_gaze_annotated_object_relation_change</div>
+<div class="question">Q1. The white vase is the last gaze-annotated object in this window. How does its wearer-relative position evolve?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="B">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The white vase follows: front → right-front → front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The white vase follows: left-front → front → left-front.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The white vase follows: right-front → right → right-front.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The white vase follows: right → right-behind → right.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The white vase follows: left-front → front → left-front.</div><div class="explanation">Across the full window, the annotation-derived relation sequence is left-front → front → left-front.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Deterministic ADT gaze/object computation produces signed semantic GT; the language layer cannot choose or modify the answer.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Aria Digital Twin v2&quot;,
+  &quot;answer_provenance&quot;: &quot;direct computation from annotations; no LLM label judgment&quot;,
+  &quot;coordinate_frame&quot;: &quot;gravity-aligned wearer CPF: +right and +forward, metric world positions&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;depth_consistent_ray_obb_intersection&quot;,
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;7379153972126671&quot;,
+    &quot;name&quot;: &quot;WhiteVase&quot;
+  },
+  &quot;gaze_events&quot;: [
+    {
+      &quot;object_id&quot;: &quot;7379153972126671&quot;,
+      &quot;object_name&quot;: &quot;WhiteVase&quot;,
+      &quot;start_index&quot;: 293,
+      &quot;end_index&quot;: 298,
+      &quot;start_time_s&quot;: 9.765104,
+      &quot;end_time_s&quot;: 9.931744,
+      &quot;state_count&quot;: 6,
+      &quot;direct_hit_count&quot;: 6,
+      &quot;merged_gap_count&quot;: 0,
+      &quot;hit_support_ratio&quot;: 1.0,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.192214044398512,
+        &quot;forward_m&quot;: 0.48097458345335864,
+        &quot;up_m&quot;: -0.5993270150566801,
+        &quot;distance_m&quot;: 0.7920282336394202
+      }
+    }
+  ],
+  &quot;transition&quot;: {
+    &quot;start_frame&quot;: 28,
+    &quot;end_frame&quot;: 298,
+    &quot;relation_sequence&quot;: [
+      &quot;left-front&quot;,
+      &quot;front&quot;,
+      &quot;left-front&quot;
+    ],
+    &quot;last_supported_event_end_frame&quot;: 298,
+    &quot;last_supported_event_object_id&quot;: &quot;7379153972126671&quot;
+  },
+  &quot;anchor_states&quot;: [
+    {
+      &quot;frame&quot;: 28,
+      &quot;time_s&quot;: 0.933184,
+      &quot;gazed_object_name&quot;: &quot;WhiteFlatwareTray&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.7687873680539608,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.46246792695525496,
+        &quot;forward_m&quot;: 0.49767554961603894,
+        &quot;up_m&quot;: -0.5701332529222891,
+        &quot;distance_m&quot;: 0.8901625069621262
+      }
+    },
+    {
+      &quot;frame&quot;: 298,
+      &quot;time_s&quot;: 9.931744,
+      &quot;gazed_object_name&quot;: &quot;WhiteVase&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.6993547563327174,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.19694819736996538,
+        &quot;forward_m&quot;: 0.48498051370628603,
+        &quot;up_m&quot;: -0.5999275543727177,
+        &quot;distance_m&quot;: 0.7959849778126925
+      }
+    }
+  ]
 }</pre></details>
 </article>
 </div></section>

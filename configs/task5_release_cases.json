@@ -1,12 +1,12 @@
 {
   "schema_version": 4,
-  "release_status": "signed_semantic_gt_gaze_anchor_pilot",
+  "release_status": "signed_semantic_gt_adt_body_frame_pilot",
   "minimum_examples_per_category": 0,
   "minimum_examples_by_category": {
     "between_repeated_gaze_events": 0,
-    "after_gaze_turns_to_object": 0,
-    "last_gaze_annotated_object": 0,
-    "gaze_target_at_anchor": 2
+    "after_gaze_turns_to_object": 1,
+    "last_gaze_annotated_object": 1,
+    "gaze_target_at_anchor": 0
   },
   "analysis": "outputs/qa/task5_adt_analysis.json",
   "media_source": "site/qa_benchmark/task5_media/adt_seq100_rgb.mp4",
@@ -23,12 +23,12 @@
     "minimum_lateral_shift_m": 0.2,
     "minimum_relation_run_states": 6
   },
-  "known_deficit": "Current ADT pilot contains two evidence-closed gaze-target questions; additional sequences are required for broader object/scene diversity.",
+  "known_deficit": "The sample supports categories 2 and 3; additional ADT sequences are required for repeated-gaze category 1 and scene diversity.",
   "cases": [
     {
       "id": "task5_onset_apartment_release_golden_skeleton_seq100_10s_sam_0_270_c2f0b522",
-      "question_type": "gaze_target_at_evidence_anchor",
-      "category": "gaze_target_at_anchor",
+      "question_type": "gaze_onset_side_change",
+      "category": "after_gaze_turns_to_object",
       "object_id": "4508463855879675",
       "object_name": "WoodenBowl",
       "sequence_name": "Apartment_release_golden_skeleton_seq100_10s_sample_M1292",
@@ -40,15 +40,12 @@
       "event_start_frames": [
         84
       ],
-      "anchor_frames": [
-        58,
-        98
-      ]
+      "pre_frame": 58
     },
     {
       "id": "task5_last_apartment_release_golden_skeleton_seq100_10s_sam_28_298_4ef37b82",
-      "question_type": "gaze_target_at_evidence_anchor",
-      "category": "gaze_target_at_anchor",
+      "question_type": "last_gaze_annotated_object_relation_change",
+      "category": "last_gaze_annotated_object",
       "object_id": "7379153972126671",
       "object_name": "WhiteVase",
       "sequence_name": "Apartment_release_golden_skeleton_seq100_10s_sample_M1292",
