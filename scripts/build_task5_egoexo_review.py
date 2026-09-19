@@ -137,7 +137,7 @@ def render_evidence(path: Path, video: Path, anchors: list[dict[str, Any]], mask
         cv2.drawMarker(canvas, (gaze_x, gaze_y), (20, 20, 245), cv2.MARKER_CROSS, 28, 4)
         cv2.circle(canvas, (gaze_x, gaze_y), 11, (20, 20, 245), 3)
         cv2.rectangle(canvas, (0, 0), (width, 66), (18, 25, 38), -1)
-        label = f"anchor {index}  t={anchor['time_s']:.1f}s  hit: {anchor['object_name']}"
+        label = f"moment {index}  clip t={anchor['clip_time_s']:.1f}s  hit: {anchor['object_name']}"
         cv2.putText(canvas, label, (12, 27), cv2.FONT_HERSHEY_SIMPLEX, 0.58, (255, 255, 255), 2)
         detail = f"margin {anchor['boundary_margin_px']:.1f}px  unique among {anchor['annotated_mask_count']} masks"
         cv2.putText(canvas, detail, (12, 53), cv2.FONT_HERSHEY_SIMPLEX, 0.48, (220, 230, 240), 1)
@@ -239,6 +239,9 @@ def build_case(
         source_duration - window_duration,
     )
     end_sec = start_sec + window_duration
+    clip_times = [round(float(anchor["time_s"]) - start_sec, 6) for anchor in anchors]
+    for anchor, clip_time in zip(anchors, clip_times):
+        anchor["clip_time_s"] = clip_time
     if frames[0] / fps < start_sec or frames[-1] / fps > end_sec:
         raise ValueError(f"{case_id} anchors do not fit the review window")
 
@@ -294,15 +297,15 @@ def build_case(
         task_id=TASK_ID,
         question_type=QUESTION_TYPE,
         question_focus=(
-            f"At which of the three marked moments does the camera wearer's gaze "
-            f"land on the {target_name}?"
+            f"At which stated clip time ({clip_times[0]:.1f}s, {clip_times[1]:.1f}s, or {clip_times[2]:.1f}s) "
+            f"does the camera wearer's gaze land on the {target_name}?"
         ),
-        options=anchor_options(),
+        options=anchor_options(clip_times),
         correct_option_id=correct_semantic_option_id,
         evidence_statement=(
             f"The synchronized gaze point lands inside the annotated {target_name} region "
-            f"only at the {ORDINALS[target_index]} marked moment. "
-            + "At the first, second, and third moments, it lands on "
+            f"only at {clip_times[target_index]:.1f} seconds into the clip. "
+            + f"At {clip_times[0]:.1f}s, {clip_times[1]:.1f}s, and {clip_times[2]:.1f}s, it lands on "
             + ", ".join(anchor["object_name"] for anchor in anchors)
             + ", respectively."
         ),

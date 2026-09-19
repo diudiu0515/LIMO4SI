@@ -6302,1291 +6302,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </article>
 </div></section>
 <section class="staticCase" id="case-14">
-<p class="eyebrow">Case 14</p><h2>Task 5 · EgoExo4D · indiana_cooking_16_3</h2>
-<div class="metaGrid">
-<div class="metaBox"><strong>1</strong><span>questions</span></div>
-<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
-<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
-</div>
-<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_indiana_cooking_16_3_278f27b09b.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
-<figure><img src="./task5_media/task5_egoexo_indiana_cooking_16_3_278f27b09b_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
-</div></details><div class="qaList">
-<article class="card task5_human_state_grounded_spatial_reasoning">
-<div class="cardHead"><div>
-<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which of the three marked moments does the camera wearer's gaze land on the recipe sheet?</div>
-</div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="A">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The gaze lands there at the second marked moment.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The gaze lands there at the first marked moment.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The gaze lands there at the third marked moment.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The gaze does not land there at any marked moment.</span></button>
-</div>
-<button type="button" class="submitAnswer" disabled>Submit answer</button>
-<div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The gaze lands there at the second marked moment.</div><div class="explanation">The synchronized gaze point lands inside the annotated recipe sheet region only at the second marked moment. At the first, second, and third moments, it lands on white flat plate, recipe sheet, white plastic storage bin, respectively.</div></div>
-<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
-<pre class="jsonBlock">{
-  &quot;T/H/S&quot;: {
-    &quot;T&quot;: true,
-    &quot;H&quot;: true,
-    &quot;S&quot;: true
-  },
-  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
-  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
-  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
-  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
-  &quot;target_object&quot;: {
-    &quot;id&quot;: &quot;Recipe sheet_0&quot;,
-    &quot;name&quot;: &quot;recipe sheet&quot;,
-    &quot;anchor_index&quot;: 1
-  },
-  &quot;anchors&quot;: [
-    {
-      &quot;video_frame&quot;: 5280,
-      &quot;time_s&quot;: 176.0,
-      &quot;object_id&quot;: &quot;White flat plate_0&quot;,
-      &quot;object_name&quot;: &quot;white flat plate&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        588.873704,
-        1004.660454
-      ],
-      &quot;boundary_margin_px&quot;: 33.953495,
-      &quot;annotated_mask_count&quot;: 5,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 5370,
-      &quot;time_s&quot;: 179.0,
-      &quot;object_id&quot;: &quot;Recipe sheet_0&quot;,
-      &quot;object_name&quot;: &quot;recipe sheet&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        893.127655,
-        1022.763005
-      ],
-      &quot;boundary_margin_px&quot;: 259.580902,
-      &quot;annotated_mask_count&quot;: 4,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 5610,
-      &quot;time_s&quot;: 187.0,
-      &quot;object_id&quot;: &quot;White plastic storage bin_0&quot;,
-      &quot;object_name&quot;: &quot;white plastic storage bin&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        760.564821,
-        982.396608
-      ],
-      &quot;boundary_margin_px&quot;: 120.0,
-      &quot;annotated_mask_count&quot;: 5,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    }
-  ],
-  &quot;source_window&quot;: {
-    &quot;start_sec&quot;: 174.0,
-    &quot;end_sec&quot;: 189.0,
-    &quot;duration_sec&quot;: 15.0
-  },
-  &quot;source_evidence&quot;: {
-    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
-    &quot;gaze&quot;: &quot;takes/indiana_cooking_16_3/eye_gaze/general_eye_gaze_2d.csv&quot;,
-    &quot;video&quot;: &quot;takes/indiana_cooking_16_3/frame_aligned_videos/downscaled/448/aria02_214-1.mp4&quot;
-  },
-  &quot;claim_limits&quot;: [
-    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
-    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
-  ],
-  &quot;answer_signature&quot;: &quot;sha256:90b0744f3095813fbd858c730f15d39b8fe738a439ae155049e890c516c59bf1&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:329e0188d914917d4748bba5cd4d7b183f437574b1b4b0c44625cdb455d160e2&quot;
-}</pre></details>
-</article>
-</div></section>
-<section class="staticCase" id="case-15">
-<p class="eyebrow">Case 15</p><h2>Task 5 · EgoExo4D · iiith_cooking_125_2</h2>
-<div class="metaGrid">
-<div class="metaBox"><strong>1</strong><span>questions</span></div>
-<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
-<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
-</div>
-<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_iiith_cooking_125_2_49a1e4f29d.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
-<figure><img src="./task5_media/task5_egoexo_iiith_cooking_125_2_49a1e4f29d_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
-</div></details><div class="qaList">
-<article class="card task5_human_state_grounded_spatial_reasoning">
-<div class="cardHead"><div>
-<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which of the three marked moments does the camera wearer's gaze land on the pancake pan?</div>
-</div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="B">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The gaze lands there at the second marked moment.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The gaze lands there at the first marked moment.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The gaze lands there at the third marked moment.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The gaze does not land there at any marked moment.</span></button>
-</div>
-<button type="button" class="submitAnswer" disabled>Submit answer</button>
-<div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The gaze lands there at the first marked moment.</div><div class="explanation">The synchronized gaze point lands inside the annotated pancake pan region only at the first marked moment. At the first, second, and third moments, it lands on pancake pan, egg crate, blue chopping plate, respectively.</div></div>
-<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
-<pre class="jsonBlock">{
-  &quot;T/H/S&quot;: {
-    &quot;T&quot;: true,
-    &quot;H&quot;: true,
-    &quot;S&quot;: true
-  },
-  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
-  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
-  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
-  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
-  &quot;target_object&quot;: {
-    &quot;id&quot;: &quot;pancake pan_0&quot;,
-    &quot;name&quot;: &quot;pancake pan&quot;,
-    &quot;anchor_index&quot;: 0
-  },
-  &quot;anchors&quot;: [
-    {
-      &quot;video_frame&quot;: 60,
-      &quot;time_s&quot;: 2.0,
-      &quot;object_id&quot;: &quot;pancake pan_0&quot;,
-      &quot;object_name&quot;: &quot;pancake pan&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        690.93523,
-        860.422814
-      ],
-      &quot;boundary_margin_px&quot;: 154.782959,
-      &quot;annotated_mask_count&quot;: 1,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 150,
-      &quot;time_s&quot;: 5.0,
-      &quot;object_id&quot;: &quot;egg crate_0&quot;,
-      &quot;object_name&quot;: &quot;egg crate&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        1006.510834,
-        855.741987
-      ],
-      &quot;boundary_margin_px&quot;: 16.584497,
-      &quot;annotated_mask_count&quot;: 3,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 480,
-      &quot;time_s&quot;: 16.0,
-      &quot;object_id&quot;: &quot;blue chopping plate_0&quot;,
-      &quot;object_name&quot;: &quot;blue chopping plate&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        772.899244,
-        964.221975
-      ],
-      &quot;boundary_margin_px&quot;: 12.984499,
-      &quot;annotated_mask_count&quot;: 5,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    }
-  ],
-  &quot;source_window&quot;: {
-    &quot;start_sec&quot;: 1.5,
-    &quot;end_sec&quot;: 16.5,
-    &quot;duration_sec&quot;: 15.0
-  },
-  &quot;source_evidence&quot;: {
-    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
-    &quot;gaze&quot;: &quot;takes/iiith_cooking_125_2/eye_gaze/general_eye_gaze_2d.csv&quot;,
-    &quot;video&quot;: &quot;takes/iiith_cooking_125_2/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
-  },
-  &quot;claim_limits&quot;: [
-    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
-    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
-  ],
-  &quot;answer_signature&quot;: &quot;sha256:0a61c97ae5119307f588d2b597a50a081055dee6800287d2aadd5c80c0498312&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:c7a8ad522d9dacdc9a559314fdd8ec4da9516bbe25c2c60a8fa679a965bee59f&quot;
-}</pre></details>
-</article>
-</div></section>
-<section class="staticCase" id="case-16">
-<p class="eyebrow">Case 16</p><h2>Task 5 · EgoExo4D · iiith_cooking_145_2</h2>
-<div class="metaGrid">
-<div class="metaBox"><strong>1</strong><span>questions</span></div>
-<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
-<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
-</div>
-<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_iiith_cooking_145_2_c92a5c063f.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
-<figure><img src="./task5_media/task5_egoexo_iiith_cooking_145_2_c92a5c063f_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
-</div></details><div class="qaList">
-<article class="card task5_human_state_grounded_spatial_reasoning">
-<div class="cardHead"><div>
-<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which of the three marked moments does the camera wearer's gaze land on the white chopping board?</div>
-</div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="C">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The gaze lands there at the first marked moment.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The gaze lands there at the second marked moment.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The gaze lands there at the third marked moment.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The gaze does not land there at any marked moment.</span></button>
-</div>
-<button type="button" class="submitAnswer" disabled>Submit answer</button>
-<div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The gaze lands there at the third marked moment.</div><div class="explanation">The synchronized gaze point lands inside the annotated white chopping board region only at the third marked moment. At the first, second, and third moments, it lands on large steel bowl, steel tomato bowl, white chopping board, respectively.</div></div>
-<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
-<pre class="jsonBlock">{
-  &quot;T/H/S&quot;: {
-    &quot;T&quot;: true,
-    &quot;H&quot;: true,
-    &quot;S&quot;: true
-  },
-  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
-  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
-  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
-  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
-  &quot;target_object&quot;: {
-    &quot;id&quot;: &quot;White chopping board_0&quot;,
-    &quot;name&quot;: &quot;white chopping board&quot;,
-    &quot;anchor_index&quot;: 2
-  },
-  &quot;anchors&quot;: [
-    {
-      &quot;video_frame&quot;: 10890,
-      &quot;time_s&quot;: 363.0,
-      &quot;object_id&quot;: &quot;Large steel bowl_0&quot;,
-      &quot;object_name&quot;: &quot;large steel bowl&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        844.629913,
-        855.419072
-      ],
-      &quot;boundary_margin_px&quot;: 99.463577,
-      &quot;annotated_mask_count&quot;: 6,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 11190,
-      &quot;time_s&quot;: 373.0,
-      &quot;object_id&quot;: &quot;Steel tomato bowl_0&quot;,
-      &quot;object_name&quot;: &quot;steel tomato bowl&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        905.154279,
-        809.561915
-      ],
-      &quot;boundary_margin_px&quot;: 40.944191,
-      &quot;annotated_mask_count&quot;: 5,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 11310,
-      &quot;time_s&quot;: 377.0,
-      &quot;object_id&quot;: &quot;White chopping board_0&quot;,
-      &quot;object_name&quot;: &quot;white chopping board&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        790.141093,
-        904.831271
-      ],
-      &quot;boundary_margin_px&quot;: 114.393799,
-      &quot;annotated_mask_count&quot;: 10,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    }
-  ],
-  &quot;source_window&quot;: {
-    &quot;start_sec&quot;: 362.5,
-    &quot;end_sec&quot;: 377.5,
-    &quot;duration_sec&quot;: 15.0
-  },
-  &quot;source_evidence&quot;: {
-    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
-    &quot;gaze&quot;: &quot;takes/iiith_cooking_145_2/eye_gaze/general_eye_gaze_2d.csv&quot;,
-    &quot;video&quot;: &quot;takes/iiith_cooking_145_2/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
-  },
-  &quot;claim_limits&quot;: [
-    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
-    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
-  ],
-  &quot;answer_signature&quot;: &quot;sha256:85223bf8144a05c18ae3a69b503843fe78b0a458da61c143458ed69953542ab3&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:a4eff6b5526428dc67434e4cf3a4298756baa4e35ef784a4313c5d9df431aed1&quot;
-}</pre></details>
-</article>
-</div></section>
-<section class="staticCase" id="case-17">
-<p class="eyebrow">Case 17</p><h2>Task 5 · EgoExo4D · minnesota_cooking_060_4</h2>
-<div class="metaGrid">
-<div class="metaBox"><strong>1</strong><span>questions</span></div>
-<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
-<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
-</div>
-<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_minnesota_cooking_060_4_655a676809.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
-<figure><img src="./task5_media/task5_egoexo_minnesota_cooking_060_4_655a676809_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
-</div></details><div class="qaList">
-<article class="card task5_human_state_grounded_spatial_reasoning">
-<div class="cardHead"><div>
-<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which of the three marked moments does the camera wearer's gaze land on the glass bowl?</div>
-</div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="D">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The gaze lands there at the first marked moment.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The gaze lands there at the third marked moment.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The gaze does not land there at any marked moment.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The gaze lands there at the second marked moment.</span></button>
-</div>
-<button type="button" class="submitAnswer" disabled>Submit answer</button>
-<div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The gaze lands there at the second marked moment.</div><div class="explanation">The synchronized gaze point lands inside the annotated glass bowl region only at the second marked moment. At the first, second, and third moments, it lands on mini-tomato package, glass bowl, flat plate, respectively.</div></div>
-<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
-<pre class="jsonBlock">{
-  &quot;T/H/S&quot;: {
-    &quot;T&quot;: true,
-    &quot;H&quot;: true,
-    &quot;S&quot;: true
-  },
-  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
-  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
-  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
-  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
-  &quot;target_object&quot;: {
-    &quot;id&quot;: &quot;Glass bowl_1&quot;,
-    &quot;name&quot;: &quot;glass bowl&quot;,
-    &quot;anchor_index&quot;: 1
-  },
-  &quot;anchors&quot;: [
-    {
-      &quot;video_frame&quot;: 14280,
-      &quot;time_s&quot;: 476.0,
-      &quot;object_id&quot;: &quot;Mini Tomato package_0&quot;,
-      &quot;object_name&quot;: &quot;mini-tomato package&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        886.756962,
-        924.590588
-      ],
-      &quot;boundary_margin_px&quot;: 55.922489,
-      &quot;annotated_mask_count&quot;: 6,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 14340,
-      &quot;time_s&quot;: 478.0,
-      &quot;object_id&quot;: &quot;Glass bowl_1&quot;,
-      &quot;object_name&quot;: &quot;glass bowl&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        762.935924,
-        1017.717395
-      ],
-      &quot;boundary_margin_px&quot;: 111.654274,
-      &quot;annotated_mask_count&quot;: 7,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 14580,
-      &quot;time_s&quot;: 486.0,
-      &quot;object_id&quot;: &quot;Flat plate_0&quot;,
-      &quot;object_name&quot;: &quot;flat plate&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        780.326376,
-        1079.186743
-      ],
-      &quot;boundary_margin_px&quot;: 55.137989,
-      &quot;annotated_mask_count&quot;: 6,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    }
-  ],
-  &quot;source_window&quot;: {
-    &quot;start_sec&quot;: 473.5,
-    &quot;end_sec&quot;: 488.5,
-    &quot;duration_sec&quot;: 15.0
-  },
-  &quot;source_evidence&quot;: {
-    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
-    &quot;gaze&quot;: &quot;takes/minnesota_cooking_060_4/eye_gaze/general_eye_gaze_2d.csv&quot;,
-    &quot;video&quot;: &quot;takes/minnesota_cooking_060_4/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
-  },
-  &quot;claim_limits&quot;: [
-    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
-    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
-  ],
-  &quot;answer_signature&quot;: &quot;sha256:69c1bfddf36b525e8ba82a33901ee8a4ce4209cc95e6598786dde5c77697721c&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:17ef3f7d3ef56b0aee52089fed081cd1b3d10b2b535de2c96c6a8c1962fec1f5&quot;
-}</pre></details>
-</article>
-</div></section>
-<section class="staticCase" id="case-18">
-<p class="eyebrow">Case 18</p><h2>Task 5 · EgoExo4D · uniandes_cooking_006_6</h2>
-<div class="metaGrid">
-<div class="metaBox"><strong>1</strong><span>questions</span></div>
-<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
-<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
-</div>
-<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_uniandes_cooking_006_6_13837ab534.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
-<figure><img src="./task5_media/task5_egoexo_uniandes_cooking_006_6_13837ab534_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
-</div></details><div class="qaList">
-<article class="card task5_human_state_grounded_spatial_reasoning">
-<div class="cardHead"><div>
-<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which of the three marked moments does the camera wearer's gaze land on the frying pan?</div>
-</div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="A">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The gaze lands there at the first marked moment.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The gaze lands there at the second marked moment.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The gaze lands there at the third marked moment.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The gaze does not land there at any marked moment.</span></button>
-</div>
-<button type="button" class="submitAnswer" disabled>Submit answer</button>
-<div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The gaze lands there at the first marked moment.</div><div class="explanation">The synchronized gaze point lands inside the annotated frying pan region only at the first marked moment. At the first, second, and third moments, it lands on frying pan, stainless bowl, liquid milk pack, respectively.</div></div>
-<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
-<pre class="jsonBlock">{
-  &quot;T/H/S&quot;: {
-    &quot;T&quot;: true,
-    &quot;H&quot;: true,
-    &quot;S&quot;: true
-  },
-  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
-  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
-  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
-  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
-  &quot;target_object&quot;: {
-    &quot;id&quot;: &quot;frying pan_0&quot;,
-    &quot;name&quot;: &quot;frying pan&quot;,
-    &quot;anchor_index&quot;: 0
-  },
-  &quot;anchors&quot;: [
-    {
-      &quot;video_frame&quot;: 5040,
-      &quot;time_s&quot;: 168.0,
-      &quot;object_id&quot;: &quot;frying pan_0&quot;,
-      &quot;object_name&quot;: &quot;frying pan&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        621.837765,
-        896.6388
-      ],
-      &quot;boundary_margin_px&quot;: 97.266678,
-      &quot;annotated_mask_count&quot;: 3,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 5250,
-      &quot;time_s&quot;: 175.0,
-      &quot;object_id&quot;: &quot;stainless bowl_0&quot;,
-      &quot;object_name&quot;: &quot;stainless bowl&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        828.79593,
-        902.210924
-      ],
-      &quot;boundary_margin_px&quot;: 67.710083,
-      &quot;annotated_mask_count&quot;: 3,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 5460,
-      &quot;time_s&quot;: 182.0,
-      &quot;object_id&quot;: &quot;liquid milk pack_0&quot;,
-      &quot;object_name&quot;: &quot;liquid milk pack&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        631.936198,
-        841.396247
-      ],
-      &quot;boundary_margin_px&quot;: 50.52869,
-      &quot;annotated_mask_count&quot;: 2,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    }
-  ],
-  &quot;source_window&quot;: {
-    &quot;start_sec&quot;: 167.5,
-    &quot;end_sec&quot;: 182.5,
-    &quot;duration_sec&quot;: 15.0
-  },
-  &quot;source_evidence&quot;: {
-    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
-    &quot;gaze&quot;: &quot;takes/uniandes_cooking_006_6/eye_gaze/general_eye_gaze_2d.csv&quot;,
-    &quot;video&quot;: &quot;takes/uniandes_cooking_006_6/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
-  },
-  &quot;claim_limits&quot;: [
-    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
-    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
-  ],
-  &quot;answer_signature&quot;: &quot;sha256:282e9d2f60c80f1391a64899afc625e325ac1c27d2df31c6f751ce0918138d2f&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:9291dc95624a32f73359bba0b243c69c67499c5af4842d00a609d7537b5a47aa&quot;
-}</pre></details>
-</article>
-</div></section>
-<section class="staticCase" id="case-19">
-<p class="eyebrow">Case 19</p><h2>Task 5 · EgoExo4D · sfu_cooking_010_3</h2>
-<div class="metaGrid">
-<div class="metaBox"><strong>1</strong><span>questions</span></div>
-<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
-<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
-</div>
-<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_sfu_cooking_010_3_dab0e9e401.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
-<figure><img src="./task5_media/task5_egoexo_sfu_cooking_010_3_dab0e9e401_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
-</div></details><div class="qaList">
-<article class="card task5_human_state_grounded_spatial_reasoning">
-<div class="cardHead"><div>
-<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which of the three marked moments does the camera wearer's gaze land on the chopping board?</div>
-</div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="B">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The gaze lands there at the first marked moment.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The gaze lands there at the third marked moment.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The gaze lands there at the second marked moment.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The gaze does not land there at any marked moment.</span></button>
-</div>
-<button type="button" class="submitAnswer" disabled>Submit answer</button>
-<div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The gaze lands there at the third marked moment.</div><div class="explanation">The synchronized gaze point lands inside the annotated chopping board region only at the third marked moment. At the first, second, and third moments, it lands on tomato package, cream bowl, chopping board, respectively.</div></div>
-<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
-<pre class="jsonBlock">{
-  &quot;T/H/S&quot;: {
-    &quot;T&quot;: true,
-    &quot;H&quot;: true,
-    &quot;S&quot;: true
-  },
-  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
-  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
-  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
-  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
-  &quot;target_object&quot;: {
-    &quot;id&quot;: &quot;chopping board_0&quot;,
-    &quot;name&quot;: &quot;chopping board&quot;,
-    &quot;anchor_index&quot;: 2
-  },
-  &quot;anchors&quot;: [
-    {
-      &quot;video_frame&quot;: 5100,
-      &quot;time_s&quot;: 170.0,
-      &quot;object_id&quot;: &quot;tomato package_0&quot;,
-      &quot;object_name&quot;: &quot;tomato package&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        724.115447,
-        871.523581
-      ],
-      &quot;boundary_margin_px&quot;: 43.741089,
-      &quot;annotated_mask_count&quot;: 13,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 5340,
-      &quot;time_s&quot;: 178.0,
-      &quot;object_id&quot;: &quot;cream bowl_0&quot;,
-      &quot;object_name&quot;: &quot;cream bowl&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        699.343383,
-        903.649626
-      ],
-      &quot;boundary_margin_px&quot;: 39.759693,
-      &quot;annotated_mask_count&quot;: 8,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 5460,
-      &quot;time_s&quot;: 182.0,
-      &quot;object_id&quot;: &quot;chopping board_0&quot;,
-      &quot;object_name&quot;: &quot;chopping board&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        820.290666,
-        948.228919
-      ],
-      &quot;boundary_margin_px&quot;: 84.984497,
-      &quot;annotated_mask_count&quot;: 9,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    }
-  ],
-  &quot;source_window&quot;: {
-    &quot;start_sec&quot;: 168.5,
-    &quot;end_sec&quot;: 183.5,
-    &quot;duration_sec&quot;: 15.0
-  },
-  &quot;source_evidence&quot;: {
-    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
-    &quot;gaze&quot;: &quot;takes/sfu_cooking_010_3/eye_gaze/general_eye_gaze_2d.csv&quot;,
-    &quot;video&quot;: &quot;takes/sfu_cooking_010_3/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
-  },
-  &quot;claim_limits&quot;: [
-    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
-    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
-  ],
-  &quot;answer_signature&quot;: &quot;sha256:fddcfa56bfcb0e1022f8df59c757d798fd0fc49ed21adc750fb5352aed76b0b5&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:f9a905eb1ef00fe3c23b65e2f2901d55d6fb397802b569a2466036df63d99b97&quot;
-}</pre></details>
-</article>
-</div></section>
-<section class="staticCase" id="case-20">
-<p class="eyebrow">Case 20</p><h2>Task 5 · EgoExo4D · iiith_cooking_32_1</h2>
-<div class="metaGrid">
-<div class="metaBox"><strong>1</strong><span>questions</span></div>
-<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
-<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
-</div>
-<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_iiith_cooking_32_1_06aeff1d04.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
-<figure><img src="./task5_media/task5_egoexo_iiith_cooking_32_1_06aeff1d04_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
-</div></details><div class="qaList">
-<article class="card task5_human_state_grounded_spatial_reasoning">
-<div class="cardHead"><div>
-<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which of the three marked moments does the camera wearer's gaze land on the tawa pan?</div>
-</div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="C">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The gaze lands there at the first marked moment.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The gaze lands there at the third marked moment.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The gaze lands there at the second marked moment.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The gaze does not land there at any marked moment.</span></button>
-</div>
-<button type="button" class="submitAnswer" disabled>Submit answer</button>
-<div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The gaze lands there at the second marked moment.</div><div class="explanation">The synchronized gaze point lands inside the annotated tawa pan region only at the second marked moment. At the first, second, and third moments, it lands on gas lighter, tawa pan, stainless paprika container, respectively.</div></div>
-<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
-<pre class="jsonBlock">{
-  &quot;T/H/S&quot;: {
-    &quot;T&quot;: true,
-    &quot;H&quot;: true,
-    &quot;S&quot;: true
-  },
-  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
-  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
-  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
-  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
-  &quot;target_object&quot;: {
-    &quot;id&quot;: &quot;tawa pan_0&quot;,
-    &quot;name&quot;: &quot;tawa pan&quot;,
-    &quot;anchor_index&quot;: 1
-  },
-  &quot;anchors&quot;: [
-    {
-      &quot;video_frame&quot;: 930,
-      &quot;time_s&quot;: 31.0,
-      &quot;object_id&quot;: &quot;gas lighter _0&quot;,
-      &quot;object_name&quot;: &quot;gas lighter&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        800.265214,
-        984.323007
-      ],
-      &quot;boundary_margin_px&quot;: 10.0,
-      &quot;annotated_mask_count&quot;: 2,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 1170,
-      &quot;time_s&quot;: 39.0,
-      &quot;object_id&quot;: &quot;tawa pan_0&quot;,
-      &quot;object_name&quot;: &quot;tawa pan&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        747.736215,
-        1060.761572
-      ],
-      &quot;boundary_margin_px&quot;: 119.000084,
-      &quot;annotated_mask_count&quot;: 2,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 1260,
-      &quot;time_s&quot;: 42.0,
-      &quot;object_id&quot;: &quot;stainless paprika container_0&quot;,
-      &quot;object_name&quot;: &quot;stainless paprika container&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        611.962708,
-        809.412736
-      ],
-      &quot;boundary_margin_px&quot;: 24.968996,
-      &quot;annotated_mask_count&quot;: 7,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    }
-  ],
-  &quot;source_window&quot;: {
-    &quot;start_sec&quot;: 29.0,
-    &quot;end_sec&quot;: 44.0,
-    &quot;duration_sec&quot;: 15.0
-  },
-  &quot;source_evidence&quot;: {
-    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
-    &quot;gaze&quot;: &quot;takes/iiith_cooking_32_1/eye_gaze/general_eye_gaze_2d.csv&quot;,
-    &quot;video&quot;: &quot;takes/iiith_cooking_32_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
-  },
-  &quot;claim_limits&quot;: [
-    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
-    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
-  ],
-  &quot;answer_signature&quot;: &quot;sha256:fe286c17534a983ff55fb63f9ef1d4d5ef73b9cdb2aa16e0bf1b01ae82c07885&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:75968e7bbcc8a3d28912994b9687a6547ab8766b193c52d5b55316ba8f96eb1f&quot;
-}</pre></details>
-</article>
-</div></section>
-<section class="staticCase" id="case-21">
-<p class="eyebrow">Case 21</p><h2>Task 5 · EgoExo4D · sfu_cooking_007_3</h2>
-<div class="metaGrid">
-<div class="metaBox"><strong>1</strong><span>questions</span></div>
-<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
-<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
-</div>
-<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_sfu_cooking_007_3_60ab95d4a7.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
-<figure><img src="./task5_media/task5_egoexo_sfu_cooking_007_3_60ab95d4a7_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
-</div></details><div class="qaList">
-<article class="card task5_human_state_grounded_spatial_reasoning">
-<div class="cardHead"><div>
-<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which of the three marked moments does the camera wearer's gaze land on the pink frying pan?</div>
-</div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="D">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The gaze lands there at the second marked moment.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The gaze lands there at the third marked moment.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The gaze does not land there at any marked moment.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The gaze lands there at the first marked moment.</span></button>
-</div>
-<button type="button" class="submitAnswer" disabled>Submit answer</button>
-<div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The gaze lands there at the first marked moment.</div><div class="explanation">The synchronized gaze point lands inside the annotated pink frying pan region only at the first marked moment. At the first, second, and third moments, it lands on pink frying pan, meat cleaver knife, wooden chopping board, respectively.</div></div>
-<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
-<pre class="jsonBlock">{
-  &quot;T/H/S&quot;: {
-    &quot;T&quot;: true,
-    &quot;H&quot;: true,
-    &quot;S&quot;: true
-  },
-  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
-  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
-  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
-  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
-  &quot;target_object&quot;: {
-    &quot;id&quot;: &quot;pink frying pan_0&quot;,
-    &quot;name&quot;: &quot;pink frying pan&quot;,
-    &quot;anchor_index&quot;: 0
-  },
-  &quot;anchors&quot;: [
-    {
-      &quot;video_frame&quot;: 15840,
-      &quot;time_s&quot;: 528.0,
-      &quot;object_id&quot;: &quot;pink frying pan_0&quot;,
-      &quot;object_name&quot;: &quot;pink frying pan&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        791.261928,
-        962.300876
-      ],
-      &quot;boundary_margin_px&quot;: 104.654274,
-      &quot;annotated_mask_count&quot;: 4,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 15930,
-      &quot;time_s&quot;: 531.0,
-      &quot;object_id&quot;: &quot;meat cleaver knife_0&quot;,
-      &quot;object_name&quot;: &quot;meat cleaver knife&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        480.545871,
-        897.638169
-      ],
-      &quot;boundary_margin_px&quot;: 25.165895,
-      &quot;annotated_mask_count&quot;: 8,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 16170,
-      &quot;time_s&quot;: 539.0,
-      &quot;object_id&quot;: &quot;wooden chopping board_0&quot;,
-      &quot;object_name&quot;: &quot;wooden chopping board&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        554.504394,
-        877.609664
-      ],
-      &quot;boundary_margin_px&quot;: 22.590698,
-      &quot;annotated_mask_count&quot;: 6,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    }
-  ],
-  &quot;source_window&quot;: {
-    &quot;start_sec&quot;: 526.0,
-    &quot;end_sec&quot;: 541.0,
-    &quot;duration_sec&quot;: 15.0
-  },
-  &quot;source_evidence&quot;: {
-    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
-    &quot;gaze&quot;: &quot;takes/sfu_cooking_007_3/eye_gaze/general_eye_gaze_2d.csv&quot;,
-    &quot;video&quot;: &quot;takes/sfu_cooking_007_3/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
-  },
-  &quot;claim_limits&quot;: [
-    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
-    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
-  ],
-  &quot;answer_signature&quot;: &quot;sha256:ca974299b4e4ae6bba5e452151eca9f4eb66639665ba3ae5e34d1e477bdac454&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:284a8c69ccf534c2a464b6690fa2595fda3799274e7f3168430a522363ecc30c&quot;
-}</pre></details>
-</article>
-</div></section>
-<section class="staticCase" id="case-22">
-<p class="eyebrow">Case 22</p><h2>Task 5 · EgoExo4D · uniandes_cooking_001_5</h2>
-<div class="metaGrid">
-<div class="metaBox"><strong>1</strong><span>questions</span></div>
-<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
-<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
-</div>
-<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_uniandes_cooking_001_5_8854e96840.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
-<figure><img src="./task5_media/task5_egoexo_uniandes_cooking_001_5_8854e96840_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
-</div></details><div class="qaList">
-<article class="card task5_human_state_grounded_spatial_reasoning">
-<div class="cardHead"><div>
-<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which of the three marked moments does the camera wearer's gaze land on the aluminium skillet?</div>
-</div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="A">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The gaze lands there at the third marked moment.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The gaze lands there at the first marked moment.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The gaze lands there at the second marked moment.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The gaze does not land there at any marked moment.</span></button>
-</div>
-<button type="button" class="submitAnswer" disabled>Submit answer</button>
-<div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The gaze lands there at the third marked moment.</div><div class="explanation">The synchronized gaze point lands inside the annotated aluminium skillet region only at the third marked moment. At the first, second, and third moments, it lands on stainless bowl, egg whisk, aluminium skillet, respectively.</div></div>
-<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
-<pre class="jsonBlock">{
-  &quot;T/H/S&quot;: {
-    &quot;T&quot;: true,
-    &quot;H&quot;: true,
-    &quot;S&quot;: true
-  },
-  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
-  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
-  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
-  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
-  &quot;target_object&quot;: {
-    &quot;id&quot;: &quot;alluminuim skiilet_0&quot;,
-    &quot;name&quot;: &quot;aluminium skillet&quot;,
-    &quot;anchor_index&quot;: 2
-  },
-  &quot;anchors&quot;: [
-    {
-      &quot;video_frame&quot;: 14400,
-      &quot;time_s&quot;: 480.0,
-      &quot;object_id&quot;: &quot;stainless bowl_0&quot;,
-      &quot;object_name&quot;: &quot;stainless bowl&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        824.128208,
-        980.035569
-      ],
-      &quot;boundary_margin_px&quot;: 73.70388,
-      &quot;annotated_mask_count&quot;: 10,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 14520,
-      &quot;time_s&quot;: 484.0,
-      &quot;object_id&quot;: &quot;egg whisk_1&quot;,
-      &quot;object_name&quot;: &quot;egg whisk&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        862.041643,
-        983.353874
-      ],
-      &quot;boundary_margin_px&quot;: 16.0,
-      &quot;annotated_mask_count&quot;: 11,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 14760,
-      &quot;time_s&quot;: 492.0,
-      &quot;object_id&quot;: &quot;alluminuim skiilet_0&quot;,
-      &quot;object_name&quot;: &quot;aluminium skillet&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        820.969535,
-        972.501721
-      ],
-      &quot;boundary_margin_px&quot;: 102.057381,
-      &quot;annotated_mask_count&quot;: 3,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    }
-  ],
-  &quot;source_window&quot;: {
-    &quot;start_sec&quot;: 478.5,
-    &quot;end_sec&quot;: 493.5,
-    &quot;duration_sec&quot;: 15.0
-  },
-  &quot;source_evidence&quot;: {
-    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
-    &quot;gaze&quot;: &quot;takes/uniandes_cooking_001_5/eye_gaze/general_eye_gaze_2d.csv&quot;,
-    &quot;video&quot;: &quot;takes/uniandes_cooking_001_5/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
-  },
-  &quot;claim_limits&quot;: [
-    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
-    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
-  ],
-  &quot;answer_signature&quot;: &quot;sha256:f8bb28a9c2924869f9ce12dded41eebb25a46694189f33a1a14f24ba019cb655&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:7f20a9260053ccec9d81955c98db184fe4cfbffbb554f39684efe1219de058d7&quot;
-}</pre></details>
-</article>
-</div></section>
-<section class="staticCase" id="case-23">
-<p class="eyebrow">Case 23</p><h2>Task 5 · EgoExo4D · minnesota_cooking_010_2</h2>
-<div class="metaGrid">
-<div class="metaBox"><strong>1</strong><span>questions</span></div>
-<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
-<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
-</div>
-<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_minnesota_cooking_010_2_a60293338e.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
-<figure><img src="./task5_media/task5_egoexo_minnesota_cooking_010_2_a60293338e_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
-</div></details><div class="qaList">
-<article class="card task5_human_state_grounded_spatial_reasoning">
-<div class="cardHead"><div>
-<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which of the three marked moments does the camera wearer's gaze land on the egg carton?</div>
-</div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="B">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The gaze lands there at the second marked moment.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The gaze lands there at the first marked moment.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The gaze lands there at the third marked moment.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The gaze does not land there at any marked moment.</span></button>
-</div>
-<button type="button" class="submitAnswer" disabled>Submit answer</button>
-<div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The gaze lands there at the first marked moment.</div><div class="explanation">The synchronized gaze point lands inside the annotated egg carton region only at the first marked moment. At the first, second, and third moments, it lands on egg carton, paper towel, paper towel sheet, respectively.</div></div>
-<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
-<pre class="jsonBlock">{
-  &quot;T/H/S&quot;: {
-    &quot;T&quot;: true,
-    &quot;H&quot;: true,
-    &quot;S&quot;: true
-  },
-  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
-  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
-  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
-  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
-  &quot;target_object&quot;: {
-    &quot;id&quot;: &quot;egg carton_0&quot;,
-    &quot;name&quot;: &quot;egg carton&quot;,
-    &quot;anchor_index&quot;: 0
-  },
-  &quot;anchors&quot;: [
-    {
-      &quot;video_frame&quot;: 3960,
-      &quot;time_s&quot;: 132.0,
-      &quot;object_id&quot;: &quot;egg carton_0&quot;,
-      &quot;object_name&quot;: &quot;egg carton&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        776.794504,
-        1067.378781
-      ],
-      &quot;boundary_margin_px&quot;: 83.0,
-      &quot;annotated_mask_count&quot;: 4,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 4050,
-      &quot;time_s&quot;: 135.0,
-      &quot;object_id&quot;: &quot;paper towel_0&quot;,
-      &quot;object_name&quot;: &quot;paper towel&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        712.887876,
-        896.334161
-      ],
-      &quot;boundary_margin_px&quot;: 33.165894,
-      &quot;annotated_mask_count&quot;: 1,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 4290,
-      &quot;time_s&quot;: 143.0,
-      &quot;object_id&quot;: &quot;paper towel sheet_0&quot;,
-      &quot;object_name&quot;: &quot;paper towel sheet&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        742.420242,
-        1101.288652
-      ],
-      &quot;boundary_margin_px&quot;: 27.999994,
-      &quot;annotated_mask_count&quot;: 5,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    }
-  ],
-  &quot;source_window&quot;: {
-    &quot;start_sec&quot;: 130.0,
-    &quot;end_sec&quot;: 145.0,
-    &quot;duration_sec&quot;: 15.0
-  },
-  &quot;source_evidence&quot;: {
-    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
-    &quot;gaze&quot;: &quot;takes/minnesota_cooking_010_2/eye_gaze/general_eye_gaze_2d.csv&quot;,
-    &quot;video&quot;: &quot;takes/minnesota_cooking_010_2/frame_aligned_videos/downscaled/448/aria05_214-1.mp4&quot;
-  },
-  &quot;claim_limits&quot;: [
-    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
-    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
-  ],
-  &quot;answer_signature&quot;: &quot;sha256:656456bf316123582bd9177d7d272ab961e67e89bfb70ef9558ae4dfd2353353&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:5a9803b085d2ee6f1e9664051e3363f8a5d25a6a73c0ba4a5059733912185078&quot;
-}</pre></details>
-</article>
-</div></section>
-<section class="staticCase" id="case-24">
-<p class="eyebrow">Case 24</p><h2>Task 5 · EgoExo4D · sfu_cooking_007_1</h2>
-<div class="metaGrid">
-<div class="metaBox"><strong>1</strong><span>questions</span></div>
-<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
-<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
-</div>
-<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_sfu_cooking_007_1_4ec66ba784.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
-<figure><img src="./task5_media/task5_egoexo_sfu_cooking_007_1_4ec66ba784_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
-</div></details><div class="qaList">
-<article class="card task5_human_state_grounded_spatial_reasoning">
-<div class="cardHead"><div>
-<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which of the three marked moments does the camera wearer's gaze land on the non-stick pan?</div>
-</div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="C">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The gaze lands there at the first marked moment.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The gaze lands there at the second marked moment.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The gaze lands there at the third marked moment.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The gaze does not land there at any marked moment.</span></button>
-</div>
-<button type="button" class="submitAnswer" disabled>Submit answer</button>
-<div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The gaze lands there at the third marked moment.</div><div class="explanation">The synchronized gaze point lands inside the annotated non-stick pan region only at the third marked moment. At the first, second, and third moments, it lands on blue and white bowl, kitchen cloth, non-stick pan, respectively.</div></div>
-<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
-<pre class="jsonBlock">{
-  &quot;T/H/S&quot;: {
-    &quot;T&quot;: true,
-    &quot;H&quot;: true,
-    &quot;S&quot;: true
-  },
-  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
-  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
-  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
-  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
-  &quot;target_object&quot;: {
-    &quot;id&quot;: &quot;non-stick pan_0&quot;,
-    &quot;name&quot;: &quot;non-stick pan&quot;,
-    &quot;anchor_index&quot;: 2
-  },
-  &quot;anchors&quot;: [
-    {
-      &quot;video_frame&quot;: 7650,
-      &quot;time_s&quot;: 255.0,
-      &quot;object_id&quot;: &quot;blue and white bowl_0&quot;,
-      &quot;object_name&quot;: &quot;blue and white bowl&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        707.472827,
-        1023.467755
-      ],
-      &quot;boundary_margin_px&quot;: 10.5907,
-      &quot;annotated_mask_count&quot;: 6,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 7710,
-      &quot;time_s&quot;: 257.0,
-      &quot;object_id&quot;: &quot;kitchen cloth_0&quot;,
-      &quot;object_name&quot;: &quot;kitchen cloth&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        718.215248,
-        981.948018
-      ],
-      &quot;boundary_margin_px&quot;: 30.0,
-      &quot;annotated_mask_count&quot;: 6,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 7980,
-      &quot;time_s&quot;: 266.0,
-      &quot;object_id&quot;: &quot;non-stick pan_0&quot;,
-      &quot;object_name&quot;: &quot;non-stick pan&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        699.837178,
-        969.717585
-      ],
-      &quot;boundary_margin_px&quot;: 94.482178,
-      &quot;annotated_mask_count&quot;: 7,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    }
-  ],
-  &quot;source_window&quot;: {
-    &quot;start_sec&quot;: 253.0,
-    &quot;end_sec&quot;: 268.0,
-    &quot;duration_sec&quot;: 15.0
-  },
-  &quot;source_evidence&quot;: {
-    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
-    &quot;gaze&quot;: &quot;takes/sfu_cooking_007_1/eye_gaze/general_eye_gaze_2d.csv&quot;,
-    &quot;video&quot;: &quot;takes/sfu_cooking_007_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
-  },
-  &quot;claim_limits&quot;: [
-    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
-    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
-  ],
-  &quot;answer_signature&quot;: &quot;sha256:0595549828bc7c824b4ba7db1b90f37570377ef996cf9e6efed861b316c7b4ac&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:452480b71bd3bf5fb937e10384f3dbbe94759b578260fb1f8d9d70eb43b6b277&quot;
-}</pre></details>
-</article>
-</div></section>
-<section class="staticCase" id="case-25">
-<p class="eyebrow">Case 25</p><h2>Task 5 · EgoExo4D · sfu_cooking_010_1</h2>
-<div class="metaGrid">
-<div class="metaBox"><strong>1</strong><span>questions</span></div>
-<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
-<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
-</div>
-<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
-<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_sfu_cooking_010_1_718f6f57a3.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
-<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
-<figure><img src="./task5_media/task5_egoexo_sfu_cooking_010_1_718f6f57a3_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
-</div></details><div class="qaList">
-<article class="card task5_human_state_grounded_spatial_reasoning">
-<div class="cardHead"><div>
-<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which of the three marked moments does the camera wearer's gaze land on the white bowl?</div>
-</div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="D">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The gaze lands there at the first marked moment.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The gaze lands there at the third marked moment.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The gaze does not land there at any marked moment.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The gaze lands there at the second marked moment.</span></button>
-</div>
-<button type="button" class="submitAnswer" disabled>Submit answer</button>
-<div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The gaze lands there at the second marked moment.</div><div class="explanation">The synchronized gaze point lands inside the annotated white bowl region only at the second marked moment. At the first, second, and third moments, it lands on dining table, white bowl, white plate, respectively.</div></div>
-<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
-<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
-<pre class="jsonBlock">{
-  &quot;T/H/S&quot;: {
-    &quot;T&quot;: true,
-    &quot;H&quot;: true,
-    &quot;S&quot;: true
-  },
-  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
-  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
-  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
-  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
-  &quot;target_object&quot;: {
-    &quot;id&quot;: &quot;white bowl_0&quot;,
-    &quot;name&quot;: &quot;white bowl&quot;,
-    &quot;anchor_index&quot;: 1
-  },
-  &quot;anchors&quot;: [
-    {
-      &quot;video_frame&quot;: 6510,
-      &quot;time_s&quot;: 217.0,
-      &quot;object_id&quot;: &quot;dining table_0&quot;,
-      &quot;object_name&quot;: &quot;dining table&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        611.27551,
-        917.753205
-      ],
-      &quot;boundary_margin_px&quot;: 53.72559,
-      &quot;annotated_mask_count&quot;: 7,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 6660,
-      &quot;time_s&quot;: 222.0,
-      &quot;object_id&quot;: &quot;white bowl_0&quot;,
-      &quot;object_name&quot;: &quot;white bowl&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        778.013973,
-        939.318411
-      ],
-      &quot;boundary_margin_px&quot;: 53.32869,
-      &quot;annotated_mask_count&quot;: 6,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    },
-    {
-      &quot;video_frame&quot;: 6900,
-      &quot;time_s&quot;: 230.0,
-      &quot;object_id&quot;: &quot;white plate_0&quot;,
-      &quot;object_name&quot;: &quot;white plate&quot;,
-      &quot;gaze_pixel_xy&quot;: [
-        698.538945,
-        828.703641
-      ],
-      &quot;boundary_margin_px&quot;: 51.331791,
-      &quot;annotated_mask_count&quot;: 5,
-      &quot;alignment_skew_ms&quot;: 0.0,
-      &quot;unique_annotated_mask_hit&quot;: true
-    }
-  ],
-  &quot;source_window&quot;: {
-    &quot;start_sec&quot;: 216.0,
-    &quot;end_sec&quot;: 231.0,
-    &quot;duration_sec&quot;: 15.0
-  },
-  &quot;source_evidence&quot;: {
-    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
-    &quot;gaze&quot;: &quot;takes/sfu_cooking_010_1/eye_gaze/general_eye_gaze_2d.csv&quot;,
-    &quot;video&quot;: &quot;takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
-  },
-  &quot;claim_limits&quot;: [
-    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
-    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
-  ],
-  &quot;answer_signature&quot;: &quot;sha256:4b30f8099c6c8403d47f8a5217c7a016b12590de87b8ef458764ece8fbd410a9&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:ab4fdf998aa7e6b9d4eef2af35b4727e3c982586150237019102c557cd98ca1e&quot;
-}</pre></details>
-</article>
-</div></section>
-<section class="staticCase" id="case-26">
-<p class="eyebrow">Case 26</p><h2>EgoBody recording_20211002_S03_S18_03</h2>
+<p class="eyebrow">Case 14</p><h2>EgoBody recording_20211002_S03_S18_03</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -8281,8 +6997,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-27">
-<p class="eyebrow">Case 27</p><h2>EgoBody recording_20211002_S03_S18_04</h2>
+<section class="staticCase" id="case-15">
+<p class="eyebrow">Case 15</p><h2>EgoBody recording_20211002_S03_S18_04</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -8977,8 +7693,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-28">
-<p class="eyebrow">Case 28</p><h2>EgoBody recording_20220315_S21_S30_01</h2>
+<section class="staticCase" id="case-16">
+<p class="eyebrow">Case 16</p><h2>EgoBody recording_20220315_S21_S30_01</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -9665,6 +8381,1326 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
   &quot;facing_counts&quot;: {
     &quot;facing_each_other&quot;: 30
   }
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-17">
+<p class="eyebrow">Case 17</p><h2>Task 5 · EgoExo4D · indiana_cooking_16_3</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_indiana_cooking_16_3_278f27b09b.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_egoexo_indiana_cooking_16_3_278f27b09b_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
+<div class="question">Q1. At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera wearer's gaze land on the recipe sheet?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 5.0s into the clip, but not at 2.0s or 13.0s.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 2.0s into the clip, but not at 5.0s or 13.0s.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 13.0s into the clip, but not at 2.0s or 5.0s.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At none of these clip times: 2.0s, 5.0s, or 13.0s.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">At 5.0s into the clip, but not at 2.0s or 13.0s.</div><div class="explanation">The synchronized gaze point lands inside the annotated recipe sheet region only at 5.0 seconds into the clip. At 2.0s, 5.0s, and 13.0s, it lands on white flat plate, recipe sheet, white plastic storage bin, respectively.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
+  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
+  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
+  &quot;target_object&quot;: {
+    &quot;id&quot;: &quot;Recipe sheet_0&quot;,
+    &quot;name&quot;: &quot;recipe sheet&quot;,
+    &quot;anchor_index&quot;: 1
+  },
+  &quot;anchors&quot;: [
+    {
+      &quot;video_frame&quot;: 5280,
+      &quot;time_s&quot;: 176.0,
+      &quot;clip_time_s&quot;: 2.0,
+      &quot;object_id&quot;: &quot;White flat plate_0&quot;,
+      &quot;object_name&quot;: &quot;white flat plate&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        588.873704,
+        1004.660454
+      ],
+      &quot;boundary_margin_px&quot;: 33.953495,
+      &quot;annotated_mask_count&quot;: 5,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 5370,
+      &quot;time_s&quot;: 179.0,
+      &quot;clip_time_s&quot;: 5.0,
+      &quot;object_id&quot;: &quot;Recipe sheet_0&quot;,
+      &quot;object_name&quot;: &quot;recipe sheet&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        893.127655,
+        1022.763005
+      ],
+      &quot;boundary_margin_px&quot;: 259.580902,
+      &quot;annotated_mask_count&quot;: 4,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 5610,
+      &quot;time_s&quot;: 187.0,
+      &quot;clip_time_s&quot;: 13.0,
+      &quot;object_id&quot;: &quot;White plastic storage bin_0&quot;,
+      &quot;object_name&quot;: &quot;white plastic storage bin&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        760.564821,
+        982.396608
+      ],
+      &quot;boundary_margin_px&quot;: 120.0,
+      &quot;annotated_mask_count&quot;: 5,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    }
+  ],
+  &quot;source_window&quot;: {
+    &quot;start_sec&quot;: 174.0,
+    &quot;end_sec&quot;: 189.0,
+    &quot;duration_sec&quot;: 15.0
+  },
+  &quot;source_evidence&quot;: {
+    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
+    &quot;gaze&quot;: &quot;takes/indiana_cooking_16_3/eye_gaze/general_eye_gaze_2d.csv&quot;,
+    &quot;video&quot;: &quot;takes/indiana_cooking_16_3/frame_aligned_videos/downscaled/448/aria02_214-1.mp4&quot;
+  },
+  &quot;claim_limits&quot;: [
+    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
+    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
+  ],
+  &quot;answer_signature&quot;: &quot;sha256:9aa4906ad40935c810ffcc261235292e598beba5f11d350b681c98db270a260e&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:c56b46c8f6399e85b13a6b3d6350231f689af92b97738f619b205de41a5899fd&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-18">
+<p class="eyebrow">Case 18</p><h2>Task 5 · EgoExo4D · iiith_cooking_125_2</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_iiith_cooking_125_2_49a1e4f29d.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_egoexo_iiith_cooking_125_2_49a1e4f29d_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
+<div class="question">Q1. At which stated clip time (0.5s, 3.5s, or 14.5s) does the camera wearer's gaze land on the pancake pan?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="B">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 3.5s into the clip, but not at 0.5s or 14.5s.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 0.5s into the clip, but not at 3.5s or 14.5s.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 14.5s into the clip, but not at 0.5s or 3.5s.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At none of these clip times: 0.5s, 3.5s, or 14.5s.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">At 0.5s into the clip, but not at 3.5s or 14.5s.</div><div class="explanation">The synchronized gaze point lands inside the annotated pancake pan region only at 0.5 seconds into the clip. At 0.5s, 3.5s, and 14.5s, it lands on pancake pan, egg crate, blue chopping plate, respectively.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
+  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
+  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
+  &quot;target_object&quot;: {
+    &quot;id&quot;: &quot;pancake pan_0&quot;,
+    &quot;name&quot;: &quot;pancake pan&quot;,
+    &quot;anchor_index&quot;: 0
+  },
+  &quot;anchors&quot;: [
+    {
+      &quot;video_frame&quot;: 60,
+      &quot;time_s&quot;: 2.0,
+      &quot;clip_time_s&quot;: 0.5,
+      &quot;object_id&quot;: &quot;pancake pan_0&quot;,
+      &quot;object_name&quot;: &quot;pancake pan&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        690.93523,
+        860.422814
+      ],
+      &quot;boundary_margin_px&quot;: 154.782959,
+      &quot;annotated_mask_count&quot;: 1,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 150,
+      &quot;time_s&quot;: 5.0,
+      &quot;clip_time_s&quot;: 3.5,
+      &quot;object_id&quot;: &quot;egg crate_0&quot;,
+      &quot;object_name&quot;: &quot;egg crate&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        1006.510834,
+        855.741987
+      ],
+      &quot;boundary_margin_px&quot;: 16.584497,
+      &quot;annotated_mask_count&quot;: 3,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 480,
+      &quot;time_s&quot;: 16.0,
+      &quot;clip_time_s&quot;: 14.5,
+      &quot;object_id&quot;: &quot;blue chopping plate_0&quot;,
+      &quot;object_name&quot;: &quot;blue chopping plate&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        772.899244,
+        964.221975
+      ],
+      &quot;boundary_margin_px&quot;: 12.984499,
+      &quot;annotated_mask_count&quot;: 5,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    }
+  ],
+  &quot;source_window&quot;: {
+    &quot;start_sec&quot;: 1.5,
+    &quot;end_sec&quot;: 16.5,
+    &quot;duration_sec&quot;: 15.0
+  },
+  &quot;source_evidence&quot;: {
+    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
+    &quot;gaze&quot;: &quot;takes/iiith_cooking_125_2/eye_gaze/general_eye_gaze_2d.csv&quot;,
+    &quot;video&quot;: &quot;takes/iiith_cooking_125_2/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
+  },
+  &quot;claim_limits&quot;: [
+    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
+    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
+  ],
+  &quot;answer_signature&quot;: &quot;sha256:3cfc1b8e70070df3311d4cc6569ba0ce2c594661fbaf3de21e985b93a54a3581&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:12a32b969ef3bb44875c0f7cc2f0dcd2330c73cf5a85ab7b8f7510b47074dbd3&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-19">
+<p class="eyebrow">Case 19</p><h2>Task 5 · EgoExo4D · iiith_cooking_145_2</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_iiith_cooking_145_2_c92a5c063f.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_egoexo_iiith_cooking_145_2_c92a5c063f_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
+<div class="question">Q1. At which stated clip time (0.5s, 10.5s, or 14.5s) does the camera wearer's gaze land on the white chopping board?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="C">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 0.5s into the clip, but not at 10.5s or 14.5s.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 10.5s into the clip, but not at 0.5s or 14.5s.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 14.5s into the clip, but not at 0.5s or 10.5s.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At none of these clip times: 0.5s, 10.5s, or 14.5s.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">At 14.5s into the clip, but not at 0.5s or 10.5s.</div><div class="explanation">The synchronized gaze point lands inside the annotated white chopping board region only at 14.5 seconds into the clip. At 0.5s, 10.5s, and 14.5s, it lands on large steel bowl, steel tomato bowl, white chopping board, respectively.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
+  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
+  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
+  &quot;target_object&quot;: {
+    &quot;id&quot;: &quot;White chopping board_0&quot;,
+    &quot;name&quot;: &quot;white chopping board&quot;,
+    &quot;anchor_index&quot;: 2
+  },
+  &quot;anchors&quot;: [
+    {
+      &quot;video_frame&quot;: 10890,
+      &quot;time_s&quot;: 363.0,
+      &quot;clip_time_s&quot;: 0.5,
+      &quot;object_id&quot;: &quot;Large steel bowl_0&quot;,
+      &quot;object_name&quot;: &quot;large steel bowl&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        844.629913,
+        855.419072
+      ],
+      &quot;boundary_margin_px&quot;: 99.463577,
+      &quot;annotated_mask_count&quot;: 6,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 11190,
+      &quot;time_s&quot;: 373.0,
+      &quot;clip_time_s&quot;: 10.5,
+      &quot;object_id&quot;: &quot;Steel tomato bowl_0&quot;,
+      &quot;object_name&quot;: &quot;steel tomato bowl&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        905.154279,
+        809.561915
+      ],
+      &quot;boundary_margin_px&quot;: 40.944191,
+      &quot;annotated_mask_count&quot;: 5,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 11310,
+      &quot;time_s&quot;: 377.0,
+      &quot;clip_time_s&quot;: 14.5,
+      &quot;object_id&quot;: &quot;White chopping board_0&quot;,
+      &quot;object_name&quot;: &quot;white chopping board&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        790.141093,
+        904.831271
+      ],
+      &quot;boundary_margin_px&quot;: 114.393799,
+      &quot;annotated_mask_count&quot;: 10,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    }
+  ],
+  &quot;source_window&quot;: {
+    &quot;start_sec&quot;: 362.5,
+    &quot;end_sec&quot;: 377.5,
+    &quot;duration_sec&quot;: 15.0
+  },
+  &quot;source_evidence&quot;: {
+    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
+    &quot;gaze&quot;: &quot;takes/iiith_cooking_145_2/eye_gaze/general_eye_gaze_2d.csv&quot;,
+    &quot;video&quot;: &quot;takes/iiith_cooking_145_2/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
+  },
+  &quot;claim_limits&quot;: [
+    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
+    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
+  ],
+  &quot;answer_signature&quot;: &quot;sha256:0358c42187fc67a093a8253771a2eab39b2bfff6df8e26556af28219d75922a4&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:d90e4bfb0d90548f83a73f79875d06f34d877aa735801e074eb72badb0392d99&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-20">
+<p class="eyebrow">Case 20</p><h2>Task 5 · EgoExo4D · minnesota_cooking_060_4</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_minnesota_cooking_060_4_655a676809.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_egoexo_minnesota_cooking_060_4_655a676809_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
+<div class="question">Q1. At which stated clip time (2.5s, 4.5s, or 12.5s) does the camera wearer's gaze land on the glass bowl?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="D">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 2.5s into the clip, but not at 4.5s or 12.5s.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 12.5s into the clip, but not at 2.5s or 4.5s.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At none of these clip times: 2.5s, 4.5s, or 12.5s.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At 4.5s into the clip, but not at 2.5s or 12.5s.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">At 4.5s into the clip, but not at 2.5s or 12.5s.</div><div class="explanation">The synchronized gaze point lands inside the annotated glass bowl region only at 4.5 seconds into the clip. At 2.5s, 4.5s, and 12.5s, it lands on mini-tomato package, glass bowl, flat plate, respectively.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
+  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
+  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
+  &quot;target_object&quot;: {
+    &quot;id&quot;: &quot;Glass bowl_1&quot;,
+    &quot;name&quot;: &quot;glass bowl&quot;,
+    &quot;anchor_index&quot;: 1
+  },
+  &quot;anchors&quot;: [
+    {
+      &quot;video_frame&quot;: 14280,
+      &quot;time_s&quot;: 476.0,
+      &quot;clip_time_s&quot;: 2.5,
+      &quot;object_id&quot;: &quot;Mini Tomato package_0&quot;,
+      &quot;object_name&quot;: &quot;mini-tomato package&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        886.756962,
+        924.590588
+      ],
+      &quot;boundary_margin_px&quot;: 55.922489,
+      &quot;annotated_mask_count&quot;: 6,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 14340,
+      &quot;time_s&quot;: 478.0,
+      &quot;clip_time_s&quot;: 4.5,
+      &quot;object_id&quot;: &quot;Glass bowl_1&quot;,
+      &quot;object_name&quot;: &quot;glass bowl&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        762.935924,
+        1017.717395
+      ],
+      &quot;boundary_margin_px&quot;: 111.654274,
+      &quot;annotated_mask_count&quot;: 7,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 14580,
+      &quot;time_s&quot;: 486.0,
+      &quot;clip_time_s&quot;: 12.5,
+      &quot;object_id&quot;: &quot;Flat plate_0&quot;,
+      &quot;object_name&quot;: &quot;flat plate&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        780.326376,
+        1079.186743
+      ],
+      &quot;boundary_margin_px&quot;: 55.137989,
+      &quot;annotated_mask_count&quot;: 6,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    }
+  ],
+  &quot;source_window&quot;: {
+    &quot;start_sec&quot;: 473.5,
+    &quot;end_sec&quot;: 488.5,
+    &quot;duration_sec&quot;: 15.0
+  },
+  &quot;source_evidence&quot;: {
+    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
+    &quot;gaze&quot;: &quot;takes/minnesota_cooking_060_4/eye_gaze/general_eye_gaze_2d.csv&quot;,
+    &quot;video&quot;: &quot;takes/minnesota_cooking_060_4/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
+  },
+  &quot;claim_limits&quot;: [
+    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
+    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
+  ],
+  &quot;answer_signature&quot;: &quot;sha256:464797f80369a81825d0878a44886fe20cace6a809c62cd84d9326191160582a&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:cc7faf8e21ddc84b4465c4522f0ba35ce7e892adf8418425b80bcf7c15f33842&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-21">
+<p class="eyebrow">Case 21</p><h2>Task 5 · EgoExo4D · uniandes_cooking_006_6</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_uniandes_cooking_006_6_13837ab534.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_egoexo_uniandes_cooking_006_6_13837ab534_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
+<div class="question">Q1. At which stated clip time (0.5s, 7.5s, or 14.5s) does the camera wearer's gaze land on the frying pan?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 0.5s into the clip, but not at 7.5s or 14.5s.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 7.5s into the clip, but not at 0.5s or 14.5s.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 14.5s into the clip, but not at 0.5s or 7.5s.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At none of these clip times: 0.5s, 7.5s, or 14.5s.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">At 0.5s into the clip, but not at 7.5s or 14.5s.</div><div class="explanation">The synchronized gaze point lands inside the annotated frying pan region only at 0.5 seconds into the clip. At 0.5s, 7.5s, and 14.5s, it lands on frying pan, stainless bowl, liquid milk pack, respectively.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
+  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
+  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
+  &quot;target_object&quot;: {
+    &quot;id&quot;: &quot;frying pan_0&quot;,
+    &quot;name&quot;: &quot;frying pan&quot;,
+    &quot;anchor_index&quot;: 0
+  },
+  &quot;anchors&quot;: [
+    {
+      &quot;video_frame&quot;: 5040,
+      &quot;time_s&quot;: 168.0,
+      &quot;clip_time_s&quot;: 0.5,
+      &quot;object_id&quot;: &quot;frying pan_0&quot;,
+      &quot;object_name&quot;: &quot;frying pan&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        621.837765,
+        896.6388
+      ],
+      &quot;boundary_margin_px&quot;: 97.266678,
+      &quot;annotated_mask_count&quot;: 3,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 5250,
+      &quot;time_s&quot;: 175.0,
+      &quot;clip_time_s&quot;: 7.5,
+      &quot;object_id&quot;: &quot;stainless bowl_0&quot;,
+      &quot;object_name&quot;: &quot;stainless bowl&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        828.79593,
+        902.210924
+      ],
+      &quot;boundary_margin_px&quot;: 67.710083,
+      &quot;annotated_mask_count&quot;: 3,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 5460,
+      &quot;time_s&quot;: 182.0,
+      &quot;clip_time_s&quot;: 14.5,
+      &quot;object_id&quot;: &quot;liquid milk pack_0&quot;,
+      &quot;object_name&quot;: &quot;liquid milk pack&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        631.936198,
+        841.396247
+      ],
+      &quot;boundary_margin_px&quot;: 50.52869,
+      &quot;annotated_mask_count&quot;: 2,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    }
+  ],
+  &quot;source_window&quot;: {
+    &quot;start_sec&quot;: 167.5,
+    &quot;end_sec&quot;: 182.5,
+    &quot;duration_sec&quot;: 15.0
+  },
+  &quot;source_evidence&quot;: {
+    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
+    &quot;gaze&quot;: &quot;takes/uniandes_cooking_006_6/eye_gaze/general_eye_gaze_2d.csv&quot;,
+    &quot;video&quot;: &quot;takes/uniandes_cooking_006_6/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
+  },
+  &quot;claim_limits&quot;: [
+    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
+    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
+  ],
+  &quot;answer_signature&quot;: &quot;sha256:e7270bc9f3fe4ba10a5577c2b9df57f6db907ba0a82f19c29f8604fe4a42147d&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:ba079780f71114d23e8401bf7834543497da4206422c4f5d27b70620947028c4&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-22">
+<p class="eyebrow">Case 22</p><h2>Task 5 · EgoExo4D · sfu_cooking_010_3</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_sfu_cooking_010_3_dab0e9e401.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_egoexo_sfu_cooking_010_3_dab0e9e401_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
+<div class="question">Q1. At which stated clip time (1.5s, 9.5s, or 13.5s) does the camera wearer's gaze land on the chopping board?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="B">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 1.5s into the clip, but not at 9.5s or 13.5s.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 13.5s into the clip, but not at 1.5s or 9.5s.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 9.5s into the clip, but not at 1.5s or 13.5s.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At none of these clip times: 1.5s, 9.5s, or 13.5s.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">At 13.5s into the clip, but not at 1.5s or 9.5s.</div><div class="explanation">The synchronized gaze point lands inside the annotated chopping board region only at 13.5 seconds into the clip. At 1.5s, 9.5s, and 13.5s, it lands on tomato package, cream bowl, chopping board, respectively.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
+  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
+  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
+  &quot;target_object&quot;: {
+    &quot;id&quot;: &quot;chopping board_0&quot;,
+    &quot;name&quot;: &quot;chopping board&quot;,
+    &quot;anchor_index&quot;: 2
+  },
+  &quot;anchors&quot;: [
+    {
+      &quot;video_frame&quot;: 5100,
+      &quot;time_s&quot;: 170.0,
+      &quot;clip_time_s&quot;: 1.5,
+      &quot;object_id&quot;: &quot;tomato package_0&quot;,
+      &quot;object_name&quot;: &quot;tomato package&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        724.115447,
+        871.523581
+      ],
+      &quot;boundary_margin_px&quot;: 43.741089,
+      &quot;annotated_mask_count&quot;: 13,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 5340,
+      &quot;time_s&quot;: 178.0,
+      &quot;clip_time_s&quot;: 9.5,
+      &quot;object_id&quot;: &quot;cream bowl_0&quot;,
+      &quot;object_name&quot;: &quot;cream bowl&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        699.343383,
+        903.649626
+      ],
+      &quot;boundary_margin_px&quot;: 39.759693,
+      &quot;annotated_mask_count&quot;: 8,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 5460,
+      &quot;time_s&quot;: 182.0,
+      &quot;clip_time_s&quot;: 13.5,
+      &quot;object_id&quot;: &quot;chopping board_0&quot;,
+      &quot;object_name&quot;: &quot;chopping board&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        820.290666,
+        948.228919
+      ],
+      &quot;boundary_margin_px&quot;: 84.984497,
+      &quot;annotated_mask_count&quot;: 9,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    }
+  ],
+  &quot;source_window&quot;: {
+    &quot;start_sec&quot;: 168.5,
+    &quot;end_sec&quot;: 183.5,
+    &quot;duration_sec&quot;: 15.0
+  },
+  &quot;source_evidence&quot;: {
+    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
+    &quot;gaze&quot;: &quot;takes/sfu_cooking_010_3/eye_gaze/general_eye_gaze_2d.csv&quot;,
+    &quot;video&quot;: &quot;takes/sfu_cooking_010_3/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
+  },
+  &quot;claim_limits&quot;: [
+    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
+    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
+  ],
+  &quot;answer_signature&quot;: &quot;sha256:d0d5069cc8054a2be1bb7c8dc86f5e4fd1acce9bedd78ef6053e89c6b81ad153&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:dc677d51d68ee68ee958297b44cf26a8f0752b926a6ddfa5b457234576cf8c66&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-23">
+<p class="eyebrow">Case 23</p><h2>Task 5 · EgoExo4D · iiith_cooking_32_1</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_iiith_cooking_32_1_06aeff1d04.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_egoexo_iiith_cooking_32_1_06aeff1d04_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
+<div class="question">Q1. At which stated clip time (2.0s, 10.0s, or 13.0s) does the camera wearer's gaze land on the tawa pan?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="C">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 2.0s into the clip, but not at 10.0s or 13.0s.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 13.0s into the clip, but not at 2.0s or 10.0s.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 10.0s into the clip, but not at 2.0s or 13.0s.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At none of these clip times: 2.0s, 10.0s, or 13.0s.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">At 10.0s into the clip, but not at 2.0s or 13.0s.</div><div class="explanation">The synchronized gaze point lands inside the annotated tawa pan region only at 10.0 seconds into the clip. At 2.0s, 10.0s, and 13.0s, it lands on gas lighter, tawa pan, stainless paprika container, respectively.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
+  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
+  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
+  &quot;target_object&quot;: {
+    &quot;id&quot;: &quot;tawa pan_0&quot;,
+    &quot;name&quot;: &quot;tawa pan&quot;,
+    &quot;anchor_index&quot;: 1
+  },
+  &quot;anchors&quot;: [
+    {
+      &quot;video_frame&quot;: 930,
+      &quot;time_s&quot;: 31.0,
+      &quot;clip_time_s&quot;: 2.0,
+      &quot;object_id&quot;: &quot;gas lighter _0&quot;,
+      &quot;object_name&quot;: &quot;gas lighter&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        800.265214,
+        984.323007
+      ],
+      &quot;boundary_margin_px&quot;: 10.0,
+      &quot;annotated_mask_count&quot;: 2,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 1170,
+      &quot;time_s&quot;: 39.0,
+      &quot;clip_time_s&quot;: 10.0,
+      &quot;object_id&quot;: &quot;tawa pan_0&quot;,
+      &quot;object_name&quot;: &quot;tawa pan&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        747.736215,
+        1060.761572
+      ],
+      &quot;boundary_margin_px&quot;: 119.000084,
+      &quot;annotated_mask_count&quot;: 2,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 1260,
+      &quot;time_s&quot;: 42.0,
+      &quot;clip_time_s&quot;: 13.0,
+      &quot;object_id&quot;: &quot;stainless paprika container_0&quot;,
+      &quot;object_name&quot;: &quot;stainless paprika container&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        611.962708,
+        809.412736
+      ],
+      &quot;boundary_margin_px&quot;: 24.968996,
+      &quot;annotated_mask_count&quot;: 7,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    }
+  ],
+  &quot;source_window&quot;: {
+    &quot;start_sec&quot;: 29.0,
+    &quot;end_sec&quot;: 44.0,
+    &quot;duration_sec&quot;: 15.0
+  },
+  &quot;source_evidence&quot;: {
+    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
+    &quot;gaze&quot;: &quot;takes/iiith_cooking_32_1/eye_gaze/general_eye_gaze_2d.csv&quot;,
+    &quot;video&quot;: &quot;takes/iiith_cooking_32_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
+  },
+  &quot;claim_limits&quot;: [
+    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
+    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
+  ],
+  &quot;answer_signature&quot;: &quot;sha256:4e254e91c94f005182804c65f1879aa8bd361c478b7c52e2c437fb60a57314fe&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:debf20e80ff68e89842fca6183c6a5807161b4b0626224369726b8708f4cbdb1&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-24">
+<p class="eyebrow">Case 24</p><h2>Task 5 · EgoExo4D · sfu_cooking_007_3</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_sfu_cooking_007_3_60ab95d4a7.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_egoexo_sfu_cooking_007_3_60ab95d4a7_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
+<div class="question">Q1. At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera wearer's gaze land on the pink frying pan?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="D">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 5.0s into the clip, but not at 2.0s or 13.0s.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 13.0s into the clip, but not at 2.0s or 5.0s.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At none of these clip times: 2.0s, 5.0s, or 13.0s.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At 2.0s into the clip, but not at 5.0s or 13.0s.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">At 2.0s into the clip, but not at 5.0s or 13.0s.</div><div class="explanation">The synchronized gaze point lands inside the annotated pink frying pan region only at 2.0 seconds into the clip. At 2.0s, 5.0s, and 13.0s, it lands on pink frying pan, meat cleaver knife, wooden chopping board, respectively.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
+  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
+  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
+  &quot;target_object&quot;: {
+    &quot;id&quot;: &quot;pink frying pan_0&quot;,
+    &quot;name&quot;: &quot;pink frying pan&quot;,
+    &quot;anchor_index&quot;: 0
+  },
+  &quot;anchors&quot;: [
+    {
+      &quot;video_frame&quot;: 15840,
+      &quot;time_s&quot;: 528.0,
+      &quot;clip_time_s&quot;: 2.0,
+      &quot;object_id&quot;: &quot;pink frying pan_0&quot;,
+      &quot;object_name&quot;: &quot;pink frying pan&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        791.261928,
+        962.300876
+      ],
+      &quot;boundary_margin_px&quot;: 104.654274,
+      &quot;annotated_mask_count&quot;: 4,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 15930,
+      &quot;time_s&quot;: 531.0,
+      &quot;clip_time_s&quot;: 5.0,
+      &quot;object_id&quot;: &quot;meat cleaver knife_0&quot;,
+      &quot;object_name&quot;: &quot;meat cleaver knife&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        480.545871,
+        897.638169
+      ],
+      &quot;boundary_margin_px&quot;: 25.165895,
+      &quot;annotated_mask_count&quot;: 8,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 16170,
+      &quot;time_s&quot;: 539.0,
+      &quot;clip_time_s&quot;: 13.0,
+      &quot;object_id&quot;: &quot;wooden chopping board_0&quot;,
+      &quot;object_name&quot;: &quot;wooden chopping board&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        554.504394,
+        877.609664
+      ],
+      &quot;boundary_margin_px&quot;: 22.590698,
+      &quot;annotated_mask_count&quot;: 6,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    }
+  ],
+  &quot;source_window&quot;: {
+    &quot;start_sec&quot;: 526.0,
+    &quot;end_sec&quot;: 541.0,
+    &quot;duration_sec&quot;: 15.0
+  },
+  &quot;source_evidence&quot;: {
+    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
+    &quot;gaze&quot;: &quot;takes/sfu_cooking_007_3/eye_gaze/general_eye_gaze_2d.csv&quot;,
+    &quot;video&quot;: &quot;takes/sfu_cooking_007_3/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
+  },
+  &quot;claim_limits&quot;: [
+    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
+    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
+  ],
+  &quot;answer_signature&quot;: &quot;sha256:a334fbb6d2149048f3fde5ea58fea34f8111fcc1919574c93d88186aafa13e71&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:d6178b5775aad8042daaeef671cf75dfededbdf51d32f50b15a7d0b1ea956bd5&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-25">
+<p class="eyebrow">Case 25</p><h2>Task 5 · EgoExo4D · uniandes_cooking_001_5</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_uniandes_cooking_001_5_8854e96840.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_egoexo_uniandes_cooking_001_5_8854e96840_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
+<div class="question">Q1. At which stated clip time (1.5s, 5.5s, or 13.5s) does the camera wearer's gaze land on the aluminium skillet?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 13.5s into the clip, but not at 1.5s or 5.5s.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 1.5s into the clip, but not at 5.5s or 13.5s.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 5.5s into the clip, but not at 1.5s or 13.5s.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At none of these clip times: 1.5s, 5.5s, or 13.5s.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">At 13.5s into the clip, but not at 1.5s or 5.5s.</div><div class="explanation">The synchronized gaze point lands inside the annotated aluminium skillet region only at 13.5 seconds into the clip. At 1.5s, 5.5s, and 13.5s, it lands on stainless bowl, egg whisk, aluminium skillet, respectively.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
+  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
+  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
+  &quot;target_object&quot;: {
+    &quot;id&quot;: &quot;alluminuim skiilet_0&quot;,
+    &quot;name&quot;: &quot;aluminium skillet&quot;,
+    &quot;anchor_index&quot;: 2
+  },
+  &quot;anchors&quot;: [
+    {
+      &quot;video_frame&quot;: 14400,
+      &quot;time_s&quot;: 480.0,
+      &quot;clip_time_s&quot;: 1.5,
+      &quot;object_id&quot;: &quot;stainless bowl_0&quot;,
+      &quot;object_name&quot;: &quot;stainless bowl&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        824.128208,
+        980.035569
+      ],
+      &quot;boundary_margin_px&quot;: 73.70388,
+      &quot;annotated_mask_count&quot;: 10,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 14520,
+      &quot;time_s&quot;: 484.0,
+      &quot;clip_time_s&quot;: 5.5,
+      &quot;object_id&quot;: &quot;egg whisk_1&quot;,
+      &quot;object_name&quot;: &quot;egg whisk&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        862.041643,
+        983.353874
+      ],
+      &quot;boundary_margin_px&quot;: 16.0,
+      &quot;annotated_mask_count&quot;: 11,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 14760,
+      &quot;time_s&quot;: 492.0,
+      &quot;clip_time_s&quot;: 13.5,
+      &quot;object_id&quot;: &quot;alluminuim skiilet_0&quot;,
+      &quot;object_name&quot;: &quot;aluminium skillet&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        820.969535,
+        972.501721
+      ],
+      &quot;boundary_margin_px&quot;: 102.057381,
+      &quot;annotated_mask_count&quot;: 3,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    }
+  ],
+  &quot;source_window&quot;: {
+    &quot;start_sec&quot;: 478.5,
+    &quot;end_sec&quot;: 493.5,
+    &quot;duration_sec&quot;: 15.0
+  },
+  &quot;source_evidence&quot;: {
+    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
+    &quot;gaze&quot;: &quot;takes/uniandes_cooking_001_5/eye_gaze/general_eye_gaze_2d.csv&quot;,
+    &quot;video&quot;: &quot;takes/uniandes_cooking_001_5/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
+  },
+  &quot;claim_limits&quot;: [
+    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
+    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
+  ],
+  &quot;answer_signature&quot;: &quot;sha256:cf6af6292373a324237c315790b197043cb8ce2ef0d21cea905c7f7a3352fbad&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:1ccb0fcb83bed7db3426bdab8510a6539c3129d671745cd7f153ff17b3d7e752&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-26">
+<p class="eyebrow">Case 26</p><h2>Task 5 · EgoExo4D · minnesota_cooking_010_2</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_minnesota_cooking_010_2_a60293338e.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_egoexo_minnesota_cooking_010_2_a60293338e_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
+<div class="question">Q1. At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera wearer's gaze land on the egg carton?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="B">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 5.0s into the clip, but not at 2.0s or 13.0s.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 2.0s into the clip, but not at 5.0s or 13.0s.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 13.0s into the clip, but not at 2.0s or 5.0s.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At none of these clip times: 2.0s, 5.0s, or 13.0s.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">At 2.0s into the clip, but not at 5.0s or 13.0s.</div><div class="explanation">The synchronized gaze point lands inside the annotated egg carton region only at 2.0 seconds into the clip. At 2.0s, 5.0s, and 13.0s, it lands on egg carton, paper towel, paper towel sheet, respectively.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
+  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
+  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
+  &quot;target_object&quot;: {
+    &quot;id&quot;: &quot;egg carton_0&quot;,
+    &quot;name&quot;: &quot;egg carton&quot;,
+    &quot;anchor_index&quot;: 0
+  },
+  &quot;anchors&quot;: [
+    {
+      &quot;video_frame&quot;: 3960,
+      &quot;time_s&quot;: 132.0,
+      &quot;clip_time_s&quot;: 2.0,
+      &quot;object_id&quot;: &quot;egg carton_0&quot;,
+      &quot;object_name&quot;: &quot;egg carton&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        776.794504,
+        1067.378781
+      ],
+      &quot;boundary_margin_px&quot;: 83.0,
+      &quot;annotated_mask_count&quot;: 4,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 4050,
+      &quot;time_s&quot;: 135.0,
+      &quot;clip_time_s&quot;: 5.0,
+      &quot;object_id&quot;: &quot;paper towel_0&quot;,
+      &quot;object_name&quot;: &quot;paper towel&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        712.887876,
+        896.334161
+      ],
+      &quot;boundary_margin_px&quot;: 33.165894,
+      &quot;annotated_mask_count&quot;: 1,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 4290,
+      &quot;time_s&quot;: 143.0,
+      &quot;clip_time_s&quot;: 13.0,
+      &quot;object_id&quot;: &quot;paper towel sheet_0&quot;,
+      &quot;object_name&quot;: &quot;paper towel sheet&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        742.420242,
+        1101.288652
+      ],
+      &quot;boundary_margin_px&quot;: 27.999994,
+      &quot;annotated_mask_count&quot;: 5,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    }
+  ],
+  &quot;source_window&quot;: {
+    &quot;start_sec&quot;: 130.0,
+    &quot;end_sec&quot;: 145.0,
+    &quot;duration_sec&quot;: 15.0
+  },
+  &quot;source_evidence&quot;: {
+    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
+    &quot;gaze&quot;: &quot;takes/minnesota_cooking_010_2/eye_gaze/general_eye_gaze_2d.csv&quot;,
+    &quot;video&quot;: &quot;takes/minnesota_cooking_010_2/frame_aligned_videos/downscaled/448/aria05_214-1.mp4&quot;
+  },
+  &quot;claim_limits&quot;: [
+    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
+    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
+  ],
+  &quot;answer_signature&quot;: &quot;sha256:b20efa7c21bd1b3365aa79a13d3cbc4aca61daaa8c270d0d61e1570222aeea5c&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:e578315fc7c788b63ff8729542200fd809bfc7361e8bf7bd8b0404e39c773847&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-27">
+<p class="eyebrow">Case 27</p><h2>Task 5 · EgoExo4D · sfu_cooking_007_1</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_sfu_cooking_007_1_4ec66ba784.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_egoexo_sfu_cooking_007_1_4ec66ba784_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
+<div class="question">Q1. At which stated clip time (2.0s, 4.0s, or 13.0s) does the camera wearer's gaze land on the non-stick pan?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="C">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 2.0s into the clip, but not at 4.0s or 13.0s.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 4.0s into the clip, but not at 2.0s or 13.0s.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 13.0s into the clip, but not at 2.0s or 4.0s.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At none of these clip times: 2.0s, 4.0s, or 13.0s.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">At 13.0s into the clip, but not at 2.0s or 4.0s.</div><div class="explanation">The synchronized gaze point lands inside the annotated non-stick pan region only at 13.0 seconds into the clip. At 2.0s, 4.0s, and 13.0s, it lands on blue and white bowl, kitchen cloth, non-stick pan, respectively.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
+  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
+  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
+  &quot;target_object&quot;: {
+    &quot;id&quot;: &quot;non-stick pan_0&quot;,
+    &quot;name&quot;: &quot;non-stick pan&quot;,
+    &quot;anchor_index&quot;: 2
+  },
+  &quot;anchors&quot;: [
+    {
+      &quot;video_frame&quot;: 7650,
+      &quot;time_s&quot;: 255.0,
+      &quot;clip_time_s&quot;: 2.0,
+      &quot;object_id&quot;: &quot;blue and white bowl_0&quot;,
+      &quot;object_name&quot;: &quot;blue and white bowl&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        707.472827,
+        1023.467755
+      ],
+      &quot;boundary_margin_px&quot;: 10.5907,
+      &quot;annotated_mask_count&quot;: 6,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 7710,
+      &quot;time_s&quot;: 257.0,
+      &quot;clip_time_s&quot;: 4.0,
+      &quot;object_id&quot;: &quot;kitchen cloth_0&quot;,
+      &quot;object_name&quot;: &quot;kitchen cloth&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        718.215248,
+        981.948018
+      ],
+      &quot;boundary_margin_px&quot;: 30.0,
+      &quot;annotated_mask_count&quot;: 6,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 7980,
+      &quot;time_s&quot;: 266.0,
+      &quot;clip_time_s&quot;: 13.0,
+      &quot;object_id&quot;: &quot;non-stick pan_0&quot;,
+      &quot;object_name&quot;: &quot;non-stick pan&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        699.837178,
+        969.717585
+      ],
+      &quot;boundary_margin_px&quot;: 94.482178,
+      &quot;annotated_mask_count&quot;: 7,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    }
+  ],
+  &quot;source_window&quot;: {
+    &quot;start_sec&quot;: 253.0,
+    &quot;end_sec&quot;: 268.0,
+    &quot;duration_sec&quot;: 15.0
+  },
+  &quot;source_evidence&quot;: {
+    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
+    &quot;gaze&quot;: &quot;takes/sfu_cooking_007_1/eye_gaze/general_eye_gaze_2d.csv&quot;,
+    &quot;video&quot;: &quot;takes/sfu_cooking_007_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
+  },
+  &quot;claim_limits&quot;: [
+    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
+    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
+  ],
+  &quot;answer_signature&quot;: &quot;sha256:88e1eb5972472bbf272ccbd4a679c1388f6bd019c6908b5702b9c504be58d7e0&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:f18fd71187306e1c7524952eb5e609c0506e5a7242a85b86212a285700a371e1&quot;
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-28">
+<p class="eyebrow">Case 28</p><h2>Task 5 · EgoExo4D · sfu_cooking_010_1</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>15.0s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">15.0-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_egoexo_sfu_cooking_010_1_718f6f57a3.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_egoexo_sfu_cooking_010_1_718f6f57a3_evidence.jpg" loading="lazy" alt="original"><figcaption>Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
+<div class="question">Q1. At which stated clip time (1.0s, 6.0s, or 14.0s) does the camera wearer's gaze land on the white bowl?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="D">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 1.0s into the clip, but not at 6.0s or 14.0s.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 14.0s into the clip, but not at 1.0s or 6.0s.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At none of these clip times: 1.0s, 6.0s, or 14.0s.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At 6.0s into the clip, but not at 1.0s or 14.0s.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">At 6.0s into the clip, but not at 1.0s or 14.0s.</div><div class="explanation">The synchronized gaze point lands inside the annotated white bowl region only at 6.0 seconds into the clip. At 1.0s, 6.0s, and 14.0s, it lands on dining table, white bowl, white plate, respectively.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Ego-Exo4D v2 take_eye_gaze + Relations masks&quot;,
+  &quot;answer_provenance&quot;: &quot;direct synchronized gaze-point / Relations-mask containment; no LLM label judgment&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;frame_aligned_2d_gaze_inside_relation_mask&quot;,
+  &quot;coordinate_frame&quot;: &quot;frame-aligned ego RGB annotation plane; containment only, no directional claim&quot;,
+  &quot;target_object&quot;: {
+    &quot;id&quot;: &quot;white bowl_0&quot;,
+    &quot;name&quot;: &quot;white bowl&quot;,
+    &quot;anchor_index&quot;: 1
+  },
+  &quot;anchors&quot;: [
+    {
+      &quot;video_frame&quot;: 6510,
+      &quot;time_s&quot;: 217.0,
+      &quot;clip_time_s&quot;: 1.0,
+      &quot;object_id&quot;: &quot;dining table_0&quot;,
+      &quot;object_name&quot;: &quot;dining table&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        611.27551,
+        917.753205
+      ],
+      &quot;boundary_margin_px&quot;: 53.72559,
+      &quot;annotated_mask_count&quot;: 7,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 6660,
+      &quot;time_s&quot;: 222.0,
+      &quot;clip_time_s&quot;: 6.0,
+      &quot;object_id&quot;: &quot;white bowl_0&quot;,
+      &quot;object_name&quot;: &quot;white bowl&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        778.013973,
+        939.318411
+      ],
+      &quot;boundary_margin_px&quot;: 53.32869,
+      &quot;annotated_mask_count&quot;: 6,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    },
+    {
+      &quot;video_frame&quot;: 6900,
+      &quot;time_s&quot;: 230.0,
+      &quot;clip_time_s&quot;: 14.0,
+      &quot;object_id&quot;: &quot;white plate_0&quot;,
+      &quot;object_name&quot;: &quot;white plate&quot;,
+      &quot;gaze_pixel_xy&quot;: [
+        698.538945,
+        828.703641
+      ],
+      &quot;boundary_margin_px&quot;: 51.331791,
+      &quot;annotated_mask_count&quot;: 5,
+      &quot;alignment_skew_ms&quot;: 0.0,
+      &quot;unique_annotated_mask_hit&quot;: true
+    }
+  ],
+  &quot;source_window&quot;: {
+    &quot;start_sec&quot;: 216.0,
+    &quot;end_sec&quot;: 231.0,
+    &quot;duration_sec&quot;: 15.0
+  },
+  &quot;source_evidence&quot;: {
+    &quot;relations&quot;: &quot;annotations/relations_val.json&quot;,
+    &quot;gaze&quot;: &quot;takes/sfu_cooking_010_1/eye_gaze/general_eye_gaze_2d.csv&quot;,
+    &quot;video&quot;: &quot;takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4&quot;
+  },
+  &quot;claim_limits&quot;: [
+    &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
+    &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
+  ],
+  &quot;answer_signature&quot;: &quot;sha256:7de5067a2205ab7529f00ee2fd9b9d14fe725d2a9fe89450eeb8821a5faa0d75&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:aa156a4c564117af60dcdfd1ff3eac102c538bacf47d2103299d58957915992a&quot;
 }</pre></details>
 </article>
 </div></section>

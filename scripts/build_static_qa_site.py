@@ -71,6 +71,7 @@ def evidence_payload(group: dict[str, Any], qa: dict[str, Any]) -> dict[str, Any
             {
                 'video_frame': anchor.get('video_frame'),
                 'time_s': anchor.get('time_s'),
+                'clip_time_s': anchor.get('clip_time_s'),
                 'object_id': anchor.get('object_id'),
                 'object_name': anchor.get('object_name'),
                 'gaze_pixel_xy': anchor.get('gaze_pixel_xy'),

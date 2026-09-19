@@ -6,6 +6,7 @@ from limo4si.scale_quality import TASK5_ID, validate_release
 from limo4si.semantic_gt import seal_deterministic_question
 from limo4si.task5_egoexo import (
     GAZE_GROUNDING_METHOD,
+    anchor_options,
     display_object_name,
     gaze_row_for_video_frame,
     unique_encoded_mask_hit,
@@ -176,6 +177,15 @@ class Task5EgoExoTests(unittest.TestCase):
         errors = validate_release({"groups": [group]})["cases"][0]["errors"]
         self.assertTrue(any("about 15 seconds" in error for error in errors))
 
+
+
+    def test_clip_time_options_are_explicit_and_equal_detail(self):
+        options = anchor_options([2.0, 5.0, 13.0])
+        self.assertEqual([row["id"] for row in options], ["anchor_1", "anchor_2", "anchor_3", "no_anchor"])
+        for option in options:
+            self.assertIn("2.0s", option["statement"])
+            self.assertIn("5.0s", option["statement"])
+            self.assertIn("13.0s", option["statement"])
 
 
 if __name__ == "__main__":

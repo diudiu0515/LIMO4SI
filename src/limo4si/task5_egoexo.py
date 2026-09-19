@@ -162,13 +162,28 @@ def unique_encoded_mask_hit(
     return hit
 
 
-def anchor_options() -> list[dict[str, str]]:
-    return [
-        {"id": "anchor_1", "statement": "The gaze lands there at the first marked moment."},
-        {"id": "anchor_2", "statement": "The gaze lands there at the second marked moment."},
-        {"id": "anchor_3", "statement": "The gaze lands there at the third marked moment."},
-        {"id": "no_anchor", "statement": "The gaze does not land there at any marked moment."},
-    ]
+def anchor_options(clip_times_s: Sequence[float] | None = None) -> list[dict[str, str]]:
+    if clip_times_s is None:
+        labels = ["the first marked moment", "the second marked moment", "the third marked moment"]
+        return [
+            {"id": f"anchor_{index + 1}", "statement": f"The gaze lands there at {label}."}
+            for index, label in enumerate(labels)
+        ] + [{"id": "no_anchor", "statement": "The gaze does not land there at any marked moment."}]
+    if len(clip_times_s) != 3:
+        raise ValueError("exactly three clip-relative anchor times are required")
+    times = [f"{float(value):.1f}s" for value in clip_times_s]
+    options = []
+    for index, selected in enumerate(times):
+        others = [value for position, value in enumerate(times) if position != index]
+        options.append({
+            "id": f"anchor_{index + 1}",
+            "statement": f"At {selected} into the clip, but not at {others[0]} or {others[1]}."
+        })
+    options.append({
+        "id": "no_anchor",
+        "statement": f"At none of these clip times: {times[0]}, {times[1]}, or {times[2]}."
+    })
+    return options
 
 
 def validate_review_result(result: Mapping[str, Any], *, minimum_boundary_margin_px: float = 10.0) -> None:
