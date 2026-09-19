@@ -73,6 +73,9 @@ class ScaleQualityPolicy:
     min_task5_relation_run_states: int = 6
     excluded_task5_target_categories: tuple[str, ...] = (
         "table", "shelter", "floor", "wall", "ceiling", "part of a cabinet/wardrobe",
+        "door", "door frame", "couch", "bed frame", "mattress", "refrigerator",
+        "coffee table", "dining table", "side table", "cabinets and shelves",
+        "chair", "armchair", "dining chair", "bar stool", "pot",
     )
     min_task5_gaze_onset_turn_deg: float = 8.0
     min_task5_event_hit_support: float = 0.80

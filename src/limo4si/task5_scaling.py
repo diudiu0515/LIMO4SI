@@ -39,6 +39,9 @@ class Task5CandidatePolicy:
     min_relation_run_states: int = 6
     excluded_target_categories: tuple[str, ...] = (
         "table", "shelter", "floor", "wall", "ceiling", "part of a cabinet/wardrobe",
+        "door", "door frame", "couch", "bed frame", "mattress", "refrigerator",
+        "coffee table", "dining table", "side table", "cabinets and shelves",
+        "chair", "armchair", "dining chair", "bar stool", "pot",
     )
     min_onset_turn_deg: float = 8.0
     min_pre_gaze_gap_sec: float = 0.40
@@ -449,8 +452,18 @@ def select_balanced_candidates(
                 key = (str(row["sequence_name"]), int(row["window_frames"][0]), int(row["window_frames"][1]))
                 if key in used_windows or sequence_counts[str(row["sequence_name"])] >= max_cases_per_sequence:
                     continue
+                conflicts = [
+                    chosen for chosen in selected
+                    if str(chosen["sequence_name"]) == str(row["sequence_name"])
+                    and (
+                        str(chosen["object_id"]) == str(row["object_id"])
+                        or max(int(chosen["window_frames"][0]), key[1])
+                        <= min(int(chosen["window_frames"][1]), key[2])
+                    )
+                ]
                 diversity = sequence_counts[str(row["sequence_name"])] * 0.20
                 diversity += object_category_counts[(category, str(row["object_id"]))] * 0.10
+                diversity += len(conflicts) * 100.0
                 eligible.append((float(row["candidate_score"]) - diversity, row["id"], row, key))
             if not eligible:
                 break

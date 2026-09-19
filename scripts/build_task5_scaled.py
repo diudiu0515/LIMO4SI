@@ -41,7 +41,11 @@ def shown_name(value: str) -> str:
     aliases = {"KitchIsland": "kitchen island", "WhiteVase": "white vase", "WoodenBowl": "wooden bowl"}
     if value in aliases:
         return aliases[value]
-    return " ".join(re.sub(r"(?<!^)(?=[A-Z])", " ", value).lower().split())
+    normalized = re.sub(r"(?<!^)(?=[A-Z])", " ", value.replace("_", " "))
+    tokens = [token for token in normalized.lower().split() if token not in {"anon"}]
+    if len(tokens) > 1 and tokens[-1] in {"a", "b"}:
+        tokens.pop()
+    return " ".join(tokens)
 
 
 def event_by_start(events: list[dict[str, Any]], object_id: str, frame: int) -> dict[str, Any]:
@@ -498,8 +502,10 @@ def main() -> None:
     }
     data_path = resolve(args.site_data)
     data = load_js(data_path)
-    generated_names = {group["name"] for group in groups}
-    data["groups"] = [group for group in data.get("groups", []) if group.get("name") not in generated_names]
+    data["groups"] = [
+        group for group in data.get("groups", [])
+        if not any(question.get("task_id") == TASK5_ID for question in (group.get("qa") or []))
+    ]
     data["groups"].extend(groups)
     task = {"id": TASK5_ID, "name": TASK5_NAME, "description": "How gaze-anchored object relations change with the wearer's spatial state."}
     data["tasks"] = [row for row in data.get("tasks", []) if row.get("id") != TASK5_ID] + [task]
