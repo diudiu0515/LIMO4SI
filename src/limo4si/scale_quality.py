@@ -735,7 +735,7 @@ def _validate_task5_egoexo(
 
 def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], metrics: dict[str, Any]) -> None:
     """Independently audit annotation-derived gaze/object/wearer claims."""
-    if question.get("question_type") == "gaze_point_inside_relation_mask_at_anchor":
+    if question.get("question_type") in {"gaze_point_inside_relation_mask_at_anchor", "gaze_target_sequence_across_clip_checkpoints"}:
         _validate_task5_egoexo(group, question, policy, errors, metrics)
         return
     result = question["result_json"]

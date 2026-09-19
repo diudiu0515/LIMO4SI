@@ -8400,7 +8400,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
 <div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera wearer's gaze land on the recipe sheet?</div>
+<div class="question">Q1. At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera-wearer gaze land on the recipe sheet?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="A">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 5.0s into the clip, but not at 2.0s or 13.0s.</span></button>
@@ -8489,8 +8489,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
     &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
   ],
-  &quot;answer_signature&quot;: &quot;sha256:9aa4906ad40935c810ffcc261235292e598beba5f11d350b681c98db270a260e&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:c56b46c8f6399e85b13a6b3d6350231f689af92b97738f619b205de41a5899fd&quot;
+  &quot;answer_signature&quot;: &quot;sha256:64ff2d0d17232e2ecf4660b1dd7f266498663ad1a7a9a4e5332decfb6a11d89f&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:c2f3d2a7e55fa9ccfe309dff39fb3939f0ac2383e41e44add1679f2bb9a6d690&quot;
 }</pre></details>
 </article>
 </div></section>
@@ -8509,18 +8509,18 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <article class="card task5_human_state_grounded_spatial_reasoning">
 <div class="cardHead"><div>
 <div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which stated clip time (0.5s, 3.5s, or 14.5s) does the camera wearer's gaze land on the pancake pan?</div>
+<div class="questionType">gaze_target_sequence_across_clip_checkpoints</div>
+<div class="question">Q1. Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="B">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 3.5s into the clip, but not at 0.5s or 14.5s.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 0.5s into the clip, but not at 3.5s or 14.5s.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 14.5s into the clip, but not at 0.5s or 3.5s.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At none of these clip times: 0.5s, 3.5s, or 14.5s.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 0.5s: pancake pan; at 3.5s: blue chopping plate; at 14.5s: egg crate.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 0.5s: egg crate; at 3.5s: pancake pan; at 14.5s: blue chopping plate.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At 0.5s: egg crate; at 3.5s: blue chopping plate; at 14.5s: pancake pan.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">At 0.5s into the clip, but not at 3.5s or 14.5s.</div><div class="explanation">The synchronized gaze point lands inside the annotated pancake pan region only at 0.5 seconds into the clip. At 0.5s, 3.5s, and 14.5s, it lands on pancake pan, egg crate, blue chopping plate, respectively.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.</div><div class="explanation">The annotation-supported gaze-target sequence spanning the clip is At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
 <pre class="jsonBlock">{
@@ -8599,8 +8599,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
     &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
   ],
-  &quot;answer_signature&quot;: &quot;sha256:3cfc1b8e70070df3311d4cc6569ba0ce2c594661fbaf3de21e985b93a54a3581&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:12a32b969ef3bb44875c0f7cc2f0dcd2330c73cf5a85ab7b8f7510b47074dbd3&quot;
+  &quot;answer_signature&quot;: &quot;sha256:955cb6398ecdda1b8ea50f313a9cb977f9636750ce3b58ddfe7d03e84705f84f&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:fdfc50df5281a68dce64311a08f6de047b7cdff2aeda6122c5d2ca4f13c7840b&quot;
 }</pre></details>
 </article>
 </div></section>
@@ -8620,7 +8620,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
 <div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which stated clip time (0.5s, 10.5s, or 14.5s) does the camera wearer's gaze land on the white chopping board?</div>
+<div class="question">Q1. At which stated clip time (0.5s, 10.5s, or 14.5s) does the camera-wearer gaze land on the white chopping board?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="C">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 0.5s into the clip, but not at 10.5s or 14.5s.</span></button>
@@ -8709,8 +8709,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
     &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
   ],
-  &quot;answer_signature&quot;: &quot;sha256:0358c42187fc67a093a8253771a2eab39b2bfff6df8e26556af28219d75922a4&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:d90e4bfb0d90548f83a73f79875d06f34d877aa735801e074eb72badb0392d99&quot;
+  &quot;answer_signature&quot;: &quot;sha256:c6c23486fac8531d2f3d8dd65274db2bf76b6ccc96fb86c5b9b09c48e4175ae4&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:2cfbea6a15587f54a6d9c35ca5f33ab62d89d69003af8f53fc18525a6bc00e90&quot;
 }</pre></details>
 </article>
 </div></section>
@@ -8729,18 +8729,18 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <article class="card task5_human_state_grounded_spatial_reasoning">
 <div class="cardHead"><div>
 <div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which stated clip time (2.5s, 4.5s, or 12.5s) does the camera wearer's gaze land on the glass bowl?</div>
+<div class="questionType">gaze_target_sequence_across_clip_checkpoints</div>
+<div class="question">Q1. Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="D">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 2.5s into the clip, but not at 4.5s or 12.5s.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 12.5s into the clip, but not at 2.5s or 4.5s.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At none of these clip times: 2.5s, 4.5s, or 12.5s.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At 4.5s into the clip, but not at 2.5s or 12.5s.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 2.5s: mini-tomato package; at 4.5s: flat plate; at 12.5s: glass bowl.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 2.5s: glass bowl; at 4.5s: mini-tomato package; at 12.5s: flat plate.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 2.5s: glass bowl; at 4.5s: flat plate; at 12.5s: mini-tomato package.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">At 4.5s into the clip, but not at 2.5s or 12.5s.</div><div class="explanation">The synchronized gaze point lands inside the annotated glass bowl region only at 4.5 seconds into the clip. At 2.5s, 4.5s, and 12.5s, it lands on mini-tomato package, glass bowl, flat plate, respectively.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.</div><div class="explanation">The annotation-supported gaze-target sequence spanning the clip is At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
 <pre class="jsonBlock">{
@@ -8819,8 +8819,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
     &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
   ],
-  &quot;answer_signature&quot;: &quot;sha256:464797f80369a81825d0878a44886fe20cace6a809c62cd84d9326191160582a&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:cc7faf8e21ddc84b4465c4522f0ba35ce7e892adf8418425b80bcf7c15f33842&quot;
+  &quot;answer_signature&quot;: &quot;sha256:60b4cbb7ca3227609545ddbfafe8ba9e400ba85fcb70020b57482cf8a16c2a67&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:c5d51f78258b20cf0d9786440c48b164c1d07eae1e21bc678be658074891a812&quot;
 }</pre></details>
 </article>
 </div></section>
@@ -8840,7 +8840,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
 <div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which stated clip time (0.5s, 7.5s, or 14.5s) does the camera wearer's gaze land on the frying pan?</div>
+<div class="question">Q1. At which stated clip time (0.5s, 7.5s, or 14.5s) does the camera-wearer gaze land on the frying pan?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="A">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 0.5s into the clip, but not at 7.5s or 14.5s.</span></button>
@@ -8929,8 +8929,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
     &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
   ],
-  &quot;answer_signature&quot;: &quot;sha256:e7270bc9f3fe4ba10a5577c2b9df57f6db907ba0a82f19c29f8604fe4a42147d&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:ba079780f71114d23e8401bf7834543497da4206422c4f5d27b70620947028c4&quot;
+  &quot;answer_signature&quot;: &quot;sha256:082453ad7d1a19fd476a53dc846524007f56fa39a00680149e5c66b94563ec79&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:cdffe9c587bc8fafcc5e8deddd37f0650845034a4d270534574f5325f97f26a1&quot;
 }</pre></details>
 </article>
 </div></section>
@@ -8949,18 +8949,18 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <article class="card task5_human_state_grounded_spatial_reasoning">
 <div class="cardHead"><div>
 <div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which stated clip time (1.5s, 9.5s, or 13.5s) does the camera wearer's gaze land on the chopping board?</div>
+<div class="questionType">gaze_target_sequence_across_clip_checkpoints</div>
+<div class="question">Q1. Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="B">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 1.5s into the clip, but not at 9.5s or 13.5s.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 13.5s into the clip, but not at 1.5s or 9.5s.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 9.5s into the clip, but not at 1.5s or 13.5s.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At none of these clip times: 1.5s, 9.5s, or 13.5s.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 1.5s: cream bowl; at 9.5s: tomato package; at 13.5s: chopping board.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 1.5s: tomato package; at 9.5s: chopping board; at 13.5s: cream bowl.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At 1.5s: cream bowl; at 9.5s: chopping board; at 13.5s: tomato package.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">At 13.5s into the clip, but not at 1.5s or 9.5s.</div><div class="explanation">The synchronized gaze point lands inside the annotated chopping board region only at 13.5 seconds into the clip. At 1.5s, 9.5s, and 13.5s, it lands on tomato package, cream bowl, chopping board, respectively.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.</div><div class="explanation">The annotation-supported gaze-target sequence spanning the clip is At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
 <pre class="jsonBlock">{
@@ -9039,8 +9039,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
     &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
   ],
-  &quot;answer_signature&quot;: &quot;sha256:d0d5069cc8054a2be1bb7c8dc86f5e4fd1acce9bedd78ef6053e89c6b81ad153&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:dc677d51d68ee68ee958297b44cf26a8f0752b926a6ddfa5b457234576cf8c66&quot;
+  &quot;answer_signature&quot;: &quot;sha256:6e01c409debe0c58b189b61af1ce9d3c831849709a3bd2bd0bce8d08aa00fba4&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:ef2212aace12d128fda54d4a34e37761b1a704adc50da0452bf6df33d156623f&quot;
 }</pre></details>
 </article>
 </div></section>
@@ -9060,7 +9060,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
 <div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which stated clip time (2.0s, 10.0s, or 13.0s) does the camera wearer's gaze land on the tawa pan?</div>
+<div class="question">Q1. At which stated clip time (2.0s, 10.0s, or 13.0s) does the camera-wearer gaze land on the tawa pan?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="C">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 2.0s into the clip, but not at 10.0s or 13.0s.</span></button>
@@ -9149,8 +9149,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
     &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
   ],
-  &quot;answer_signature&quot;: &quot;sha256:4e254e91c94f005182804c65f1879aa8bd361c478b7c52e2c437fb60a57314fe&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:debf20e80ff68e89842fca6183c6a5807161b4b0626224369726b8708f4cbdb1&quot;
+  &quot;answer_signature&quot;: &quot;sha256:e2c9c0627ae7424695475434e0b89ce96a44658e49e01b3d8240fe1c6918878b&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:a0e63364d186f7c4da4ad13c7b8ea9f84f1bbd6798f3521b500aa402b2b749d4&quot;
 }</pre></details>
 </article>
 </div></section>
@@ -9169,18 +9169,18 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <article class="card task5_human_state_grounded_spatial_reasoning">
 <div class="cardHead"><div>
 <div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera wearer's gaze land on the pink frying pan?</div>
+<div class="questionType">gaze_target_sequence_across_clip_checkpoints</div>
+<div class="question">Q1. Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="D">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 5.0s into the clip, but not at 2.0s or 13.0s.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 13.0s into the clip, but not at 2.0s or 5.0s.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At none of these clip times: 2.0s, 5.0s, or 13.0s.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At 2.0s into the clip, but not at 5.0s or 13.0s.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 2.0s: pink frying pan; at 5.0s: wooden chopping board; at 13.0s: meat cleaver knife.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 2.0s: meat cleaver knife; at 5.0s: pink frying pan; at 13.0s: wooden chopping board.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 2.0s: meat cleaver knife; at 5.0s: wooden chopping board; at 13.0s: pink frying pan.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">At 2.0s into the clip, but not at 5.0s or 13.0s.</div><div class="explanation">The synchronized gaze point lands inside the annotated pink frying pan region only at 2.0 seconds into the clip. At 2.0s, 5.0s, and 13.0s, it lands on pink frying pan, meat cleaver knife, wooden chopping board, respectively.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.</div><div class="explanation">The annotation-supported gaze-target sequence spanning the clip is At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
 <pre class="jsonBlock">{
@@ -9259,8 +9259,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
     &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
   ],
-  &quot;answer_signature&quot;: &quot;sha256:a334fbb6d2149048f3fde5ea58fea34f8111fcc1919574c93d88186aafa13e71&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:d6178b5775aad8042daaeef671cf75dfededbdf51d32f50b15a7d0b1ea956bd5&quot;
+  &quot;answer_signature&quot;: &quot;sha256:fa521223b0ebd912c32be49b3bb7365cd449946d2bbdae3809830ec42e9fe2d2&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:a4a3777fedf3bf1a282567b72c9dc37b246a5b7306b0c429433d1776dffdc8b5&quot;
 }</pre></details>
 </article>
 </div></section>
@@ -9280,7 +9280,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
 <div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which stated clip time (1.5s, 5.5s, or 13.5s) does the camera wearer's gaze land on the aluminium skillet?</div>
+<div class="question">Q1. At which stated clip time (1.5s, 5.5s, or 13.5s) does the camera-wearer gaze land on the aluminium skillet?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="A">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 13.5s into the clip, but not at 1.5s or 5.5s.</span></button>
@@ -9369,8 +9369,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
     &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
   ],
-  &quot;answer_signature&quot;: &quot;sha256:cf6af6292373a324237c315790b197043cb8ce2ef0d21cea905c7f7a3352fbad&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:1ccb0fcb83bed7db3426bdab8510a6539c3129d671745cd7f153ff17b3d7e752&quot;
+  &quot;answer_signature&quot;: &quot;sha256:f8b1a3dfe5cf8ad5c7016485243df8ee3afbed8653b8c3db906cef9cd1455131&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:49e5a8fc53dc1566fc7781a23e3cf114f2ba48b4069d81177586b79ec26c80b4&quot;
 }</pre></details>
 </article>
 </div></section>
@@ -9389,18 +9389,18 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <article class="card task5_human_state_grounded_spatial_reasoning">
 <div class="cardHead"><div>
 <div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera wearer's gaze land on the egg carton?</div>
+<div class="questionType">gaze_target_sequence_across_clip_checkpoints</div>
+<div class="question">Q1. Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="B">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 5.0s into the clip, but not at 2.0s or 13.0s.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 2.0s into the clip, but not at 5.0s or 13.0s.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 13.0s into the clip, but not at 2.0s or 5.0s.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At none of these clip times: 2.0s, 5.0s, or 13.0s.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 2.0s: egg carton; at 5.0s: paper towel sheet; at 13.0s: paper towel.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 2.0s: paper towel; at 5.0s: egg carton; at 13.0s: paper towel sheet.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At 2.0s: paper towel; at 5.0s: paper towel sheet; at 13.0s: egg carton.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">At 2.0s into the clip, but not at 5.0s or 13.0s.</div><div class="explanation">The synchronized gaze point lands inside the annotated egg carton region only at 2.0 seconds into the clip. At 2.0s, 5.0s, and 13.0s, it lands on egg carton, paper towel, paper towel sheet, respectively.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.</div><div class="explanation">The annotation-supported gaze-target sequence spanning the clip is At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
 <pre class="jsonBlock">{
@@ -9479,8 +9479,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
     &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
   ],
-  &quot;answer_signature&quot;: &quot;sha256:b20efa7c21bd1b3365aa79a13d3cbc4aca61daaa8c270d0d61e1570222aeea5c&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:e578315fc7c788b63ff8729542200fd809bfc7361e8bf7bd8b0404e39c773847&quot;
+  &quot;answer_signature&quot;: &quot;sha256:2f65746f552a6ce1620a8907bb5f529f70ae4079784527d648d100cd00b7f466&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:884080439f056d46f016365d37d962c3207046a558151d145f07dd6d7df201c9&quot;
 }</pre></details>
 </article>
 </div></section>
@@ -9500,7 +9500,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
 <div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which stated clip time (2.0s, 4.0s, or 13.0s) does the camera wearer's gaze land on the non-stick pan?</div>
+<div class="question">Q1. At which stated clip time (2.0s, 4.0s, or 13.0s) does the camera-wearer gaze land on the non-stick pan?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="C">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 2.0s into the clip, but not at 4.0s or 13.0s.</span></button>
@@ -9589,8 +9589,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
     &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
   ],
-  &quot;answer_signature&quot;: &quot;sha256:88e1eb5972472bbf272ccbd4a679c1388f6bd019c6908b5702b9c504be58d7e0&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:f18fd71187306e1c7524952eb5e609c0506e5a7242a85b86212a285700a371e1&quot;
+  &quot;answer_signature&quot;: &quot;sha256:c8bc0953e3ce018f7f12ef108b03127ce2eb7419f17c2db6079a3f211cb4ad75&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:616c04f57ca19f2b48081efc88083eb5304950b7f28f9eb0762207261a8f6696&quot;
 }</pre></details>
 </article>
 </div></section>
@@ -9609,18 +9609,18 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <article class="card task5_human_state_grounded_spatial_reasoning">
 <div class="cardHead"><div>
 <div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
-<div class="questionType">gaze_point_inside_relation_mask_at_anchor</div>
-<div class="question">Q1. At which stated clip time (1.0s, 6.0s, or 14.0s) does the camera wearer's gaze land on the white bowl?</div>
+<div class="questionType">gaze_target_sequence_across_clip_checkpoints</div>
+<div class="question">Q1. Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?</div>
 </div><span class="pill ok">ok</span></div>
 <div class="optionsGrid answerOptions" data-correct="D">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 1.0s into the clip, but not at 6.0s or 14.0s.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 14.0s into the clip, but not at 1.0s or 6.0s.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At none of these clip times: 1.0s, 6.0s, or 14.0s.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At 6.0s into the clip, but not at 1.0s or 14.0s.</span></button>
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">At 1.0s: dining table; at 6.0s: white plate; at 14.0s: white bowl.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">At 1.0s: white bowl; at 6.0s: dining table; at 14.0s: white plate.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">At 1.0s: white bowl; at 6.0s: white plate; at 14.0s: dining table.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">At 6.0s into the clip, but not at 1.0s or 14.0s.</div><div class="explanation">The synchronized gaze point lands inside the annotated white bowl region only at 6.0 seconds into the clip. At 1.0s, 6.0s, and 14.0s, it lands on dining table, white bowl, white plate, respectively.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.</div><div class="explanation">The annotation-supported gaze-target sequence spanning the clip is At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.</div>
 <pre class="jsonBlock">{
@@ -9699,8 +9699,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
     &quot;Claims only synchronized 2D gaze-point containment in a Relations annotation mask.&quot;,
     &quot;Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target.&quot;
   ],
-  &quot;answer_signature&quot;: &quot;sha256:7de5067a2205ab7529f00ee2fd9b9d14fe725d2a9fe89450eeb8821a5faa0d75&quot;,
-  &quot;evidence_signature&quot;: &quot;sha256:aa156a4c564117af60dcdfd1ff3eac102c538bacf47d2103299d58957915992a&quot;
+  &quot;answer_signature&quot;: &quot;sha256:c3e50bdce2bdd019b4f04bf602a2bef828018f899208d001d4247d388db7586d&quot;,
+  &quot;evidence_signature&quot;: &quot;sha256:878d0706ee8a369b1be60d3b755bd5a4a586ec022b4a41f35e2bbbca3af43fcd&quot;
 }</pre></details>
 </article>
 </div></section>

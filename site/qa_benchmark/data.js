@@ -26204,7 +26204,7 @@ window.QA_DATA = {
           "question_categories": [
             "evidence_closed_gaze_mask_anchor"
           ],
-          "question": "At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera wearer's gaze land on the recipe sheet?",
+          "question": "At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera-wearer gaze land on the recipe sheet?",
           "options": [
             {
               "label": "A",
@@ -26236,7 +26236,7 @@ window.QA_DATA = {
             "semantic_gt_id": "task5_egoexo_indiana_cooking_16_3_278f27b09b",
             "task_id": "task5_human_state_grounded_spatial_reasoning",
             "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera wearer's gaze land on the recipe sheet?",
+            "question_focus": "At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera-wearer gaze land on the recipe sheet?",
             "options": [
               {
                 "id": "anchor_1",
@@ -26285,7 +26285,7 @@ window.QA_DATA = {
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:c56b46c8f6399e85b13a6b3d6350231f689af92b97738f619b205de41a5899fd"
+                "value": "sha256:c2f3d2a7e55fa9ccfe309dff39fb3939f0ac2383e41e44add1679f2bb9a6d690"
               }
             ],
             "evidence_refs": [
@@ -26312,7 +26312,7 @@ window.QA_DATA = {
               },
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:c56b46c8f6399e85b13a6b3d6350231f689af92b97738f619b205de41a5899fd"
+                "sha256": "sha256:c2f3d2a7e55fa9ccfe309dff39fb3939f0ac2383e41e44add1679f2bb9a6d690"
               }
             ],
             "provenance": {
@@ -26338,9 +26338,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:9aa4906ad40935c810ffcc261235292e598beba5f11d350b681c98db270a260e"
+            "answer_signature": "sha256:64ff2d0d17232e2ecf4660b1dd7f266498663ad1a7a9a4e5332decfb6a11d89f"
           },
-          "answer_signature": "sha256:9aa4906ad40935c810ffcc261235292e598beba5f11d350b681c98db270a260e",
+          "answer_signature": "sha256:64ff2d0d17232e2ecf4660b1dd7f266498663ad1a7a9a4e5332decfb6a11d89f",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -26349,7 +26349,7 @@ window.QA_DATA = {
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
               "semantic_gt_id": "task5_egoexo_indiana_cooking_16_3_278f27b09b",
-              "answer_signature": "sha256:9aa4906ad40935c810ffcc261235292e598beba5f11d350b681c98db270a260e",
+              "answer_signature": "sha256:64ff2d0d17232e2ecf4660b1dd7f266498663ad1a7a9a4e5332decfb6a11d89f",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -26482,9 +26482,10 @@ window.QA_DATA = {
               "gaze": "takes/indiana_cooking_16_3/eye_gaze/general_eye_gaze_2d.csv",
               "video": "takes/indiana_cooking_16_3/frame_aligned_videos/downscaled/448/aria02_214-1.mp4"
             },
+            "temporal_scope": "three explicit clip-relative checkpoints",
             "semantic_gt_id": "task5_egoexo_indiana_cooking_16_3_278f27b09b",
-            "answer_signature": "sha256:9aa4906ad40935c810ffcc261235292e598beba5f11d350b681c98db270a260e",
-            "evidence_signature": "sha256:c56b46c8f6399e85b13a6b3d6350231f689af92b97738f619b205de41a5899fd",
+            "answer_signature": "sha256:64ff2d0d17232e2ecf4660b1dd7f266498663ad1a7a9a4e5332decfb6a11d89f",
+            "evidence_signature": "sha256:c2f3d2a7e55fa9ccfe309dff39fb3939f0ac2383e41e44add1679f2bb9a6d690",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           }
@@ -26514,63 +26515,63 @@ window.QA_DATA = {
         {
           "task_id": "task5_human_state_grounded_spatial_reasoning",
           "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_point_inside_relation_mask_at_anchor",
+          "question_type": "gaze_target_sequence_across_clip_checkpoints",
           "question_categories": [
             "evidence_closed_gaze_mask_anchor"
           ],
-          "question": "At which stated clip time (0.5s, 3.5s, or 14.5s) does the camera wearer's gaze land on the pancake pan?",
+          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
           "options": [
             {
               "label": "A",
-              "text": "At 3.5s into the clip, but not at 0.5s or 14.5s.",
+              "text": "At 0.5s: pancake pan; at 3.5s: blue chopping plate; at 14.5s: egg crate.",
               "semantic_option_id": "anchor_2"
             },
             {
               "label": "B",
-              "text": "At 0.5s into the clip, but not at 3.5s or 14.5s.",
+              "text": "At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
               "semantic_option_id": "anchor_1"
             },
             {
               "label": "C",
-              "text": "At 14.5s into the clip, but not at 0.5s or 3.5s.",
+              "text": "At 0.5s: egg crate; at 3.5s: pancake pan; at 14.5s: blue chopping plate.",
               "semantic_option_id": "anchor_3"
             },
             {
               "label": "D",
-              "text": "At none of these clip times: 0.5s, 3.5s, or 14.5s.",
+              "text": "At 0.5s: egg crate; at 3.5s: blue chopping plate; at 14.5s: pancake pan.",
               "semantic_option_id": "no_anchor"
             }
           ],
           "correct_option": "B",
-          "correct_answer": "At 0.5s into the clip, but not at 3.5s or 14.5s.",
-          "answer": "At 0.5s into the clip, but not at 3.5s or 14.5s.",
-          "explanation": "The synchronized gaze point lands inside the annotated pancake pan region only at 0.5 seconds into the clip. At 0.5s, 3.5s, and 14.5s, it lands on pancake pan, egg crate, blue chopping plate, respectively.",
+          "correct_answer": "At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
+          "answer": "At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
+          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
           "semantic_gt": {
             "schema_version": "limo4si.semantic_gt.v1",
             "semantic_gt_id": "task5_egoexo_iiith_cooking_125_2_49a1e4f29d",
             "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (0.5s, 3.5s, or 14.5s) does the camera wearer's gaze land on the pancake pan?",
+            "question_type": "gaze_target_sequence_across_clip_checkpoints",
+            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
             "options": [
               {
                 "id": "anchor_1",
-                "statement": "At 0.5s into the clip, but not at 3.5s or 14.5s."
+                "statement": "At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate."
               },
               {
                 "id": "anchor_2",
-                "statement": "At 3.5s into the clip, but not at 0.5s or 14.5s."
+                "statement": "At 0.5s: pancake pan; at 3.5s: blue chopping plate; at 14.5s: egg crate."
               },
               {
                 "id": "anchor_3",
-                "statement": "At 14.5s into the clip, but not at 0.5s or 3.5s."
+                "statement": "At 0.5s: egg crate; at 3.5s: pancake pan; at 14.5s: blue chopping plate."
               },
               {
                 "id": "no_anchor",
-                "statement": "At none of these clip times: 0.5s, 3.5s, or 14.5s."
+                "statement": "At 0.5s: egg crate; at 3.5s: blue chopping plate; at 14.5s: pancake pan."
               }
             ],
             "correct_option_id": "anchor_1",
-            "evidence_statement": "The synchronized gaze point lands inside the annotated pancake pan region only at 0.5 seconds into the clip. At 0.5s, 3.5s, and 14.5s, it lands on pancake pan, egg crate, blue chopping plate, respectively.",
+            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
             "semantic_facts": [
               {
                 "id": "target_object_id",
@@ -26599,7 +26600,7 @@ window.QA_DATA = {
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:12a32b969ef3bb44875c0f7cc2f0dcd2330c73cf5a85ab7b8f7510b47074dbd3"
+                "value": "sha256:fdfc50df5281a68dce64311a08f6de047b7cdff2aeda6122c5d2ca4f13c7840b"
               }
             ],
             "evidence_refs": [
@@ -26626,7 +26627,7 @@ window.QA_DATA = {
               },
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:12a32b969ef3bb44875c0f7cc2f0dcd2330c73cf5a85ab7b8f7510b47074dbd3"
+                "sha256": "sha256:fdfc50df5281a68dce64311a08f6de047b7cdff2aeda6122c5d2ca4f13c7840b"
               }
             ],
             "provenance": {
@@ -26652,9 +26653,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:3cfc1b8e70070df3311d4cc6569ba0ce2c594661fbaf3de21e985b93a54a3581"
+            "answer_signature": "sha256:955cb6398ecdda1b8ea50f313a9cb977f9636750ce3b58ddfe7d03e84705f84f"
           },
-          "answer_signature": "sha256:3cfc1b8e70070df3311d4cc6569ba0ce2c594661fbaf3de21e985b93a54a3581",
+          "answer_signature": "sha256:955cb6398ecdda1b8ea50f313a9cb977f9636750ce3b58ddfe7d03e84705f84f",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -26663,7 +26664,7 @@ window.QA_DATA = {
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
               "semantic_gt_id": "task5_egoexo_iiith_cooking_125_2_49a1e4f29d",
-              "answer_signature": "sha256:3cfc1b8e70070df3311d4cc6569ba0ce2c594661fbaf3de21e985b93a54a3581",
+              "answer_signature": "sha256:955cb6398ecdda1b8ea50f313a9cb977f9636750ce3b58ddfe7d03e84705f84f",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -26674,7 +26675,7 @@ window.QA_DATA = {
           "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
           "result_json": {
             "status": "ok",
-            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
+            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
             "T_Q": true,
             "H_Q": true,
             "S_Q": true,
@@ -26796,9 +26797,10 @@ window.QA_DATA = {
               "gaze": "takes/iiith_cooking_125_2/eye_gaze/general_eye_gaze_2d.csv",
               "video": "takes/iiith_cooking_125_2/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
             },
+            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
             "semantic_gt_id": "task5_egoexo_iiith_cooking_125_2_49a1e4f29d",
-            "answer_signature": "sha256:3cfc1b8e70070df3311d4cc6569ba0ce2c594661fbaf3de21e985b93a54a3581",
-            "evidence_signature": "sha256:12a32b969ef3bb44875c0f7cc2f0dcd2330c73cf5a85ab7b8f7510b47074dbd3",
+            "answer_signature": "sha256:955cb6398ecdda1b8ea50f313a9cb977f9636750ce3b58ddfe7d03e84705f84f",
+            "evidence_signature": "sha256:fdfc50df5281a68dce64311a08f6de047b7cdff2aeda6122c5d2ca4f13c7840b",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           }
@@ -26832,7 +26834,7 @@ window.QA_DATA = {
           "question_categories": [
             "evidence_closed_gaze_mask_anchor"
           ],
-          "question": "At which stated clip time (0.5s, 10.5s, or 14.5s) does the camera wearer's gaze land on the white chopping board?",
+          "question": "At which stated clip time (0.5s, 10.5s, or 14.5s) does the camera-wearer gaze land on the white chopping board?",
           "options": [
             {
               "label": "A",
@@ -26864,7 +26866,7 @@ window.QA_DATA = {
             "semantic_gt_id": "task5_egoexo_iiith_cooking_145_2_c92a5c063f",
             "task_id": "task5_human_state_grounded_spatial_reasoning",
             "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (0.5s, 10.5s, or 14.5s) does the camera wearer's gaze land on the white chopping board?",
+            "question_focus": "At which stated clip time (0.5s, 10.5s, or 14.5s) does the camera-wearer gaze land on the white chopping board?",
             "options": [
               {
                 "id": "anchor_1",
@@ -26913,7 +26915,7 @@ window.QA_DATA = {
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:d90e4bfb0d90548f83a73f79875d06f34d877aa735801e074eb72badb0392d99"
+                "value": "sha256:2cfbea6a15587f54a6d9c35ca5f33ab62d89d69003af8f53fc18525a6bc00e90"
               }
             ],
             "evidence_refs": [
@@ -26940,7 +26942,7 @@ window.QA_DATA = {
               },
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:d90e4bfb0d90548f83a73f79875d06f34d877aa735801e074eb72badb0392d99"
+                "sha256": "sha256:2cfbea6a15587f54a6d9c35ca5f33ab62d89d69003af8f53fc18525a6bc00e90"
               }
             ],
             "provenance": {
@@ -26966,9 +26968,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:0358c42187fc67a093a8253771a2eab39b2bfff6df8e26556af28219d75922a4"
+            "answer_signature": "sha256:c6c23486fac8531d2f3d8dd65274db2bf76b6ccc96fb86c5b9b09c48e4175ae4"
           },
-          "answer_signature": "sha256:0358c42187fc67a093a8253771a2eab39b2bfff6df8e26556af28219d75922a4",
+          "answer_signature": "sha256:c6c23486fac8531d2f3d8dd65274db2bf76b6ccc96fb86c5b9b09c48e4175ae4",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -26977,7 +26979,7 @@ window.QA_DATA = {
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
               "semantic_gt_id": "task5_egoexo_iiith_cooking_145_2_c92a5c063f",
-              "answer_signature": "sha256:0358c42187fc67a093a8253771a2eab39b2bfff6df8e26556af28219d75922a4",
+              "answer_signature": "sha256:c6c23486fac8531d2f3d8dd65274db2bf76b6ccc96fb86c5b9b09c48e4175ae4",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -27110,9 +27112,10 @@ window.QA_DATA = {
               "gaze": "takes/iiith_cooking_145_2/eye_gaze/general_eye_gaze_2d.csv",
               "video": "takes/iiith_cooking_145_2/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
             },
+            "temporal_scope": "three explicit clip-relative checkpoints",
             "semantic_gt_id": "task5_egoexo_iiith_cooking_145_2_c92a5c063f",
-            "answer_signature": "sha256:0358c42187fc67a093a8253771a2eab39b2bfff6df8e26556af28219d75922a4",
-            "evidence_signature": "sha256:d90e4bfb0d90548f83a73f79875d06f34d877aa735801e074eb72badb0392d99",
+            "answer_signature": "sha256:c6c23486fac8531d2f3d8dd65274db2bf76b6ccc96fb86c5b9b09c48e4175ae4",
+            "evidence_signature": "sha256:2cfbea6a15587f54a6d9c35ca5f33ab62d89d69003af8f53fc18525a6bc00e90",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           }
@@ -27142,63 +27145,63 @@ window.QA_DATA = {
         {
           "task_id": "task5_human_state_grounded_spatial_reasoning",
           "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_point_inside_relation_mask_at_anchor",
+          "question_type": "gaze_target_sequence_across_clip_checkpoints",
           "question_categories": [
             "evidence_closed_gaze_mask_anchor"
           ],
-          "question": "At which stated clip time (2.5s, 4.5s, or 12.5s) does the camera wearer's gaze land on the glass bowl?",
+          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
           "options": [
             {
               "label": "A",
-              "text": "At 2.5s into the clip, but not at 4.5s or 12.5s.",
+              "text": "At 2.5s: mini-tomato package; at 4.5s: flat plate; at 12.5s: glass bowl.",
               "semantic_option_id": "anchor_1"
             },
             {
               "label": "B",
-              "text": "At 12.5s into the clip, but not at 2.5s or 4.5s.",
+              "text": "At 2.5s: glass bowl; at 4.5s: mini-tomato package; at 12.5s: flat plate.",
               "semantic_option_id": "anchor_3"
             },
             {
               "label": "C",
-              "text": "At none of these clip times: 2.5s, 4.5s, or 12.5s.",
+              "text": "At 2.5s: glass bowl; at 4.5s: flat plate; at 12.5s: mini-tomato package.",
               "semantic_option_id": "no_anchor"
             },
             {
               "label": "D",
-              "text": "At 4.5s into the clip, but not at 2.5s or 12.5s.",
+              "text": "At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
               "semantic_option_id": "anchor_2"
             }
           ],
           "correct_option": "D",
-          "correct_answer": "At 4.5s into the clip, but not at 2.5s or 12.5s.",
-          "answer": "At 4.5s into the clip, but not at 2.5s or 12.5s.",
-          "explanation": "The synchronized gaze point lands inside the annotated glass bowl region only at 4.5 seconds into the clip. At 2.5s, 4.5s, and 12.5s, it lands on mini-tomato package, glass bowl, flat plate, respectively.",
+          "correct_answer": "At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
+          "answer": "At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
+          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
           "semantic_gt": {
             "schema_version": "limo4si.semantic_gt.v1",
             "semantic_gt_id": "task5_egoexo_minnesota_cooking_060_4_655a676809",
             "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (2.5s, 4.5s, or 12.5s) does the camera wearer's gaze land on the glass bowl?",
+            "question_type": "gaze_target_sequence_across_clip_checkpoints",
+            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
             "options": [
               {
                 "id": "anchor_1",
-                "statement": "At 2.5s into the clip, but not at 4.5s or 12.5s."
+                "statement": "At 2.5s: mini-tomato package; at 4.5s: flat plate; at 12.5s: glass bowl."
               },
               {
                 "id": "anchor_2",
-                "statement": "At 4.5s into the clip, but not at 2.5s or 12.5s."
+                "statement": "At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate."
               },
               {
                 "id": "anchor_3",
-                "statement": "At 12.5s into the clip, but not at 2.5s or 4.5s."
+                "statement": "At 2.5s: glass bowl; at 4.5s: mini-tomato package; at 12.5s: flat plate."
               },
               {
                 "id": "no_anchor",
-                "statement": "At none of these clip times: 2.5s, 4.5s, or 12.5s."
+                "statement": "At 2.5s: glass bowl; at 4.5s: flat plate; at 12.5s: mini-tomato package."
               }
             ],
             "correct_option_id": "anchor_2",
-            "evidence_statement": "The synchronized gaze point lands inside the annotated glass bowl region only at 4.5 seconds into the clip. At 2.5s, 4.5s, and 12.5s, it lands on mini-tomato package, glass bowl, flat plate, respectively.",
+            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
             "semantic_facts": [
               {
                 "id": "target_object_id",
@@ -27227,7 +27230,7 @@ window.QA_DATA = {
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:cc7faf8e21ddc84b4465c4522f0ba35ce7e892adf8418425b80bcf7c15f33842"
+                "value": "sha256:c5d51f78258b20cf0d9786440c48b164c1d07eae1e21bc678be658074891a812"
               }
             ],
             "evidence_refs": [
@@ -27254,7 +27257,7 @@ window.QA_DATA = {
               },
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:cc7faf8e21ddc84b4465c4522f0ba35ce7e892adf8418425b80bcf7c15f33842"
+                "sha256": "sha256:c5d51f78258b20cf0d9786440c48b164c1d07eae1e21bc678be658074891a812"
               }
             ],
             "provenance": {
@@ -27280,9 +27283,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:464797f80369a81825d0878a44886fe20cace6a809c62cd84d9326191160582a"
+            "answer_signature": "sha256:60b4cbb7ca3227609545ddbfafe8ba9e400ba85fcb70020b57482cf8a16c2a67"
           },
-          "answer_signature": "sha256:464797f80369a81825d0878a44886fe20cace6a809c62cd84d9326191160582a",
+          "answer_signature": "sha256:60b4cbb7ca3227609545ddbfafe8ba9e400ba85fcb70020b57482cf8a16c2a67",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -27291,7 +27294,7 @@ window.QA_DATA = {
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
               "semantic_gt_id": "task5_egoexo_minnesota_cooking_060_4_655a676809",
-              "answer_signature": "sha256:464797f80369a81825d0878a44886fe20cace6a809c62cd84d9326191160582a",
+              "answer_signature": "sha256:60b4cbb7ca3227609545ddbfafe8ba9e400ba85fcb70020b57482cf8a16c2a67",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -27302,7 +27305,7 @@ window.QA_DATA = {
           "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
           "result_json": {
             "status": "ok",
-            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
+            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
             "T_Q": true,
             "H_Q": true,
             "S_Q": true,
@@ -27424,9 +27427,10 @@ window.QA_DATA = {
               "gaze": "takes/minnesota_cooking_060_4/eye_gaze/general_eye_gaze_2d.csv",
               "video": "takes/minnesota_cooking_060_4/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
             },
+            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
             "semantic_gt_id": "task5_egoexo_minnesota_cooking_060_4_655a676809",
-            "answer_signature": "sha256:464797f80369a81825d0878a44886fe20cace6a809c62cd84d9326191160582a",
-            "evidence_signature": "sha256:cc7faf8e21ddc84b4465c4522f0ba35ce7e892adf8418425b80bcf7c15f33842",
+            "answer_signature": "sha256:60b4cbb7ca3227609545ddbfafe8ba9e400ba85fcb70020b57482cf8a16c2a67",
+            "evidence_signature": "sha256:c5d51f78258b20cf0d9786440c48b164c1d07eae1e21bc678be658074891a812",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           }
@@ -27460,7 +27464,7 @@ window.QA_DATA = {
           "question_categories": [
             "evidence_closed_gaze_mask_anchor"
           ],
-          "question": "At which stated clip time (0.5s, 7.5s, or 14.5s) does the camera wearer's gaze land on the frying pan?",
+          "question": "At which stated clip time (0.5s, 7.5s, or 14.5s) does the camera-wearer gaze land on the frying pan?",
           "options": [
             {
               "label": "A",
@@ -27492,7 +27496,7 @@ window.QA_DATA = {
             "semantic_gt_id": "task5_egoexo_uniandes_cooking_006_6_13837ab534",
             "task_id": "task5_human_state_grounded_spatial_reasoning",
             "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (0.5s, 7.5s, or 14.5s) does the camera wearer's gaze land on the frying pan?",
+            "question_focus": "At which stated clip time (0.5s, 7.5s, or 14.5s) does the camera-wearer gaze land on the frying pan?",
             "options": [
               {
                 "id": "anchor_1",
@@ -27541,7 +27545,7 @@ window.QA_DATA = {
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:ba079780f71114d23e8401bf7834543497da4206422c4f5d27b70620947028c4"
+                "value": "sha256:cdffe9c587bc8fafcc5e8deddd37f0650845034a4d270534574f5325f97f26a1"
               }
             ],
             "evidence_refs": [
@@ -27568,7 +27572,7 @@ window.QA_DATA = {
               },
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:ba079780f71114d23e8401bf7834543497da4206422c4f5d27b70620947028c4"
+                "sha256": "sha256:cdffe9c587bc8fafcc5e8deddd37f0650845034a4d270534574f5325f97f26a1"
               }
             ],
             "provenance": {
@@ -27594,9 +27598,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:e7270bc9f3fe4ba10a5577c2b9df57f6db907ba0a82f19c29f8604fe4a42147d"
+            "answer_signature": "sha256:082453ad7d1a19fd476a53dc846524007f56fa39a00680149e5c66b94563ec79"
           },
-          "answer_signature": "sha256:e7270bc9f3fe4ba10a5577c2b9df57f6db907ba0a82f19c29f8604fe4a42147d",
+          "answer_signature": "sha256:082453ad7d1a19fd476a53dc846524007f56fa39a00680149e5c66b94563ec79",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -27605,7 +27609,7 @@ window.QA_DATA = {
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
               "semantic_gt_id": "task5_egoexo_uniandes_cooking_006_6_13837ab534",
-              "answer_signature": "sha256:e7270bc9f3fe4ba10a5577c2b9df57f6db907ba0a82f19c29f8604fe4a42147d",
+              "answer_signature": "sha256:082453ad7d1a19fd476a53dc846524007f56fa39a00680149e5c66b94563ec79",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -27738,9 +27742,10 @@ window.QA_DATA = {
               "gaze": "takes/uniandes_cooking_006_6/eye_gaze/general_eye_gaze_2d.csv",
               "video": "takes/uniandes_cooking_006_6/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
             },
+            "temporal_scope": "three explicit clip-relative checkpoints",
             "semantic_gt_id": "task5_egoexo_uniandes_cooking_006_6_13837ab534",
-            "answer_signature": "sha256:e7270bc9f3fe4ba10a5577c2b9df57f6db907ba0a82f19c29f8604fe4a42147d",
-            "evidence_signature": "sha256:ba079780f71114d23e8401bf7834543497da4206422c4f5d27b70620947028c4",
+            "answer_signature": "sha256:082453ad7d1a19fd476a53dc846524007f56fa39a00680149e5c66b94563ec79",
+            "evidence_signature": "sha256:cdffe9c587bc8fafcc5e8deddd37f0650845034a4d270534574f5325f97f26a1",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           }
@@ -27770,63 +27775,63 @@ window.QA_DATA = {
         {
           "task_id": "task5_human_state_grounded_spatial_reasoning",
           "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_point_inside_relation_mask_at_anchor",
+          "question_type": "gaze_target_sequence_across_clip_checkpoints",
           "question_categories": [
             "evidence_closed_gaze_mask_anchor"
           ],
-          "question": "At which stated clip time (1.5s, 9.5s, or 13.5s) does the camera wearer's gaze land on the chopping board?",
+          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
           "options": [
             {
               "label": "A",
-              "text": "At 1.5s into the clip, but not at 9.5s or 13.5s.",
+              "text": "At 1.5s: cream bowl; at 9.5s: tomato package; at 13.5s: chopping board.",
               "semantic_option_id": "anchor_1"
             },
             {
               "label": "B",
-              "text": "At 13.5s into the clip, but not at 1.5s or 9.5s.",
+              "text": "At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
               "semantic_option_id": "anchor_3"
             },
             {
               "label": "C",
-              "text": "At 9.5s into the clip, but not at 1.5s or 13.5s.",
+              "text": "At 1.5s: tomato package; at 9.5s: chopping board; at 13.5s: cream bowl.",
               "semantic_option_id": "anchor_2"
             },
             {
               "label": "D",
-              "text": "At none of these clip times: 1.5s, 9.5s, or 13.5s.",
+              "text": "At 1.5s: cream bowl; at 9.5s: chopping board; at 13.5s: tomato package.",
               "semantic_option_id": "no_anchor"
             }
           ],
           "correct_option": "B",
-          "correct_answer": "At 13.5s into the clip, but not at 1.5s or 9.5s.",
-          "answer": "At 13.5s into the clip, but not at 1.5s or 9.5s.",
-          "explanation": "The synchronized gaze point lands inside the annotated chopping board region only at 13.5 seconds into the clip. At 1.5s, 9.5s, and 13.5s, it lands on tomato package, cream bowl, chopping board, respectively.",
+          "correct_answer": "At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
+          "answer": "At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
+          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
           "semantic_gt": {
             "schema_version": "limo4si.semantic_gt.v1",
             "semantic_gt_id": "task5_egoexo_sfu_cooking_010_3_dab0e9e401",
             "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (1.5s, 9.5s, or 13.5s) does the camera wearer's gaze land on the chopping board?",
+            "question_type": "gaze_target_sequence_across_clip_checkpoints",
+            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
             "options": [
               {
                 "id": "anchor_1",
-                "statement": "At 1.5s into the clip, but not at 9.5s or 13.5s."
+                "statement": "At 1.5s: cream bowl; at 9.5s: tomato package; at 13.5s: chopping board."
               },
               {
                 "id": "anchor_2",
-                "statement": "At 9.5s into the clip, but not at 1.5s or 13.5s."
+                "statement": "At 1.5s: tomato package; at 9.5s: chopping board; at 13.5s: cream bowl."
               },
               {
                 "id": "anchor_3",
-                "statement": "At 13.5s into the clip, but not at 1.5s or 9.5s."
+                "statement": "At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board."
               },
               {
                 "id": "no_anchor",
-                "statement": "At none of these clip times: 1.5s, 9.5s, or 13.5s."
+                "statement": "At 1.5s: cream bowl; at 9.5s: chopping board; at 13.5s: tomato package."
               }
             ],
             "correct_option_id": "anchor_3",
-            "evidence_statement": "The synchronized gaze point lands inside the annotated chopping board region only at 13.5 seconds into the clip. At 1.5s, 9.5s, and 13.5s, it lands on tomato package, cream bowl, chopping board, respectively.",
+            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
             "semantic_facts": [
               {
                 "id": "target_object_id",
@@ -27855,7 +27860,7 @@ window.QA_DATA = {
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:dc677d51d68ee68ee958297b44cf26a8f0752b926a6ddfa5b457234576cf8c66"
+                "value": "sha256:ef2212aace12d128fda54d4a34e37761b1a704adc50da0452bf6df33d156623f"
               }
             ],
             "evidence_refs": [
@@ -27882,7 +27887,7 @@ window.QA_DATA = {
               },
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:dc677d51d68ee68ee958297b44cf26a8f0752b926a6ddfa5b457234576cf8c66"
+                "sha256": "sha256:ef2212aace12d128fda54d4a34e37761b1a704adc50da0452bf6df33d156623f"
               }
             ],
             "provenance": {
@@ -27908,9 +27913,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:d0d5069cc8054a2be1bb7c8dc86f5e4fd1acce9bedd78ef6053e89c6b81ad153"
+            "answer_signature": "sha256:6e01c409debe0c58b189b61af1ce9d3c831849709a3bd2bd0bce8d08aa00fba4"
           },
-          "answer_signature": "sha256:d0d5069cc8054a2be1bb7c8dc86f5e4fd1acce9bedd78ef6053e89c6b81ad153",
+          "answer_signature": "sha256:6e01c409debe0c58b189b61af1ce9d3c831849709a3bd2bd0bce8d08aa00fba4",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -27919,7 +27924,7 @@ window.QA_DATA = {
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
               "semantic_gt_id": "task5_egoexo_sfu_cooking_010_3_dab0e9e401",
-              "answer_signature": "sha256:d0d5069cc8054a2be1bb7c8dc86f5e4fd1acce9bedd78ef6053e89c6b81ad153",
+              "answer_signature": "sha256:6e01c409debe0c58b189b61af1ce9d3c831849709a3bd2bd0bce8d08aa00fba4",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -27930,7 +27935,7 @@ window.QA_DATA = {
           "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
           "result_json": {
             "status": "ok",
-            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
+            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
             "T_Q": true,
             "H_Q": true,
             "S_Q": true,
@@ -28052,9 +28057,10 @@ window.QA_DATA = {
               "gaze": "takes/sfu_cooking_010_3/eye_gaze/general_eye_gaze_2d.csv",
               "video": "takes/sfu_cooking_010_3/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
             },
+            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
             "semantic_gt_id": "task5_egoexo_sfu_cooking_010_3_dab0e9e401",
-            "answer_signature": "sha256:d0d5069cc8054a2be1bb7c8dc86f5e4fd1acce9bedd78ef6053e89c6b81ad153",
-            "evidence_signature": "sha256:dc677d51d68ee68ee958297b44cf26a8f0752b926a6ddfa5b457234576cf8c66",
+            "answer_signature": "sha256:6e01c409debe0c58b189b61af1ce9d3c831849709a3bd2bd0bce8d08aa00fba4",
+            "evidence_signature": "sha256:ef2212aace12d128fda54d4a34e37761b1a704adc50da0452bf6df33d156623f",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           }
@@ -28088,7 +28094,7 @@ window.QA_DATA = {
           "question_categories": [
             "evidence_closed_gaze_mask_anchor"
           ],
-          "question": "At which stated clip time (2.0s, 10.0s, or 13.0s) does the camera wearer's gaze land on the tawa pan?",
+          "question": "At which stated clip time (2.0s, 10.0s, or 13.0s) does the camera-wearer gaze land on the tawa pan?",
           "options": [
             {
               "label": "A",
@@ -28120,7 +28126,7 @@ window.QA_DATA = {
             "semantic_gt_id": "task5_egoexo_iiith_cooking_32_1_06aeff1d04",
             "task_id": "task5_human_state_grounded_spatial_reasoning",
             "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (2.0s, 10.0s, or 13.0s) does the camera wearer's gaze land on the tawa pan?",
+            "question_focus": "At which stated clip time (2.0s, 10.0s, or 13.0s) does the camera-wearer gaze land on the tawa pan?",
             "options": [
               {
                 "id": "anchor_1",
@@ -28169,7 +28175,7 @@ window.QA_DATA = {
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:debf20e80ff68e89842fca6183c6a5807161b4b0626224369726b8708f4cbdb1"
+                "value": "sha256:a0e63364d186f7c4da4ad13c7b8ea9f84f1bbd6798f3521b500aa402b2b749d4"
               }
             ],
             "evidence_refs": [
@@ -28196,7 +28202,7 @@ window.QA_DATA = {
               },
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:debf20e80ff68e89842fca6183c6a5807161b4b0626224369726b8708f4cbdb1"
+                "sha256": "sha256:a0e63364d186f7c4da4ad13c7b8ea9f84f1bbd6798f3521b500aa402b2b749d4"
               }
             ],
             "provenance": {
@@ -28222,9 +28228,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:4e254e91c94f005182804c65f1879aa8bd361c478b7c52e2c437fb60a57314fe"
+            "answer_signature": "sha256:e2c9c0627ae7424695475434e0b89ce96a44658e49e01b3d8240fe1c6918878b"
           },
-          "answer_signature": "sha256:4e254e91c94f005182804c65f1879aa8bd361c478b7c52e2c437fb60a57314fe",
+          "answer_signature": "sha256:e2c9c0627ae7424695475434e0b89ce96a44658e49e01b3d8240fe1c6918878b",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -28233,7 +28239,7 @@ window.QA_DATA = {
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
               "semantic_gt_id": "task5_egoexo_iiith_cooking_32_1_06aeff1d04",
-              "answer_signature": "sha256:4e254e91c94f005182804c65f1879aa8bd361c478b7c52e2c437fb60a57314fe",
+              "answer_signature": "sha256:e2c9c0627ae7424695475434e0b89ce96a44658e49e01b3d8240fe1c6918878b",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -28366,9 +28372,10 @@ window.QA_DATA = {
               "gaze": "takes/iiith_cooking_32_1/eye_gaze/general_eye_gaze_2d.csv",
               "video": "takes/iiith_cooking_32_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
             },
+            "temporal_scope": "three explicit clip-relative checkpoints",
             "semantic_gt_id": "task5_egoexo_iiith_cooking_32_1_06aeff1d04",
-            "answer_signature": "sha256:4e254e91c94f005182804c65f1879aa8bd361c478b7c52e2c437fb60a57314fe",
-            "evidence_signature": "sha256:debf20e80ff68e89842fca6183c6a5807161b4b0626224369726b8708f4cbdb1",
+            "answer_signature": "sha256:e2c9c0627ae7424695475434e0b89ce96a44658e49e01b3d8240fe1c6918878b",
+            "evidence_signature": "sha256:a0e63364d186f7c4da4ad13c7b8ea9f84f1bbd6798f3521b500aa402b2b749d4",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           }
@@ -28398,63 +28405,63 @@ window.QA_DATA = {
         {
           "task_id": "task5_human_state_grounded_spatial_reasoning",
           "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_point_inside_relation_mask_at_anchor",
+          "question_type": "gaze_target_sequence_across_clip_checkpoints",
           "question_categories": [
             "evidence_closed_gaze_mask_anchor"
           ],
-          "question": "At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera wearer's gaze land on the pink frying pan?",
+          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
           "options": [
             {
               "label": "A",
-              "text": "At 5.0s into the clip, but not at 2.0s or 13.0s.",
+              "text": "At 2.0s: pink frying pan; at 5.0s: wooden chopping board; at 13.0s: meat cleaver knife.",
               "semantic_option_id": "anchor_2"
             },
             {
               "label": "B",
-              "text": "At 13.0s into the clip, but not at 2.0s or 5.0s.",
+              "text": "At 2.0s: meat cleaver knife; at 5.0s: pink frying pan; at 13.0s: wooden chopping board.",
               "semantic_option_id": "anchor_3"
             },
             {
               "label": "C",
-              "text": "At none of these clip times: 2.0s, 5.0s, or 13.0s.",
+              "text": "At 2.0s: meat cleaver knife; at 5.0s: wooden chopping board; at 13.0s: pink frying pan.",
               "semantic_option_id": "no_anchor"
             },
             {
               "label": "D",
-              "text": "At 2.0s into the clip, but not at 5.0s or 13.0s.",
+              "text": "At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
               "semantic_option_id": "anchor_1"
             }
           ],
           "correct_option": "D",
-          "correct_answer": "At 2.0s into the clip, but not at 5.0s or 13.0s.",
-          "answer": "At 2.0s into the clip, but not at 5.0s or 13.0s.",
-          "explanation": "The synchronized gaze point lands inside the annotated pink frying pan region only at 2.0 seconds into the clip. At 2.0s, 5.0s, and 13.0s, it lands on pink frying pan, meat cleaver knife, wooden chopping board, respectively.",
+          "correct_answer": "At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
+          "answer": "At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
+          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
           "semantic_gt": {
             "schema_version": "limo4si.semantic_gt.v1",
             "semantic_gt_id": "task5_egoexo_sfu_cooking_007_3_60ab95d4a7",
             "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera wearer's gaze land on the pink frying pan?",
+            "question_type": "gaze_target_sequence_across_clip_checkpoints",
+            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
             "options": [
               {
                 "id": "anchor_1",
-                "statement": "At 2.0s into the clip, but not at 5.0s or 13.0s."
+                "statement": "At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board."
               },
               {
                 "id": "anchor_2",
-                "statement": "At 5.0s into the clip, but not at 2.0s or 13.0s."
+                "statement": "At 2.0s: pink frying pan; at 5.0s: wooden chopping board; at 13.0s: meat cleaver knife."
               },
               {
                 "id": "anchor_3",
-                "statement": "At 13.0s into the clip, but not at 2.0s or 5.0s."
+                "statement": "At 2.0s: meat cleaver knife; at 5.0s: pink frying pan; at 13.0s: wooden chopping board."
               },
               {
                 "id": "no_anchor",
-                "statement": "At none of these clip times: 2.0s, 5.0s, or 13.0s."
+                "statement": "At 2.0s: meat cleaver knife; at 5.0s: wooden chopping board; at 13.0s: pink frying pan."
               }
             ],
             "correct_option_id": "anchor_1",
-            "evidence_statement": "The synchronized gaze point lands inside the annotated pink frying pan region only at 2.0 seconds into the clip. At 2.0s, 5.0s, and 13.0s, it lands on pink frying pan, meat cleaver knife, wooden chopping board, respectively.",
+            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
             "semantic_facts": [
               {
                 "id": "target_object_id",
@@ -28483,7 +28490,7 @@ window.QA_DATA = {
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:d6178b5775aad8042daaeef671cf75dfededbdf51d32f50b15a7d0b1ea956bd5"
+                "value": "sha256:a4a3777fedf3bf1a282567b72c9dc37b246a5b7306b0c429433d1776dffdc8b5"
               }
             ],
             "evidence_refs": [
@@ -28510,7 +28517,7 @@ window.QA_DATA = {
               },
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:d6178b5775aad8042daaeef671cf75dfededbdf51d32f50b15a7d0b1ea956bd5"
+                "sha256": "sha256:a4a3777fedf3bf1a282567b72c9dc37b246a5b7306b0c429433d1776dffdc8b5"
               }
             ],
             "provenance": {
@@ -28536,9 +28543,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:a334fbb6d2149048f3fde5ea58fea34f8111fcc1919574c93d88186aafa13e71"
+            "answer_signature": "sha256:fa521223b0ebd912c32be49b3bb7365cd449946d2bbdae3809830ec42e9fe2d2"
           },
-          "answer_signature": "sha256:a334fbb6d2149048f3fde5ea58fea34f8111fcc1919574c93d88186aafa13e71",
+          "answer_signature": "sha256:fa521223b0ebd912c32be49b3bb7365cd449946d2bbdae3809830ec42e9fe2d2",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -28547,7 +28554,7 @@ window.QA_DATA = {
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
               "semantic_gt_id": "task5_egoexo_sfu_cooking_007_3_60ab95d4a7",
-              "answer_signature": "sha256:a334fbb6d2149048f3fde5ea58fea34f8111fcc1919574c93d88186aafa13e71",
+              "answer_signature": "sha256:fa521223b0ebd912c32be49b3bb7365cd449946d2bbdae3809830ec42e9fe2d2",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -28558,7 +28565,7 @@ window.QA_DATA = {
           "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
           "result_json": {
             "status": "ok",
-            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
+            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
             "T_Q": true,
             "H_Q": true,
             "S_Q": true,
@@ -28680,9 +28687,10 @@ window.QA_DATA = {
               "gaze": "takes/sfu_cooking_007_3/eye_gaze/general_eye_gaze_2d.csv",
               "video": "takes/sfu_cooking_007_3/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
             },
+            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
             "semantic_gt_id": "task5_egoexo_sfu_cooking_007_3_60ab95d4a7",
-            "answer_signature": "sha256:a334fbb6d2149048f3fde5ea58fea34f8111fcc1919574c93d88186aafa13e71",
-            "evidence_signature": "sha256:d6178b5775aad8042daaeef671cf75dfededbdf51d32f50b15a7d0b1ea956bd5",
+            "answer_signature": "sha256:fa521223b0ebd912c32be49b3bb7365cd449946d2bbdae3809830ec42e9fe2d2",
+            "evidence_signature": "sha256:a4a3777fedf3bf1a282567b72c9dc37b246a5b7306b0c429433d1776dffdc8b5",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           }
@@ -28716,7 +28724,7 @@ window.QA_DATA = {
           "question_categories": [
             "evidence_closed_gaze_mask_anchor"
           ],
-          "question": "At which stated clip time (1.5s, 5.5s, or 13.5s) does the camera wearer's gaze land on the aluminium skillet?",
+          "question": "At which stated clip time (1.5s, 5.5s, or 13.5s) does the camera-wearer gaze land on the aluminium skillet?",
           "options": [
             {
               "label": "A",
@@ -28748,7 +28756,7 @@ window.QA_DATA = {
             "semantic_gt_id": "task5_egoexo_uniandes_cooking_001_5_8854e96840",
             "task_id": "task5_human_state_grounded_spatial_reasoning",
             "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (1.5s, 5.5s, or 13.5s) does the camera wearer's gaze land on the aluminium skillet?",
+            "question_focus": "At which stated clip time (1.5s, 5.5s, or 13.5s) does the camera-wearer gaze land on the aluminium skillet?",
             "options": [
               {
                 "id": "anchor_1",
@@ -28797,7 +28805,7 @@ window.QA_DATA = {
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:1ccb0fcb83bed7db3426bdab8510a6539c3129d671745cd7f153ff17b3d7e752"
+                "value": "sha256:49e5a8fc53dc1566fc7781a23e3cf114f2ba48b4069d81177586b79ec26c80b4"
               }
             ],
             "evidence_refs": [
@@ -28824,7 +28832,7 @@ window.QA_DATA = {
               },
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:1ccb0fcb83bed7db3426bdab8510a6539c3129d671745cd7f153ff17b3d7e752"
+                "sha256": "sha256:49e5a8fc53dc1566fc7781a23e3cf114f2ba48b4069d81177586b79ec26c80b4"
               }
             ],
             "provenance": {
@@ -28850,9 +28858,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:cf6af6292373a324237c315790b197043cb8ce2ef0d21cea905c7f7a3352fbad"
+            "answer_signature": "sha256:f8b1a3dfe5cf8ad5c7016485243df8ee3afbed8653b8c3db906cef9cd1455131"
           },
-          "answer_signature": "sha256:cf6af6292373a324237c315790b197043cb8ce2ef0d21cea905c7f7a3352fbad",
+          "answer_signature": "sha256:f8b1a3dfe5cf8ad5c7016485243df8ee3afbed8653b8c3db906cef9cd1455131",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -28861,7 +28869,7 @@ window.QA_DATA = {
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
               "semantic_gt_id": "task5_egoexo_uniandes_cooking_001_5_8854e96840",
-              "answer_signature": "sha256:cf6af6292373a324237c315790b197043cb8ce2ef0d21cea905c7f7a3352fbad",
+              "answer_signature": "sha256:f8b1a3dfe5cf8ad5c7016485243df8ee3afbed8653b8c3db906cef9cd1455131",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -28994,9 +29002,10 @@ window.QA_DATA = {
               "gaze": "takes/uniandes_cooking_001_5/eye_gaze/general_eye_gaze_2d.csv",
               "video": "takes/uniandes_cooking_001_5/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
             },
+            "temporal_scope": "three explicit clip-relative checkpoints",
             "semantic_gt_id": "task5_egoexo_uniandes_cooking_001_5_8854e96840",
-            "answer_signature": "sha256:cf6af6292373a324237c315790b197043cb8ce2ef0d21cea905c7f7a3352fbad",
-            "evidence_signature": "sha256:1ccb0fcb83bed7db3426bdab8510a6539c3129d671745cd7f153ff17b3d7e752",
+            "answer_signature": "sha256:f8b1a3dfe5cf8ad5c7016485243df8ee3afbed8653b8c3db906cef9cd1455131",
+            "evidence_signature": "sha256:49e5a8fc53dc1566fc7781a23e3cf114f2ba48b4069d81177586b79ec26c80b4",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           }
@@ -29026,63 +29035,63 @@ window.QA_DATA = {
         {
           "task_id": "task5_human_state_grounded_spatial_reasoning",
           "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_point_inside_relation_mask_at_anchor",
+          "question_type": "gaze_target_sequence_across_clip_checkpoints",
           "question_categories": [
             "evidence_closed_gaze_mask_anchor"
           ],
-          "question": "At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera wearer's gaze land on the egg carton?",
+          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
           "options": [
             {
               "label": "A",
-              "text": "At 5.0s into the clip, but not at 2.0s or 13.0s.",
+              "text": "At 2.0s: egg carton; at 5.0s: paper towel sheet; at 13.0s: paper towel.",
               "semantic_option_id": "anchor_2"
             },
             {
               "label": "B",
-              "text": "At 2.0s into the clip, but not at 5.0s or 13.0s.",
+              "text": "At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
               "semantic_option_id": "anchor_1"
             },
             {
               "label": "C",
-              "text": "At 13.0s into the clip, but not at 2.0s or 5.0s.",
+              "text": "At 2.0s: paper towel; at 5.0s: egg carton; at 13.0s: paper towel sheet.",
               "semantic_option_id": "anchor_3"
             },
             {
               "label": "D",
-              "text": "At none of these clip times: 2.0s, 5.0s, or 13.0s.",
+              "text": "At 2.0s: paper towel; at 5.0s: paper towel sheet; at 13.0s: egg carton.",
               "semantic_option_id": "no_anchor"
             }
           ],
           "correct_option": "B",
-          "correct_answer": "At 2.0s into the clip, but not at 5.0s or 13.0s.",
-          "answer": "At 2.0s into the clip, but not at 5.0s or 13.0s.",
-          "explanation": "The synchronized gaze point lands inside the annotated egg carton region only at 2.0 seconds into the clip. At 2.0s, 5.0s, and 13.0s, it lands on egg carton, paper towel, paper towel sheet, respectively.",
+          "correct_answer": "At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
+          "answer": "At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
+          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
           "semantic_gt": {
             "schema_version": "limo4si.semantic_gt.v1",
             "semantic_gt_id": "task5_egoexo_minnesota_cooking_010_2_a60293338e",
             "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera wearer's gaze land on the egg carton?",
+            "question_type": "gaze_target_sequence_across_clip_checkpoints",
+            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
             "options": [
               {
                 "id": "anchor_1",
-                "statement": "At 2.0s into the clip, but not at 5.0s or 13.0s."
+                "statement": "At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet."
               },
               {
                 "id": "anchor_2",
-                "statement": "At 5.0s into the clip, but not at 2.0s or 13.0s."
+                "statement": "At 2.0s: egg carton; at 5.0s: paper towel sheet; at 13.0s: paper towel."
               },
               {
                 "id": "anchor_3",
-                "statement": "At 13.0s into the clip, but not at 2.0s or 5.0s."
+                "statement": "At 2.0s: paper towel; at 5.0s: egg carton; at 13.0s: paper towel sheet."
               },
               {
                 "id": "no_anchor",
-                "statement": "At none of these clip times: 2.0s, 5.0s, or 13.0s."
+                "statement": "At 2.0s: paper towel; at 5.0s: paper towel sheet; at 13.0s: egg carton."
               }
             ],
             "correct_option_id": "anchor_1",
-            "evidence_statement": "The synchronized gaze point lands inside the annotated egg carton region only at 2.0 seconds into the clip. At 2.0s, 5.0s, and 13.0s, it lands on egg carton, paper towel, paper towel sheet, respectively.",
+            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
             "semantic_facts": [
               {
                 "id": "target_object_id",
@@ -29111,7 +29120,7 @@ window.QA_DATA = {
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:e578315fc7c788b63ff8729542200fd809bfc7361e8bf7bd8b0404e39c773847"
+                "value": "sha256:884080439f056d46f016365d37d962c3207046a558151d145f07dd6d7df201c9"
               }
             ],
             "evidence_refs": [
@@ -29138,7 +29147,7 @@ window.QA_DATA = {
               },
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:e578315fc7c788b63ff8729542200fd809bfc7361e8bf7bd8b0404e39c773847"
+                "sha256": "sha256:884080439f056d46f016365d37d962c3207046a558151d145f07dd6d7df201c9"
               }
             ],
             "provenance": {
@@ -29164,9 +29173,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:b20efa7c21bd1b3365aa79a13d3cbc4aca61daaa8c270d0d61e1570222aeea5c"
+            "answer_signature": "sha256:2f65746f552a6ce1620a8907bb5f529f70ae4079784527d648d100cd00b7f466"
           },
-          "answer_signature": "sha256:b20efa7c21bd1b3365aa79a13d3cbc4aca61daaa8c270d0d61e1570222aeea5c",
+          "answer_signature": "sha256:2f65746f552a6ce1620a8907bb5f529f70ae4079784527d648d100cd00b7f466",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -29175,7 +29184,7 @@ window.QA_DATA = {
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
               "semantic_gt_id": "task5_egoexo_minnesota_cooking_010_2_a60293338e",
-              "answer_signature": "sha256:b20efa7c21bd1b3365aa79a13d3cbc4aca61daaa8c270d0d61e1570222aeea5c",
+              "answer_signature": "sha256:2f65746f552a6ce1620a8907bb5f529f70ae4079784527d648d100cd00b7f466",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -29186,7 +29195,7 @@ window.QA_DATA = {
           "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
           "result_json": {
             "status": "ok",
-            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
+            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
             "T_Q": true,
             "H_Q": true,
             "S_Q": true,
@@ -29308,9 +29317,10 @@ window.QA_DATA = {
               "gaze": "takes/minnesota_cooking_010_2/eye_gaze/general_eye_gaze_2d.csv",
               "video": "takes/minnesota_cooking_010_2/frame_aligned_videos/downscaled/448/aria05_214-1.mp4"
             },
+            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
             "semantic_gt_id": "task5_egoexo_minnesota_cooking_010_2_a60293338e",
-            "answer_signature": "sha256:b20efa7c21bd1b3365aa79a13d3cbc4aca61daaa8c270d0d61e1570222aeea5c",
-            "evidence_signature": "sha256:e578315fc7c788b63ff8729542200fd809bfc7361e8bf7bd8b0404e39c773847",
+            "answer_signature": "sha256:2f65746f552a6ce1620a8907bb5f529f70ae4079784527d648d100cd00b7f466",
+            "evidence_signature": "sha256:884080439f056d46f016365d37d962c3207046a558151d145f07dd6d7df201c9",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           }
@@ -29344,7 +29354,7 @@ window.QA_DATA = {
           "question_categories": [
             "evidence_closed_gaze_mask_anchor"
           ],
-          "question": "At which stated clip time (2.0s, 4.0s, or 13.0s) does the camera wearer's gaze land on the non-stick pan?",
+          "question": "At which stated clip time (2.0s, 4.0s, or 13.0s) does the camera-wearer gaze land on the non-stick pan?",
           "options": [
             {
               "label": "A",
@@ -29376,7 +29386,7 @@ window.QA_DATA = {
             "semantic_gt_id": "task5_egoexo_sfu_cooking_007_1_4ec66ba784",
             "task_id": "task5_human_state_grounded_spatial_reasoning",
             "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (2.0s, 4.0s, or 13.0s) does the camera wearer's gaze land on the non-stick pan?",
+            "question_focus": "At which stated clip time (2.0s, 4.0s, or 13.0s) does the camera-wearer gaze land on the non-stick pan?",
             "options": [
               {
                 "id": "anchor_1",
@@ -29425,7 +29435,7 @@ window.QA_DATA = {
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:f18fd71187306e1c7524952eb5e609c0506e5a7242a85b86212a285700a371e1"
+                "value": "sha256:616c04f57ca19f2b48081efc88083eb5304950b7f28f9eb0762207261a8f6696"
               }
             ],
             "evidence_refs": [
@@ -29452,7 +29462,7 @@ window.QA_DATA = {
               },
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:f18fd71187306e1c7524952eb5e609c0506e5a7242a85b86212a285700a371e1"
+                "sha256": "sha256:616c04f57ca19f2b48081efc88083eb5304950b7f28f9eb0762207261a8f6696"
               }
             ],
             "provenance": {
@@ -29478,9 +29488,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:88e1eb5972472bbf272ccbd4a679c1388f6bd019c6908b5702b9c504be58d7e0"
+            "answer_signature": "sha256:c8bc0953e3ce018f7f12ef108b03127ce2eb7419f17c2db6079a3f211cb4ad75"
           },
-          "answer_signature": "sha256:88e1eb5972472bbf272ccbd4a679c1388f6bd019c6908b5702b9c504be58d7e0",
+          "answer_signature": "sha256:c8bc0953e3ce018f7f12ef108b03127ce2eb7419f17c2db6079a3f211cb4ad75",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -29489,7 +29499,7 @@ window.QA_DATA = {
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
               "semantic_gt_id": "task5_egoexo_sfu_cooking_007_1_4ec66ba784",
-              "answer_signature": "sha256:88e1eb5972472bbf272ccbd4a679c1388f6bd019c6908b5702b9c504be58d7e0",
+              "answer_signature": "sha256:c8bc0953e3ce018f7f12ef108b03127ce2eb7419f17c2db6079a3f211cb4ad75",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -29622,9 +29632,10 @@ window.QA_DATA = {
               "gaze": "takes/sfu_cooking_007_1/eye_gaze/general_eye_gaze_2d.csv",
               "video": "takes/sfu_cooking_007_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
             },
+            "temporal_scope": "three explicit clip-relative checkpoints",
             "semantic_gt_id": "task5_egoexo_sfu_cooking_007_1_4ec66ba784",
-            "answer_signature": "sha256:88e1eb5972472bbf272ccbd4a679c1388f6bd019c6908b5702b9c504be58d7e0",
-            "evidence_signature": "sha256:f18fd71187306e1c7524952eb5e609c0506e5a7242a85b86212a285700a371e1",
+            "answer_signature": "sha256:c8bc0953e3ce018f7f12ef108b03127ce2eb7419f17c2db6079a3f211cb4ad75",
+            "evidence_signature": "sha256:616c04f57ca19f2b48081efc88083eb5304950b7f28f9eb0762207261a8f6696",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           }
@@ -29654,63 +29665,63 @@ window.QA_DATA = {
         {
           "task_id": "task5_human_state_grounded_spatial_reasoning",
           "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_point_inside_relation_mask_at_anchor",
+          "question_type": "gaze_target_sequence_across_clip_checkpoints",
           "question_categories": [
             "evidence_closed_gaze_mask_anchor"
           ],
-          "question": "At which stated clip time (1.0s, 6.0s, or 14.0s) does the camera wearer's gaze land on the white bowl?",
+          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
           "options": [
             {
               "label": "A",
-              "text": "At 1.0s into the clip, but not at 6.0s or 14.0s.",
+              "text": "At 1.0s: dining table; at 6.0s: white plate; at 14.0s: white bowl.",
               "semantic_option_id": "anchor_1"
             },
             {
               "label": "B",
-              "text": "At 14.0s into the clip, but not at 1.0s or 6.0s.",
+              "text": "At 1.0s: white bowl; at 6.0s: dining table; at 14.0s: white plate.",
               "semantic_option_id": "anchor_3"
             },
             {
               "label": "C",
-              "text": "At none of these clip times: 1.0s, 6.0s, or 14.0s.",
+              "text": "At 1.0s: white bowl; at 6.0s: white plate; at 14.0s: dining table.",
               "semantic_option_id": "no_anchor"
             },
             {
               "label": "D",
-              "text": "At 6.0s into the clip, but not at 1.0s or 14.0s.",
+              "text": "At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
               "semantic_option_id": "anchor_2"
             }
           ],
           "correct_option": "D",
-          "correct_answer": "At 6.0s into the clip, but not at 1.0s or 14.0s.",
-          "answer": "At 6.0s into the clip, but not at 1.0s or 14.0s.",
-          "explanation": "The synchronized gaze point lands inside the annotated white bowl region only at 6.0 seconds into the clip. At 1.0s, 6.0s, and 14.0s, it lands on dining table, white bowl, white plate, respectively.",
+          "correct_answer": "At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
+          "answer": "At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
+          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
           "semantic_gt": {
             "schema_version": "limo4si.semantic_gt.v1",
             "semantic_gt_id": "task5_egoexo_sfu_cooking_010_1_718f6f57a3",
             "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (1.0s, 6.0s, or 14.0s) does the camera wearer's gaze land on the white bowl?",
+            "question_type": "gaze_target_sequence_across_clip_checkpoints",
+            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
             "options": [
               {
                 "id": "anchor_1",
-                "statement": "At 1.0s into the clip, but not at 6.0s or 14.0s."
+                "statement": "At 1.0s: dining table; at 6.0s: white plate; at 14.0s: white bowl."
               },
               {
                 "id": "anchor_2",
-                "statement": "At 6.0s into the clip, but not at 1.0s or 14.0s."
+                "statement": "At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate."
               },
               {
                 "id": "anchor_3",
-                "statement": "At 14.0s into the clip, but not at 1.0s or 6.0s."
+                "statement": "At 1.0s: white bowl; at 6.0s: dining table; at 14.0s: white plate."
               },
               {
                 "id": "no_anchor",
-                "statement": "At none of these clip times: 1.0s, 6.0s, or 14.0s."
+                "statement": "At 1.0s: white bowl; at 6.0s: white plate; at 14.0s: dining table."
               }
             ],
             "correct_option_id": "anchor_2",
-            "evidence_statement": "The synchronized gaze point lands inside the annotated white bowl region only at 6.0 seconds into the clip. At 1.0s, 6.0s, and 14.0s, it lands on dining table, white bowl, white plate, respectively.",
+            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
             "semantic_facts": [
               {
                 "id": "target_object_id",
@@ -29739,7 +29750,7 @@ window.QA_DATA = {
               },
               {
                 "id": "result_evidence_signature",
-                "value": "sha256:aa156a4c564117af60dcdfd1ff3eac102c538bacf47d2103299d58957915992a"
+                "value": "sha256:878d0706ee8a369b1be60d3b755bd5a4a586ec022b4a41f35e2bbbca3af43fcd"
               }
             ],
             "evidence_refs": [
@@ -29766,7 +29777,7 @@ window.QA_DATA = {
               },
               {
                 "kind": "result_json_sha256",
-                "sha256": "sha256:aa156a4c564117af60dcdfd1ff3eac102c538bacf47d2103299d58957915992a"
+                "sha256": "sha256:878d0706ee8a369b1be60d3b755bd5a4a586ec022b4a41f35e2bbbca3af43fcd"
               }
             ],
             "provenance": {
@@ -29792,9 +29803,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:7de5067a2205ab7529f00ee2fd9b9d14fe725d2a9fe89450eeb8821a5faa0d75"
+            "answer_signature": "sha256:c3e50bdce2bdd019b4f04bf602a2bef828018f899208d001d4247d388db7586d"
           },
-          "answer_signature": "sha256:7de5067a2205ab7529f00ee2fd9b9d14fe725d2a9fe89450eeb8821a5faa0d75",
+          "answer_signature": "sha256:c3e50bdce2bdd019b4f04bf602a2bef828018f899208d001d4247d388db7586d",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -29803,7 +29814,7 @@ window.QA_DATA = {
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
               "semantic_gt_id": "task5_egoexo_sfu_cooking_010_1_718f6f57a3",
-              "answer_signature": "sha256:7de5067a2205ab7529f00ee2fd9b9d14fe725d2a9fe89450eeb8821a5faa0d75",
+              "answer_signature": "sha256:c3e50bdce2bdd019b4f04bf602a2bef828018f899208d001d4247d388db7586d",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -29814,7 +29825,7 @@ window.QA_DATA = {
           "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
           "result_json": {
             "status": "ok",
-            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
+            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
             "T_Q": true,
             "H_Q": true,
             "S_Q": true,
@@ -29936,9 +29947,10 @@ window.QA_DATA = {
               "gaze": "takes/sfu_cooking_010_1/eye_gaze/general_eye_gaze_2d.csv",
               "video": "takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
             },
+            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
             "semantic_gt_id": "task5_egoexo_sfu_cooking_010_1_718f6f57a3",
-            "answer_signature": "sha256:7de5067a2205ab7529f00ee2fd9b9d14fe725d2a9fe89450eeb8821a5faa0d75",
-            "evidence_signature": "sha256:aa156a4c564117af60dcdfd1ff3eac102c538bacf47d2103299d58957915992a",
+            "answer_signature": "sha256:c3e50bdce2bdd019b4f04bf602a2bef828018f899208d001d4247d388db7586d",
+            "evidence_signature": "sha256:878d0706ee8a369b1be60d3b755bd5a4a586ec022b4a41f35e2bbbca3af43fcd",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"
           }

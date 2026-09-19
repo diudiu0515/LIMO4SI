@@ -57,7 +57,7 @@ def evidence_payload(group: dict[str, Any], qa: dict[str, Any]) -> dict[str, Any
     r = qa.get('result_json') or {}
     qtype = qa.get('question_type', '')
     out: dict[str, Any] = {'T/H/S': {'T': r.get('T_Q'), 'H': r.get('H_Q'), 'S': r.get('S_Q')}}
-    if qtype == 'gaze_point_inside_relation_mask_at_anchor':
+    if qtype in {'gaze_point_inside_relation_mask_at_anchor', 'gaze_target_sequence_across_clip_checkpoints'}:
         out['annotation_source'] = r.get('annotation_source')
         out['answer_provenance'] = 'direct synchronized gaze-point / Relations-mask containment; no LLM label judgment'
         out['gaze_grounding_method'] = r.get('gaze_grounding_method')

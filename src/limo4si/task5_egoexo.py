@@ -14,6 +14,7 @@ from pycocotools import mask as mask_utils
 
 
 QUESTION_TYPE = "gaze_point_inside_relation_mask_at_anchor"
+CLIP_SEQUENCE_QUESTION_TYPE = "gaze_target_sequence_across_clip_checkpoints"
 RELEASE_MIN_WINDOW_SEC = 14.5
 RELEASE_MAX_WINDOW_SEC = 15.5
 RELEASE_MIN_ANCHOR_SPAN_RATIO = 0.65

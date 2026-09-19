@@ -12,6 +12,7 @@ import subprocess
 import sys
 from pathlib import Path
 from typing import Any
+from itertools import permutations
 
 import cv2
 import numpy as np
@@ -31,6 +32,7 @@ from limo4si.semantic_gt import (  # noqa: E402
 )
 from limo4si.task5_egoexo import (  # noqa: E402
     GAZE_GROUNDING_METHOD,
+    CLIP_SEQUENCE_QUESTION_TYPE,
     QUESTION_TYPE,
     RELEASE_MAX_WINDOW_SEC,
     RELEASE_MIN_WINDOW_SEC,
@@ -44,6 +46,20 @@ from limo4si.task5_egoexo import (  # noqa: E402
 
 TASK_ID = "task5_human_state_grounded_spatial_reasoning"
 TASK_NAME = "Task 5 · Human-State–Grounded Spatial Reasoning"
+
+
+def sequence_options(anchors: list[dict[str, Any]], correct_id: str) -> list[dict[str, str]]:
+    times = [f"{float(anchor['clip_time_s']):.1f}s" for anchor in anchors]
+    names = [str(anchor["object_name"]) for anchor in anchors]
+    orders = [tuple(names)] + [order for order in permutations(names) if tuple(order) != tuple(names)][:3]
+    option_ids = ["anchor_1", "anchor_2", "anchor_3", "no_anchor"]
+    correct_position = option_ids.index(correct_id)
+    orders[0], orders[correct_position] = orders[correct_position], orders[0]
+    return [
+        {"id": option_id, "statement": f"At {times[0]}: {order[0]}; at {times[1]}: {order[1]}; at {times[2]}: {order[2]}."}
+        for option_id, order in zip(option_ids, orders)
+    ]
+
 ORDINALS = ("first", "second", "third")
 
 
@@ -291,24 +307,43 @@ def build_case(
         },
     }
     validate_review_result(result, minimum_boundary_margin_px=float(config["minimum_boundary_margin_px"]))
+    sequence_mode = case_index % 2 == 1
+    question_type = CLIP_SEQUENCE_QUESTION_TYPE if sequence_mode else QUESTION_TYPE
+    sequence_statement = (
+        f"At {clip_times[0]:.1f}s: {anchors[0]['object_name']}; "
+        f"at {clip_times[1]:.1f}s: {anchors[1]['object_name']}; "
+        f"at {clip_times[2]:.1f}s: {anchors[2]['object_name']}."
+    )
+    question_focus = (
+        "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, "
+        "which sequence describes how the camera-wearer gaze target changes?"
+        if sequence_mode else
+        f"At which stated clip time ({clip_times[0]:.1f}s, {clip_times[1]:.1f}s, or {clip_times[2]:.1f}s) "
+        f"does the camera-wearer gaze land on the {target_name}?"
+    )
+    semantic_options = sequence_options(anchors, correct_semantic_option_id) if sequence_mode else anchor_options(clip_times)
+    evidence_statement = (
+        "The annotation-supported gaze-target sequence spanning the clip is " + sequence_statement
+        if sequence_mode else
+        f"The synchronized gaze point lands inside the annotated {target_name} region "
+        f"only at {clip_times[target_index]:.1f} seconds into the clip. "
+        + f"At {clip_times[0]:.1f}s, {clip_times[1]:.1f}s, and {clip_times[2]:.1f}s, it lands on "
+        + ", ".join(anchor["object_name"] for anchor in anchors) + ", respectively."
+    )
+    result["answer_type"] = question_type
+    result["temporal_scope"] = (
+        "annotation-supported early/middle/late checkpoints spanning the 15-second clip"
+        if sequence_mode else "three explicit clip-relative checkpoints"
+    )
     evidence_signature = compute_result_evidence_signature(result)
     semantic_gt = make_semantic_gt(
         case_id=case_id,
         task_id=TASK_ID,
-        question_type=QUESTION_TYPE,
-        question_focus=(
-            f"At which stated clip time ({clip_times[0]:.1f}s, {clip_times[1]:.1f}s, or {clip_times[2]:.1f}s) "
-            f"does the camera wearer's gaze land on the {target_name}?"
-        ),
-        options=anchor_options(clip_times),
+        question_type=question_type,
+        question_focus=question_focus,
+        options=semantic_options,
         correct_option_id=correct_semantic_option_id,
-        evidence_statement=(
-            f"The synchronized gaze point lands inside the annotated {target_name} region "
-            f"only at {clip_times[target_index]:.1f} seconds into the clip. "
-            + f"At {clip_times[0]:.1f}s, {clip_times[1]:.1f}s, and {clip_times[2]:.1f}s, it lands on "
-            + ", ".join(anchor["object_name"] for anchor in anchors)
-            + ", respectively."
-        ),
+        evidence_statement=evidence_statement,
         semantic_facts=[
             {"id": "target_object_id", "value": target_object_id},
             {"id": "target_anchor_index", "value": target_index},
@@ -348,7 +383,7 @@ def build_case(
     question = {
         "task_id": TASK_ID,
         "task_name": TASK_NAME,
-        "question_type": QUESTION_TYPE,
+        "question_type": question_type,
         "question_categories": ["evidence_closed_gaze_mask_anchor"],
         **language,
         "status": "ok",
