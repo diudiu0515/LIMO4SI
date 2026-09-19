@@ -97,8 +97,11 @@ def body_centric_relation(
     if up is None:
         raise ValueError("invalid up vector")
     right = unit(sub(right_world, [dot(right_world, up) * x for x in up]))
-    forward = unit(sub(forward_world, [dot(forward_world, up) * x for x in up]))
-    if right is None or forward is None:
+    forward_horizontal = sub(forward_world, [dot(forward_world, up) * x for x in up])
+    if right is None:
+        raise ValueError("wearer right axis collapses after gravity alignment")
+    forward = unit(sub(forward_horizontal, [dot(forward_horizontal, right) * x for x in right]))
+    if forward is None:
         raise ValueError("wearer axes collapse after gravity alignment")
     lateral, longitudinal, vertical = dot(relative, right), dot(relative, forward), dot(relative, up)
     side = "left" if lateral < -lateral_deadband_m else "right" if lateral > lateral_deadband_m else "center"

@@ -6,6 +6,7 @@
 __pycache__/
 *.pyc
 .venv/
+/*_download_urls.json
 /data/
 /.lfs-chunks/
 /models/
@@ -22,4 +23,9 @@ __pycache__/
 /site/qa_benchmark/task5_media/task5c_behave_backpack_24_33_blurred.mp4
 /site/task5_review/
 /site/qa_benchmark/task5_media/task5_egoexo_*
+/site/qa_benchmark/task5_media/*_rgb.mp4
+/site/qa_benchmark/task5_media/task5_repeated_*
+/site/qa_benchmark/task5_media/task5_onset_*
+/site/qa_benchmark/task5_media/task5_last_*
+/.gitignore.orig
 /site/qa_benchmark/multihuman_media/egobody_*

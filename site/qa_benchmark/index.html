@@ -26,9 +26,9 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </div>
 <h2>Task 5 · Three requested categories</h2>
 <div class="coverageNotice">Only metric object geometry in a validated wearer body frame counts below. Image-plane gaze/mask questions are auxiliary and do not satisfy these categories.</div><div class="capabilityGrid">
-<div class="capabilityItem missing"><strong>1 · Relation change between two gazes at X</strong><br>0 published · current subset lacks object-linked metric 3D pose/OBB</div>
-<div class="capabilityItem"><strong>2 · Body-side change when gaze turns to X</strong><br>1 published case(s)</div>
-<div class="capabilityItem"><strong>3 · Full-clip relation change of the last gaze-annotated object</strong><br>1 published case(s)</div>
+<div class="capabilityItem"><strong>1 · Relation change between two gazes at X</strong><br>1 published case(s)</div>
+<div class="capabilityItem"><strong>2 · Body-side change when gaze turns to X</strong><br>2 published case(s)</div>
+<div class="capabilityItem"><strong>3 · Full-clip relation change of the last gaze-annotated object</strong><br>2 published case(s)</div>
 <div class="capabilityItem"><strong>Auxiliary evidence-closed gaze questions</strong><br>12 published · not counted toward the three categories</div>
 </div>
 <a href="#case-1">Case 1</a>
@@ -61,6 +61,9 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <a href="#case-28">Case 28</a>
 <a href="#case-29">Case 29</a>
 <a href="#case-30">Case 30</a>
+<a href="#case-31">Case 31</a>
+<a href="#case-32">Case 32</a>
+<a href="#case-33">Case 33</a>
 </nav>
 <section class="staticCase" id="case-1">
 <p class="eyebrow">Case 1</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 08</h2>
@@ -9927,6 +9930,354 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
         &quot;forward_m&quot;: 0.48498051370628603,
         &quot;up_m&quot;: -0.5999275543727177,
         &quot;distance_m&quot;: 0.7959849778126925
+      }
+    }
+  ]
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-31">
+<p class="eyebrow">Case 31</p><h2>Task 5 · cereal_ anon</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>8.998559999999998s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">8.998559999999998-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_repeated_apartment_release_clean_seq134_m1292_2273_2543_fc04bcb5.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_repeated_apartment_release_clean_seq134_m1292_2273_2543_fc04bcb5_gaze_evidence.jpg" loading="lazy" alt="original"><figcaption>ADT RGB anchor frames · green: target 2D box · red: measured gaze projection</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">relation_change_between_gazes</div>
+<div class="question">Q1. Between the two sustained gazes at the cereal_ anon, how does its wearer-relative position change?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The cereal_ anon changes from left-front to front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The cereal_ anon changes from front to left-front.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The cereal_ anon changes from left-front to behind.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The cereal_ anon changes from right-front to front.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The cereal_ anon changes from left-front to front.</div><div class="explanation">At the first gaze event the cereal_ anon is left-front; at the later event it is front.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Deterministic ADT gaze/object computation produces signed semantic GT; the language layer cannot choose or modify the answer.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Aria Digital Twin v2&quot;,
+  &quot;answer_provenance&quot;: &quot;direct computation from annotations; no LLM label judgment&quot;,
+  &quot;coordinate_frame&quot;: &quot;gravity-aligned wearer CPF: +right and +forward, metric world positions&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;depth_consistent_ray_obb_intersection&quot;,
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;6187322721312854&quot;,
+    &quot;name&quot;: &quot;Cereal_Anon&quot;
+  },
+  &quot;gaze_events&quot;: [
+    {
+      &quot;object_id&quot;: &quot;6187322721312854&quot;,
+      &quot;object_name&quot;: &quot;Cereal_Anon&quot;,
+      &quot;start_index&quot;: 2302,
+      &quot;end_index&quot;: 2319,
+      &quot;start_time_s&quot;: 76.721056,
+      &quot;end_time_s&quot;: 77.287632,
+      &quot;state_count&quot;: 18,
+      &quot;direct_hit_count&quot;: 18,
+      &quot;merged_gap_count&quot;: 0,
+      &quot;hit_support_ratio&quot;: 1.0,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.25786948438707913,
+        &quot;forward_m&quot;: 2.879198222133858,
+        &quot;up_m&quot;: -0.9427375771449342,
+        &quot;distance_m&quot;: 3.0405646207041763
+      }
+    },
+    {
+      &quot;object_id&quot;: &quot;6187322721312854&quot;,
+      &quot;object_name&quot;: &quot;Cereal_Anon&quot;,
+      &quot;start_index&quot;: 2411,
+      &quot;end_index&quot;: 2470,
+      &quot;start_time_s&quot;: 80.353808,
+      &quot;end_time_s&quot;: 82.32016,
+      &quot;state_count&quot;: 60,
+      &quot;direct_hit_count&quot;: 60,
+      &quot;merged_gap_count&quot;: 0,
+      &quot;hit_support_ratio&quot;: 1.0,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.05332505544619892,
+        &quot;forward_m&quot;: 0.3122403293795736,
+        &quot;up_m&quot;: -0.541183016664664,
+        &quot;distance_m&quot;: 0.6270698863409649
+      }
+    }
+  ],
+  &quot;transition&quot;: {
+    &quot;start_frame&quot;: 2310,
+    &quot;end_frame&quot;: 2440,
+    &quot;start_relation&quot;: &quot;left-front&quot;,
+    &quot;end_relation&quot;: &quot;front&quot;
+  },
+  &quot;anchor_states&quot;: [
+    {
+      &quot;frame&quot;: 2310,
+      &quot;time_s&quot;: 76.98768,
+      &quot;gazed_object_name&quot;: &quot;Cereal_Anon&quot;,
+      &quot;gaze_hit_distance_m&quot;: 3.0051649599403087,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.27541439986287874,
+        &quot;forward_m&quot;: 2.9121329084845913,
+        &quot;up_m&quot;: -0.9472533349113887,
+        &quot;distance_m&quot;: 3.074680479144378
+      }
+    },
+    {
+      &quot;frame&quot;: 2440,
+      &quot;time_s&quot;: 81.32032,
+      &quot;gazed_object_name&quot;: &quot;Cereal_Anon&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.6509994350381314,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.054050501326617484,
+        &quot;forward_m&quot;: 0.3123908128705454,
+        &quot;up_m&quot;: -0.5405272510866876,
+        &quot;distance_m&quot;: 0.6266411938477313
+      }
+    }
+  ]
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-32">
+<p class="eyebrow">Case 32</p><h2>Task 5 · apartment_ bedroom door</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>8.998559999999998s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">8.998559999999998-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_onset_apartment_release_multiuser_meal_seq137_m1292_1502_1772_daf8b3dc.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_onset_apartment_release_multiuser_meal_seq137_m1292_1502_1772_daf8b3dc_gaze_evidence.jpg" loading="lazy" alt="original"><figcaption>ADT RGB anchor frames · green: target 2D box · red: measured gaze projection</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_onset_side_change</div>
+<div class="question">Q1. As gaze turns to the apartment_ bedroom door, how does it shift in the wearer's body-relative view?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="B">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The apartment_ bedroom door changes from right-front to left-front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The apartment_ bedroom door changes from left-front to right-front.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The apartment_ bedroom door changes from left-front to left-front.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The apartment_ bedroom door changes from right-front to right-front.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The apartment_ bedroom door changes from left-front to right-front.</div><div class="explanation">Immediately before the gaze onset the apartment_ bedroom door is left-front; during the sustained gaze it is right-front.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Deterministic ADT gaze/object computation produces signed semantic GT; the language layer cannot choose or modify the answer.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Aria Digital Twin v2&quot;,
+  &quot;answer_provenance&quot;: &quot;direct computation from annotations; no LLM label judgment&quot;,
+  &quot;coordinate_frame&quot;: &quot;gravity-aligned wearer CPF: +right and +forward, metric world positions&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;depth_consistent_ray_obb_intersection&quot;,
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;4709930779068635&quot;,
+    &quot;name&quot;: &quot;Apartment_BedroomDoor&quot;
+  },
+  &quot;gaze_events&quot;: [
+    {
+      &quot;object_id&quot;: &quot;4709930779068635&quot;,
+      &quot;object_name&quot;: &quot;Apartment_BedroomDoor&quot;,
+      &quot;start_index&quot;: 1653,
+      &quot;end_index&quot;: 1666,
+      &quot;start_time_s&quot;: 55.15784,
+      &quot;end_time_s&quot;: 55.591104,
+      &quot;state_count&quot;: 14,
+      &quot;direct_hit_count&quot;: 14,
+      &quot;merged_gap_count&quot;: 0,
+      &quot;hit_support_ratio&quot;: 1.0,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;right-front&quot;,
+        &quot;side&quot;: &quot;right&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.30407496284325686,
+        &quot;forward_m&quot;: 2.8579393779531324,
+        &quot;up_m&quot;: -0.5383877323442192,
+        &quot;distance_m&quot;: 2.9240623149006275
+      }
+    }
+  ],
+  &quot;transition&quot;: {
+    &quot;start_frame&quot;: 1608,
+    &quot;end_frame&quot;: 1659,
+    &quot;start_relation&quot;: &quot;left-front&quot;,
+    &quot;end_relation&quot;: &quot;right-front&quot;,
+    &quot;wearer_turn_deg&quot;: 54.842981165496134,
+    &quot;pre_gazed_object_id&quot;: &quot;4494726720620587&quot;
+  },
+  &quot;anchor_states&quot;: [
+    {
+      &quot;frame&quot;: 1608,
+      &quot;time_s&quot;: 53.65808,
+      &quot;gazed_object_name&quot;: &quot;GreySofa&quot;,
+      &quot;gaze_hit_distance_m&quot;: 6.097648162915879,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -2.815008077323988,
+        &quot;forward_m&quot;: 1.8109672628358557,
+        &quot;up_m&quot;: -0.5544078457935726,
+        &quot;distance_m&quot;: 3.392821976163789
+      }
+    },
+    {
+      &quot;frame&quot;: 1659,
+      &quot;time_s&quot;: 55.357808,
+      &quot;gazed_object_name&quot;: &quot;Apartment_BedroomDoor&quot;,
+      &quot;gaze_hit_distance_m&quot;: 2.5556847964799596,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;right-front&quot;,
+        &quot;side&quot;: &quot;right&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.3006525908115949,
+        &quot;forward_m&quot;: 2.8847944485101467,
+        &quot;up_m&quot;: -0.5406350005402039,
+        &quot;distance_m&quot;: 2.9503757717154935
+      }
+    }
+  ]
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-33">
+<p class="eyebrow">Case 33</p><h2>Task 5 · lite office_ sofa_ pleather</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>8.998559999999998s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">8.998559999999998-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_last_lite_release_recognition_birdhousetoy_seq030_612_2257_2527_047211ad.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_last_lite_release_recognition_birdhousetoy_seq030_612_2257_2527_047211ad_gaze_evidence.jpg" loading="lazy" alt="original"><figcaption>ADT RGB anchor frames · green: target 2D box · red: measured gaze projection</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">last_gaze_annotated_object_relation_change</div>
+<div class="question">Q1. The lite office_ sofa_ pleather is the last gaze-annotated object in this window. How does its wearer-relative position evolve?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="C">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The lite office_ sofa_ pleather follows: left-front → right-front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The lite office_ sofa_ pleather follows: right → front.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The lite office_ sofa_ pleather follows: right-front → left-front.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The lite office_ sofa_ pleather follows: right-behind → right-front.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The lite office_ sofa_ pleather follows: right-front → left-front.</div><div class="explanation">Across the full window, the annotation-derived relation sequence is right-front → left-front.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Deterministic ADT gaze/object computation produces signed semantic GT; the language layer cannot choose or modify the answer.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Aria Digital Twin v2&quot;,
+  &quot;answer_provenance&quot;: &quot;direct computation from annotations; no LLM label judgment&quot;,
+  &quot;coordinate_frame&quot;: &quot;gravity-aligned wearer CPF: +right and +forward, metric world positions&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;depth_consistent_ray_obb_intersection&quot;,
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;6102090756514563&quot;,
+    &quot;name&quot;: &quot;LiteOffice_Sofa_Pleather&quot;
+  },
+  &quot;gaze_events&quot;: [
+    {
+      &quot;object_id&quot;: &quot;6102090756514563&quot;,
+      &quot;object_name&quot;: &quot;LiteOffice_Sofa_Pleather&quot;,
+      &quot;start_index&quot;: 2516,
+      &quot;end_index&quot;: 2527,
+      &quot;start_time_s&quot;: 83.853248,
+      &quot;end_time_s&quot;: 84.219856,
+      &quot;state_count&quot;: 12,
+      &quot;direct_hit_count&quot;: 12,
+      &quot;merged_gap_count&quot;: 0,
+      &quot;hit_support_ratio&quot;: 1.0,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.27545275356494153,
+        &quot;forward_m&quot;: 3.225037971492248,
+        &quot;up_m&quot;: -1.1043196240727002,
+        &quot;distance_m&quot;: 3.41998040478676
+      }
+    }
+  ],
+  &quot;transition&quot;: {
+    &quot;start_frame&quot;: 2257,
+    &quot;end_frame&quot;: 2527,
+    &quot;relation_sequence&quot;: [
+      &quot;right-front&quot;,
+      &quot;left-front&quot;
+    ],
+    &quot;last_supported_event_end_frame&quot;: 2527,
+    &quot;last_supported_event_object_id&quot;: &quot;6102090756514563&quot;
+  },
+  &quot;anchor_states&quot;: [
+    {
+      &quot;frame&quot;: 2257,
+      &quot;time_s&quot;: 75.221296,
+      &quot;gazed_object_name&quot;: &quot;BirdHouseToy&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.3807757420553253,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;right-front&quot;,
+        &quot;side&quot;: &quot;right&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.8120706257812013,
+        &quot;forward_m&quot;: 2.8113699785282042,
+        &quot;up_m&quot;: -1.1649687329317835,
+        &quot;distance_m&quot;: 3.149668554964955
+      }
+    },
+    {
+      &quot;frame&quot;: 2527,
+      &quot;time_s&quot;: 84.219856,
+      &quot;gazed_object_name&quot;: &quot;LiteOffice_Sofa_Pleather&quot;,
+      &quot;gaze_hit_distance_m&quot;: 3.042291634830292,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.17364811798533777,
+        &quot;forward_m&quot;: 3.2454017735869924,
+        &quot;up_m&quot;: -1.1094022062676019,
+        &quot;distance_m&quot;: 3.4341752424931475
       }
     }
   ]

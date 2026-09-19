@@ -215,6 +215,10 @@ def generate_task5_candidates(
             continue
         events.append(event)
 
+    raw_by_object: dict[str, list[Mapping[str, Any]]] = defaultdict(list)
+    for event in raw_events:
+        raw_by_object[str(event["object_id"])].append(event)
+
     by_object: dict[str, list[Mapping[str, Any]]] = defaultdict(list)
     for event in events:
         by_object[str(event["object_id"])].append(event)
@@ -265,7 +269,7 @@ def generate_task5_candidates(
                 rejection_counts["repeated_no_target_duration_annotation_window"] += 1
                 continue
             target_events_in_window = [
-                event for event in object_events
+                event for event in raw_by_object[object_id]
                 if int(event["start_index"]) >= window[0] and int(event["end_index"]) <= window[1]
             ]
             if target_events_in_window != [first, second]:

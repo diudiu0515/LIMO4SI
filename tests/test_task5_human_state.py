@@ -21,6 +21,13 @@ class Task5HumanStateTests(unittest.TestCase):
         self.assertEqual(relation["label"], "left-front")
         self.assertAlmostEqual(relation["distance_m"], 5 ** 0.5)
 
+    def test_body_relation_orthonormalizes_tilted_axes(self):
+        relation = body_centric_relation(
+            [0, 0, 0], [1, 2, 3], [1, 0.2, 0], [0.1, 0.3, 1],
+        )
+        reconstructed = sum(relation[key] ** 2 for key in ("right_m", "forward_m", "up_m")) ** 0.5
+        self.assertAlmostEqual(reconstructed, relation["distance_m"], places=9)
+
     def test_quaternion_identity(self):
         self.assertEqual(quaternion_rotation_xyzw([0, 0, 0, 1]), [[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, 1.0]])
 

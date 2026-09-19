@@ -157,13 +157,24 @@ def mine(
     trajectory_rows = rows(sequence / "aria_trajectory.csv")
     if len(gaze_rows) < minimum_gaze_run or not trajectory_rows:
         raise ValueError("gaze and wearer trajectory streams must be non-empty")
-    gaze_stamps_us = [int(row["tracking_timestamp_us"]) for row in gaze_rows]
-    if any(right <= left for left, right in zip(gaze_stamps_us, gaze_stamps_us[1:])):
-        raise ValueError("gaze timestamps must be strictly increasing")
     trajectory_entries = sorted(
         ((int(row["tracking_timestamp_us"]), row) for row in trajectory_rows),
         key=lambda item: item[0],
     )
+    raw_gaze_state_count = len(gaze_rows)
+    trajectory_start_us, trajectory_end_us = trajectory_entries[0][0], trajectory_entries[-1][0]
+    maximum_wearer_skew_us = int(maximum_wearer_skew_ms * 1000)
+    gaze_rows = [
+        row for row in gaze_rows
+        if trajectory_start_us - maximum_wearer_skew_us
+        <= int(row["tracking_timestamp_us"])
+        <= trajectory_end_us + maximum_wearer_skew_us
+    ]
+    if len(gaze_rows) < minimum_gaze_run:
+        raise ValueError("gaze and wearer streams lack sufficient common timestamp coverage")
+    gaze_stamps_us = [int(row["tracking_timestamp_us"]) for row in gaze_rows]
+    if any(right <= left for left, right in zip(gaze_stamps_us, gaze_stamps_us[1:])):
+        raise ValueError("gaze timestamps must be strictly increasing")
     bounds = parse_bounds(sequence / "3d_bounding_box.csv")
     eligible_object_ids = {
         uid for uid, row in instances.items()
@@ -179,7 +190,6 @@ def mine(
     all_center_skews_ms: list[dict[str, float]] = []
     wearer_skews_ms: list[float] = []
     object_skews_ms: list[float] = []
-    maximum_wearer_skew_us = int(maximum_wearer_skew_ms * 1000)
     maximum_object_pose_skew_ns = int(maximum_object_pose_skew_ms * 1_000_000)
     for frame_index, gaze in enumerate(gaze_rows):
         gaze_timestamp_us = int(gaze["tracking_timestamp_us"])
@@ -260,7 +270,7 @@ def mine(
     intervals = sorted((right - left) / 1_000_000 for left, right in zip(gaze_stamps_us, gaze_stamps_us[1:]))
     median_interval_s = intervals[len(intervals) // 2] if intervals else 0.0
     return {
-        "schema_version": 4,
+        "schema_version": 5,
         "dataset": "Aria Digital Twin v2",
         "sequence_name": sequence.name,
         "source_files": [
@@ -280,6 +290,8 @@ def mine(
             "maximum_allowed_dynamic_object_skew_ms": maximum_object_pose_skew_ms,
             "maximum_observed_dynamic_object_skew_ms": max(object_skews_ms, default=0.0),
             "gaze_state_count": len(gaze_rows),
+            "raw_gaze_state_count": raw_gaze_state_count,
+            "discarded_gaze_states_outside_wearer_trajectory": raw_gaze_state_count - len(gaze_rows),
             "wearer_state_count": len(trajectory_rows),
         },
         "states": states,

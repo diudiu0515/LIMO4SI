@@ -62,6 +62,10 @@ def main() -> None:
     parser.add_argument("dataset_root", type=Path, help="Directory containing one or more unpacked ADT sequences")
     parser.add_argument("--target-per-category", type=int, default=2)
     parser.add_argument("--max-sequences", type=int, default=0)
+    parser.add_argument(
+        "--sequence-name", action="append", default=[],
+        help="Restrict the run to an exact sequence directory name; repeat for multiple sequences.",
+    )
     parser.add_argument("--max-cases-per-sequence", type=int, default=0)
     parser.add_argument("--minimum-gaze-run", type=int, default=4)
     parser.add_argument("--minimum-repeated-gaze-gap-sec", type=float, default=2.0)
@@ -93,6 +97,12 @@ def main() -> None:
     for directory in (analysis_dir, selection_dir):
         directory.mkdir(parents=True, exist_ok=True)
     sequences = discover_sequences(dataset_root)
+    if args.sequence_name:
+        requested_names = set(args.sequence_name)
+        sequences = [path for path in sequences if path.name in requested_names]
+        missing_names = sorted(requested_names - {path.name for path in sequences})
+        if missing_names:
+            raise SystemExit(f"requested ADT sequences are unavailable or incomplete: {missing_names}")
     if args.max_sequences > 0:
         sequences = sequences[:args.max_sequences]
     if not sequences:
@@ -130,7 +140,7 @@ def main() -> None:
             use_cache = False
             if args.reuse_analysis and analysis_path.is_file():
                 analysis = json.loads(analysis_path.read_text(encoding="utf-8"))
-                use_cache = int(analysis.get("schema_version") or 0) >= 4 and analysis.get("sequence_name") == sequence_name
+                use_cache = int(analysis.get("schema_version") or 0) >= 5 and analysis.get("sequence_name") == sequence_name
             if use_cache:
                 record["analysis_status"] = "reused"
             else:
