@@ -86,16 +86,14 @@ def main() -> None:
                     collapsed[-1][2] = end
                 else:
                     collapsed.append([label, start, end])
-            frame_ids = [(start + end) // 2 for _, start, end in collapsed]
-            in_window = [
-                event for event in analysis["gaze_events"]
-                if lo <= int(event["start_index"]) and int(event["end_index"]) <= hi
+            def annotation_skew(frame_index: int) -> int:
+                timestamp = int(analysis["states"][frame_index]["timestamp_ns"])
+                return min(abs(value - timestamp) for value in box_times[uid])
+
+            frame_ids = [
+                min(range(start, end + 1), key=annotation_skew)
+                for _, start, end in collapsed
             ]
-            if in_window and frame_ids:
-                last_event = max(in_window, key=lambda event: int(event["end_index"]))
-                last_anchor = (int(last_event["start_index"]) + int(last_event["end_index"])) // 2
-                if analysis["states"][last_anchor]["object_relations"][uid]["label"] == collapsed[-1][0]:
-                    frame_ids[-1] = last_anchor
             if len(frame_ids) < 2:
                 raise ValueError(f"{spec['id']} has fewer than two sustained relation evidence stages")
         panels = []

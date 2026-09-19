@@ -27,7 +27,7 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <h2>Task 5 · Three requested categories</h2>
 <div class="coverageNotice">Only metric object geometry in a validated wearer body frame counts below. Image-plane gaze/mask questions are auxiliary and do not satisfy these categories.</div><div class="capabilityGrid">
 <div class="capabilityItem"><strong>1 · Relation change between two gazes at X</strong><br>1 published case(s)</div>
-<div class="capabilityItem"><strong>2 · Body-side change when gaze turns to X</strong><br>1 published case(s)</div>
+<div class="capabilityItem"><strong>2 · Body-side change when gaze turns to X</strong><br>3 published case(s)</div>
 <div class="capabilityItem"><strong>3 · Full-clip relation change of the last gaze-annotated object</strong><br>1 published case(s)</div>
 <div class="capabilityItem"><strong>Auxiliary evidence-closed gaze questions</strong><br>0 published · not counted toward the three categories</div>
 </div>
@@ -50,6 +50,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <a href="#case-17">Case 17</a>
 <a href="#case-18">Case 18</a>
 <a href="#case-19">Case 19</a>
+<a href="#case-20">Case 20</a>
+<a href="#case-21">Case 21</a>
 </nav>
 <section class="staticCase" id="case-1">
 <p class="eyebrow">Case 1</p><h2>Task 4 · HOI-M3 · bedroom_data02 · window 08</h2>
@@ -8510,7 +8512,225 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 </article>
 </div></section>
 <section class="staticCase" id="case-18">
-<p class="eyebrow">Case 18</p><h2>Task 5 · lemon</h2>
+<p class="eyebrow">Case 18</p><h2>Task 5 · large coffee canister</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>8.99856s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">8.99856-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_onset_apartment_release_clean_seq134_m1292_0_270_e4c7dff9.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_onset_apartment_release_clean_seq134_m1292_0_270_e4c7dff9_gaze_evidence.jpg" loading="lazy" alt="original"><figcaption>ADT RGB anchor frames · green: target 2D box · red: measured gaze projection</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_onset_side_change</div>
+<div class="question">Q1. As gaze turns to the large coffee canister, how does it shift in the wearer's body-relative view?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="B">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The large coffee canister changes from front to left-front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The large coffee canister changes from left-front to front.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The large coffee canister changes from left-front to behind.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The large coffee canister changes from right-front to front.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The large coffee canister changes from left-front to front.</div><div class="explanation">Immediately before the gaze onset the large coffee canister is left-front; during the sustained gaze it is front.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Deterministic ADT gaze/object computation produces signed semantic GT; the language layer cannot choose or modify the answer.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Aria Digital Twin v2&quot;,
+  &quot;answer_provenance&quot;: &quot;direct computation from annotations; no LLM label judgment&quot;,
+  &quot;coordinate_frame&quot;: &quot;gravity-aligned wearer CPF: +right and +forward, metric world positions&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;depth_consistent_ray_obb_intersection&quot;,
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;4243547695770937&quot;,
+    &quot;name&quot;: &quot;CoffeeCanisterLarge&quot;
+  },
+  &quot;gaze_events&quot;: [
+    {
+      &quot;object_id&quot;: &quot;4243547695770937&quot;,
+      &quot;object_name&quot;: &quot;CoffeeCanisterLarge&quot;,
+      &quot;start_index&quot;: 81,
+      &quot;end_index&quot;: 94,
+      &quot;start_time_s&quot;: 2.699568,
+      &quot;end_time_s&quot;: 3.132832,
+      &quot;state_count&quot;: 14,
+      &quot;direct_hit_count&quot;: 13,
+      &quot;merged_gap_count&quot;: 1,
+      &quot;hit_support_ratio&quot;: 0.9285714285714286,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.005605205993760361,
+        &quot;forward_m&quot;: 0.6594007886864733,
+        &quot;up_m&quot;: -0.7654212035333812,
+        &quot;distance_m&quot;: 1.0103021514740356
+      }
+    }
+  ],
+  &quot;transition&quot;: {
+    &quot;start_frame&quot;: 39,
+    &quot;end_frame&quot;: 87,
+    &quot;start_relation&quot;: &quot;left-front&quot;,
+    &quot;end_relation&quot;: &quot;front&quot;,
+    &quot;wearer_turn_deg&quot;: 18.328534635516725,
+    &quot;pre_gazed_object_id&quot;: &quot;7158052634270103&quot;
+  },
+  &quot;anchor_states&quot;: [
+    {
+      &quot;frame&quot;: 39,
+      &quot;time_s&quot;: 1.299792,
+      &quot;gazed_object_name&quot;: &quot;Orange_A&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.8006337408707543,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;left-front&quot;,
+        &quot;side&quot;: &quot;left&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.551449626387536,
+        &quot;forward_m&quot;: 0.5674137254315162,
+        &quot;up_m&quot;: -0.7637190943827618,
+        &quot;distance_m&quot;: 1.099691721063613
+      }
+    },
+    {
+      &quot;frame&quot;: 87,
+      &quot;time_s&quot;: 2.899536,
+      &quot;gazed_object_name&quot;: &quot;CoffeeCanisterLarge&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.9569632777700328,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.017082459646955088,
+        &quot;forward_m&quot;: 0.6638047055912486,
+        &quot;up_m&quot;: -0.7650459556090167,
+        &quot;distance_m&quot;: 1.0130270538274817
+      }
+    }
+  ]
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-19">
+<p class="eyebrow">Case 19</p><h2>Task 5 · black ceramic bowl</h2>
+<div class="metaGrid">
+<div class="metaBox"><strong>1</strong><span>questions</span></div>
+<div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
+<div class="metaBox"><strong>8.998559999999998s</strong><span>video window</span></div>
+</div>
+<div class="videoPanel"><div class="taskName">8.998559999999998-second evidence video</div>
+<video class="inlineVideo" controls muted playsinline preload="none"><source src="./task5_media/task5_onset_apartment_release_clean_seq134_m1292_1117_1387_17217083.mp4" type="video/mp4">Your browser cannot play this video.</video></div>
+<details class="visualEvidenceBox"><summary>Show gaze and object localization evidence</summary><div class="mediaGrid">
+<figure><img src="./task5_media/task5_onset_apartment_release_clean_seq134_m1292_1117_1387_17217083_gaze_evidence.jpg" loading="lazy" alt="original"><figcaption>ADT RGB anchor frames · green: target 2D box · red: measured gaze projection</figcaption></figure>
+</div></details><div class="qaList">
+<article class="card task5_human_state_grounded_spatial_reasoning">
+<div class="cardHead"><div>
+<div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
+<div class="questionType">gaze_onset_side_change</div>
+<div class="question">Q1. As gaze turns to the black ceramic bowl, how does it shift in the wearer's body-relative view?</div>
+</div><span class="pill ok">ok</span></div>
+<div class="optionsGrid answerOptions" data-correct="C">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The black ceramic bowl changes from front to right-front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The black ceramic bowl changes from right-front to behind.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The black ceramic bowl changes from right-front to front.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The black ceramic bowl changes from left-front to front.</span></button>
+</div>
+<button type="button" class="submitAnswer" disabled>Submit answer</button>
+<div class="feedback" hidden></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The black ceramic bowl changes from right-front to front.</div><div class="explanation">Immediately before the gaze onset the black ceramic bowl is right-front; during the sustained gaze it is front.</div></div>
+<details class="questionEvidence"><summary>Show computed evidence for this question</summary>
+<div class="methodBox">Deterministic ADT gaze/object computation produces signed semantic GT; the language layer cannot choose or modify the answer.</div>
+<pre class="jsonBlock">{
+  &quot;T/H/S&quot;: {
+    &quot;T&quot;: true,
+    &quot;H&quot;: true,
+    &quot;S&quot;: true
+  },
+  &quot;annotation_source&quot;: &quot;Aria Digital Twin v2&quot;,
+  &quot;answer_provenance&quot;: &quot;direct computation from annotations; no LLM label judgment&quot;,
+  &quot;coordinate_frame&quot;: &quot;gravity-aligned wearer CPF: +right and +forward, metric world positions&quot;,
+  &quot;gaze_grounding_method&quot;: &quot;depth_consistent_ray_obb_intersection&quot;,
+  &quot;object&quot;: {
+    &quot;id&quot;: &quot;4989808014384955&quot;,
+    &quot;name&quot;: &quot;BlackCeramicBowl&quot;
+  },
+  &quot;gaze_events&quot;: [
+    {
+      &quot;object_id&quot;: &quot;4989808014384955&quot;,
+      &quot;object_name&quot;: &quot;BlackCeramicBowl&quot;,
+      &quot;start_index&quot;: 1255,
+      &quot;end_index&quot;: 1287,
+      &quot;start_time_s&quot;: 41.82664,
+      &quot;end_time_s&quot;: 42.893136,
+      &quot;state_count&quot;: 33,
+      &quot;direct_hit_count&quot;: 33,
+      &quot;merged_gap_count&quot;: 0,
+      &quot;hit_support_ratio&quot;: 1.0,
+      &quot;median_relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.029355696150305116,
+        &quot;forward_m&quot;: 0.45436993305478407,
+        &quot;up_m&quot;: -0.7037735095993857,
+        &quot;distance_m&quot;: 0.8382189127993442
+      }
+    }
+  ],
+  &quot;transition&quot;: {
+    &quot;start_frame&quot;: 1217,
+    &quot;end_frame&quot;: 1271,
+    &quot;start_relation&quot;: &quot;right-front&quot;,
+    &quot;end_relation&quot;: &quot;front&quot;,
+    &quot;wearer_turn_deg&quot;: 39.122720872358755,
+    &quot;pre_gazed_object_id&quot;: &quot;4469271893111727&quot;
+  },
+  &quot;anchor_states&quot;: [
+    {
+      &quot;frame&quot;: 1217,
+      &quot;time_s&quot;: 40.560176,
+      &quot;gazed_object_name&quot;: &quot;BlackCeramicDishLarge&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.9367004145102393,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;right-front&quot;,
+        &quot;side&quot;: &quot;right&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: 0.6019708895430993,
+        &quot;forward_m&quot;: 0.5543443304410527,
+        &quot;up_m&quot;: -0.7420825018387849,
+        &quot;distance_m&quot;: 1.104695898464713
+      }
+    },
+    {
+      &quot;frame&quot;: 1271,
+      &quot;time_s&quot;: 42.359888,
+      &quot;gazed_object_name&quot;: &quot;BlackCeramicBowl&quot;,
+      &quot;gaze_hit_distance_m&quot;: 0.8024995721864256,
+      &quot;relation&quot;: {
+        &quot;label&quot;: &quot;front&quot;,
+        &quot;side&quot;: &quot;center&quot;,
+        &quot;depth&quot;: &quot;front&quot;,
+        &quot;right_m&quot;: -0.029355696150305116,
+        &quot;forward_m&quot;: 0.45436993305478407,
+        &quot;up_m&quot;: -0.7037735095993857,
+        &quot;distance_m&quot;: 0.8382189127993442
+      }
+    }
+  ]
+}</pre></details>
+</article>
+</div></section>
+<section class="staticCase" id="case-20">
+<p class="eyebrow">Case 20</p><h2>Task 5 · lemon</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -8527,15 +8747,15 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="questionType">gaze_onset_side_change</div>
 <div class="question">Q1. As gaze turns to the lemon, how does it shift in the wearer's body-relative view?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="B">
+<div class="optionsGrid answerOptions" data-correct="D">
 <button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The lemon changes from left-front to right-front.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The lemon changes from right-front to left-front.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The lemon changes from right-front to right-front.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The lemon changes from left-front to left-front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The lemon changes from right-front to right-front.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The lemon changes from left-front to left-front.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The lemon changes from right-front to left-front.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: B</div><div class="answer">The lemon changes from right-front to left-front.</div><div class="explanation">Immediately before the gaze onset the lemon is right-front; during the sustained gaze it is left-front.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: D</div><div class="answer">The lemon changes from right-front to left-front.</div><div class="explanation">Immediately before the gaze onset the lemon is right-front; during the sustained gaze it is left-front.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Deterministic ADT gaze/object computation produces signed semantic GT; the language layer cannot choose or modify the answer.</div>
 <pre class="jsonBlock">{
@@ -8618,8 +8838,8 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 }</pre></details>
 </article>
 </div></section>
-<section class="staticCase" id="case-19">
-<p class="eyebrow">Case 19</p><h2>Task 5 · bird house toy</h2>
+<section class="staticCase" id="case-21">
+<p class="eyebrow">Case 21</p><h2>Task 5 · birdhouse toy</h2>
 <div class="metaGrid">
 <div class="metaBox"><strong>1</strong><span>questions</span></div>
 <div class="metaBox"><strong>1</strong><span>directly answerable</span></div>
@@ -8634,17 +8854,17 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <div class="cardHead"><div>
 <div class="taskName">Task 5 · Human-State–Grounded Spatial Reasoning</div>
 <div class="questionType">last_gaze_annotated_object_relation_change</div>
-<div class="question">Q1. The bird house toy is the last gaze-annotated object in this window. How does its wearer-relative position evolve?</div>
+<div class="question">Q1. The birdhouse toy is the last gaze-annotated object in this window. How does its wearer-relative position evolve?</div>
 </div><span class="pill ok">ok</span></div>
-<div class="optionsGrid answerOptions" data-correct="C">
-<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The bird house toy follows: right-front → front.</span></button>
-<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The bird house toy follows: right-front → right.</span></button>
-<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The bird house toy follows: front → right-front.</span></button>
-<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The bird house toy follows: right → right-behind.</span></button>
+<div class="optionsGrid answerOptions" data-correct="A">
+<button type="button" class="option" data-option="A"><span class="optionLabel">A</span><span class="optionText">The birdhouse toy follows: front → right-front.</span></button>
+<button type="button" class="option" data-option="B"><span class="optionLabel">B</span><span class="optionText">The birdhouse toy follows: right-front → front.</span></button>
+<button type="button" class="option" data-option="C"><span class="optionLabel">C</span><span class="optionText">The birdhouse toy follows: right-front → right.</span></button>
+<button type="button" class="option" data-option="D"><span class="optionLabel">D</span><span class="optionText">The birdhouse toy follows: right → right-behind.</span></button>
 </div>
 <button type="button" class="submitAnswer" disabled>Submit answer</button>
 <div class="feedback" hidden></div>
-<div class="answerBox hidden"><div class="answerLabel">Correct answer: C</div><div class="answer">The bird house toy follows: front → right-front.</div><div class="explanation">Across the full window, the annotation-derived relation sequence is front → right-front.</div></div>
+<div class="answerBox hidden"><div class="answerLabel">Correct answer: A</div><div class="answer">The birdhouse toy follows: front → right-front.</div><div class="explanation">Across the full window, the annotation-derived relation sequence is front → right-front.</div></div>
 <details class="questionEvidence"><summary>Show computed evidence for this question</summary>
 <div class="methodBox">Deterministic ADT gaze/object computation produces signed semantic GT; the language layer cannot choose or modify the answer.</div>
 <pre class="jsonBlock">{

@@ -41,7 +41,7 @@ class Task5CandidatePolicy:
         "table", "shelter", "floor", "wall", "ceiling", "part of a cabinet/wardrobe",
         "door", "door frame", "couch", "bed frame", "mattress", "refrigerator",
         "coffee table", "dining table", "side table", "cabinets and shelves",
-        "chair", "armchair", "dining chair", "bar stool", "pot",
+        "chair", "armchair", "dining chair", "bar stool", "pot", "step stool", "baking pan", "tray",
     )
     min_onset_turn_deg: float = 8.0
     min_pre_gaze_gap_sec: float = 0.40
@@ -330,6 +330,7 @@ def generate_task5_candidates(
         candidates.append(_candidate(
             analysis, "after_gaze_turns_to_object", object_id, window[0], window[1], score,
             event_start_frames=[int(event["start_index"])], pre_frame=before_frame,
+            transition_signature=f"{_relation(states, before_frame, object_id)['label']}->{after['label']}",
         ))
 
     # 3. End a real ~9 s window on a sustained gaze, so the target is still the last gaze object.
@@ -430,23 +431,31 @@ def generate_task5_candidates(
 def select_balanced_candidates(
     candidates: Sequence[Mapping[str, Any]], target_per_category: int,
     max_cases_per_sequence: int = 0,
+    category_targets: Mapping[str, int] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Select every category with deterministic sequence/object diversity."""
     if target_per_category < 1:
         raise ValueError("target_per_category must be positive")
     categories = list(REQUESTED_CATEGORIES)
+    targets = {category: target_per_category for category in categories}
+    if category_targets:
+        unknown = sorted(set(category_targets) - set(categories))
+        if unknown or any(int(value) < 1 for value in category_targets.values()):
+            raise ValueError(f"invalid category targets: unknown={unknown}, values={category_targets}")
+        targets.update({key: int(value) for key, value in category_targets.items()})
     sequence_names = sorted({str(row["sequence_name"]) for row in candidates})
-    total_target = target_per_category * len(categories)
+    total_target = sum(targets.values())
     if max_cases_per_sequence <= 0:
         max_cases_per_sequence = max(1, math.ceil(total_target / max(1, len(sequence_names))) + 1)
     selected: list[dict[str, Any]] = []
     sequence_counts: Counter[str] = Counter()
     object_category_counts: Counter[tuple[str, str]] = Counter()
+    transition_counts: Counter[tuple[str, str]] = Counter()
     used_windows: set[tuple[str, int, int]] = set()
     deficits: dict[str, int] = {}
     for category in categories:
         pool = [dict(row) for row in candidates if row["category"] == category]
-        while sum(row["category"] == category for row in selected) < target_per_category:
+        while sum(row["category"] == category for row in selected) < targets[category]:
             eligible = []
             for row in pool:
                 key = (str(row["sequence_name"]), int(row["window_frames"][0]), int(row["window_frames"][1]))
@@ -461,9 +470,12 @@ def select_balanced_candidates(
                         <= min(int(chosen["window_frames"][1]), key[2])
                     )
                 ]
-                diversity = sequence_counts[str(row["sequence_name"])] * 0.20
+                diversity = sequence_counts[str(row["sequence_name"])] * 0.05
                 diversity += object_category_counts[(category, str(row["object_id"]))] * 0.10
                 diversity += len(conflicts) * 100.0
+                signature = str(row.get("transition_signature") or "")
+                if signature:
+                    diversity += transition_counts[(category, signature)] * 10.0
                 eligible.append((float(row["candidate_score"]) - diversity, row["id"], row, key))
             if not eligible:
                 break
@@ -472,14 +484,18 @@ def select_balanced_candidates(
             used_windows.add(window_key)
             sequence_counts[str(chosen["sequence_name"])] += 1
             object_category_counts[(category, str(chosen["object_id"]))] += 1
+            signature = str(chosen.get("transition_signature") or "")
+            if signature:
+                transition_counts[(category, signature)] += 1
             pool = [row for row in pool if row["id"] != chosen["id"]]
         count = sum(row["category"] == category for row in selected)
-        if count < target_per_category:
-            deficits[category] = target_per_category - count
+        if count < targets[category]:
+            deficits[category] = targets[category] - count
     selected.sort(key=lambda row: (categories.index(row["category"]), row["sequence_name"], row["id"]))
     return selected, {
         "status": "ok" if not deficits else "insufficient_candidates",
         "target_per_category": target_per_category,
+        "target_by_category": targets,
         "selected_count": len(selected),
         "selected_counts": dict(Counter(row["category"] for row in selected)),
         "selected_sequence_counts": dict(sequence_counts),

@@ -61,6 +61,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("dataset_root", type=Path, help="Directory containing one or more unpacked ADT sequences")
     parser.add_argument("--target-per-category", type=int, default=2)
+    parser.add_argument(
+        "--category-target", action="append", default=[], metavar="CATEGORY=COUNT",
+        help="Override the requested count for one canonical Task 5 category.",
+    )
     parser.add_argument("--max-sequences", type=int, default=0)
     parser.add_argument(
         "--sequence-name", action="append", default=[],
@@ -88,6 +92,13 @@ def main() -> None:
         ["--language-client-factory", args.language_client_factory]
         if args.language_client_factory else []
     )
+
+    category_targets: dict[str, int] = {}
+    for value in args.category_target:
+        name, separator, count = value.partition("=")
+        if not separator or not count.isdigit() or int(count) < 1:
+            raise SystemExit(f"invalid --category-target {value!r}; expected CATEGORY=positive_integer")
+        category_targets[name] = int(count)
 
     dataset_root = args.dataset_root.resolve()
     output_root = resolve(args.output_root)
@@ -169,7 +180,7 @@ def main() -> None:
         sequence_records.append(record)
 
     selected, selection = select_balanced_candidates(
-        all_candidates, args.target_per_category, args.max_cases_per_sequence,
+        all_candidates, args.target_per_category, args.max_cases_per_sequence, category_targets,
     )
     report: dict[str, Any] = {
         "pipeline": "annotation-only ADT Task 5 scale pipeline",
@@ -217,7 +228,8 @@ def main() -> None:
     release_config.write_text(json.dumps({
         "schema_version": 1,
         "generated_by": "scripts/scale_task5_adt.py",
-        "minimum_examples_per_category": args.target_per_category,
+        "minimum_examples_per_category": min(selection["target_by_category"].values()),
+        "minimum_examples_by_category": selection["target_by_category"],
         "selection_summary": selection,
         "cases": selected,
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")

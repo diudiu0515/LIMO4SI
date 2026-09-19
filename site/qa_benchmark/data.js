@@ -38873,6 +38873,25380 @@ window.QA_DATA = {
       "case_policy": "one annotation-derived question per unique gaze/object window"
     },
     {
+      "name": "task5_onset_apartment_release_clean_seq134_m1292_0_270_e4c7dff9",
+      "title": "Task 5 · large coffee canister",
+      "video_clip": "./task5_media/task5_onset_apartment_release_clean_seq134_m1292_0_270_e4c7dff9.mp4",
+      "original_image": "./task5_media/task5_onset_apartment_release_clean_seq134_m1292_0_270_e4c7dff9_gaze_evidence.jpg",
+      "original_caption": "ADT RGB anchor frames · green: target 2D box · red: measured gaze projection",
+      "video_window": {
+        "source_video": "site/qa_benchmark/task5_media/Apartment_release_clean_seq134_M1292_rgb.mp4",
+        "source_sequence": "Apartment_release_clean_seq134_M1292",
+        "start_sec": 0.0,
+        "duration_sec": 8.99856
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_onset_side_change",
+          "question_categories": [
+            "after_gaze_turns_to_object"
+          ],
+          "question": "As gaze turns to the large coffee canister, how does it shift in the wearer's body-relative view?",
+          "options": [
+            {
+              "label": "A",
+              "text": "The large coffee canister changes from front to left-front.",
+              "semantic_option_id": "relation_pair_2"
+            },
+            {
+              "label": "B",
+              "text": "The large coffee canister changes from left-front to front.",
+              "semantic_option_id": "relation_pair_1"
+            },
+            {
+              "label": "C",
+              "text": "The large coffee canister changes from left-front to behind.",
+              "semantic_option_id": "relation_pair_3"
+            },
+            {
+              "label": "D",
+              "text": "The large coffee canister changes from right-front to front.",
+              "semantic_option_id": "relation_pair_4"
+            }
+          ],
+          "correct_option": "B",
+          "correct_answer": "The large coffee canister changes from left-front to front.",
+          "answer": "The large coffee canister changes from left-front to front.",
+          "explanation": "Immediately before the gaze onset the large coffee canister is left-front; during the sustained gaze it is front.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_onset_apartment_release_clean_seq134_m1292_0_270_e4c7dff9",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_onset_side_change",
+            "question_focus": "As gaze turns to the large coffee canister, how does it shift in the wearer's body-relative view?",
+            "options": [
+              {
+                "id": "relation_pair_1",
+                "statement": "The large coffee canister changes from left-front to front."
+              },
+              {
+                "id": "relation_pair_2",
+                "statement": "The large coffee canister changes from front to left-front."
+              },
+              {
+                "id": "relation_pair_3",
+                "statement": "The large coffee canister changes from left-front to behind."
+              },
+              {
+                "id": "relation_pair_4",
+                "statement": "The large coffee canister changes from right-front to front."
+              }
+            ],
+            "correct_option_id": "relation_pair_1",
+            "evidence_statement": "Immediately before the gaze onset the large coffee canister is left-front; during the sustained gaze it is front.",
+            "semantic_facts": [
+              {
+                "id": "pre_onset_relation",
+                "value": "left-front",
+                "frame": 39
+              },
+              {
+                "id": "sustained_gaze_relation",
+                "value": "front",
+                "frame": 87
+              },
+              {
+                "id": "wearer_turn_deg",
+                "value": 18.328534635516725
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:d62aadb5fca5db1ddf705269c5c52087ce2a6e077ab0fa0f0d3e4905e311efdf"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "gaze_event",
+                "start_index": 81
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:d62aadb5fca5db1ddf705269c5c52087ce2a6e077ab0fa0f0d3e4905e311efdf"
+              }
+            ],
+            "provenance": {
+              "dataset": "Aria Digital Twin v2",
+              "sequence_name": "Apartment_release_clean_seq134_M1292",
+              "analysis_schema_version": 5,
+              "coordinate_frame": "gravity-aligned wearer CPF: +right and +forward, metric world positions",
+              "computation": "deterministic_annotation_geometry"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:f5782afd56b03b466331cd2231c5ae83ddd31e8c64ed4a80e3b5a56861873def"
+          },
+          "answer_signature": "sha256:f5782afd56b03b466331cd2231c5ae83ddd31e8c64ed4a80e3b5a56861873def",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_onset_apartment_release_clean_seq134_m1292_0_270_e4c7dff9",
+              "answer_signature": "sha256:f5782afd56b03b466331cd2231c5ae83ddd31e8c64ed4a80e3b5a56861873def",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "method": "Deterministic ADT gaze/object computation produces signed semantic GT; the language layer cannot choose or modify the answer.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_onset_side_change",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "annotation_source": "Aria Digital Twin v2",
+            "analysis_schema_version": 5,
+            "coordinate_frame": "gravity-aligned wearer CPF: +right and +forward, metric world positions",
+            "alignment_diagnostics": {
+              "maximum_allowed_wearer_skew_ms": 10.0,
+              "maximum_observed_wearer_skew_ms": 0.003,
+              "maximum_allowed_dynamic_object_skew_ms": 50.0,
+              "maximum_observed_dynamic_object_skew_ms": 0.0037,
+              "gaze_state_count": 2816,
+              "raw_gaze_state_count": 3434,
+              "discarded_gaze_states_outside_wearer_trajectory": 618,
+              "wearer_state_count": 2816
+            },
+            "maximum_internal_gaze_gap_states": 1,
+            "gaze_definition": "smallest eligible same-time object OBB containing the measured fixation depth along the gaze ray",
+            "gaze_grounding_method": "depth_consistent_ray_obb_intersection",
+            "maximum_gaze_depth_obb_residual_m": 0.05,
+            "object_id": "4243547695770937",
+            "object_name": "CoffeeCanisterLarge",
+            "object_category": "container",
+            "timeline": [
+              {
+                "frame": 0,
+                "time_s": 0.0,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 0.0,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2958579814182387,
+                  1.5493765213550155,
+                  2.2793083160939216
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6933482197571522,
+                  -0.6511461002876685,
+                  -0.30866973003478915
+                ],
+                "wearer_world_m": [
+                  1.2538112695666308,
+                  1.546126718786368,
+                  2.3375283685392145
+                ],
+                "right_world": [
+                  -0.4814852270907268,
+                  -0.05277046307552408,
+                  0.8748641347776159
+                ],
+                "forward_world": [
+                  -0.8505436265291244,
+                  -0.21278380139342304,
+                  -0.4809351237279826
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3102538061108311,
+                  "forward_m": 1.0104812503149525,
+                  "up_m": -0.7532588732646096,
+                  "distance_m": 1.2979709979796143
+                }
+              },
+              {
+                "frame": 1,
+                "time_s": 0.033328,
+                "gazed_object_id": "5182637931800950",
+                "gazed_object_name": "Banana_A",
+                "gaze_depth_m": 0.915742,
+                "gaze_hit_distance_m": 0.9247276327695026,
+                "gaze_hit_exit_distance_m": 0.9360423011737206,
+                "gaze_depth_obb_residual_m": 0.008985632769502705,
+                "gaze_origin_world_m": [
+                  1.2851962985883203,
+                  1.549200041251113,
+                  2.2661708197049575
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6969302351844436,
+                  -0.6552546082972672,
+                  -0.29142691294894296
+                ],
+                "wearer_world_m": [
+                  1.243888643481331,
+                  1.54557104972958,
+                  2.3248953439780298
+                ],
+                "right_world": [
+                  -0.4703610091119914,
+                  -0.057103490195550055,
+                  0.8806246149833855
+                ],
+                "forward_world": [
+                  -0.854336273416926,
+                  -0.22051590288785355,
+                  -0.47061902691841306
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3163551958527891,
+                  "forward_m": 0.99090908929402,
+                  "up_m": -0.7530846590564014,
+                  "distance_m": 1.2841798693698079
+                }
+              },
+              {
+                "frame": 2,
+                "time_s": 0.066656,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.974745,
+                "gaze_hit_distance_m": 0.9836794803747113,
+                "gaze_hit_exit_distance_m": 1.4218484813391816,
+                "gaze_depth_obb_residual_m": 0.00893448037471134,
+                "gaze_origin_world_m": [
+                  1.27438267847561,
+                  1.5487029526587368,
+                  2.2522634657423395
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7019691357984028,
+                  -0.6588886528114889,
+                  -0.2703795028893736
+                ],
+                "wearer_world_m": [
+                  1.2338729280930671,
+                  1.544822652874706,
+                  2.311525300834835
+                ],
+                "right_world": [
+                  -0.4583898284712628,
+                  -0.05950465826981925,
+                  0.8867569908369929
+                ],
+                "forward_world": [
+                  -0.8582854578578943,
+                  -0.22936237915634408,
+                  -0.45906314582789826
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.32229323004045524,
+                  "forward_m": 0.9705635112933781,
+                  "up_m": -0.7525900080741328,
+                  "distance_m": 1.2697472881786613
+                }
+              },
+              {
+                "frame": 3,
+                "time_s": 0.099984,
+                "gazed_object_id": "5182637931800950",
+                "gazed_object_name": "Banana_A",
+                "gaze_depth_m": 0.896898,
+                "gaze_hit_distance_m": 0.904519285502515,
+                "gaze_hit_exit_distance_m": 0.916486860904933,
+                "gaze_depth_obb_residual_m": 0.007621285502515063,
+                "gaze_origin_world_m": [
+                  1.2652985746367862,
+                  1.5482142225434359,
+                  2.2397848276808445
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6950260843197563,
+                  -0.6695922175702754,
+                  -0.261887388555592
+                ],
+                "wearer_world_m": [
+                  1.22561527810567,
+                  1.54431109232324,
+                  2.299601742110692
+                ],
+                "right_world": [
+                  -0.44602970877574166,
+                  -0.058702114989674425,
+                  0.8930910147264759
+                ],
+                "forward_world": [
+                  -0.8625218923395472,
+                  -0.2382493095258199,
+                  -0.4464227276309713
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.32865331329025627,
+                  "forward_m": 0.9522864461137277,
+                  "up_m": -0.7521012003770478,
+                  "distance_m": 1.2571868164267286
+                }
+              },
+              {
+                "frame": 4,
+                "time_s": 0.133312,
+                "gazed_object_id": "5182637931800950",
+                "gazed_object_name": "Banana_A",
+                "gaze_depth_m": 0.887805,
+                "gaze_hit_distance_m": 0.8954916151778615,
+                "gaze_hit_exit_distance_m": 0.9107199945726594,
+                "gaze_depth_obb_residual_m": 0.007686615177861511,
+                "gaze_origin_world_m": [
+                  1.2574750809612962,
+                  1.5483562738380885,
+                  2.2280451621684443
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6928373247250068,
+                  -0.6769738085784404,
+                  -0.24836043156408244
+                ],
+                "wearer_world_m": [
+                  1.2189258541662051,
+                  1.544637539152231,
+                  2.2886107450256814
+                ],
+                "right_world": [
+                  -0.42912234681219164,
+                  -0.05527318364874817,
+                  0.9015535960971646
+                ],
+                "forward_world": [
+                  -0.8695097157252899,
+                  -0.2449642360777118,
+                  -0.42888853715410635
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3393878298499166,
+                  "forward_m": 0.9337832175240062,
+                  "up_m": -0.7522440347793256,
+                  "distance_m": 1.2461967277443802
+                }
+              },
+              {
+                "frame": 5,
+                "time_s": 0.16664,
+                "gazed_object_id": "5182637931800950",
+                "gazed_object_name": "Banana_A",
+                "gaze_depth_m": 0.881291,
+                "gaze_hit_distance_m": 0.8886378237835045,
+                "gaze_hit_exit_distance_m": 0.903448005906064,
+                "gaze_depth_obb_residual_m": 0.007346823783504486,
+                "gaze_origin_world_m": [
+                  1.2507553510668414,
+                  1.5493584294563933,
+                  2.2166178118690456
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6901483924748076,
+                  -0.6831216000543208,
+                  -0.23883064272338164
+                ],
+                "wearer_world_m": [
+                  1.2136753425377529,
+                  1.545972133323644,
+                  2.2781130772720344
+                ],
+                "right_world": [
+                  -0.4072941278119244,
+                  -0.05034721597989783,
+                  0.9119082471899231
+                ],
+                "forward_world": [
+                  -0.8795897732179159,
+                  -0.24713621949599113,
+                  -0.4065040219526553
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3541887825038668,
+                  "forward_m": 0.9145014863840272,
+                  "up_m": -0.7532472817687464,
+                  "distance_m": 1.2365856742426593
+                }
+              },
+              {
+                "frame": 6,
+                "time_s": 0.199968,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.951452,
+                "gaze_hit_distance_m": 0.9595321815345446,
+                "gaze_hit_exit_distance_m": 1.3859342330437086,
+                "gaze_depth_obb_residual_m": 0.008080181534544595,
+                "gaze_origin_world_m": [
+                  1.2452722053060041,
+                  1.5510856616304642,
+                  2.205432671095897
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6992576050968753,
+                  -0.6779593130012994,
+                  -0.22673767139359288
+                ],
+                "wearer_world_m": [
+                  1.209810543469114,
+                  1.5480917987247431,
+                  2.267895212075814
+                ],
+                "right_world": [
+                  -0.3833485805703096,
+                  -0.04534986497042111,
+                  0.9224897048324678
+                ],
+                "forward_world": [
+                  -0.8914099401502402,
+                  -0.2432397083862977,
+                  -0.3823908509176104
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3698096122798883,
+                  "forward_m": 0.8955489044943621,
+                  "up_m": -0.7549731094123503,
+                  "distance_m": 1.2283124136844854
+                }
+              },
+              {
+                "frame": 7,
+                "time_s": 0.233296,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.951562,
+                "gaze_hit_distance_m": 0.9595041803273878,
+                "gaze_hit_exit_distance_m": 1.3780873654670376,
+                "gaze_depth_obb_residual_m": 0.007942180327387804,
+                "gaze_origin_world_m": [
+                  1.240799319779321,
+                  1.5529835222020794,
+                  2.1945275300514835
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7000015176989279,
+                  -0.6799295558319036,
+                  -0.21838881456115847
+                ],
+                "wearer_world_m": [
+                  1.2069059379324851,
+                  1.5503441455517641,
+                  2.2578705174998377
+                ],
+                "right_world": [
+                  -0.3602423839357003,
+                  -0.0410484185807424,
+                  0.9319551771133332
+                ],
+                "forward_world": [
+                  -0.9023608537469162,
+                  -0.23802893637190947,
+                  -0.3592869536662783
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3835147908052779,
+                  "forward_m": 0.8779251436834942,
+                  "up_m": -0.7568711305297617,
+                  "distance_m": 1.220938188815265
+                }
+              },
+              {
+                "frame": 8,
+                "time_s": 0.266624,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.964798,
+                "gaze_hit_distance_m": 0.9728484206568814,
+                "gaze_hit_exit_distance_m": 1.357453764723588,
+                "gaze_depth_obb_residual_m": 0.00805042065688133,
+                "gaze_origin_world_m": [
+                  1.2370030343245313,
+                  1.554432961796819,
+                  2.183901333738886
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7078066635007573,
+                  -0.6719725766213348,
+                  -0.21785909063614928
+                ],
+                "wearer_world_m": [
+                  1.20452557250101,
+                  1.5520527509563882,
+                  2.2479919786947358
+                ],
+                "right_world": [
+                  -0.33945072130765086,
+                  -0.03759379394210455,
+                  0.9398722862499748
+                ],
+                "forward_world": [
+                  -0.9107555051199278,
+                  -0.23666266492654778,
+                  -0.33840093516952563
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3942624468454744,
+                  "forward_m": 0.8619910236996352,
+                  "up_m": -0.7583260237973519,
+                  "distance_m": 1.213890341134498
+                }
+              },
+              {
+                "frame": 9,
+                "time_s": 0.299952,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.1837,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2337169459642376,
+                  1.5552702758413945,
+                  2.1732808765221603
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8037597490645768,
+                  -0.5456742387598267,
+                  -0.23708625210570983
+                ],
+                "wearer_world_m": [
+                  1.2028316707761069,
+                  1.553087589343824,
+                  2.2381607451811423
+                ],
+                "right_world": [
+                  -0.31615008216621987,
+                  -0.035010729982330346,
+                  0.9480629590551448
+                ],
+                "forward_world": [
+                  -0.9193867393327446,
+                  -0.23522405609955543,
+                  -0.3152739554279378
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4064112082543839,
+                  "forward_m": 0.8455062122168884,
+                  "up_m": -0.7591649726219791,
+                  "distance_m": 1.2068066459662328
+                }
+              },
+              {
+                "frame": 10,
+                "time_s": 0.33328,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.03334,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2308617728210998,
+                  1.5554016522368113,
+                  2.1624159031887564
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8302509873304559,
+                  -0.507139176026428,
+                  -0.23128587111200516
+                ],
+                "wearer_world_m": [
+                  1.2019787769032257,
+                  1.553366705960146,
+                  2.228216307757871
+                ],
+                "right_world": [
+                  -0.2869732146448022,
+                  -0.03353542534791029,
+                  0.9573514241505903
+                ],
+                "forward_world": [
+                  -0.9298391530736202,
+                  -0.23052989886262662,
+                  -0.2868015256962911
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.42253490982120967,
+                  "forward_m": 0.8268000004790759,
+                  "up_m": -0.7592907075692306,
+                  "distance_m": 1.1994400232653573
+                }
+              },
+              {
+                "frame": 11,
+                "time_s": 0.366608,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.00156,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2284801896797455,
+                  1.5546510485898564,
+                  2.1512332003993464
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8321927205256143,
+                  -0.5124860824221846,
+                  -0.21169150013106047
+                ],
+                "wearer_world_m": [
+                  1.2017772042194552,
+                  1.552674882808852,
+                  2.2179498177994628
+                ],
+                "right_world": [
+                  -0.25534853733178703,
+                  -0.033311527657435544,
+                  0.9662750470790629
+                ],
+                "forward_world": [
+                  -0.9398959057008467,
+                  -0.22578116437355536,
+                  -0.2561611841417567
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.43928123427931554,
+                  "forward_m": 0.8073032618967808,
+                  "up_m": -0.7585421468662277,
+                  "distance_m": 1.191676444355416
+                }
+              },
+              {
+                "frame": 12,
+                "time_s": 0.399936,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.99552,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2267278787251352,
+                  1.5531321301805106,
+                  2.1396066393099127
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8343120675858839,
+                  -0.5133294668475126,
+                  -0.20103788783862475
+                ],
+                "wearer_world_m": [
+                  1.2023473949558459,
+                  1.5511344085539658,
+                  2.207205920522646
+                ],
+                "right_world": [
+                  -0.22179982916213659,
+                  -0.033888382318214685,
+                  0.9745031622973328
+                ],
+                "forward_world": [
+                  -0.9486646665425549,
+                  -0.22359808243306084,
+                  -0.22369454169907926
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.45596650280070017,
+                  "forward_m": 0.7873570785268276,
+                  "up_m": -0.7570313945906351,
+                  "distance_m": 1.1836102201225045
+                }
+              },
+              {
+                "frame": 13,
+                "time_s": 0.433264,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.98559,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2258658094857484,
+                  1.5513310501073954,
+                  2.1273145128808655
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8335669891390189,
+                  -0.5149853561498681,
+                  -0.19989036387205844
+                ],
+                "wearer_world_m": [
+                  1.2042404507019189,
+                  1.549293844922521,
+                  2.1958437428014284
+                ],
+                "right_world": [
+                  -0.18218269393864345,
+                  -0.03431192917458696,
+                  0.9826658422605201
+                ],
+                "forward_world": [
+                  -0.9566828278137226,
+                  -0.22462342659663814,
+                  -0.18520875570642836
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4755240439014172,
+                  "forward_m": 0.7651741726493833,
+                  "up_m": -0.7552220748031946,
+                  "distance_m": 1.175574333289081
+                }
+              },
+              {
+                "frame": 14,
+                "time_s": 0.466592,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.95975,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2260168117698589,
+                  1.5496228455968295,
+                  2.1141497459869614
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8335516888890582,
+                  -0.5193568499210881,
+                  -0.18830837578356235
+                ],
+                "wearer_world_m": [
+                  1.207521994078146,
+                  1.547647487329905,
+                  2.183591098071059
+                ],
+                "right_world": [
+                  -0.13741186178636355,
+                  -0.033121935973542654,
+                  0.9899600585870979
+                ],
+                "forward_world": [
+                  -0.9635370796706366,
+                  -0.22719528288458937,
+                  -0.14134567391601627
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.49669550291619896,
+                  "forward_m": 0.7411433523281116,
+                  "up_m": -0.7535079220532754,
+                  "distance_m": 1.1678073813409349
+                }
+              },
+              {
+                "frame": 15,
+                "time_s": 0.49992,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.39523,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.227184530205135,
+                  1.5482733575703276,
+                  2.099952451122218
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8928712210372608,
+                  -0.4498689391651043,
+                  -0.01997298720508578
+                ],
+                "wearer_world_m": [
+                  1.211860985543214,
+                  1.546575420499848,
+                  2.1701690281514265
+                ],
+                "right_world": [
+                  -0.09232723527197861,
+                  -0.029068392403070797,
+                  0.995304330438753
+                ],
+                "forward_world": [
+                  -0.9687364181800378,
+                  -0.22853948121048698,
+                  -0.09653733795662978
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5155945146480261,
+                  "forward_m": 0.717670493183347,
+                  "up_m": -0.7521877482047852,
+                  "distance_m": 1.1604632906173928
+                }
+              },
+              {
+                "frame": 16,
+                "time_s": 0.533248,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 3.46377,
+                "gaze_hit_distance_m": 3.1969911592743885,
+                "gaze_hit_exit_distance_m": 4.168943894020184,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2292242322809017,
+                  1.547496753305109,
+                  2.0846914457342183
+                ],
+                "gaze_direction_world_unit": [
+                  -0.9092933045544472,
+                  -0.36313120469944093,
+                  0.20327669435030082
+                ],
+                "wearer_world_m": [
+                  1.21689733297931,
+                  1.546167052633731,
+                  2.1555034584914683
+                ],
+                "right_world": [
+                  -0.049958251106002605,
+                  -0.02375567519305649,
+                  0.9984687481551697
+                ],
+                "forward_world": [
+                  -0.9717386601998423,
+                  -0.22977922435071602,
+                  -0.05408774657719151
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5302773606150022,
+                  "forward_m": 0.696400474335431,
+                  "up_m": -0.7513829829871063,
+                  "distance_m": 1.1535788169683199
+                }
+              },
+              {
+                "frame": 17,
+                "time_s": 0.566576,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.49069,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2319617613636424,
+                  1.5474400089291698,
+                  2.068424691625301
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8874482354584261,
+                  -0.3048754895169667,
+                  0.34566828791995874
+                ],
+                "wearer_world_m": [
+                  1.2223332188073273,
+                  1.546400677226456,
+                  2.139658620752178
+                ],
+                "right_world": [
+                  -0.01198506439747088,
+                  -0.01930449938767928,
+                  0.9997418139373685
+                ],
+                "forward_world": [
+                  -0.9723846664119744,
+                  -0.2328242834168497,
+                  -0.01615281951558939
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5400519704791612,
+                  "forward_m": 0.6783300322510292,
+                  "up_m": -0.7511561436191044,
+                  "distance_m": 1.147180594138879
+                }
+              },
+              {
+                "frame": 18,
+                "time_s": 0.599904,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.48021,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.235375678236189,
+                  1.5480644053962735,
+                  2.051376472443835
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8844464478908332,
+                  -0.30649188149393447,
+                  0.35187669344757105
+                ],
+                "wearer_world_m": [
+                  1.228167413368305,
+                  1.547244835058065,
+                  2.122898713201904
+                ],
+                "right_world": [
+                  0.021923533045477672,
+                  -0.015923337346823357,
+                  0.9996328356084266
+                ],
+                "forward_world": [
+                  -0.9717830919411341,
+                  -0.23522130595871335,
+                  0.017565860081595996
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.545769829103452,
+                  "forward_m": 0.6634477108311048,
+                  "up_m": -0.7516287871244022,
+                  "distance_m": 1.1414786047056442
+                }
+              },
+              {
+                "frame": 19,
+                "time_s": 0.633232,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.52446,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2393373396334209,
+                  1.5491786981222062,
+                  2.0339303413136585
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8827123004142237,
+                  -0.3014304170721441,
+                  0.36049784792858663
+                ],
+                "wearer_world_m": [
+                  1.234274833620771,
+                  1.548584553394476,
+                  2.105638637388202
+                ],
+                "right_world": [
+                  0.05185780023661829,
+                  -0.012809797556636499,
+                  0.998572319685048
+                ],
+                "forward_world": [
+                  -0.9708698448025019,
+                  -0.23487102027767534,
+                  0.04740620515174848
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5481769239722131,
+                  "forward_m": 0.6516697715112175,
+                  "up_m": -0.7527275164027374,
+                  "distance_m": 1.136560664912768
+                }
+              },
+              {
+                "frame": 20,
+                "time_s": 0.66656,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.52641,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2434120625794567,
+                  1.5503718470593666,
+                  2.016722087122534
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8820240951219669,
+                  -0.30205594039811057,
+                  0.3616568878018065
+                ],
+                "wearer_world_m": [
+                  1.240107682657104,
+                  1.550170629720863,
+                  2.088535054516393
+                ],
+                "right_world": [
+                  0.07629584214550966,
+                  -0.007563612171001127,
+                  0.9970565361313442
+                ],
+                "forward_world": [
+                  -0.9698169036458343,
+                  -0.23282366553742997,
+                  0.07244524945447822
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5471199076235815,
+                  "forward_m": 0.6434255428331677,
+                  "up_m": -0.7539400718648738,
+                  "distance_m": 1.1321493958183275
+                }
+              },
+              {
+                "frame": 21,
+                "time_s": 0.699888,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.52423,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2472760201453983,
+                  1.5515564491842155,
+                  2.0004192828041565
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8804351324461976,
+                  -0.30275791486379977,
+                  0.3649268728687577
+                ],
+                "wearer_world_m": [
+                  1.245396171203178,
+                  1.5519225301174968,
+                  2.0722830000313133
+                ],
+                "right_world": [
+                  0.09604148613631108,
+                  7.809585401089003e-05,
+                  0.9953773288767264
+                ],
+                "forward_world": [
+                  -0.9685992887278205,
+                  -0.23038595840438675,
+                  0.09347581530028043
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5439075234075967,
+                  "forward_m": 0.6378698265286412,
+                  "up_m": -0.7551194670994599,
+                  "distance_m": 1.1282369960285987
+                }
+              },
+              {
+                "frame": 22,
+                "time_s": 0.733216,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.5398,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2507847362647233,
+                  1.5530714967955095,
+                  1.9856600265576378
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8780368221199075,
+                  -0.3014701593703103,
+                  0.3717083292190435
+                ],
+                "wearer_world_m": [
+                  1.2502733750077442,
+                  1.553971093750899,
+                  2.057541811009491
+                ],
+                "right_world": [
+                  0.11496954067467846,
+                  0.00733898782517467,
+                  0.9933419068854167
+                ],
+                "forward_world": [
+                  -0.966855091027373,
+                  -0.22866521107278462,
+                  0.11359337216355991
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5416960964231086,
+                  "forward_m": 0.6325838368113977,
+                  "up_m": -0.7566324457681719,
+                  "distance_m": 1.1252064830350865
+                }
+              },
+              {
+                "frame": 23,
+                "time_s": 0.766544,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.54544,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2537511670266681,
+                  1.5550160692638493,
+                  1.9726527301527805
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8770096359313186,
+                  -0.3016709760478689,
+                  0.3739635285611977
+                ],
+                "wearer_world_m": [
+                  1.2547321778844651,
+                  1.5562817736007069,
+                  2.044524124401317
+                ],
+                "right_world": [
+                  0.13556075253588945,
+                  0.012248990004558563,
+                  0.9906933151161221
+                ],
+                "forward_world": [
+                  -0.964545452171114,
+                  -0.22690129601415218,
+                  0.13478825083485357
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5422287159498087,
+                  "forward_m": 0.6259039972108031,
+                  "up_m": -0.7585821678401584,
+                  "distance_m": 1.1230381558478384
+                }
+              },
+              {
+                "frame": 24,
+                "time_s": 0.799872,
+                "gazed_object_id": "8473544005996466",
+                "gazed_object_name": "BlackKitchenChair_B",
+                "gaze_depth_m": 2.80986,
+                "gaze_hit_distance_m": 2.6480830648081084,
+                "gaze_hit_exit_distance_m": 3.1328492340583716,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2560027071757316,
+                  1.5572450661161126,
+                  1.961260571372601
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8362174533938752,
+                  -0.26213815403357205,
+                  0.4816886534259791
+                ],
+                "wearer_world_m": [
+                  1.258666936974048,
+                  1.558665513388454,
+                  2.0330863739099083
+                ],
+                "right_world": [
+                  0.1587115812005055,
+                  0.013974087071056102,
+                  0.9872260930928467
+                ],
+                "forward_world": [
+                  -0.9618741098506529,
+                  -0.22337873879676456,
+                  0.15779776884538171
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5458409793623611,
+                  "forward_m": 0.6170689067485735,
+                  "up_m": -0.7608085541187835,
+                  "distance_m": 1.1214036144258923
+                }
+              },
+              {
+                "frame": 25,
+                "time_s": 0.8332,
+                "gazed_object_id": "8473544005996466",
+                "gazed_object_name": "BlackKitchenChair_B",
+                "gaze_depth_m": 3.09646,
+                "gaze_hit_distance_m": 2.6927605172290883,
+                "gaze_hit_exit_distance_m": 3.185208243081912,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.257775350076027,
+                  1.559294229380859,
+                  1.9511481372457395
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8211003786944063,
+                  -0.2492098088614101,
+                  0.5135062212623736
+                ],
+                "wearer_world_m": [
+                  1.262169205904777,
+                  1.5608120777668202,
+                  2.022886912452969
+                ],
+                "right_world": [
+                  0.18243052464536147,
+                  0.014904034475583222,
+                  0.9831057793716651
+                ],
+                "forward_world": [
+                  -0.9585397273138546,
+                  -0.2199226819649625,
+                  0.18120597429008556
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5509189321915331,
+                  "forward_m": 0.6073367207881778,
+                  "up_m": -0.7628535455104505,
+                  "distance_m": 1.119962094966906
+                }
+              },
+              {
+                "frame": 26,
+                "time_s": 0.866528,
+                "gazed_object_id": "8473544005996466",
+                "gazed_object_name": "BlackKitchenChair_B",
+                "gaze_depth_m": 2.86539,
+                "gaze_hit_distance_m": 2.698989372677315,
+                "gaze_hit_exit_distance_m": 3.192121762544972,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.259395994217908,
+                  1.5606981988563535,
+                  1.9419353067895258
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8199259589289237,
+                  -0.2530740964650477,
+                  0.5134928661363123
+                ],
+                "wearer_world_m": [
+                  1.265360086941307,
+                  1.5624465975399071,
+                  2.013555376609584
+                ],
+                "right_world": [
+                  0.20391572525840912,
+                  0.017972616511192308,
+                  0.9788234580597663
+                ],
+                "forward_world": [
+                  -0.9544913383117346,
+                  -0.21861787000116345,
+                  0.20286081929250943
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5554074740058959,
+                  "forward_m": 0.5985895705975922,
+                  "up_m": -0.7642624123301753,
+                  "distance_m": 1.1184292427822864
+                }
+              },
+              {
+                "frame": 27,
+                "time_s": 0.899856,
+                "gazed_object_id": "8473544005996466",
+                "gazed_object_name": "BlackKitchenChair_B",
+                "gaze_depth_m": 2.84895,
+                "gaze_hit_distance_m": 2.714236033957075,
+                "gaze_hit_exit_distance_m": 3.2097474303302773,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2608245484015688,
+                  1.5615271026517759,
+                  1.93341922490866
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8155751330646835,
+                  -0.2559839826417447,
+                  0.5189502894857987
+                ],
+                "wearer_world_m": [
+                  1.2681088529603592,
+                  1.563596525529739,
+                  2.004908511497959
+                ],
+                "right_world": [
+                  0.2219337996434803,
+                  0.022261130485458608,
+                  0.974807586473001
+                ],
+                "forward_world": [
+                  -0.9507486071988136,
+                  -0.21692093937789653,
+                  0.22141000873701855
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5583807281021503,
+                  "forward_m": 0.5915182899479879,
+                  "up_m": -0.7650963124032553,
+                  "distance_m": 1.1167162988476254
+                }
+              },
+              {
+                "frame": 28,
+                "time_s": 0.933184,
+                "gazed_object_id": "8473544005996466",
+                "gazed_object_name": "BlackKitchenChair_B",
+                "gaze_depth_m": 2.85919,
+                "gaze_hit_distance_m": 2.718023545610995,
+                "gaze_hit_exit_distance_m": 3.213893898091089,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2619439748556214,
+                  1.5618835586915967,
+                  1.9255366562221563
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8148398517724722,
+                  -0.2535277969755097,
+                  0.52130573766664
+                ],
+                "wearer_world_m": [
+                  1.270248859282467,
+                  1.564290767916486,
+                  1.996903987259574
+                ],
+                "right_world": [
+                  0.23582071404303556,
+                  0.02651726280753662,
+                  0.971434725342588
+                ],
+                "forward_world": [
+                  -0.9481071965594916,
+                  -0.21309319739323757,
+                  0.23597464494480797
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5593824210664435,
+                  "forward_m": 0.5864211646577477,
+                  "up_m": -0.7654510759104192,
+                  "distance_m": 1.1147707499612303
+                }
+              },
+              {
+                "frame": 29,
+                "time_s": 0.966512,
+                "gazed_object_id": "8473544005996466",
+                "gazed_object_name": "BlackKitchenChair_B",
+                "gaze_depth_m": 2.85068,
+                "gaze_hit_distance_m": 2.727067022900883,
+                "gaze_hit_exit_distance_m": 3.224348834748271,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2626672219967001,
+                  1.5616639083125194,
+                  1.918424301748954
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8123348753806215,
+                  -0.2569689063357401,
+                  0.5235255785699146
+                ],
+                "wearer_world_m": [
+                  1.271668424337759,
+                  1.564430278401374,
+                  1.9896941218269282
+                ],
+                "right_world": [
+                  0.24527681330942447,
+                  0.03108811235784663,
+                  0.9689544953829361
+                ],
+                "forward_world": [
+                  -0.946317249837752,
+                  -0.20937440537033702,
+                  0.24626412860043445
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.55837314678736,
+                  "forward_m": 0.5833685008846281,
+                  "up_m": -0.7652312289859833,
+                  "distance_m": 1.112509870829466
+                }
+              },
+              {
+                "frame": 30,
+                "time_s": 0.99984,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 3.54302,
+                "gaze_hit_distance_m": 2.5589346964479596,
+                "gaze_hit_exit_distance_m": 3.6363498989270857,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2629070106860318,
+                  1.5610716277924208,
+                  1.9122851047001044
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7878667964353426,
+                  -0.43101725961485726,
+                  0.4398750197372079
+                ],
+                "wearer_world_m": [
+                  1.2722933712331048,
+                  1.564238981247014,
+                  1.983488516196844
+                ],
+                "right_world": [
+                  0.2505071328045811,
+                  0.03645457332939467,
+                  0.967428157796433
+                ],
+                "forward_world": [
+                  -0.9451171499617645,
+                  -0.20730725370834024,
+                  0.2525416310394329
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5556618869600077,
+                  "forward_m": 0.5820907772274242,
+                  "up_m": -0.7646425882707424,
+                  "distance_m": 1.1100757151431442
+                }
+              },
+              {
+                "frame": 31,
+                "time_s": 1.033168,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.00484,
+                "gaze_hit_distance_m": 0.9450183176507005,
+                "gaze_hit_exit_distance_m": 1.1276631154098098,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.262581628293628,
+                  1.5607116299683452,
+                  1.9073628211752456
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7374360945695568,
+                  -0.5880290152398289,
+                  0.3322798273474882
+                ],
+                "wearer_world_m": [
+                  1.272104272167613,
+                  1.5643310717828134,
+                  1.978526580179397
+                ],
+                "right_world": [
+                  0.2523662325442747,
+                  0.04274079245606338,
+                  0.9666873896620546
+                ],
+                "forward_world": [
+                  -0.9443732743376319,
+                  -0.20684229908383117,
+                  0.255686100573603
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5519710600266086,
+                  "forward_m": 0.5819142499069527,
+                  "up_m": -0.7642829829288328,
+                  "distance_m": 1.1078920179089042
+                }
+              },
+              {
+                "frame": 32,
+                "time_s": 1.066496,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.01445,
+                "gaze_hit_distance_m": 0.9413008884608212,
+                "gaze_hit_exit_distance_m": 1.1155983542995447,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2617673110622252,
+                  1.5608388708087981,
+                  1.903725999138498
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7337001506786743,
+                  -0.5944125100618581,
+                  0.3291775459779295
+                ],
+                "wearer_world_m": [
+                  1.27129557401503,
+                  1.5648126993809153,
+                  1.9748700965224808
+                ],
+                "right_world": [
+                  0.25245331955405503,
+                  0.047764142126154985,
+                  0.9664294636304769
+                ],
+                "forward_world": [
+                  -0.9439774421804232,
+                  -0.20723112592733134,
+                  0.2568303897543987
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5483307430374827,
+                  "forward_m": 0.5819617541784383,
+                  "up_m": -0.7644075128013514,
+                  "distance_m": 1.1061938947190186
+                }
+              },
+              {
+                "frame": 33,
+                "time_s": 1.099824,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.0151,
+                "gaze_hit_distance_m": 0.9411777715279163,
+                "gaze_hit_exit_distance_m": 1.118597637881766,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2606727075192126,
+                  1.5613669237852539,
+                  1.901286565344087
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7342867858692848,
+                  -0.5932579134532204,
+                  0.3299514573734851
+                ],
+                "wearer_world_m": [
+                  1.270223896559955,
+                  1.565363504574528,
+                  1.972426313944309
+                ],
+                "right_world": [
+                  0.25276672042157944,
+                  0.04811245346947818,
+                  0.9663302628338135
+                ],
+                "forward_world": [
+                  -0.9438238712141278,
+                  -0.20746106104087925,
+                  0.25720888063628455
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5458868972231687,
+                  "forward_m": 0.5813409969503959,
+                  "up_m": -0.7649349764139176,
+                  "distance_m": 1.1050227949850533
+                }
+              },
+              {
+                "frame": 34,
+                "time_s": 1.133152,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.01431,
+                "gaze_hit_distance_m": 0.9408949373272454,
+                "gaze_hit_exit_distance_m": 1.118439887215852,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.259599517613522,
+                  1.561808693912581,
+                  1.899795221772932
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7328655417577108,
+                  -0.5937527027640855,
+                  0.3322135242047203
+                ],
+                "wearer_world_m": [
+                  1.269255519448638,
+                  1.5654983583010882,
+                  1.9709374012887468
+                ],
+                "right_world": [
+                  0.25418611288126397,
+                  0.043860920361884756,
+                  0.9661602556943243
+                ],
+                "forward_world": [
+                  -0.9435939757572066,
+                  -0.20791203299252178,
+                  0.2576877867723355
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5449974634458221,
+                  "forward_m": 0.5799109432409558,
+                  "up_m": -0.7653775098264789,
+                  "distance_m": 1.1041384287312788
+                }
+              },
+              {
+                "frame": 35,
+                "time_s": 1.16648,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.01693,
+                "gaze_hit_distance_m": 0.9436159082289838,
+                "gaze_hit_exit_distance_m": 1.1108605317455993,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2588043936084163,
+                  1.5617008230848974,
+                  1.8989427490686601
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7294436259775745,
+                  -0.5977143524568105,
+                  0.33264027024373327
+                ],
+                "wearer_world_m": [
+                  1.268667553330042,
+                  1.564865544069422,
+                  1.9700817982779082
+                ],
+                "right_world": [
+                  0.2569959741401877,
+                  0.03667629220560746,
+                  0.9657162724453727
+                ],
+                "forward_world": [
+                  -0.942944267391274,
+                  -0.2093645588004233,
+                  0.2588872150420668
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5456063940354676,
+                  "forward_m": 0.5778175293134189,
+                  "up_m": -0.7652690669196032,
+                  "distance_m": 1.1032661415897116
+                }
+              },
+              {
+                "frame": 36,
+                "time_s": 1.199808,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.01133,
+                "gaze_hit_distance_m": 0.93890281361076,
+                "gaze_hit_exit_distance_m": 1.1202068784593406,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2582162346442665,
+                  1.5613395000353938,
+                  1.8984561625642895
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7326987729649954,
+                  -0.5924164195743595,
+                  0.3349556596242059
+                ],
+                "wearer_world_m": [
+                  1.268383920191384,
+                  1.563893183412049,
+                  1.9695768949341599
+                ],
+                "right_world": [
+                  0.26112968080203786,
+                  0.028403557118539757,
+                  0.9648857589099551
+                ],
+                "forward_world": [
+                  -0.9417958999525005,
+                  -0.21175416011986187,
+                  0.2611142633112787
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5474085713686881,
+                  "forward_m": 0.5750724070008183,
+                  "up_m": -0.7649061615559667,
+                  "distance_m": 1.1024726088606036
+                }
+              },
+              {
+                "frame": 37,
+                "time_s": 1.233136,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.01676,
+                "gaze_hit_distance_m": 0.9905370969056092,
+                "gaze_hit_exit_distance_m": 1.0371530360353665,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2576878070388742,
+                  1.5610111463217138,
+                  1.898048014164963
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7076161067305492,
+                  -0.6390945537402137,
+                  0.301392761816035
+                ],
+                "wearer_world_m": [
+                  1.2682150904753702,
+                  1.562998405423949,
+                  1.9691345023726967
+                ],
+                "right_world": [
+                  0.26601342573950165,
+                  0.020858468485950632,
+                  0.9637436285749212
+                ],
+                "forward_world": [
+                  -0.9402214496008523,
+                  -0.21493355670284386,
+                  0.2641726554992732
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.549753561349311,
+                  "forward_m": 0.5719145464013639,
+                  "up_m": -0.7645762375741761,
+                  "distance_m": 1.1017676931480662
+                }
+              },
+              {
+                "frame": 38,
+                "time_s": 1.266464,
+                "gazed_object_id": "7158052634270103",
+                "gazed_object_name": "Orange_A",
+                "gaze_depth_m": 0.831232,
+                "gaze_hit_distance_m": 0.8010252380871039,
+                "gaze_hit_exit_distance_m": 0.9100892162671015,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2570820587030067,
+                  1.5605837490309558,
+                  1.897383201366268
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6399113367291003,
+                  -0.7174537033486073,
+                  0.2752701667034493
+                ],
+                "wearer_world_m": [
+                  1.267914276177247,
+                  1.562164540287635,
+                  1.9684340695143319
+                ],
+                "right_world": [
+                  0.2701615361952365,
+                  0.015667316164527656,
+                  0.9626875295571409
+                ],
+                "forward_world": [
+                  -0.9385057959088308,
+                  -0.21897578578260993,
+                  0.2669390872210747
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5513937132045769,
+                  "forward_m": 0.569154129527201,
+                  "up_m": -0.7641481842781731,
+                  "distance_m": 1.1008605259773037
+                }
+              },
+              {
+                "frame": 39,
+                "time_s": 1.299792,
+                "gazed_object_id": "7158052634270103",
+                "gazed_object_name": "Orange_A",
+                "gaze_depth_m": 0.833143,
+                "gaze_hit_distance_m": 0.8006337408707543,
+                "gaze_hit_exit_distance_m": 0.9058708386937661,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2563117137383573,
+                  1.5601545290459788,
+                  1.8962558985746056
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6440408211425899,
+                  -0.7133226161584935,
+                  0.2763734176413887
+                ],
+                "wearer_world_m": [
+                  1.267312326976354,
+                  1.5615518076577861,
+                  1.96728473653405
+                ],
+                "right_world": [
+                  0.27246008264822363,
+                  0.013565217752917802,
+                  0.9620714569254404
+                ],
+                "forward_world": [
+                  -0.9371666636359517,
+                  -0.22271284880900644,
+                  0.26854726128716316
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.551449626387536,
+                  "forward_m": 0.5674137254315162,
+                  "up_m": -0.7637190943827618,
+                  "distance_m": 1.099691721063613
+                }
+              },
+              {
+                "frame": 40,
+                "time_s": 1.33312,
+                "gazed_object_id": "7158052634270103",
+                "gazed_object_name": "Orange_A",
+                "gaze_depth_m": 0.838258,
+                "gaze_hit_distance_m": 0.8022334024327611,
+                "gaze_hit_exit_distance_m": 0.9070465218846243,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.255350934210273,
+                  1.5601559672053489,
+                  1.8946419222392394
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6433543936261068,
+                  -0.7149396716945653,
+                  0.2737816466442766
+                ],
+                "wearer_world_m": [
+                  1.266352603258686,
+                  1.5615860012784808,
+                  1.9656699447493649
+                ],
+                "right_world": [
+                  0.2724796311884163,
+                  0.014131141395816671,
+                  0.9620577744762924
+                ],
+                "forward_world": [
+                  -0.936936417418025,
+                  -0.22355809344243213,
+                  0.26864833625440704
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5496472155932394,
+                  "forward_m": 0.56691553383905,
+                  "up_m": -0.7637201441998002,
+                  "distance_m": 1.098532540607687
+                }
+              },
+              {
+                "frame": 41,
+                "time_s": 1.366448,
+                "gazed_object_id": "7158052634270103",
+                "gazed_object_name": "Orange_A",
+                "gaze_depth_m": 0.840214,
+                "gaze_hit_distance_m": 0.8028204492484556,
+                "gaze_hit_exit_distance_m": 0.9076112210585163,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2541925966208942,
+                  1.5606093836855583,
+                  1.8926426623081034
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6418910450935181,
+                  -0.7158094586979417,
+                  0.27494127567047977
+                ],
+                "wearer_world_m": [
+                  1.265063401191032,
+                  1.562202726285497,
+                  1.9636873564685902
+                ],
+                "right_world": [
+                  0.2706987867722062,
+                  0.016156181504484862,
+                  0.9625285162732844
+                ],
+                "forward_world": [
+                  -0.9377763431390957,
+                  -0.22145763588595216,
+                  0.267454754596866
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5463652803016374,
+                  "forward_m": 0.5673465706961446,
+                  "up_m": -0.764173050309521,
+                  "distance_m": 1.0974322765524622
+                }
+              },
+              {
+                "frame": 42,
+                "time_s": 1.399776,
+                "gazed_object_id": "7158052634270103",
+                "gazed_object_name": "Orange_A",
+                "gaze_depth_m": 0.851559,
+                "gaze_hit_distance_m": 0.801641963777334,
+                "gaze_hit_exit_distance_m": 0.9109718413211645,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2528372018713236,
+                  1.5612146851897337,
+                  1.8904497536553595
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6382593032817487,
+                  -0.7197726604642478,
+                  0.2730428153651275
+                ],
+                "wearer_world_m": [
+                  1.2635294747341907,
+                  1.5629694613379952,
+                  1.961517733524605
+                ],
+                "right_world": [
+                  0.26826497046663184,
+                  0.018021465699963157,
+                  0.9631765842225207
+                ],
+                "forward_world": [
+                  -0.9390366550197652,
+                  -0.21829576284625787,
+                  0.26562590320347285
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.542457981956844,
+                  "forward_m": 0.5680057082325936,
+                  "up_m": -0.7647791962525003,
+                  "distance_m": 1.096256523717931
+                }
+              },
+              {
+                "frame": 43,
+                "time_s": 1.433104,
+                "gazed_object_id": "7158052634270103",
+                "gazed_object_name": "Orange_A",
+                "gaze_depth_m": 0.90997,
+                "gaze_hit_distance_m": 0.8069179419134787,
+                "gaze_hit_exit_distance_m": 0.9116701733582853,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.251259355123062,
+                  1.5617181510718154,
+                  1.8882872551988275
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6387714513906286,
+                  -0.7211567557679528,
+                  0.2681491497255797
+                ],
+                "wearer_world_m": [
+                  1.261816387386207,
+                  1.563566592148345,
+                  1.9593730768257982
+                ],
+                "right_world": [
+                  0.2664180651662692,
+                  0.01900371028853262,
+                  0.9636702099516886
+                ],
+                "forward_world": [
+                  -0.9400618660010285,
+                  -0.2156653087372753,
+                  0.2641442081475961
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.538866018032983,
+                  "forward_m": 0.5681006760040557,
+                  "up_m": -0.7652844146207753,
+                  "distance_m": 1.0948859295508602
+                }
+              },
+              {
+                "frame": 44,
+                "time_s": 1.466432,
+                "gazed_object_id": "7158052634270103",
+                "gazed_object_name": "Orange_A",
+                "gaze_depth_m": 0.902357,
+                "gaze_hit_distance_m": 0.8065918791030662,
+                "gaze_hit_exit_distance_m": 0.9052776456626218,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2494415801789542,
+                  1.561956959789869,
+                  1.886318423180058
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6316629592890437,
+                  -0.7275900286596448,
+                  0.2676091479326993
+                ],
+                "wearer_world_m": [
+                  1.259965239349828,
+                  1.56382291578203,
+                  1.957408735508044
+                ],
+                "right_world": [
+                  0.2659602361988679,
+                  0.019132306314770725,
+                  0.9637941209698888
+                ],
+                "forward_world": [
+                  -0.9403818605751609,
+                  -0.21473564388149569,
+                  0.2637623163910988
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5362178418055313,
+                  "forward_m": 0.5671213939870321,
+                  "up_m": -0.7655247270016675,
+                  "distance_m": 1.0932448751489092
+                }
+              },
+              {
+                "frame": 45,
+                "time_s": 1.49976,
+                "gazed_object_id": "7158052634270103",
+                "gazed_object_name": "Orange_A",
+                "gaze_depth_m": 0.903197,
+                "gaze_hit_distance_m": 0.8047113455877569,
+                "gaze_hit_exit_distance_m": 0.9109616459929999,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2474426019045726,
+                  1.5620321434872178,
+                  1.884415435340102
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6305278376635792,
+                  -0.7269238207875833,
+                  0.27205956094736417
+                ],
+                "wearer_world_m": [
+                  1.257957219823467,
+                  1.563941380090715,
+                  1.9555059362991718
+                ],
+                "right_world": [
+                  0.2658439953139477,
+                  0.019847097670858238,
+                  0.9638117362169656
+                ],
+                "forward_world": [
+                  -0.9401847189452668,
+                  -0.21559192866142807,
+                  0.26376659105704675
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5337873787379163,
+                  "forward_m": 0.5657593335459905,
+                  "up_m": -0.7656006012095681,
+                  "distance_m": 1.0914013330424106
+                }
+              },
+              {
+                "frame": 46,
+                "time_s": 1.533088,
+                "gazed_object_id": "7158052634270103",
+                "gazed_object_name": "Orange_A",
+                "gaze_depth_m": 0.897055,
+                "gaze_hit_distance_m": 0.8077575703310168,
+                "gaze_hit_exit_distance_m": 0.9065365384774013,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2453566169543622,
+                  1.5620757353131065,
+                  1.8824200696064513
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6236771605864786,
+                  -0.7319573904658696,
+                  0.2743449979591063
+                ],
+                "wearer_world_m": [
+                  1.2557854134251392,
+                  1.56412895396976,
+                  1.953519198984518
+                ],
+                "right_world": [
+                  0.26469357932552795,
+                  0.02207509503360275,
+                  0.9640798718172152
+                ],
+                "forward_world": [
+                  -0.9400021239762587,
+                  -0.21724832162610214,
+                  0.26305735813841813
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5306403634181385,
+                  "forward_m": 0.5649130943821218,
+                  "up_m": -0.76564374013673,
+                  "distance_m": 1.0894568996997902
+                }
+              },
+              {
+                "frame": 47,
+                "time_s": 1.566416,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.953207,
+                "gaze_hit_distance_m": 0.9616001285673009,
+                "gaze_hit_exit_distance_m": 1.388192259799394,
+                "gaze_depth_obb_residual_m": 0.0083931285673009,
+                "gaze_origin_world_m": [
+                  1.243315136740241,
+                  1.562144828528488,
+                  1.8802672133645717
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6978573453924425,
+                  -0.6886712640651245,
+                  0.19679180758546932
+                ],
+                "wearer_world_m": [
+                  1.253503823577859,
+                  1.5643987354187139,
+                  1.951395071938095
+                ],
+                "right_world": [
+                  0.26144003510932723,
+                  0.024861089531755587,
+                  0.9648994943875389
+                ],
+                "forward_world": [
+                  -0.9407688988666902,
+                  -0.21701856067117214,
+                  0.26049342266047254
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5261269007482986,
+                  "forward_m": 0.5652880029032754,
+                  "up_m": -0.7657111313132485,
+                  "distance_m": 1.0875079671130683
+                }
+              },
+              {
+                "frame": 48,
+                "time_s": 1.599744,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.01562,
+                "gaze_hit_distance_m": 1.022766403974131,
+                "gaze_hit_exit_distance_m": 1.2724764860933104,
+                "gaze_depth_obb_residual_m": 0.0071464039741311325,
+                "gaze_origin_world_m": [
+                  1.2414197766773187,
+                  1.5623079198509464,
+                  1.8779631293770254
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7589037744598495,
+                  -0.6466972400333477,
+                  0.07647052271198757
+                ],
+                "wearer_world_m": [
+                  1.251197837851042,
+                  1.5647683135263168,
+                  1.949141761589545
+                ],
+                "right_world": [
+                  0.255855370244798,
+                  0.027408535278090188,
+                  0.9663264467615524
+                ],
+                "forward_world": [
+                  -0.9427220439246953,
+                  -0.21424669728624268,
+                  0.25568242137538905
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5201455523188881,
+                  "forward_m": 0.5670670615028254,
+                  "up_m": -0.7658724198049104,
+                  "distance_m": 1.0856689234091577
+                }
+              },
+              {
+                "frame": 49,
+                "time_s": 1.633072,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.00596,
+                "gaze_hit_distance_m": 1.0131567595787454,
+                "gaze_hit_exit_distance_m": 1.2800159865477994,
+                "gaze_depth_obb_residual_m": 0.0071967595787454375,
+                "gaze_origin_world_m": [
+                  1.2397286034665946,
+                  1.5626490047888844,
+                  1.875589666393541
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7531242006788161,
+                  -0.6531680088935813,
+                  0.07858428920521288
+                ],
+                "wearer_world_m": [
+                  1.2489778032531609,
+                  1.565285367308435,
+                  1.9468326562028808
+                ],
+                "right_world": [
+                  0.24865603273588965,
+                  0.029480103769753768,
+                  0.9681431200322466
+                ],
+                "forward_world": [
+                  -0.945170822585833,
+                  -0.21109151944349638,
+                  0.24918364021631878
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5132022420272002,
+                  "forward_m": 0.5698654839851661,
+                  "up_m": -0.766214117003144,
+                  "distance_m": 1.0840697782681243
+                }
+              },
+              {
+                "frame": 50,
+                "time_s": 1.6664,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.0066,
+                "gaze_hit_distance_m": 1.0142151212502561,
+                "gaze_hit_exit_distance_m": 1.2788602186972933,
+                "gaze_depth_obb_residual_m": 0.007615121250256207,
+                "gaze_origin_world_m": [
+                  1.238302714889634,
+                  1.5630768348015502,
+                  1.8732184191634522
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7527118024836865,
+                  -0.6529341307213415,
+                  0.08427314721146861
+                ],
+                "wearer_world_m": [
+                  1.2468910930891393,
+                  1.565886240278365,
+                  1.944537481844962
+                ],
+                "right_world": [
+                  0.239659220600965,
+                  0.03161857268765805,
+                  0.9703420653780468
+                ],
+                "forward_world": [
+                  -0.9478252907702215,
+                  -0.20879114077125635,
+                  0.24090138586521748
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5052599097326043,
+                  "forward_m": 0.5737798815522424,
+                  "up_m": -0.7666445762254753,
+                  "distance_m": 1.0827071788406333
+                }
+              },
+              {
+                "frame": 51,
+                "time_s": 1.699728,
+                "gazed_object_id": "7379153972126671",
+                "gazed_object_name": "WhiteVase",
+                "gaze_depth_m": 1.01255,
+                "gaze_hit_distance_m": 0.9870056806368843,
+                "gaze_hit_exit_distance_m": 1.0179688499212962,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2371803257091123,
+                  1.5634039992102147,
+                  1.8709266627278078
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7549923486818639,
+                  -0.6490985778768855,
+                  0.09304616934644683
+                ],
+                "wearer_world_m": [
+                  1.244925511210786,
+                  1.566440800739254,
+                  1.942332906425526
+                ],
+                "right_world": [
+                  0.22817468456444573,
+                  0.034647851655233666,
+                  0.9730035147416443
+                ],
+                "forward_world": [
+                  -0.9507281013153221,
+                  -0.20750780360153886,
+                  0.23034015892550697
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.495970612188105,
+                  "forward_m": 0.5791260883571355,
+                  "up_m": -0.766973788434464,
+                  "distance_m": 1.0814909461089326
+                }
+              },
+              {
+                "frame": 52,
+                "time_s": 1.733056,
+                "gazed_object_id": "7379153972126671",
+                "gazed_object_name": "WhiteVase",
+                "gaze_depth_m": 1.01013,
+                "gaze_hit_distance_m": 0.9878159236268881,
+                "gaze_hit_exit_distance_m": 1.0158202981171283,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2362099252015277,
+                  1.5637125297615764,
+                  1.8689141383481485
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7536805949340031,
+                  -0.6507662407036874,
+                  0.09202641349263557
+                ],
+                "wearer_world_m": [
+                  1.2429983099538369,
+                  1.5669501332595144,
+                  1.9404088756163191
+                ],
+                "right_world": [
+                  0.21511685111725765,
+                  0.03722544193432796,
+                  0.9758785820163234
+                ],
+                "forward_world": [
+                  -0.9540151384532118,
+                  -0.2055968168279771,
+                  0.2181400112595165
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4860023015635631,
+                  "forward_m": 0.5851934454057715,
+                  "up_m": -0.767281790717968,
+                  "distance_m": 1.0804494213235203
+                }
+              },
+              {
+                "frame": 53,
+                "time_s": 1.766384,
+                "gazed_object_id": "7379153972126671",
+                "gazed_object_name": "WhiteVase",
+                "gaze_depth_m": 1.0232,
+                "gaze_hit_distance_m": 0.9778299353261717,
+                "gaze_hit_exit_distance_m": 1.0295691808172145,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.235186748173131,
+                  1.5641342490760122,
+                  1.8674264267118041
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7601733389023376,
+                  -0.6425242170293429,
+                  0.09643197266934622
+                ],
+                "wearer_world_m": [
+                  1.241027588791305,
+                  1.567439524392458,
+                  1.939001711810472
+                ],
+                "right_world": [
+                  0.20214362932187208,
+                  0.0376665821893242,
+                  0.9786312797528784
+                ],
+                "forward_world": [
+                  -0.9576637179147368,
+                  -0.2015469908669521,
+                  0.20556997315318204
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4765267624851194,
+                  "forward_m": 0.5908966554932134,
+                  "up_m": -0.7677000121850912,
+                  "distance_m": 1.079629529767783
+                }
+              },
+              {
+                "frame": 54,
+                "time_s": 1.799712,
+                "gazed_object_id": "6219594724780839",
+                "gazed_object_name": "RedClock",
+                "gaze_depth_m": 1.08901,
+                "gaze_hit_distance_m": 1.0771786483455692,
+                "gaze_hit_exit_distance_m": 1.0944871370302358,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2340186132300228,
+                  1.5645234683464733,
+                  1.8666859479827587
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8181551404673806,
+                  -0.5749539738347724,
+                  0.0070777184462721965
+                ],
+                "wearer_world_m": [
+                  1.239044522016763,
+                  1.567786370668683,
+                  1.9383250114209631
+                ],
+                "right_world": [
+                  0.19096103667494196,
+                  0.036583061396367605,
+                  0.9809156753212285
+                ],
+                "forward_world": [
+                  -0.960800307506634,
+                  -0.19764883280281825,
+                  0.19441632644107087
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4687948101292138,
+                  "forward_m": 0.5953005600037057,
+                  "up_m": -0.7680875188249282,
+                  "distance_m": 1.0789391861080242
+                }
+              },
+              {
+                "frame": 55,
+                "time_s": 1.83304,
+                "gazed_object_id": "6219594724780839",
+                "gazed_object_name": "RedClock",
+                "gaze_depth_m": 1.06749,
+                "gaze_hit_distance_m": 1.0620673004541186,
+                "gaze_hit_exit_distance_m": 1.0699176652489593,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2326152942566637,
+                  1.5647063555907816,
+                  1.8667402329107592
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8293160378094776,
+                  -0.558680087369027,
+                  0.010557907431176405
+                ],
+                "wearer_world_m": [
+                  1.237041728352082,
+                  1.567873137837667,
+                  1.938423144907969
+                ],
+                "right_world": [
+                  0.1827301570497521,
+                  0.03499539643298326,
+                  0.9825400815911133
+                ],
+                "forward_world": [
+                  -0.9628469144667655,
+                  -0.1957425041683393,
+                  0.18603948872144443
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4635770342366566,
+                  "forward_m": 0.5978237905984899,
+                  "up_m": -0.7682728008545217,
+                  "distance_m": 1.0782115042096578
+                }
+              },
+              {
+                "frame": 56,
+                "time_s": 1.866368,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.06515,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2308330581243367,
+                  1.5646047914638652,
+                  1.8672575356788608
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8308939002054421,
+                  -0.556209411150601,
+                  0.015697692470239555
+                ],
+                "wearer_world_m": [
+                  1.2348685883643071,
+                  1.567693501161179,
+                  1.9389669218782142
+                ],
+                "right_world": [
+                  0.1773580509430785,
+                  0.033749020961704554,
+                  0.9835675499678704
+                ],
+                "forward_world": [
+                  -0.9641390182595582,
+                  -0.19453775073854862,
+                  0.1805298230406308
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.46049104303580396,
+                  "forward_m": 0.5985066812517902,
+                  "up_m": -0.7681720329004501,
+                  "distance_m": 1.0771956741231579
+                }
+              },
+              {
+                "frame": 57,
+                "time_s": 1.899696,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.06325,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2287087973626287,
+                  1.5642898700837744,
+                  1.8678603664862952
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8313740785071289,
+                  -0.5553777872935663,
+                  0.01930427329180673
+                ],
+                "wearer_world_m": [
+                  1.232517716327339,
+                  1.5673867643144768,
+                  1.9395817934342032
+                ],
+                "right_world": [
+                  0.17423881142703018,
+                  0.03371525167655308,
+                  0.9841260683453532
+                ],
+                "forward_world": [
+                  -0.9649460684908794,
+                  -0.19335081901714934,
+                  0.17746702704838652
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4588143557435232,
+                  "forward_m": 0.5977715359183385,
+                  "up_m": -0.7678548601833927,
+                  "distance_m": 1.075845020668763
+                }
+              },
+              {
+                "frame": 58,
+                "time_s": 1.933024,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.06152,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.226509756418473,
+                  1.5640013378947484,
+                  1.868179653954889
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8304847346901458,
+                  -0.5567015133873273,
+                  0.019455858729392317
+                ],
+                "wearer_world_m": [
+                  1.2301744444523368,
+                  1.567248568304933,
+                  1.9399019465651899
+                ],
+                "right_world": [
+                  0.17225706590291734,
+                  0.03574492968345275,
+                  0.9844032726725586
+                ],
+                "forward_world": [
+                  -0.9653564619995862,
+                  -0.1927133145122762,
+                  0.1759217999150029
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4575545689041669,
+                  "forward_m": 0.5964664568270711,
+                  "up_m": -0.7675660566221151,
+                  "distance_m": 1.0743770608698522
+                }
+              },
+              {
+                "frame": 59,
+                "time_s": 1.966352,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.06008,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2243296474010394,
+                  1.5638908214246003,
+                  1.8678656587980744
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8287952840979786,
+                  -0.5592604991087697,
+                  0.018057441500959504
+                ],
+                "wearer_world_m": [
+                  1.2277711851690778,
+                  1.567449785072368,
+                  1.939584214950196
+                ],
+                "right_world": [
+                  0.16919243316667743,
+                  0.04000792064992602,
+                  0.984770677287057
+                ],
+                "forward_world": [
+                  -0.9659276150887045,
+                  -0.19182139008940235,
+                  0.17374808405624687
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.45503581317692166,
+                  "forward_m": 0.59577399623751,
+                  "up_m": -0.7674568733495489,
+                  "distance_m": 1.072844023294095
+                }
+              },
+              {
+                "frame": 60,
+                "time_s": 1.99968,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.05761,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.222112867364442,
+                  1.5640037124356125,
+                  1.8666510832153196
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8287332086982593,
+                  -0.5594259561295962,
+                  0.015616286664082879
+                ],
+                "wearer_world_m": [
+                  1.2250489353690048,
+                  1.5680172362399463,
+                  1.9383681162851882
+                ],
+                "right_world": [
+                  0.16223433372586699,
+                  0.04605959808844422,
+                  0.9856766885670247
+                ],
+                "forward_world": [
+                  -0.9674478473493093,
+                  -0.18919689151519864,
+                  0.16807497999456544
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.44928325095256155,
+                  "forward_m": 0.5969604875060209,
+                  "up_m": -0.767568728208556,
+                  "distance_m": 1.0711577921826592
+                }
+              },
+              {
+                "frame": 61,
+                "time_s": 2.033008,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.05596,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2197708558842937,
+                  1.5641581924465002,
+                  1.8647692262014024
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8275560932727144,
+                  -0.5611520799599784,
+                  0.016101417446686583
+                ],
+                "wearer_world_m": [
+                  1.221832745084235,
+                  1.568669965678081,
+                  1.936487105535875
+                ],
+                "right_world": [
+                  0.15019221217308276,
+                  0.05267749533874182,
+                  0.9872524403046026
+                ],
+                "forward_world": [
+                  -0.9698133509416542,
+                  -0.18618315768042948,
+                  0.15747347754928154
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4397799660215437,
+                  "forward_m": 0.6003450499950181,
+                  "up_m": -0.7677220409089759,
+                  "distance_m": 1.0692136033856259
+                }
+              },
+              {
+                "frame": 62,
+                "time_s": 2.066336,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.05401,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.217199025107724,
+                  1.5641024907362353,
+                  1.8626074936169899
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8273868227105572,
+                  -0.5611855270603556,
+                  0.02240200488617755
+                ],
+                "wearer_world_m": [
+                  1.2180394108975778,
+                  1.5690296010279892,
+                  1.9343227572426442
+                ],
+                "right_world": [
+                  0.1333547561198466,
+                  0.058345553917747164,
+                  0.9893494354161466
+                ],
+                "forward_world": [
+                  -0.9724526862017578,
+                  -0.18487160873156644,
+                  0.14197979216771728
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4270334230309553,
+                  "forward_m": 0.6054695213689327,
+                  "up_m": -0.7676684095670987,
+                  "distance_m": 1.0668953429177288
+                }
+              },
+              {
+                "frame": 63,
+                "time_s": 2.099664,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.05342,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.214278659114765,
+                  1.5637114256425457,
+                  1.8602801559305948
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8238528995939578,
+                  -0.5663033629152278,
+                  0.02380968251641369
+                ],
+                "wearer_world_m": [
+                  1.213798034219386,
+                  1.5688825131742432,
+                  1.9319815544835481
+                ],
+                "right_world": [
+                  0.11511836451472818,
+                  0.06182280944509344,
+                  0.9914260952707319
+                ],
+                "forward_world": [
+                  -0.9747375198786188,
+                  -0.18527863700175684,
+                  0.1247340932209427
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4131816104726283,
+                  "forward_m": 0.6105864135031188,
+                  "up_m": -0.7672794002000365,
+                  "distance_m": 1.0640735357853253
+                }
+              },
+              {
+                "frame": 64,
+                "time_s": 2.132992,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.04775,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2110645145806624,
+                  1.5629237465878234,
+                  1.8577307992359655
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8267247632770169,
+                  -0.5621135373163253,
+                  0.023548608245259728
+                ],
+                "wearer_world_m": [
+                  1.2093245551430778,
+                  1.568155158063994,
+                  1.9294083171625969
+                ],
+                "right_world": [
+                  0.0977106000454886,
+                  0.06296105012659925,
+                  0.9932212969956429
+                ],
+                "forward_world": [
+                  -0.9762958850893142,
+                  -0.18760528032012858,
+                  0.10793796159682906
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.39955620774579337,
+                  "forward_m": 0.6147905726717069,
+                  "up_m": -0.7664912555790597,
+                  "distance_m": 1.0607174252709193
+                }
+              },
+              {
+                "frame": 65,
+                "time_s": 2.16632,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.46369,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2079882780369477,
+                  1.5617585930672422,
+                  1.8546787167054848
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7532171014211488,
+                  -0.6311644088894509,
+                  -0.18519040762942562
+                ],
+                "wearer_world_m": [
+                  1.2048974437675448,
+                  1.566994420121904,
+                  1.9263103756250768
+                ],
+                "right_world": [
+                  0.07902774778903787,
+                  0.06377605090703148,
+                  0.994830252058157
+                ],
+                "forward_world": [
+                  -0.9769383365382569,
+                  -0.1936184310436949,
+                  0.0900188300415038
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3846474309797091,
+                  "forward_m": 0.6193657821762893,
+                  "up_m": -0.765325828042674,
+                  "distance_m": 1.0570199815326773
+                }
+              },
+              {
+                "frame": 66,
+                "time_s": 2.199648,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 1.02202,
+                "gaze_hit_distance_m": 1.0083919685526077,
+                "gaze_hit_exit_distance_m": 1.0096957410313103,
+                "gaze_depth_obb_residual_m": 0.012324258968689605,
+                "gaze_origin_world_m": [
+                  1.205411933048007,
+                  1.5605312216302245,
+                  1.8509106169697018
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6801026386049404,
+                  -0.6604327417107774,
+                  -0.318259319799097
+                ],
+                "wearer_world_m": [
+                  1.200837433694324,
+                  1.5657894801441516,
+                  1.9224612030893409
+                ],
+                "right_world": [
+                  0.05847103770986245,
+                  0.06515201838533898,
+                  0.996160806421056
+                ],
+                "forward_world": [
+                  -0.9768259459291396,
+                  -0.2020728531112764,
+                  0.0705523450716567
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3678723028558735,
+                  "forward_m": 0.624821368674643,
+                  "up_m": -0.7640989534832088,
+                  "distance_m": 1.0533655513045186
+                }
+              },
+              {
+                "frame": 67,
+                "time_s": 2.232976,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 1.01631,
+                "gaze_hit_distance_m": 0.9958217765760269,
+                "gaze_hit_exit_distance_m": 1.0134276941358555,
+                "gaze_depth_obb_residual_m": 0.0028823058641445076,
+                "gaze_origin_world_m": [
+                  1.2035366989028853,
+                  1.5598943715056812,
+                  1.8463332500879643
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6759364386208164,
+                  -0.668219892240372,
+                  -0.3107927067337217
+                ],
+                "wearer_world_m": [
+                  1.197499388487814,
+                  1.565187236439299,
+                  1.9177727221237133
+                ],
+                "right_world": [
+                  0.03812554120649364,
+                  0.06634942126577512,
+                  0.997067799803709
+                ],
+                "forward_world": [
+                  -0.9768466781270462,
+                  -0.20772969059921578,
+                  0.05117561016450506
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.35039736954933026,
+                  "forward_m": 0.6304982951986513,
+                  "up_m": -0.7634605613117347,
+                  "distance_m": 1.0503230196058375
+                }
+              },
+              {
+                "frame": 68,
+                "time_s": 2.266304,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 1.01495,
+                "gaze_hit_distance_m": 0.9950632609428813,
+                "gaze_hit_exit_distance_m": 1.0085078756800572,
+                "gaze_depth_obb_residual_m": 0.0064421243199428435,
+                "gaze_origin_world_m": [
+                  1.2023988267953383,
+                  1.5601422272936323,
+                  1.8409087495566334
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6783294328905385,
+                  -0.6689755912986968,
+                  -0.30387635433011195
+                ],
+                "wearer_world_m": [
+                  1.1950211107738071,
+                  1.565487904408594,
+                  1.912218319345605
+                ],
+                "right_world": [
+                  0.019404286226907874,
+                  0.06721878340289963,
+                  0.9975495520693991
+                ],
+                "forward_world": [
+                  -0.9774110247329488,
+                  -0.20874267637161617,
+                  0.033078449052245995
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.33305223071135465,
+                  "forward_m": 0.6359307513428448,
+                  "up_m": -0.7637059334848478,
+                  "distance_m": 1.0481309372999383
+                }
+              },
+              {
+                "frame": 69,
+                "time_s": 2.299632,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 1.01664,
+                "gaze_hit_distance_m": 1.000833472099668,
+                "gaze_hit_exit_distance_m": 1.00385910446741,
+                "gaze_depth_obb_residual_m": 0.012780895532590097,
+                "gaze_origin_world_m": [
+                  1.2019087350052329,
+                  1.561227503667588,
+                  1.8346357281248178
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6804577692194794,
+                  -0.6661125699116457,
+                  -0.3054034520344404
+                ],
+                "wearer_world_m": [
+                  1.1933660681059288,
+                  1.5666465959761517,
+                  1.905809585557156
+                ],
+                "right_world": [
+                  0.0030702900710320447,
+                  0.06791877380759136,
+                  0.9976861297438955
+                ],
+                "forward_world": [
+                  -0.978380442888288,
+                  -0.20610986555499858,
+                  0.01704207424633558
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.31632296651504926,
+                  "forward_m": 0.6408293387923271,
+                  "up_m": -0.7647913908697227,
+                  "distance_m": 1.0467226624805337
+                }
+              },
+              {
+                "frame": 70,
+                "time_s": 2.33296,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.00875,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2019321622912367,
+                  1.5627083349707436,
+                  1.8274867123911995
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6855067681036123,
+                  -0.6614514849938892,
+                  -0.3042407005703205
+                ],
+                "wearer_world_m": [
+                  1.192463556127398,
+                  1.5681956803426107,
+                  1.8985380757777242
+                ],
+                "right_world": [
+                  -0.009962745405477424,
+                  0.06825072968127933,
+                  0.9976184549225013
+                ],
+                "forward_world": [
+                  -0.979557864740728,
+                  -0.20112327446774542,
+                  0.0039771964947010185
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3007784420734538,
+                  "forward_m": 0.6448609561375497,
+                  "up_m": -0.7662738568909698,
+                  "distance_m": 1.0457002188587947
+                }
+              },
+              {
+                "frame": 71,
+                "time_s": 2.366288,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 1.01537,
+                "gaze_hit_distance_m": 0.9967094754676253,
+                "gaze_hit_exit_distance_m": 1.0055532190251655,
+                "gaze_depth_obb_residual_m": 0.009816780974834627,
+                "gaze_origin_world_m": [
+                  1.2023577409966761,
+                  1.5640288318452036,
+                  1.8193846537682132
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6793215436472884,
+                  -0.6716718654858941,
+                  -0.29559963709613185
+                ],
+                "wearer_world_m": [
+                  1.1922229740744859,
+                  1.5695576823309032,
+                  1.890340837520862
+                ],
+                "right_world": [
+                  -0.01937781668829186,
+                  0.06808672489063952,
+                  0.9974912020233873
+                ],
+                "forward_world": [
+                  -0.9807524475317437,
+                  -0.19517119742577685,
+                  -0.005730650563697481
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.2865684594512946,
+                  "forward_m": 0.6479375690343961,
+                  "up_m": -0.7675949050057512,
+                  "distance_m": 1.0445795869675414
+                }
+              },
+              {
+                "frame": 72,
+                "time_s": 2.399616,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 1.01236,
+                "gaze_hit_distance_m": 0.9976402166952022,
+                "gaze_hit_exit_distance_m": 0.9996700343155573,
+                "gaze_depth_obb_residual_m": 0.012689965684442583,
+                "gaze_origin_world_m": [
+                  1.2032358859116756,
+                  1.5648693996598169,
+                  1.8100997969040726
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6845922981670909,
+                  -0.6718892274914409,
+                  -0.2826627872063396
+                ],
+                "wearer_world_m": [
+                  1.192528489689936,
+                  1.5704682427629841,
+                  1.8809663357151138
+                ],
+                "right_world": [
+                  -0.02748855202236572,
+                  0.0683764419022158,
+                  0.9972808238908974
+                ],
+                "forward_world": [
+                  -0.981753677458224,
+                  -0.18963669070430283,
+                  -0.01405853249718364
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.27198317338600086,
+                  "forward_m": 0.6508669622417975,
+                  "up_m": -0.7684357967150311,
+                  "distance_m": 1.0431185085195496
+                }
+              },
+              {
+                "frame": 73,
+                "time_s": 2.432944,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 1.0094,
+                "gaze_hit_distance_m": 0.9918305839030354,
+                "gaze_hit_exit_distance_m": 1.0016538116943774,
+                "gaze_depth_obb_residual_m": 0.007746188305622681,
+                "gaze_origin_world_m": [
+                  1.2045538375470597,
+                  1.5651398388026272,
+                  1.7995128778262153
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6844945771681727,
+                  -0.6761277748413292,
+                  -0.27261402369554855
+                ],
+                "wearer_world_m": [
+                  1.1932498884854659,
+                  1.570859085948511,
+                  1.8702770823981398
+                ],
+                "right_world": [
+                  -0.035937572942629614,
+                  0.06950569958387451,
+                  0.9969340241843236
+                ],
+                "forward_world": [
+                  -0.9824536116827084,
+                  -0.18514404138336576,
+                  -0.022507439477571722
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.25583222946823353,
+                  "forward_m": 0.6540854148579958,
+                  "up_m": -0.7687066929490344,
+                  "distance_m": 1.0412434102309047
+                }
+              },
+              {
+                "frame": 74,
+                "time_s": 2.466272,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 1.00462,
+                "gaze_hit_distance_m": 0.9891246171616581,
+                "gaze_hit_exit_distance_m": 0.9936607023229687,
+                "gaze_depth_obb_residual_m": 0.01095929767703141,
+                "gaze_origin_world_m": [
+                  1.2060748348428247,
+                  1.5651259167278413,
+                  1.787834909785053
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6928852983183051,
+                  -0.6780447661616611,
+                  -0.24528607472731173
+                ],
+                "wearer_world_m": [
+                  1.194241048200025,
+                  1.570921038115479,
+                  1.8585062601527602
+                ],
+                "right_world": [
+                  -0.04345812063853066,
+                  0.07000669590070704,
+                  0.996599445253525
+                ],
+                "forward_world": [
+                  -0.9830890560851983,
+                  -0.1806239691027849,
+                  -0.0301809474846349
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.2391567065973765,
+                  "forward_m": 0.6570082038806782,
+                  "up_m": -0.7686908465413266,
+                  "distance_m": 1.0391060233842548
+                }
+              },
+              {
+                "frame": 75,
+                "time_s": 2.4996,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.82337,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2076710092144225,
+                  1.5649869946748085,
+                  1.77516089219744
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8259052695423029,
+                  -0.5484949217723964,
+                  -0.1305136258486032
+                ],
+                "wearer_world_m": [
+                  1.195472321989706,
+                  1.570752325403532,
+                  1.845772610011001
+                ],
+                "right_world": [
+                  -0.04865830141362082,
+                  0.06904522082165536,
+                  0.9964261774889451
+                ],
+                "forward_world": [
+                  -0.9836891033092966,
+                  -0.1762740711251768,
+                  -0.03582177940176051
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.22298774351778036,
+                  "forward_m": 0.6592204794322079,
+                  "up_m": -0.7685490115552487,
+                  "distance_m": 1.036804107546132
+                }
+              },
+              {
+                "frame": 76,
+                "time_s": 2.532928,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.76995,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2093989739449684,
+                  1.5646433089919867,
+                  1.7613745019679745
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8196387319968359,
+                  -0.5590003689958957,
+                  -0.1253432745426376
+                ],
+                "wearer_world_m": [
+                  1.197064521533158,
+                  1.5702778014043501,
+                  1.8319731951567
+                ],
+                "right_world": [
+                  -0.05060130055315509,
+                  0.06693150964361641,
+                  0.996473623032319
+                ],
+                "forward_world": [
+                  -0.9839904053331529,
+                  -0.17406274347809975,
+                  -0.03827588725521941
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.20785134269433891,
+                  "forward_m": 0.6606769576626976,
+                  "up_m": -0.7682077016770379,
+                  "distance_m": 1.034330361133325
+                }
+              },
+              {
+                "frame": 77,
+                "time_s": 2.566256,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.84583,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.211391429215726,
+                  1.563885521422497,
+                  1.746353907171299
+                ],
+                "gaze_direction_world_unit": [
+                  -0.818106519389239,
+                  -0.5445089942821202,
+                  -0.18496399130290075
+                ],
+                "wearer_world_m": [
+                  1.1990893292444942,
+                  1.569349943403912,
+                  1.816971611252548
+                ],
+                "right_world": [
+                  -0.05015862157644141,
+                  0.06439512992010747,
+                  0.9966631225866263
+                ],
+                "forward_world": [
+                  -0.9841956977527279,
+                  -0.17287925645939597,
+                  -0.03836132441754281
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.1930504023140301,
+                  "forward_m": 0.6618189107241749,
+                  "up_m": -0.7674538303493681,
+                  "distance_m": 1.0316288625972323
+                }
+              },
+              {
+                "frame": 78,
+                "time_s": 2.599584,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.46617,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2137940205067377,
+                  1.562497812628466,
+                  1.730007091788566
+                ],
+                "gaze_direction_world_unit": [
+                  -0.750587230817122,
+                  -0.6291407324309557,
+                  -0.20199194966761835
+                ],
+                "wearer_world_m": [
+                  1.201559378983635,
+                  1.567834055220195,
+                  1.8006463143409368
+                ],
+                "right_world": [
+                  -0.049244862063293204,
+                  0.06222024537647641,
+                  0.9968468210440653
+                ],
+                "forward_world": [
+                  -0.9847315728058483,
+                  -0.1698717880257248,
+                  -0.03804346398875286
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.17721123392073876,
+                  "forward_m": 0.6632386548542544,
+                  "up_m": -0.7660630609061336,
+                  "distance_m": 1.0286602685072783
+                }
+              },
+              {
+                "frame": 79,
+                "time_s": 2.632912,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.3587,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2164827817931088,
+                  1.5608554226276354,
+                  1.7124290689612984
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7297408436961057,
+                  -0.6574478428306998,
+                  -0.18772489179369678
+                ],
+                "wearer_world_m": [
+                  1.2043879503656332,
+                  1.566018940390921,
+                  1.783105195326919
+                ],
+                "right_world": [
+                  -0.047300862933334575,
+                  0.0595148922412649,
+                  0.9971061157004669
+                ],
+                "forward_world": [
+                  -0.9851663764753696,
+                  -0.167625080465719,
+                  -0.03672932154629621
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.1608253398607078,
+                  "forward_m": 0.6647340797963547,
+                  "up_m": -0.7644256608599795,
+                  "distance_m": 1.025710864603293
+                }
+              },
+              {
+                "frame": 80,
+                "time_s": 2.66624,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 0.981789,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2192272304582406,
+                  1.5595130414142053,
+                  1.693808084605987
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7226205968837467,
+                  -0.6807990809003093,
+                  -0.11971668390275392
+                ],
+                "wearer_world_m": [
+                  1.20740005831748,
+                  1.564369152548044,
+                  1.7645512672090382
+                ],
+                "right_world": [
+                  -0.04350034263146885,
+                  0.055416229468133196,
+                  0.9975152939692105
+                ],
+                "forward_world": [
+                  -0.9849801567584272,
+                  -0.16937794590289879,
+                  -0.03354403425139496
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.14466289475632588,
+                  "forward_m": 0.6660072845220213,
+                  "up_m": -0.7631109285939596,
+                  "distance_m": 1.0231477632752817
+                }
+              },
+              {
+                "frame": 81,
+                "time_s": 2.699568,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 0.971456,
+                "gaze_hit_distance_m": 0.9568429335748402,
+                "gaze_hit_exit_distance_m": 0.9965394757548443,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.221856905738626,
+                  1.5586842090093869,
+                  1.6743740087661803
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7060785757439252,
+                  -0.6943305726964586,
+                  -0.13913339173051859
+                ],
+                "wearer_world_m": [
+                  1.210240877356336,
+                  1.563293367195192,
+                  1.7451686783850158
+                ],
+                "right_world": [
+                  -0.04049988274085142,
+                  0.052162219779945174,
+                  0.9978170485242305
+                ],
+                "forward_world": [
+                  -0.9847663452256112,
+                  -0.171092452150926,
+                  -0.031026087861272034
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.12716379797368987,
+                  "forward_m": 0.667377782772946,
+                  "up_m": -0.7623029962858601,
+                  "distance_m": 1.021111940288834
+                }
+              },
+              {
+                "frame": 82,
+                "time_s": 2.732896,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 0.982785,
+                "gaze_hit_distance_m": 0.9685744092919923,
+                "gaze_hit_exit_distance_m": 0.9835453160964899,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.224179272477252,
+                  1.5583999165971598,
+                  1.6545551439203652
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7174380548662227,
+                  -0.6854944775390113,
+                  -0.12401596144565163
+                ],
+                "wearer_world_m": [
+                  1.212544077929135,
+                  1.563002388209843,
+                  1.7253471011180717
+                ],
+                "right_world": [
+                  -0.04078793331373842,
+                  0.051896778473443594,
+                  0.9978191564006339
+                ],
+                "forward_world": [
+                  -0.9849918219990861,
+                  -0.1697140024946713,
+                  -0.03143672934895503
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.1070731746724569,
+                  "forward_m": 0.6689289093015311,
+                  "up_m": -0.7620132705157049,
+                  "distance_m": 1.019605205398548
+                }
+              },
+              {
+                "frame": 83,
+                "time_s": 2.766224,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 0.981854,
+                "gaze_hit_distance_m": 0.9678976325136118,
+                "gaze_hit_exit_distance_m": 0.9836594660588939,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2259147774434798,
+                  1.5584838494306108,
+                  1.635190633026328
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7181561688696797,
+                  -0.6859764128828054,
+                  -0.11699606011683855
+                ],
+                "wearer_world_m": [
+                  1.214025959576438,
+                  1.563308177062461,
+                  1.705925656696536
+                ],
+                "right_world": [
+                  -0.044381539080936006,
+                  0.05485608310780091,
+                  0.9975074381351138
+                ],
+                "forward_world": [
+                  -0.9851017811044891,
+                  -0.168462821924958,
+                  -0.03456527873231585
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.08523120965869316,
+                  "forward_m": 0.6701904219576589,
+                  "up_m": -0.7620918369126941,
+                  "distance_m": 1.0184318969242043
+                }
+              },
+              {
+                "frame": 84,
+                "time_s": 2.799552,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.30141,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.2267748171389914,
+                  1.558860250784846,
+                  1.6169466726055506
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7336982729194459,
+                  -0.6719959818741419,
+                  -0.10053976656045216
+                ],
+                "wearer_world_m": [
+                  1.214525742082154,
+                  1.563964964881753,
+                  1.68760050304128
+                ],
+                "right_world": [
+                  -0.0494519198090862,
+                  0.05892118022297309,
+                  0.9970370114235119
+                ],
+                "forward_world": [
+                  -0.9847667222116725,
+                  -0.16949029652409703,
+                  -0.03882708086699427
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.06355234573052679,
+                  "forward_m": 0.67056608747976,
+                  "up_m": -0.762474059564991,
+                  "distance_m": 1.0173811821708139
+                }
+              },
+              {
+                "frame": 85,
+                "time_s": 2.83288,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 0.979758,
+                "gaze_hit_distance_m": 0.9664643083930746,
+                "gaze_hit_exit_distance_m": 0.9812898239855717,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2264900573548954,
+                  1.559603818522896,
+                  1.6001642007137824
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7194555383993506,
+                  -0.6880662485760316,
+                  -0.0945968595515061
+                ],
+                "wearer_world_m": [
+                  1.2140306845502158,
+                  1.5647226356328618,
+                  1.67078022893478
+                ],
+                "right_world": [
+                  -0.05238215537060548,
+                  0.05948181565261569,
+                  0.9968540632436619
+                ],
+                "forward_world": [
+                  -0.9841550623124581,
+                  -0.17240231984174847,
+                  -0.04142768926630208
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.04483758825170597,
+                  "forward_m": 0.6695835937518334,
+                  "up_m": -0.7632187639441873,
+                  "distance_m": 1.0162949768538379
+                }
+              },
+              {
+                "frame": 86,
+                "time_s": 2.866208,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 0.969129,
+                "gaze_hit_distance_m": 0.9562538356349998,
+                "gaze_hit_exit_distance_m": 0.9874533433818277,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2249797148984447,
+                  1.560571767036132,
+                  1.5847517841090082
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7145316849172658,
+                  -0.6965701759516483,
+                  -0.0650727379474923
+                ],
+                "wearer_world_m": [
+                  1.2125362228906622,
+                  1.565353283640135,
+                  1.65539425226109
+                ],
+                "right_world": [
+                  -0.05210074791363539,
+                  0.05528659655951103,
+                  0.9971102769040675
+                ],
+                "forward_world": [
+                  -0.9833777532322969,
+                  -0.1767456668761725,
+                  -0.041583214020767645
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.029722032083990317,
+                  "forward_m": 0.6672618229195929,
+                  "up_m": -0.7641813859814449,
+                  "distance_m": 1.0149359241832472
+                }
+              },
+              {
+                "frame": 87,
+                "time_s": 2.899536,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 0.969605,
+                "gaze_hit_distance_m": 0.9569632777700328,
+                "gaze_hit_exit_distance_m": 0.9827413600415346,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2223124082185728,
+                  1.5614386987810682,
+                  1.5703059704097422
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7157476761697148,
+                  -0.6969775975391087,
+                  -0.04390321840441053
+                ],
+                "wearer_world_m": [
+                  1.210038318682885,
+                  1.5656477754138312,
+                  1.6410144713199541
+                ],
+                "right_world": [
+                  -0.04963999121011714,
+                  0.04794160562801468,
+                  0.9976158948826284
+                ],
+                "forward_world": [
+                  -0.9824256213504536,
+                  -0.18229088806044497,
+                  -0.0401239410366106
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.017082459646955088,
+                  "forward_m": 0.6638047055912486,
+                  "up_m": -0.7650459556090167,
+                  "distance_m": 1.0130270538274817
+                }
+              },
+              {
+                "frame": 88,
+                "time_s": 2.932864,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 0.943393,
+                "gaze_hit_distance_m": 0.9306222922257189,
+                "gaze_hit_exit_distance_m": 1.0053299711377952,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2186084086215228,
+                  1.5618118294770766,
+                  1.5564621090736284
+                ],
+                "gaze_direction_world_unit": [
+                  -0.696178984705822,
+                  -0.7172846603365869,
+                  -0.028940236692164667
+                ],
+                "wearer_world_m": [
+                  1.20655970419717,
+                  1.56539959484449,
+                  1.6272435922621218
+                ],
+                "right_world": [
+                  -0.04637692654031006,
+                  0.040124946334040665,
+                  0.9981178133699276
+                ],
+                "forward_world": [
+                  -0.981141286582548,
+                  -0.18952605703254355,
+                  -0.0379690593620588
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.005605205993760361,
+                  "forward_m": 0.6594007886864733,
+                  "up_m": -0.7654212035333812,
+                  "distance_m": 1.0103021514740356
+                }
+              },
+              {
+                "frame": 89,
+                "time_s": 2.966192,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 0.933471,
+                "gaze_hit_distance_m": 0.9209863042877041,
+                "gaze_hit_exit_distance_m": 1.0105668497677762,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.214002332656678,
+                  1.561406369105417,
+                  1.5429310655754125
+                ],
+                "gaze_direction_world_unit": [
+                  -0.68927810367277,
+                  -0.7244968188378126,
+                  0.0002351407233307512
+                ],
+                "wearer_world_m": [
+                  1.2021503097272441,
+                  1.5645111525484978,
+                  1.613768566754179
+                ],
+                "right_world": [
+                  -0.04351026437203148,
+                  0.034489941979763086,
+                  0.9984574606844845
+                ],
+                "forward_world": [
+                  -0.979415558826522,
+                  -0.1986509598155201,
+                  -0.03581842113918848
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.005808914692999115,
+                  "forward_m": 0.6541908708397761,
+                  "up_m": -0.7650197216477979,
+                  "distance_m": 1.00660549049272
+                }
+              },
+              {
+                "frame": 90,
+                "time_s": 2.99952,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 0.915645,
+                "gaze_hit_distance_m": 0.9043124846213819,
+                "gaze_hit_exit_distance_m": 1.022497804683962,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2085958232243326,
+                  1.5604909586920865,
+                  1.5296404633715137
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6758970086729881,
+                  -0.7369124058476713,
+                  0.011105844168927459
+                ],
+                "wearer_world_m": [
+                  1.196923647208484,
+                  1.563325671348615,
+                  1.6005191372601382
+                ],
+                "right_world": [
+                  -0.04089626226067378,
+                  0.031813673914494106,
+                  0.9986567908371569
+                ],
+                "forward_world": [
+                  -0.9776598561323947,
+                  -0.20751851636535804,
+                  -0.033425605046227824
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.017148612467297576,
+                  "forward_m": 0.6482576190927332,
+                  "up_m": -0.7641057854453402,
+                  "distance_m": 1.0021924301112901
+                }
+              },
+              {
+                "frame": 91,
+                "time_s": 3.032848,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 0.931047,
+                "gaze_hit_distance_m": 0.9154422427445706,
+                "gaze_hit_exit_distance_m": 1.0416395001321817,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.2024786342681046,
+                  1.559405007255473,
+                  1.5165699083764164
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6592370308491236,
+                  -0.7507215640602913,
+                  0.04270445424193514
+                ],
+                "wearer_world_m": [
+                  1.190989496317352,
+                  1.5621844174876418,
+                  1.5874806712330511
+                ],
+                "right_world": [
+                  -0.03826448802577703,
+                  0.03189054407183259,
+                  0.9987586405908728
+                ],
+                "forward_world": [
+                  -0.9762902117791151,
+                  -0.21429755135212733,
+                  -0.030561116942494637
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.02826858806041678,
+                  "forward_m": 0.641685877957997,
+                  "up_m": -0.7630169991352329,
+                  "distance_m": 0.9973739619676218
+                }
+              },
+              {
+                "frame": 92,
+                "time_s": 3.066176,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 0.916485,
+                "gaze_hit_distance_m": 0.9045674102394169,
+                "gaze_hit_exit_distance_m": 1.0028151214364875,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.1957288267597526,
+                  1.558339131259752,
+                  1.5036963455270138
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6771052364185906,
+                  -0.7343046985318522,
+                  0.0482193791806777
+                ],
+                "wearer_world_m": [
+                  1.184415744569201,
+                  1.5611824227806368,
+                  1.5746328774811282
+                ],
+                "right_world": [
+                  -0.035751103094105896,
+                  0.03339627798007261,
+                  0.9988025566870723
+                ],
+                "forward_world": [
+                  -0.9753048237841705,
+                  -0.21913392960484823,
+                  -0.02758299474794912
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.03928178503026465,
+                  "forward_m": 0.6345495960269194,
+                  "up_m": -0.7619487980166174,
+                  "distance_m": 0.9923518626233633
+                }
+              },
+              {
+                "frame": 93,
+                "time_s": 3.099504,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 0.912559,
+                "gaze_hit_distance_m": 0.8977325276513556,
+                "gaze_hit_exit_distance_m": 1.0249208316525855,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.1883037570168857,
+                  1.5574375902587227,
+                  1.4910924210601935
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6561654047312749,
+                  -0.7514606162556914,
+                  0.06894855945165995
+                ],
+                "wearer_world_m": [
+                  1.1771274455821292,
+                  1.5604005061996182,
+                  1.5620457359428719
+                ],
+                "right_world": [
+                  -0.033808030842180536,
+                  0.03541549887692265,
+                  0.9988006605373635
+                ],
+                "forward_world": [
+                  -0.9747604795577711,
+                  -0.22183454768004285,
+                  -0.02512848877062185
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.05039572388328121,
+                  "forward_m": 0.6267803454371528,
+                  "up_m": -0.7610474760632895,
+                  "distance_m": 0.9872115230457653
+                }
+              },
+              {
+                "frame": 94,
+                "time_s": 3.132832,
+                "gazed_object_id": "4243547695770937",
+                "gazed_object_name": "CoffeeCanisterLarge",
+                "gaze_depth_m": 0.904738,
+                "gaze_hit_distance_m": 0.8896242965957419,
+                "gaze_hit_exit_distance_m": 1.0176915545100336,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.1800147297329555,
+                  1.5567939820276102,
+                  1.4789439422126653
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6519389000993658,
+                  -0.7548599770368839,
+                  0.07184765552963368
+                ],
+                "wearer_world_m": [
+                  1.168883514221118,
+                  1.5599206781696762,
+                  1.5498973178438797
+                ],
+                "right_world": [
+                  -0.033175869965900606,
+                  0.03766954287548509,
+                  0.998739389025765
+                ],
+                "forward_world": [
+                  -0.9748679004236404,
+                  -0.2214840292926596,
+                  -0.024029180008731388
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.06186603559039864,
+                  "forward_m": 0.6181242945085071,
+                  "up_m": -0.7604040170256179,
+                  "distance_m": 0.9818957780385902
+                }
+              },
+              {
+                "frame": 95,
+                "time_s": 3.16616,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.13924,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.1708249034825209,
+                  1.5562683022835426,
+                  1.4672814513509096
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6920676560324439,
+                  -0.7217365809043677,
+                  0.011775706273171482
+                ],
+                "wearer_world_m": [
+                  1.1596623233707022,
+                  1.559484517005306,
+                  1.5382258977093861
+                ],
+                "right_world": [
+                  -0.033639276686751485,
+                  0.038516695763445366,
+                  0.9986915756185484
+                ],
+                "forward_world": [
+                  -0.9755887265303462,
+                  -0.21824096690283742,
+                  -0.024444161515824847
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.07349733017747215,
+                  "forward_m": 0.6085161528232487,
+                  "up_m": -0.7598781639025497,
+                  "distance_m": 0.9762728049914808
+                }
+              },
+              {
+                "frame": 96,
+                "time_s": 3.199488,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.45807,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  1.1607913865292045,
+                  1.5556000560675474,
+                  1.456029690896345
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8949863730839203,
+                  -0.44332595053206914,
+                  -0.04961344151464647
+                ],
+                "wearer_world_m": [
+                  1.149572993368934,
+                  1.5586546149316507,
+                  1.5269724778873233
+                ],
+                "right_world": [
+                  -0.03446191376337199,
+                  0.0355973636045495,
+                  0.9987718479233242
+                ],
+                "forward_world": [
+                  -0.9766869518292396,
+                  -0.21307532355267475,
+                  -0.026105643440292592
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.08489398639691688,
+                  "forward_m": 0.5980401920015104,
+                  "up_m": -0.7592109278184775,
+                  "distance_m": 0.9701857003144072
+                }
+              },
+              {
+                "frame": 97,
+                "time_s": 3.232816,
+                "gazed_object_id": "4717015544976522",
+                "gazed_object_name": "BlackArmChair",
+                "gaze_depth_m": 3.64932,
+                "gaze_hit_distance_m": 3.6340936407481785,
+                "gaze_hit_exit_distance_m": 3.851433592742072,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.149733166693853,
+                  1.5549603908525493,
+                  1.4452660120488636
+                ],
+                "gaze_direction_world_unit": [
+                  -0.9484514625598881,
+                  -0.26065611471432704,
+                  -0.18027260754213587
+                ],
+                "wearer_world_m": [
+                  1.138375999666259,
+                  1.5576265151534943,
+                  1.5162023795856867
+                ],
+                "right_world": [
+                  -0.03646654857469911,
+                  0.029327107188879778,
+                  0.9989044557008349
+                ],
+                "forward_world": [
+                  -0.9779863792778083,
+                  -0.2065531220108887,
+                  -0.029638652712932034
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.09644321212417703,
+                  "forward_m": 0.5864268050338186,
+                  "up_m": -0.7585726277104577,
+                  "distance_m": 0.9636545658785362
+                }
+              },
+              {
+                "frame": 98,
+                "time_s": 3.266144,
+                "gazed_object_id": "4717015544976522",
+                "gazed_object_name": "BlackArmChair",
+                "gaze_depth_m": 3.99395,
+                "gaze_hit_distance_m": 3.5601973281397608,
+                "gaze_hit_exit_distance_m": 4.326973231188742,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.1374144699570254,
+                  1.5546443154726137,
+                  1.4350950173512054
+                ],
+                "gaze_direction_world_unit": [
+                  -0.9502659154891094,
+                  -0.2216621405091396,
+                  -0.21877062262687635
+                ],
+                "wearer_world_m": [
+                  1.1257776278915779,
+                  1.5568054692082733,
+                  1.5060032328292068
+                ],
+                "right_world": [
+                  -0.04047103809263791,
+                  0.021286635709327734,
+                  0.9989539399871663
+                ],
+                "forward_world": [
+                  -0.9793736630939648,
+                  -0.19892539627867095,
+                  -0.035438887585286794
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.1084540832478471,
+                  "forward_m": 0.5733154715626243,
+                  "up_m": -0.758256852262598,
+                  "distance_m": 0.9567687140105431
+                }
+              },
+              {
+                "frame": 99,
+                "time_s": 3.299472,
+                "gazed_object_id": "4717015544976522",
+                "gazed_object_name": "BlackArmChair",
+                "gaze_depth_m": 4.20599,
+                "gaze_hit_distance_m": 3.536638314258462,
+                "gaze_hit_exit_distance_m": 4.301931552348744,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.123813257012201,
+                  1.554655557534958,
+                  1.4254462862041997
+                ],
+                "gaze_direction_world_unit": [
+                  -0.9496789038369804,
+                  -0.2173128578862328,
+                  -0.22557726260487737
+                ],
+                "wearer_world_m": [
+                  1.111900101578572,
+                  1.556274800378459,
+                  1.4963230558909453
+                ],
+                "right_world": [
+                  -0.04444929128574471,
+                  0.012572680423265134,
+                  0.998932524353457
+                ],
+                "forward_world": [
+                  -0.9809131689936885,
+                  -0.19001922783402364,
+                  -0.041255883800024096
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.11976852399795887,
+                  "forward_m": 0.5588622247187648,
+                  "up_m": -0.7582678637641624,
+                  "distance_m": 0.9495481234649054
+                }
+              },
+              {
+                "frame": 100,
+                "time_s": 3.3328,
+                "gazed_object_id": "4717015544976522",
+                "gazed_object_name": "BlackArmChair",
+                "gaze_depth_m": 4.18878,
+                "gaze_hit_distance_m": 3.521447264365207,
+                "gaze_hit_exit_distance_m": 4.284593936372788,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.1088993023037612,
+                  1.5551152761775837,
+                  1.416231098943596
+                ],
+                "gaze_direction_world_unit": [
+                  -0.949514415546326,
+                  -0.217868410502286,
+                  -0.22573375993618272
+                ],
+                "wearer_world_m": [
+                  1.096832816664113,
+                  1.556212898562784,
+                  1.4870919262772342
+                ],
+                "right_world": [
+                  -0.046712988093585206,
+                  0.004053115000297744,
+                  0.9989001296436812
+                ],
+                "forward_world": [
+                  -0.9825630664177463,
+                  -0.18034750750293327,
+                  -0.04521722071550249
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.12954107692608005,
+                  "forward_m": 0.5432616992247364,
+                  "up_m": -0.7587278147701216,
+                  "distance_m": 0.9421157367126188
+                }
+              },
+              {
+                "frame": 101,
+                "time_s": 3.366128,
+                "gazed_object_id": "4717015544976522",
+                "gazed_object_name": "BlackArmChair",
+                "gaze_depth_m": 4.17608,
+                "gaze_hit_distance_m": 3.5056997886822487,
+                "gaze_hit_exit_distance_m": 4.272287984554396,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.0925203029664439,
+                  1.5565534763353106,
+                  1.407415867241456
+                ],
+                "gaze_direction_world_unit": [
+                  -0.948485255527721,
+                  -0.22383219651701147,
+                  -0.22422057855799826
+                ],
+                "wearer_world_m": [
+                  1.080374574005151,
+                  1.5571793445673718,
+                  1.4782688929916308
+                ],
+                "right_world": [
+                  -0.04792563105290698,
+                  -0.0035863272398629215,
+                  0.9988444684459685
+                ],
+                "forward_world": [
+                  -0.9839196507592531,
+                  -0.1720891056047174,
+                  -0.04782740408968006
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.13821867433484147,
+                  "forward_m": 0.5263213941659655,
+                  "up_m": -0.7601675785661286,
+                  "distance_m": 0.9348654231464429
+                }
+              },
+              {
+                "frame": 102,
+                "time_s": 3.399456,
+                "gazed_object_id": "4717015544976522",
+                "gazed_object_name": "BlackArmChair",
+                "gaze_depth_m": 4.16007,
+                "gaze_hit_distance_m": 3.4890281095770077,
+                "gaze_hit_exit_distance_m": 4.256388805749729,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.0749365455276652,
+                  1.5587739008724986,
+                  1.3988504356224747
+                ],
+                "gaze_direction_world_unit": [
+                  -0.9477927346088333,
+                  -0.22759010112312358,
+                  -0.22336445127521143
+                ],
+                "wearer_world_m": [
+                  1.06276087787302,
+                  1.558981243759136,
+                  1.469700783730942
+                ],
+                "right_world": [
+                  -0.04842468850084569,
+                  -0.010229004346105214,
+                  0.9987744575296686
+                ],
+                "forward_world": [
+                  -0.9849153633709605,
+                  -0.1658201606633285,
+                  -0.049450999114648675
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.14618463612291988,
+                  "forward_m": 0.508273855582289,
+                  "up_m": -0.7623899365856446,
+                  "distance_m": 0.9278742778598505
+                }
+              },
+              {
+                "frame": 103,
+                "time_s": 3.432784,
+                "gazed_object_id": "4717015544976522",
+                "gazed_object_name": "BlackArmChair",
+                "gaze_depth_m": 4.14208,
+                "gaze_hit_distance_m": 3.4708341913151957,
+                "gaze_hit_exit_distance_m": 4.2387286075290085,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.0569551541414133,
+                  1.5606040132853913,
+                  1.3902346833215593
+                ],
+                "gaze_direction_world_unit": [
+                  -0.9478040637534961,
+                  -0.22939809145657128,
+                  -0.22145873739467037
+                ],
+                "wearer_world_m": [
+                  1.0448305894699619,
+                  1.560423892694516,
+                  1.461093868958289
+                ],
+                "right_world": [
+                  -0.047780885120425,
+                  -0.016388733439709105,
+                  0.9987233833416295
+                ],
+                "forward_world": [
+                  -0.9858743246214511,
+                  -0.1599147926029476,
+                  -0.04979031189854566
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.15360701872365187,
+                  "forward_m": 0.4899957759248316,
+                  "up_m": -0.7642193214896474,
+                  "distance_m": 0.920718278282474
+                }
+              },
+              {
+                "frame": 104,
+                "time_s": 3.466112,
+                "gazed_object_id": "4717015544976522",
+                "gazed_object_name": "BlackArmChair",
+                "gaze_depth_m": 4.11876,
+                "gaze_hit_distance_m": 3.4485105426924427,
+                "gaze_hit_exit_distance_m": 4.215973259779039,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.0392599822750448,
+                  1.561501916121381,
+                  1.3814899889527723
+                ],
+                "gaze_direction_world_unit": [
+                  -0.949187248658703,
+                  -0.22576620743395623,
+                  -0.21925598410216662
+                ],
+                "wearer_world_m": [
+                  1.0272723120375051,
+                  1.561010491560542,
+                  1.452370987571422
+                ],
+                "right_world": [
+                  -0.045905961185912614,
+                  -0.021249439076580126,
+                  0.9987197324908168
+                ],
+                "forward_world": [
+                  -0.9865781451651551,
+                  -0.15586966627072166,
+                  -0.04866426429256021
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.16061519443540095,
+                  "forward_m": 0.4722067557242447,
+                  "up_m": -0.7651153956949024,
+                  "distance_m": 0.9133334711727723
+                }
+              },
+              {
+                "frame": 105,
+                "time_s": 3.49944,
+                "gazed_object_id": "4717015544976522",
+                "gazed_object_name": "BlackArmChair",
+                "gaze_depth_m": 4.10668,
+                "gaze_hit_distance_m": 3.435958967273047,
+                "gaze_hit_exit_distance_m": 4.205001890564029,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.022351166601763,
+                  1.5615904865378278,
+                  1.3727241653378743
+                ],
+                "gaze_direction_world_unit": [
+                  -0.9489826487810955,
+                  -0.2313530161581183,
+                  -0.21426085556385954
+                ],
+                "wearer_world_m": [
+                  1.010586041407431,
+                  1.5609544480643842,
+                  1.4436412929250941
+                ],
+                "right_world": [
+                  -0.04275413825088664,
+                  -0.023141805068579394,
+                  0.9988175711913524
+                ],
+                "forward_world": [
+                  -0.986541847880827,
+                  -0.15694453785104234,
+                  -0.04586495850435229
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1671601722947093,
+                  "forward_m": 0.45544502019031924,
+                  "up_m": -0.7652053911064628,
+                  "distance_m": 0.9060419307052803
+                }
+              },
+              {
+                "frame": 106,
+                "time_s": 3.532768,
+                "gazed_object_id": "4717015544976522",
+                "gazed_object_name": "BlackArmChair",
+                "gaze_depth_m": 3.45355,
+                "gaze_hit_distance_m": 3.4236237871843747,
+                "gaze_hit_exit_distance_m": 4.194120401687754,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  1.0062747577504323,
+                  1.5619352900919117,
+                  1.3640935320954937
+                ],
+                "gaze_direction_world_unit": [
+                  -0.9480509253287686,
+                  -0.23746600635537513,
+                  -0.21168216459799905
+                ],
+                "wearer_world_m": [
+                  0.9949429318070991,
+                  1.5613454059947418,
+                  1.435081583615041
+                ],
+                "right_world": [
+                  -0.036603894843995954,
+                  -0.022054127635953283,
+                  0.9990864678977827
+                ],
+                "forward_world": [
+                  -0.9862362808102089,
+                  -0.1605110350375418,
+                  -0.039676265510047215
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.17238871987809745,
+                  "forward_m": 0.44008416203620093,
+                  "up_m": -0.7655526045520346,
+                  "distance_m": 0.8997014675728378
+                }
+              },
+              {
+                "frame": 107,
+                "time_s": 3.566096,
+                "gazed_object_id": "4717015544976522",
+                "gazed_object_name": "BlackArmChair",
+                "gaze_depth_m": 3.96745,
+                "gaze_hit_distance_m": 3.402550224500078,
+                "gaze_hit_exit_distance_m": 4.172385536589951,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.9908050071963111,
+                  1.5637154305743273,
+                  1.3557279558740218
+                ],
+                "gaze_direction_world_unit": [
+                  -0.9489275718857596,
+                  -0.2339806940928907,
+                  -0.2116352950403268
+                ],
+                "wearer_world_m": [
+                  0.9802936683231228,
+                  1.563337343952814,
+                  1.4268435695365618
+                ],
+                "right_world": [
+                  -0.025050769072287316,
+                  -0.018954110649492747,
+                  0.999506478547475
+                ],
+                "forward_world": [
+                  -0.986466567482886,
+                  -0.16159060456704694,
+                  -0.02778826648406657
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.17526704949757696,
+                  "forward_m": 0.42637031500410594,
+                  "up_m": -0.767332519703229,
+                  "distance_m": 0.8951588573825279
+                }
+              },
+              {
+                "frame": 108,
+                "time_s": 3.599424,
+                "gazed_object_id": "4717015544976522",
+                "gazed_object_name": "BlackArmChair",
+                "gaze_depth_m": 3.92591,
+                "gaze_hit_distance_m": 3.388521077876435,
+                "gaze_hit_exit_distance_m": 4.159255628179067,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.9754255958551479,
+                  1.5668683999533888,
+                  1.3475622358749335
+                ],
+                "gaze_direction_world_unit": [
+                  -0.9482219042899068,
+                  -0.2379298466023561,
+                  -0.21039155952794736
+                ],
+                "wearer_world_m": [
+                  0.9662810698857741,
+                  1.566768074277471,
+                  1.418867419982081
+                ],
+                "right_world": [
+                  -0.005933870468053826,
+                  -0.01567798912241465,
+                  0.9998594850469471
+                ],
+                "forward_world": [
+                  -0.9876229858478568,
+                  -0.15662586771722672,
+                  -0.008317174206996625
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.17515710536309917,
+                  "forward_m": 0.41421501071560357,
+                  "up_m": -0.7704858392940587,
+                  "distance_m": 0.8921336868507866
+                }
+              },
+              {
+                "frame": 109,
+                "time_s": 3.632752,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 5.28789,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.9597554733907224,
+                  1.570717241628796,
+                  1.3394542133896583
+                ],
+                "gaze_direction_world_unit": [
+                  -0.9552201883503133,
+                  -0.28906516499784846,
+                  -0.0632117248044945
+                ],
+                "wearer_world_m": [
+                  0.952581961947828,
+                  1.5708638117709801,
+                  1.410984493353965
+                ],
+                "right_world": [
+                  0.021495286788292767,
+                  -0.013551583284647437,
+                  0.9996771014864594
+                ],
+                "forward_world": [
+                  -0.9891201118383397,
+                  -0.1458398111485404,
+                  0.01929128925366075
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.17216727331037956,
+                  "forward_m": 0.4033744297324927,
+                  "up_m": -0.774337875874298,
+                  "distance_m": 0.8899166514762292
+                }
+              },
+              {
+                "frame": 110,
+                "time_s": 3.66608,
+                "gazed_object_id": "4440053852752882",
+                "gazed_object_name": "Apartment_DoubleDoorB",
+                "gaze_depth_m": 5.26563,
+                "gaze_hit_distance_m": 5.127793358488236,
+                "gaze_hit_exit_distance_m": 5.349037104108764,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.9438905438650068,
+                  1.573913850672191,
+                  1.3311724500579738
+                ],
+                "gaze_direction_world_unit": [
+                  -0.963352838127336,
+                  -0.24522941327816702,
+                  0.1086915090301579
+                ],
+                "wearer_world_m": [
+                  0.9391217322815301,
+                  1.574256073902508,
+                  1.402902520602634
+                ],
+                "right_world": [
+                  0.0548918858893106,
+                  -0.011895972586943013,
+                  0.9984214374199534
+                ],
+                "forward_world": [
+                  -0.9891615084153964,
+                  -0.13702895824132688,
+                  0.052750117276405495
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.16772691447423527,
+                  "forward_m": 0.39351560737311775,
+                  "up_m": -0.7775368433368532,
+                  "distance_m": 0.887440360718127
+                }
+              },
+              {
+                "frame": 111,
+                "time_s": 3.699408,
+                "gazed_object_id": "4188893447889258",
+                "gazed_object_name": "ApartmentDynamicDoubleDoorA",
+                "gaze_depth_m": 5.45025,
+                "gaze_hit_distance_m": 5.325764123139471,
+                "gaze_hit_exit_distance_m": 5.55372702245954,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.9278532034244772,
+                  1.5757346668526078,
+                  1.3224974171701338
+                ],
+                "gaze_direction_world_unit": [
+                  -0.9325948297900881,
+                  -0.23714241786411927,
+                  0.2720852019099087
+                ],
+                "wearer_world_m": [
+                  0.925651502691238,
+                  1.576267916710365,
+                  1.39435094776864
+                ],
+                "right_world": [
+                  0.0904755287713469,
+                  -0.009756095702106754,
+                  0.9958508910927362
+                ],
+                "forward_world": [
+                  -0.9872115540271134,
+                  -0.13266646947093225,
+                  0.088390924157912
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1636721711412369,
+                  "forward_m": 0.38405671370511707,
+                  "up_m": -0.779358597876891,
+                  "distance_m": 0.8841311910755633
+                }
+              },
+              {
+                "frame": 112,
+                "time_s": 3.732736,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.4821,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.9114989416141076,
+                  1.5763927740592525,
+                  1.3132744478074447
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8451307686521305,
+                  -0.226259609876018,
+                  0.48431453913362016
+                ],
+                "wearer_world_m": [
+                  0.9116910643286941,
+                  1.5771819450733882,
+                  1.3851590915011642
+                ],
+                "right_world": [
+                  0.12349839745854074,
+                  -0.006828065836270145,
+                  0.9923212803029613
+                ],
+                "forward_world": [
+                  -0.9843766052316485,
+                  -0.12731047403178586,
+                  0.12163363956742018
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1619990056024447,
+                  "forward_m": 0.37418898741003637,
+                  "up_m": -0.7800202164827341,
+                  "distance_m": 0.8801662423865736
+                }
+              },
+              {
+                "frame": 113,
+                "time_s": 3.766064,
+                "gazed_object_id": "4587554268035732",
+                "gazed_object_name": "Mug_2",
+                "gaze_depth_m": 3.26335,
+                "gaze_hit_distance_m": 3.230543396043015,
+                "gaze_hit_exit_distance_m": 3.2699543827971986,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.8949332429213376,
+                  1.5758073256182994,
+                  1.3034052418796183
+                ],
+                "gaze_direction_world_unit": [
+                  -0.8003822799179929,
+                  -0.23884718921971948,
+                  0.5498547319020858
+                ],
+                "wearer_world_m": [
+                  0.8973175121978759,
+                  1.5768748581539789,
+                  1.375246993913531
+                ],
+                "right_world": [
+                  0.1536197041741023,
+                  -0.0035624894840732974,
+                  0.9881236234187186
+                ],
+                "forward_world": [
+                  -0.9807993104010484,
+                  -0.12213246584681876,
+                  0.15204069686437072
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.16284195951084418,
+                  "forward_m": 0.36409205807553113,
+                  "up_m": -0.7794362023117389,
+                  "distance_m": 0.8755577216866706
+                }
+              },
+              {
+                "frame": 114,
+                "time_s": 3.799392,
+                "gazed_object_id": "4587554268035732",
+                "gazed_object_name": "Mug_2",
+                "gaze_depth_m": 3.20426,
+                "gaze_hit_distance_m": 3.2187790519649644,
+                "gaze_hit_exit_distance_m": 3.2576548269598153,
+                "gaze_depth_obb_residual_m": 0.01451905196496428,
+                "gaze_origin_world_m": [
+                  0.8784583727585695,
+                  1.573707640792202,
+                  1.2928309431517093
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7981428139244269,
+                  -0.2340105872948759,
+                  0.5551640240637937
+                ],
+                "wearer_world_m": [
+                  0.883020914900164,
+                  1.574999791339627,
+                  1.364563608355011
+                ],
+                "right_world": [
+                  0.18355375182889905,
+                  -0.0002883319160755654,
+                  0.9830096322286173
+                ],
+                "forward_world": [
+                  -0.9755320404143707,
+                  -0.12316268579058597,
+                  0.18212136325490208
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.16513733334050285,
+                  "forward_m": 0.35461549250039637,
+                  "up_m": -0.777327025606054,
+                  "distance_m": 0.8702067519398284
+                }
+              },
+              {
+                "frame": 115,
+                "time_s": 3.83272,
+                "gazed_object_id": "4587554268035732",
+                "gazed_object_name": "Mug_2",
+                "gaze_depth_m": 3.20044,
+                "gaze_hit_distance_m": 3.2153784398562792,
+                "gaze_hit_exit_distance_m": 3.2399638529807424,
+                "gaze_depth_obb_residual_m": 0.014938439856279295,
+                "gaze_origin_world_m": [
+                  0.8623597660338825,
+                  1.5705338214423197,
+                  1.2816096527424257
+                ],
+                "gaze_direction_world_unit": [
+                  -0.794778642426903,
+                  -0.2282843376515016,
+                  0.5623283477871835
+                ],
+                "wearer_world_m": [
+                  0.8690900951734529,
+                  1.572119386302094,
+                  1.353165577408022
+                ],
+                "right_world": [
+                  0.21335514100076092,
+                  0.004762748077030393,
+                  0.9769631006539093
+                ],
+                "forward_world": [
+                  -0.9684465836954688,
+                  -0.13080835607228397,
+                  0.2121329500814093
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1686815634361364,
+                  "forward_m": 0.34613717284948015,
+                  "up_m": -0.7741449325885129,
+                  "distance_m": 0.8646182908798329
+                }
+              },
+              {
+                "frame": 116,
+                "time_s": 3.866048,
+                "gazed_object_id": "4587554268035732",
+                "gazed_object_name": "Mug_2",
+                "gaze_depth_m": 3.20413,
+                "gaze_hit_distance_m": 3.194722597363101,
+                "gaze_hit_exit_distance_m": 3.2426950912511425,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.8468787712958288,
+                  1.567138835481001,
+                  1.2699115790799662
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7941123449133042,
+                  -0.22613087641223645,
+                  0.5641368720349056
+                ],
+                "wearer_world_m": [
+                  0.8557514040853779,
+                  1.5692056866048216,
+                  1.341221229302175
+                ],
+                "right_world": [
+                  0.24276030589122033,
+                  0.012914507915834053,
+                  0.970000334726176
+                ],
+                "forward_world": [
+                  -0.9597732620894064,
+                  -0.14221692969730676,
+                  0.2420942590928808
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.17324406245106516,
+                  "forward_m": 0.33889509356128694,
+                  "up_m": -0.7707581812748993,
+                  "distance_m": 0.8596112863478774
+                }
+              },
+              {
+                "frame": 117,
+                "time_s": 3.899376,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.44585,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.832094425148512,
+                  1.5647067487310955,
+                  1.258146614535863
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7945618174001212,
+                  -0.22508556926813833,
+                  0.5639219847080397
+                ],
+                "wearer_world_m": [
+                  0.843350363473521,
+                  1.567249792640302,
+                  1.329103633083005
+                ],
+                "right_world": [
+                  0.2752831016483054,
+                  0.020836186904855128,
+                  0.9611373820958975
+                ],
+                "forward_world": [
+                  -0.9492541733961042,
+                  -0.1522889580510678,
+                  0.2751810086939123
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.17709437818539908,
+                  "forward_m": 0.3335641294349725,
+                  "up_m": -0.7683398085201514,
+                  "distance_m": 0.8561387204112235
+                }
+              },
+              {
+                "frame": 118,
+                "time_s": 3.932704,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.22863,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.8179515935469778,
+                  1.5639926384720202,
+                  1.2467976582998002
+                ],
+                "gaze_direction_world_unit": [
+                  -0.7667288041675421,
+                  -0.23784617267121178,
+                  0.5962852832373667
+                ],
+                "wearer_world_m": [
+                  0.8319719527611681,
+                  1.566940799359705,
+                  1.3172447985958078
+                ],
+                "right_world": [
+                  0.3127257673484551,
+                  0.027166300633299625,
+                  0.9494548891581007
+                ],
+                "forward_world": [
+                  -0.9365996857273757,
+                  -0.15752098604198264,
+                  0.31299867036737145
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.17907787021267046,
+                  "forward_m": 0.33036740476827764,
+                  "up_m": -0.7676334495237586,
+                  "distance_m": 0.8546769088731588
+                }
+              },
+              {
+                "frame": 119,
+                "time_s": 3.966032,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 2.39932,
+                "gaze_hit_distance_m": 2.386308471886208,
+                "gaze_hit_exit_distance_m": 3.6006799506889924,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.8042132203298632,
+                  1.5646159064067557,
+                  1.2363467537264947
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6542146520223051,
+                  -0.3992593458381393,
+                  0.6423357096100409
+                ],
+                "wearer_world_m": [
+                  0.8210628945821801,
+                  1.5683119720469132,
+                  1.3061356445141727
+                ],
+                "right_world": [
+                  0.3508180275033367,
+                  0.03782252005091721,
+                  0.9356795223556336
+                ],
+                "forward_world": [
+                  -0.9223352191412055,
+                  -0.15883348614175619,
+                  0.35223524413635954
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1801509281544473,
+                  "forward_m": 0.32815668706783896,
+                  "up_m": -0.7682611279654157,
+                  "distance_m": 0.8546147254318411
+                }
+              },
+              {
+                "frame": 120,
+                "time_s": 3.99936,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.13437,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.7907066271656604,
+                  1.566105462804917,
+                  1.2270340803325612
+                ],
+                "gaze_direction_world_unit": [
+                  -0.478968992164681,
+                  -0.46180625318700963,
+                  0.7465411502804954
+                ],
+                "wearer_world_m": [
+                  0.810274620148828,
+                  1.570897632771633,
+                  1.296042706305122
+                ],
+                "right_world": [
+                  0.38722558246593586,
+                  0.05309820407115594,
+                  0.920454740336718
+                ],
+                "forward_world": [
+                  -0.9068953027063344,
+                  -0.15794620201475718,
+                  0.39063270113790943
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1808654818961209,
+                  "forward_m": 0.3261807233692394,
+                  "up_m": -0.7697475993142104,
+                  "distance_m": 0.8553464523157774
+                }
+              },
+              {
+                "frame": 121,
+                "time_s": 4.032688,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.21047,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.7773439944996513,
+                  1.5680436414356071,
+                  1.2188005717614683
+                ],
+                "gaze_direction_world_unit": [
+                  -0.4558460221609587,
+                  -0.47514273624787573,
+                  0.7526245971737253
+                ],
+                "wearer_world_m": [
+                  0.7996130823380029,
+                  1.5736764719384042,
+                  1.286921204820583
+                ],
+                "right_world": [
+                  0.423203215135066,
+                  0.06484735854901766,
+                  0.9037111589377209
+                ],
+                "forward_world": [
+                  -0.889927044095175,
+                  -0.15749180143752423,
+                  0.42804928298969
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.18088777609853485,
+                  "forward_m": 0.32450987710505075,
+                  "up_m": -0.7716628475763732,
+                  "distance_m": 0.856440656560795
+                }
+              },
+              {
+                "frame": 122,
+                "time_s": 4.066016,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.18161,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.7641130881397759,
+                  1.56975932850088,
+                  1.2118201356768283
+                ],
+                "gaze_direction_world_unit": [
+                  -0.45418467783547145,
+                  -0.4803466454859817,
+                  0.7503221831918964
+                ],
+                "wearer_world_m": [
+                  0.789110627928643,
+                  1.575775160533373,
+                  1.278954288464071
+                ],
+                "right_world": [
+                  0.45933071302448636,
+                  0.07038966913071235,
+                  0.8854719592127615
+                ],
+                "forward_world": [
+                  -0.8711937600163466,
+                  -0.1587986208669641,
+                  0.4645475546371228
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.17987321671416073,
+                  "forward_m": 0.323053754818197,
+                  "up_m": -0.7733740716365375,
+                  "distance_m": 0.8572196668724483
+                }
+              },
+              {
+                "frame": 123,
+                "time_s": 4.099344,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.1449,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.7510459348955137,
+                  1.57052104267913,
+                  1.2064209810101156
+                ],
+                "gaze_direction_world_unit": [
+                  -0.4417000928341069,
+                  -0.48654378985098634,
+                  0.753774613891832
+                ],
+                "wearer_world_m": [
+                  0.77877314540804,
+                  1.5766033954650849,
+                  1.2724684524437841
+                ],
+                "right_world": [
+                  0.49525168334311415,
+                  0.07168575725601149,
+                  0.8657868804460161
+                ],
+                "forward_world": [
+                  -0.8507653399979481,
+                  -0.161709741505646,
+                  0.5000482934280975
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.177616071603329,
+                  "forward_m": 0.3214927293821306,
+                  "up_m": -0.7742105147013493,
+                  "distance_m": 0.856917128438625
+                }
+              },
+              {
+                "frame": 124,
+                "time_s": 4.132672,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.09734,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.7380262200485839,
+                  1.570596082157556,
+                  1.2026023767251968
+                ],
+                "gaze_direction_world_unit": [
+                  -0.432367167124591,
+                  -0.49452686317935163,
+                  0.7539905930359124
+                ],
+                "wearer_world_m": [
+                  0.7683446142264498,
+                  1.576597795735245,
+                  1.267508740893951
+                ],
+                "right_world": [
+                  0.5291456097132198,
+                  0.07119641914035325,
+                  0.8455388776530719
+                ],
+                "forward_world": [
+                  -0.8294220758652728,
+                  -0.1668857962411742,
+                  0.5331117622790654
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.17486820481582338,
+                  "forward_m": 0.31924375780737313,
+                  "up_m": -0.7743662815693264,
+                  "distance_m": 0.855650982577585
+                }
+              },
+              {
+                "frame": 125,
+                "time_s": 4.166,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.07104,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.7248949315416655,
+                  1.5705936709204764,
+                  1.2001904750674468
+                ],
+                "gaze_direction_world_unit": [
+                  -0.42182179317079793,
+                  -0.49902277367860404,
+                  0.756995803262003
+                ],
+                "wearer_world_m": [
+                  0.7575560467662591,
+                  1.576496855539445,
+                  1.2639593206320343
+                ],
+                "right_world": [
+                  0.5596138286520015,
+                  0.07078178329133461,
+                  0.8257253186959614
+                ],
+                "forward_world": [
+                  -0.8080576650855869,
+                  -0.17466988949744192,
+                  0.5626128683201094
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1724621826665209,
+                  "forward_m": 0.31588874879587175,
+                  "up_m": -0.7743534945742969,
+                  "distance_m": 0.8539041167633211
+                }
+              },
+              {
+                "frame": 126,
+                "time_s": 4.199328,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.0688,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.7115776138315238,
+                  1.5706495233616868,
+                  1.1989494861152916
+                ],
+                "gaze_direction_world_unit": [
+                  -0.40559824540297185,
+                  -0.4993740499235495,
+                  0.7655818843134825
+                ],
+                "wearer_world_m": [
+                  0.746520010263236,
+                  1.5763597856103368,
+                  1.2615153197440439
+                ],
+                "right_world": [
+                  0.5890917015125399,
+                  0.06909464930113372,
+                  0.8051067610242846
+                ],
+                "forward_world": [
+                  -0.785882427285885,
+                  -0.18286572954209768,
+                  0.5907189987145176
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1698123881791192,
+                  "forward_m": 0.3119012777635611,
+                  "up_m": -0.7743644795088488,
+                  "distance_m": 0.8519149026602647
+                }
+              },
+              {
+                "frame": 127,
+                "time_s": 4.232656,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.04021,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.6979996119267665,
+                  1.5706712349137604,
+                  1.1987189540826115
+                ],
+                "gaze_direction_world_unit": [
+                  -0.39243035600550197,
+                  -0.504419174901104,
+                  0.7691291904988942
+                ],
+                "wearer_world_m": [
+                  0.735275044910609,
+                  1.5760784319561991,
+                  1.2599510209839608
+                ],
+                "right_world": [
+                  0.6190258410047591,
+                  0.06566062549643285,
+                  0.7826210388353794
+                ],
+                "forward_world": [
+                  -0.76231477236739,
+                  -0.18944714333549112,
+                  0.6188586007421051
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.166590189212525,
+                  "forward_m": 0.30755721815920933,
+                  "up_m": -0.7743712162625033,
+                  "distance_m": 0.8497026033616497
+                }
+              },
+              {
+                "frame": 128,
+                "time_s": 4.265984,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.00519,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.684063075335013,
+                  1.5703277553358066,
+                  1.1995297370689615
+                ],
+                "gaze_direction_world_unit": [
+                  -0.38161140612185196,
+                  -0.5106067795203831,
+                  0.7704890988362687
+                ],
+                "wearer_world_m": [
+                  0.7235289944465451,
+                  1.575577827316001,
+                  1.2593873988499298
+                ],
+                "right_world": [
+                  0.6469362680288939,
+                  0.06401102158547002,
+                  0.7598526529692662
+                ],
+                "forward_world": [
+                  -0.7388414608929823,
+                  -0.19389680838013224,
+                  0.6453815331767108
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1637956312716591,
+                  "forward_m": 0.30222792061685383,
+                  "up_m": -0.7740351711659675,
+                  "distance_m": 0.8469363441404539
+                }
+              },
+              {
+                "frame": 129,
+                "time_s": 4.299312,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.98472,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.6697499856256108,
+                  1.569333031438368,
+                  1.2013835197338563
+                ],
+                "gaze_direction_world_unit": [
+                  -0.36889442881785595,
+                  -0.5139685180799447,
+                  0.7744373846928189
+                ],
+                "wearer_world_m": [
+                  0.7111968788360942,
+                  1.5746400070614368,
+                  1.25988183384576
+                ],
+                "right_world": [
+                  0.6720072442452146,
+                  0.0651488139290516,
+                  0.7376732987750003
+                ],
+                "forward_world": [
+                  -0.71611116650592,
+                  -0.19659650933780434,
+                  0.6697272651771923
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.16183051736013193,
+                  "forward_m": 0.2957073914949578,
+                  "up_m": -0.7730544846340375,
+                  "distance_m": 0.8433535521633839
+                }
+              },
+              {
+                "frame": 130,
+                "time_s": 4.33264,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.96034,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.6551358278353363,
+                  1.567533079679504,
+                  1.2042355893754801
+                ],
+                "gaze_direction_world_unit": [
+                  -0.35088204616634816,
+                  -0.517738255167742,
+                  0.7802748802915411
+                ],
+                "wearer_world_m": [
+                  0.6984881783754828,
+                  1.57289424586034,
+                  1.2613310646850502
+                ],
+                "right_world": [
+                  0.6959571589295439,
+                  0.06622967836314377,
+                  0.7150225609298163
+                ],
+                "forward_world": [
+                  -0.6929592179513975,
+                  -0.19914388680903664,
+                  0.6929280154552688
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.16011846057173806,
+                  "forward_m": 0.2884285075350651,
+                  "up_m": -0.7712623265120047,
+                  "distance_m": 0.8388530870608264
+                }
+              },
+              {
+                "frame": 131,
+                "time_s": 4.365968,
+                "gazed_object_id": "7379153972126671",
+                "gazed_object_name": "WhiteVase",
+                "gaze_depth_m": 0.974838,
+                "gaze_hit_distance_m": 0.9323190988384353,
+                "gaze_hit_exit_distance_m": 1.0583883305959942,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.6404073642453127,
+                  1.5651411140553013,
+                  1.208381712696914
+                ],
+                "gaze_direction_world_unit": [
+                  -0.19041864803270886,
+                  -0.5562477070098152,
+                  0.8089061916734956
+                ],
+                "wearer_world_m": [
+                  0.685652322776792,
+                  1.570539754491854,
+                  1.263985760300677
+                ],
+                "right_world": [
+                  0.7195730630598716,
+                  0.06713256993338064,
+                  0.6911641085681275
+                ],
+                "forward_world": [
+                  -0.6685519802158854,
+                  -0.202141543494829,
+                  0.7156654568602194
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.15807152817925302,
+                  "forward_m": 0.28046973244513557,
+                  "up_m": -0.7688713408674626,
+                  "distance_m": 0.8335544479193306
+                }
+              },
+              {
+                "frame": 132,
+                "time_s": 4.399296,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.08157,
+                "gaze_hit_distance_m": 1.104695036375584,
+                "gaze_hit_exit_distance_m": 2.328431094034743,
+                "gaze_depth_obb_residual_m": 0.023125036375584163,
+                "gaze_origin_world_m": [
+                  0.6258085363472602,
+                  1.5625846015546223,
+                  1.2143193304071758
+                ],
+                "gaze_direction_world_unit": [
+                  -0.0812819528610746,
+                  -0.6000122826461701,
+                  0.7958508056242845
+                ],
+                "wearer_world_m": [
+                  0.672926627055614,
+                  1.5681357307757067,
+                  1.268329812661736
+                ],
+                "right_world": [
+                  0.7427610089672653,
+                  0.06965738345781193,
+                  0.6659233683298265
+                ],
+                "forward_world": [
+                  -0.6426037372728264,
+                  -0.20518555678219846,
+                  0.7382136033228969
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.15525250133007076,
+                  "forward_m": 0.27157148234142064,
+                  "up_m": -0.7663179852881203,
+                  "distance_m": 0.827706266598486
+                }
+              },
+              {
+                "frame": 133,
+                "time_s": 4.432624,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.04143,
+                "gaze_hit_distance_m": 1.0628351460480976,
+                "gaze_hit_exit_distance_m": 2.354703140867969,
+                "gaze_depth_obb_residual_m": 0.021405146048097512,
+                "gaze_origin_world_m": [
+                  0.6113344198491473,
+                  1.559793946843402,
+                  1.2220512583894607
+                ],
+                "gaze_direction_world_unit": [
+                  -0.016986871686305555,
+                  -0.6207701646008357,
+                  0.7838085537500623
+                ],
+                "wearer_world_m": [
+                  0.660262973801115,
+                  1.5655564912657511,
+                  1.2744043995650371
+                ],
+                "right_world": [
+                  0.7649796797181312,
+                  0.0729909553071896,
+                  0.6399050008100343
+                ],
+                "forward_world": [
+                  -0.6158172039717338,
+                  -0.20807297757577642,
+                  0.7599176319149242
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.15198535077132974,
+                  "forward_m": 0.2615132210414417,
+                  "up_m": -0.7635421334041557,
+                  "distance_m": 0.8212705407549472
+                }
+              },
+              {
+                "frame": 134,
+                "time_s": 4.465952,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.02503,
+                "gaze_hit_distance_m": 1.0455457283390366,
+                "gaze_hit_exit_distance_m": 2.3595487998211504,
+                "gaze_depth_obb_residual_m": 0.020515728339036476,
+                "gaze_origin_world_m": [
+                  0.5969157128423426,
+                  1.5566375386743334,
+                  1.2314176245036457
+                ],
+                "gaze_direction_world_unit": [
+                  -0.014734066649241189,
+                  -0.6279321962029895,
+                  0.7781285653744284
+                ],
+                "wearer_world_m": [
+                  0.6475622853921911,
+                  1.562530077009458,
+                  1.2820956708543292
+                ],
+                "right_world": [
+                  0.7858724143569084,
+                  0.07522998079788391,
+                  0.6137955672225032
+                ],
+                "forward_world": [
+                  -0.5889890282494691,
+                  -0.2113481202710173,
+                  0.7800153182211577
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1487088460318196,
+                  "forward_m": 0.2501940720571861,
+                  "up_m": -0.7604117222944632,
+                  "distance_m": 0.8142096670904269
+                }
+              },
+              {
+                "frame": 135,
+                "time_s": 4.49928,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.00237,
+                "gaze_hit_distance_m": 1.0217275455410486,
+                "gaze_hit_exit_distance_m": 2.373628306390633,
+                "gaze_depth_obb_residual_m": 0.019357545541048626,
+                "gaze_origin_world_m": [
+                  0.5826843928700082,
+                  1.5536740615283333,
+                  1.2425221351630635
+                ],
+                "gaze_direction_world_unit": [
+                  0.0003257902541994387,
+                  -0.639539451483805,
+                  0.7687582089685313
+                ],
+                "wearer_world_m": [
+                  0.635019696865373,
+                  1.5594964180519282,
+                  1.2914626891160472
+                ],
+                "right_world": [
+                  0.8062088182907183,
+                  0.07503953895162963,
+                  0.5868529704314455
+                ],
+                "forward_world": [
+                  -0.561079755427391,
+                  -0.21765665916017796,
+                  0.7986332617495775
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.14509641885518856,
+                  "forward_m": 0.23771893029544677,
+                  "up_m": -0.7574440225241692,
+                  "distance_m": 0.8070221235152144
+                }
+              },
+              {
+                "frame": 136,
+                "time_s": 4.532608,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.996636,
+                "gaze_hit_distance_m": 1.0156770337764771,
+                "gaze_hit_exit_distance_m": 2.361493984533301,
+                "gaze_depth_obb_residual_m": 0.019041033776477145,
+                "gaze_origin_world_m": [
+                  0.5688840397992084,
+                  1.5513348188345308,
+                  1.2551656719315658
+                ],
+                "gaze_direction_world_unit": [
+                  0.010655467390601206,
+                  -0.6410952059940667,
+                  0.7673873844845984
+                ],
+                "wearer_world_m": [
+                  0.622932143003631,
+                  1.556854061980741,
+                  1.302244352840201
+                ],
+                "right_world": [
+                  0.8266122204231625,
+                  0.07207095414067795,
+                  0.5581379888668586
+                ],
+                "forward_world": [
+                  -0.5311483846316095,
+                  -0.22786327779359322,
+                  0.8160635515303888
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.14094920579885964,
+                  "forward_m": 0.2244841600270559,
+                  "up_m": -0.7550563745953828,
+                  "distance_m": 0.8002311825563317
+                }
+              },
+              {
+                "frame": 137,
+                "time_s": 4.565936,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.978932,
+                "gaze_hit_distance_m": 0.9968805811869463,
+                "gaze_hit_exit_distance_m": 2.370567351538562,
+                "gaze_depth_obb_residual_m": 0.01794858118694631,
+                "gaze_origin_world_m": [
+                  0.5559200829304904,
+                  1.5493509763022635,
+                  1.2683097525883515
+                ],
+                "gaze_direction_world_unit": [
+                  0.016532158029284108,
+                  -0.6511101548014506,
+                  0.758803172150279
+                ],
+                "wearer_world_m": [
+                  0.611695148299391,
+                  1.554459677553875,
+                  1.313377534379967
+                ],
+                "right_world": [
+                  0.8469448442241639,
+                  0.06753744090065829,
+                  0.5273737999926594
+                ],
+                "forward_world": [
+                  -0.49972048228136856,
+                  -0.23759884765161948,
+                  0.8329623203861618
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1366055405971851,
+                  "forward_m": 0.2115242128396518,
+                  "up_m": -0.7530512998648925,
+                  "distance_m": 0.7940338950998802
+                }
+              },
+              {
+                "frame": 138,
+                "time_s": 4.599264,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.11991,
+                "gaze_hit_distance_m": 1.1215329020586846,
+                "gaze_hit_exit_distance_m": 1.1563012796352616,
+                "gaze_depth_obb_residual_m": 0.0016229020586846499,
+                "gaze_origin_world_m": [
+                  0.5440874607651465,
+                  1.5477271220461264,
+                  1.2809320022557618
+                ],
+                "gaze_direction_world_unit": [
+                  0.020384410519540846,
+                  -0.5624089474819096,
+                  0.8266079189071812
+                ],
+                "wearer_world_m": [
+                  0.601581563904859,
+                  1.5523980256069432,
+                  1.3238350611803378
+                ],
+                "right_world": [
+                  0.8669204912237288,
+                  0.062293235081469805,
+                  0.4945385877355717
+                ],
+                "forward_world": [
+                  -0.4671069618155952,
+                  -0.24472477226112477,
+                  0.8496592682158799
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.13238861701406598,
+                  "forward_m": 0.1997988156678312,
+                  "up_m": -0.7514526702643888,
+                  "distance_m": 0.7887505488458599
+                }
+              },
+              {
+                "frame": 139,
+                "time_s": 4.632592,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.21214,
+                "gaze_hit_distance_m": 1.2299054734378394,
+                "gaze_hit_exit_distance_m": 1.2715781660722278,
+                "gaze_depth_obb_residual_m": 0.017765473437839407,
+                "gaze_origin_world_m": [
+                  0.5334441765309563,
+                  1.546969514377943,
+                  1.2922238890079858
+                ],
+                "gaze_direction_world_unit": [
+                  -0.0060935398650746875,
+                  -0.4427232736767847,
+                  0.8966375921836109
+                ],
+                "wearer_world_m": [
+                  0.592620597170609,
+                  1.5511958649871767,
+                  1.332823776961116
+                ],
+                "right_world": [
+                  0.886164658647229,
+                  0.056830865886533855,
+                  0.4598722109969543
+                ],
+                "forward_world": [
+                  -0.4331643763365026,
+                  -0.25086100196831057,
+                  0.8657005144762615
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.128599818634718,
+                  "forward_m": 0.18997175646095676,
+                  "up_m": -0.7507044984736797,
+                  "distance_m": 0.784974156029587
+                }
+              },
+              {
+                "frame": 140,
+                "time_s": 4.66592,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.20346,
+                "gaze_hit_distance_m": 1.226553398575576,
+                "gaze_hit_exit_distance_m": 1.2608499948898884,
+                "gaze_depth_obb_residual_m": 0.02309339857557613,
+                "gaze_origin_world_m": [
+                  0.52338413987313,
+                  1.5475463962100686,
+                  1.3019759128540995
+                ],
+                "gaze_direction_world_unit": [
+                  0.0027460214082957735,
+                  -0.4444862457653038,
+                  0.8957814670397523
+                ],
+                "wearer_world_m": [
+                  0.584110471280794,
+                  1.551362879571322,
+                  1.34026179575524
+                ],
+                "right_world": [
+                  0.9035854032496718,
+                  0.05151232904121569,
+                  0.4252997754418383
+                ],
+                "forward_world": [
+                  -0.39996105002475885,
+                  -0.25428740764491753,
+                  0.8805504373835266
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.12608700903554348,
+                  "forward_m": 0.18170530013177896,
+                  "up_m": -0.7512662918885366,
+                  "distance_m": 0.7831448086219182
+                }
+              },
+              {
+                "frame": 141,
+                "time_s": 4.699248,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.21088,
+                "gaze_hit_distance_m": 1.2327430251605946,
+                "gaze_hit_exit_distance_m": 1.2519510819539748,
+                "gaze_depth_obb_residual_m": 0.021863025160594685,
+                "gaze_origin_world_m": [
+                  0.5128787790572895,
+                  1.5497414370031557,
+                  1.3104425667242257
+                ],
+                "gaze_direction_world_unit": [
+                  0.010751712458814844,
+                  -0.4442178613339067,
+                  0.895854280757274
+                ],
+                "wearer_world_m": [
+                  0.57491497266586,
+                  1.553232444440226,
+                  1.346600349436033
+                ],
+                "right_world": [
+                  0.9180486038419158,
+                  0.046540422164179085,
+                  0.3937267454576706
+                ],
+                "forward_world": [
+                  -0.3707419045072067,
+                  -0.25112725691377835,
+                  0.8941395534687694
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1260097410069288,
+                  "forward_m": 0.1740607898278485,
+                  "up_m": -0.7534554388292497,
+                  "distance_m": 0.7834990183053869
+                }
+              },
+              {
+                "frame": 142,
+                "time_s": 4.732576,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.19359,
+                "gaze_hit_distance_m": 1.2182961240892798,
+                "gaze_hit_exit_distance_m": 1.2473326734312011,
+                "gaze_depth_obb_residual_m": 0.024706124089279857,
+                "gaze_origin_world_m": [
+                  0.5014737265659264,
+                  1.552896481740674,
+                  1.3178662143424267
+                ],
+                "gaze_direction_world_unit": [
+                  0.02148285298355218,
+                  -0.4519511806532486,
+                  0.8917839521620814
+                ],
+                "wearer_world_m": [
+                  0.564638846464865,
+                  1.5562380967575469,
+                  1.3520285172248692
+                ],
+                "right_world": [
+                  0.9302689551345877,
+                  0.043371287960915245,
+                  0.36430564433373036
+                ],
+                "forward_world": [
+                  -0.3439152834510839,
+                  -0.24269597653579364,
+                  0.9070947804844309
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1283094625063478,
+                  "forward_m": 0.16692212895679406,
+                  "up_m": -0.7566150097362064,
+                  "distance_m": 0.785361437977608
+                }
+              },
+              {
+                "frame": 143,
+                "time_s": 4.765904,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.18987,
+                "gaze_hit_distance_m": 1.2034718080341913,
+                "gaze_hit_exit_distance_m": 1.2486309262463962,
+                "gaze_depth_obb_residual_m": 0.01360180803419131,
+                "gaze_origin_world_m": [
+                  0.48904717370361045,
+                  1.556045071740655,
+                  1.3244741413950942
+                ],
+                "gaze_direction_world_unit": [
+                  0.029107529177655134,
+                  -0.45996294492402867,
+                  0.887460895500183
+                ],
+                "wearer_world_m": [
+                  0.55324943733057,
+                  1.5594996716818312,
+                  1.35663307149889
+                ],
+                "right_world": [
+                  0.9412306702961131,
+                  0.04363707086175023,
+                  0.3349337715736302
+                ],
+                "forward_world": [
+                  -0.31650659795998276,
+                  -0.2322859714066351,
+                  0.9197101722474714
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1325068425157252,
+                  "forward_m": 0.16047043530683222,
+                  "up_m": -0.7597673964674666,
+                  "distance_m": 0.7877533374451701
+                }
+              },
+              {
+                "frame": 144,
+                "time_s": 4.799232,
+                "gazed_object_id": "4860206504015397",
+                "gazed_object_name": "CakeMocha_A",
+                "gaze_depth_m": 1.2217,
+                "gaze_hit_distance_m": 1.238045635986308,
+                "gaze_hit_exit_distance_m": 1.26659041878364,
+                "gaze_depth_obb_residual_m": 0.016345635986307894,
+                "gaze_origin_world_m": [
+                  0.4757624542682122,
+                  1.5587337644993176,
+                  1.3304923526977679
+                ],
+                "gaze_direction_world_unit": [
+                  0.013197082641117963,
+                  -0.4496829167860186,
+                  0.8930907632265502
+                ],
+                "wearer_world_m": [
+                  0.540890547270969,
+                  1.562467555274286,
+                  1.360699173273145
+                ],
+                "right_world": [
+                  0.9507612666148267,
+                  0.04619154962830002,
+                  0.3064626480468816
+                ],
+                "forward_world": [
+                  -0.28940530570599565,
+                  -0.22149393422189279,
+                  0.9312276875888768
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.13842686645365565,
+                  "forward_m": 0.15457366162667094,
+                  "up_m": -0.7624609828212345,
+                  "distance_m": 0.7901909671399552
+                }
+              },
+              {
+                "frame": 145,
+                "time_s": 4.83256,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.66847,
+                "gaze_hit_distance_m": 1.5102356570460302,
+                "gaze_hit_exit_distance_m": 1.7375068467779686,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  0.4618231398582482,
+                  1.5606367722751961,
+                  1.3360520985604432
+                ],
+                "gaze_direction_world_unit": [
+                  -0.02936645663534443,
+                  -0.38797756329215594,
+                  0.9212008584486693
+                ],
+                "wearer_world_m": [
+                  0.527755524147391,
+                  1.5646824456319266,
+                  1.364417833700563
+                ],
+                "right_world": [
+                  0.9588104762440045,
+                  0.049317953695582464,
+                  0.27973239013032836
+                ],
+                "forward_world": [
+                  -0.2636892900782569,
+                  -0.21156447997817956,
+                  0.9411208366142932
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.14587532361873295,
+                  "forward_m": 0.14914397070192909,
+                  "up_m": -0.7643703061770094,
+                  "distance_m": 0.7923291607676338
+                }
+              },
+              {
+                "frame": 146,
+                "time_s": 4.865888,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.431,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.4473578676007188,
+                  1.5614236990522414,
+                  1.3410704565182814
+                ],
+                "gaze_direction_world_unit": [
+                  -0.021095123787050196,
+                  -0.39916036746947436,
+                  0.9166384220585798
+                ],
+                "wearer_world_m": [
+                  0.5140224422906811,
+                  1.565698696438834,
+                  1.367633976235199
+                ],
+                "right_world": [
+                  0.9659203819632386,
+                  0.05154449188632919,
+                  0.25365524056122307
+                ],
+                "forward_world": [
+                  -0.23848756655395809,
+                  -0.2036687368091482,
+                  0.9495486960897462
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.15449803069501583,
+                  "forward_m": 0.1445092093948763,
+                  "up_m": -0.7651545171056389,
+                  "distance_m": 0.7938601817295875
+                }
+              },
+              {
+                "frame": 147,
+                "time_s": 4.899216,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.42714,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.4323872273047181,
+                  1.561147423718006,
+                  1.3454300511415427
+                ],
+                "gaze_direction_world_unit": [
+                  -0.011130232898449721,
+                  -0.39989975426812296,
+                  0.916491300805371
+                ],
+                "wearer_world_m": [
+                  0.499740357957701,
+                  1.5654958139592658,
+                  1.370183010450521
+                ],
+                "right_world": [
+                  0.9723874872540348,
+                  0.051909881975337954,
+                  0.22752568818727054
+                ],
+                "forward_world": [
+                  -0.21325262944598028,
+                  -0.19837118394056125,
+                  0.9566463241012299
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.16412934474480323,
+                  "forward_m": 0.14096119268001656,
+                  "up_m": -0.7648711726117633,
+                  "distance_m": 0.7948813813020311
+                }
+              },
+              {
+                "frame": 148,
+                "time_s": 4.932544,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.42601,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.41680289265088066,
+                  1.5603694658182221,
+                  1.3490079321136865
+                ],
+                "gaze_direction_world_unit": [
+                  -0.0023769511726694503,
+                  -0.399481534397232,
+                  0.9167381598792295
+                ],
+                "wearer_world_m": [
+                  0.4847981405075639,
+                  1.5646208366255938,
+                  1.371956435685084
+                ],
+                "right_world": [
+                  0.9781927198098301,
+                  0.0501660359089732,
+                  0.2015499237217101
+                ],
+                "forward_world": [
+                  -0.1882977478373265,
+                  -0.19532668296126598,
+                  0.9624923091031634
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.17485911247734398,
+                  "forward_m": 0.1386405853934011,
+                  "up_m": -0.7641067748134933,
+                  "distance_m": 0.79602517827671
+                }
+              },
+              {
+                "frame": 149,
+                "time_s": 4.965872,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.42602,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.40048346538278484,
+                  1.5595713923792809,
+                  1.351706981979479
+                ],
+                "gaze_direction_world_unit": [
+                  0.006902479166981501,
+                  -0.40199915162595334,
+                  0.9156140223223774
+                ],
+                "wearer_world_m": [
+                  0.46905739827784704,
+                  1.5636726540026569,
+                  1.372893229438624
+                ],
+                "right_world": [
+                  0.9831818298950951,
+                  0.04782243598240983,
+                  0.17625692605069782
+                ],
+                "forward_world": [
+                  -0.16400206905346087,
+                  -0.1934407776370943,
+                  0.9673075968342955
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.18682388601767738,
+                  "forward_m": 0.13757517112527323,
+                  "up_m": -0.763338316941033,
+                  "distance_m": 0.7978192014531008
+                }
+              },
+              {
+                "frame": 150,
+                "time_s": 4.9992,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.5862,
+                "gaze_hit_distance_m": 1.6187263737063982,
+                "gaze_hit_exit_distance_m": 1.7507173962006257,
+                "gaze_depth_obb_residual_m": 0.032526373706398104,
+                "gaze_origin_world_m": [
+                  0.3833218490587523,
+                  1.5591000183578263,
+                  1.3534634928844413
+                ],
+                "gaze_direction_world_unit": [
+                  0.05491054584193972,
+                  -0.33963545097791176,
+                  0.9389529234175538
+                ],
+                "wearer_world_m": [
+                  0.452389390963814,
+                  1.5631841401610769,
+                  1.3729841564307648
+                ],
+                "right_world": [
+                  0.987180526772302,
+                  0.04730029846213295,
+                  0.15243782118278248
+                ],
+                "forward_world": [
+                  -0.14083949034939935,
+                  -0.19119229469130788,
+                  0.9713957712532999
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.2001705787779284,
+                  "forward_m": 0.13767972045929594,
+                  "up_m": -0.762887913742017,
+                  "distance_m": 0.8006384545896406
+                }
+              },
+              {
+                "frame": 151,
+                "time_s": 5.032528,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.6025,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.3653172019584817,
+                  1.5589818149103707,
+                  1.3543463721012032
+                ],
+                "gaze_direction_world_unit": [
+                  0.07083883094149424,
+                  -0.3363912079600533,
+                  0.9390542131517319
+                ],
+                "wearer_world_m": [
+                  0.434784657144336,
+                  1.563124211088604,
+                  1.372378979369812
+                ],
+                "right_world": [
+                  0.990200114764226,
+                  0.0477758298121682,
+                  0.13122958053226053
+                ],
+                "forward_world": [
+                  -0.12008434422223979,
+                  -0.18845482847790396,
+                  0.9747125360310487
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.21494197828948183,
+                  "forward_m": 0.13868389005600332,
+                  "up_m": -0.7627912023943391,
+                  "distance_m": 0.8045394296380155
+                }
+              },
+              {
+                "frame": 152,
+                "time_s": 5.065856,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.60329,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.34655615023763314,
+                  1.5591140396908356,
+                  1.3545233713018836
+                ],
+                "gaze_direction_world_unit": [
+                  0.08286700609584713,
+                  -0.3370997672445871,
+                  0.9378149104297476
+                ],
+                "wearer_world_m": [
+                  0.41633425435463006,
+                  1.563250583567022,
+                  1.371315241108368
+                ],
+                "right_world": [
+                  0.9923980051967294,
+                  0.047355311452799004,
+                  0.11359433858586859
+                ],
+                "forward_world": [
+                  -0.10298944193744297,
+                  -0.1857484622338375,
+                  0.9771850815619212
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.2310735419084509,
+                  "forward_m": 0.1401917100694307,
+                  "up_m": -0.7629576727386161,
+                  "distance_m": 0.8094152875582676
+                }
+              },
+              {
+                "frame": 153,
+                "time_s": 5.099184,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.59866,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.3272909711616331,
+                  1.5594622576118358,
+                  1.3543074302152913
+                ],
+                "gaze_direction_world_unit": [
+                  0.09176953216143402,
+                  -0.3362613474340489,
+                  0.9372868606721794
+                ],
+                "wearer_world_m": [
+                  0.397312177301785,
+                  1.5635096284720549,
+                  1.370078009811432
+                ],
+                "right_world": [
+                  0.9940228426330144,
+                  0.04577634989513078,
+                  0.09911162451529298
+                ],
+                "forward_world": [
+                  -0.08918384486240738,
+                  -0.18312927106974103,
+                  0.979035194409794
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.24819211220948226,
+                  "forward_m": 0.14188130540035154,
+                  "up_m": -0.7633118544168169,
+                  "distance_m": 0.8150917840822295
+                }
+              },
+              {
+                "frame": 154,
+                "time_s": 5.132512,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.59587,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.3078906162636502,
+                  1.5600374995496669,
+                  1.3541181852578978
+                ],
+                "gaze_direction_world_unit": [
+                  0.1025490847352985,
+                  -0.3372722890263799,
+                  0.9358050482204392
+                ],
+                "wearer_world_m": [
+                  0.37809610501472996,
+                  1.56399655002478,
+                  1.3690706756711208
+                ],
+                "right_world": [
+                  0.995181224322415,
+                  0.04417117913425957,
+                  0.08753992055073667
+                ],
+                "forward_world": [
+                  -0.07825132291807102,
+                  -0.18020148192156527,
+                  0.9805121908343841
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.26585866888013154,
+                  "forward_m": 0.1432766895777292,
+                  "up_m": -0.7638375260885583,
+                  "distance_m": 0.8213749496156779
+                }
+              },
+              {
+                "frame": 155,
+                "time_s": 5.16584,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.62051,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.2888904359448967,
+                  1.5609142313234685,
+                  1.3545274737762945
+                ],
+                "gaze_direction_world_unit": [
+                  0.12173266166889796,
+                  -0.33570582415676886,
+                  0.9340678555170548
+                ],
+                "wearer_world_m": [
+                  0.359201567930585,
+                  1.565029876786387,
+                  1.368931219202908
+                ],
+                "right_world": [
+                  0.995755096140039,
+                  0.04583242338288887,
+                  0.07981965596263979
+                ],
+                "forward_world": [
+                  -0.07061073647056476,
+                  -0.17589649619258502,
+                  0.9818729788125632
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.28363964911733464,
+                  "forward_m": 0.143436931742156,
+                  "up_m": -0.7646453229456096,
+                  "distance_m": 0.8280749204278586
+                }
+              },
+              {
+                "frame": 156,
+                "time_s": 5.199168,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.62016,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.2706524474201254,
+                  1.562155762385239,
+                  1.3559185467251995
+                ],
+                "gaze_direction_world_unit": [
+                  0.13155329013544081,
+                  -0.3350527957157143,
+                  0.932970179554322
+                ],
+                "wearer_world_m": [
+                  0.34102055836153,
+                  1.566625221084627,
+                  1.369933346134133
+                ],
+                "right_world": [
+                  0.9959678294958413,
+                  0.0501505042843179,
+                  0.07438420214919239
+                ],
+                "forward_world": [
+                  -0.06483515128951833,
+                  -0.17068749431471925,
+                  0.9831897998056265
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.30093240719415476,
+                  "forward_m": 0.1422649442252086,
+                  "up_m": -0.7658337881038423,
+                  "distance_m": 0.8350455191524299
+                }
+              },
+              {
+                "frame": 157,
+                "time_s": 5.232496,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.62189,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.2532674461479435,
+                  1.5637833881969871,
+                  1.3584059192153668
+                ],
+                "gaze_direction_world_unit": [
+                  0.1434804081361996,
+                  -0.3367900468182392,
+                  0.9305836001376973
+                ],
+                "wearer_world_m": [
+                  0.32373986676682,
+                  1.568356520882785,
+                  1.3718515910302758
+                ],
+                "right_world": [
+                  0.9964817965133207,
+                  0.05116135969046698,
+                  0.06638180844333419
+                ],
+                "forward_world": [
+                  -0.05698966397173011,
+                  -0.16711320240406843,
+                  0.9842892642829374
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.316957283344964,
+                  "forward_m": 0.14105723287926583,
+                  "up_m": -0.7674442756855684,
+                  "distance_m": 0.8422171802424372
+                }
+              },
+              {
+                "frame": 158,
+                "time_s": 5.265824,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.6129,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.23672134998156996,
+                  1.5656434821873755,
+                  1.3622463295144263
+                ],
+                "gaze_direction_world_unit": [
+                  0.15133389085402388,
+                  -0.337791381915755,
+                  0.9289752611250884
+                ],
+                "wearer_world_m": [
+                  0.307364447522009,
+                  1.5699823536986908,
+                  1.37484746695913
+                ],
+                "right_world": [
+                  0.9973802307844297,
+                  0.047590342507751945,
+                  0.054477835313023304
+                ],
+                "forward_world": [
+                  -0.04594973483942266,
+                  -0.16484186583430727,
+                  0.9852490959835745
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.3315630038989178,
+                  "forward_m": 0.14010179417586488,
+                  "up_m": -0.7693120166915985,
+                  "distance_m": 0.8493547652847218
+                }
+              },
+              {
+                "frame": 159,
+                "time_s": 5.299152,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.64526,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.22089197751949832,
+                  1.567430750393029,
+                  1.3677902490939742
+                ],
+                "gaze_direction_world_unit": [
+                  0.1577735256836741,
+                  -0.3242271874910588,
+                  0.9327294599641317
+                ],
+                "wearer_world_m": [
+                  0.291729738922683,
+                  1.571404095448032,
+                  1.379378423646481
+                ],
+                "right_world": [
+                  0.9983055311800981,
+                  0.04203963049355766,
+                  0.04023351691299232
+                ],
+                "forward_world": [
+                  -0.03295163078892527,
+                  -0.16145937717345205,
+                  0.9863290827868308
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.34513511619373133,
+                  "forward_m": 0.13864837643224442,
+                  "up_m": -0.7711012550133093,
+                  "distance_m": 0.8561184300086399
+                }
+              },
+              {
+                "frame": 160,
+                "time_s": 5.33248,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.65494,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.205341948977475,
+                  1.5687000963026536,
+                  1.3751304440224998
+                ],
+                "gaze_direction_world_unit": [
+                  0.17117775493818904,
+                  -0.3311768991947247,
+                  0.9279116540135102
+                ],
+                "wearer_world_m": [
+                  0.276371574514948,
+                  1.5722884340498833,
+                  1.385617475500386
+                ],
+                "right_world": [
+                  0.9990393079198725,
+                  0.03614045947069432,
+                  0.02478564948169537
+                ],
+                "forward_world": [
+                  -0.01879943141246876,
+                  -0.157459358861975,
+                  0.987346510443696
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.35832662231713736,
+                  "forward_m": 0.13624815606407234,
+                  "up_m": -0.7723722845305386,
+                  "distance_m": 0.8622763328556523
+                }
+              },
+              {
+                "frame": 161,
+                "time_s": 5.365808,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.65698,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.18960751742190307,
+                  1.5689995471394054,
+                  1.384247233771983
+                ],
+                "gaze_direction_world_unit": [
+                  0.18159623514616752,
+                  -0.33475269226592347,
+                  0.9246423321487361
+                ],
+                "wearer_world_m": [
+                  0.260811153867896,
+                  1.572259217396203,
+                  1.393600223009859
+                ],
+                "right_world": [
+                  0.9994752702865787,
+                  0.03114562425352657,
+                  0.008895739172715245
+                ],
+                "forward_world": [
+                  -0.003983324708096758,
+                  -0.15436541821373914,
+                  0.9880057949141632
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.3717704856212745,
+                  "forward_m": 0.1326657608793494,
+                  "up_m": -0.7726876538370878,
+                  "distance_m": 0.8676748863952662
+                }
+              },
+              {
+                "frame": 162,
+                "time_s": 5.399136,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.65771,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.17372578815296452,
+                  1.5681169887710351,
+                  1.3951611134331725
+                ],
+                "gaze_direction_world_unit": [
+                  0.19330328301038163,
+                  -0.33661735321162023,
+                  0.9215869998509154
+                ],
+                "wearer_world_m": [
+                  0.245078155439856,
+                  1.571212977823676,
+                  1.403365760612818
+                ],
+                "right_world": [
+                  0.999565561069971,
+                  0.028586710740426485,
+                  -0.007175590004861454
+                ],
+                "forward_world": [
+                  0.011448594259750144,
+                  -0.1522439075109338,
+                  0.9882766426033136
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.38555111929379204,
+                  "forward_m": 0.12780972695027096,
+                  "up_m": -0.7718174090749957,
+                  "distance_m": 0.872173781332045
+                }
+              },
+              {
+                "frame": 163,
+                "time_s": 5.432464,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.47467,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.1578072687747776,
+                  1.5660946272981517,
+                  1.4078792019780328
+                ],
+                "gaze_direction_world_unit": [
+                  0.20483178802166735,
+                  -0.337233309914837,
+                  0.918867582026774
+                ],
+                "wearer_world_m": [
+                  0.22927881680445802,
+                  1.5692392187899082,
+                  1.414949638144993
+                ],
+                "right_world": [
+                  0.9993124605722665,
+                  0.029060176503060475,
+                  -0.02302416744670105
+                ],
+                "forward_world": [
+                  0.027147078557891224,
+                  -0.1505594164422427,
+                  0.9882281610267656
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.3996906966085801,
+                  "forward_m": 0.12153993723860684,
+                  "up_m": -0.769792448468154,
+                  "distance_m": 0.8758453191163449
+                }
+              },
+              {
+                "frame": 164,
+                "time_s": 5.465792,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.47345,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.1418411311480609,
+                  1.563415461581913,
+                  1.4223522186905775
+                ],
+                "gaze_direction_world_unit": [
+                  0.2174792964528865,
+                  -0.33677954119194864,
+                  0.9161235158257308
+                ],
+                "wearer_world_m": [
+                  0.21340170772435102,
+                  1.5667109262215348,
+                  1.42837596286492
+                ],
+                "right_world": [
+                  0.998814337288033,
+                  0.030904989973086452,
+                  -0.03761384349719499
+                ],
+                "forward_world": [
+                  0.04179898735207088,
+                  -0.14836070456453415,
+                  0.9880495665691353
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.4143687914162603,
+                  "forward_m": 0.1135057985250831,
+                  "up_m": -0.7671181401622723,
+                  "distance_m": 0.8792356354041917
+                }
+              },
+              {
+                "frame": 165,
+                "time_s": 5.49912,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.4329,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.1260240731978079,
+                  1.560427083031605,
+                  1.4384090520004733
+                ],
+                "gaze_direction_world_unit": [
+                  0.22881300261464677,
+                  -0.3392397233298733,
+                  0.91244781765838
+                ],
+                "wearer_world_m": [
+                  0.197641666383375,
+                  1.563955457934835,
+                  1.443560034222232
+                ],
+                "right_world": [
+                  0.9981856657233823,
+                  0.0339073434615428,
+                  -0.04975609313189111
+                ],
+                "forward_world": [
+                  0.05420344555380324,
+                  -0.14621219529419346,
+                  0.9877671691432898
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.4295392695557043,
+                  "forward_m": 0.10331059668009268,
+                  "up_m": -0.7641273665247542,
+                  "distance_m": 0.8826481154734886
+                }
+              },
+              {
+                "frame": 166,
+                "time_s": 5.532448,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.3742,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.11084181517116928,
+                  1.5572373544710658,
+                  1.455743436559967
+                ],
+                "gaze_direction_world_unit": [
+                  0.24137266253745776,
+                  -0.3430864304538916,
+                  0.9077614989731527
+                ],
+                "wearer_world_m": [
+                  0.182478356264477,
+                  1.561197128974354,
+                  1.4602808220483232
+                ],
+                "right_world": [
+                  0.9974966062214667,
+                  0.03999935191360922,
+                  -0.05831442722987129
+                ],
+                "forward_world": [
+                  0.06358574385614624,
+                  -0.14652236587853018,
+                  0.9871616126428431
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.4448051887868956,
+                  "forward_m": 0.09057440565793512,
+                  "up_m": -0.7608625505858778,
+                  "distance_m": 0.8859837469254622
+                }
+              },
+              {
+                "frame": 167,
+                "time_s": 5.565776,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.3593,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.0966958736400579,
+                  1.554381948109837,
+                  1.474299738821256
+                ],
+                "gaze_direction_world_unit": [
+                  0.25240067632025603,
+                  -0.34346455749922,
+                  0.9046137276953862
+                ],
+                "wearer_world_m": [
+                  0.16833082118246398,
+                  1.558808733750079,
+                  1.478410646323509
+                ],
+                "right_world": [
+                  0.9968327436553304,
+                  0.04681193200994102,
+                  -0.06428937857907274
+                ],
+                "forward_world": [
+                  0.07059350856497837,
+                  -0.14860716363932547,
+                  0.9863733915022045
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.45958638572939337,
+                  "forward_m": 0.07560817663138437,
+                  "up_m": -0.7578807539263899,
+                  "distance_m": 0.8895613972589876
+                }
+              },
+              {
+                "frame": 168,
+                "time_s": 5.599104,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.57319,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.08383828379973499,
+                  1.5527043395493272,
+                  1.4941847648995672
+                ],
+                "gaze_direction_world_unit": [
+                  0.25889285709890053,
+                  -0.3461272599399334,
+                  0.9017596178969436
+                ],
+                "wearer_world_m": [
+                  0.155487505505547,
+                  1.5572739276651761,
+                  1.4978684579382031
+                ],
+                "right_world": [
+                  0.9963278164651799,
+                  0.04894692668223333,
+                  -0.07025012815711867
+                ],
+                "forward_world": [
+                  0.07685643941808529,
+                  -0.14966093707332576,
+                  0.9857457540534009
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.4733806377890666,
+                  "forward_m": 0.05939858415810384,
+                  "up_m": -0.7561115123765526,
+                  "distance_m": 0.8940481190528441
+                }
+              },
+              {
+                "frame": 169,
+                "time_s": 5.632432,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.24313,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.071991563294907,
+                  1.5527202857192512,
+                  1.5151505735188358
+                ],
+                "gaze_direction_world_unit": [
+                  0.2740632921945196,
+                  -0.352876821141745,
+                  0.894632472567589
+                ],
+                "wearer_world_m": [
+                  0.14368079984347001,
+                  1.5570357342535281,
+                  1.5183273593208981
+                ],
+                "right_world": [
+                  0.9959727484152271,
+                  0.045425221948425965,
+                  -0.07729704797180398
+                ],
+                "forward_world": [
+                  0.08330107248333407,
+                  -0.15003098328682452,
+                  0.9851657908073721
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.486413460366282,
+                  "forward_m": 0.04273698925566401,
+                  "up_m": -0.7560981200913346,
+                  "distance_m": 0.9000604823464863
+                }
+              },
+              {
+                "frame": 170,
+                "time_s": 5.66576,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.20847,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.06064968823627406,
+                  1.5544202574234367,
+                  1.5367520308638736
+                ],
+                "gaze_direction_world_unit": [
+                  0.2848279173883731,
+                  -0.35648103912584284,
+                  0.8898282565866072
+                ],
+                "wearer_world_m": [
+                  0.132394244203366,
+                  1.558178399918068,
+                  1.5393320996759132
+                ],
+                "right_world": [
+                  0.9956158040113634,
+                  0.03773391079164916,
+                  -0.085588099518417
+                ],
+                "forward_world": [
+                  0.09034862714643643,
+                  -0.15108494855008173,
+                  0.9843832911495265
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.49921722221954057,
+                  "forward_m": 0.026217466881940522,
+                  "up_m": -0.7578213256052622,
+                  "distance_m": 0.9078537063163957
+                }
+              },
+              {
+                "frame": 171,
+                "time_s": 5.699088,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.15838,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.04936978475408353,
+                  1.5562421691269968,
+                  1.558434386449109
+                ],
+                "gaze_direction_world_unit": [
+                  0.29843671702701174,
+                  -0.36155664051506065,
+                  0.8832962819063612
+                ],
+                "wearer_world_m": [
+                  0.12116540634313,
+                  1.559351662423266,
+                  1.560378987457775
+                ],
+                "right_world": [
+                  0.9951173554124274,
+                  0.028787718474129656,
+                  -0.09440718310611473
+                ],
+                "forward_world": [
+                  0.097710733366486,
+                  -0.15233733685030681,
+                  0.9834866284735849
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.5122588093888312,
+                  "forward_m": 0.01010936861003034,
+                  "up_m": -0.7596714315507038,
+                  "distance_m": 0.9163034273887946
+                }
+              },
+              {
+                "frame": 172,
+                "time_s": 5.732416,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.13748,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.03779371589400417,
+                  1.5570059188469654,
+                  1.5797045805658871
+                ],
+                "gaze_direction_world_unit": [
+                  0.312073119315716,
+                  -0.3637246486489758,
+                  0.8776757648276143
+                ],
+                "wearer_world_m": [
+                  0.10962533660008099,
+                  1.559581196379565,
+                  1.5809882913465552
+                ],
+                "right_world": [
+                  0.9943874118502085,
+                  0.021554558207488875,
+                  -0.10358125397157492
+                ],
+                "forward_world": [
+                  0.10567345028714609,
+                  -0.15444106102970717,
+                  0.9823345054371388
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.5258681499502927,
+                  "forward_m": -0.005130596272864732,
+                  "up_m": -0.7604345766068135,
+                  "distance_m": 0.9245671308506713
+                }
+              },
+              {
+                "frame": 173,
+                "time_s": 5.765744,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.07917,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.025714023578687836,
+                  1.5573697169838208,
+                  1.600287917809082
+                ],
+                "gaze_direction_world_unit": [
+                  0.3235031879709413,
+                  -0.3692315971446828,
+                  0.871213931846033
+                ],
+                "wearer_world_m": [
+                  0.097565549096979,
+                  1.559646415452896,
+                  1.6007743597637583
+                ],
+                "right_world": [
+                  0.9932314991590263,
+                  0.01827168782849202,
+                  -0.11470542490314883
+                ],
+                "forward_world": [
+                  0.11614977618374406,
+                  -0.16174252643399242,
+                  0.9799737673199295
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.5402622044350254,
+                  "forward_m": -0.018326720715809007,
+                  "up_m": -0.7607899551858011,
+                  "distance_m": 0.9332847765525812
+                }
+              },
+              {
+                "frame": 174,
+                "time_s": 5.799072,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.064,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  0.01282829174373705,
+                  1.558214092706707,
+                  1.6201394299971554
+                ],
+                "gaze_direction_world_unit": [
+                  0.3374241542648226,
+                  -0.3708114538759907,
+                  0.8652420504073084
+                ],
+                "wearer_world_m": [
+                  0.08468141022000798,
+                  1.5604456328982481,
+                  1.619679762064283
+                ],
+                "right_world": [
+                  0.9916060728132685,
+                  0.018918736565149877,
+                  -0.12790417415638072
+                ],
+                "forward_world": [
+                  0.1292475561500484,
+                  -0.17205204971267368,
+                  0.9765721485988157
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.5557875250972458,
+                  "forward_m": -0.029211073415951166,
+                  "up_m": -0.7616298124420094,
+                  "distance_m": 0.943309615695867
+                }
+              },
+              {
+                "frame": 175,
+                "time_s": 5.8324,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.04074,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.0012970755166684111,
+                  1.5602799569334627,
+                  1.6394769151717765
+                ],
+                "gaze_direction_world_unit": [
+                  0.3499005021274537,
+                  -0.3735155164370151,
+                  0.8591017387898511
+                ],
+                "wearer_world_m": [
+                  0.070540886298448,
+                  1.5626001776000518,
+                  1.6380678306078809
+                ],
+                "right_world": [
+                  0.9897945357376017,
+                  0.020455036377480668,
+                  -0.1410261270502085
+                ],
+                "forward_world": [
+                  0.14242544627353348,
+                  -0.17440381602580055,
+                  0.9743194041018702
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.572834012965099,
+                  "forward_m": -0.03900946553830163,
+                  "up_m": -0.7636854441337932,
+                  "distance_m": 0.9554454471047064
+                }
+              },
+              {
+                "frame": 176,
+                "time_s": 5.865728,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.01884,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.016927797492226573,
+                  1.563128730918152,
+                  1.658459211455879
+                ],
+                "gaze_direction_world_unit": [
+                  0.3656073740464718,
+                  -0.37626766120719424,
+                  0.8513247882991023
+                ],
+                "wearer_world_m": [
+                  0.054885246414973,
+                  1.565591740226729,
+                  1.6562496841470433
+                ],
+                "right_world": [
+                  0.9881462629005013,
+                  0.02168659053822866,
+                  -0.1519758365879278
+                ],
+                "forward_world": [
+                  0.15345096242535416,
+                  -0.1682031327036336,
+                  0.973735337902151
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.591560129481877,
+                  "forward_m": -0.04903655692229755,
+                  "up_m": -0.7665345539096526,
+                  "distance_m": 0.9694963605114146
+                }
+              },
+              {
+                "frame": 177,
+                "time_s": 5.899056,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.96093,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.0341397234215878,
+                  1.565487629643327,
+                  1.6771959865209565
+                ],
+                "gaze_direction_world_unit": [
+                  0.380543003863425,
+                  -0.38247176249250203,
+                  0.8419634036622259
+                ],
+                "wearer_world_m": [
+                  0.037648578549884,
+                  1.568134149227721,
+                  1.6744578603109
+                ],
+                "right_world": [
+                  0.9869777583332555,
+                  0.023334575341619854,
+                  -0.1591552768496487
+                ],
+                "forward_world": [
+                  0.16083135774750879,
+                  -0.1607435896784944,
+                  0.9738042784576193
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.6118976838484923,
+                  "forward_m": -0.06046931648734237,
+                  "up_m": -0.7689335102717151,
+                  "distance_m": 0.9845476407743698
+                }
+              },
+              {
+                "frame": 178,
+                "time_s": 5.932384,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.92084,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.052544509659785306,
+                  1.5668300344798762,
+                  1.6958863242062465
+                ],
+                "gaze_direction_world_unit": [
+                  0.4008360806416853,
+                  -0.3866923590523146,
+                  0.8305416641604251
+                ],
+                "wearer_world_m": [
+                  0.019221109550622,
+                  1.5697061302847681,
+                  1.692806442184495
+                ],
+                "right_world": [
+                  0.9861703057327197,
+                  0.025571105512993603,
+                  -0.1637505623009533
+                ],
+                "forward_world": [
+                  0.16573507871902032,
+                  -0.15280204212378645,
+                  0.9742604475215038
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.6334144051138667,
+                  "forward_m": -0.07301847251372749,
+                  "up_m": -0.7703142176779137,
+                  "distance_m": 0.9999647493240589
+                }
+              },
+              {
+                "frame": 179,
+                "time_s": 5.965712,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.87091,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.07159569203314829,
+                  1.5669587461864294,
+                  1.7147431112073737
+                ],
+                "gaze_direction_world_unit": [
+                  0.41825354274246174,
+                  -0.39178323082943173,
+                  0.8194936693008872
+                ],
+                "wearer_world_m": [
+                  0.000144154997705,
+                  1.570084609958289,
+                  1.71132477467193
+                ],
+                "right_world": [
+                  0.9853497714317891,
+                  0.027828880728827096,
+                  -0.16825986252431785
+                ],
+                "forward_world": [
+                  0.1705171664948572,
+                  -0.14271883156629478,
+                  0.9749642203931981
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.6556858049362647,
+                  "forward_m": -0.08548326681589345,
+                  "up_m": -0.7704264506138379,
+                  "distance_m": 1.0152773904238541
+                }
+              },
+              {
+                "frame": 180,
+                "time_s": 5.99904,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.60927,
+                "gaze_hit_distance_m": 1.655270688762737,
+                "gaze_hit_exit_distance_m": 1.6645377376731796,
+                "gaze_depth_obb_residual_m": 0.04600068876273711,
+                "gaze_origin_world_m": [
+                  -0.09099837520241312,
+                  1.5655322145579202,
+                  1.7338574330259653
+                ],
+                "gaze_direction_world_unit": [
+                  0.4312435941577346,
+                  -0.4068983678964553,
+                  0.8052718054800627
+                ],
+                "wearer_world_m": [
+                  -0.019289934541269,
+                  1.5687680229130068,
+                  1.7299215997931767
+                ],
+                "right_world": [
+                  0.9841341965107346,
+                  0.02803885841899692,
+                  -0.17519619195841674
+                ],
+                "forward_world": [
+                  0.17737513777840969,
+                  -0.13190509940270323,
+                  0.9752636080822727
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.6787008862081655,
+                  "forward_m": -0.09626786528791696,
+                  "up_m": -0.7689667553559312,
+                  "distance_m": 1.0301515741236675
+                }
+              },
+              {
+                "frame": 181,
+                "time_s": 6.032368,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.60531,
+                "gaze_hit_distance_m": 1.6513071627287192,
+                "gaze_hit_exit_distance_m": 1.658795330757666,
+                "gaze_depth_obb_residual_m": 0.04599716272871923,
+                "gaze_origin_world_m": [
+                  -0.11061260087997127,
+                  1.5623506926222321,
+                  1.753130478350959
+                ],
+                "gaze_direction_world_unit": [
+                  0.44815141940842584,
+                  -0.40595848191018385,
+                  0.7964659542299293
+                ],
+                "wearer_world_m": [
+                  -0.038950784518239995,
+                  1.565487116773229,
+                  1.7483546412219781
+                ],
+                "right_world": [
+                  0.9821053639604123,
+                  0.025663363472504808,
+                  -0.18657557679252917
+                ],
+                "forward_world": [
+                  0.1883228888711595,
+                  -0.1239191582134708,
+                  0.9742579390258441
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.7026216437087104,
+                  "forward_m": -0.1036720080668733,
+                  "up_m": -0.765771011159382,
+                  "distance_m": 1.0444282172541155
+                }
+              },
+              {
+                "frame": 182,
+                "time_s": 6.065696,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.59913,
+                "gaze_hit_distance_m": 1.6453924012939547,
+                "gaze_hit_exit_distance_m": 1.6615608962314168,
+                "gaze_depth_obb_residual_m": 0.04626240129395476,
+                "gaze_origin_world_m": [
+                  -0.13051097030106723,
+                  1.5576574081904195,
+                  1.7721009936910037
+                ],
+                "gaze_direction_world_unit": [
+                  0.47121005990685527,
+                  -0.4045401215220562,
+                  0.7837782655327323
+                ],
+                "wearer_world_m": [
+                  -0.058937854281383,
+                  1.5607128764030516,
+                  1.766099753966212
+                ],
+                "right_world": [
+                  0.9787906894100136,
+                  0.024686241463578742,
+                  -0.20337004648343093
+                ],
+                "forward_world": [
+                  0.20485735777942948,
+                  -0.12520986699309636,
+                  0.9707502007062383
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.7276258537753463,
+                  "forward_m": -0.10614587514574464,
+                  "up_m": -0.7610573634680101,
+                  "distance_m": 1.0582601950284423
+                }
+              },
+              {
+                "frame": 183,
+                "time_s": 6.099024,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.22124,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.15070558734244824,
+                  1.5525414939034954,
+                  1.790689082140769
+                ],
+                "gaze_direction_world_unit": [
+                  0.483931992385891,
+                  -0.40642327921616794,
+                  0.7750031902234975
+                ],
+                "wearer_world_m": [
+                  -0.079285777088573,
+                  1.555666006218366,
+                  1.7831055587449667
+                ],
+                "right_world": [
+                  0.9739532897461232,
+                  0.026891178054139542,
+                  -0.22514851528616625
+                ],
+                "forward_world": [
+                  0.2267037288130731,
+                  -0.13526546693360159,
+                  0.9645251022122148
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.7536582759024121,
+                  "forward_m": -0.10344340045555664,
+                  "up_m": -0.7559223845393992,
+                  "distance_m": 1.0724364714899137
+                }
+              },
+              {
+                "frame": 184,
+                "time_s": 6.132352,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.21484,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.17107246021506156,
+                  1.549079264719446,
+                  1.809381453908582
+                ],
+                "gaze_direction_world_unit": [
+                  0.4997603573162226,
+                  -0.40584749277317006,
+                  0.7651976201380224
+                ],
+                "wearer_world_m": [
+                  -0.099872026115923,
+                  1.5523545405342651,
+                  1.800009556905782
+                ],
+                "right_world": [
+                  0.967870911318448,
+                  0.03009501633242523,
+                  -0.24964011900243316
+                ],
+                "forward_world": [
+                  0.2513454166108978,
+                  -0.14409662364557735,
+                  0.9571110931352949
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.7803780108942383,
+                  "forward_m": -0.09737207789659938,
+                  "up_m": -0.7525014152213143,
+                  "distance_m": 1.0884528199932373
+                }
+              },
+              {
+                "frame": 185,
+                "time_s": 6.16568,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.2165,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.19166120820433188,
+                  1.5482902702709895,
+                  1.828339882300868
+                ],
+                "gaze_direction_world_unit": [
+                  0.5191386943606983,
+                  -0.40300622579381484,
+                  0.7537114819271985
+                ],
+                "wearer_world_m": [
+                  -0.12071566243822601,
+                  1.5519516146400818,
+                  1.8173223601493
+                ],
+                "right_world": [
+                  0.961614282790235,
+                  0.03591452686424201,
+                  -0.27204433075133155
+                ],
+                "forward_world": [
+                  0.2743400514020663,
+                  -0.14735649528169542,
+                  0.9502755387228523
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.8073512837461646,
+                  "forward_m": -0.09178553135390086,
+                  "up_m": -0.7518063121231249,
+                  "distance_m": 1.1070019919045635
+                }
+              },
+              {
+                "frame": 186,
+                "time_s": 6.199008,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.78952,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.21248913484191528,
+                  1.5501643595981853,
+                  1.8474013526188466
+                ],
+                "gaze_direction_world_unit": [
+                  0.5259455727562491,
+                  -0.39612246951757296,
+                  0.752640846381194
+                ],
+                "wearer_world_m": [
+                  -0.141775091012796,
+                  1.554735138614608,
+                  1.8352896357497799
+                ],
+                "right_world": [
+                  0.9567354566867724,
+                  0.04848883324284954,
+                  -0.2868903953936091
+                ],
+                "forward_world": [
+                  0.2909315183078788,
+                  -0.14582126724465802,
+                  0.9455659732003021
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.8340807335604024,
+                  "forward_m": -0.09142535756492962,
+                  "up_m": -0.7537660737720304,
+                  "distance_m": 1.127924004564242
+                }
+              },
+              {
+                "frame": 187,
+                "time_s": 6.232336,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.82848,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.23210765867957944,
+                  1.553620319494963,
+                  1.866220277449362
+                ],
+                "gaze_direction_world_unit": [
+                  0.5423601374588565,
+                  -0.3925632315309054,
+                  0.7427917544949075
+                ],
+                "wearer_world_m": [
+                  -0.161626626762246,
+                  1.5593063459749619,
+                  1.8532528203456509
+                ],
+                "right_world": [
+                  0.952297510810462,
+                  0.06361960084600456,
+                  -0.29846607393872077
+                ],
+                "forward_world": [
+                  0.30465871713489784,
+                  -0.14153799439747458,
+                  0.9418864380675935
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.8594897640022097,
+                  "forward_m": -0.09319067050860261,
+                  "up_m": -0.7572656375028876,
+                  "distance_m": 1.1492860397816862
+                }
+              },
+              {
+                "frame": 188,
+                "time_s": 6.265664,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.58358,
+                "gaze_hit_distance_m": 1.6326566258132444,
+                "gaze_hit_exit_distance_m": 1.6435609929479502,
+                "gaze_depth_obb_residual_m": 0.04907662581324446,
+                "gaze_origin_world_m": [
+                  -0.2486963381164059,
+                  1.557306815170172,
+                  1.884465968798753
+                ],
+                "gaze_direction_world_unit": [
+                  0.5564884064587976,
+                  -0.4075110190546367,
+                  0.7240548479404026
+                ],
+                "wearer_world_m": [
+                  -0.17850830274753898,
+                  1.563788863652897,
+                  1.8703349943268248
+                ],
+                "right_world": [
+                  0.9464628413959286,
+                  0.07424580529497106,
+                  -0.3141586386729589
+                ],
+                "forward_world": [
+                  0.32172256219214573,
+                  -0.13703315663009707,
+                  0.9368652554986293
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.8824253019796963,
+                  "forward_m": -0.09086023756667583,
+                  "up_m": -0.7609448089170209,
+                  "distance_m": 1.168745908468728
+                }
+              },
+              {
+                "frame": 189,
+                "time_s": 6.298992,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.58674,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.2617723076637784,
+                  1.5608607833286359,
+                  1.902207818925218
+                ],
+                "gaze_direction_world_unit": [
+                  0.5630452574030451,
+                  -0.40902211342252226,
+                  0.7181092875372885
+                ],
+                "wearer_world_m": [
+                  -0.191948534109613,
+                  1.567628235695926,
+                  1.886494641776306
+                ],
+                "right_world": [
+                  0.9388308745430294,
+                  0.07792604854593586,
+                  -0.33544615061554645
+                ],
+                "forward_world": [
+                  0.34328936880725364,
+                  -0.1343580239464999,
+                  0.9295699708279679
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.902546425704793,
+                  "forward_m": -0.0831292603461346,
+                  "up_m": -0.7644803954402702,
+                  "distance_m": 1.1857195281729591
+                }
+              },
+              {
+                "frame": 190,
+                "time_s": 6.33232,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.57398,
+                "gaze_hit_distance_m": 1.6208371149429914,
+                "gaze_hit_exit_distance_m": 1.6341136130123792,
+                "gaze_depth_obb_residual_m": 0.046857114942991496,
+                "gaze_origin_world_m": [
+                  -0.27153920611013377,
+                  1.5640736694249557,
+                  1.91959307243064
+                ],
+                "gaze_direction_world_unit": [
+                  0.5732267479088633,
+                  -0.4146493047302711,
+                  0.7067369026508596
+                ],
+                "wearer_world_m": [
+                  -0.202155825283094,
+                  1.570557671617741,
+                  1.901930516512146
+                ],
+                "right_world": [
+                  0.9293980521502728,
+                  0.07396536517117905,
+                  -0.36159146203190884
+                ],
+                "forward_world": [
+                  0.3685694150063937,
+                  -0.1345373161012723,
+                  0.9198131858687995
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.9199209411004855,
+                  "forward_m": -0.0706018922548306,
+                  "up_m": -0.7676949210200752,
+                  "distance_m": 1.2002477481025262
+                }
+              },
+              {
+                "frame": 191,
+                "time_s": 6.365648,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.56449,
+                "gaze_hit_distance_m": 1.6090383143818046,
+                "gaze_hit_exit_distance_m": 1.6276973843190343,
+                "gaze_depth_obb_residual_m": 0.04454831438180462,
+                "gaze_origin_world_m": [
+                  -0.2789643306879635,
+                  1.5664838129991303,
+                  1.9366830962446915
+                ],
+                "gaze_direction_world_unit": [
+                  0.5793840837664261,
+                  -0.41916780592137404,
+                  0.6990081787484321
+                ],
+                "wearer_world_m": [
+                  -0.21009512587339302,
+                  1.5721617774035168,
+                  1.916862524874742
+                ],
+                "right_world": [
+                  0.9184941843248726,
+                  0.0628776040677137,
+                  -0.39040343270531164
+                ],
+                "forward_world": [
+                  0.3954157989008075,
+                  -0.136443600327936,
+                  0.9083113397449061
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.9351785375147152,
+                  "forward_m": -0.05499647329236684,
+                  "up_m": -0.7701075275048316,
+                  "distance_m": 1.2127032254522805
+                }
+              },
+              {
+                "frame": 192,
+                "time_s": 6.398976,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.55645,
+                "gaze_hit_distance_m": 1.5985142409246096,
+                "gaze_hit_exit_distance_m": 1.6184715258000142,
+                "gaze_depth_obb_residual_m": 0.0420642409246097,
+                "gaze_origin_world_m": [
+                  -0.2847452485524281,
+                  1.5678006773717685,
+                  1.953658058256086
+                ],
+                "gaze_direction_world_unit": [
+                  0.5845867355023621,
+                  -0.42274578152051656,
+                  0.6924914099693213
+                ],
+                "wearer_world_m": [
+                  -0.21647482930049503,
+                  1.572421078919797,
+                  1.931615747903034
+                ],
+                "right_world": [
+                  0.9062724049247444,
+                  0.048352330011093875,
+                  -0.4199194925868754
+                ],
+                "forward_world": [
+                  0.42242460404062104,
+                  -0.13907413094614393,
+                  0.8956650266716342
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.9488356322059339,
+                  "forward_m": -0.03802793728880682,
+                  "up_m": -0.7714180755419874,
+                  "distance_m": 1.2234463732550678
+                }
+              },
+              {
+                "frame": 193,
+                "time_s": 6.432304,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.53047,
+                "gaze_hit_distance_m": 1.5696605240536678,
+                "gaze_hit_exit_distance_m": 1.6221379726226535,
+                "gaze_depth_obb_residual_m": 0.03919052405366785,
+                "gaze_origin_world_m": [
+                  -0.28907441192946043,
+                  1.5680105640154685,
+                  1.9708534087592378
+                ],
+                "gaze_direction_world_unit": [
+                  0.5931509103543695,
+                  -0.43053673714776564,
+                  0.6803014886886093
+                ],
+                "wearer_world_m": [
+                  -0.221500141661939,
+                  1.571856396235367,
+                  1.946625547249225
+                ],
+                "right_world": [
+                  0.8928118209486189,
+                  0.0378351909694804,
+                  -0.44883800050654626
+                ],
+                "forward_world": [
+                  0.4494068027225758,
+                  -0.14194615186544904,
+                  0.8819777863627078
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.9611548907050277,
+                  "forward_m": -0.02113956133124084,
+                  "up_m": -0.7716254284067943,
+                  "distance_m": 1.2327495312282377
+                }
+              },
+              {
+                "frame": 194,
+                "time_s": 6.465632,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.26727,
+                "gaze_hit_distance_m": 1.2320889956982228,
+                "gaze_hit_exit_distance_m": 1.271881130887243,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.2921626346794359,
+                  1.5672383105625762,
+                  1.9884120123235618
+                ],
+                "gaze_direction_world_unit": [
+                  0.5967719058958312,
+                  -0.43185432671500107,
+                  0.6762877588948288
+                ],
+                "wearer_world_m": [
+                  -0.22534436847213102,
+                  1.570636697049792,
+                  1.9621093133872691
+                ],
+                "right_world": [
+                  0.8787665576558141,
+                  0.031896816067514,
+                  -0.47618476484501954
+                ],
+                "forward_world": [
+                  0.4754679536244085,
+                  -0.14470064763238144,
+                  0.8677510862286412
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.9724324652674813,
+                  "forward_m": -0.005535214405718192,
+                  "up_m": -0.7708563100663683,
+                  "distance_m": 1.2409169951587598
+                }
+              },
+              {
+                "frame": 195,
+                "time_s": 6.49896,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.52753,
+                "gaze_hit_distance_m": 1.5642634263290307,
+                "gaze_hit_exit_distance_m": 1.5903505141354186,
+                "gaze_depth_obb_residual_m": 0.03673342632903065,
+                "gaze_origin_world_m": [
+                  -0.29422547781965663,
+                  1.5657115176764516,
+                  2.00632871753697
+                ],
+                "gaze_direction_world_unit": [
+                  0.6028888988694011,
+                  -0.43064750261085205,
+                  0.6716157414140002
+                ],
+                "wearer_world_m": [
+                  -0.228171077951672,
+                  1.5686560640271017,
+                  1.978111566620032
+                ],
+                "right_world": [
+                  0.8648885468156093,
+                  0.025844105500191464,
+                  -0.5012981984787894
+                ],
+                "forward_world": [
+                  0.4992895816828126,
+                  -0.1472440342007263,
+                  0.8538320139320715
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.9829626045074323,
+                  "forward_m": 0.007910431416115915,
+                  "up_m": -0.7693311317769482,
+                  "distance_m": 1.2482581652472473
+                }
+              },
+              {
+                "frame": 196,
+                "time_s": 6.532288,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.25528,
+                "gaze_hit_distance_m": 1.2192640608839143,
+                "gaze_hit_exit_distance_m": 1.2613204878739437,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.29520420046853396,
+                  1.5635923227366164,
+                  2.0246167997512234
+                ],
+                "gaze_direction_world_unit": [
+                  0.6066508392152772,
+                  -0.435240304759113,
+                  0.6652372782643756
+                ],
+                "wearer_world_m": [
+                  -0.229922089609351,
+                  1.5660396963268501,
+                  1.9946114991315131
+                ],
+                "right_world": [
+                  0.8511238269974492,
+                  0.018947132988080553,
+                  -0.5246229477145926
+                ],
+                "forward_world": [
+                  0.5213327402565967,
+                  -0.14786136326661348,
+                  0.8404458288250862
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.9928179829668918,
+                  "forward_m": 0.01947995488156451,
+                  "up_m": -0.767211370974853,
+                  "distance_m": 1.2548626632814242
+                }
+              },
+              {
+                "frame": 197,
+                "time_s": 6.565616,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.56344,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.2949138711540864,
+                  1.5610329491665997,
+                  2.0433061923306433
+                ],
+                "gaze_direction_world_unit": [
+                  0.6081404756692139,
+                  -0.42833179685486167,
+                  0.6683539733224508
+                ],
+                "wearer_world_m": [
+                  -0.23043388388748498,
+                  1.5630108589787008,
+                  2.011581110520282
+                ],
+                "right_world": [
+                  0.8371092125875984,
+                  0.011917708900688967,
+                  -0.5469059648747034
+                ],
+                "forward_world": [
+                  0.5426632449570032,
+                  -0.1442457734018989,
+                  0.8274719085433797
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.0019388586444213,
+                  "forward_m": 0.02980465193193671,
+                  "up_m": -0.7646514476757242,
+                  "distance_m": 1.2607385256947812
+                }
+              },
+              {
+                "frame": 198,
+                "time_s": 6.598944,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.52936,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.29319567898016224,
+                  1.558294489121187,
+                  2.0624804315063785
+                ],
+                "gaze_direction_world_unit": [
+                  0.6141783636860818,
+                  -0.4322493320913108,
+                  0.6602616545631761
+                ],
+                "wearer_world_m": [
+                  -0.229542652754318,
+                  1.5597558057881218,
+                  2.029100519779549
+                ],
+                "right_world": [
+                  0.8229034690047681,
+                  0.0035883403933784225,
+                  -0.5681698729369069
+                ],
+                "forward_world": [
+                  0.5633394168544824,
+                  -0.13542099391582083,
+                  0.8150520571257414
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.0103297309626733,
+                  "forward_m": 0.03866041173341728,
+                  "up_m": -0.7619131572693207,
+                  "distance_m": 1.2660064975830931
+                }
+              },
+              {
+                "frame": 199,
+                "time_s": 6.632272,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.50415,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.28995133513913307,
+                  1.5555033920188124,
+                  2.082280345309619
+                ],
+                "gaze_direction_world_unit": [
+                  0.6163107058695471,
+                  -0.4351060061179163,
+                  0.6563869874324875
+                ],
+                "wearer_world_m": [
+                  -0.227132359228794,
+                  1.556325089931581,
+                  2.047335205746063
+                ],
+                "right_world": [
+                  0.8087649315669233,
+                  -0.006945784990966847,
+                  -0.5880910146723973
+                ],
+                "forward_world": [
+                  0.5829769812264552,
+                  -0.12263445194480216,
+                  0.8031803225654168
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.0181079136131,
+                  "forward_m": 0.04540456679506788,
+                  "up_m": -0.7591226132220905,
+                  "distance_m": 1.2707763140508257
+                }
+              },
+              {
+                "frame": 200,
+                "time_s": 6.6656,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.45527,
+                "gaze_hit_distance_m": 1.4826670806542324,
+                "gaze_hit_exit_distance_m": 1.5104829104820565,
+                "gaze_depth_obb_residual_m": 0.027397080654232298,
+                "gaze_origin_world_m": [
+                  -0.28522179965377353,
+                  1.5524010434058053,
+                  2.1029391892495197
+                ],
+                "gaze_direction_world_unit": [
+                  0.6229289869521499,
+                  -0.44536296624055627,
+                  0.6431261971931957
+                ],
+                "wearer_world_m": [
+                  -0.22321063749766604,
+                  1.552474308404203,
+                  2.066570630008206
+                ],
+                "right_world": [
+                  0.795181695689596,
+                  -0.018808330456189862,
+                  -0.6060794647120705
+                ],
+                "forward_world": [
+                  0.6007476375067832,
+                  -0.11137475169611269,
+                  0.7916425586807772
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.0255877260706163,
+                  "forward_m": 0.04904467493860071,
+                  "up_m": -0.7560194122287133,
+                  "distance_m": 1.2750689846722725
+                }
+              },
+              {
+                "frame": 201,
+                "time_s": 6.698928,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.17382,
+                "gaze_hit_distance_m": 1.1357818503353443,
+                "gaze_hit_exit_distance_m": 1.2021026045132266,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.2790446899947928,
+                  1.5492908625900177,
+                  2.124756237768602
+                ],
+                "gaze_direction_world_unit": [
+                  0.6271214644046232,
+                  -0.45597175873737245,
+                  0.6315128059801699
+                ],
+                "wearer_world_m": [
+                  -0.21779089981140196,
+                  1.5485686689701408,
+                  2.08713292949375
+                ],
+                "right_world": [
+                  0.7825112545833032,
+                  -0.030789281371725555,
+                  -0.6218747113390914
+                ],
+                "forward_world": [
+                  0.6162420821736623,
+                  -0.1044755117793666,
+                  0.7805962872040251
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.033117868072897,
+                  "forward_m": 0.04888363278783536,
+                  "up_m": -0.7529072828555528,
+                  "distance_m": 1.279293365676128
+                }
+              },
+              {
+                "frame": 202,
+                "time_s": 6.732256,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.1561,
+                "gaze_hit_distance_m": 1.117826151115514,
+                "gaze_hit_exit_distance_m": 1.1803055753596492,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.2714378192529256,
+                  1.547293017349176,
+                  2.1480660746249756
+                ],
+                "gaze_direction_world_unit": [
+                  0.631995634655954,
+                  -0.4617047868869686,
+                  0.6224228526825447
+                ],
+                "wearer_world_m": [
+                  -0.210883778982613,
+                  1.545810714655419,
+                  2.109348214577377
+                ],
+                "right_world": [
+                  0.7708738215169437,
+                  -0.04192525304331965,
+                  -0.6356066586003617
+                ],
+                "forward_world": [
+                  0.6296949923270623,
+                  -0.10040354653906902,
+                  0.7703267777252703
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.0410283158073792,
+                  "forward_m": 0.044655861394820806,
+                  "up_m": -0.7509096123318844,
+                  "distance_m": 1.2843672941032416
+                }
+              },
+              {
+                "frame": 203,
+                "time_s": 6.765584,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.14134,
+                "gaze_hit_distance_m": 1.0904277019052944,
+                "gaze_hit_exit_distance_m": 1.1817459031261253,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.2627955513597758,
+                  1.546919679645299,
+                  2.1725585092674247
+                ],
+                "gaze_direction_world_unit": [
+                  0.6279962700089152,
+                  -0.47377154590135684,
+                  0.6173825452255094
+                ],
+                "wearer_world_m": [
+                  -0.20291406424986802,
+                  1.544770840427325,
+                  2.13283884546571
+                ],
+                "right_world": [
+                  0.7597615829143023,
+                  -0.05147630903384374,
+                  -0.6481608802880705
+                ],
+                "forward_world": [
+                  0.641987806372841,
+                  -0.09856203454361345,
+                  0.7603533269574159
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.04945476718721,
+                  "forward_m": 0.03787370612878366,
+                  "up_m": -0.7505379419981595,
+                  "distance_m": 1.2907737711801874
+                }
+              },
+              {
+                "frame": 204,
+                "time_s": 6.798912,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.13811,
+                "gaze_hit_distance_m": 1.0774161148706884,
+                "gaze_hit_exit_distance_m": 1.1698211998890875,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.2538329469238056,
+                  1.548071357927961,
+                  2.197367449218548
+                ],
+                "gaze_direction_world_unit": [
+                  0.6284445915945456,
+                  -0.4819373536011198,
+                  0.6105684093527226
+                ],
+                "wearer_world_m": [
+                  -0.19466507417335802,
+                  1.54537388611027,
+                  2.156624987572501
+                ],
+                "right_world": [
+                  0.7480503503938343,
+                  -0.05904403293907684,
+                  -0.6610101931513247
+                ],
+                "forward_world": [
+                  0.6544639993569208,
+                  -0.09944456747136629,
+                  0.7495249505828189
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.058345963272426,
+                  "forward_m": 0.031610495874502154,
+                  "up_m": -0.75168937235981,
+                  "distance_m": 1.2985115763608563
+                }
+              },
+              {
+                "frame": 205,
+                "time_s": 6.83224,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.12953,
+                "gaze_hit_distance_m": 1.0731286944961662,
+                "gaze_hit_exit_distance_m": 1.1367096001656223,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.24537442712719176,
+                  1.5501004835799883,
+                  2.2213528065229977
+                ],
+                "gaze_direction_world_unit": [
+                  0.6367616816067418,
+                  -0.48640404822298133,
+                  0.5982856029603669
+                ],
+                "wearer_world_m": [
+                  -0.187056451702687,
+                  1.546866727299425,
+                  2.179440776463541
+                ],
+                "right_world": [
+                  0.7341862807276346,
+                  -0.06601063357361778,
+                  -0.6757315305996413
+                ],
+                "forward_world": [
+                  0.6684777716437296,
+                  -0.10383350771872865,
+                  0.7364482816145737
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.0675059780390739,
+                  "forward_m": 0.0296662816845068,
+                  "up_m": -0.7537169848421055,
+                  "distance_m": 1.3071107048209876
+                }
+              },
+              {
+                "frame": 206,
+                "time_s": 6.865568,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.11608,
+                "gaze_hit_distance_m": 1.0583273058899585,
+                "gaze_hit_exit_distance_m": 1.1212575884179574,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.23812884786448185,
+                  1.552376151439515,
+                  2.2435286046214684
+                ],
+                "gaze_direction_world_unit": [
+                  0.6393304430603894,
+                  -0.4956842943089446,
+                  0.5878381281880662
+                ],
+                "wearer_world_m": [
+                  -0.180877355711928,
+                  1.5485528835765248,
+                  2.2002191256341392
+                ],
+                "right_world": [
+                  0.716915132455302,
+                  -0.07331256749964285,
+                  -0.6932950023642226
+                ],
+                "forward_world": [
+                  0.684907804525876,
+                  -0.11155824085479613,
+                  0.7200389282510549
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.0766585631982608,
+                  "forward_m": 0.0350316068738773,
+                  "up_m": -0.7559920796808665,
+                  "distance_m": 1.3160337760591523
+                }
+              },
+              {
+                "frame": 207,
+                "time_s": 6.898896,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.07975,
+                "gaze_hit_distance_m": 1.0271061198174674,
+                "gaze_hit_exit_distance_m": 1.117818455998385,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.2321132897703028,
+                  1.5553883867127578,
+                  2.2640574483558495
+                ],
+                "gaze_direction_world_unit": [
+                  0.6375845446376043,
+                  -0.5126111526353532,
+                  0.5750789116574467
+                ],
+                "wearer_world_m": [
+                  -0.176065830763353,
+                  1.5512752296987302,
+                  2.219226365620294
+                ],
+                "right_world": [
+                  0.6976358486355898,
+                  -0.07663083681460361,
+                  -0.7123425703603529
+                ],
+                "forward_world": [
+                  0.7031356364444267,
+                  -0.11757675178810831,
+                  0.7012674127612437
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.0857695657473698,
+                  "forward_m": 0.045613089772431836,
+                  "up_m": -0.7590051483202688,
+                  "distance_m": 1.3255432543068875
+                }
+              },
+              {
+                "frame": 208,
+                "time_s": 6.932224,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.08114,
+                "gaze_hit_distance_m": 1.0232691419976112,
+                "gaze_hit_exit_distance_m": 1.1101496245155946,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.22714879156264484,
+                  1.55947325713427,
+                  2.2833831645030718
+                ],
+                "gaze_direction_world_unit": [
+                  0.6386053764481472,
+                  -0.5198533850862072,
+                  0.5673937179648112
+                ],
+                "wearer_world_m": [
+                  -0.172308849704069,
+                  1.5556040818433567,
+                  2.23706176598666
+                ],
+                "right_world": [
+                  0.6785435997233469,
+                  -0.07320091146080057,
+                  -0.7309036939541295
+                ],
+                "forward_world": [
+                  0.721866109178618,
+                  -0.11773270691708333,
+                  0.6819445213074887
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.0949494874129626,
+                  "forward_m": 0.05779577715709805,
+                  "up_m": -0.7630918799395544,
+                  "distance_m": 1.3358757236632401
+                }
+              },
+              {
+                "frame": 209,
+                "time_s": 6.965552,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.0762,
+                "gaze_hit_distance_m": 1.0087903375813192,
+                "gaze_hit_exit_distance_m": 1.1092082340721745,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.2230214111629611,
+                  1.5639216268006226,
+                  2.3019326010740753
+                ],
+                "gaze_direction_world_unit": [
+                  0.6372130206826279,
+                  -0.5320682075765331,
+                  0.5575508844570296
+                ],
+                "wearer_world_m": [
+                  -0.16926691240153197,
+                  1.5605602821517568,
+                  2.254317299688291
+                ],
+                "right_world": [
+                  0.6615666354815182,
+                  -0.06661590737375458,
+                  -0.7469216208561889
+                ],
+                "forward_world": [
+                  0.7387000416750049,
+                  -0.1135083528023032,
+                  0.6644080841421585
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.1044466763346352,
+                  "forward_m": 0.06800524956234721,
+                  "up_m": -0.7675418628922442,
+                  "distance_m": 1.3466802464307392
+                }
+              },
+              {
+                "frame": 210,
+                "time_s": 6.99888,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.05721,
+                "gaze_hit_distance_m": 0.9921243649861181,
+                "gaze_hit_exit_distance_m": 1.0985277841895762,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.2194098297573815,
+                  1.5679898527066372,
+                  2.320083796648505
+                ],
+                "gaze_direction_world_unit": [
+                  0.6396613020334488,
+                  -0.544334385427233,
+                  0.5427094024636293
+                ],
+                "wearer_world_m": [
+                  -0.16659414776915601,
+                  1.565144588384296,
+                  2.271396324871315
+                ],
+                "right_world": [
+                  0.647012097342263,
+                  -0.0601948896528144,
+                  -0.7600999415553534
+                ],
+                "forward_world": [
+                  0.7529138300531568,
+                  -0.10697439457671205,
+                  0.6493668019075443
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.1143770844615557,
+                  "forward_m": 0.0752044228166806,
+                  "up_m": -0.7716101054050506,
+                  "distance_m": 1.3575250076324266
+                }
+              },
+              {
+                "frame": 211,
+                "time_s": 7.032208,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.04711,
+                "gaze_hit_distance_m": 0.9770676466312451,
+                "gaze_hit_exit_distance_m": 1.093269093318996,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.21585755774355625,
+                  1.5711119846486155,
+                  2.33814429776406
+                ],
+                "gaze_direction_world_unit": [
+                  0.6402163937573425,
+                  -0.5557877887858408,
+                  0.5303045379787816
+                ],
+                "wearer_world_m": [
+                  -0.163960201222477,
+                  1.5686521239425157,
+                  2.28845853348061
+                ],
+                "right_world": [
+                  0.6328508232049171,
+                  -0.055707275879648056,
+                  -0.7722671396498284
+                ],
+                "forward_world": [
+                  0.7660934396328728,
+                  -0.09955122048805459,
+                  0.6349727523688025
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.1244922196473859,
+                  "forward_m": 0.08183378733089941,
+                  "up_m": -0.7747296118992497,
+                  "distance_m": 1.3679859254941131
+                }
+              },
+              {
+                "frame": 212,
+                "time_s": 7.065536,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.04513,
+                "gaze_hit_distance_m": 0.9755069864395026,
+                "gaze_hit_exit_distance_m": 1.0832061522718872,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.21197791506214766,
+                  1.573083766755999,
+                  2.356375367294607
+                ],
+                "gaze_direction_world_unit": [
+                  0.6431072809552211,
+                  -0.5600500063015665,
+                  0.5222614437463268
+                ],
+                "wearer_world_m": [
+                  -0.161070723058909,
+                  1.570903341631548,
+                  2.305662792427795
+                ],
+                "right_world": [
+                  0.6176363309621397,
+                  -0.05270224409133665,
+                  -0.7846960151188254
+                ],
+                "forward_world": [
+                  0.7794319070947675,
+                  -0.0921071268601435,
+                  0.6196790938737428
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.1345893948634098,
+                  "forward_m": 0.08961130908404191,
+                  "up_m": -0.7766987587221857,
+                  "distance_m": 1.3778912306321056
+                }
+              },
+              {
+                "frame": 213,
+                "time_s": 7.098864,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 1.0181,
+                "gaze_hit_distance_m": 0.954731469853045,
+                "gaze_hit_exit_distance_m": 1.0680698300390081,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.20746044249713114,
+                  1.5739934193547511,
+                  2.3749908919861826
+                ],
+                "gaze_direction_world_unit": [
+                  0.6467616439120412,
+                  -0.5718897065491073,
+                  0.5046201933210462
+                ],
+                "wearer_world_m": [
+                  -0.15766928885597697,
+                  1.572115425019837,
+                  2.323170279703414
+                ],
+                "right_world": [
+                  0.6005611221339016,
+                  -0.04933545402599799,
+                  -0.7980553561986274
+                ],
+                "forward_world": [
+                  0.7936073757465122,
+                  -0.08497539434750839,
+                  0.6024670244222662
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.144538340316199,
+                  "forward_m": 0.09941608524379286,
+                  "up_m": -0.7776103114016147,
+                  "distance_m": 1.3872740777716122
+                }
+              },
+              {
+                "frame": 214,
+                "time_s": 7.132192,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 0.994531,
+                "gaze_hit_distance_m": 0.9275904632483257,
+                "gaze_hit_exit_distance_m": 1.057539397946258,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.20206564303170457,
+                  1.573985106225591,
+                  2.3941045333342044
+                ],
+                "gaze_direction_world_unit": [
+                  0.6476878983508498,
+                  -0.5870199494027671,
+                  0.48570357764075817
+                ],
+                "wearer_world_m": [
+                  -0.153547957255182,
+                  1.572399504190933,
+                  2.3410801829461203
+                ],
+                "right_world": [
+                  0.5811582845002172,
+                  -0.04608182460512912,
+                  -0.8124847775791417
+                ],
+                "forward_world": [
+                  0.8087674731609817,
+                  -0.07805226664285196,
+                  0.5829262543656045
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 1.1542053391539968,
+                  "forward_m": 0.11158692449325636,
+                  "up_m": -0.7776045679347698,
+                  "distance_m": 1.3961770914617087
+                }
+              },
+              {
+                "frame": 215,
+                "time_s": 7.16552,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 0.982331,
+                "gaze_hit_distance_m": 0.9107445788419366,
+                "gaze_hit_exit_distance_m": 1.0466499966606164,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.1956223220189432,
+                  1.5731986584822921,
+                  2.413781781105268
+                ],
+                "gaze_direction_world_unit": [
+                  0.6486514740801428,
+                  -0.5970214877130317,
+                  0.4720345415142583
+                ],
+                "wearer_world_m": [
+                  -0.14856488884548902,
+                  1.571796980766509,
+                  2.359452277300181
+                ],
+                "right_world": [
+                  0.5589840262660791,
+                  -0.0442740350750678,
+                  -0.8279955725712159
+                ],
+                "forward_world": [
+                  0.8248920799113093,
+                  -0.0717107080471408,
+                  0.5607233104223256
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.163454564467501,
+                  "forward_m": 0.12645784830194357,
+                  "up_m": -0.7768159224618788,
+                  "distance_m": 1.4046569290640758
+                }
+              },
+              {
+                "frame": 216,
+                "time_s": 7.198848,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 0.972858,
+                "gaze_hit_distance_m": 0.909087371734522,
+                "gaze_hit_exit_distance_m": 1.0286358894735061,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.18812204599684415,
+                  1.5716595700081244,
+                  2.434080264982899
+                ],
+                "gaze_direction_world_unit": [
+                  0.6529146014310495,
+                  -0.5982115396604162,
+                  0.4645917315829542
+                ],
+                "wearer_world_m": [
+                  -0.14278603991823902,
+                  1.570300018204618,
+                  2.378305182080816
+                ],
+                "right_world": [
+                  0.5328842257973416,
+                  -0.04401957832174184,
+                  -0.8450424123206739
+                ],
+                "forward_world": [
+                  0.8422261978388583,
+                  -0.06893349322080973,
+                  0.5346991726066876
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.1721072064903144,
+                  "forward_m": 0.14552250372855563,
+                  "up_m": -0.7752749334507648,
+                  "distance_m": 1.4128210520214668
+                }
+              },
+              {
+                "frame": 217,
+                "time_s": 7.232176,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 0.951894,
+                "gaze_hit_distance_m": 0.9034850066162464,
+                "gaze_hit_exit_distance_m": 1.0000530663200562,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.17952688649974452,
+                  1.569438351302872,
+                  2.454951438914582
+                ],
+                "gaze_direction_world_unit": [
+                  0.6608334064929174,
+                  -0.5999435208311711,
+                  0.4509622829856893
+                ],
+                "wearer_world_m": [
+                  -0.136227166201915,
+                  1.568003332649762,
+                  2.3975830099262003
+                ],
+                "right_world": [
+                  0.5020605843887778,
+                  -0.044694526053297594,
+                  -0.8636767734193562
+                ],
+                "forward_world": [
+                  0.8606656653542247,
+                  -0.07209260889042991,
+                  0.5040409390354527
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.179832338878332,
+                  "forward_m": 0.1697598776628359,
+                  "up_m": -0.7730564216806436,
+                  "distance_m": 1.4207177745875137
+                }
+              },
+              {
+                "frame": 218,
+                "time_s": 7.265504,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 0.932329,
+                "gaze_hit_distance_m": 0.8875380539126012,
+                "gaze_hit_exit_distance_m": 0.9792187643859812,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.16962685480879533,
+                  1.5667883139046046,
+                  2.4760884202021956
+                ],
+                "gaze_direction_world_unit": [
+                  0.6639759941375885,
+                  -0.6076728895331648,
+                  0.4357402190932291
+                ],
+                "wearer_world_m": [
+                  -0.128640937666438,
+                  1.565257208526111,
+                  2.417047146390397
+                ],
+                "right_world": [
+                  0.46717312467378747,
+                  -0.04502887030157146,
+                  -0.8830185006113378
+                ],
+                "forward_world": [
+                  0.8793480928578902,
+                  -0.08045276164264253,
+                  0.46933387341130994
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.186175863119034,
+                  "forward_m": 0.19809231049378517,
+                  "up_m": -0.7704095927914606,
+                  "distance_m": 1.4282103074785784
+                }
+              },
+              {
+                "frame": 219,
+                "time_s": 7.298832,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 0.911843,
+                "gaze_hit_distance_m": 0.8636306335323797,
+                "gaze_hit_exit_distance_m": 0.9661080731092349,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.15851514598849023,
+                  1.5640094546640952,
+                  2.497369978855772
+                ],
+                "gaze_direction_world_unit": [
+                  0.6620452312969416,
+                  -0.6209632584077311,
+                  0.4196435909490732
+                ],
+                "wearer_world_m": [
+                  -0.12015211395204302,
+                  1.562389047859404,
+                  2.4365940481285686
+                ],
+                "right_world": [
+                  0.42786903440083185,
+                  -0.044935727678983864,
+                  -0.9027230304910034
+                ],
+                "forward_world": [
+                  0.8980711000649888,
+                  -0.09153461996314882,
+                  0.43022053946349775
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.190780582767732,
+                  "forward_m": 0.23093805277610047,
+                  "up_m": -0.767630920567585,
+                  "distance_m": 1.4354609053290563
+                }
+              },
+              {
+                "frame": 220,
+                "time_s": 7.33216,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 0.883501,
+                "gaze_hit_distance_m": 0.8496004946393054,
+                "gaze_hit_exit_distance_m": 0.9211093992453064,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.14669814598492692,
+                  1.5614156782634505,
+                  2.518971012420774
+                ],
+                "gaze_direction_world_unit": [
+                  0.6750165233834533,
+                  -0.625838417735493,
+                  0.3907415617075434
+                ],
+                "wearer_world_m": [
+                  -0.11141585352383901,
+                  1.559636838672315,
+                  2.4563606517014867
+                ],
+                "right_world": [
+                  0.38209244976612333,
+                  -0.04595719992744595,
+                  -0.9229806583057695
+                ],
+                "forward_world": [
+                  0.9174031409540717,
+                  -0.10137316879353835,
+                  0.38483107672894645
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.1931455622200655,
+                  "forward_m": 0.2711178129244401,
+                  "up_m": -0.7650335239782762,
+                  "distance_m": 1.4430445225082236
+                }
+              },
+              {
+                "frame": 221,
+                "time_s": 7.365488,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 0.864167,
+                "gaze_hit_distance_m": 0.827978751265935,
+                "gaze_hit_exit_distance_m": 0.8886341009435692,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.13425346657737564,
+                  1.559181109007101,
+                  2.5409924257247
+                ],
+                "gaze_direction_world_unit": [
+                  0.6812704626231147,
+                  -0.6371093286600747,
+                  0.36050278791098983
+                ],
+                "wearer_world_m": [
+                  -0.102464469504329,
+                  1.557167240919382,
+                  2.476545038644888
+                ],
+                "right_world": [
+                  0.3306539958638003,
+                  -0.04835852198649105,
+                  -0.9425122749177253
+                ],
+                "forward_world": [
+                  0.9362745344703027,
+                  -0.10865898783509909,
+                  0.3340407467137356
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.193059536647565,
+                  "forward_m": 0.3173687037031704,
+                  "up_m": -0.7627949562898599,
+                  "distance_m": 1.4511960919934916
+                }
+              },
+              {
+                "frame": 222,
+                "time_s": 7.398816,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 0.840248,
+                "gaze_hit_distance_m": 0.8035484459909525,
+                "gaze_hit_exit_distance_m": 0.8940593739511472,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.12092329463983087,
+                  1.557352123310618,
+                  2.5634604427725183
+                ],
+                "gaze_direction_world_unit": [
+                  0.6675500098351326,
+                  -0.6562594463780727,
+                  0.3517108519916048
+                ],
+                "wearer_world_m": [
+                  -0.092829516808836,
+                  1.5550880836827108,
+                  2.497326673238747
+                ],
+                "right_world": [
+                  0.2767084385770898,
+                  -0.051152741917216984,
+                  -0.9595914948636113
+                ],
+                "forward_world": [
+                  0.9528952901186425,
+                  -0.11444630593203219,
+                  0.2808782816955059
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.191072859722518,
+                  "forward_m": 0.36539361224091027,
+                  "up_m": -0.7609671798429148,
+                  "distance_m": 1.459876055640381
+                }
+              },
+              {
+                "frame": 223,
+                "time_s": 7.432144,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 0.82473,
+                "gaze_hit_distance_m": 0.7842278274094583,
+                "gaze_hit_exit_distance_m": 0.8887470952474211,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.10669914663121989,
+                  1.5558463355435754,
+                  2.586448106158879
+                ],
+                "gaze_direction_world_unit": [
+                  0.6585494867725195,
+                  -0.6720299041484822,
+                  0.3386567309265134
+                ],
+                "wearer_world_m": [
+                  -0.08249744708671901,
+                  1.5533115833662718,
+                  2.518802600236036
+                ],
+                "right_world": [
+                  0.22031135494556298,
+                  -0.054021053788005716,
+                  -0.9739325606168451
+                ],
+                "forward_world": [
+                  0.9665978694499899,
+                  -0.12196565935226875,
+                  0.22541725025717663
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.1870594642743197,
+                  "forward_m": 0.41520859579865216,
+                  "up_m": -0.7594644555529746,
+                  "distance_m": 1.4691135453043445
+                }
+              },
+              {
+                "frame": 224,
+                "time_s": 7.465472,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 0.826027,
+                "gaze_hit_distance_m": 0.7858243404060764,
+                "gaze_hit_exit_distance_m": 0.8674515659439602,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.09178714041607036,
+                  1.5545635288711734,
+                  2.6099257404233076
+                ],
+                "gaze_direction_world_unit": [
+                  0.659460677444079,
+                  -0.6727095000824963,
+                  0.33551981074707693
+                ],
+                "wearer_world_m": [
+                  -0.07171856128600701,
+                  1.5517727161674,
+                  2.540950924750101
+                ],
+                "right_world": [
+                  0.1608295401555237,
+                  -0.0561355770497884,
+                  -0.9853845219012988
+                ],
+                "forward_world": [
+                  0.9768064664833243,
+                  -0.13394079842502185,
+                  0.16705983824255966
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.180464134562299,
+                  "forward_m": 0.4679244653310889,
+                  "up_m": -0.7581809098822536,
+                  "distance_m": 1.4789479944721466
+                }
+              },
+              {
+                "frame": 225,
+                "time_s": 7.4988,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 0.817818,
+                "gaze_hit_distance_m": 0.7743122464300031,
+                "gaze_hit_exit_distance_m": 0.8511446642939395,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.07678669021134864,
+                  1.5535654746320915,
+                  2.6332356060433573
+                ],
+                "gaze_direction_world_unit": [
+                  0.655692449371212,
+                  -0.6830780105906709,
+                  0.32167039541286957
+                ],
+                "wearer_world_m": [
+                  -0.060851074802944,
+                  1.5508037804470467,
+                  2.5631892577603548
+                ],
+                "right_world": [
+                  0.10181335587741991,
+                  -0.054196477629114115,
+                  -0.9933261208573824
+                ],
+                "forward_world": [
+                  0.9832282941214503,
+                  -0.14639708802483875,
+                  0.10876586898871382
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.1721258709134628,
+                  "forward_m": 0.5201626667804334,
+                  "up_m": -0.7571812388538917,
+                  "distance_m": 1.4892184815026603
+                }
+              },
+              {
+                "frame": 226,
+                "time_s": 7.532128,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.959077,
+                "gaze_hit_distance_m": 0.9597284381895963,
+                "gaze_hit_exit_distance_m": 1.3658837005991917,
+                "gaze_depth_obb_residual_m": 0.0006514381895963428,
+                "gaze_origin_world_m": [
+                  -0.06231915696066306,
+                  1.5529232877857906,
+                  2.6555814300433527
+                ],
+                "gaze_direction_world_unit": [
+                  0.6584729052147074,
+                  -0.687644248690043,
+                  0.3058738634496407
+                ],
+                "wearer_world_m": [
+                  -0.05027854100301099,
+                  1.550631263784729,
+                  2.584744773612244
+                ],
+                "right_world": [
+                  0.046630933529572205,
+                  -0.046435804113694204,
+                  -0.9978322865764949
+                ],
+                "forward_world": [
+                  0.9863091624726636,
+                  -0.15603717196095404,
+                  0.05335388447808387
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.163149606937629,
+                  "forward_m": 0.568827381470091,
+                  "up_m": -0.7565395547133172,
+                  "distance_m": 1.49961118156511
+                }
+              },
+              {
+                "frame": 227,
+                "time_s": 7.565456,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.944296,
+                "gaze_hit_distance_m": 0.9446205002907291,
+                "gaze_hit_exit_distance_m": 1.4005589445820958,
+                "gaze_depth_obb_residual_m": 0.0003245002907290573,
+                "gaze_origin_world_m": [
+                  -0.048766946453934285,
+                  1.5526466637798102,
+                  2.6763058236610062
+                ],
+                "gaze_direction_world_unit": [
+                  0.6572901638368379,
+                  -0.6983085762919373,
+                  0.2834338949393146
+                ],
+                "wearer_world_m": [
+                  -0.040384538577146,
+                  1.551098457750299,
+                  2.6049237531020952
+                ],
+                "right_world": [
+                  -0.004874650323081875,
+                  -0.03480196135879414,
+                  -0.9993823398828947
+                ],
+                "forward_world": [
+                  0.9861381951423736,
+                  -0.16592324463114175,
+                  0.000967973355160523
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.153070242207639,
+                  "forward_m": 0.6145867476178497,
+                  "up_m": -0.7562632720135152,
+                  "distance_m": 1.5097092403535384
+                }
+              },
+              {
+                "frame": 228,
+                "time_s": 7.598784,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.914138,
+                "gaze_hit_distance_m": 0.9147708983877252,
+                "gaze_hit_exit_distance_m": 1.6468729608640158,
+                "gaze_depth_obb_residual_m": 0.0006328983877251781,
+                "gaze_origin_world_m": [
+                  -0.03633885609944002,
+                  1.552589623831174,
+                  2.6949409421942296
+                ],
+                "gaze_direction_world_unit": [
+                  0.6542260228653928,
+                  -0.7206855651196217,
+                  0.22934826625449412
+                ],
+                "wearer_world_m": [
+                  -0.031439673058374,
+                  1.551928438608926,
+                  2.623221889351683
+                ],
+                "right_world": [
+                  -0.053635707389513454,
+                  -0.021109696094425895,
+                  -0.9983374137152368
+                ],
+                "forward_world": [
+                  0.9831345337864308,
+                  -0.1761711821920393,
+                  -0.04909381877178137
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.1409936691636873,
+                  "forward_m": 0.6586833723849645,
+                  "up_m": -0.7562053941004866,
+                  "distance_m": 1.5190710767422029
+                }
+              },
+              {
+                "frame": 229,
+                "time_s": 7.632112,
+                "gazed_object_id": "4744652172236017",
+                "gazed_object_name": "DinoToy",
+                "gaze_depth_m": 0.708304,
+                "gaze_hit_distance_m": 0.6724840506609082,
+                "gaze_hit_exit_distance_m": 0.7759735263410744,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.02506064002792575,
+                  1.5523939360299193,
+                  2.711242248242683
+                ],
+                "gaze_direction_world_unit": [
+                  0.6302606151655854,
+                  -0.7659251720509983,
+                  0.1270046762514927
+                ],
+                "wearer_world_m": [
+                  -0.023568106810412003,
+                  1.552696143932246,
+                  2.6393691467652984
+                ],
+                "right_world": [
+                  -0.10099994658552308,
+                  -0.006928261216537376,
+                  -0.9948623070486875
+                ],
+                "forward_world": [
+                  0.9784553818201549,
+                  -0.1816797297296208,
+                  -0.09806906542099147
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.1257863846636318,
+                  "forward_m": 0.7025464495680966,
+                  "up_m": -0.7560093479097197,
+                  "distance_m": 1.5272578799343708
+                }
+              },
+              {
+                "frame": 230,
+                "time_s": 7.66544,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.869358,
+                "gaze_hit_distance_m": 0.8710766645871709,
+                "gaze_hit_exit_distance_m": 1.660454177821751,
+                "gaze_depth_obb_residual_m": 0.0017186645871709594,
+                "gaze_origin_world_m": [
+                  -0.015052434336349039,
+                  1.5517708963742471,
+                  2.725335019162658
+                ],
+                "gaze_direction_world_unit": [
+                  0.6473445609033059,
+                  -0.755079497750008,
+                  0.10392291155708516
+                ],
+                "wearer_world_m": [
+                  -0.016960054005303,
+                  1.552962370868603,
+                  2.653480979076328
+                ],
+                "right_world": [
+                  -0.14797734978635957,
+                  0.005859884636050486,
+                  -0.9889733897847095
+                ],
+                "forward_world": [
+                  0.9718909375592839,
+                  -0.1842874395248033,
+                  -0.14651329333384272
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.1066896449390315,
+                  "forward_m": 0.7472391706993403,
+                  "up_m": -0.7553859700018991,
+                  "distance_m": 1.5341891383132744
+                }
+              },
+              {
+                "frame": 231,
+                "time_s": 7.698768,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.864121,
+                "gaze_hit_distance_m": 0.8658450896262523,
+                "gaze_hit_exit_distance_m": 1.6465221109616124,
+                "gaze_depth_obb_residual_m": 0.0017240896262522565,
+                "gaze_origin_world_m": [
+                  -0.006475565964927167,
+                  1.5505606700948018,
+                  2.737625995644578
+                ],
+                "gaze_direction_world_unit": [
+                  0.6477487070498038,
+                  -0.7581291303034204,
+                  0.07524516131079101
+                ],
+                "wearer_world_m": [
+                  -0.011786841233946998,
+                  1.552437049205817,
+                  2.66595779308969
+                ],
+                "right_world": [
+                  -0.19477284358686092,
+                  0.016285386432178597,
+                  -0.9807131719263507
+                ],
+                "forward_world": [
+                  0.9621991320900913,
+                  -0.19087623721983724,
+                  -0.19426552002316688
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.083663854077643,
+                  "forward_m": 0.7929533376206427,
+                  "up_m": -0.754173544613036,
+                  "distance_m": 1.5400909322739091
+                }
+              },
+              {
+                "frame": 232,
+                "time_s": 7.732096,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.86045,
+                "gaze_hit_distance_m": 0.861986478405816,
+                "gaze_hit_exit_distance_m": 1.6356204975304447,
+                "gaze_depth_obb_residual_m": 0.0015364784058159442,
+                "gaze_origin_world_m": [
+                  0.0008117378415664449,
+                  1.5490219565502201,
+                  2.748229016957613
+                ],
+                "gaze_direction_world_unit": [
+                  0.6476806587661509,
+                  -0.759699948361061,
+                  0.05801510769141138
+                ],
+                "wearer_world_m": [
+                  -0.007736773447549999,
+                  1.5516250208300733,
+                  2.6768973359729706
+                ],
+                "right_world": [
+                  -0.2390557838634767,
+                  0.027761052544480053,
+                  -0.9706089099957005
+                ],
+                "forward_world": [
+                  0.9497904168008326,
+                  -0.2011250134644949,
+                  -0.23968081506913935
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.058565732578007,
+                  "forward_m": 0.8368109668395259,
+                  "up_m": -0.7526326965330921,
+                  "distance_m": 1.5450792796170647
+                }
+              },
+              {
+                "frame": 233,
+                "time_s": 7.765424,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.850348,
+                "gaze_hit_distance_m": 0.8518023471653368,
+                "gaze_hit_exit_distance_m": 1.644554804930137,
+                "gaze_depth_obb_residual_m": 0.0014543471653367668,
+                "gaze_origin_world_m": [
+                  0.00698645366359991,
+                  1.5476176663036427,
+                  2.757081948073735
+                ],
+                "gaze_direction_world_unit": [
+                  0.6404870042324421,
+                  -0.7670448383775259,
+                  0.03766448363839725
+                ],
+                "wearer_world_m": [
+                  -0.0044563571369399995,
+                  1.551255146972126,
+                  2.686202525697636
+                ],
+                "right_world": [
+                  -0.2784314151744807,
+                  0.04353469575082905,
+                  -0.959468955886442
+                ],
+                "forward_world": [
+                  0.936122500767925,
+                  -0.2111411490006399,
+                  -0.28123669524920725
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.0336462484707223,
+                  "forward_m": 0.8759826530916203,
+                  "up_m": -0.7512289389357172,
+                  "distance_m": 1.5492304845275655
+                }
+              },
+              {
+                "frame": 234,
+                "time_s": 7.798752,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.842746,
+                "gaze_hit_distance_m": 0.8439821266456329,
+                "gaze_hit_exit_distance_m": 1.6549238375817412,
+                "gaze_depth_obb_residual_m": 0.0012361266456328845,
+                "gaze_origin_world_m": [
+                  0.011836452156095845,
+                  1.5468279942402934,
+                  2.7640324509732963
+                ],
+                "gaze_direction_world_unit": [
+                  0.6335690751388011,
+                  -0.7731942674296091,
+                  0.027583542951451046
+                ],
+                "wearer_world_m": [
+                  -0.002316348026868,
+                  1.551540329718135,
+                  2.693707819141161
+                ],
+                "right_world": [
+                  -0.3150801425340707,
+                  0.059471597420329786,
+                  -0.947199890667743
+                ],
+                "forward_world": [
+                  0.9219097519439241,
+                  -0.21785518052223932,
+                  -0.32034595297945423
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 1.0071120550229655,
+                  "forward_m": 0.9129090631589454,
+                  "up_m": -0.7504400297310856,
+                  "distance_m": 1.5526873114678037
+                }
+              },
+              {
+                "frame": 235,
+                "time_s": 7.83208,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.833948,
+                "gaze_hit_distance_m": 0.8347450043582573,
+                "gaze_hit_exit_distance_m": 1.6783452868422317,
+                "gaze_depth_obb_residual_m": 0.0007970043582572472,
+                "gaze_origin_world_m": [
+                  0.01501588159351519,
+                  1.5469106604535987,
+                  2.768865407999284
+                ],
+                "gaze_direction_world_unit": [
+                  0.62279708245473,
+                  -0.7818855297484771,
+                  0.027907211537876953
+                ],
+                "wearer_world_m": [
+                  -0.0018770491512329999,
+                  1.5524633808147832,
+                  2.6992101290288883
+                ],
+                "right_world": [
+                  -0.3519138300059331,
+                  0.07159390097835858,
+                  -0.933290399389845
+                ],
+                "forward_world": [
+                  0.9069875899170774,
+                  -0.22037166666944386,
+                  -0.35890087805095
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.9759641178788093,
+                  "forward_m": 0.950652115924387,
+                  "up_m": -0.7505217384850421,
+                  "distance_m": 1.5554832962256735
+                }
+              },
+              {
+                "frame": 236,
+                "time_s": 7.865408,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.829125,
+                "gaze_hit_distance_m": 0.8295145309145336,
+                "gaze_hit_exit_distance_m": 1.696239123956347,
+                "gaze_depth_obb_residual_m": 0.0003895309145336423,
+                "gaze_origin_world_m": [
+                  0.016089409138490166,
+                  1.5476092701001247,
+                  2.77129458826662
+                ],
+                "gaze_direction_world_unit": [
+                  0.6155880437348094,
+                  -0.7876541167510619,
+                  0.025541197619831868
+                ],
+                "wearer_world_m": [
+                  -0.0036820615460370003,
+                  1.553825988129979,
+                  2.702457802570975
+                ],
+                "right_world": [
+                  -0.3903843246506581,
+                  0.08106215170141984,
+                  -0.9170763363148053
+                ],
+                "forward_world": [
+                  0.8900494937886014,
+                  -0.22146234385428964,
+                  -0.3984549270133558
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.9379735174596189,
+                  "forward_m": 0.9906314906353191,
+                  "up_m": -0.7512200850427156,
+                  "distance_m": 1.557394197326261
+                }
+              },
+              {
+                "frame": 237,
+                "time_s": 7.898736,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 0.851701,
+                "gaze_hit_distance_m": 0.8543213787678787,
+                "gaze_hit_exit_distance_m": 1.6473305625966082,
+                "gaze_depth_obb_residual_m": 0.002620378767878684,
+                "gaze_origin_world_m": [
+                  0.01476817528960714,
+                  1.5487375044745504,
+                  2.7711709814470713
+                ],
+                "gaze_direction_world_unit": [
+                  0.6354889192300301,
+                  -0.7651124078182732,
+                  -0.10371517217057896
+                ],
+                "wearer_world_m": [
+                  -0.00821096487707,
+                  1.555411732151255,
+                  2.7033810448552753
+                ],
+                "right_world": [
+                  -0.4329826184029843,
+                  0.08767003544453136,
+                  -0.8971287628016675
+                ],
+                "forward_world": [
+                  0.8692430133080982,
+                  -0.22286378786903654,
+                  -0.4413029751448799
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.8894947262543034,
+                  "forward_m": 1.0349284146968702,
+                  "up_m": -0.7523494730423493,
+                  "distance_m": 1.5583027373293985
+                }
+              },
+              {
+                "frame": 238,
+                "time_s": 7.932064,
+                "gazed_object_id": "6378363738872787",
+                "gazed_object_name": "Flask",
+                "gaze_depth_m": 0.621982,
+                "gaze_hit_distance_m": 0.6306165086724909,
+                "gaze_hit_exit_distance_m": 0.7015161667023524,
+                "gaze_depth_obb_residual_m": 0.008634508672490826,
+                "gaze_origin_world_m": [
+                  0.011009171495025442,
+                  1.5502889401176005,
+                  2.7685453696649667
+                ],
+                "gaze_direction_world_unit": [
+                  0.6791804380674209,
+                  -0.6009386386153258,
+                  -0.42141035246622177
+                ],
+                "wearer_world_m": [
+                  -0.015813635133578002,
+                  1.556998646225334,
+                  2.702185904706964
+                ],
+                "right_world": [
+                  -0.48363777908516564,
+                  0.08835102036286706,
+                  -0.8707976779036615
+                ],
+                "forward_world": [
+                  0.842103178869293,
+                  -0.2243041844479813,
+                  -0.490458835150675
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.824625086902506,
+                  "forward_m": 1.086201621859516,
+                  "up_m": -0.7539011148957873,
+                  "distance_m": 1.558270640267704
+                }
+              },
+              {
+                "frame": 239,
+                "time_s": 7.965392,
+                "gazed_object_id": "7158052634270103",
+                "gazed_object_name": "Orange_A",
+                "gaze_depth_m": 1.16978,
+                "gaze_hit_distance_m": 1.104229902651972,
+                "gaze_hit_exit_distance_m": 1.1689524534063638,
+                "gaze_depth_obb_residual_m": 0.0008275465936362636,
+                "gaze_origin_world_m": [
+                  0.004927404456298072,
+                  1.551993109011825,
+                  2.763603006274656
+                ],
+                "gaze_direction_world_unit": [
+                  0.6519725648833239,
+                  -0.5392482517755979,
+                  -0.5330507457985791
+                ],
+                "wearer_world_m": [
+                  -0.026310286681387997,
+                  1.5585228306973409,
+                  2.699185376016347
+                ],
+                "right_world": [
+                  -0.5412750151275487,
+                  0.08561185764508317,
+                  -0.8364759218466664
+                ],
+                "forward_world": [
+                  0.8079324573424532,
+                  -0.22265136135186256,
+                  -0.5455928112253197
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.7422036056122807,
+                  "forward_m": 1.141658934497599,
+                  "up_m": -0.7556045719145462,
+                  "distance_m": 1.5573020208040016
+                }
+              },
+              {
+                "frame": 240,
+                "time_s": 7.99872,
+                "gazed_object_id": "4404207983027294",
+                "gazed_object_name": "ChoppingBoard",
+                "gaze_depth_m": 1.24759,
+                "gaze_hit_distance_m": 1.271481704132611,
+                "gaze_hit_exit_distance_m": 1.3164733605902854,
+                "gaze_depth_obb_residual_m": 0.02389170413261099,
+                "gaze_origin_world_m": [
+                  -0.0033098495036010325,
+                  1.553409079622423,
+                  2.7566831284866984
+                ],
+                "gaze_direction_world_unit": [
+                  0.6297615091249575,
+                  -0.4949626158678992,
+                  -0.59867558035873
+                ],
+                "wearer_world_m": [
+                  -0.039174298280156,
+                  1.560007031160894,
+                  2.694729354990245
+                ],
+                "right_world": [
+                  -0.6010016076475446,
+                  0.0853658770233628,
+                  -0.7946758676624697
+                ],
+                "forward_world": [
+                  0.7681152173177477,
+                  -0.2131105795535024,
+                  -0.6038070004622994
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.6462492271691063,
+                  "forward_m": 1.1952660882139505,
+                  "up_m": -0.7570208898436208,
+                  "distance_m": 1.555435538011966
+                }
+              },
+              {
+                "frame": 241,
+                "time_s": 8.032048,
+                "gazed_object_id": "6295672500506081",
+                "gazed_object_name": "CoffeeCanisterSmall",
+                "gaze_depth_m": 1.66555,
+                "gaze_hit_distance_m": 1.6574275773680354,
+                "gaze_hit_exit_distance_m": 1.7365056388921556,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.013586006840122046,
+                  1.55460827450461,
+                  2.748647407031124
+                ],
+                "gaze_direction_world_unit": [
+                  0.526985315092762,
+                  -0.45686618300609394,
+                  -0.7166308453464898
+                ],
+                "wearer_world_m": [
+                  -0.053962659438345,
+                  1.56129227790883,
+                  2.689544854425887
+                ],
+                "right_world": [
+                  -0.6584998158426043,
+                  0.08495351550861095,
+                  -0.7477706150538312
+                ],
+                "forward_world": [
+                  0.7238916927869029,
+                  -0.2002279883804126,
+                  -0.6602193346027105
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5426780595311453,
+                  "forward_m": 1.2424461896907024,
+                  "up_m": -0.7582217832196368,
+                  "distance_m": 1.5534066702322995
+                }
+              },
+              {
+                "frame": 242,
+                "time_s": 8.065376,
+                "gazed_object_id": "4671332369591132",
+                "gazed_object_name": "KitchIsland",
+                "gaze_depth_m": 1.29274,
+                "gaze_hit_distance_m": 1.3171885145528264,
+                "gaze_hit_exit_distance_m": 1.3662725870547625,
+                "gaze_depth_obb_residual_m": 0.024448514552826373,
+                "gaze_origin_world_m": [
+                  -0.025669873098454157,
+                  1.5558580701024058,
+                  2.740464630876976
+                ],
+                "gaze_direction_world_unit": [
+                  0.5423116332786997,
+                  -0.49671678813226283,
+                  -0.6776212251679832
+                ],
+                "wearer_world_m": [
+                  -0.070158645873512,
+                  1.5622471713960617,
+                  2.684357677808495
+                ],
+                "right_world": [
+                  -0.7101592750793004,
+                  0.07977314721192408,
+                  -0.6995070042556747
+                ],
+                "forward_world": [
+                  0.6776608426102363,
+                  -0.19197646246695138,
+                  -0.7098738058637329
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.4388821430881734,
+                  "forward_m": 1.280447471335664,
+                  "up_m": -0.7594737465555798,
+                  "distance_m": 1.5520836427456906
+                }
+              },
+              {
+                "frame": 243,
+                "time_s": 8.098704,
+                "gazed_object_id": "6260912350647035",
+                "gazed_object_name": "StepStool",
+                "gaze_depth_m": 3.13377,
+                "gaze_hit_distance_m": 3.0015220258694004,
+                "gaze_hit_exit_distance_m": 3.479344660065332,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.038928005724364785,
+                  1.5571883016870374,
+                  2.7323849661797235
+                ],
+                "gaze_direction_world_unit": [
+                  0.5785703078920369,
+                  -0.4475044125158182,
+                  -0.681906298258482
+                ],
+                "wearer_world_m": [
+                  -0.086875097522569,
+                  1.5629168490330818,
+                  2.6791278367565305
+                ],
+                "right_world": [
+                  -0.7529689906031265,
+                  0.0699955590200593,
+                  -0.6543227956502653
+                ],
+                "forward_world": [
+                  0.6342176463361371,
+                  -0.1880151569167844,
+                  -0.7499455165846435
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.3428391636463637,
+                  "forward_m": 1.3079346828238543,
+                  "up_m": -0.7608042973184471,
+                  "distance_m": 1.5514686608119066
+                }
+              },
+              {
+                "frame": 244,
+                "time_s": 8.132032,
+                "gazed_object_id": "6260912350647035",
+                "gazed_object_name": "StepStool",
+                "gaze_depth_m": 3.1597,
+                "gaze_hit_distance_m": 3.0289535976034005,
+                "gaze_hit_exit_distance_m": 3.4610278823990055,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.0526802439194017,
+                  1.558630833897732,
+                  2.7244357704218434
+                ],
+                "gaze_direction_world_unit": [
+                  0.5869792379849723,
+                  -0.45035174856036897,
+                  -0.6727842720688403
+                ],
+                "wearer_world_m": [
+                  -0.10327636902859699,
+                  1.5635264208577608,
+                  2.6736014606178196
+                ],
+                "right_world": [
+                  -0.7852982960397322,
+                  0.05799449808076168,
+                  -0.6163953475079562
+                ],
+                "forward_world": [
+                  0.5981882937175341,
+                  -0.18560454425682787,
+                  -0.7795650828574355
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.26139322390179953,
+                  "forward_m": 1.3256512563781753,
+                  "up_m": -0.7622439209601304,
+                  "distance_m": 1.5513521412237403
+                }
+              },
+              {
+                "frame": 245,
+                "time_s": 8.16536,
+                "gazed_object_id": "6260912350647035",
+                "gazed_object_name": "StepStool",
+                "gaze_depth_m": 3.18724,
+                "gaze_hit_distance_m": 3.0541374583124994,
+                "gaze_hit_exit_distance_m": 3.481329234908182,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.06637443838603391,
+                  1.560367485660541,
+                  2.7165978116197635
+                ],
+                "gaze_direction_world_unit": [
+                  0.5982461249297344,
+                  -0.44824345514544,
+                  -0.6642133534684729
+                ],
+                "wearer_world_m": [
+                  -0.118798657183962,
+                  1.564690048270195,
+                  2.667597011249641
+                ],
+                "right_world": [
+                  -0.8073363606620155,
+                  0.04955928881460206,
+                  -0.5880066986397375
+                ],
+                "forward_world": [
+                  0.5715002811463842,
+                  -0.18248728340019146,
+                  -0.8000536357312688
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.19783653272746504,
+                  "forward_m": 1.3359200924469978,
+                  "up_m": -0.7639762578592597,
+                  "distance_m": 1.5516061064773685
+                }
+              },
+              {
+                "frame": 246,
+                "time_s": 8.198688,
+                "gazed_object_id": "6260912350647035",
+                "gazed_object_name": "StepStool",
+                "gaze_depth_m": 3.43063,
+                "gaze_hit_distance_m": 3.1011025763228677,
+                "gaze_hit_exit_distance_m": 3.47039720437476,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.07957042978263665,
+                  1.56236071274692,
+                  2.708866843574956
+                ],
+                "gaze_direction_world_unit": [
+                  0.6110937324848468,
+                  -0.450301656944618,
+                  -0.6509937540949761
+                ],
+                "wearer_world_m": [
+                  -0.13305301234147598,
+                  1.5665504684655518,
+                  2.66101163475862
+                ],
+                "right_world": [
+                  -0.819981418543423,
+                  0.047027594679625265,
+                  -0.5704549750700448
+                ],
+                "forward_world": [
+                  0.5551894759859107,
+                  -0.17713891935473944,
+                  -0.8126416485784651
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1536097808774608,
+                  "forward_m": 1.3410820189658827,
+                  "up_m": -0.7659667504096539,
+                  "distance_m": 1.5520315747780247
+                }
+              },
+              {
+                "frame": 247,
+                "time_s": 8.232016,
+                "gazed_object_id": "6260912350647035",
+                "gazed_object_name": "StepStool",
+                "gaze_depth_m": 3.43077,
+                "gaze_hit_distance_m": 3.125075911115443,
+                "gaze_hit_exit_distance_m": 3.4685823771701827,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.0919844939679539,
+                  1.5642557695998067,
+                  2.7012347078414076
+                ],
+                "gaze_direction_world_unit": [
+                  0.6186492626747679,
+                  -0.451118468978784,
+                  -0.6432458447111836
+                ],
+                "wearer_world_m": [
+                  -0.145859000990329,
+                  1.568534277271114,
+                  2.653829079840055
+                ],
+                "right_world": [
+                  -0.8246343401937039,
+                  0.04733647245957699,
+                  -0.5636820587426737
+                ],
+                "forward_world": [
+                  0.5494835596118542,
+                  -0.16961548389799536,
+                  -0.818106597784381
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1280184430167608,
+                  "forward_m": 1.3430097877367317,
+                  "up_m": -0.7678642280446449,
+                  "distance_m": 1.5523142350760348
+                }
+              },
+              {
+                "frame": 248,
+                "time_s": 8.265344,
+                "gazed_object_id": "6260912350647035",
+                "gazed_object_name": "StepStool",
+                "gaze_depth_m": 3.30763,
+                "gaze_hit_distance_m": 3.1744523099237685,
+                "gaze_hit_exit_distance_m": 3.4654836232943085,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.10403760601893908,
+                  1.5657332786342046,
+                  2.693339412432053
+                ],
+                "gaze_direction_world_unit": [
+                  0.6331827247739725,
+                  -0.4496837095938605,
+                  -0.629971585370096
+                ],
+                "wearer_world_m": [
+                  -0.15796357500008099,
+                  1.570023668138632,
+                  2.645993408077459
+                ],
+                "right_world": [
+                  -0.8252230740607227,
+                  0.04642841993450804,
+                  -0.5628954430977001
+                ],
+                "forward_world": [
+                  0.549958553152424,
+                  -0.1609654770572591,
+                  -0.8195338339630777
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.11229466836053703,
+                  "forward_m": 1.3434081031642742,
+                  "up_m": -0.7693465928788751,
+                  "distance_m": 1.5521757645846586
+                }
+              },
+              {
+                "frame": 249,
+                "time_s": 8.298672,
+                "gazed_object_id": "6260912350647035",
+                "gazed_object_name": "StepStool",
+                "gaze_depth_m": 3.32306,
+                "gaze_hit_distance_m": 3.19184262554762,
+                "gaze_hit_exit_distance_m": 3.457039441252726,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.1166776015808767,
+                  1.566604695359102,
+                  2.684550227459431
+                ],
+                "gaze_direction_world_unit": [
+                  0.6367181489506684,
+                  -0.45341836717614015,
+                  -0.6237000746385707
+                ],
+                "wearer_world_m": [
+                  -0.170787726747739,
+                  1.5705196171443048,
+                  2.637382129736052
+                ],
+                "right_world": [
+                  -0.8273549259785283,
+                  0.04007226874263593,
+                  -0.5602481947645022
+                ],
+                "forward_world": [
+                  0.5491013519768136,
+                  -0.15220155134308977,
+                  -0.821780014983325
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.09234193043877847,
+                  "forward_m": 1.3435876088722032,
+                  "up_m": -0.7702184218550184,
+                  "distance_m": 1.5514480694489647
+                }
+              },
+              {
+                "frame": 250,
+                "time_s": 8.332,
+                "gazed_object_id": "6260912350647035",
+                "gazed_object_name": "StepStool",
+                "gaze_depth_m": 3.44043,
+                "gaze_hit_distance_m": 3.2239808210922254,
+                "gaze_hit_exit_distance_m": 3.42674476472352,
+                "gaze_depth_obb_residual_m": 0.013685235276480245,
+                "gaze_origin_world_m": [
+                  -0.13042722619309827,
+                  1.5673806844333866,
+                  2.6744122016738032
+                ],
+                "gaze_direction_world_unit": [
+                  0.6473282401348543,
+                  -0.45184595456955423,
+                  -0.6138414965306933
+                ],
+                "wearer_world_m": [
+                  -0.185012117212811,
+                  1.570540771492876,
+                  2.6277370988550355
+                ],
+                "right_world": [
+                  -0.8328473730110723,
+                  0.02789468058493999,
+                  -0.552799366916805
+                ],
+                "forward_world": [
+                  0.5443737899565135,
+                  -0.13935980028010173,
+                  -0.8271856036430225
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.06284245145520373,
+                  "forward_m": 1.343537463615358,
+                  "up_m": -0.7709922120813053,
+                  "distance_m": 1.5503132202664447
+                }
+              },
+              {
+                "frame": 251,
+                "time_s": 8.365328,
+                "gazed_object_id": "6260912350647035",
+                "gazed_object_name": "StepStool",
+                "gaze_depth_m": 3.45043,
+                "gaze_hit_distance_m": 3.219268944877964,
+                "gaze_hit_exit_distance_m": 3.4360177822952584,
+                "gaze_depth_obb_residual_m": 0.014412217704741437,
+                "gaze_origin_world_m": [
+                  -0.1456830178797585,
+                  1.5688246158775045,
+                  2.6627494161467182
+                ],
+                "gaze_direction_world_unit": [
+                  0.6501170393326798,
+                  -0.4513864370848906,
+                  -0.611226733369148
+                ],
+                "wearer_world_m": [
+                  -0.20101860852553502,
+                  1.571007180818118,
+                  2.616909798792697
+                ],
+                "right_world": [
+                  -0.8414135675114631,
+                  0.0115365145583511,
+                  -0.5402685602915269
+                ],
+                "forward_world": [
+                  0.5353982429754012,
+                  -0.1178024410467928,
+                  -0.8363440119366384
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.02330395968220611,
+                  "forward_m": 1.3427694428183068,
+                  "up_m": -0.7724363769758877,
+                  "distance_m": 1.5492678295178959
+                }
+              },
+              {
+                "frame": 252,
+                "time_s": 8.398656,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.44074,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.16322245840837735,
+                  1.5712864618173203,
+                  2.650228198576056
+                ],
+                "gaze_direction_world_unit": [
+                  0.6633986527151082,
+                  -0.460944628706098,
+                  -0.5894338612963941
+                ],
+                "wearer_world_m": [
+                  -0.21951673089172002,
+                  1.5724297179853681,
+                  2.6055324543501746
+                ],
+                "right_world": [
+                  -0.8521687807562021,
+                  -0.006378672050662268,
+                  -0.523228135374388
+                ],
+                "forward_world": [
+                  0.521589576343108,
+                  -0.09035583057019259,
+                  -0.848398572448226
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.025255064656829695,
+                  "forward_m": 1.3414807121262657,
+                  "up_m": -0.7749012889142921,
+                  "distance_m": 1.5494128974739576
+                }
+              },
+              {
+                "frame": 253,
+                "time_s": 8.431984,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.41413,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.18342326318995728,
+                  1.5747808232262608,
+                  2.6375604244204505
+                ],
+                "gaze_direction_world_unit": [
+                  0.653960394250053,
+                  -0.4725004788535288,
+                  -0.5908291633251539
+                ],
+                "wearer_world_m": [
+                  -0.240817615096399,
+                  1.574867477875305,
+                  2.5942713662046457
+                ],
+                "right_world": [
+                  -0.8642940032411863,
+                  -0.02470727057288418,
+                  -0.5023797634679991
+                ],
+                "forward_world": [
+                  0.5028984035164519,
+                  -0.06118841390044427,
+                  -0.8621769967616578
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.08143307176601289,
+                  "forward_m": 1.339684983489897,
+                  "up_m": -0.7783997455032214,
+                  "distance_m": 1.55154547595778
+                }
+              },
+              {
+                "frame": 254,
+                "time_s": 8.465312,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.36704,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.20544311210189786,
+                  1.5788219578059652,
+                  2.6249939038617223
+                ],
+                "gaze_direction_world_unit": [
+                  0.479555039567043,
+                  -0.3684641180399634,
+                  -0.7964051467330455
+                ],
+                "wearer_world_m": [
+                  -0.264007435327272,
+                  1.5775874821582068,
+                  2.5833194774586032
+                ],
+                "right_world": [
+                  -0.8768433902739711,
+                  -0.04659849101192711,
+                  -0.4785125385695345
+                ],
+                "forward_world": [
+                  0.48011913068500645,
+                  -0.03285639177652084,
+                  -0.876587746816998
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.1428842294418139,
+                  "forward_m": 1.3365166799969281,
+                  "up_m": -0.7824420213186352,
+                  "distance_m": 1.555283979104261
+                }
+              },
+              {
+                "frame": 255,
+                "time_s": 8.49864,
+                "gazed_object_id": "6230984856972407",
+                "gazed_object_name": "HybridMattress",
+                "gaze_depth_m": 5.23283,
+                "gaze_hit_distance_m": 5.2054077552481175,
+                "gaze_hit_exit_distance_m": 5.2473344348635536,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.2285208236768752,
+                  1.5827366318070497,
+                  2.61250658812199
+                ],
+                "gaze_direction_world_unit": [
+                  0.36490305003863593,
+                  -0.2393176719586704,
+                  -0.8997626442350132
+                ],
+                "wearer_world_m": [
+                  -0.288261685171933,
+                  1.579940538522876,
+                  2.572615824389335
+                ],
+                "right_world": [
+                  -0.8890980645003798,
+                  -0.07119412865252345,
+                  -0.4521460248051362
+                ],
+                "forward_world": [
+                  0.45389326455643375,
+                  -0.009721980699082922,
+                  -0.8910030232729795
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.20793215812986077,
+                  "forward_m": 1.3311196089722412,
+                  "up_m": -0.7863542918617911,
+                  "distance_m": 1.5599577776672076
+                }
+              },
+              {
+                "frame": 256,
+                "time_s": 8.531968,
+                "gazed_object_id": "4382154278474428",
+                "gazed_object_name": "BlackBedFrame",
+                "gaze_depth_m": 4.9491,
+                "gaze_hit_distance_m": 4.898966795616739,
+                "gaze_hit_exit_distance_m": 6.586339986543324,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.25225381245635675,
+                  1.5856899008556273,
+                  2.599821836400069
+                ],
+                "gaze_direction_world_unit": [
+                  0.2465542388701245,
+                  -0.24032459168637096,
+                  -0.938858401424812
+                ],
+                "wearer_world_m": [
+                  -0.313174952367629,
+                  1.581547827074257,
+                  2.561880834335009
+                ],
+                "right_world": [
+                  -0.9013924254871635,
+                  -0.09136098627201907,
+                  -0.4232550832084277
+                ],
+                "forward_world": [
+                  0.42488909969815036,
+                  0.0017207902307160433,
+                  -0.9052437748135459
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.276578584322078,
+                  "forward_m": 1.322524831742741,
+                  "up_m": -0.7893060324497048,
+                  "distance_m": 1.5647912502130323
+                }
+              },
+              {
+                "frame": 257,
+                "time_s": 8.565296,
+                "gazed_object_id": "4820696891314354",
+                "gazed_object_name": "Bookcase",
+                "gaze_depth_m": 2.66134,
+                "gaze_hit_distance_m": 2.6613484986259768,
+                "gaze_hit_exit_distance_m": 3.1536695734840903,
+                "gaze_depth_obb_residual_m": 8.498625976738339e-06,
+                "gaze_origin_world_m": [
+                  -0.27612254588159874,
+                  1.5873069644145292,
+                  2.5867948152203284
+                ],
+                "gaze_direction_world_unit": [
+                  0.08739712175469339,
+                  -0.1969175813163872,
+                  -0.9765168760843312
+                ],
+                "wearer_world_m": [
+                  -0.338268172021115,
+                  1.582330467061893,
+                  2.551000718963729
+                ],
+                "right_world": [
+                  -0.9144221271069695,
+                  -0.1030134803125109,
+                  -0.3914337700442706
+                ],
+                "forward_world": [
+                  0.3933664175360002,
+                  0.0016844096197889125,
+                  -0.9193802392476835
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.34914825157941787,
+                  "forward_m": 1.3096084980605818,
+                  "up_m": -0.7909238998445435,
+                  "distance_m": 1.569248079533239
+                }
+              },
+              {
+                "frame": 258,
+                "time_s": 8.598624,
+                "gazed_object_id": "4820696891314354",
+                "gazed_object_name": "Bookcase",
+                "gaze_depth_m": 2.64775,
+                "gaze_hit_distance_m": 2.6357397242089147,
+                "gaze_hit_exit_distance_m": 3.1256126130603783,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.29956491168204324,
+                  1.5876644466091727,
+                  2.5734454153932167
+                ],
+                "gaze_direction_world_unit": [
+                  -0.008172038966412998,
+                  -0.16621573428956232,
+                  -0.9860555498823145
+                ],
+                "wearer_world_m": [
+                  -0.36300794027014704,
+                  1.582440770076406,
+                  2.540042466001732
+                ],
+                "right_world": [
+                  -0.9284273668741132,
+                  -0.10574047630773778,
+                  -0.3561482501844065
+                ],
+                "forward_world": [
+                  0.35859490928417864,
+                  -0.004455421416685576,
+                  -0.9334826405753199
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.42554289293636344,
+                  "forward_m": 1.2912636073130819,
+                  "up_m": -0.7912831135607866,
+                  "distance_m": 1.573078962768969
+                }
+              },
+              {
+                "frame": 259,
+                "time_s": 8.631952,
+                "gazed_object_id": "6522114837829109",
+                "gazed_object_name": "YellowArmChair",
+                "gaze_depth_m": 6.31003,
+                "gaze_hit_distance_m": 5.8179218872303835,
+                "gaze_hit_exit_distance_m": 6.572936886152094,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -0.3225395790914585,
+                  1.5870629424344938,
+                  2.5601759615679085
+                ],
+                "gaze_direction_world_unit": [
+                  -0.21124035181850365,
+                  -0.17054891608702127,
+                  -0.962439910324347
+                ],
+                "wearer_world_m": [
+                  -0.38734369421119197,
+                  1.5820021445562398,
+                  2.529469664341056
+                ],
+                "right_world": [
+                  -0.9430154665775912,
+                  -0.10243016676355572,
+                  -0.3165910465130669
+                ],
+                "forward_world": [
+                  0.31952587417780765,
+                  -0.013203093284040623,
+                  -0.9474855640370681
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5058872318029681,
+                  "forward_m": 1.2668005713768549,
+                  "up_m": -0.7906820931897327,
+                  "distance_m": 1.5766685610593285
+                }
+              },
+              {
+                "frame": 260,
+                "time_s": 8.66528,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.24621,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.3452196143680671,
+                  1.5859006033798058,
+                  2.547447559139134
+                ],
+                "gaze_direction_world_unit": [
+                  -0.37595504741155916,
+                  -0.21187303710588162,
+                  -0.9020906930421703
+                ],
+                "wearer_world_m": [
+                  -0.411395742406394,
+                  1.5811652286609819,
+                  2.519764387262933
+                ],
+                "right_world": [
+                  -0.957263327382222,
+                  -0.09681312285311283,
+                  -0.2725328260825576
+                ],
+                "forward_world": [
+                  0.2758304155491196,
+                  -0.022229759434994667,
+                  -0.960949228447301
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.589570009776258,
+                  "forward_m": 1.2358627885451894,
+                  "up_m": -0.7895178213571539,
+                  "distance_m": 1.58059736137285
+                }
+              },
+              {
+                "frame": 261,
+                "time_s": 8.698608,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.97903,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.36761379827959967,
+                  1.5845684197835954,
+                  2.535210405640806
+                ],
+                "gaze_direction_world_unit": [
+                  -0.4049934392449162,
+                  -0.21469884329695604,
+                  -0.8887545897802854
+                ],
+                "wearer_world_m": [
+                  -0.43504374250304495,
+                  1.58028097715427,
+                  2.51065674687631
+                ],
+                "right_world": [
+                  -0.969691427393335,
+                  -0.08973243329484268,
+                  -0.22725894053890017
+                ],
+                "forward_world": [
+                  0.23063801872554285,
+                  -0.029141640247202644,
+                  -0.9726031406087783
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.6717654188101647,
+                  "forward_m": 1.1998950452923391,
+                  "up_m": -0.7881859463912636,
+                  "distance_m": 1.5850091431013869
+                }
+              },
+              {
+                "frame": 262,
+                "time_s": 8.731936,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.98297,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.3894708938202896,
+                  1.583438182033703,
+                  2.5232898630107377
+                ],
+                "gaze_direction_world_unit": [
+                  -0.4123776969902381,
+                  -0.2106864205781807,
+                  -0.8863158958345393
+                ],
+                "wearer_world_m": [
+                  -0.45796444536338204,
+                  1.57964010155219,
+                  2.501789405279106
+                ],
+                "right_world": [
+                  -0.9795699267788636,
+                  -0.08246669424055764,
+                  -0.18341756429384481
+                ],
+                "forward_world": [
+                  0.18660678495402966,
+                  -0.032723590230524124,
+                  -0.9818895428975429
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.7488659654908015,
+                  "forward_m": 1.1606902986537688,
+                  "up_m": -0.7870603492289509,
+                  "distance_m": 1.5898006783832506
+                }
+              },
+              {
+                "frame": 263,
+                "time_s": 8.765264,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 6.01667,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.41000456799738394,
+                  1.5828380123494161,
+                  2.5115400819055616
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3957173142246048,
+                  -0.20014876602590104,
+                  -0.8962969812964753
+                ],
+                "wearer_world_m": [
+                  -0.479401618990521,
+                  1.5792845681035412,
+                  2.4931149890035598
+                ],
+                "right_world": [
+                  -0.9870785008976413,
+                  -0.0788098908533981,
+                  -0.13951714650658897
+                ],
+                "forward_world": [
+                  0.14258486394569514,
+                  -0.03471350237737886,
+                  -0.989173659842539
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.8219436383972507,
+                  "forward_m": 1.1173159761297833,
+                  "up_m": -0.7864613306242045,
+                  "distance_m": 1.594524305171845
+                }
+              },
+              {
+                "frame": 264,
+                "time_s": 8.798592,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 5.99663,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.4287668671644119,
+                  1.5829062935265878,
+                  2.49966865343165
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3926775914403716,
+                  -0.20089888335771272,
+                  -0.8974652906080622
+                ],
+                "wearer_world_m": [
+                  -0.498903684669781,
+                  1.579292435810214,
+                  2.4843119427283655
+                ],
+                "right_world": [
+                  -0.9922052326277282,
+                  -0.07950717479675015,
+                  -0.09595512233328612
+                ],
+                "forward_world": [
+                  0.09905103625852468,
+                  -0.035946811879449495,
+                  -0.9944328629584888
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.890116671065637,
+                  "forward_m": 1.0700615119314025,
+                  "up_m": -0.7865254089574176,
+                  "distance_m": 1.5987374851305398
+                }
+              },
+              {
+                "frame": 265,
+                "time_s": 8.83192,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 5.02762,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.44590360888034186,
+                  1.5835164367674448,
+                  2.48720406237905
+                ],
+                "gaze_direction_world_unit": [
+                  -0.38370241263136695,
+                  -0.2069803131369535,
+                  -0.8999620039282752
+                ],
+                "wearer_world_m": [
+                  -0.516590193863886,
+                  1.579804358817986,
+                  2.474646639010328
+                ],
+                "right_world": [
+                  -0.9951147791214494,
+                  -0.08097875327516564,
+                  -0.0564713900313174
+                ],
+                "forward_world": [
+                  0.059471044177602184,
+                  -0.0351200331359645,
+                  -0.9976120379069984
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.9497258825861952,
+                  "forward_m": 1.022397445701668,
+                  "up_m": -0.7871341129766487,
+                  "distance_m": 1.6021410365017674
+                }
+              },
+              {
+                "frame": 266,
+                "time_s": 8.865248,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 5.00978,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.4614859967801562,
+                  1.5843781670169128,
+                  2.4738982963393767
+                ],
+                "gaze_direction_world_unit": [
+                  -0.37769677920571854,
+                  -0.20827744543598553,
+                  -0.9022004481822693
+                ],
+                "wearer_world_m": [
+                  -0.532565447759183,
+                  1.580532912622946,
+                  2.463849049195147
+                ],
+                "right_world": [
+                  -0.9963216237399065,
+                  -0.08300918786567356,
+                  -0.021276672628922355
+                ],
+                "forward_world": [
+                  0.02414487227883466,
+                  -0.03370325296331936,
+                  -0.9991401883030879
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0011199249421532,
+                  "forward_m": 0.9752424705463226,
+                  "up_m": -0.787998026978872,
+                  "distance_m": 1.6044562539988656
+                }
+              },
+              {
+                "frame": 267,
+                "time_s": 8.898576,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.98706,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.4755136767084517,
+                  1.5850693728739556,
+                  2.4596901844412042
+                ],
+                "gaze_direction_world_unit": [
+                  -0.37099055871947395,
+                  -0.20982031674466506,
+                  -0.904622263722368
+                ],
+                "wearer_world_m": [
+                  -0.546872684527808,
+                  1.5808579338410402,
+                  2.4520601460855285
+                ],
+                "right_world": [
+                  -0.9960495361826709,
+                  -0.08789812155247345,
+                  0.01261910051602988
+                ],
+                "forward_world": [
+                  -0.00951722138294786,
+                  -0.03561961066508493,
+                  -0.9993201017858173
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0475592706331796,
+                  "forward_m": 0.9262428045598929,
+                  "up_m": -0.7886897914867822,
+                  "distance_m": 1.605408902953998
+                }
+              },
+              {
+                "frame": 268,
+                "time_s": 8.931904,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.80441,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -0.488303176731335,
+                  1.5850681759200789,
+                  2.4445203530206743
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3723669239627668,
+                  -0.21872841161303305,
+                  -0.9019427675256042
+                ],
+                "wearer_world_m": [
+                  -0.55985334408796,
+                  1.5802865475562782,
+                  2.439443810651161
+                ],
+                "right_world": [
+                  -0.9942955965173533,
+                  -0.09506035588359499,
+                  0.04837143253497045
+                ],
+                "forward_world": [
+                  -0.04450733854069894,
+                  -0.042358260985518315,
+                  -0.9981106524540784
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.092200283077653,
+                  "forward_m": 0.8722251643452735,
+                  "up_m": -0.7886868259058033,
+                  "distance_m": 1.6049003411518783
+                }
+              },
+              {
+                "frame": 269,
+                "time_s": 8.965232,
+                "gazed_object_id": "4349905901758424",
+                "gazed_object_name": "RedArmChair",
+                "gaze_depth_m": 5.8619,
+                "gaze_hit_distance_m": 5.881645445294041,
+                "gaze_hit_exit_distance_m": 6.418116477546457,
+                "gaze_depth_obb_residual_m": 0.019745445294041097,
+                "gaze_origin_world_m": [
+                  -0.5001982900387757,
+                  1.583980637663324,
+                  2.4283174814571793
+                ],
+                "gaze_direction_world_unit": [
+                  -0.36209496704046046,
+                  -0.20344680426868644,
+                  -0.9096684190829243
+                ],
+                "wearer_world_m": [
+                  -0.5718486772892309,
+                  1.5785690166442332,
+                  2.4260818460205438
+                ],
+                "right_world": [
+                  -0.9908241700676561,
+                  -0.10254090619318765,
+                  0.08805013666554479
+                ],
+                "forward_world": [
+                  -0.08290755340065181,
+                  -0.053385501706663716,
+                  -0.9951262863559811
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.1366347014590181,
+                  "forward_m": 0.8106316519444777,
+                  "up_m": -0.7875969305363901,
+                  "distance_m": 1.6029257764118112
+                }
+              },
+              {
+                "frame": 270,
+                "time_s": 8.99856,
+                "gazed_object_id": "4349905901758424",
+                "gazed_object_name": "RedArmChair",
+                "gaze_depth_m": 5.84537,
+                "gaze_hit_distance_m": 5.865503241927113,
+                "gaze_hit_exit_distance_m": 6.375260378737842,
+                "gaze_depth_obb_residual_m": 0.02013324192711341,
+                "gaze_origin_world_m": [
+                  -0.5109923668326442,
+                  1.5821717376436153,
+                  2.4109625642388264
+                ],
+                "gaze_direction_world_unit": [
+                  -0.36229727455932786,
+                  -0.20582320540819313,
+                  -0.9090530748874788
+                ],
+                "wearer_world_m": [
+                  -0.5826328113919871,
+                  1.5762378182803016,
+                  2.411667550287913
+                ],
+                "right_world": [
+                  -0.9857101742598351,
+                  -0.10842787347452358,
+                  0.12891411332526292
+                ],
+                "forward_world": [
+                  -0.12235864541295371,
+                  -0.06510937148528843,
+                  -0.9903479851231577
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.177673130770487,
+                  "forward_m": 0.7442703223951185,
+                  "up_m": -0.7857873924229398,
+                  "distance_m": 1.5994730825580459
+                }
+              }
+            ],
+            "gaze_events": [
+              {
+                "object_id": "4243547695770937",
+                "object_name": "CoffeeCanisterLarge",
+                "start_index": 81,
+                "end_index": 94,
+                "start_time_s": 2.699568,
+                "end_time_s": 3.132832,
+                "state_count": 14,
+                "direct_hit_count": 13,
+                "merged_gap_count": 1,
+                "hit_support_ratio": 0.9285714285714286,
+                "median_relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.005605205993760361,
+                  "forward_m": 0.6594007886864733,
+                  "up_m": -0.7654212035333812,
+                  "distance_m": 1.0103021514740356
+                }
+              }
+            ],
+            "transition": {
+              "start_frame": 39,
+              "end_frame": 87,
+              "start_relation": "left-front",
+              "end_relation": "front",
+              "wearer_turn_deg": 18.328534635516725,
+              "pre_gazed_object_id": "7158052634270103"
+            },
+            "semantic_gt_id": "task5_onset_apartment_release_clean_seq134_m1292_0_270_e4c7dff9",
+            "answer_signature": "sha256:f5782afd56b03b466331cd2231c5ae83ddd31e8c64ed4a80e3b5a56861873def",
+            "evidence_signature": "sha256:d62aadb5fca5db1ddf705269c5c52087ce2a6e077ab0fa0f0d3e4905e311efdf",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "task5_media": {
+        "object_id": "4243547695770937",
+        "anchor_frames": [
+          39,
+          87
+        ]
+      },
+      "case_policy": "one annotation-derived question per unique gaze/object window"
+    },
+    {
+      "name": "task5_onset_apartment_release_clean_seq134_m1292_1117_1387_17217083",
+      "title": "Task 5 · black ceramic bowl",
+      "video_clip": "./task5_media/task5_onset_apartment_release_clean_seq134_m1292_1117_1387_17217083.mp4",
+      "original_image": "./task5_media/task5_onset_apartment_release_clean_seq134_m1292_1117_1387_17217083_gaze_evidence.jpg",
+      "original_caption": "ADT RGB anchor frames · green: target 2D box · red: measured gaze projection",
+      "video_window": {
+        "source_video": "site/qa_benchmark/task5_media/Apartment_release_clean_seq134_M1292_rgb.mp4",
+        "source_sequence": "Apartment_release_clean_seq134_M1292",
+        "start_sec": 37.227376,
+        "duration_sec": 8.998559999999998
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_onset_side_change",
+          "question_categories": [
+            "after_gaze_turns_to_object"
+          ],
+          "question": "As gaze turns to the black ceramic bowl, how does it shift in the wearer's body-relative view?",
+          "options": [
+            {
+              "label": "A",
+              "text": "The black ceramic bowl changes from front to right-front.",
+              "semantic_option_id": "relation_pair_2"
+            },
+            {
+              "label": "B",
+              "text": "The black ceramic bowl changes from right-front to behind.",
+              "semantic_option_id": "relation_pair_3"
+            },
+            {
+              "label": "C",
+              "text": "The black ceramic bowl changes from right-front to front.",
+              "semantic_option_id": "relation_pair_1"
+            },
+            {
+              "label": "D",
+              "text": "The black ceramic bowl changes from left-front to front.",
+              "semantic_option_id": "relation_pair_4"
+            }
+          ],
+          "correct_option": "C",
+          "correct_answer": "The black ceramic bowl changes from right-front to front.",
+          "answer": "The black ceramic bowl changes from right-front to front.",
+          "explanation": "Immediately before the gaze onset the black ceramic bowl is right-front; during the sustained gaze it is front.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_onset_apartment_release_clean_seq134_m1292_1117_1387_17217083",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_onset_side_change",
+            "question_focus": "As gaze turns to the black ceramic bowl, how does it shift in the wearer's body-relative view?",
+            "options": [
+              {
+                "id": "relation_pair_1",
+                "statement": "The black ceramic bowl changes from right-front to front."
+              },
+              {
+                "id": "relation_pair_2",
+                "statement": "The black ceramic bowl changes from front to right-front."
+              },
+              {
+                "id": "relation_pair_3",
+                "statement": "The black ceramic bowl changes from right-front to behind."
+              },
+              {
+                "id": "relation_pair_4",
+                "statement": "The black ceramic bowl changes from left-front to front."
+              }
+            ],
+            "correct_option_id": "relation_pair_1",
+            "evidence_statement": "Immediately before the gaze onset the black ceramic bowl is right-front; during the sustained gaze it is front.",
+            "semantic_facts": [
+              {
+                "id": "pre_onset_relation",
+                "value": "right-front",
+                "frame": 1217
+              },
+              {
+                "id": "sustained_gaze_relation",
+                "value": "front",
+                "frame": 1271
+              },
+              {
+                "id": "wearer_turn_deg",
+                "value": 39.122720872358755
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:15bd089fa65451ada537676a784dc7b632f907aa12f1f3be3f91808db5c8b695"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "gaze_event",
+                "start_index": 1255
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:15bd089fa65451ada537676a784dc7b632f907aa12f1f3be3f91808db5c8b695"
+              }
+            ],
+            "provenance": {
+              "dataset": "Aria Digital Twin v2",
+              "sequence_name": "Apartment_release_clean_seq134_M1292",
+              "analysis_schema_version": 5,
+              "coordinate_frame": "gravity-aligned wearer CPF: +right and +forward, metric world positions",
+              "computation": "deterministic_annotation_geometry"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:e0746116d368787f5f957ec5d390bfd063892451da4e1cbfddf75d8f16bb1253"
+          },
+          "answer_signature": "sha256:e0746116d368787f5f957ec5d390bfd063892451da4e1cbfddf75d8f16bb1253",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_onset_apartment_release_clean_seq134_m1292_1117_1387_17217083",
+              "answer_signature": "sha256:e0746116d368787f5f957ec5d390bfd063892451da4e1cbfddf75d8f16bb1253",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "method": "Deterministic ADT gaze/object computation produces signed semantic GT; the language layer cannot choose or modify the answer.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_onset_side_change",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "annotation_source": "Aria Digital Twin v2",
+            "analysis_schema_version": 5,
+            "coordinate_frame": "gravity-aligned wearer CPF: +right and +forward, metric world positions",
+            "alignment_diagnostics": {
+              "maximum_allowed_wearer_skew_ms": 10.0,
+              "maximum_observed_wearer_skew_ms": 0.003,
+              "maximum_allowed_dynamic_object_skew_ms": 50.0,
+              "maximum_observed_dynamic_object_skew_ms": 0.0037,
+              "gaze_state_count": 2816,
+              "raw_gaze_state_count": 3434,
+              "discarded_gaze_states_outside_wearer_trajectory": 618,
+              "wearer_state_count": 2816
+            },
+            "maximum_internal_gaze_gap_states": 1,
+            "gaze_definition": "smallest eligible same-time object OBB containing the measured fixation depth along the gaze ray",
+            "gaze_grounding_method": "depth_consistent_ray_obb_intersection",
+            "maximum_gaze_depth_obb_residual_m": 0.05,
+            "object_id": "4989808014384955",
+            "object_name": "BlackCeramicBowl",
+            "object_category": "bowl",
+            "timeline": [
+              {
+                "frame": 1117,
+                "time_s": 37.227376,
+                "gazed_object_id": "4592004530886030",
+                "gazed_object_name": "CandleDishSmall",
+                "gaze_depth_m": 1.45998,
+                "gaze_hit_distance_m": 1.4516233039850264,
+                "gaze_hit_exit_distance_m": 1.462549855440977,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.3062031323544487,
+                  1.535765693956827,
+                  2.2356934727133835
+                ],
+                "gaze_direction_world_unit": [
+                  0.7491989745915921,
+                  -0.5398396519514839,
+                  0.3837630084463691
+                ],
+                "wearer_world_m": [
+                  -2.287774028740587,
+                  1.531309796203636,
+                  2.166349584617873
+                ],
+                "right_world": [
+                  0.1363789619911927,
+                  -0.06410993194443595,
+                  -0.98858014108735
+                ],
+                "forward_world": [
+                  0.9550630426104731,
+                  -0.2565806902994036,
+                  0.14839452147942306
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.9673592671299539,
+                  "forward_m": 1.1172489157667016,
+                  "up_m": -0.7573489706776362,
+                  "distance_m": 1.6606042740130915
+                }
+              },
+              {
+                "frame": 1118,
+                "time_s": 37.260704,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.47112,
+                "gaze_hit_distance_m": 1.4669416312374692,
+                "gaze_hit_exit_distance_m": 2.2789849010204075,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.2960952647836157,
+                  1.5363677347404139,
+                  2.209590691219882
+                ],
+                "gaze_direction_world_unit": [
+                  0.678882455372248,
+                  -0.5387355479737443,
+                  0.4988813698036614
+                ],
+                "wearer_world_m": [
+                  -2.277959922826597,
+                  1.531471433695171,
+                  2.140199068460529
+                ],
+                "right_world": [
+                  0.132190654688917,
+                  -0.06974932690902468,
+                  -0.988767243697249
+                ],
+                "forward_world": [
+                  0.9543306826823483,
+                  -0.26066158736367595,
+                  0.14597426130688923
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.9992379012746884,
+                  "forward_m": 1.106633843827023,
+                  "up_m": -0.7579516372718104,
+                  "distance_m": 1.672604415900614
+                }
+              },
+              {
+                "frame": 1119,
+                "time_s": 37.294032,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.33623,
+                "gaze_hit_distance_m": 1.3304522272719759,
+                "gaze_hit_exit_distance_m": 2.463280652635329,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.2865091956467647,
+                  1.5365726881253585,
+                  2.1852451617213027
+                ],
+                "gaze_direction_world_unit": [
+                  0.6248221891189003,
+                  -0.5943933391083926,
+                  0.5062546695174677
+                ],
+                "wearer_world_m": [
+                  -2.269068459283638,
+                  1.531071409061248,
+                  2.115720933248268
+                ],
+                "right_world": [
+                  0.12230449517128378,
+                  -0.07716481096490425,
+                  -0.9894883538524588
+                ],
+                "forward_world": [
+                  0.9531333253423354,
+                  -0.2688454930263942,
+                  0.13877667311640202
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0355104532998234,
+                  "forward_m": 1.0901279012330247,
+                  "up_m": -0.7581578180704531,
+                  "distance_m": 1.6838836114890112
+                }
+              },
+              {
+                "frame": 1120,
+                "time_s": 37.32736,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.40499,
+                "gaze_hit_distance_m": 1.3972372740374452,
+                "gaze_hit_exit_distance_m": 2.426802929103309,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.277344289543807,
+                  1.5370755851369515,
+                  2.1635292024786343
+                ],
+                "gaze_direction_world_unit": [
+                  0.6304746789292908,
+                  -0.5662531531919021,
+                  0.5309039891818824
+                ],
+                "wearer_world_m": [
+                  -2.260458788188129,
+                  1.531133958719416,
+                  2.093904216873739
+                ],
+                "right_world": [
+                  0.11442477285690411,
+                  -0.08207943259658021,
+                  -0.9900353216432578
+                ],
+                "forward_world": [
+                  0.9511612950291328,
+                  -0.27856102616604306,
+                  0.13302610848936297
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0667283596359045,
+                  "forward_m": 1.0752852349521116,
+                  "up_m": -0.7586619650608639,
+                  "distance_m": 1.6940235261021428
+                }
+              },
+              {
+                "frame": 1121,
+                "time_s": 37.360688,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.47256,
+                "gaze_hit_distance_m": 1.4632044653877518,
+                "gaze_hit_exit_distance_m": 2.397252433218091,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.268499998210041,
+                  1.5382260433147976,
+                  2.1448772775958025
+                ],
+                "gaze_direction_world_unit": [
+                  0.6345799270729686,
+                  -0.5414280281616343,
+                  0.5515106585344205
+                ],
+                "wearer_world_m": [
+                  -2.251641010697738,
+                  1.532181105173182,
+                  2.075254759945806
+                ],
+                "right_world": [
+                  0.1140756173240538,
+                  -0.08237900405480811,
+                  -0.9900507326511478
+                ],
+                "forward_world": [
+                  0.9484714283687894,
+                  -0.2875027878766421,
+                  0.1332069687787652
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0866419493421555,
+                  "forward_m": 1.0682677270764296,
+                  "up_m": -0.7598120658125136,
+                  "distance_m": 1.7027334019562312
+                }
+              },
+              {
+                "frame": 1122,
+                "time_s": 37.394016,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.44491,
+                "gaze_hit_distance_m": 1.4356253976388644,
+                "gaze_hit_exit_distance_m": 2.4369879803373036,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.2599593427264475,
+                  1.5398105232423067,
+                  2.1291749598735126
+                ],
+                "gaze_direction_world_unit": [
+                  0.6208506897667927,
+                  -0.5529758307491446,
+                  0.5556637037124087
+                ],
+                "wearer_world_m": [
+                  -2.242495231779619,
+                  1.5339444541864211,
+                  2.059686430146165
+                ],
+                "right_world": [
+                  0.12271317234127105,
+                  -0.07898035033540712,
+                  -0.9892944867908837
+                ],
+                "forward_world": [
+                  0.9452253233674214,
+                  -0.29450975856270734,
+                  0.14075897902545792
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0939482100078035,
+                  "forward_m": 1.071136527659816,
+                  "up_m": -0.761392159812294,
+                  "distance_m": 1.7099047248575097
+                }
+              },
+              {
+                "frame": 1123,
+                "time_s": 37.427344,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.40827,
+                "gaze_hit_distance_m": 1.399285009665523,
+                "gaze_hit_exit_distance_m": 2.507335119534174,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.2515672646479774,
+                  1.541515050760903,
+                  2.1159447445970474
+                ],
+                "gaze_direction_world_unit": [
+                  0.6003596757726194,
+                  -0.5686173794494165,
+                  0.5623544571658288
+                ],
+                "wearer_world_m": [
+                  -2.232996353889042,
+                  1.5359060427780067,
+                  2.046722479363732
+                ],
+                "right_world": [
+                  0.1385083976496429,
+                  -0.07475749931045092,
+                  -0.9875356905334497
+                ],
+                "forward_world": [
+                  0.9414968953218221,
+                  -0.29940993171123564,
+                  0.15471680222924444
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0910111039763721,
+                  "forward_m": 1.0819604645624128,
+                  "up_m": -0.7630927472729705,
+                  "distance_m": 1.7155915063955243
+                }
+              },
+              {
+                "frame": 1124,
+                "time_s": 37.460672,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.42029,
+                "gaze_hit_distance_m": 1.4110196366463932,
+                "gaze_hit_exit_distance_m": 2.4851020622326097,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.243050369746044,
+                  1.542996302319007,
+                  2.1045235330196697
+                ],
+                "gaze_direction_world_unit": [
+                  0.5895486609425589,
+                  -0.5649333760502401,
+                  0.5773063805340402
+                ],
+                "wearer_world_m": [
+                  -2.2231465144003217,
+                  1.5374602703164666,
+                  2.035666793385532
+                ],
+                "right_world": [
+                  0.1575642330366135,
+                  -0.07334730933170444,
+                  -0.9847810338757467
+                ],
+                "forward_world": [
+                  0.9374264311570502,
+                  -0.3024413003612806,
+                  0.172513611068618
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.082541441974348,
+                  "forward_m": 1.0962162225808902,
+                  "up_m": -0.7645779122493073,
+                  "distance_m": 1.7199317905489524
+                }
+              },
+              {
+                "frame": 1125,
+                "time_s": 37.494,
+                "gazed_object_id": "8473544005996466",
+                "gazed_object_name": "BlackKitchenChair_B",
+                "gaze_depth_m": 1.71686,
+                "gaze_hit_distance_m": 1.6523722098012328,
+                "gaze_hit_exit_distance_m": 2.3424690757167936,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.233973286090051,
+                  1.544049856864033,
+                  2.094565587692219
+                ],
+                "gaze_direction_world_unit": [
+                  0.5527704212981159,
+                  -0.4700132249656638,
+                  0.6881369265598813
+                ],
+                "wearer_world_m": [
+                  -2.212737854453454,
+                  1.538375243702456,
+                  2.026119134828145
+                ],
+                "right_world": [
+                  0.17663672026298133,
+                  -0.07523882810713506,
+                  -0.9813962440318398
+                ],
+                "forward_world": [
+                  0.9336669843034362,
+                  -0.30279622028965314,
+                  0.19126006221902897
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0724502597059735,
+                  "forward_m": 1.1098652109761673,
+                  "up_m": -0.7656375185705645,
+                  "distance_m": 1.722832306384308
+                }
+              },
+              {
+                "frame": 1126,
+                "time_s": 37.527328,
+                "gazed_object_id": "8473544005996466",
+                "gazed_object_name": "BlackKitchenChair_B",
+                "gaze_depth_m": 1.93205,
+                "gaze_hit_distance_m": 1.5862665823633857,
+                "gaze_hit_exit_distance_m": 2.2150326062711185,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.2238872446870563,
+                  1.5445321287148972,
+                  2.08590735153057
+                ],
+                "gaze_direction_world_unit": [
+                  0.5349858799985242,
+                  -0.4188952717661786,
+                  0.7337007969834461
+                ],
+                "wearer_world_m": [
+                  -2.201455870397973,
+                  1.538599929547458,
+                  2.0178654220933407
+                ],
+                "right_world": [
+                  0.19379177395440023,
+                  -0.07919394853855276,
+                  -0.9778410233072043
+                ],
+                "forward_world": [
+                  0.9308016281953151,
+                  -0.3000396282175774,
+                  0.20876913193287944
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0632401755614795,
+                  "forward_m": 1.1203218336391814,
+                  "up_m": -0.7661200256669978,
+                  "distance_m": 1.724105732136131
+                }
+              },
+              {
+                "frame": 1127,
+                "time_s": 37.560656,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 1.77322,
+                "gaze_hit_distance_m": 1.722952592591187,
+                "gaze_hit_exit_distance_m": 1.7871610947542869,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.2125266793023988,
+                  1.5443043240896293,
+                  2.078561331139329
+                ],
+                "gaze_direction_world_unit": [
+                  0.5287811660565603,
+                  -0.4256403725155553,
+                  0.734316520111514
+                ],
+                "wearer_world_m": [
+                  -2.18892088279966,
+                  1.53816947125732,
+                  2.010935953852417
+                ],
+                "right_world": [
+                  0.21067120441605736,
+                  -0.08248901570597673,
+                  -0.9740704317028352
+                ],
+                "forward_world": [
+                  0.9279740171531944,
+                  -0.2964391002927206,
+                  0.22580541026779044
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0532278911023654,
+                  "forward_m": 1.129045845430857,
+                  "up_m": -0.76589012863584,
+                  "distance_m": 1.723549013176718
+                }
+              },
+              {
+                "frame": 1128,
+                "time_s": 37.593984,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 1.77017,
+                "gaze_hit_distance_m": 1.6990020373406272,
+                "gaze_hit_exit_distance_m": 1.7969516840611996,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.1997248762164907,
+                  1.5432913526919365,
+                  2.0725741344873514
+                ],
+                "gaze_direction_world_unit": [
+                  0.5175406341212161,
+                  -0.431143421617587,
+                  0.7390988039695974
+                ],
+                "wearer_world_m": [
+                  -2.1748859524081103,
+                  1.537145954071939,
+                  2.0053928600067135
+                ],
+                "right_world": [
+                  0.22844113079688472,
+                  -0.08293884596157691,
+                  -0.9700184521908863
+                ],
+                "forward_world": [
+                  0.924413559484693,
+                  -0.2940840152444475,
+                  0.24284596562130356
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0411689076425565,
+                  "forward_m": 1.1370295310582117,
+                  "up_m": -0.7648760476544394,
+                  "distance_m": 1.7210183662632796
+                }
+              },
+              {
+                "frame": 1129,
+                "time_s": 37.627312,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 1.76265,
+                "gaze_hit_distance_m": 1.687345412085041,
+                "gaze_hit_exit_distance_m": 1.802608265198689,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.1854440663320642,
+                  1.541549871105247,
+                  2.0679808237373827
+                ],
+                "gaze_direction_world_unit": [
+                  0.5065757575567007,
+                  -0.4331120652260666,
+                  0.74551655971646
+                ],
+                "wearer_world_m": [
+                  -2.159404595728027,
+                  1.535620587637498,
+                  2.0012361515213883
+                ],
+                "right_world": [
+                  0.24578727318745086,
+                  -0.08001670194223226,
+                  -0.9660154987107429
+                ],
+                "forward_world": [
+                  0.9204086854455125,
+                  -0.29331929729302275,
+                  0.25847948002112403
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0286687080427148,
+                  "forward_m": 1.1427384449260154,
+                  "up_m": -0.7631321799382739,
+                  "distance_m": 1.7165026036902882
+                }
+              },
+              {
+                "frame": 1130,
+                "time_s": 37.66064,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 1.76115,
+                "gaze_hit_distance_m": 1.6665459464167152,
+                "gaze_hit_exit_distance_m": 1.7933617713877097,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.16983571755323,
+                  1.5391666444668115,
+                  2.0647292412335823
+                ],
+                "gaze_direction_world_unit": [
+                  0.5015819210264874,
+                  -0.43718016227384304,
+                  0.746517971795452
+                ],
+                "wearer_world_m": [
+                  -2.142635517513192,
+                  1.5336747165328861,
+                  1.9984114491537
+                ],
+                "right_world": [
+                  0.26260197589814166,
+                  -0.07377918483266932,
+                  -0.9620794323442423
+                ],
+                "forward_world": [
+                  0.9160162941012765,
+                  -0.29428731623185045,
+                  0.2725970000678996
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0159736578412855,
+                  "forward_m": 1.146179504613471,
+                  "up_m": -0.7607456345996362,
+                  "distance_m": 1.7101648607037236
+                }
+              },
+              {
+                "frame": 1131,
+                "time_s": 37.693968,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 1.75114,
+                "gaze_hit_distance_m": 1.6620103232059678,
+                "gaze_hit_exit_distance_m": 1.78996613997741,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.153246105239928,
+                  1.5362576141331787,
+                  2.0626692890043414
+                ],
+                "gaze_direction_world_unit": [
+                  0.49236450977227203,
+                  -0.43659604644471095,
+                  0.7529681810976865
+                ],
+                "wearer_world_m": [
+                  -2.1248254785658367,
+                  1.53138255369208,
+                  1.996816700094356
+                ],
+                "right_world": [
+                  0.2803296112287914,
+                  -0.06480216617834755,
+                  -0.9577139386721428
+                ],
+                "forward_world": [
+                  0.9108113138940604,
+                  -0.29702944480245885,
+                  0.28669890024713773
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -1.0014765182107506,
+                  "forward_m": 1.1492264808082262,
+                  "up_m": -0.7578362129534407,
+                  "distance_m": 1.7023490965081167
+                }
+              },
+              {
+                "frame": 1132,
+                "time_s": 37.727296,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 1.73264,
+                "gaze_hit_distance_m": 1.6537799677198155,
+                "gaze_hit_exit_distance_m": 1.797440172216314,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.1358740378783243,
+                  1.5331077625672087,
+                  2.0617061572951685
+                ],
+                "gaze_direction_world_unit": [
+                  0.47795169124720716,
+                  -0.4368364905404704,
+                  0.7620604053263889
+                ],
+                "wearer_world_m": [
+                  -2.106266012293103,
+                  1.52895115147597,
+                  1.996329180413539
+                ],
+                "right_world": [
+                  0.29761730478656445,
+                  -0.05438750710644022,
+                  -0.9531347957987522
+                ],
+                "forward_world": [
+                  0.9056153099985705,
+                  -0.29987732675251944,
+                  0.2998908121232717
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.9868380068429509,
+                  "forward_m": 1.150675448095707,
+                  "up_m": -0.7546874505790387,
+                  "distance_m": 1.6933565444588192
+                }
+              },
+              {
+                "frame": 1133,
+                "time_s": 37.760624,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 1.72487,
+                "gaze_hit_distance_m": 1.6202387213307439,
+                "gaze_hit_exit_distance_m": 1.7640520723939783,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.117788314195325,
+                  1.530143683342472,
+                  2.061806792985605
+                ],
+                "gaze_direction_world_unit": [
+                  0.4688090443651003,
+                  -0.44419534741172084,
+                  0.7634844944458679
+                ],
+                "wearer_world_m": [
+                  -2.087219749794714,
+                  1.526718238268356,
+                  1.9968307135599432
+                ],
+                "right_world": [
+                  0.31161791035909137,
+                  -0.0440952008139624,
+                  -0.9491838026476278
+                ],
+                "forward_world": [
+                  0.9020140719931156,
+                  -0.3003622880735737,
+                  0.31008564918358666
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.975529254748082,
+                  "forward_m": 1.1477059403079295,
+                  "up_m": -0.7517218847464002,
+                  "distance_m": 1.6834405377957777
+                }
+              },
+              {
+                "frame": 1134,
+                "time_s": 37.793952,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.50188,
+                "gaze_hit_distance_m": 1.4892824802070213,
+                "gaze_hit_exit_distance_m": 2.035129480238133,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.0988949524262885,
+                  1.5279704112020818,
+                  2.0630529885527613
+                ],
+                "gaze_direction_world_unit": [
+                  0.4408132711325694,
+                  -0.5251343168536919,
+                  0.7279544005334471
+                ],
+                "wearer_world_m": [
+                  -2.067545438836851,
+                  1.525255129764306,
+                  1.998416335286837
+                ],
+                "right_world": [
+                  0.32301034648628185,
+                  -0.034311125982447954,
+                  -0.9457732617792859
+                ],
+                "forward_world": [
+                  0.8996210637051724,
+                  -0.29915514773836754,
+                  0.31810083200081357
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.9667347747524756,
+                  "forward_m": 1.1409483542465746,
+                  "up_m": -0.7495491836195174,
+                  "distance_m": 1.6727711291262684
+                }
+              },
+              {
+                "frame": 1135,
+                "time_s": 37.82728,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.24448,
+                "gaze_hit_distance_m": 1.2214105873737684,
+                "gaze_hit_exit_distance_m": 1.2538246069416863,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.0791546286971934,
+                  1.527140839099565,
+                  2.065428430542646
+                ],
+                "gaze_direction_world_unit": [
+                  0.40093591227744313,
+                  -0.6265305747077246,
+                  0.6683635486789078
+                ],
+                "wearer_world_m": [
+                  -2.047100320017586,
+                  1.5251061697730783,
+                  2.0011132448023843
+                ],
+                "right_world": [
+                  0.3333097901015321,
+                  -0.024896602510858068,
+                  -0.9424885903849918
+                ],
+                "forward_world": [
+                  0.8973643875594535,
+                  -0.2982653400688453,
+                  0.3252305995038946
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.9586866460334441,
+                  "forward_m": 1.1319254296922172,
+                  "up_m": -0.7487265826703702,
+                  "distance_m": 1.6616036709348034
+                }
+              },
+              {
+                "frame": 1136,
+                "time_s": 37.860608,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.17895,
+                "gaze_hit_distance_m": 1.1557635157200032,
+                "gaze_hit_exit_distance_m": 1.1864051563187326,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.058983217753691,
+                  1.527748044140853,
+                  2.0683899719899594
+                ],
+                "gaze_direction_world_unit": [
+                  0.3618345110009241,
+                  -0.6618832952356952,
+                  0.6564954608652371
+                ],
+                "wearer_world_m": [
+                  -2.02635302659156,
+                  1.52638356197738,
+                  2.004347247858733
+                ],
+                "right_world": [
+                  0.34174502265813234,
+                  -0.015329020885374023,
+                  -0.9396676862631222
+                ],
+                "forward_world": [
+                  0.8950070901469854,
+                  -0.29967311872022784,
+                  0.3303911780043749
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.9526929012718031,
+                  "forward_m": 1.1204345002737877,
+                  "up_m": -0.7493373890368628,
+                  "distance_m": 1.6506070871488592
+                }
+              },
+              {
+                "frame": 1137,
+                "time_s": 37.893936,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.17064,
+                "gaze_hit_distance_m": 1.1472347930279545,
+                "gaze_hit_exit_distance_m": 1.1775726268263367,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.038991439299977,
+                  1.529487957658011,
+                  2.07137511995439
+                ],
+                "gaze_direction_world_unit": [
+                  0.35187590044621886,
+                  -0.6683066902864337,
+                  0.655400273423467
+                ],
+                "wearer_world_m": [
+                  -2.005854550705874,
+                  1.5287726456217667,
+                  2.0075825134549468
+                ],
+                "right_world": [
+                  0.3491861075677323,
+                  -0.005727920502623413,
+                  -0.9370358868306021
+                ],
+                "forward_world": [
+                  0.8922138099486644,
+                  -0.30359832191201014,
+                  0.33433901397997223
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.948001128521376,
+                  "forward_m": 1.108146661996389,
+                  "up_m": -0.7510717030519346,
+                  "distance_m": 1.6403669916506107
+                }
+              },
+              {
+                "frame": 1138,
+                "time_s": 37.927264,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.16265,
+                "gaze_hit_distance_m": 1.1394984995908841,
+                "gaze_hit_exit_distance_m": 1.1695469345952774,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.0199585088102103,
+                  1.531471191381969,
+                  2.0740390813414025
+                ],
+                "gaze_direction_world_unit": [
+                  0.33796254698882766,
+                  -0.6745708548494859,
+                  0.6563044100266723
+                ],
+                "wearer_world_m": [
+                  -1.986037645927481,
+                  1.531297140325788,
+                  2.010656067303563
+                ],
+                "right_world": [
+                  0.3607136513673044,
+                  0.0022787733397333643,
+                  -0.932673827717565
+                ],
+                "forward_world": [
+                  0.8879308047020626,
+                  -0.30686053855626744,
+                  0.34265944600741016
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.9386500630613204,
+                  "forward_m": 1.101039046018552,
+                  "up_m": -0.7530488331766026,
+                  "distance_m": 1.6310835254183358
+                }
+              },
+              {
+                "frame": 1139,
+                "time_s": 37.960592,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.15737,
+                "gaze_hit_distance_m": 1.1346546321322395,
+                "gaze_hit_exit_distance_m": 1.1644997276508626,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -2.002144784619467,
+                  1.5332963205108574,
+                  2.076342404935219
+                ],
+                "gaze_direction_world_unit": [
+                  0.33064641851668064,
+                  -0.6790882233007121,
+                  0.6553717501512972
+                ],
+                "wearer_world_m": [
+                  -1.9670777683597849,
+                  1.533411629035299,
+                  2.0135861082345103
+                ],
+                "right_world": [
+                  0.3776015527343066,
+                  0.0065346057108273126,
+                  -0.9259451205664649
+                ],
+                "forward_world": [
+                  0.8815875765492516,
+                  -0.30840610903827165,
+                  0.35733599984033393
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.923074337803845,
+                  "forward_m": 1.1005574246873748,
+                  "up_m": -0.7548731154260714,
+                  "distance_m": 1.6226910668822876
+                }
+              },
+              {
+                "frame": 1140,
+                "time_s": 37.99392,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.15351,
+                "gaze_hit_distance_m": 1.130878682915615,
+                "gaze_hit_exit_distance_m": 1.1605435460361087,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9851694214422824,
+                  1.5352186854045484,
+                  2.0785638298156943
+                ],
+                "gaze_direction_world_unit": [
+                  0.31481951111468015,
+                  -0.6830817288323433,
+                  0.6590053316604737
+                ],
+                "wearer_world_m": [
+                  -1.948833819034183,
+                  1.535192374009307,
+                  2.016533313081179
+                ],
+                "right_world": [
+                  0.39635891531799305,
+                  0.004749796206289791,
+                  -0.918083356609814
+                ],
+                "forward_world": [
+                  0.873460952980734,
+                  -0.30995590001400597,
+                  0.375490750438004
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.9051910937213332,
+                  "forward_m": 1.102635831628994,
+                  "up_m": -0.7567996273608163,
+                  "distance_m": 1.6149063035724571
+                }
+              },
+              {
+                "frame": 1141,
+                "time_s": 38.027248,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.15687,
+                "gaze_hit_distance_m": 1.1342829736594684,
+                "gaze_hit_exit_distance_m": 1.163949966290116,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9685947197572067,
+                  1.5372750117892746,
+                  2.080838962610294
+                ],
+                "gaze_direction_world_unit": [
+                  0.3049962707744241,
+                  -0.6829693880983156,
+                  0.6637244079693823
+                ],
+                "wearer_world_m": [
+                  -1.9308734661469782,
+                  1.5368156953820031,
+                  2.01964290264308
+                ],
+                "right_world": [
+                  0.4169228858498667,
+                  -0.0011545607525139112,
+                  -0.9089411280408035
+                ],
+                "forward_world": [
+                  0.8636492109035993,
+                  -0.31122902224301996,
+                  0.3965432337327723
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.884992286136279,
+                  "forward_m": 1.1067101508581878,
+                  "up_m": -0.7588598640830035,
+                  "distance_m": 1.6074473546120709
+                }
+              },
+              {
+                "frame": 1142,
+                "time_s": 38.060576,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.16653,
+                "gaze_hit_distance_m": 1.143928722279221,
+                "gaze_hit_exit_distance_m": 1.1737644287863769,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.951993473071231,
+                  1.5393082529624684,
+                  2.0832111465980034
+                ],
+                "gaze_direction_world_unit": [
+                  0.29568264104819547,
+                  -0.6792013811908624,
+                  0.6717568455707683
+                ],
+                "wearer_world_m": [
+                  -1.9126284130737632,
+                  1.538445157863777,
+                  2.023063754142084
+                ],
+                "right_world": [
+                  0.44140377812918374,
+                  -0.0068558422077509285,
+                  -0.8972823981784693
+                ],
+                "forward_world": [
+                  0.8518935254269999,
+                  -0.31089637739124704,
+                  0.4214509032622385
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.8598601740655094,
+                  "forward_m": 1.1143553207894636,
+                  "up_m": -0.7608901573606887,
+                  "distance_m": 1.600031603276676
+                }
+              },
+              {
+                "frame": 1143,
+                "time_s": 38.093904,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.1613,
+                "gaze_hit_distance_m": 1.1392030122506214,
+                "gaze_hit_exit_distance_m": 1.1688434411462134,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.935157692545197,
+                  1.541095532848011,
+                  2.0858283097766113
+                ],
+                "gaze_direction_world_unit": [
+                  0.27448210429200914,
+                  -0.6835871801115245,
+                  0.6762899833729648
+                ],
+                "wearer_world_m": [
+                  -1.893929151734461,
+                  1.5398379193034342,
+                  2.0269497268131094
+                ],
+                "right_world": [
+                  0.4692860358983261,
+                  -0.012502210146330295,
+                  -0.882957706377997
+                ],
+                "forward_world": [
+                  0.8377067075508503,
+                  -0.30997620888881894,
+                  0.44962453452545215
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.8300993751795097,
+                  "forward_m": 1.1246650130279483,
+                  "up_m": -0.7626737156992713,
+                  "distance_m": 1.5923591180450158
+                }
+              },
+              {
+                "frame": 1144,
+                "time_s": 38.127232,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.14359,
+                "gaze_hit_distance_m": 1.1221717868661936,
+                "gaze_hit_exit_distance_m": 1.1513157552743145,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9179820537153993,
+                  1.5423795999648025,
+                  2.088830385513205
+                ],
+                "gaze_direction_world_unit": [
+                  0.2652074105181967,
+                  -0.6949508685744427,
+                  0.6683624164133262
+                ],
+                "wearer_world_m": [
+                  -1.8747845586274579,
+                  1.5406280089153952,
+                  2.0313937243295768
+                ],
+                "right_world": [
+                  0.4989194493721737,
+                  -0.01947220066010097,
+                  -0.8664295796194978
+                ],
+                "forward_world": [
+                  0.8209945323415024,
+                  -0.30958427809102695,
+                  0.4797140321318683
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.7974314146973095,
+                  "forward_m": 1.1357971255681674,
+                  "up_m": -0.7639607135970978,
+                  "distance_m": 1.5841615900894868
+                }
+              },
+              {
+                "frame": 1145,
+                "time_s": 38.16056,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.14518,
+                "gaze_hit_distance_m": 1.123911112204824,
+                "gaze_hit_exit_distance_m": 1.1530763950178646,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.900396766128742,
+                  1.542870824009366,
+                  2.0921905855829044
+                ],
+                "gaze_direction_world_unit": [
+                  0.25028403398219373,
+                  -0.6944285960784766,
+                  0.6746308822475267
+                ],
+                "wearer_world_m": [
+                  -1.8552419026741451,
+                  1.5406320003957168,
+                  2.036297046812992
+                ],
+                "right_world": [
+                  0.5285550785128642,
+                  -0.026487031537234945,
+                  -0.8484856900022568
+                ],
+                "forward_world": [
+                  0.8031472101629082,
+                  -0.3081007472587815,
+                  0.5099298857157889
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.7640461286165452,
+                  "forward_m": 1.1460407428757489,
+                  "up_m": -0.764454646396757,
+                  "distance_m": 1.5752989485753868
+                }
+              },
+              {
+                "frame": 1146,
+                "time_s": 38.193888,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.20619,
+                "gaze_hit_distance_m": 1.1837924482829802,
+                "gaze_hit_exit_distance_m": 1.2145262234527565,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.8823788442440115,
+                  1.542377293612106,
+                  2.0958559729894244
+                ],
+                "gaze_direction_world_unit": [
+                  0.2034732045261134,
+                  -0.6596919385346114,
+                  0.7234674845992193
+                ],
+                "wearer_world_m": [
+                  -1.8353377023567399,
+                  1.539762517507751,
+                  2.041557210417284
+                ],
+                "right_world": [
+                  0.5572822318170041,
+                  -0.03221463135248573,
+                  -0.8296979761502874
+                ],
+                "forward_world": [
+                  0.7851920699819478,
+                  -0.304505824709816,
+                  0.5392120324652063
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.7312494589298543,
+                  "forward_m": 1.1546010953084478,
+                  "up_m": -0.7639587706447565,
+                  "distance_m": 1.56571468145308
+                }
+              },
+              {
+                "frame": 1147,
+                "time_s": 38.227216,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.1947,
+                "gaze_hit_distance_m": 1.1738321713898485,
+                "gaze_hit_exit_distance_m": 1.2043585013051317,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.863988571836285,
+                  1.540925843375063,
+                  2.0997823577462342
+                ],
+                "gaze_direction_world_unit": [
+                  0.1850432673531582,
+                  -0.6640043883166332,
+                  0.7244702626771659
+                ],
+                "wearer_world_m": [
+                  -1.8150942447385447,
+                  1.5380303125217683,
+                  2.0471608566298958
+                ],
+                "right_world": [
+                  0.585687659473844,
+                  -0.036716836882254245,
+                  -0.8097047853566223
+                ],
+                "forward_world": [
+                  0.7664001327638644,
+                  -0.30006683369234666,
+                  0.5679707138729783
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.6982779685661546,
+                  "forward_m": 1.162114402165643,
+                  "up_m": -0.7625059013790767,
+                  "distance_m": 1.5554797506697424
+                }
+              },
+              {
+                "frame": 1148,
+                "time_s": 38.260544,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.18274,
+                "gaze_hit_distance_m": 1.1836439677542037,
+                "gaze_hit_exit_distance_m": 1.9958872026856798,
+                "gaze_depth_obb_residual_m": 0.0009039677542037605,
+                "gaze_origin_world_m": [
+                  -1.8454764851023688,
+                  1.538687974831082,
+                  2.103745667986865
+                ],
+                "gaze_direction_world_unit": [
+                  0.16343366032366954,
+                  -0.6701711623489522,
+                  0.7239889859860174
+                ],
+                "wearer_world_m": [
+                  -1.7947511514770749,
+                  1.5355643785204032,
+                  2.052900359691108
+                ],
+                "right_world": [
+                  0.613963293869134,
+                  -0.040316421594007334,
+                  -0.788304293995167
+                ],
+                "forward_world": [
+                  0.74595039100661,
+                  -0.296901108243904,
+                  0.5961608391035319
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.6648492003499032,
+                  "forward_m": 1.169115192678956,
+                  "up_m": -0.7602704204977099,
+                  "distance_m": 1.54494851216551
+                }
+              },
+              {
+                "frame": 1149,
+                "time_s": 38.293872,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.17848,
+                "gaze_hit_distance_m": 1.171785746350462,
+                "gaze_hit_exit_distance_m": 1.9963902617145217,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.8272635184661845,
+                  1.536006922815587,
+                  2.1073316235135935
+                ],
+                "gaze_direction_world_unit": [
+                  0.15333964440343675,
+                  -0.6746607099290195,
+                  0.7220248471709951
+                ],
+                "wearer_world_m": [
+                  -1.774759509096806,
+                  1.532663134217782,
+                  2.0583396876572366
+                ],
+                "right_world": [
+                  0.6416700870856306,
+                  -0.043330445326244416,
+                  -0.7657558173774122
+                ],
+                "forward_world": [
+                  0.7234368015603551,
+                  -0.29742599264799013,
+                  0.6230385004520032
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.6315782696491246,
+                  "forward_m": 1.175872704126522,
+                  "up_m": -0.7575930912717161,
+                  "distance_m": 1.5347687183890075
+                }
+              },
+              {
+                "frame": 1150,
+                "time_s": 38.3272,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.16114,
+                "gaze_hit_distance_m": 1.1550400599952613,
+                "gaze_hit_exit_distance_m": 2.0057468918608885,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.8091882017496035,
+                  1.5336246396770357,
+                  2.1105644895206073
+                ],
+                "gaze_direction_world_unit": [
+                  0.1420090103249445,
+                  -0.6823805323655425,
+                  0.7170706032428389
+                ],
+                "wearer_world_m": [
+                  -1.7550013700140268,
+                  1.5301451973317581,
+                  2.063450346756187
+                ],
+                "right_world": [
+                  0.6681022788044028,
+                  -0.04508818772349579,
+                  -0.7427020939678141
+                ],
+                "forward_world": [
+                  0.700477955811834,
+                  -0.29851827386905183,
+                  0.6482418326426613
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5995995749286576,
+                  "forward_m": 1.1817204818515847,
+                  "up_m": -0.7552130610949724,
+                  "distance_m": 1.5252310366402222
+                }
+              },
+              {
+                "frame": 1151,
+                "time_s": 38.360528,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.15253,
+                "gaze_hit_distance_m": 1.123238653422779,
+                "gaze_hit_exit_distance_m": 1.1527486045407727,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7907343254091617,
+                  1.5324716145042132,
+                  2.113794977345997
+                ],
+                "gaze_direction_world_unit": [
+                  0.13317840058246028,
+                  -0.6860942382892016,
+                  0.715218994298011
+                ],
+                "wearer_world_m": [
+                  -1.7350026385832458,
+                  1.529092143720653,
+                  2.068511205840511
+                ],
+                "right_world": [
+                  0.6925230175806675,
+                  -0.044208102379661524,
+                  -0.7200399390346041
+                ],
+                "forward_world": [
+                  0.679686789860025,
+                  -0.29448411121696705,
+                  0.6717923607265321
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5703308518832101,
+                  "forward_m": 1.185514784323448,
+                  "up_m": -0.7540588317077104,
+                  "distance_m": 1.5163532919922378
+                }
+              },
+              {
+                "frame": 1152,
+                "time_s": 38.393856,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.15056,
+                "gaze_hit_distance_m": 1.121663947214776,
+                "gaze_hit_exit_distance_m": 1.1511114009960672,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7717849368989818,
+                  1.53287597713457,
+                  2.117298180054556
+                ],
+                "gaze_direction_world_unit": [
+                  0.11537145755183909,
+                  -0.6874516024511974,
+                  0.7170074762996862
+                ],
+                "wearer_world_m": [
+                  -1.7146709451761581,
+                  1.529743903720212,
+                  2.073752298887535
+                ],
+                "right_world": [
+                  0.7145380940505941,
+                  -0.04149249805390484,
+                  -0.6983650082555629
+                ],
+                "forward_world": [
+                  0.6605849407970248,
+                  -0.2886714324949686,
+                  0.693034155041073
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5445108710055919,
+                  "forward_m": 1.1868283847182706,
+                  "up_m": -0.7544621364951525,
+                  "distance_m": 1.5080672461203704
+                }
+              },
+              {
+                "frame": 1153,
+                "time_s": 38.427184,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.15115,
+                "gaze_hit_distance_m": 1.1226008130101777,
+                "gaze_hit_exit_distance_m": 1.151998732029444,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7525742170387137,
+                  1.5346379590943118,
+                  2.1212662897751566
+                ],
+                "gaze_direction_world_unit": [
+                  0.09867873196374144,
+                  -0.6885113328540193,
+                  0.7184807947256562
+                ],
+                "wearer_world_m": [
+                  -1.6942641746823883,
+                  1.53169468474543,
+                  2.079321828907114
+                ],
+                "right_world": [
+                  0.7337680213529364,
+                  -0.03916575235063394,
+                  -0.6782702519516882
+                ],
+                "forward_world": [
+                  0.6421123616591021,
+                  -0.28621129209906737,
+                  0.7111784665465853
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5226802579122483,
+                  "forward_m": 1.1855710782963875,
+                  "up_m": -0.7562265722698394,
+                  "distance_m": 1.5002173383583675
+                }
+              },
+              {
+                "frame": 1154,
+                "time_s": 38.460512,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.14076,
+                "gaze_hit_distance_m": 1.112466644879128,
+                "gaze_hit_exit_distance_m": 1.141519655305884,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7340513706648555,
+                  1.5365675822169034,
+                  2.125756500248225
+                ],
+                "gaze_direction_world_unit": [
+                  0.081620586909737,
+                  -0.6964267998073964,
+                  0.7129711020108308
+                ],
+                "wearer_world_m": [
+                  -1.6747796770059031,
+                  1.5335924564266408,
+                  2.085184629964352
+                ],
+                "right_world": [
+                  0.74937344736495,
+                  -0.03973215602949293,
+                  -0.6609544554366962
+                ],
+                "forward_world": [
+                  0.6254388755075981,
+                  -0.28527072164898004,
+                  0.7262553465370574
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.5058024013363156,
+                  "forward_m": 1.1818233988642177,
+                  "up_m": -0.7581561904583825,
+                  "distance_m": 1.4924286999488192
+                }
+              },
+              {
+                "frame": 1155,
+                "time_s": 38.49384,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.14294,
+                "gaze_hit_distance_m": 1.114819753168052,
+                "gaze_hit_exit_distance_m": 1.1438773985433817,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7171939076178693,
+                  1.5379109152093897,
+                  2.1310140148260492
+                ],
+                "gaze_direction_world_unit": [
+                  0.07073299522275733,
+                  -0.6962643981572783,
+                  0.714291768989046
+                ],
+                "wearer_world_m": [
+                  -1.657153579043509,
+                  1.5346460249111449,
+                  2.091611462408429
+                ],
+                "right_world": [
+                  0.7619599436174032,
+                  -0.043893448498318194,
+                  -0.6461349777728257
+                ],
+                "forward_world": [
+                  0.6104583109918174,
+                  -0.2844432977280586,
+                  0.7392108365808799
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.492165762954392,
+                  "forward_m": 1.1765301812930289,
+                  "up_m": -0.7594939551440091,
+                  "distance_m": 1.4843454697671215
+                }
+              },
+              {
+                "frame": 1156,
+                "time_s": 38.527168,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.13553,
+                "gaze_hit_distance_m": 1.1074598217248417,
+                "gaze_hit_exit_distance_m": 1.1362687561705906,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7026721686660653,
+                  1.5392677072399839,
+                  2.1377253572741046
+                ],
+                "gaze_direction_world_unit": [
+                  0.05458851346851745,
+                  -0.7020651322294262,
+                  0.7100173549322413
+                ],
+                "wearer_world_m": [
+                  -1.641839886614933,
+                  1.535625311427751,
+                  2.0995910142982708
+                ],
+                "right_world": [
+                  0.775049386198648,
+                  -0.048912926313201766,
+                  -0.6300047417222977
+                ],
+                "forward_world": [
+                  0.593367843022453,
+                  -0.2864936037415429,
+                  0.7522207241774618
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4746266834132744,
+                  "forward_m": 1.172141441833281,
+                  "up_m": -0.7608467486525836,
+                  "distance_m": 1.475829876105676
+                }
+              },
+              {
+                "frame": 1157,
+                "time_s": 38.560496,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.14556,
+                "gaze_hit_distance_m": 1.1177069507841555,
+                "gaze_hit_exit_distance_m": 1.1467129773148996,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6907159782926053,
+                  1.5409420504411953,
+                  2.146252924719987
+                ],
+                "gaze_direction_world_unit": [
+                  0.04419468032981827,
+                  -0.6973398197257492,
+                  0.7153768280112275
+                ],
+                "wearer_world_m": [
+                  -1.6289384595872882,
+                  1.5370894011537268,
+                  2.109691237435591
+                ],
+                "right_world": [
+                  0.7907975331363175,
+                  -0.051287882681735425,
+                  -0.6099252533512116
+                ],
+                "forward_world": [
+                  0.5724139881282444,
+                  -0.2909103653124432,
+                  0.7666246705845691
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.44877979620919967,
+                  "forward_m": 1.1698289990557107,
+                  "up_m": -0.7625229229157181,
+                  "distance_m": 1.4667461949802996
+                }
+              },
+              {
+                "frame": 1158,
+                "time_s": 38.593824,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.13419,
+                "gaze_hit_distance_m": 1.1069542059541326,
+                "gaze_hit_exit_distance_m": 1.1356105882836955,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6810774304405127,
+                  1.5426652809669261,
+                  2.156491889182106
+                ],
+                "gaze_direction_world_unit": [
+                  0.03257989732987315,
+                  -0.7055945362381942,
+                  0.7078664427141481
+                ],
+                "wearer_world_m": [
+                  -1.6181929030170958,
+                  1.539079574997014,
+                  2.121840184686788
+                ],
+                "right_world": [
+                  0.8093539339967966,
+                  -0.047277390634973715,
+                  -0.5854152866629451
+                ],
+                "forward_world": [
+                  0.549041616135387,
+                  -0.29305655853894663,
+                  0.782733132842063
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.41437733411220645,
+                  "forward_m": 1.1691404346061285,
+                  "up_m": -0.7642527458711504,
+                  "distance_m": 1.456942068315875
+                }
+              },
+              {
+                "frame": 1159,
+                "time_s": 38.627152,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.12169,
+                "gaze_hit_distance_m": 1.0951277299890299,
+                "gaze_hit_exit_distance_m": 1.1234231967522956,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6735203513327546,
+                  1.5439956520316485,
+                  2.168052706863105
+                ],
+                "gaze_direction_world_unit": [
+                  0.019368253699514726,
+                  -0.7143307768145903,
+                  0.6995401432684871
+                ],
+                "wearer_world_m": [
+                  -1.609471384186197,
+                  1.541048176154049,
+                  2.135539572679976
+                ],
+                "right_world": [
+                  0.8290873242808259,
+                  -0.03817452539283972,
+                  -0.5578144084979277
+                ],
+                "forward_world": [
+                  0.5241161965027713,
+                  -0.29438877411149306,
+                  0.7991479601679533
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3742642118881802,
+                  "forward_m": 1.1687256083589044,
+                  "up_m": -0.7655889368460749,
+                  "distance_m": 1.4464161462578033
+                }
+              },
+              {
+                "frame": 1160,
+                "time_s": 38.66048,
+                "gazed_object_id": "4506017399482622",
+                "gazed_object_name": "HeatTrivet",
+                "gaze_depth_m": 1.1142,
+                "gaze_hit_distance_m": 1.1081357481199667,
+                "gaze_hit_exit_distance_m": 1.1221658357114805,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6677967068625568,
+                  1.5444601542338858,
+                  2.180425325384736
+                ],
+                "gaze_direction_world_unit": [
+                  -0.006084686785612581,
+                  -0.7129261322614678,
+                  0.701212739848204
+                ],
+                "wearer_world_m": [
+                  -1.6026689344909957,
+                  1.5421573394460881,
+                  2.150075168696982
+                ],
+                "right_world": [
+                  0.8476866159712386,
+                  -0.02850551296554088,
+                  -0.52973090983423
+                ],
+                "forward_world": [
+                  0.49837624908916067,
+                  -0.2993968411238506,
+                  0.8136231596192909
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3329627291478631,
+                  "forward_m": 1.1671469309417974,
+                  "up_m": -0.766051658274695,
+                  "distance_m": 1.435246069687655
+                }
+              },
+              {
+                "frame": 1161,
+                "time_s": 38.693808,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.10242,
+                "gaze_hit_distance_m": 1.0995125634117089,
+                "gaze_hit_exit_distance_m": 1.9747562360763442,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6634002989504677,
+                  1.5440830198839295,
+                  2.193675072984612
+                ],
+                "gaze_direction_world_unit": [
+                  -0.006770789181816117,
+                  -0.7263924913984835,
+                  0.687246756888499
+                ],
+                "wearer_world_m": [
+                  -1.597324479992243,
+                  1.542488362460693,
+                  2.16539955499285
+                ],
+                "right_world": [
+                  0.8643101906943944,
+                  -0.017953067004760653,
+                  -0.5026386193349476
+                ],
+                "forward_world": [
+                  0.47414286716475784,
+                  -0.3043266473165669,
+                  0.8261802668000735
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.29282587612644423,
+                  "forward_m": 1.1634770558606753,
+                  "up_m": -0.7656697109011403,
+                  "distance_m": 1.4232624351941847
+                }
+              },
+              {
+                "frame": 1162,
+                "time_s": 38.727136,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.0807,
+                "gaze_hit_distance_m": 1.078503558893563,
+                "gaze_hit_exit_distance_m": 1.9953007709197537,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6598404931285022,
+                  1.5430264316532574,
+                  2.208052445368133
+                ],
+                "gaze_direction_world_unit": [
+                  -0.01047215368526333,
+                  -0.7395688692133567,
+                  0.6729994217587927
+                ],
+                "wearer_world_m": [
+                  -1.592972426098425,
+                  1.542350845743047,
+                  2.181665575596615
+                ],
+                "right_world": [
+                  0.8784219825495693,
+                  -0.0050562502323673875,
+                  -0.4778590324638358
+                ],
+                "forward_world": [
+                  0.4538210445066325,
+                  -0.30448934333490696,
+                  0.8374560880179845
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.25579152062139854,
+                  "forward_m": 1.157024595362014,
+                  "up_m": -0.7646122466819067,
+                  "distance_m": 1.4102365418859324
+                }
+              },
+              {
+                "frame": 1163,
+                "time_s": 38.760464,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.06926,
+                "gaze_hit_distance_m": 1.0678141347427805,
+                "gaze_hit_exit_distance_m": 1.990446054432497,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6570453773244913,
+                  1.5411857800094497,
+                  2.2235560344019456
+                ],
+                "gaze_direction_world_unit": [
+                  -0.005890923876230469,
+                  -0.7452347645189963,
+                  0.6667761564184795
+                ],
+                "wearer_world_m": [
+                  -1.589597486078316,
+                  1.5413668547598809,
+                  2.198680124782821
+                ],
+                "right_world": [
+                  0.8889480153552167,
+                  0.006867596255806907,
+                  -0.4579566159776376
+                ],
+                "forward_world": [
+                  0.43816899201911547,
+                  -0.3038478352985366,
+                  0.8459813398753815
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.2250664964255089,
+                  "forward_m": 1.1474285879755302,
+                  "up_m": -0.7627729397314493,
+                  "distance_m": 1.3960909174918839
+                }
+              },
+              {
+                "frame": 1164,
+                "time_s": 38.793792,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 1.05485,
+                "gaze_hit_distance_m": 1.0317786326803455,
+                "gaze_hit_exit_distance_m": 1.0552995318350802,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6549490415261936,
+                  1.5385505059535436,
+                  2.240257343268545
+                ],
+                "gaze_direction_world_unit": [
+                  -0.008419834785931557,
+                  -0.7526950033683052,
+                  0.6583155309474059
+                ],
+                "wearer_world_m": [
+                  -1.5871373649928049,
+                  1.5393424096164752,
+                  2.216403389396709
+                ],
+                "right_world": [
+                  0.8956688585150874,
+                  0.015606997762943192,
+                  -0.444447654406127
+                ],
+                "forward_world": [
+                  0.4275554029021935,
+                  -0.3052037817601586,
+                  0.8509095304722121
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.20217705023883298,
+                  "forward_m": 1.1347998252193678,
+                  "up_m": -0.7601390159765945,
+                  "distance_m": 1.380745279394809
+                }
+              },
+              {
+                "frame": 1165,
+                "time_s": 38.82712,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.04639,
+                "gaze_hit_distance_m": 1.0455292543011652,
+                "gaze_hit_exit_distance_m": 1.973106236644289,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6533083225085161,
+                  1.5354550217005314,
+                  2.2585321324090644
+                ],
+                "gaze_direction_world_unit": [
+                  -0.009178097305769684,
+                  -0.7556341819672333,
+                  0.6549295729867112
+                ],
+                "wearer_world_m": [
+                  -1.585285715245767,
+                  1.5368545799573312,
+                  2.2353151593319467
+                ],
+                "right_world": [
+                  0.8996190193888278,
+                  0.024139759227785912,
+                  -0.4360079035732135
+                ],
+                "forward_world": [
+                  0.42193558636436,
+                  -0.3052845222029794,
+                  0.8536812762750875
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.18509693321393994,
+                  "forward_m": 1.1194739196174335,
+                  "up_m": -0.7570457067096769,
+                  "distance_m": 1.3640384647935628
+                }
+              },
+              {
+                "frame": 1166,
+                "time_s": 38.860448,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.03048,
+                "gaze_hit_distance_m": 1.0298873528987251,
+                "gaze_hit_exit_distance_m": 1.9717267573841462,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6520286029763633,
+                  1.532306599228328,
+                  2.278718766128847
+                ],
+                "gaze_direction_world_unit": [
+                  -0.007200408156097571,
+                  -0.7640476492711996,
+                  0.6451196352348452
+                ],
+                "wearer_world_m": [
+                  -1.583902569051066,
+                  1.5344551216078282,
+                  2.255865121907541
+                ],
+                "right_world": [
+                  0.9016089062333819,
+                  0.03430585155417662,
+                  -0.4311896204105431
+                ],
+                "forward_world": [
+                  0.4205582195105854,
+                  -0.3026417216948174,
+                  0.8553003988609398
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.17171383257723116,
+                  "forward_m": 1.1016613468609282,
+                  "up_m": -0.7538982654718402,
+                  "distance_m": 1.345921973276031
+                }
+              },
+              {
+                "frame": 1167,
+                "time_s": 38.893776,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.02035,
+                "gaze_hit_distance_m": 1.0196682072015377,
+                "gaze_hit_exit_distance_m": 1.9562353702964774,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6511997552540003,
+                  1.5295207623552338,
+                  2.3010408014634383
+                ],
+                "gaze_direction_world_unit": [
+                  -0.01934406340208511,
+                  -0.7689896288321604,
+                  0.6389685109296641
+                ],
+                "wearer_world_m": [
+                  -1.583047073833452,
+                  1.5325105531835839,
+                  2.278361849393469
+                ],
+                "right_world": [
+                  0.9022139337510316,
+                  0.045623090107900915,
+                  -0.42886892099392826
+                ],
+                "forward_world": [
+                  0.4219812550470965,
+                  -0.2988495531315617,
+                  0.8559326871792798
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.16028484190125458,
+                  "forward_m": 1.0815462119767687,
+                  "up_m": -0.7511070571357082,
+                  "distance_m": 1.3264973616497215
+                }
+              },
+              {
+                "frame": 1168,
+                "time_s": 38.927104,
+                "gazed_object_id": "4506017399482622",
+                "gazed_object_name": "HeatTrivet",
+                "gaze_depth_m": 1.04535,
+                "gaze_hit_distance_m": 1.044709993154232,
+                "gaze_hit_exit_distance_m": 1.0582346591162708,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6506174090381083,
+                  1.5272159401321401,
+                  2.325436724654278
+                ],
+                "gaze_direction_world_unit": [
+                  -0.029507892085591625,
+                  -0.7397547168777725,
+                  0.6722293084668
+                ],
+                "wearer_world_m": [
+                  -1.5824888898656742,
+                  1.531058448464013,
+                  2.302813689798389
+                ],
+                "right_world": [
+                  0.9019149802002526,
+                  0.05713434250790622,
+                  -0.42811801573464214
+                ],
+                "forward_world": [
+                  0.4248997236997017,
+                  -0.2952762488177856,
+                  0.8557290235138775
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.14975255434623214,
+                  "forward_m": 1.0593426586280177,
+                  "up_m": -0.7487955664864256,
+                  "distance_m": 1.3058818845179012
+                }
+              },
+              {
+                "frame": 1169,
+                "time_s": 38.960432,
+                "gazed_object_id": "4587554268035732",
+                "gazed_object_name": "Mug_2",
+                "gaze_depth_m": 0.981636,
+                "gaze_hit_distance_m": 0.9388432158231281,
+                "gaze_hit_exit_distance_m": 0.9896218855440191,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6499058030945473,
+                  1.5252986489952145,
+                  2.351586621467159
+                ],
+                "gaze_direction_world_unit": [
+                  -0.02692514189996492,
+                  -0.7288414787716665,
+                  0.6841528597876332
+                ],
+                "wearer_world_m": [
+                  -1.581832192005788,
+                  1.5299162022768034,
+                  2.328943225608144
+                ],
+                "right_world": [
+                  0.9010605761791965,
+                  0.06774096095455112,
+                  -0.42837016733728017
+                ],
+                "forward_world": [
+                  0.4283831400294442,
+                  -0.29310992141152226,
+                  0.8547364853033037
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.13979270562828872,
+                  "forward_m": 1.0353301703822673,
+                  "up_m": -0.7468805230460305,
+                  "distance_m": 1.2842433873515424
+                }
+              },
+              {
+                "frame": 1170,
+                "time_s": 38.99376,
+                "gazed_object_id": "4587554268035732",
+                "gazed_object_name": "Mug_2",
+                "gaze_depth_m": 0.967395,
+                "gaze_hit_distance_m": 0.919305445831978,
+                "gaze_hit_exit_distance_m": 0.9312644196895948,
+                "gaze_depth_obb_residual_m": 0.03613058031040517,
+                "gaze_origin_world_m": [
+                  -1.6490164288214424,
+                  1.5236969376727798,
+                  2.3787744353739178
+                ],
+                "gaze_direction_world_unit": [
+                  -0.02237500011083976,
+                  -0.7396047373602823,
+                  0.672669452141442
+                ],
+                "wearer_world_m": [
+                  -1.5810448432311508,
+                  1.528956400258533,
+                  2.355965154222362
+                ],
+                "right_world": [
+                  0.8992956492053478,
+                  0.07688205516163082,
+                  -0.4305304692056726
+                ],
+                "forward_world": [
+                  0.4330532971966134,
+                  -0.2940541119276614,
+                  0.8520545880667365
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.13166446125669545,
+                  "forward_m": 1.0100411001977654,
+                  "up_m": -0.7452843012890382,
+                  "distance_m": 1.2621280617253614
+                }
+              },
+              {
+                "frame": 1171,
+                "time_s": 39.027088,
+                "gazed_object_id": "4587554268035732",
+                "gazed_object_name": "Mug_2",
+                "gaze_depth_m": 0.93018,
+                "gaze_hit_distance_m": 0.9103201702213467,
+                "gaze_hit_exit_distance_m": 0.9109606262721872,
+                "gaze_depth_obb_residual_m": 0.019219373727812794,
+                "gaze_origin_world_m": [
+                  -1.6480060229195599,
+                  1.522412022785507,
+                  2.406109747189162
+                ],
+                "gaze_direction_world_unit": [
+                  -0.026262184771449648,
+                  -0.745295098860561,
+                  0.6662173168459798
+                ],
+                "wearer_world_m": [
+                  -1.580202188888107,
+                  1.5281779724776139,
+                  2.382926658184819
+                ],
+                "right_world": [
+                  0.8962449480427661,
+                  0.08463916310794511,
+                  -0.4354092387354758
+                ],
+                "forward_world": [
+                  0.43968447526287296,
+                  -0.29899570343882853,
+                  0.8469233327391164
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.1264283188751829,
+                  "forward_m": 0.9842407667289483,
+                  "up_m": -0.7439991724960218,
+                  "distance_m": 1.24026157538624
+                }
+              },
+              {
+                "frame": 1172,
+                "time_s": 39.060416,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 0.904654,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.6468046042021764,
+                  1.521672206241359,
+                  2.432659942140828
+                ],
+                "gaze_direction_world_unit": [
+                  -0.029247774713135444,
+                  -0.7551167139768692,
+                  0.654937642792888
+                ],
+                "wearer_world_m": [
+                  -1.57920035091423,
+                  1.5279449039816642,
+                  2.409029878631858
+                ],
+                "right_world": [
+                  0.8926090326447033,
+                  0.09255746236779241,
+                  -0.4412280940750739
+                ],
+                "forward_world": [
+                  0.4472375396353008,
+                  -0.3051286212709001,
+                  0.8407586500430918
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.122485367529169,
+                  "forward_m": 0.9590181596098847,
+                  "up_m": -0.7432571395942039,
+                  "distance_m": 1.2194874625341763
+                }
+              },
+              {
+                "frame": 1173,
+                "time_s": 39.093744,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 0.953201,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.6453913094463668,
+                  1.5216585772488485,
+                  2.457650054285172
+                ],
+                "gaze_direction_world_unit": [
+                  -0.02780022195254528,
+                  -0.7612884640532637,
+                  0.6478171209213386
+                ],
+                "wearer_world_m": [
+                  -1.57797693224447,
+                  1.528471762575292,
+                  2.433630396644233
+                ],
+                "right_world": [
+                  0.8891974859987269,
+                  0.10080503105469302,
+                  -0.44628037891846284
+                ],
+                "forward_world": [
+                  0.4543003882621951,
+                  -0.3101136847365944,
+                  0.835129127598787
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.11835473859770806,
+                  "forward_m": 0.9352881681474124,
+                  "up_m": -0.7432431448358139,
+                  "distance_m": 1.2004924714343297
+                }
+              },
+              {
+                "frame": 1174,
+                "time_s": 39.127072,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 0.938615,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.6439081463343874,
+                  1.5223375061504618,
+                  2.4806719382029154
+                ],
+                "gaze_direction_world_unit": [
+                  -0.03240275392374087,
+                  -0.7695335564377198,
+                  0.6377837933457327
+                ],
+                "wearer_world_m": [
+                  -1.5766393488415789,
+                  1.5294917447583318,
+                  2.456345256250516
+                ],
+                "right_world": [
+                  0.8865679994172876,
+                  0.10615684613716578,
+                  -0.4502531581537645
+                ],
+                "forward_world": [
+                  0.45950944488499534,
+                  -0.31437994605164254,
+                  0.8306722094677597
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.11369652284610215,
+                  "forward_m": 0.9135166660471505,
+                  "up_m": -0.7439216521348957,
+                  "distance_m": 1.1835789044116611
+                }
+              },
+              {
+                "frame": 1175,
+                "time_s": 39.1604,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 0.926571,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.6424105232557467,
+                  1.52341635162974,
+                  2.5014565341509134
+                ],
+                "gaze_direction_world_unit": [
+                  -0.04187106269450869,
+                  -0.7738995423591928,
+                  0.631922710816018
+                ],
+                "wearer_world_m": [
+                  -1.5752349245079669,
+                  1.530617531013242,
+                  2.4768873736165373
+                ],
+                "right_world": [
+                  0.8848180611864613,
+                  0.1074039571592052,
+                  -0.45338878303810687
+                ],
+                "forward_world": [
+                  0.46259155154128284,
+                  -0.3188883580054013,
+                  0.8272359225585211
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.10884817750708264,
+                  "forward_m": 0.8939197909033403,
+                  "up_m": -0.7449988187963639,
+                  "distance_m": 1.168744522264495
+                }
+              },
+              {
+                "frame": 1176,
+                "time_s": 39.193728,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.01628,
+                "gaze_hit_distance_m": 1.0163991308809242,
+                "gaze_hit_exit_distance_m": 1.6034313688414399,
+                "gaze_depth_obb_residual_m": 0.00011913088092407875,
+                "gaze_origin_world_m": [
+                  -1.640827208195237,
+                  1.5243484385378414,
+                  2.5198681615368694
+                ],
+                "gaze_direction_world_unit": [
+                  0.012281914629598822,
+                  -0.7662131391161675,
+                  0.6424691276775717
+                ],
+                "wearer_world_m": [
+                  -1.5737212566391416,
+                  1.5314204104917648,
+                  2.495072190504585
+                ],
+                "right_world": [
+                  0.8834437997570117,
+                  0.1063237842894249,
+                  -0.45631382355268313
+                ],
+                "forward_world": [
+                  0.4646152475070106,
+                  -0.3245468800115848,
+                  0.8238944073476556
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.10470942145583312,
+                  "forward_m": 0.8764765658025346,
+                  "up_m": -0.7459286776973223,
+                  "distance_m": 1.1556750518869463
+                }
+              },
+              {
+                "frame": 1177,
+                "time_s": 39.227056,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.934456,
+                "gaze_hit_distance_m": 0.9140572214273894,
+                "gaze_hit_exit_distance_m": 1.0193754455794937,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.639110243689257,
+                  1.5249353432495483,
+                  2.536021309672557
+                ],
+                "gaze_direction_world_unit": [
+                  0.04580118307958875,
+                  -0.7153059271707772,
+                  0.6973088857765007
+                ],
+                "wearer_world_m": [
+                  -1.5720789008058134,
+                  1.5318744339397243,
+                  2.510987137175034
+                ],
+                "right_world": [
+                  0.8819924009865345,
+                  0.10510244526207102,
+                  -0.45939403631516784
+                ],
+                "forward_world": [
+                  0.4667432982591147,
+                  -0.32951061382178193,
+                  0.820715205725467
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.10176933155747075,
+                  "forward_m": 0.860995213024666,
+                  "up_m": -0.7465159297549645,
+                  "distance_m": 1.1440960567517762
+                }
+              },
+              {
+                "frame": 1178,
+                "time_s": 39.260384,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.922517,
+                "gaze_hit_distance_m": 0.9028480416561939,
+                "gaze_hit_exit_distance_m": 1.0085136490883801,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6372609192606664,
+                  1.5252272208631663,
+                  2.5501833766090742
+                ],
+                "gaze_direction_world_unit": [
+                  0.044628830071255066,
+                  -0.7218228532585885,
+                  0.6906374128586588
+                ],
+                "wearer_world_m": [
+                  -1.5703264047106982,
+                  1.5321894615536749,
+                  2.524897814176581
+                ],
+                "right_world": [
+                  0.8802130498103024,
+                  0.10560595288448721,
+                  -0.4626795539668962
+                ],
+                "forward_world": [
+                  0.4698735779582651,
+                  -0.33087154334005925,
+                  0.8183781781942046
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.10005477618361491,
+                  "forward_m": 0.8472149521209227,
+                  "up_m": -0.7468141031389619,
+                  "distance_m": 1.133805732028932
+                }
+              },
+              {
+                "frame": 1179,
+                "time_s": 39.293712,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.910799,
+                "gaze_hit_distance_m": 0.896307647793971,
+                "gaze_hit_exit_distance_m": 0.9967453817750097,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6354668606105682,
+                  1.5252003229301527,
+                  2.562516602279171
+                ],
+                "gaze_direction_world_unit": [
+                  0.045335940606895775,
+                  -0.7273589357286303,
+                  0.6847580821757436
+                ],
+                "wearer_world_m": [
+                  -1.5686204908330432,
+                  1.532214338224125,
+                  2.537013109615963
+                ],
+                "right_world": [
+                  0.8786077165665491,
+                  0.10646397238429478,
+                  -0.46552540529370795
+                ],
+                "forward_world": [
+                  0.47273798255187727,
+                  -0.3318632976681922,
+                  0.8163244156054464
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.09864989240959338,
+                  "forward_m": 0.8351467884132286,
+                  "up_m": -0.7467931444994522,
+                  "distance_m": 1.124678603042102
+                }
+              },
+              {
+                "frame": 1180,
+                "time_s": 39.32704,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.910754,
+                "gaze_hit_distance_m": 0.9050182957448268,
+                "gaze_hit_exit_distance_m": 0.9959983657249898,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6339152301196953,
+                  1.5248194617695627,
+                  2.573176070273442
+                ],
+                "gaze_direction_world_unit": [
+                  0.0474641160531889,
+                  -0.7394594656796194,
+                  0.6715257674163375
+                ],
+                "wearer_world_m": [
+                  -1.5671102133405692,
+                  1.531740308588532,
+                  2.547539118164249
+                ],
+                "right_world": [
+                  0.877793157800745,
+                  0.10574433770135863,
+                  -0.4672229737098742
+                ],
+                "forward_world": [
+                  0.4737340339188535,
+                  -0.3363809436621164,
+                  0.8138942964832439
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.09658544832992233,
+                  "forward_m": 0.8248180642363636,
+                  "up_m": -0.7464105123880703,
+                  "distance_m": 1.1165940358622446
+                }
+              },
+              {
+                "frame": 1181,
+                "time_s": 39.360368,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.898167,
+                "gaze_hit_distance_m": 0.8880164184724937,
+                "gaze_hit_exit_distance_m": 0.9852035486880836,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6324998037574963,
+                  1.5241245616315813,
+                  2.582454665141371
+                ],
+                "gaze_direction_world_unit": [
+                  0.04448888127563483,
+                  -0.7399549443611919,
+                  0.6711835961629784
+                ],
+                "wearer_world_m": [
+                  -1.565700460783596,
+                  1.530901934494399,
+                  2.556764653535037
+                ],
+                "right_world": [
+                  0.8776188517829304,
+                  0.10435041386449737,
+                  -0.46786337976114306
+                ],
+                "forward_world": [
+                  0.4734758824069343,
+                  -0.34114692217973974,
+                  0.8120587209471157
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.0940006957821713,
+                  "forward_m": 0.815901010257692,
+                  "up_m": -0.7457099922783399,
+                  "distance_m": 1.1093304205379102
+                }
+              },
+              {
+                "frame": 1182,
+                "time_s": 39.393696,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.892988,
+                "gaze_hit_distance_m": 0.882487648814015,
+                "gaze_hit_exit_distance_m": 0.9809878067339609,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6310807279584123,
+                  1.5231841040118153,
+                  2.590527954069823
+                ],
+                "gaze_direction_world_unit": [
+                  0.04299133257751542,
+                  -0.74467003676621,
+                  0.6660467563661138
+                ],
+                "wearer_world_m": [
+                  -1.5642552853886118,
+                  1.529845913532461,
+                  2.5648756204476957
+                ],
+                "right_world": [
+                  0.8780475861423105,
+                  0.10309296183381866,
+                  -0.4673374345052975
+                ],
+                "forward_world": [
+                  0.47232552700374675,
+                  -0.34395405526099027,
+                  0.8115443329912126
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.09091438414645381,
+                  "forward_m": 0.8081751139584782,
+                  "up_m": -0.744765213578297,
+                  "distance_m": 1.102763648032911
+                }
+              },
+              {
+                "frame": 1183,
+                "time_s": 39.427024,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.882155,
+                "gaze_hit_distance_m": 0.8768614217970715,
+                "gaze_hit_exit_distance_m": 0.9692640274018998,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6295930109820003,
+                  1.522095713755252,
+                  2.597264827394586
+                ],
+                "gaze_direction_world_unit": [
+                  0.04396000155163088,
+                  -0.7451154875315005,
+                  0.6654851076502578
+                ],
+                "wearer_world_m": [
+                  -1.5626775863235158,
+                  1.5285861193009018,
+                  2.5718038321346266
+                ],
+                "right_world": [
+                  0.8796221173858185,
+                  0.10124096548123326,
+                  -0.46477435117927657
+                ],
+                "forward_world": [
+                  0.46895471438173963,
+                  -0.3482118760363154,
+                  0.8116834144211711
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.08664551808966975,
+                  "forward_m": 0.8017969513595484,
+                  "up_m": -0.7436760433122328,
+                  "distance_m": 1.0970140629960181
+                }
+              },
+              {
+                "frame": 1184,
+                "time_s": 39.460352,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.885038,
+                "gaze_hit_distance_m": 0.875124641511824,
+                "gaze_hit_exit_distance_m": 0.974224662647501,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6281085881141304,
+                  1.5209401581065847,
+                  2.6024906928136624
+                ],
+                "gaze_direction_world_unit": [
+                  0.04027902321160659,
+                  -0.751621939768578,
+                  0.658363167216726
+                ],
+                "wearer_world_m": [
+                  -1.561029034097855,
+                  1.527141317437785,
+                  2.577392072195655
+                ],
+                "right_world": [
+                  0.8825214096133831,
+                  0.09810458965723351,
+                  -0.4599254842495619
+                ],
+                "forward_world": [
+                  0.46275773555751487,
+                  -0.3552981101978878,
+                  0.8121690286335046
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.08100292917696844,
+                  "forward_m": 0.7969515533148616,
+                  "up_m": -0.7425207450835554,
+                  "distance_m": 1.0922592685556198
+                }
+              },
+              {
+                "frame": 1185,
+                "time_s": 39.49368,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.88253,
+                "gaze_hit_distance_m": 0.8792510858657157,
+                "gaze_hit_exit_distance_m": 0.9699853367885753,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.626852848626934,
+                  1.519791632564927,
+                  2.6060372822169167
+                ],
+                "gaze_direction_world_unit": [
+                  0.04197774830754375,
+                  -0.7542749597820598,
+                  0.6552153490973793
+                ],
+                "wearer_world_m": [
+                  -1.55955484510795,
+                  1.5255773969462019,
+                  2.581429044696054
+                ],
+                "right_world": [
+                  0.8864181526224201,
+                  0.09331410693765149,
+                  -0.45338210832352555
+                ],
+                "forward_world": [
+                  0.454288052633879,
+                  -0.36327509573405403,
+                  0.8134209058375201
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.07442299639251432,
+                  "forward_m": 0.7938103656089908,
+                  "up_m": -0.7413665140696648,
+                  "distance_m": 1.0887139142695506
+                }
+              },
+              {
+                "frame": 1186,
+                "time_s": 39.527008,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.890169,
+                "gaze_hit_distance_m": 0.8662016720757943,
+                "gaze_hit_exit_distance_m": 0.9839242109874233,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6260021392113826,
+                  1.5190115735073058,
+                  2.6078996045288476
+                ],
+                "gaze_direction_world_unit": [
+                  0.0318730776486163,
+                  -0.7581606191542661,
+                  0.6512884019271532
+                ],
+                "wearer_world_m": [
+                  -1.5584405045484957,
+                  1.5242600208474657,
+                  2.583900833243714
+                ],
+                "right_world": [
+                  0.8911816022196154,
+                  0.08667948112505214,
+                  -0.44528869221794903
+                ],
+                "forward_world": [
+                  0.4437738882381377,
+                  -0.3702436588183501,
+                  0.8160786538213127
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.06688091335135582,
+                  "forward_m": 0.7924250683136518,
+                  "up_m": -0.7405794538896534,
+                  "distance_m": 1.0866777226878743
+                }
+              },
+              {
+                "frame": 1187,
+                "time_s": 39.560336,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.892467,
+                "gaze_hit_distance_m": 0.8609054998859054,
+                "gaze_hit_exit_distance_m": 0.9873238346815589,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6256724778315326,
+                  1.5191071989129867,
+                  2.6082035495482416
+                ],
+                "gaze_direction_world_unit": [
+                  0.028535274581710512,
+                  -0.7583931198049605,
+                  0.6511724916925201
+                ],
+                "wearer_world_m": [
+                  -1.557800596811262,
+                  1.5237136234033692,
+                  2.58496026404071
+                ],
+                "right_world": [
+                  0.8968743214100852,
+                  0.07825700789393289,
+                  -0.4353071241212227
+                ],
+                "forward_world": [
+                  0.4310816242901504,
+                  -0.37479771036463305,
+                  0.8207894428565672
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.05791114924600449,
+                  "forward_m": 0.7927304038262266,
+                  "up_m": -0.7406778071791202,
+                  "distance_m": 1.086452395830188
+                }
+              },
+              {
+                "frame": 1188,
+                "time_s": 39.593664,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.904219,
+                "gaze_hit_distance_m": 0.865739353484515,
+                "gaze_hit_exit_distance_m": 0.9996000226653223,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6258440481439034,
+                  1.5201527740642335,
+                  2.6071678031452046
+                ],
+                "gaze_direction_world_unit": [
+                  0.02324625838832728,
+                  -0.7608520944943037,
+                  0.6485088293728732
+                ],
+                "wearer_world_m": [
+                  -1.557600450630435,
+                  1.5240724422069132,
+                  2.584907764936095
+                ],
+                "right_world": [
+                  0.9038155498604719,
+                  0.06899696365822808,
+                  -0.42232318292553983
+                ],
+                "forward_world": [
+                  0.41547987520325397,
+                  -0.3777481181875287,
+                  0.827455637787833
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.046491253613444916,
+                  "forward_m": 0.7945143482085881,
+                  "up_m": -0.7417310114024445,
+                  "distance_m": 1.0879243445423767
+                }
+              },
+              {
+                "frame": 1189,
+                "time_s": 39.626992,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.91837,
+                "gaze_hit_distance_m": 0.8739675349232222,
+                "gaze_hit_exit_distance_m": 1.0085123473604567,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6263782366777424,
+                  1.5219913453094958,
+                  2.6051113922062115
+                ],
+                "gaze_direction_world_unit": [
+                  0.017398521494660424,
+                  -0.7597559273022327,
+                  0.6499755552164435
+                ],
+                "wearer_world_m": [
+                  -1.557694320311195,
+                  1.525244442655564,
+                  2.5841352464398857
+                ],
+                "right_world": [
+                  0.9122060512307981,
+                  0.05991246189247265,
+                  -0.4053277895825779
+                ],
+                "forward_world": [
+                  0.3963420388426375,
+                  -0.3798576331346224,
+                  0.8358356099110781
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.031759121376393196,
+                  "forward_m": 0.7973445866420192,
+                  "up_m": -0.7435731847528854,
+                  "distance_m": 1.090719080570924
+                }
+              },
+              {
+                "frame": 1190,
+                "time_s": 39.66032,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.943866,
+                "gaze_hit_distance_m": 0.8894585751040999,
+                "gaze_hit_exit_distance_m": 1.021397602582125,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6269165504009584,
+                  1.52428940448424,
+                  2.6025847016950507
+                ],
+                "gaze_direction_world_unit": [
+                  0.015250063414584736,
+                  -0.76524638868045,
+                  0.6435568352347606
+                ],
+                "wearer_world_m": [
+                  -1.5577536575488369,
+                  1.5269255932736732,
+                  2.5831526029408645
+                ],
+                "right_world": [
+                  0.9215570466847811,
+                  0.051037975588679035,
+                  -0.38487366076861457
+                ],
+                "forward_world": [
+                  0.3745017982453308,
+                  -0.37826327289212325,
+                  0.8465608657928575
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.014282245437108099,
+                  "forward_m": 0.800393603409298,
+                  "up_m": -0.7458717394883176,
+                  "distance_m": 1.0941474099409894
+                }
+              },
+              {
+                "frame": 1191,
+                "time_s": 39.693648,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.02802,
+                "gaze_hit_distance_m": 1.0287866771318122,
+                "gaze_hit_exit_distance_m": 1.4594500643633939,
+                "gaze_depth_obb_residual_m": 0.0007666771318122212,
+                "gaze_origin_world_m": [
+                  -1.6273247655626224,
+                  1.526673520415865,
+                  2.6000802563199605
+                ],
+                "gaze_direction_world_unit": [
+                  0.013408119344533787,
+                  -0.7591842900714563,
+                  0.6507376092130697
+                ],
+                "wearer_world_m": [
+                  -1.557655070810797,
+                  1.5287618230847841,
+                  2.582478144908244
+                ],
+                "right_world": [
+                  0.931754371177616,
+                  0.04256027421795275,
+                  -0.36058621001072455
+                ],
+                "forward_world": [
+                  0.3497080008610444,
+                  -0.37231680397587874,
+                  0.8597002452081532
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.0063102958834668765,
+                  "forward_m": 0.8029804748802447,
+                  "up_m": -0.7482551991382508,
+                  "distance_m": 1.0975897712307925
+                }
+              },
+              {
+                "frame": 1192,
+                "time_s": 39.726976,
+                "gazed_object_id": "6518005798228368",
+                "gazed_object_name": "NIT_CoffeeCan_Anon",
+                "gaze_depth_m": 0.93404,
+                "gaze_hit_distance_m": 0.8845487905980773,
+                "gaze_hit_exit_distance_m": 1.0181895433607273,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6280258018163625,
+                  1.5287677906607384,
+                  2.5978458882289197
+                ],
+                "gaze_direction_world_unit": [
+                  0.01737992180196024,
+                  -0.7581733907560748,
+                  0.6518213312462198
+                ],
+                "wearer_world_m": [
+                  -1.557794936316324,
+                  1.5303730380299359,
+                  2.582577934436771
+                ],
+                "right_world": [
+                  0.9435346342314308,
+                  0.03517526057037354,
+                  -0.32940111573819436
+                ],
+                "forward_world": [
+                  0.31870082851846365,
+                  -0.36772731655378854,
+                  0.8736168511205553
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.03302112012323538,
+                  "forward_m": 0.8046630717785649,
+                  "up_m": -0.7503470118381309,
+                  "distance_m": 1.1007241669159087
+                }
+              },
+              {
+                "frame": 1193,
+                "time_s": 39.760304,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.0457,
+                "gaze_hit_distance_m": 1.0440367416980523,
+                "gaze_hit_exit_distance_m": 1.4753331959990257,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6294720942417933,
+                  1.530251052178527,
+                  2.596036798951653
+                ],
+                "gaze_direction_world_unit": [
+                  -0.12102789140829284,
+                  -0.7517675039625713,
+                  0.6482267114884636
+                ],
+                "wearer_world_m": [
+                  -1.558634027089923,
+                  1.5314230180798267,
+                  2.583844324259724
+                ],
+                "right_world": [
+                  0.9571913457645329,
+                  0.028978015815283004,
+                  -0.28800173991296024
+                ],
+                "forward_world": [
+                  0.2782027806710553,
+                  -0.3668338341802142,
+                  0.887714002890309
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.06893541166003317,
+                  "forward_m": 0.8045998698239484,
+                  "up_m": -0.7518274425036413,
+                  "distance_m": 1.1033483333938647
+                }
+              },
+              {
+                "frame": 1194,
+                "time_s": 39.793632,
+                "gazed_object_id": "6403392549732697",
+                "gazed_object_name": "BambooPlate",
+                "gaze_depth_m": 1.01636,
+                "gaze_hit_distance_m": 0.985356646040912,
+                "gaze_hit_exit_distance_m": 1.052033607456714,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6320486359638617,
+                  1.5308971636062256,
+                  2.594714314008205
+                ],
+                "gaze_direction_world_unit": [
+                  -0.2427879169668276,
+                  -0.7480290842856916,
+                  0.6176621377724383
+                ],
+                "wearer_world_m": [
+                  -1.56062966664408,
+                  1.531671302865826,
+                  2.586541601440959
+                ],
+                "right_world": [
+                  0.9720738261323076,
+                  0.02341492437415285,
+                  -0.23350421380576625
+                ],
+                "forward_world": [
+                  0.2256208580045188,
+                  -0.36696868616805045,
+                  0.9024573185505227
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.11647174136446528,
+                  "forward_m": 0.8013118068075107,
+                  "up_m": -0.7524742246242805,
+                  "distance_m": 1.1053885004782258
+                }
+              },
+              {
+                "frame": 1195,
+                "time_s": 39.82696,
+                "gazed_object_id": "5188521177876543",
+                "gazed_object_name": "SandwichBLT_A",
+                "gaze_depth_m": 1.03519,
+                "gaze_hit_distance_m": 0.9558259639203196,
+                "gaze_hit_exit_distance_m": 1.0356222770199643,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6357182570075601,
+                  1.530756567351084,
+                  2.5935313548102887
+                ],
+                "gaze_direction_world_unit": [
+                  -0.37608326630874733,
+                  -0.7416226227120966,
+                  0.5554793086012972
+                ],
+                "wearer_world_m": [
+                  -1.5639125161904779,
+                  1.5309203581363617,
+                  2.590071519656893
+                ],
+                "right_world": [
+                  0.98548527040375,
+                  0.015030490292261445,
+                  -0.16909425235300668
+                ],
+                "forward_world": [
+                  0.16267959447381647,
+                  -0.3683019506580645,
+                  0.9153627820068386
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.17234216832462382,
+                  "forward_m": 0.7937106499022604,
+                  "up_m": -0.7523347829564265,
+                  "distance_m": 1.1071070609463183
+                }
+              },
+              {
+                "frame": 1196,
+                "time_s": 39.860288,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.09608,
+                "gaze_hit_distance_m": 1.0857663912899116,
+                "gaze_hit_exit_distance_m": 1.9047599312471906,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6400660541412015,
+                  1.5300881327171618,
+                  2.5918815951470195
+                ],
+                "gaze_direction_world_unit": [
+                  -0.4797937582973988,
+                  -0.7234522632083924,
+                  0.49640182549776357
+                ],
+                "wearer_world_m": [
+                  -1.568196897145423,
+                  1.529077327353209,
+                  2.593246969173558
+                ],
+                "right_world": [
+                  0.9947264397551461,
+                  -0.0008726309521923103,
+                  -0.1025599754644742
+                ],
+                "forward_world": [
+                  0.09485243628495832,
+                  -0.37257640276152776,
+                  0.9231412889888999
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.229399553572407,
+                  "forward_m": 0.7824306613907145,
+                  "up_m": -0.7516616899362535,
+                  "distance_m": 1.108971230998061
+                }
+              },
+              {
+                "frame": 1197,
+                "time_s": 39.893616,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.09047,
+                "gaze_hit_distance_m": 1.0800890970984454,
+                "gaze_hit_exit_distance_m": 1.8080738591434184,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6442329207179214,
+                  1.5292251413760318,
+                  2.5897221014028036
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5039464773772291,
+                  -0.7265154512976518,
+                  0.4671330077877731
+                ],
+                "wearer_world_m": [
+                  -1.572626347737944,
+                  1.5267056155659742,
+                  2.595571237813901
+                ],
+                "right_world": [
+                  0.9989662929113674,
+                  -0.021241294522978932,
+                  -0.040188966569310036
+                ],
+                "forward_world": [
+                  0.02917461383973441,
+                  -0.3783989040382427,
+                  0.9251827448293439
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.2819210961017914,
+                  "forward_m": 0.7688841012130151,
+                  "up_m": -0.7507946870780753,
+                  "distance_m": 1.111015268873496
+                }
+              },
+              {
+                "frame": 1198,
+                "time_s": 39.926944,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.07914,
+                "gaze_hit_distance_m": 1.0695640388561427,
+                "gaze_hit_exit_distance_m": 1.8091679566858538,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6474288269028212,
+                  1.5284334873803755,
+                  2.587293653052797
+                ],
+                "gaze_direction_world_unit": [
+                  -0.501978629335236,
+                  -0.7329232445198232,
+                  0.45917422982268263
+                ],
+                "wearer_world_m": [
+                  -1.576301488002792,
+                  1.524487197441785,
+                  2.5969575113775534
+                ],
+                "right_world": [
+                  0.9990917628045513,
+                  -0.04048237308038291,
+                  0.013297630084914192
+                ],
+                "forward_world": [
+                  -0.027841359830789947,
+                  -0.38395087468237477,
+                  0.9229336837029039
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.3258747580126539,
+                  "forward_m": 0.7550936166702787,
+                  "up_m": -0.7500078582484616,
+                  "distance_m": 1.1130465018499687
+                }
+              },
+              {
+                "frame": 1199,
+                "time_s": 39.960272,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.09434,
+                "gaze_hit_distance_m": 1.0849816858584425,
+                "gaze_hit_exit_distance_m": 1.7760183986822558,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6498067498295377,
+                  1.5276104876490142,
+                  2.5849208468285023
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5100693699984113,
+                  -0.7217763022678453,
+                  0.46783352517105936
+                ],
+                "wearer_world_m": [
+                  -1.5792356325727948,
+                  1.522444204095449,
+                  2.597612916178266
+                ],
+                "right_world": [
+                  0.9967949306579325,
+                  -0.05710954474895419,
+                  0.05602112202746029
+                ],
+                "forward_world": [
+                  -0.07383780564508785,
+                  -0.3872895148181865,
+                  0.918996632294924
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.3604152848375162,
+                  "forward_m": 0.7426890401024936,
+                  "up_m": -0.7491928309147832,
+                  "distance_m": 1.1147986749754317
+                }
+              },
+              {
+                "frame": 1200,
+                "time_s": 39.9936,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.08275,
+                "gaze_hit_distance_m": 1.0742479067295967,
+                "gaze_hit_exit_distance_m": 1.8061143961867596,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6518315973222841,
+                  1.5267487590719293,
+                  2.5828820499776515
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5003203268524694,
+                  -0.7281648871734746,
+                  0.4684607428866149
+                ],
+                "wearer_world_m": [
+                  -1.5817889966765981,
+                  1.5205969543440068,
+                  2.5978570656497117
+                ],
+                "right_world": [
+                  0.993567646138465,
+                  -0.07081255424132862,
+                  0.08836806385051688
+                ],
+                "forward_world": [
+                  -0.10904572556965086,
+                  -0.38787520823885696,
+                  0.9152386861189007
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.38659840380419597,
+                  "forward_m": 0.7324109783742577,
+                  "up_m": -0.7483348192489446,
+                  "distance_m": 1.1161940551568261
+                }
+              },
+              {
+                "frame": 1201,
+                "time_s": 40.026928,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.07366,
+                "gaze_hit_distance_m": 1.0657426986697212,
+                "gaze_hit_exit_distance_m": 1.8241413321549143,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6541382985653137,
+                  1.5262181281239477,
+                  2.581321632451277
+                ],
+                "gaze_direction_world_unit": [
+                  -0.494060564764116,
+                  -0.7334661595154721,
+                  0.4668313948210715
+                ],
+                "wearer_world_m": [
+                  -1.584576749708096,
+                  1.519263127373186,
+                  2.598081124870257
+                ],
+                "right_world": [
+                  0.9901196437085451,
+                  -0.08199227510311441,
+                  0.11375569421299048
+                ],
+                "forward_world": [
+                  -0.1368544541352012,
+                  -0.3882247994773628,
+                  0.911346456323893
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.4077486295990745,
+                  "forward_m": 0.7235284284538006,
+                  "up_m": -0.747799699564738,
+                  "distance_m": 1.117567323426138
+                }
+              },
+              {
+                "frame": 1202,
+                "time_s": 40.060256,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.0754,
+                "gaze_hit_distance_m": 1.0675946632731053,
+                "gaze_hit_exit_distance_m": 1.8033828997406822,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6572702708108091,
+                  1.5261589733309375,
+                  2.580357220631871
+                ],
+                "gaze_direction_world_unit": [
+                  -0.49813424847856574,
+                  -0.7321535858542376,
+                  0.46455720553391067
+                ],
+                "wearer_world_m": [
+                  -1.588160050197127,
+                  1.518581555649985,
+                  2.59864442514805
+                ],
+                "right_world": [
+                  0.9866242426574148,
+                  -0.09049626491422588,
+                  0.13558403238308425
+                ],
+                "forward_world": [
+                  -0.16036804711637342,
+                  -0.38967852175248574,
+                  0.906880774495125
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.4269320032335628,
+                  "forward_m": 0.7148397621975271,
+                  "up_m": -0.7477306588571905,
+                  "distance_m": 1.1190924712456285
+                }
+              },
+              {
+                "frame": 1203,
+                "time_s": 40.093584,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.07283,
+                "gaze_hit_distance_m": 1.0653816058799457,
+                "gaze_hit_exit_distance_m": 1.79997096890121,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.661605713152333,
+                  1.5263724439613253,
+                  2.580095472620688
+                ],
+                "gaze_direction_world_unit": [
+                  -0.4966980648052117,
+                  -0.7338786549549742,
+                  0.463371505619666
+                ],
+                "wearer_world_m": [
+                  -1.5929431274043793,
+                  1.518434552306116,
+                  2.5998565681235966
+                ],
+                "right_world": [
+                  0.9830395173680613,
+                  -0.09526280110195604,
+                  0.15671089949004519
+                ],
+                "forward_world": [
+                  -0.1817448573650563,
+                  -0.39171004402791576,
+                  0.9019601145444313
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.44653676596255193,
+                  "forward_m": 0.7050618909079241,
+                  "up_m": -0.7479388819216624,
+                  "distance_m": 1.1206783322868248
+                }
+              },
+              {
+                "frame": 1204,
+                "time_s": 40.126912,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.05801,
+                "gaze_hit_distance_m": 1.0510747576799282,
+                "gaze_hit_exit_distance_m": 1.8097229106478123,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6670799211288168,
+                  1.5266959992963396,
+                  2.5806422974033003
+                ],
+                "gaze_direction_world_unit": [
+                  -0.4910712247636216,
+                  -0.7441691636475551,
+                  0.45283695529986895
+                ],
+                "wearer_world_m": [
+                  -1.598870343818799,
+                  1.5186688410889921,
+                  2.6018809413172357
+                ],
+                "right_world": [
+                  0.979318218215339,
+                  -0.09632051018257465,
+                  0.17792747620787192
+                ],
+                "forward_world": [
+                  -0.2016555312423115,
+                  -0.39313908585125035,
+                  0.897093476676441
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.46697426454158486,
+                  "forward_m": 0.6937126956796903,
+                  "up_m": -0.7482642183027307,
+                  "distance_m": 1.122141527742171
+                }
+              },
+              {
+                "frame": 1205,
+                "time_s": 40.16024,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 1.04294,
+                "gaze_hit_distance_m": 1.0276454908816026,
+                "gaze_hit_exit_distance_m": 1.057265890843816,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6733277583268962,
+                  1.5270060463373707,
+                  2.582083781106309
+                ],
+                "gaze_direction_world_unit": [
+                  -0.529881965835827,
+                  -0.7376291481230901,
+                  0.41848338332742
+                ],
+                "wearer_world_m": [
+                  -1.605562381057526,
+                  1.519111097844691,
+                  2.6047461978538196
+                ],
+                "right_world": [
+                  0.9755559821573023,
+                  -0.0945292330319171,
+                  0.19838031600816503
+                ],
+                "forward_world": [
+                  -0.2196545972850127,
+                  -0.3927213758166672,
+                  0.8930407487165537
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.48720116422244897,
+                  "forward_m": 0.6811483487422799,
+                  "up_m": -0.7485793521796079,
+                  "distance_m": 1.1232537976448982
+                }
+              },
+              {
+                "frame": 1206,
+                "time_s": 40.193568,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 1.03854,
+                "gaze_hit_distance_m": 1.0241953335557508,
+                "gaze_hit_exit_distance_m": 1.0537286448627756,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6800812541259988,
+                  1.5271574414526907,
+                  2.584385152351305
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5256954143339234,
+                  -0.7403178308960199,
+                  0.41901532263832186
+                ],
+                "wearer_world_m": [
+                  -1.6127104403546593,
+                  1.5195376412066548,
+                  2.608284394954325
+                ],
+                "right_world": [
+                  0.9721237985834768,
+                  -0.09080640448524305,
+                  0.21617011156053723
+                ],
+                "forward_world": [
+                  -0.23443557094734813,
+                  -0.39181050899191056,
+                  0.889676619968228
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5056078070170984,
+                  "forward_m": 0.6684623400857519,
+                  "up_m": -0.7487340106302582,
+                  "distance_m": 1.1238699984001845
+                }
+              },
+              {
+                "frame": 1207,
+                "time_s": 40.226896,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 1.03252,
+                "gaze_hit_distance_m": 1.0155957375667155,
+                "gaze_hit_exit_distance_m": 1.0448727743094846,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6871576624005955,
+                  1.527036425613882,
+                  2.5874757118481
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5222546433348858,
+                  -0.746481350552989,
+                  0.412329577876408
+                ],
+                "wearer_world_m": [
+                  -1.620088721068804,
+                  1.519771816092605,
+                  2.6123160874116067
+                ],
+                "right_world": [
+                  0.9694628058091095,
+                  -0.08578134532880122,
+                  0.22974644490461638
+                ],
+                "forward_world": [
+                  -0.24483459508411787,
+                  -0.39228588271301923,
+                  0.8866610441843394
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.521008312704221,
+                  "forward_m": 0.6567416568635246,
+                  "up_m": -0.748610997207916,
+                  "distance_m": 1.12391178074944
+                }
+              },
+              {
+                "frame": 1208,
+                "time_s": 40.260224,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 1.02722,
+                "gaze_hit_distance_m": 1.0106608869451883,
+                "gaze_hit_exit_distance_m": 1.0397950190746252,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6945354604183285,
+                  1.5266877663399796,
+                  2.591348517878951
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5193745828956325,
+                  -0.749747246649518,
+                  0.41003549697978003
+                ],
+                "wearer_world_m": [
+                  -1.627690860806669,
+                  1.5199204725200008,
+                  2.616923211193065
+                ],
+                "right_world": [
+                  0.9674944081614094,
+                  -0.07860922583904381,
+                  0.2403646392242233
+                ],
+                "forward_world": [
+                  -0.2516331958197218,
+                  -0.3939696552306349,
+                  0.8840071524139429
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5343076295409611,
+                  "forward_m": 0.6455294224257184,
+                  "up_m": -0.7482600360707761,
+                  "distance_m": 1.1234259921256948
+                }
+              },
+              {
+                "frame": 1209,
+                "time_s": 40.293552,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 1.01842,
+                "gaze_hit_distance_m": 0.9987086951834894,
+                "gaze_hit_exit_distance_m": 1.0275213472791818,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7022766090984207,
+                  1.5262173614455246,
+                  2.5960728062324545
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5151636703704632,
+                  -0.758379626762221,
+                  0.39933286171116417
+                ],
+                "wearer_world_m": [
+                  -1.63560926172308,
+                  1.520085847654412,
+                  2.622263091331419
+                ],
+                "right_world": [
+                  0.965938953009933,
+                  -0.0694815053799894,
+                  0.249267445664702
+                ],
+                "forward_world": [
+                  -0.25605598819216585,
+                  -0.3957891034377944,
+                  0.8819219446815235
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5464375834607417,
+                  "forward_m": 0.6341662594305509,
+                  "up_m": -0.7477913616428389,
+                  "distance_m": 1.1224761902892206
+                }
+              },
+              {
+                "frame": 1210,
+                "time_s": 40.32688,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 1.01349,
+                "gaze_hit_distance_m": 0.994046776602657,
+                "gaze_hit_exit_distance_m": 1.0227430393426131,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7105341833915007,
+                  1.5257727257420564,
+                  2.601833620336217
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5156690551349307,
+                  -0.7614799847802155,
+                  0.3927259328786056
+                ],
+                "wearer_world_m": [
+                  -1.644011458360278,
+                  1.5202094696315132,
+                  2.6285139302457527
+                ],
+                "right_world": [
+                  0.9646295009563941,
+                  -0.06152717777347119,
+                  0.2563285631369451
+                ],
+                "forward_world": [
+                  -0.2593369480662633,
+                  -0.395856708617704,
+                  0.8809323547299386
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5574770504189825,
+                  "forward_m": 0.6225391919840667,
+                  "up_m": -0.7473512814867688,
+                  "distance_m": 1.1211019780733325
+                }
+              },
+              {
+                "frame": 1211,
+                "time_s": 40.360208,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 1.00787,
+                "gaze_hit_distance_m": 0.989396009685281,
+                "gaze_hit_exit_distance_m": 1.0179652334752052,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7192741157816316,
+                  1.525405675892467,
+                  2.6085511170851245
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5143994686170109,
+                  -0.7646297779147317,
+                  0.3882453984435685
+                ],
+                "wearer_world_m": [
+                  -1.6528676995411797,
+                  1.520244299840846,
+                  2.635599403174147
+                ],
+                "right_world": [
+                  0.9635423656198527,
+                  -0.05610716560928691,
+                  0.26160675760192137
+                ],
+                "forward_world": [
+                  -0.2621023675899606,
+                  -0.3943443087135098,
+                  0.88079220880353
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.567493815318459,
+                  "forward_m": 0.6107533715842227,
+                  "up_m": -0.7469883023085445,
+                  "distance_m": 1.1194018202200666
+                }
+              },
+              {
+                "frame": 1212,
+                "time_s": 40.393536,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 0.998075,
+                "gaze_hit_distance_m": 0.9790019593561677,
+                "gaze_hit_exit_distance_m": 1.0072915370611994,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7282140972279079,
+                  1.5250432474577513,
+                  2.615811482655538
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5063445943576775,
+                  -0.7724184829223001,
+                  0.3833860182698003
+                ],
+                "wearer_world_m": [
+                  -1.661898340069199,
+                  1.5201783344657958,
+                  2.643135733332324
+                ],
+                "right_world": [
+                  0.9626842716040855,
+                  -0.052005031048696304,
+                  0.26558326368906593
+                ],
+                "forward_world": [
+                  -0.2641486438042526,
+                  -0.3940066855686798,
+                  0.8803318838390198
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5766578593364005,
+                  "forward_m": 0.5990664249047644,
+                  "up_m": -0.7466248896660106,
+                  "distance_m": 1.1175256569991572
+                }
+              },
+              {
+                "frame": 1213,
+                "time_s": 40.426864,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 0.992741,
+                "gaze_hit_distance_m": 0.9754052575069972,
+                "gaze_hit_exit_distance_m": 1.003619601822253,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.737028810603476,
+                  1.5245366071911868,
+                  2.6233261568034685
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5044075627535463,
+                  -0.7746959216911571,
+                  0.3813387464605665
+                ],
+                "wearer_world_m": [
+                  -1.6707716613447,
+                  1.519899930327214,
+                  2.65083166717429
+                ],
+                "right_world": [
+                  0.9621293095361152,
+                  -0.048550873737465416,
+                  0.2682349798048114
+                ],
+                "forward_world": [
+                  -0.26508686119961167,
+                  -0.395977109963106,
+                  0.8791649927087657
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5847507185647415,
+                  "forward_m": 0.5879003582889566,
+                  "up_m": -0.7461141098221972,
+                  "distance_m": 1.1154579772515119
+                }
+              },
+              {
+                "frame": 1214,
+                "time_s": 40.460192,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 0.983711,
+                "gaze_hit_distance_m": 0.9661062427351712,
+                "gaze_hit_exit_distance_m": 0.9940700341352229,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7454069363481581,
+                  1.5237213438725188,
+                  2.6309328655451827
+                ],
+                "gaze_direction_world_unit": [
+                  -0.49726983882544995,
+                  -0.7813276387239125,
+                  0.3771602157712638
+                ],
+                "wearer_world_m": [
+                  -1.6791626701215512,
+                  1.519264564633363,
+                  2.658499076962638
+                ],
+                "right_world": [
+                  0.9620143423354333,
+                  -0.0455241588893647,
+                  0.2691764404593022
+                ],
+                "forward_world": [
+                  -0.26447924800775463,
+                  -0.39981827787262436,
+                  0.8776081540483892
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5913231376044016,
+                  "forward_m": 0.5777657255557538,
+                  "up_m": -0.7452973497835833,
+                  "distance_m": 1.1130788050662512
+                }
+              },
+              {
+                "frame": 1215,
+                "time_s": 40.49352,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 0.975528,
+                "gaze_hit_distance_m": 0.9592402932524032,
+                "gaze_hit_exit_distance_m": 0.9870426814220196,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7532801949960213,
+                  1.5226727757955894,
+                  2.6386097430568283
+                ],
+                "gaze_direction_world_unit": [
+                  -0.4895286174119384,
+                  -0.7857998711444355,
+                  0.37799509949752647
+                ],
+                "wearer_world_m": [
+                  -1.686997591336791,
+                  1.518405630210882,
+                  2.666113735889003
+                ],
+                "right_world": [
+                  0.9623941275091142,
+                  -0.0424012827066195,
+                  0.26832755087915355
+                ],
+                "forward_world": [
+                  -0.2621989840281092,
+                  -0.40335082751156465,
+                  0.8766754260958631
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.596314430847253,
+                  "forward_m": 0.5687971292492334,
+                  "up_m": -0.7442494318980798,
+                  "distance_m": 1.1104180706200106
+                }
+              },
+              {
+                "frame": 1216,
+                "time_s": 40.526848,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 0.964315,
+                "gaze_hit_distance_m": 0.9461855830616963,
+                "gaze_hit_exit_distance_m": 0.9736882113054797,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7606530811405168,
+                  1.5215576540827909,
+                  2.6463538437030394
+                ],
+                "gaze_direction_world_unit": [
+                  -0.4798346544371395,
+                  -0.7955963953191316,
+                  0.36984467030957136
+                ],
+                "wearer_world_m": [
+                  -1.6942816810946442,
+                  1.517544820072529,
+                  2.673681414399258
+                ],
+                "right_world": [
+                  0.9632598930985093,
+                  -0.03866581823448398,
+                  0.26577308525903576
+                ],
+                "forward_world": [
+                  -0.2582797783043828,
+                  -0.40467788258587906,
+                  0.8772270900199379
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5998253728962193,
+                  "forward_m": 0.5609777536050324,
+                  "up_m": -0.7431345829218805,
+                  "distance_m": 1.1075809344442122
+                }
+              },
+              {
+                "frame": 1217,
+                "time_s": 40.560176,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 0.954456,
+                "gaze_hit_distance_m": 0.9367004145102393,
+                "gaze_hit_exit_distance_m": 0.9639868850803742,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.767415679077126,
+                  1.5205055755413681,
+                  2.6540128786574337
+                ],
+                "gaze_direction_world_unit": [
+                  -0.46873437417782693,
+                  -0.8026036792215394,
+                  0.36893823407742576
+                ],
+                "wearer_world_m": [
+                  -1.7009132517559094,
+                  1.5167930019340732,
+                  2.681062937041783
+                ],
+                "right_world": [
+                  0.9645266423158176,
+                  -0.03432900444050602,
+                  0.2617439124738132
+                ],
+                "forward_world": [
+                  -0.25279906733581525,
+                  -0.4056863508368993,
+                  0.878357112055673
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.6019708895430993,
+                  "forward_m": 0.5543443304410527,
+                  "up_m": -0.7420825018387849,
+                  "distance_m": 1.104695898464713
+                }
+              },
+              {
+                "frame": 1218,
+                "time_s": 40.593504,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 0.948483,
+                "gaze_hit_distance_m": 0.9299436003394942,
+                "gaze_hit_exit_distance_m": 0.9570412052012595,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7733869269222482,
+                  1.5196067947865808,
+                  2.661409540133744
+                ],
+                "gaze_direction_world_unit": [
+                  -0.46774742722871854,
+                  -0.8074370720016606,
+                  0.35952429553272147
+                ],
+                "wearer_world_m": [
+                  -1.706702812178126,
+                  1.5162054493321109,
+                  2.688050136802965
+                ],
+                "right_world": [
+                  0.9662662130237014,
+                  -0.029654599728714287,
+                  0.2558323870892132
+                ],
+                "forward_world": [
+                  -0.245347674270815,
+                  -0.40807131818703246,
+                  0.8793647241065561
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.6024247511332047,
+                  "forward_m": 0.5493619206936219,
+                  "up_m": -0.7411833948585649,
+                  "distance_m": 1.1018470517726842
+                }
+              },
+              {
+                "frame": 1219,
+                "time_s": 40.626832,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.89972,
+                "gaze_hit_distance_m": 0.9152950497525705,
+                "gaze_hit_exit_distance_m": 1.8048317262950548,
+                "gaze_depth_obb_residual_m": 0.015575049752570513,
+                "gaze_origin_world_m": [
+                  -1.7782930198503615,
+                  1.518884962037322,
+                  2.6683920610466716
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3833766403552662,
+                  -0.8459431963045567,
+                  0.370678378457578
+                ],
+                "wearer_world_m": [
+                  -1.7113310186004842,
+                  1.5157733198985839,
+                  2.694362616928513
+                ],
+                "right_world": [
+                  0.9688987920995102,
+                  -0.025179086959091046,
+                  0.24617299658576952
+                ],
+                "forward_world": [
+                  -0.23449097482358572,
+                  -0.41121725780246166,
+                  0.8808600056829169
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5999310139792269,
+                  "forward_m": 0.5473891132051107,
+                  "up_m": -0.7404593490975142,
+                  "distance_m": 1.0990141538922669
+                }
+              },
+              {
+                "frame": 1220,
+                "time_s": 40.66016,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.845892,
+                "gaze_hit_distance_m": 0.8461518528526376,
+                "gaze_hit_exit_distance_m": 1.6690663846083407,
+                "gaze_depth_obb_residual_m": 0.000259852852637632,
+                "gaze_origin_world_m": [
+                  -1.7819183561897791,
+                  1.518340079801396,
+                  2.674924404014267
+                ],
+                "gaze_direction_world_unit": [
+                  -0.16415716950299905,
+                  -0.9139876718511355,
+                  0.3710511547009454
+                ],
+                "wearer_world_m": [
+                  -1.7145558593228039,
+                  1.515500691350374,
+                  2.699870217091233
+                ],
+                "right_world": [
+                  0.9726316254172203,
+                  -0.02095819379357247,
+                  0.23140543500784128
+                ],
+                "forward_world": [
+                  -0.21909904572051175,
+                  -0.4142778361570373,
+                  0.8833852402170889
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5935358131092157,
+                  "forward_m": 0.5492731658400627,
+                  "up_m": -0.7399132448723309,
+                  "distance_m": 1.0961101140363063
+                }
+              },
+              {
+                "frame": 1221,
+                "time_s": 40.693488,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.833711,
+                "gaze_hit_distance_m": 0.8350973396487018,
+                "gaze_hit_exit_distance_m": 1.647666255551919,
+                "gaze_depth_obb_residual_m": 0.0013863396487018287,
+                "gaze_origin_world_m": [
+                  -1.7841543058395593,
+                  1.5179527483251782,
+                  2.6810966217496057
+                ],
+                "gaze_direction_world_unit": [
+                  -0.07759470722289646,
+                  -0.925465792747397,
+                  0.3707993094187539
+                ],
+                "wearer_world_m": [
+                  -1.716275204743166,
+                  1.5154126520299651,
+                  2.7046346175469687
+                ],
+                "right_world": [
+                  0.977318275396734,
+                  -0.016467693190718308,
+                  0.2111345629131583
+                ],
+                "forward_world": [
+                  -0.19867444086167163,
+                  -0.4165141535328705,
+                  0.8871552437172979
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5828547131642943,
+                  "forward_m": 0.5550039538164057,
+                  "up_m": -0.7395332923398515,
+                  "distance_m": 1.09300434394777
+                }
+              },
+              {
+                "frame": 1222,
+                "time_s": 40.726816,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.835726,
+                "gaze_hit_distance_m": 0.8369744356769192,
+                "gaze_hit_exit_distance_m": 1.6516485893079476,
+                "gaze_depth_obb_residual_m": 0.001248435676919235,
+                "gaze_origin_world_m": [
+                  -1.7851903195623815,
+                  1.5176886407894865,
+                  2.686811572105177
+                ],
+                "gaze_direction_world_unit": [
+                  -0.08181642273900769,
+                  -0.9230799307956156,
+                  0.37580515474452114
+                ],
+                "wearer_world_m": [
+                  -1.7167247008854452,
+                  1.515460897533367,
+                  2.7086188626330983
+                ],
+                "right_world": [
+                  0.9824269963325172,
+                  -0.01193356634032916,
+                  0.18626536680625722
+                ],
+                "forward_world": [
+                  -0.17414507343511693,
+                  -0.4177013929141504,
+                  0.8917393339736989
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5685239095236546,
+                  "forward_m": 0.5638182410450666,
+                  "up_m": -0.7392786243569164,
+                  "distance_m": 1.0897904977867388
+                }
+              },
+              {
+                "frame": 1223,
+                "time_s": 40.760144,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.836952,
+                "gaze_hit_distance_m": 0.8378318977670771,
+                "gaze_hit_exit_distance_m": 1.6535050611265616,
+                "gaze_depth_obb_residual_m": 0.0008798977670770869,
+                "gaze_origin_world_m": [
+                  -1.7853282121909668,
+                  1.5175346643083818,
+                  2.691872737603752
+                ],
+                "gaze_direction_world_unit": [
+                  -0.09499414633460207,
+                  -0.9219734129493409,
+                  0.37542128066574065
+                ],
+                "wearer_world_m": [
+                  -1.7162571191643017,
+                  1.5156067892738718,
+                  2.711710305674286
+                ],
+                "right_world": [
+                  0.987401953064397,
+                  -0.007702969137772436,
+                  0.1580444473908426
+                ],
+                "forward_world": [
+                  -0.14676296621989054,
+                  -0.4179211515018991,
+                  0.8965503571320832
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5514738585539615,
+                  "forward_m": 0.5748544046063684,
+                  "up_m": -0.7391219799807284,
+                  "distance_m": 1.0866840867770031
+                }
+              },
+              {
+                "frame": 1224,
+                "time_s": 40.793472,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.837893,
+                "gaze_hit_distance_m": 0.8388229603339027,
+                "gaze_hit_exit_distance_m": 1.6552965613025876,
+                "gaze_depth_obb_residual_m": 0.0009299603339026907,
+                "gaze_origin_world_m": [
+                  -1.7841548931866005,
+                  1.5176941102340036,
+                  2.69639325742365
+                ],
+                "gaze_direction_world_unit": [
+                  -0.08236723165121018,
+                  -0.9210446325817794,
+                  0.3806473748003671
+                ],
+                "wearer_world_m": [
+                  -1.714421712119098,
+                  1.516257242565715,
+                  2.713808209921741
+                ],
+                "right_world": [
+                  0.9923513440466372,
+                  -0.0010145896034771396,
+                  0.12344140543905718
+                ],
+                "forward_world": [
+                  -0.11264523529586612,
+                  -0.4164846195904678,
+                  0.902137247102525
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.5293305451945857,
+                  "forward_m": 0.5894313056601034,
+                  "up_m": -0.7392735148509028,
+                  "distance_m": 1.0835799093413367
+                }
+              },
+              {
+                "frame": 1225,
+                "time_s": 40.8268,
+                "gazed_object_id": "4587554268035732",
+                "gazed_object_name": "Mug_2",
+                "gaze_depth_m": 0.81644,
+                "gaze_hit_distance_m": 0.7735584003227546,
+                "gaze_hit_exit_distance_m": 0.7989996938851182,
+                "gaze_depth_obb_residual_m": 0.0174403061148819,
+                "gaze_origin_world_m": [
+                  -1.781075602250072,
+                  1.5184144864552023,
+                  2.7005340629746932
+                ],
+                "gaze_direction_world_unit": [
+                  0.11230059781152346,
+                  -0.8707536885615856,
+                  0.4787239179188436
+                ],
+                "wearer_world_m": [
+                  -1.7106141745074943,
+                  1.517878242235729,
+                  2.714780513185697
+                ],
+                "right_world": [
+                  0.9968622634275042,
+                  0.011073079038369321,
+                  0.07837738624631607
+                ],
+                "forward_world": [
+                  -0.06684966531678699,
+                  -0.4124660238491884,
+                  0.9085168690877865
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.4987080629825077,
+                  "forward_m": 0.608907854949773,
+                  "up_m": -0.7399926476128965,
+                  "distance_m": 1.0803090420914023
+                }
+              },
+              {
+                "frame": 1226,
+                "time_s": 40.860128,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.01808,
+                "gaze_hit_distance_m": 1.0310437728611206,
+                "gaze_hit_exit_distance_m": 1.4056337873986593,
+                "gaze_depth_obb_residual_m": 0.012963772861120493,
+                "gaze_origin_world_m": [
+                  -1.77598660219618,
+                  1.519760953560007,
+                  2.7041375661519957
+                ],
+                "gaze_direction_world_unit": [
+                  0.27775949402042666,
+                  -0.7505799372296678,
+                  0.599566027481398
+                ],
+                "wearer_world_m": [
+                  -1.704837433614161,
+                  1.520442565880314,
+                  2.714403671340052
+                ],
+                "right_world": [
+                  0.9993821423048627,
+                  0.027306391131596636,
+                  0.022129045291472915
+                ],
+                "forward_world": [
+                  -0.009136921549165067,
+                  -0.40612000321229635,
+                  0.9137740747337106
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.4584721493321464,
+                  "forward_m": 0.6325276101707367,
+                  "up_m": -0.7413410983986252,
+                  "distance_m": 1.0769747042138091
+                }
+              },
+              {
+                "frame": 1227,
+                "time_s": 40.893456,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 1.12308,
+                "gaze_hit_distance_m": 1.0796125603251803,
+                "gaze_hit_exit_distance_m": 1.146788893584029,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.76914217302403,
+                  1.521592169043501,
+                  2.707012150421027
+                ],
+                "gaze_direction_world_unit": [
+                  0.4328902375719226,
+                  -0.6579971209620267,
+                  0.6161540643545316
+                ],
+                "wearer_world_m": [
+                  -1.697499096328641,
+                  1.5236255815644733,
+                  2.7125975327837795
+                ],
+                "right_world": [
+                  0.9980343747230896,
+                  0.04510975346997337,
+                  -0.04350283913689029
+                ],
+                "forward_world": [
+                  0.05788002388090324,
+                  -0.39735965522978445,
+                  0.9158357970898565
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.4092423072098351,
+                  "forward_m": 0.6580917695542127,
+                  "up_m": -0.7431725057985507,
+                  "distance_m": 1.073717568329922
+                }
+              },
+              {
+                "frame": 1228,
+                "time_s": 40.926784,
+                "gazed_object_id": "8473544005996466",
+                "gazed_object_name": "BlackKitchenChair_B",
+                "gaze_depth_m": 1.09784,
+                "gaze_hit_distance_m": 0.9656181676693967,
+                "gaze_hit_exit_distance_m": 1.6538149755344769,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7612847630934383,
+                  1.5234321902490744,
+                  2.7090554232771398
+                ],
+                "gaze_direction_world_unit": [
+                  0.46996531539838055,
+                  -0.6431954596747071,
+                  0.604509886582794
+                ],
+                "wearer_world_m": [
+                  -1.689473517879056,
+                  1.5267312201953258,
+                  2.7096238977036737
+                ],
+                "right_world": [
+                  0.9916755344230326,
+                  0.06121269532123655,
+                  -0.11328124451250754
+                ],
+                "forward_world": [
+                  0.12816719393822656,
+                  -0.38479934953454553,
+                  0.9140583301933152
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.35451391396018506,
+                  "forward_m": 0.6822466561481897,
+                  "up_m": -0.7450103592327416,
+                  "distance_m": 1.0705984543146205
+                }
+              },
+              {
+                "frame": 1229,
+                "time_s": 40.960112,
+                "gazed_object_id": "8473544005996466",
+                "gazed_object_name": "BlackKitchenChair_B",
+                "gaze_depth_m": 1.09942,
+                "gaze_hit_distance_m": 0.9634613497602518,
+                "gaze_hit_exit_distance_m": 1.6343943347344048,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7527766742684179,
+                  1.5251975996663913,
+                  2.710275368417185
+                ],
+                "gaze_direction_world_unit": [
+                  0.45603546609402434,
+                  -0.6464379281443071,
+                  0.6116777409068452
+                ],
+                "wearer_world_m": [
+                  -1.681169170211693,
+                  1.529626006161086,
+                  2.705712882287464
+                ],
+                "right_world": [
+                  0.9800495555070345,
+                  0.07507727530341915,
+                  -0.18402790952320175
+                ],
+                "forward_world": [
+                  0.1987532531111031,
+                  -0.36967111347631976,
+                  0.9076565497141149
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.29646806488299593,
+                  "forward_m": 0.7031764730233074,
+                  "up_m": -0.7467716169554266,
+                  "distance_m": 1.0677164012972682
+                }
+              },
+              {
+                "frame": 1230,
+                "time_s": 40.99344,
+                "gazed_object_id": "8473544005996466",
+                "gazed_object_name": "BlackKitchenChair_B",
+                "gaze_depth_m": 1.20002,
+                "gaze_hit_distance_m": 0.9769351670187196,
+                "gaze_hit_exit_distance_m": 1.5885071146939305,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7434539884020925,
+                  1.5273205675190131,
+                  2.710770384144673
+                ],
+                "gaze_direction_world_unit": [
+                  0.4402772893751561,
+                  -0.6395888199692442,
+                  0.6301444674285528
+                ],
+                "wearer_world_m": [
+                  -1.6724639207063081,
+                  1.5329489954989532,
+                  2.700932051561223
+                ],
+                "right_world": [
+                  0.9624565280898236,
+                  0.09008218483283106,
+                  -0.25605200939072287
+                ],
+                "forward_world": [
+                  0.2712341309817871,
+                  -0.35553849482067656,
+                  0.894440844824968
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.23449400121602043,
+                  "forward_m": 0.7203930521512353,
+                  "up_m": -0.748889479734561,
+                  "distance_m": 1.0652647741529675
+                }
+              },
+              {
+                "frame": 1231,
+                "time_s": 41.026768,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.49152,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.733067245203058,
+                  1.5299670394726395,
+                  2.7103412145579786
+                ],
+                "gaze_direction_world_unit": [
+                  0.41955869123249667,
+                  -0.6012452690791278,
+                  0.6800548735368649
+                ],
+                "wearer_world_m": [
+                  -1.6632812316247167,
+                  1.537214373807644,
+                  2.6946743656444214
+                ],
+                "right_world": [
+                  0.9357837108501907,
+                  0.11055637373239341,
+                  -0.33479267425466563
+                ],
+                "forward_world": [
+                  0.35217941211210535,
+                  -0.338049819389731,
+                  0.8727496670265433
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.16362522276853658,
+                  "forward_m": 0.7343540565287393,
+                  "up_m": -0.7515336134013165,
+                  "distance_m": 1.063415189819248
+                }
+              },
+              {
+                "frame": 1232,
+                "time_s": 41.060096,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.21247,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.7213943611903122,
+                  1.533142324332137,
+                  2.7085796868756455
+                ],
+                "gaze_direction_world_unit": [
+                  0.8162918241719763,
+                  -0.3457900230922396,
+                  0.4627060813517099
+                ],
+                "wearer_world_m": [
+                  -1.653802528421942,
+                  1.542668559937684,
+                  2.686026268527194
+                ],
+                "right_world": [
+                  0.8936758367808941,
+                  0.13875007098628955,
+                  -0.426722294420233
+                ],
+                "forward_world": [
+                  0.448457748918234,
+                  -0.3082653251221561,
+                  0.8389625359707793
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.07678050895190575,
+                  "forward_m": 0.74375123862968,
+                  "up_m": -0.7547137310195141,
+                  "distance_m": 1.0623812720993777
+                }
+              },
+              {
+                "frame": 1233,
+                "time_s": 41.093424,
+                "gazed_object_id": "6268784849863150",
+                "gazed_object_name": "Apartment_CabinetDrawerG",
+                "gaze_depth_m": 4.47076,
+                "gaze_hit_distance_m": 4.359502427963898,
+                "gaze_hit_exit_distance_m": 5.061897732249772,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.709051521562833,
+                  1.5371434545680442,
+                  2.7052923464172167
+                ],
+                "gaze_direction_world_unit": [
+                  0.9131989065390782,
+                  -0.2500465189868479,
+                  0.3217833050958236
+                ],
+                "wearer_world_m": [
+                  -1.644817539886356,
+                  1.5491466781706718,
+                  2.675326033295123
+                ],
+                "right_world": [
+                  0.8347291587175693,
+                  0.1688081103502604,
+                  -0.5241479308998884
+                ],
+                "forward_world": [
+                  0.5505928336475415,
+                  -0.2708054748857097,
+                  0.7896277137410361
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.02143856719447612,
+                  "forward_m": 0.7438695993505386,
+                  "up_m": -0.7587223078504322,
+                  "distance_m": 1.0627610895357285
+                }
+              },
+              {
+                "frame": 1234,
+                "time_s": 41.126752,
+                "gazed_object_id": "4418602414882545",
+                "gazed_object_name": "Apartment_CabinetDrawerD",
+                "gaze_depth_m": 4.19543,
+                "gaze_hit_distance_m": 4.107695890050634,
+                "gaze_hit_exit_distance_m": 4.267436326045318,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6970407828346585,
+                  1.5420716811401167,
+                  2.7006279419469963
+                ],
+                "gaze_direction_world_unit": [
+                  0.9643079426899006,
+                  -0.20709756873461604,
+                  0.16498723795912867
+                ],
+                "wearer_world_m": [
+                  -1.6370458374721408,
+                  1.5562399837764669,
+                  2.6636424389444233
+                ],
+                "right_world": [
+                  0.7643446922504868,
+                  0.19479520090028896,
+                  -0.6146804219549576
+                ],
+                "forward_world": [
+                  0.6448010426626969,
+                  -0.23529190281219714,
+                  0.7272340310052291
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.1201096250273968,
+                  "forward_m": 0.7324310683971437,
+                  "up_m": -0.7636538575788527,
+                  "distance_m": 1.064917276680525
+                }
+              },
+              {
+                "frame": 1235,
+                "time_s": 41.16008,
+                "gazed_object_id": "4418602414882545",
+                "gazed_object_name": "Apartment_CabinetDrawerD",
+                "gaze_depth_m": 4.10503,
+                "gaze_hit_distance_m": 4.036627091354759,
+                "gaze_hit_exit_distance_m": 4.194037886408638,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6861569124944629,
+                  1.5469266442602594,
+                  2.695540220181892
+                ],
+                "gaze_direction_world_unit": [
+                  0.9784366084149385,
+                  -0.20143834191925203,
+                  0.04565520472295403
+                ],
+                "wearer_world_m": [
+                  -1.630713130610556,
+                  1.5627997551533759,
+                  2.65262060809156
+                ],
+                "right_world": [
+                  0.6915836504810623,
+                  0.21452346710745215,
+                  -0.689704093396209
+                ],
+                "forward_world": [
+                  0.722289201626705,
+                  -0.20114382683684928,
+                  0.6616943933107522
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.20875662516545096,
+                  "forward_m": 0.711379358396574,
+                  "up_m": -0.7685077018736588,
+                  "distance_m": 1.0678220862776358
+                }
+              },
+              {
+                "frame": 1236,
+                "time_s": 41.193408,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.32075,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.6769094193893765,
+                  1.5508212628959943,
+                  2.6909690866598974
+                ],
+                "gaze_direction_world_unit": [
+                  0.9839053176680952,
+                  -0.1766271863843172,
+                  0.027076980895287962
+                ],
+                "wearer_world_m": [
+                  -1.6256710576811562,
+                  1.5678527239898568,
+                  2.643507298625039
+                ],
+                "right_world": [
+                  0.6261059578315091,
+                  0.22677978822591377,
+                  -0.746031002854505
+                ],
+                "forward_world": [
+                  0.7796599317727435,
+                  -0.16854148179861225,
+                  0.60309548141339
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.2802811136908924,
+                  "forward_m": 0.6859898911396325,
+                  "up_m": -0.7723986482551963,
+                  "distance_m": 1.0703921268694134
+                }
+              },
+              {
+                "frame": 1237,
+                "time_s": 41.226736,
+                "gazed_object_id": "4418602414882545",
+                "gazed_object_name": "Apartment_CabinetDrawerD",
+                "gaze_depth_m": 4.0806,
+                "gaze_hit_distance_m": 4.007158952971688,
+                "gaze_hit_exit_distance_m": 4.164089456016764,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6693788639076992,
+                  1.5536346103127558,
+                  2.6874644839463073
+                ],
+                "gaze_direction_world_unit": [
+                  0.9813604936814863,
+                  -0.1881655121885316,
+                  0.03905536408813616
+                ],
+                "wearer_world_m": [
+                  -1.6215715851438468,
+                  1.5712615524172542,
+                  2.6367514017067117
+                ],
+                "right_world": [
+                  0.573516250576585,
+                  0.232101421064716,
+                  -0.7856258910348587
+                ],
+                "forward_world": [
+                  0.8190388879035455,
+                  -0.1437901449744282,
+                  0.5554274878955453
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3332714761922738,
+                  "forward_m": 0.6614667690224187,
+                  "up_m": -0.7752090587100997,
+                  "distance_m": 1.0721740754516191
+                }
+              },
+              {
+                "frame": 1238,
+                "time_s": 41.260064,
+                "gazed_object_id": "4418602414882545",
+                "gazed_object_name": "Apartment_CabinetDrawerD",
+                "gaze_depth_m": 4.07471,
+                "gaze_hit_distance_m": 4.001474137538218,
+                "gaze_hit_exit_distance_m": 4.1584220113593044,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6633816227490301,
+                  1.5555179051077677,
+                  2.6852895701998296
+                ],
+                "gaze_direction_world_unit": [
+                  0.981254579331936,
+                  -0.18874671039060004,
+                  0.03891182155633621
+                ],
+                "wearer_world_m": [
+                  -1.6180786490087542,
+                  1.573228238905615,
+                  2.6323552113385316
+                ],
+                "right_world": [
+                  0.5353870458750782,
+                  0.2314618844501144,
+                  -0.8122721878508207
+                ],
+                "forward_world": [
+                  0.8444663015371965,
+                  -0.12915344080141203,
+                  0.5198038613720031
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.36963495531619556,
+                  "forward_m": 0.6409698484116687,
+                  "up_m": -0.7770922290206487,
+                  "distance_m": 1.0730073062047452
+                }
+              },
+              {
+                "frame": 1239,
+                "time_s": 41.293392,
+                "gazed_object_id": "4418602414882545",
+                "gazed_object_name": "Apartment_CabinetDrawerD",
+                "gaze_depth_m": 4.07704,
+                "gaze_hit_distance_m": 4.002417874170283,
+                "gaze_hit_exit_distance_m": 4.159600450729321,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6584549049315755,
+                  1.5568393460980512,
+                  2.684378037519543
+                ],
+                "gaze_direction_world_unit": [
+                  0.9798244315233364,
+                  -0.19535032490070425,
+                  0.04221769713236548
+                ],
+                "wearer_world_m": [
+                  -1.614881218705449,
+                  1.5741647002402541,
+                  2.629887417468801
+                ],
+                "right_world": [
+                  0.5090773366705291,
+                  0.22501973375353457,
+                  -0.83078660600056
+                ],
+                "forward_world": [
+                  0.8606538613131061,
+                  -0.12104257239184604,
+                  0.4945944062316165
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3939402063689718,
+                  "forward_m": 0.6246960644183033,
+                  "up_m": -0.7784163634267007,
+                  "distance_m": 1.0730172850165065
+                }
+              },
+              {
+                "frame": 1240,
+                "time_s": 41.32672,
+                "gazed_object_id": "4418602414882545",
+                "gazed_object_name": "Apartment_CabinetDrawerD",
+                "gaze_depth_m": 4.07582,
+                "gaze_hit_distance_m": 4.001350166963089,
+                "gaze_hit_exit_distance_m": 4.158663335957533,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6541623570754067,
+                  1.5577352699716398,
+                  2.684460000789755
+                ],
+                "gaze_direction_world_unit": [
+                  0.9790302715718607,
+                  -0.19928537098005328,
+                  0.04225006815700175
+                ],
+                "wearer_world_m": [
+                  -1.6117778710229769,
+                  1.5744380091415242,
+                  2.6288485312237184
+                ],
+                "right_world": [
+                  0.4909533967397227,
+                  0.21568482761979635,
+                  -0.8440644628014783
+                ],
+                "forward_world": [
+                  0.8711747168805785,
+                  -0.11665155905838943,
+                  0.47691406609292947
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4102458303210763,
+                  "forward_m": 0.6117444209456769,
+                  "up_m": -0.7793131041570285,
+                  "distance_m": 1.072316087804736
+                }
+              },
+              {
+                "frame": 1241,
+                "time_s": 41.360048,
+                "gazed_object_id": "4418602414882545",
+                "gazed_object_name": "Apartment_CabinetDrawerD",
+                "gaze_depth_m": 4.0646,
+                "gaze_hit_distance_m": 3.9981903195368202,
+                "gaze_hit_exit_distance_m": 4.1555405324213455,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6501526852157316,
+                  1.5581751462710787,
+                  2.6851601780692262
+                ],
+                "gaze_direction_world_unit": [
+                  0.9788054553794135,
+                  -0.20087691030851149,
+                  0.039854076634705554
+                ],
+                "wearer_world_m": [
+                  -1.6086565758890008,
+                  1.57436737639562,
+                  2.628733710030389
+                ],
+                "right_world": [
+                  0.4774375014445276,
+                  0.2081693142094379,
+                  -0.8536503785719185
+                ],
+                "forward_world": [
+                  0.8786652081259275,
+                  -0.11415188961213163,
+                  0.4635911972061162
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4218563790050358,
+                  "forward_m": 0.6008937482674417,
+                  "up_m": -0.779746152304996,
+                  "distance_m": 1.0709996093596774
+                }
+              },
+              {
+                "frame": 1242,
+                "time_s": 41.393376,
+                "gazed_object_id": "4418602414882545",
+                "gazed_object_name": "Apartment_CabinetDrawerD",
+                "gaze_depth_m": 4.06652,
+                "gaze_hit_distance_m": 3.992183167739044,
+                "gaze_hit_exit_distance_m": 4.149448051060758,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6463963379787685,
+                  1.5582901394097703,
+                  2.686331723059158
+                ],
+                "gaze_direction_world_unit": [
+                  0.9793241070773805,
+                  -0.19833807934130562,
+                  0.03982837657115165
+                ],
+                "wearer_world_m": [
+                  -1.6055620581987,
+                  1.5741397805199433,
+                  2.629328107625382
+                ],
+                "right_world": [
+                  0.4673938551728041,
+                  0.20316815877767366,
+                  -0.8603869381886233
+                ],
+                "forward_world": [
+                  0.8840356159889815,
+                  -0.11280742789337093,
+                  0.45360281510927997
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.42998832709185497,
+                  "forward_m": 0.5917947776717807,
+                  "up_m": -0.7798572690127045,
+                  "distance_m": 1.0692466414942803
+                }
+              },
+              {
+                "frame": 1243,
+                "time_s": 41.426704,
+                "gazed_object_id": "4418602414882545",
+                "gazed_object_name": "Apartment_CabinetDrawerD",
+                "gaze_depth_m": 4.0642,
+                "gaze_hit_distance_m": 3.9899165372028875,
+                "gaze_hit_exit_distance_m": 4.1472303750590775,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6429624697111809,
+                  1.5582482132642574,
+                  2.687917613289186
+                ],
+                "gaze_direction_world_unit": [
+                  0.9790266405231509,
+                  -0.20018799262599465,
+                  0.0378365531507317
+                ],
+                "wearer_world_m": [
+                  -1.60257113435792,
+                  1.573863242445654,
+                  2.630534927807897
+                ],
+                "right_world": [
+                  0.46066821460197377,
+                  0.19981710827184992,
+                  -0.8647877885916907
+                ],
+                "forward_world": [
+                  0.8875364057828332,
+                  -0.11248173889353502,
+                  0.44679635945873236
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.43502617430285906,
+                  "forward_m": 0.5844816109750305,
+                  "up_m": -0.7798250278525296,
+                  "distance_m": 1.0672364311443585
+                }
+              },
+              {
+                "frame": 1244,
+                "time_s": 41.460032,
+                "gazed_object_id": "5712638948858849",
+                "gazed_object_name": "Cracker_Anon",
+                "gaze_depth_m": 2.29397,
+                "gaze_hit_distance_m": 2.2802261444343412,
+                "gaze_hit_exit_distance_m": 2.383368676651777,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6397714615623413,
+                  1.5580725949401915,
+                  2.689818221650686
+                ],
+                "gaze_direction_world_unit": [
+                  0.9793086297094723,
+                  -0.20084424554162328,
+                  0.02482331181312869
+                ],
+                "wearer_world_m": [
+                  -1.599630097237942,
+                  1.573549579920635,
+                  2.6322231219711907
+                ],
+                "right_world": [
+                  0.45684980231400596,
+                  0.19795892774223023,
+                  -0.8672372922405961
+                ],
+                "forward_world": [
+                  0.8894814166064303,
+                  -0.11321053637842322,
+                  0.44272585644473905
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.43752082766305994,
+                  "forward_m": 0.5787596498528054,
+                  "up_m": -0.7796562275387868,
+                  "distance_m": 1.0650122253179648
+                }
+              },
+              {
+                "frame": 1245,
+                "time_s": 41.49336,
+                "gazed_object_id": "4403249623136829",
+                "gazed_object_name": "Apartment_CabinetDrawerC",
+                "gaze_depth_m": 4.07978,
+                "gaze_hit_distance_m": 4.008278555530393,
+                "gaze_hit_exit_distance_m": 4.668074748091696,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6367347201204365,
+                  1.5577547447840614,
+                  2.6919636975352645
+                ],
+                "gaze_direction_world_unit": [
+                  0.9750310628611125,
+                  -0.2207248499926126,
+                  -0.024391946450989133
+                ],
+                "wearer_world_m": [
+                  -1.596693167431166,
+                  1.5731786471166769,
+                  2.6342849406479467
+                ],
+                "right_world": [
+                  0.45528217759415524,
+                  0.19743439395039947,
+                  -0.8681807408889944
+                ],
+                "forward_world": [
+                  0.8902543222868387,
+                  -0.11503248015129193,
+                  0.4406980487361434
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.43810671113159927,
+                  "forward_m": 0.5742608835542891,
+                  "up_m": -0.7793317776288143,
+                  "distance_m": 1.062577560623782
+                }
+              },
+              {
+                "frame": 1246,
+                "time_s": 41.526688,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.77422,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.6338214042619394,
+                  1.5572924103101873,
+                  2.6943693303850274
+                ],
+                "gaze_direction_world_unit": [
+                  0.9747172898148936,
+                  -0.2218117205644689,
+                  -0.026940036305437648
+                ],
+                "wearer_world_m": [
+                  -1.593795677420693,
+                  1.572711028623266,
+                  2.63667817767384
+                ],
+                "right_world": [
+                  0.45495962194430745,
+                  0.19771499409132468,
+                  -0.8682859687405761
+                ],
+                "forward_world": [
+                  0.8903780353459088,
+                  -0.11791305668562922,
+                  0.43968564365534013
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.43752289614184103,
+                  "forward_m": 0.5704150227674412,
+                  "up_m": -0.7788650812211305,
+                  "distance_m": 1.0599199958453105
+                }
+              },
+              {
+                "frame": 1247,
+                "time_s": 41.560016,
+                "gazed_object_id": "4403249623136829",
+                "gazed_object_name": "Apartment_CabinetDrawerC",
+                "gaze_depth_m": 4.0741,
+                "gaze_hit_distance_m": 4.0028813080661685,
+                "gaze_hit_exit_distance_m": 4.662758673094712,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6309904091387322,
+                  1.5566766256078455,
+                  2.697044103494571
+                ],
+                "gaze_direction_world_unit": [
+                  0.9749110585013929,
+                  -0.22063072687351426,
+                  -0.029504412737053287
+                ],
+                "wearer_world_m": [
+                  -1.5909011675742488,
+                  1.572070585855211,
+                  2.639390479153277
+                ],
+                "right_world": [
+                  0.4557847563026852,
+                  0.1979104752205565,
+                  -0.8678085616770993
+                ],
+                "forward_world": [
+                  0.8898836039670114,
+                  -0.12231595622772298,
+                  0.4394837633437451
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4359175067524793,
+                  "forward_m": 0.5670865494913069,
+                  "up_m": -0.778252006902322,
+                  "distance_m": 1.0570181708725475
+                }
+              },
+              {
+                "frame": 1248,
+                "time_s": 41.593344,
+                "gazed_object_id": "4403249623136829",
+                "gazed_object_name": "Apartment_CabinetDrawerC",
+                "gaze_depth_m": 4.07086,
+                "gaze_hit_distance_m": 4.000040020906831,
+                "gaze_hit_exit_distance_m": 4.659922156311283,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6281928746955192,
+                  1.5558812070143637,
+                  2.7000062818690704
+                ],
+                "gaze_direction_world_unit": [
+                  0.9749062070059789,
+                  -0.22019453959137122,
+                  -0.032745263403424624
+                ],
+                "wearer_world_m": [
+                  -1.587866756272547,
+                  1.571138053660706,
+                  2.642481552366478
+                ],
+                "right_world": [
+                  0.4591272548636353,
+                  0.19683858596907866,
+                  -0.8662890596764319
+                ],
+                "forward_world": [
+                  0.8880144401520765,
+                  -0.12929573290289842,
+                  0.441262923362587
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.43249060403895867,
+                  "forward_m": 0.5648510938096485,
+                  "up_m": -0.7774544536984139,
+                  "distance_m": 1.0538217630773428
+                }
+              },
+              {
+                "frame": 1249,
+                "time_s": 41.626672,
+                "gazed_object_id": "4403249623136829",
+                "gazed_object_name": "Apartment_CabinetDrawerC",
+                "gaze_depth_m": 4.06369,
+                "gaze_hit_distance_m": 3.9934914945754962,
+                "gaze_hit_exit_distance_m": 4.652734661613495,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6255848950271488,
+                  1.554764227133228,
+                  2.7037227388657503
+                ],
+                "gaze_direction_world_unit": [
+                  0.9758796956191998,
+                  -0.21535421556515535,
+                  -0.03579638971313304
+                ],
+                "wearer_world_m": [
+                  -1.584498501148535,
+                  1.569791613224228,
+                  2.646677602295457
+                ],
+                "right_world": [
+                  0.4702686595641914,
+                  0.19484549511977403,
+                  -0.8607453867801033
+                ],
+                "forward_world": [
+                  0.8819358223005048,
+                  -0.13933954853435576,
+                  0.45030400348805977
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4232817254660994,
+                  "forward_m": 0.5662213655752162,
+                  "up_m": -0.7763337567368788,
+                  "distance_m": 1.049984835984128
+                }
+              },
+              {
+                "frame": 1250,
+                "time_s": 41.66,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.25396,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.6234849348549119,
+                  1.5531256286478667,
+                  2.7089317786470803
+                ],
+                "gaze_direction_world_unit": [
+                  0.9592399701552581,
+                  -0.27607695229221396,
+                  0.06033403740494889
+                ],
+                "wearer_world_m": [
+                  -1.5806542715428817,
+                  1.567874313756089,
+                  2.653109988378136
+                ],
+                "right_world": [
+                  0.4962500757115149,
+                  0.19256975796213943,
+                  -0.8465534541154026
+                ],
+                "forward_world": [
+                  0.8673469114066275,
+                  -0.15266413152333974,
+                  0.47371193590578653
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.4025661152084804,
+                  "forward_m": 0.5742906974364466,
+                  "up_m": -0.7747016823307297,
+                  "distance_m": 1.0450033391727274
+                }
+              },
+              {
+                "frame": 1251,
+                "time_s": 41.693328,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 4.34854,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.622299433782434,
+                  1.5509768933108217,
+                  2.7159187721333713
+                ],
+                "gaze_direction_world_unit": [
+                  0.9107976000395971,
+                  -0.3421863439371668,
+                  0.23098969194538682
+                ],
+                "wearer_world_m": [
+                  -1.5767335563235692,
+                  1.5650833329399652,
+                  2.662133821883389
+                ],
+                "right_world": [
+                  0.5373200738171965,
+                  0.18578250709212524,
+                  -0.8226615332757738
+                ],
+                "forward_world": [
+                  0.8421476331727034,
+                  -0.17086859084463873,
+                  0.5114599579677583
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.36912163838950973,
+                  "forward_m": 0.5882718193569577,
+                  "up_m": -0.7725564475881732,
+                  "distance_m": 1.0388252894914327
+                }
+              },
+              {
+                "frame": 1252,
+                "time_s": 41.726656,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.88265,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.6222877384938057,
+                  1.5483868940018992,
+                  2.7246012475856647
+                ],
+                "gaze_direction_world_unit": [
+                  0.819144191718914,
+                  -0.3854356008181971,
+                  0.4247848759020053
+                ],
+                "wearer_world_m": [
+                  -1.5732577354364656,
+                  1.5611606222816492,
+                  2.6736017145776816
+                ],
+                "right_world": [
+                  0.5897819834290621,
+                  0.1700198331324811,
+                  -0.7894621386514273
+                ],
+                "forward_world": [
+                  0.8054197154351858,
+                  -0.19500795992842085,
+                  0.5597061528631425
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3243972503290731,
+                  "forward_m": 0.6051477879813746,
+                  "up_m": -0.7699579103841052,
+                  "distance_m": 1.0316358878416705
+                }
+              },
+              {
+                "frame": 1253,
+                "time_s": 41.759984,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 3.20476,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.6229390782745068,
+                  1.545265929953135,
+                  2.734302162808982
+                ],
+                "gaze_direction_world_unit": [
+                  0.6663586123434815,
+                  -0.4698609044607239,
+                  0.5789619419400728
+                ],
+                "wearer_world_m": [
+                  -1.57015368240417,
+                  1.556286820433844,
+                  2.686759511885584
+                ],
+                "right_world": [
+                  0.6474289540151473,
+                  0.14888762789761942,
+                  -0.7474411172539768
+                ],
+                "forward_world": [
+                  0.758358087695529,
+                  -0.2232542412301992,
+                  0.6124137119623533
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.27212375229564933,
+                  "forward_m": 0.621116704864731,
+                  "up_m": -0.7668657324119084,
+                  "distance_m": 1.0236798079346578
+                }
+              },
+              {
+                "frame": 1254,
+                "time_s": 41.793312,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.54442,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.623588914802866,
+                  1.541621049073484,
+                  2.744367113011145
+                ],
+                "gaze_direction_world_unit": [
+                  0.5109477963906738,
+                  -0.5966259892876704,
+                  0.6188455205219019
+                ],
+                "wearer_world_m": [
+                  -1.5671801576309852,
+                  1.550840089280583,
+                  2.7007652424895294
+                ],
+                "right_world": [
+                  0.7040913337510185,
+                  0.12728291468042294,
+                  -0.6986089416599026
+                ],
+                "forward_world": [
+                  0.7040994160263059,
+                  -0.25286165715317666,
+                  0.6635548166452901
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.21688853729297608,
+                  "forward_m": 0.6331883416278914,
+                  "up_m": -0.763303606849444,
+                  "distance_m": 1.0151849633499979
+                }
+              },
+              {
+                "frame": 1255,
+                "time_s": 41.82664,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 1.02362,
+                "gaze_hit_distance_m": 1.0227883223808705,
+                "gaze_hit_exit_distance_m": 1.0523570395708197,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6236816154374447,
+                  1.5377531145483851,
+                  2.7544941981028614
+                ],
+                "gaze_direction_world_unit": [
+                  0.29769847173598946,
+                  -0.7102368075853425,
+                  0.6379179391403236
+                ],
+                "wearer_world_m": [
+                  -1.5641152459728118,
+                  1.5453846790785581,
+                  2.714976245820074
+                ],
+                "right_world": [
+                  0.7546130958258048,
+                  0.10836886331858518,
+                  -0.6471593815060035
+                ],
+                "forward_world": [
+                  0.6478535924395462,
+                  -0.2795745460979721,
+                  0.7086069403677099
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.1636831903822013,
+                  "forward_m": 0.6396232479392919,
+                  "up_m": -0.7594898319807073,
+                  "distance_m": 1.0063473013826727
+                }
+              },
+              {
+                "frame": 1256,
+                "time_s": 41.859968,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 1.01174,
+                "gaze_hit_distance_m": 1.011737759104112,
+                "gaze_hit_exit_distance_m": 1.0392595329872625,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6225919673952816,
+                  1.5339437196370242,
+                  2.764435805492516
+                ],
+                "gaze_direction_world_unit": [
+                  0.2943708281875708,
+                  -0.7142400966368176,
+                  0.6349857477679268
+                ],
+                "wearer_world_m": [
+                  -1.560542790622623,
+                  1.540365939177316,
+                  2.728704636199983
+                ],
+                "right_world": [
+                  0.7953476440026686,
+                  0.09410386752515376,
+                  -0.5988042979941054
+                ],
+                "forward_world": [
+                  0.596073002183005,
+                  -0.3008357186688906,
+                  0.7444426414718004
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.11763268123368317,
+                  "forward_m": 0.6401263444355748,
+                  "up_m": -0.7556771544280653,
+                  "distance_m": 0.9973199818810288
+                }
+              },
+              {
+                "frame": 1257,
+                "time_s": 41.893296,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.992152,
+                "gaze_hit_distance_m": 0.967566470918175,
+                "gaze_hit_exit_distance_m": 1.0532470024601093,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.619631308769783,
+                  1.5304013616073833,
+                  2.77393652026062
+                ],
+                "gaze_direction_world_unit": [
+                  0.26682279964036204,
+                  -0.7436179010363158,
+                  0.6130562868533554
+                ],
+                "wearer_world_m": [
+                  -1.555868276015965,
+                  1.536003720225164,
+                  2.741211133586765
+                ],
+                "right_world": [
+                  0.824147862227578,
+                  0.08457064401239525,
+                  -0.5600250952922043
+                ],
+                "forward_world": [
+                  0.5551856067038674,
+                  -0.3162028384747958,
+                  0.7692754429002273
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.0835801333299323,
+                  "forward_m": 0.6355541639381224,
+                  "up_m": -0.7521265316698243,
+                  "distance_m": 0.9882353230016696
+                }
+              },
+              {
+                "frame": 1258,
+                "time_s": 41.926624,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.979436,
+                "gaze_hit_distance_m": 0.9667454315362481,
+                "gaze_hit_exit_distance_m": 1.0309412492257326,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6146869818755016,
+                  1.5271104330883747,
+                  2.782890516906044
+                ],
+                "gaze_direction_world_unit": [
+                  0.2657298882103381,
+                  -0.7407267654221026,
+                  0.6170182213671087
+                ],
+                "wearer_world_m": [
+                  -1.5498155177520618,
+                  1.532258214719051,
+                  2.75234129125687
+                ],
+                "right_world": [
+                  0.8431586767768984,
+                  0.07970068163169064,
+                  -0.5317247851316267
+                ],
+                "forward_world": [
+                  0.5259151364460932,
+                  -0.32787243188214343,
+                  0.7848012090131973
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.0611928641241615,
+                  "forward_m": 0.6278304825449883,
+                  "up_m": -0.7488386727705896,
+                  "distance_m": 0.9791195224635291
+                }
+              },
+              {
+                "frame": 1259,
+                "time_s": 41.959952,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.982973,
+                "gaze_hit_distance_m": 0.9501199668907668,
+                "gaze_hit_exit_distance_m": 1.0360789498560956,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6080401702131595,
+                  1.5239314523711633,
+                  2.791363132480902
+                ],
+                "gaze_direction_world_unit": [
+                  0.26344897677772616,
+                  -0.7504627120940635,
+                  0.606135590764304
+                ],
+                "wearer_world_m": [
+                  -1.542404202287065,
+                  1.528912413111387,
+                  2.7624637995213153
+                ],
+                "right_world": [
+                  0.8564901388501887,
+                  0.07883408800124964,
+                  -0.5101076637548163
+                ],
+                "forward_world": [
+                  0.5042159656379194,
+                  -0.339184821633084,
+                  0.794178768772846
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.0465466277265931,
+                  "forward_m": 0.6185053452781625,
+                  "up_m": -0.7456613818676747,
+                  "distance_m": 0.969910484064992
+                }
+              },
+              {
+                "frame": 1260,
+                "time_s": 41.99328,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.98259,
+                "gaze_hit_distance_m": 0.9409748854688251,
+                "gaze_hit_exit_distance_m": 1.0264722958072252,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.5997997626942833,
+                  1.520988864216216,
+                  2.7998433787641437
+                ],
+                "gaze_direction_world_unit": [
+                  0.2619464964020426,
+                  -0.7546355879432618,
+                  0.6015888649503265
+                ],
+                "wearer_world_m": [
+                  -1.533577419882464,
+                  1.525928244745255,
+                  2.7723067570849462
+                ],
+                "right_world": [
+                  0.866861735824381,
+                  0.07955773948073797,
+                  -0.4921598287672984
+                ],
+                "forward_world": [
+                  0.48667967161400516,
+                  -0.34916358081142235,
+                  0.800766939297964
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.03665584347425696,
+                  "forward_m": 0.6078968605998187,
+                  "up_m": -0.7427196617769136,
+                  "distance_m": 0.9604763089102915
+                }
+              },
+              {
+                "frame": 1261,
+                "time_s": 42.026608,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.973714,
+                "gaze_hit_distance_m": 0.9358730157656697,
+                "gaze_hit_exit_distance_m": 1.0192659940535282,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.5900109900639652,
+                  1.51842152806802,
+                  2.808894819314296
+                ],
+                "gaze_direction_world_unit": [
+                  0.25775825563226745,
+                  -0.7559370271213384,
+                  0.6017639842000879
+                ],
+                "wearer_world_m": [
+                  -1.5232781659510057,
+                  1.5232851902694082,
+                  2.782605340869496
+                ],
+                "right_world": [
+                  0.876008595533119,
+                  0.07940725023354725,
+                  -0.47571359993428847
+                ],
+                "forward_world": [
+                  0.470658414781135,
+                  -0.35611580672622933,
+                  0.8072559623783748
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.029466407007938678,
+                  "forward_m": 0.5958561602340292,
+                  "up_m": -0.7401564748188887,
+                  "distance_m": 0.9506547428205062
+                }
+              },
+              {
+                "frame": 1262,
+                "time_s": 42.059936,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.962372,
+                "gaze_hit_distance_m": 0.8989427530418105,
+                "gaze_hit_exit_distance_m": 0.9812144816170136,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.5787665702652536,
+                  1.515999378833884,
+                  2.8186575398975346
+                ],
+                "gaze_direction_world_unit": [
+                  0.3078023926957508,
+                  -0.7848850518457611,
+                  0.537785405566056
+                ],
+                "wearer_world_m": [
+                  -1.511573883338252,
+                  1.5207096244887366,
+                  2.793537466044122
+                ],
+                "right_world": [
+                  0.8843430940716035,
+                  0.0781430860944407,
+                  -0.4602509642178938
+                ],
+                "forward_world": [
+                  0.45522338084467917,
+                  -0.3628888763660584,
+                  0.8130703148818802
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.0244371688941922,
+                  "forward_m": 0.5824318437854635,
+                  "up_m": -0.7377360668851326,
+                  "distance_m": 0.9402545039839175
+                }
+              },
+              {
+                "frame": 1263,
+                "time_s": 42.093264,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.951966,
+                "gaze_hit_distance_m": 0.8887999037510467,
+                "gaze_hit_exit_distance_m": 0.9704489453679721,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.566361205822582,
+                  1.513450311806375,
+                  2.829108193238543
+                ],
+                "gaze_direction_world_unit": [
+                  0.2969589011812596,
+                  -0.7909405190086825,
+                  0.5350032769988371
+                ],
+                "wearer_world_m": [
+                  -1.498773442882715,
+                  1.5178909625098718,
+                  2.8050200919618984
+                ],
+                "right_world": [
+                  0.8915754005685107,
+                  0.07543485502715613,
+                  -0.4465455046780028
+                ],
+                "forward_world": [
+                  0.44075805190723855,
+                  -0.37107498987424015,
+                  0.8173345040855478
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.021790501937919565,
+                  "forward_m": 0.5678398850582258,
+                  "up_m": -0.7351832810488779,
+                  "distance_m": 0.9291993423218933
+                }
+              },
+              {
+                "frame": 1264,
+                "time_s": 42.126592,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.940021,
+                "gaze_hit_distance_m": 0.8770001060561164,
+                "gaze_hit_exit_distance_m": 0.9579085579616095,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.5535023016018499,
+                  1.510597090839873,
+                  2.8400947747514143
+                ],
+                "gaze_direction_world_unit": [
+                  0.2821301952395001,
+                  -0.7983074436575329,
+                  0.5320787332106935
+                ],
+                "wearer_world_m": [
+                  -1.485640784960093,
+                  1.5145892707521018,
+                  2.8167080528856
+                ],
+                "right_world": [
+                  0.8966261823767755,
+                  0.06995176363753666,
+                  -0.43722790377610643
+                ],
+                "forward_world": [
+                  0.4295264646491864,
+                  -0.3772646329805477,
+                  0.820474504703238
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.022496024839141454,
+                  "forward_m": 0.5525283081536256,
+                  "up_m": -0.7323284716915258,
+                  "distance_m": 0.9176593010996603
+                }
+              },
+              {
+                "frame": 1265,
+                "time_s": 42.15992,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.928962,
+                "gaze_hit_distance_m": 0.8659779680954368,
+                "gaze_hit_exit_distance_m": 0.9462596326004886,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.5407074992706042,
+                  1.507327844817229,
+                  2.8514302640286724
+                ],
+                "gaze_direction_world_unit": [
+                  0.2680690900647379,
+                  -0.8046639279599708,
+                  0.5297687476549504
+                ],
+                "wearer_world_m": [
+                  -1.4726796753303693,
+                  1.5107260526498,
+                  2.8284361549030064
+                ],
+                "right_world": [
+                  0.8997153828477662,
+                  0.06199257760289889,
+                  -0.43205225400320085
+                ],
+                "forward_world": [
+                  0.4215374753106868,
+                  -0.3801738377174497,
+                  0.8232703140669402
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.0257952085310702,
+                  "forward_m": 0.5368991145108002,
+                  "up_m": -0.7290607563452487,
+                  "distance_m": 0.905790063087661
+                }
+              },
+              {
+                "frame": 1266,
+                "time_s": 42.193248,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.916685,
+                "gaze_hit_distance_m": 0.8538164449733376,
+                "gaze_hit_exit_distance_m": 0.9334031913022574,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.5281917378153609,
+                  1.5036079457117963,
+                  2.862904679670042
+                ],
+                "gaze_direction_world_unit": [
+                  0.2548915166764362,
+                  -0.8117571502530049,
+                  0.5254337672242868
+                ],
+                "wearer_world_m": [
+                  -1.460008636181767,
+                  1.5064058328858068,
+                  2.8402927761680252
+                ],
+                "right_world": [
+                  0.9026365721907541,
+                  0.0537969387243826,
+                  -0.4270282284903548
+                ],
+                "forward_world": [
+                  0.4137273035334977,
+                  -0.381951886420824,
+                  0.8264033366162523
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.02908487130408599,
+                  "forward_m": 0.5213147727304195,
+                  "up_m": -0.7253372693119637,
+                  "distance_m": 0.8937164965796929
+                }
+              },
+              {
+                "frame": 1267,
+                "time_s": 42.226576,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.905428,
+                "gaze_hit_distance_m": 0.8425600435071701,
+                "gaze_hit_exit_distance_m": 0.9215665250952384,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.5163724836653953,
+                  1.4995391315921045,
+                  2.8742539827952998
+                ],
+                "gaze_direction_world_unit": [
+                  0.2395010309159547,
+                  -0.8177414196566353,
+                  0.5233910839593519
+                ],
+                "wearer_world_m": [
+                  -1.4480307204980842,
+                  1.50177531654976,
+                  2.8520624396984733
+                ],
+                "right_world": [
+                  0.905659926741787,
+                  0.04623333640417038,
+                  -0.4214766609184908
+                ],
+                "forward_world": [
+                  0.4055688014796028,
+                  -0.38438895209082796,
+                  0.8293124144596616
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.031717684766275095,
+                  "forward_m": 0.5062102521639376,
+                  "up_m": -0.7212640232132034,
+                  "distance_m": 0.881746347939421
+                }
+              },
+              {
+                "frame": 1268,
+                "time_s": 42.259904,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.894577,
+                "gaze_hit_distance_m": 0.8317401945960411,
+                "gaze_hit_exit_distance_m": 0.9102274396987535,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.5057727298443446,
+                  1.4953043846606475,
+                  2.8852241946226087
+                ],
+                "gaze_direction_world_unit": [
+                  0.22709816545262995,
+                  -0.8232723035450686,
+                  0.5202395000993737
+                ],
+                "wearer_world_m": [
+                  -1.437303875573153,
+                  1.496980092996111,
+                  2.8633776915302414
+                ],
+                "right_world": [
+                  0.9081245759035688,
+                  0.03891078364505668,
+                  -0.4168881211501373
+                ],
+                "forward_world": [
+                  0.39812969117555186,
+                  -0.38849606057730757,
+                  0.8310015402635379
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.034142821762044445,
+                  "forward_m": 0.4919796985028987,
+                  "up_m": -0.7170352136325541,
+                  "distance_m": 0.8702581534268785
+                }
+              },
+              {
+                "frame": 1269,
+                "time_s": 42.293232,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.888788,
+                "gaze_hit_distance_m": 0.8258267530452695,
+                "gaze_hit_exit_distance_m": 0.9042677132965322,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4964839394776301,
+                  1.4909527469783215,
+                  2.8959080027858373
+                ],
+                "gaze_direction_world_unit": [
+                  0.22257583554396065,
+                  -0.8238050778335001,
+                  0.5213493945212255
+                ],
+                "wearer_world_m": [
+                  -1.4278650924566718,
+                  1.4919712302972359,
+                  2.8744958981194717
+                ],
+                "right_world": [
+                  0.9110812140999749,
+                  0.030249653266541776,
+                  -0.41111553095373315
+                ],
+                "forward_world": [
+                  0.38905963272955985,
+                  -0.3927256439425285,
+                  0.8333061686860755
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.035028247850399125,
+                  "forward_m": 0.4786336656316302,
+                  "up_m": -0.7126903540631325,
+                  "distance_m": 0.859211676362742
+                }
+              },
+              {
+                "frame": 1270,
+                "time_s": 42.32656,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.879201,
+                "gaze_hit_distance_m": 0.816462046753654,
+                "gaze_hit_exit_distance_m": 0.8945298569757022,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.488427370438301,
+                  1.4864967548447028,
+                  2.9064625461499376
+                ],
+                "gaze_direction_world_unit": [
+                  0.22199344853696185,
+                  -0.8277697214367916,
+                  0.5152826380532566
+                ],
+                "wearer_world_m": [
+                  -1.4195782523111902,
+                  1.486667678250364,
+                  2.8857784600132836
+                ],
+                "right_world": [
+                  0.9156787863808316,
+                  0.018737076827412297,
+                  -0.4014738872256719
+                ],
+                "forward_world": [
+                  0.37557139263982414,
+                  -0.3955608577907483,
+                  0.8381394495037389
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.033052661515310416,
+                  "forward_m": 0.4660728920703323,
+                  "up_m": -0.7082294322009779,
+                  "distance_m": 0.8484723612421142
+                }
+              },
+              {
+                "frame": 1271,
+                "time_s": 42.359888,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.865075,
+                "gaze_hit_distance_m": 0.8024995721864256,
+                "gaze_hit_exit_distance_m": 0.8797499528334763,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4816001509503522,
+                  1.482046297299907,
+                  2.9167007672868563
+                ],
+                "gaze_direction_world_unit": [
+                  0.2032800576007382,
+                  -0.836673861871198,
+                  0.5085804430406027
+                ],
+                "wearer_world_m": [
+                  -1.412496983497007,
+                  1.4812017954183032,
+                  2.8968992328643197
+                ],
+                "right_world": [
+                  0.9209115571414535,
+                  0.005112421759940561,
+                  -0.38973807495169493
+                ],
+                "forward_world": [
+                  0.35905969509011415,
+                  -0.4001705435816498,
+                  0.8431723853467694
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.029355696150305116,
+                  "forward_m": 0.45436993305478407,
+                  "up_m": -0.7037735095993857,
+                  "distance_m": 0.8382189127993442
+                }
+              },
+              {
+                "frame": 1272,
+                "time_s": 42.393216,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.856134,
+                "gaze_hit_distance_m": 0.7936145726717513,
+                "gaze_hit_exit_distance_m": 0.8705163433624007,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4759078161141188,
+                  1.4777594800121812,
+                  2.926436744205406
+                ],
+                "gaze_direction_world_unit": [
+                  0.19625362471962482,
+                  -0.8406163934959394,
+                  0.5048253101522235
+                ],
+                "wearer_world_m": [
+                  -1.4065825908169032,
+                  1.475780734260135,
+                  2.907511644371084
+                ],
+                "right_world": [
+                  0.9257487386463059,
+                  -0.009766119839805354,
+                  -0.3780130894533273
+                ],
+                "forward_world": [
+                  0.341477627630908,
+                  -0.4078066556587273,
+                  0.8468097551563816
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.025179688685185053,
+                  "forward_m": 0.4435510791515832,
+                  "up_m": -0.6994876046472768,
+                  "distance_m": 0.8286461763587651
+                }
+              },
+              {
+                "frame": 1273,
+                "time_s": 42.426544,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.836554,
+                "gaze_hit_distance_m": 0.7748417612231439,
+                "gaze_hit_exit_distance_m": 0.8503678572949389,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.471037110725391,
+                  1.4738347418971034,
+                  2.9356701924308886
+                ],
+                "gaze_direction_world_unit": [
+                  0.1891173911702661,
+                  -0.8561390314364836,
+                  0.4808955928348191
+                ],
+                "wearer_world_m": [
+                  -1.401525761923512,
+                  1.4706612014612133,
+                  2.9176102165215667
+                ],
+                "right_world": [
+                  0.9300776567622003,
+                  -0.02579257192529047,
+                  -0.3664564034441399
+                ],
+                "forward_world": [
+                  0.3238953616117575,
+                  -0.4131154345960441,
+                  0.85113302863002
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.020854076762568008,
+                  "forward_m": 0.4334432135316173,
+                  "up_m": -0.6955559292942601,
+                  "distance_m": 0.8198206893282434
+                }
+              },
+              {
+                "frame": 1274,
+                "time_s": 42.459872,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.828337,
+                "gaze_hit_distance_m": 0.7665544737835233,
+                "gaze_hit_exit_distance_m": 0.8416676033064242,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4668967885192736,
+                  1.470290479585761,
+                  2.9443123424347406
+                ],
+                "gaze_direction_world_unit": [
+                  0.1720731554327476,
+                  -0.8607703011301668,
+                  0.4790253833271253
+                ],
+                "wearer_world_m": [
+                  -1.3972406432867859,
+                  1.465924279430194,
+                  2.9270780908248764
+                ],
+                "right_world": [
+                  0.9337272902213769,
+                  -0.04233545454680879,
+                  -0.35547300429731654
+                ],
+                "forward_world": [
+                  0.3073634105349618,
+                  -0.4142525033329806,
+                  0.8566928255487352
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.016636517895588343,
+                  "forward_m": 0.42408420926734924,
+                  "up_m": -0.6920057306361697,
+                  "distance_m": 0.8117857608451272
+                }
+              },
+              {
+                "frame": 1275,
+                "time_s": 42.4932,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.815343,
+                "gaze_hit_distance_m": 0.7540373523193525,
+                "gaze_hit_exit_distance_m": 0.8283357663139628,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.463700273390894,
+                  1.4669315313981728,
+                  2.952134341169612
+                ],
+                "gaze_direction_world_unit": [
+                  0.16749955364941638,
+                  -0.8707449273658636,
+                  0.4623279907099106
+                ],
+                "wearer_world_m": [
+                  -1.3939561784773478,
+                  1.4614302525419367,
+                  2.93559472640275
+                ],
+                "right_world": [
+                  0.9363466278953092,
+                  -0.058143012430308616,
+                  -0.3462288008450665
+                ],
+                "forward_world": [
+                  0.29280366990455736,
+                  -0.4147894544886718,
+                  0.8615194248160705
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.012851605237907973,
+                  "forward_m": 0.4157967713127672,
+                  "up_m": -0.6886779087734826,
+                  "distance_m": 0.8045678223890946
+                }
+              },
+              {
+                "frame": 1276,
+                "time_s": 42.526528,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.807161,
+                "gaze_hit_distance_m": 0.7463072639187611,
+                "gaze_hit_exit_distance_m": 0.820214811300001,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4616339655307438,
+                  1.4637913393289979,
+                  2.9589460372471987
+                ],
+                "gaze_direction_world_unit": [
+                  0.17861104764558078,
+                  -0.8756185079210667,
+                  0.44876533093035714
+                ],
+                "wearer_world_m": [
+                  -1.391833284209738,
+                  1.4573084450512832,
+                  2.9430118391215516
+                ],
+                "right_world": [
+                  0.9383691479093546,
+                  -0.07162361254119731,
+                  -0.3381322232181084
+                ],
+                "forward_world": [
+                  0.27986869080859456,
+                  -0.41662093227708763,
+                  0.8649280401823343
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.00902373550991964,
+                  "forward_m": 0.4088020364775608,
+                  "up_m": -0.6855614289501368,
+                  "distance_m": 0.7982449534415532
+                }
+              },
+              {
+                "frame": 1277,
+                "time_s": 42.559856,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.804127,
+                "gaze_hit_distance_m": 0.7432622671116512,
+                "gaze_hit_exit_distance_m": 0.817086186499841,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4608226710757053,
+                  1.4610841907943912,
+                  2.96459533105233
+                ],
+                "gaze_direction_world_unit": [
+                  0.17635748324664846,
+                  -0.8755594467485854,
+                  0.44977071193244555
+                ],
+                "wearer_world_m": [
+                  -1.390948379876565,
+                  1.4538798204694743,
+                  2.949306701988899
+                ],
+                "right_world": [
+                  0.940672159072252,
+                  -0.0812717724138935,
+                  -0.3294401131542023
+                ],
+                "forward_world": [
+                  0.26745835725075606,
+                  -0.41988133093964597,
+                  0.8672748670779513
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.0042563450937619235,
+                  "forward_m": 0.4032155380900917,
+                  "up_m": -0.6827942079136522,
+                  "distance_m": 0.7929746635241703
+                }
+              },
+              {
+                "frame": 1278,
+                "time_s": 42.593184,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.798534,
+                "gaze_hit_distance_m": 0.7378269698896975,
+                "gaze_hit_exit_distance_m": 0.8113423363690726,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4611867712125979,
+                  1.4590227576870345,
+                  2.9689568481050554
+                ],
+                "gaze_direction_world_unit": [
+                  0.1712554920671855,
+                  -0.8792680625260874,
+                  0.44447635556736487
+                ],
+                "wearer_world_m": [
+                  -1.3912300596004812,
+                  1.451288135793976,
+                  2.9543180016480917
+                ],
+                "right_world": [
+                  0.94307675542928,
+                  -0.0882189690435331,
+                  -0.32066126499762776
+                ],
+                "forward_world": [
+                  0.25590140206241235,
+                  -0.4233341906208896,
+                  0.869081489547354
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.0011679553311059604,
+                  "forward_m": 0.3992124853353629,
+                  "up_m": -0.6807291742324185,
+                  "distance_m": 0.7891540921888723
+                }
+              },
+              {
+                "frame": 1279,
+                "time_s": 42.626512,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.796628,
+                "gaze_hit_distance_m": 0.7359006588865182,
+                "gaze_hit_exit_distance_m": 0.8095737693363091,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.462553091741206,
+                  1.4577853820314295,
+                  2.9719439777916272
+                ],
+                "gaze_direction_world_unit": [
+                  0.17345580759429446,
+                  -0.8797700935481164,
+                  0.44262587510238216
+                ],
+                "wearer_world_m": [
+                  -1.39252341873243,
+                  1.44962933314863,
+                  2.957894584000246
+                ],
+                "right_world": [
+                  0.9452097884383113,
+                  -0.09380339733846615,
+                  -0.312696943522263
+                ],
+                "forward_world": [
+                  0.24586801609115205,
+                  -0.425594431133989,
+                  0.8708721483955824
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.006727872524482259,
+                  "forward_m": 0.39690016983325727,
+                  "up_m": -0.6796406088911993,
+                  "distance_m": 0.7870745621199902
+                }
+              },
+              {
+                "frame": 1280,
+                "time_s": 42.65984,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.798273,
+                "gaze_hit_distance_m": 0.7377075904072175,
+                "gaze_hit_exit_distance_m": 0.8114314517579284,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.464723886037775,
+                  1.457422231656249,
+                  2.973575612505284
+                ],
+                "gaze_direction_world_unit": [
+                  0.17994105260518456,
+                  -0.8771681428105318,
+                  0.44519351615411107
+                ],
+                "wearer_world_m": [
+                  -1.3945885919855099,
+                  1.44910880620761,
+                  2.9601596076412338
+                ],
+                "right_world": [
+                  0.9478025096325283,
+                  -0.09580175357366708,
+                  -0.3041256759079908
+                ],
+                "forward_world": [
+                  0.23683961975292583,
+                  -0.42708660709879576,
+                  0.8726419795953713
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.012838473476083717,
+                  "forward_m": 0.3958799523978511,
+                  "up_m": -0.679131012299818,
+                  "distance_m": 0.7861963463277456
+                }
+              },
+              {
+                "frame": 1281,
+                "time_s": 42.693168,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.793245,
+                "gaze_hit_distance_m": 0.7337854883903184,
+                "gaze_hit_exit_distance_m": 0.8062837957424606,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.467559498797574,
+                  1.4579314714231906,
+                  2.9739098845195375
+                ],
+                "gaze_direction_world_unit": [
+                  0.18288573452570145,
+                  -0.8832269166887018,
+                  0.43181364237777853
+                ],
+                "wearer_world_m": [
+                  -1.3972640526327398,
+                  1.449821209172458,
+                  2.9612277870703285
+                ],
+                "right_world": [
+                  0.9512352118649456,
+                  -0.09282208587292398,
+                  -0.29416939351749816
+                ],
+                "forward_world": [
+                  0.2286031920461174,
+                  -0.4281490436555363,
+                  0.8743162911688056
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.019943750782066172,
+                  "forward_m": 0.3950423078836235,
+                  "up_m": -0.678865206143718,
+                  "distance_m": 0.7856934175146368
+                }
+              },
+              {
+                "frame": 1282,
+                "time_s": 42.726496,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.795653,
+                "gaze_hit_distance_m": 0.7369721800099386,
+                "gaze_hit_exit_distance_m": 0.8091290023519394,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.471065537466605,
+                  1.4592675221238771,
+                  2.973026572567366
+                ],
+                "gaze_direction_world_unit": [
+                  0.18675720234328352,
+                  -0.8806907413906958,
+                  0.43532236951667935
+                ],
+                "wearer_world_m": [
+                  -1.4006015240766359,
+                  1.4515687006970412,
+                  2.961042722325647
+                ],
+                "right_world": [
+                  0.9546522326254676,
+                  -0.08710792157388042,
+                  -0.2846951435172186
+                ],
+                "forward_world": [
+                  0.2222197220924957,
+                  -0.42790136334706386,
+                  0.8760815135356174
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.028061092538398724,
+                  "forward_m": 0.3921222910534616,
+                  "up_m": -0.6790046393221902,
+                  "distance_m": 0.7845983789662848
+                }
+              },
+              {
+                "frame": 1283,
+                "time_s": 42.759824,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.795293,
+                "gaze_hit_distance_m": 0.7373775197164488,
+                "gaze_hit_exit_distance_m": 0.8095563610083365,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4753023136108512,
+                  1.4614468493517963,
+                  2.9709346592673826
+                ],
+                "gaze_direction_world_unit": [
+                  0.19247549138767417,
+                  -0.8813815808580432,
+                  0.4314159178093107
+                ],
+                "wearer_world_m": [
+                  -1.4046841905805318,
+                  1.454252574554471,
+                  2.9595599148388145
+                ],
+                "right_world": [
+                  0.9576655921899464,
+                  -0.08033197193247904,
+                  -0.2764478030676295
+                ],
+                "forward_world": [
+                  0.21778325427963235,
+                  -0.42585706093895265,
+                  0.8781891697144812
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.03706268650743537,
+                  "forward_m": 0.3867978225269796,
+                  "up_m": -0.6795640347100251,
+                  "distance_m": 0.7828112642994667
+                }
+              },
+              {
+                "frame": 1284,
+                "time_s": 42.793152,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.796996,
+                "gaze_hit_distance_m": 0.7393073232336577,
+                "gaze_hit_exit_distance_m": 0.8119250853962791,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4803800917849617,
+                  1.464558041585172,
+                  2.967565079503371
+                ],
+                "gaze_direction_world_unit": [
+                  0.20150660958053723,
+                  -0.8794430897879357,
+                  0.4312481166563
+                ],
+                "wearer_world_m": [
+                  -1.409610315822835,
+                  1.4579374656413782,
+                  2.956800857030621
+                ],
+                "right_world": [
+                  0.9606094376136283,
+                  -0.07279309409758081,
+                  -0.2681989444784038
+                ],
+                "forward_world": [
+                  0.21393424490596513,
+                  -0.4222750542022238,
+                  0.8808608956328028
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.04684384504426904,
+                  "forward_m": 0.38124339299337734,
+                  "up_m": -0.6802509536698058,
+                  "distance_m": 0.7812056262523425
+                }
+              },
+              {
+                "frame": 1285,
+                "time_s": 42.82648,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.796109,
+                "gaze_hit_distance_m": 0.738474141454902,
+                "gaze_hit_exit_distance_m": 0.8110289396411876,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4865012222220033,
+                  1.4684585119832632,
+                  2.9630295344080375
+                ],
+                "gaze_direction_world_unit": [
+                  0.21210256481470763,
+                  -0.8801213945440614,
+                  0.4247338376734767
+                ],
+                "wearer_world_m": [
+                  -1.41555997124146,
+                  1.4625220349499541,
+                  2.9530215950223018
+                ],
+                "right_world": [
+                  0.96402987738139,
+                  -0.06394080786003639,
+                  -0.2579883109875882
+                ],
+                "forward_world": [
+                  0.20906619229698015,
+                  -0.4169479485383789,
+                  0.8845596279777183
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.05802677683179433,
+                  "forward_m": 0.3753464380094716,
+                  "up_m": -0.6802480442212218,
+                  "distance_m": 0.7790952810938353
+                }
+              },
+              {
+                "frame": 1286,
+                "time_s": 42.859808,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.796934,
+                "gaze_hit_distance_m": 0.739222903143956,
+                "gaze_hit_exit_distance_m": 0.8114266087109714,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4939982951466109,
+                  1.4728321184716182,
+                  2.9575639765440513
+                ],
+                "gaze_direction_world_unit": [
+                  0.23002917513185717,
+                  -0.8759292057280086,
+                  0.4240691042045589
+                ],
+                "wearer_world_m": [
+                  -1.4228461531888033,
+                  1.4677243807569433,
+                  2.9486563724186934
+                ],
+                "right_world": [
+                  0.9685343824652881,
+                  -0.05329194762966677,
+                  -0.24310721564861104
+                ],
+                "forward_world": [
+                  0.20078181917512622,
+                  -0.4098881233301351,
+                  0.8897631074851478
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.07179978135974388,
+                  "forward_m": 0.3671795563561358,
+                  "up_m": -0.6784705029387048,
+                  "distance_m": 0.774789170398693
+                }
+              },
+              {
+                "frame": 1287,
+                "time_s": 42.893136,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.793991,
+                "gaze_hit_distance_m": 0.7359993761288767,
+                "gaze_hit_exit_distance_m": 0.8076577191257986,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.5036555659710014,
+                  1.4773758819632632,
+                  2.9512682995677384
+                ],
+                "gaze_direction_world_unit": [
+                  0.2282675343974634,
+                  -0.8732973976171845,
+                  0.43040165898281135
+                ],
+                "wearer_world_m": [
+                  -1.4322601469171592,
+                  1.4728840868549198,
+                  2.944156364821768
+                ],
+                "right_world": [
+                  0.9747464963348029,
+                  -0.04527033128243976,
+                  -0.21867753654320443
+                ],
+                "forward_world": [
+                  0.18213857222999802,
+                  -0.40541454016312417,
+                  0.8958038798366192
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.09007194587285175,
+                  "forward_m": 0.3554541220046211,
+                  "up_m": -0.6747626164276919,
+                  "distance_m": 0.7679617026986062
+                }
+              },
+              {
+                "frame": 1288,
+                "time_s": 42.926464,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.938411,
+                "gaze_hit_distance_m": 0.9417578297646934,
+                "gaze_hit_exit_distance_m": 0.9729815033148096,
+                "gaze_depth_obb_residual_m": 0.00334682976469336,
+                "gaze_origin_world_m": [
+                  -1.5162255276030008,
+                  1.481708320068226,
+                  2.944123032933326
+                ],
+                "gaze_direction_world_unit": [
+                  0.07134366089443006,
+                  -0.781170934707847,
+                  0.6202274202402285
+                ],
+                "wearer_world_m": [
+                  -1.4446060706669768,
+                  1.477187226441678,
+                  2.939848129237453
+                ],
+                "right_world": [
+                  0.9826614060093014,
+                  -0.04528053307979796,
+                  -0.17979497897280777
+                ],
+                "forward_world": [
+                  0.14604059422267684,
+                  -0.4084180702979488,
+                  0.9010365279461133
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.11417113404407028,
+                  "forward_m": 0.3389243103157478,
+                  "up_m": -0.669317848795126,
+                  "distance_m": 0.7588749031873762
+                }
+              },
+              {
+                "frame": 1289,
+                "time_s": 42.959792,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.96117,
+                "gaze_hit_distance_m": 0.961511140940682,
+                "gaze_hit_exit_distance_m": 0.9698612398077677,
+                "gaze_depth_obb_residual_m": 0.0003411409406820498,
+                "gaze_origin_world_m": [
+                  -1.53157737390771,
+                  1.4851553166393359,
+                  2.93590402961673
+                ],
+                "gaze_direction_world_unit": [
+                  -0.08920037722063001,
+                  -0.7690181926215186,
+                  0.6329725998183728
+                ],
+                "wearer_world_m": [
+                  -1.459878316634998,
+                  1.4799427641619611,
+                  2.9355349986221335
+                ],
+                "right_world": [
+                  0.9905998898225097,
+                  -0.053616895159035005,
+                  -0.12584548794905964
+                ],
+                "forward_world": [
+                  0.09213898030027273,
+                  -0.4184442150999129,
+                  0.903556775835721
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1426463231082522,
+                  "forward_m": 0.316641144387129,
+                  "up_m": -0.6619668908979469,
+                  "distance_m": 0.7475357867421392
+                }
+              },
+              {
+                "frame": 1290,
+                "time_s": 42.99312,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 2.09335,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.5492638663639502,
+                  1.4874571885415724,
+                  2.9264631397502514
+                ],
+                "gaze_direction_world_unit": [
+                  -0.24957704068544928,
+                  -0.7132918218043542,
+                  0.6549244824479529
+                ],
+                "wearer_world_m": [
+                  -1.477804252518573,
+                  1.481012189009154,
+                  2.9309405576553287
+                ],
+                "right_world": [
+                  0.9959119931464185,
+                  -0.06898462586868159,
+                  -0.05831314861063813
+                ],
+                "forward_world": [
+                  0.022828551712505085,
+                  -0.4323884014273836,
+                  0.9013984288525142
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.1726920125413204,
+                  "forward_m": 0.2882183727416975,
+                  "up_m": -0.6529412121214072,
+                  "distance_m": 0.7343191323042156
+                }
+              },
+              {
+                "frame": 1291,
+                "time_s": 43.026448,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.14449,
+                "gaze_hit_distance_m": 1.132906985941942,
+                "gaze_hit_exit_distance_m": 1.1476770791657978,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.568659639875744,
+                  1.4893909543067927,
+                  2.915934898562805
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5062906258125933,
+                  -0.6572518292422054,
+                  0.5582918906558354
+                ],
+                "wearer_world_m": [
+                  -1.4979197589153899,
+                  1.481388283992099,
+                  2.9259293075272836
+                ],
+                "right_world": [
+                  0.9958355076980135,
+                  -0.08910795862193141,
+                  0.019272086500224828
+                ],
+                "forward_world": [
+                  -0.05708433998647544,
+                  -0.44462180999503753,
+                  0.893897546816773
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.20066771512503337,
+                  "forward_m": 0.25450376236939903,
+                  "up_m": -0.6435468440471543,
+                  "distance_m": 0.720549954851663
+                }
+              },
+              {
+                "frame": 1292,
+                "time_s": 43.059776,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.04497,
+                "gaze_hit_distance_m": 1.033991582405258,
+                "gaze_hit_exit_distance_m": 1.5177486213974964,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.5890431421492215,
+                  1.4916115139594281,
+                  2.9045160008418756
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5399878288330554,
+                  -0.7223583278448159,
+                  0.43198563738324036
+                ],
+                "wearer_world_m": [
+                  -1.5195493679221883,
+                  1.482098339621607,
+                  2.9202696213368715
+                ],
+                "right_world": [
+                  0.9888664637895688,
+                  -0.10925050747927409,
+                  0.10103189302311955
+                ],
+                "forward_world": [
+                  -0.13992646388883706,
+                  -0.4516658543097255,
+                  0.8811461517559
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.2231520730880422,
+                  "forward_m": 0.21756058404861822,
+                  "up_m": -0.6345310174044687,
+                  "distance_m": 0.7069363956562266
+                }
+              },
+              {
+                "frame": 1293,
+                "time_s": 43.093104,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.0147,
+                "gaze_hit_distance_m": 1.0023713394243303,
+                "gaze_hit_exit_distance_m": 1.5952295818349729,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6096014677374657,
+                  1.4944134059817082,
+                  2.892445736438411
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5935475780613552,
+                  -0.7481072123600165,
+                  0.29671007969468255
+                ],
+                "wearer_world_m": [
+                  -1.541713003140426,
+                  1.4839151802604953,
+                  2.913635482363338
+                ],
+                "right_world": [
+                  0.9761781294260317,
+                  -0.1227360463900789,
+                  0.1789193185400227
+                ],
+                "forward_world": [
+                  -0.21552790097194635,
+                  -0.4535946036217618,
+                  0.8647541034697919
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.23756855858231435,
+                  "forward_m": 0.18065711172649346,
+                  "up_m": -0.6257526267446952,
+                  "distance_m": 0.6932836085774156
+                }
+              },
+              {
+                "frame": 1294,
+                "time_s": 43.126432,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.997182,
+                "gaze_hit_distance_m": 0.9858545519462951,
+                "gaze_hit_exit_distance_m": 1.5711320867502971,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.629748476398322,
+                  1.4975353701732919,
+                  2.8799737846784277
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5904521521959223,
+                  -0.763842074460381,
+                  0.2605984291036034
+                ],
+                "wearer_world_m": [
+                  -1.5635960150405819,
+                  1.486648169914355,
+                  2.905923397928619
+                ],
+                "right_world": [
+                  0.9603165002058702,
+                  -0.12813971966063245,
+                  0.24773459927439342
+                ],
+                "forward_world": [
+                  -0.2788844589867608,
+                  -0.453759456931148,
+                  0.8463603332985374
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right-front",
+                  "side": "right",
+                  "depth": "front",
+                  "right_m": 0.24328473930697592,
+                  "forward_m": 0.14678152358520574,
+                  "up_m": -0.6169456388567807,
+                  "distance_m": 0.6792305951222006
+                }
+              },
+              {
+                "frame": 1295,
+                "time_s": 43.15976,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.990562,
+                "gaze_hit_distance_m": 0.9802208024433832,
+                "gaze_hit_exit_distance_m": 1.5531912719995629,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.649068920639352,
+                  1.5003088759666234,
+                  2.8673706974389073
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5851054204070548,
+                  -0.7710908990178036,
+                  0.2511383532282537
+                ],
+                "wearer_world_m": [
+                  -1.5845946668170767,
+                  1.489396558737434,
+                  2.897237964266495
+                ],
+                "right_world": [
+                  0.9437145080413032,
+                  -0.12817418678331044,
+                  0.30491688237091485
+                ],
+                "forward_world": [
+                  -0.3291015026235059,
+                  -0.4560992651741934,
+                  0.8268407714176359
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.24092530072800294,
+                  "forward_m": 0.11808001532774658,
+                  "up_m": -0.6077814957140103,
+                  "distance_m": 0.6643690518702983
+                }
+              },
+              {
+                "frame": 1296,
+                "time_s": 43.193088,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.956914,
+                "gaze_hit_distance_m": 0.9480454097806403,
+                "gaze_hit_exit_distance_m": 1.599933457849298,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6673525325009324,
+                  1.5020890139421852,
+                  2.85508045074376
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5568149077765895,
+                  -0.7991040764962255,
+                  0.22669325840188317
+                ],
+                "wearer_world_m": [
+                  -1.60437306690839,
+                  1.4914787598257602,
+                  2.888081528336206
+                ],
+                "right_world": [
+                  0.9281951663726706,
+                  -0.12350286974361965,
+                  0.35099967847207664
+                ],
+                "forward_world": [
+                  -0.3669947783130232,
+                  -0.4594874710066928,
+                  0.8088177153591831
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.23167668297828953,
+                  "forward_m": 0.09575016042549413,
+                  "up_m": -0.5980597352570686,
+                  "distance_m": 0.6484733036857305
+                }
+              },
+              {
+                "frame": 1297,
+                "time_s": 43.226416,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 0.937944,
+                "gaze_hit_distance_m": 0.9284445816776697,
+                "gaze_hit_exit_distance_m": 0.9561822423334662,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.6845777433999158,
+                  1.5025251914877336,
+                  2.8434961670741035
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5765425405476254,
+                  -0.7904419222882781,
+                  0.20688225256918763
+                ],
+                "wearer_world_m": [
+                  -1.622856859595691,
+                  1.4925809124909262,
+                  2.878988497494337
+                ],
+                "right_world": [
+                  0.914695937073384,
+                  -0.11393208735169857,
+                  0.38775097959016064
+                ],
+                "forward_world": [
+                  -0.39434947920560937,
+                  -0.4615474988362367,
+                  0.7946460813269507
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.21690958286218273,
+                  "forward_m": 0.08012954007584443,
+                  "up_m": -0.587753556223111,
+                  "distance_m": 0.6316049027541871
+                }
+              },
+              {
+                "frame": 1298,
+                "time_s": 43.259744,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.987523,
+                "gaze_hit_distance_m": 0.9779689726851708,
+                "gaze_hit_exit_distance_m": 1.4311240280075985,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7010547998424022,
+                  1.502366251886385,
+                  2.8324904347291855
+                ],
+                "gaze_direction_world_unit": [
+                  -0.600083837587428,
+                  -0.77512635407649,
+                  0.19768288515304927
+                ],
+                "wearer_world_m": [
+                  -1.640363344836407,
+                  1.493302797096031,
+                  2.869939904385223
+                ],
+                "right_world": [
+                  0.9033772939370996,
+                  -0.10138158371847958,
+                  0.41669081977122646
+                ],
+                "forward_world": [
+                  -0.4135123253978117,
+                  -0.4634348697381855,
+                  0.7837318918194188
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.19870975411406697,
+                  "forward_m": 0.0702498683972811,
+                  "up_m": -0.5772372603308648,
+                  "distance_m": 0.6145107526351274
+                }
+              },
+              {
+                "frame": 1299,
+                "time_s": 43.293072,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.984823,
+                "gaze_hit_distance_m": 0.9755611356359938,
+                "gaze_hit_exit_distance_m": 1.40307059206156,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7170042864659394,
+                  1.5023464649184304,
+                  2.821879651307941
+                ],
+                "gaze_direction_world_unit": [
+                  -0.6010266684446424,
+                  -0.7770565320245668,
+                  0.18694943128099556
+                ],
+                "wearer_world_m": [
+                  -1.6571426009065682,
+                  1.494238985331376,
+                  2.8608528353931097
+                ],
+                "right_world": [
+                  0.8940621034635583,
+                  -0.08770694087045505,
+                  0.43927263478785517
+                ],
+                "forward_world": [
+                  -0.42659744804015454,
+                  -0.4658259594644387,
+                  0.7752553081499427
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.17878368840555323,
+                  "forward_m": 0.06488775013609702,
+                  "up_m": -0.5670670133040894,
+                  "distance_m": 0.5981128864480674
+                }
+              },
+              {
+                "frame": 1300,
+                "time_s": 43.3264,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 0.939057,
+                "gaze_hit_distance_m": 0.9291164303995127,
+                "gaze_hit_exit_distance_m": 0.9440432673970246,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7322839589173769,
+                  1.5025802417596508,
+                  2.811632381651736
+                ],
+                "gaze_direction_world_unit": [
+                  -0.578953619436323,
+                  -0.7897770932464412,
+                  0.2026446385295798
+                ],
+                "wearer_world_m": [
+                  -1.6730843276645602,
+                  1.495509724391459,
+                  2.851800442902892
+                ],
+                "right_world": [
+                  0.886490887245496,
+                  -0.07308078016834202,
+                  0.4569388431734391
+                ],
+                "forward_world": [
+                  -0.4352780591960723,
+                  -0.4668347615103126,
+                  0.7698040767806508
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.15802181317349367,
+                  "forward_m": 0.063328720413439,
+                  "up_m": -0.5579622927377985,
+                  "distance_m": 0.583355243728093
+                }
+              },
+              {
+                "frame": 1301,
+                "time_s": 43.359728,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 0.933077,
+                "gaze_hit_distance_m": 0.9232470305907113,
+                "gaze_hit_exit_distance_m": 0.9396545502910266,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7468751576079298,
+                  1.5029993933560446,
+                  2.8017471801456066
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5683569591380555,
+                  -0.7951704920008,
+                  0.21136285305263197
+                ],
+                "wearer_world_m": [
+                  -1.688235870077779,
+                  1.496962046446066,
+                  2.842893821578959
+                ],
+                "right_world": [
+                  0.8799866146134099,
+                  -0.0587468196603097,
+                  0.47135164079594477
+                ],
+                "forward_world": [
+                  -0.44173507687840147,
+                  -0.46602232794764337,
+                  0.7666115781212097
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "right",
+                  "side": "right",
+                  "depth": "level",
+                  "right_m": 0.13707296661857862,
+                  "forward_m": 0.06487291561682632,
+                  "up_m": -0.5505855139861179,
+                  "distance_m": 0.5710883483048865
+                }
+              },
+              {
+                "frame": 1302,
+                "time_s": 43.393056,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 0.926561,
+                "gaze_hit_distance_m": 0.9151617131590061,
+                "gaze_hit_exit_distance_m": 0.9406029102864393,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7609730506374974,
+                  1.5034086904220454,
+                  2.7922318930821097
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5550458213570025,
+                  -0.8025928121416213,
+                  0.2185610077134867
+                ],
+                "wearer_world_m": [
+                  -1.702888855541942,
+                  1.498177292869761,
+                  2.8342666460937713
+                ],
+                "right_world": [
+                  0.8735014426267869,
+                  -0.047588277603837215,
+                  0.4844900262787903
+                ],
+                "forward_world": [
+                  -0.44861114149903136,
+                  -0.4651790646215384,
+                  0.7631228482759289
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "level",
+                  "side": "center",
+                  "depth": "level",
+                  "right_m": 0.11647061579420093,
+                  "forward_m": 0.06881941533589153,
+                  "up_m": -0.54549994051834,
+                  "distance_m": 0.5620246448120997
+                }
+              },
+              {
+                "frame": 1303,
+                "time_s": 43.426384,
+                "gazed_object_id": "4469271893111727",
+                "gazed_object_name": "BlackCeramicDishLarge",
+                "gaze_depth_m": 0.917054,
+                "gaze_hit_distance_m": 0.9018193160158127,
+                "gaze_hit_exit_distance_m": 0.9287162883321275,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.774723938969102,
+                  1.5036755249024385,
+                  2.7830870817362454
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5329853384912899,
+                  -0.8148061220435581,
+                  0.22807369956587126
+                ],
+                "wearer_world_m": [
+                  -1.7172054792749283,
+                  1.498975390474243,
+                  2.825954286354305
+                ],
+                "right_world": [
+                  0.8668834558055178,
+                  -0.04026669370438282,
+                  0.49688194516283296
+                ],
+                "forward_world": [
+                  -0.4565573922512044,
+                  -0.4643545673451807,
+                  0.758900641300592
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "level",
+                  "side": "center",
+                  "depth": "level",
+                  "right_m": 0.09637578544481495,
+                  "forward_m": 0.07499111604438832,
+                  "up_m": -0.5432230714306957,
+                  "distance_m": 0.5567793681884114
+                }
+              },
+              {
+                "frame": 1304,
+                "time_s": 43.459712,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 0.897267,
+                "gaze_hit_distance_m": 0.8912265822288435,
+                "gaze_hit_exit_distance_m": 0.9022897024211265,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7881858920294644,
+                  1.5037325210626613,
+                  2.774295303836091
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5437995427883225,
+                  -0.818812284309128,
+                  0.18392525744899488
+                ],
+                "wearer_world_m": [
+                  -1.731203197734617,
+                  1.4993876205400212,
+                  2.817909018323031
+                ],
+                "right_world": [
+                  0.8606143729202352,
+                  -0.035548439096496104,
+                  0.5080149698590717
+                ],
+                "forward_world": [
+                  -0.46479347137766225,
+                  -0.4624874852941925,
+                  0.7550313602168828
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "level",
+                  "side": "center",
+                  "depth": "level",
+                  "right_m": 0.0766959306647157,
+                  "forward_m": 0.08349997766316075,
+                  "up_m": -0.5441518980099188,
+                  "distance_m": 0.5558379261602003
+                }
+              },
+              {
+                "frame": 1305,
+                "time_s": 43.49304,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 0.887983,
+                "gaze_hit_distance_m": 0.8771526998026066,
+                "gaze_hit_exit_distance_m": 0.9012983986670042,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.8011225700082587,
+                  1.5035553994956519,
+                  2.7657691399775794
+                ],
+                "gaze_direction_world_unit": [
+                  -0.523830331832973,
+                  -0.8316024911486484,
+                  0.1844968296939523
+                ],
+                "wearer_world_m": [
+                  -1.7446545763226649,
+                  1.4994926516062081,
+                  2.810074009571232
+                ],
+                "right_world": [
+                  0.8545703316452236,
+                  -0.03180613063909962,
+                  0.5183607993719638
+                ],
+                "forward_world": [
+                  -0.4727159642807791,
+                  -0.4609602885787959,
+                  0.751036103970672
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "level",
+                  "side": "center",
+                  "depth": "level",
+                  "right_m": 0.057480750945417186,
+                  "forward_m": 0.09421518794543708,
+                  "up_m": -0.5479775220778088,
+                  "distance_m": 0.5589811294412169
+                }
+              },
+              {
+                "frame": 1306,
+                "time_s": 43.526368,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 0.880619,
+                "gaze_hit_distance_m": 0.8677321260587356,
+                "gaze_hit_exit_distance_m": 0.8916328375876761,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.8132524514858137,
+                  1.5032128602471861,
+                  2.7574137913586005
+                ],
+                "gaze_direction_world_unit": [
+                  -0.5038647699908245,
+                  -0.8402464674864013,
+                  0.20026524271255236
+                ],
+                "wearer_world_m": [
+                  -1.7573004216525612,
+                  1.499415422914528,
+                  2.802391691801411
+                ],
+                "right_world": [
+                  0.8484637621795074,
+                  -0.028020305512492905,
+                  0.5285112172387483
+                ],
+                "forward_world": [
+                  -0.479981224354906,
+                  -0.4614882534017256,
+                  0.746087539259965
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "level",
+                  "side": "center",
+                  "depth": "level",
+                  "right_m": 0.03880215884285176,
+                  "forward_m": 0.1069100677946342,
+                  "up_m": -0.5541805299543482,
+                  "distance_m": 0.5657308811680704
+                }
+              },
+              {
+                "frame": 1307,
+                "time_s": 43.559696,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 0.875803,
+                "gaze_hit_distance_m": 0.8631660905879597,
+                "gaze_hit_exit_distance_m": 0.886945864297931,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.8246237044440354,
+                  1.5030669063283104,
+                  2.749220998875634
+                ],
+                "gaze_direction_world_unit": [
+                  -0.49543656409387204,
+                  -0.8444544918137463,
+                  0.20356626000996936
+                ],
+                "wearer_world_m": [
+                  -1.7691606427144841,
+                  1.499402857623331,
+                  2.7948114061086424
+                ],
+                "right_world": [
+                  0.8426659577626606,
+                  -0.025991709918865624,
+                  0.5378089945728238
+                ],
+                "forward_world": [
+                  -0.4870404431576786,
+                  -0.46267501407679723,
+                  0.740758690855401
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.02054892066672799,
+                  "forward_m": 0.12120860731943658,
+                  "up_m": -0.562570453991646,
+                  "distance_m": 0.5758465944444332
+                }
+              },
+              {
+                "frame": 1308,
+                "time_s": 43.593024,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 0.869339,
+                "gaze_hit_distance_m": 0.8552656144613938,
+                "gaze_hit_exit_distance_m": 0.8788123724264034,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.8353699845765383,
+                  1.503351619134837,
+                  2.7412761116811644
+                ],
+                "gaze_direction_world_unit": [
+                  -0.47731545681028237,
+                  -0.8524875846042708,
+                  0.21315457486427095
+                ],
+                "wearer_world_m": [
+                  -1.78035619650621,
+                  1.4996340952870968,
+                  2.7874033795342954
+                ],
+                "right_world": [
+                  0.8373681971376699,
+                  -0.026744581967330983,
+                  0.5459846424193647
+                ],
+                "forward_world": [
+                  -0.4945337350611186,
+                  -0.46264445729707493,
+                  0.7357965010917042
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": 0.0027615390606174767,
+                  "forward_m": 0.13654706438818778,
+                  "up_m": -0.5728060272272657,
+                  "distance_m": 0.58886286325332
+                }
+              },
+              {
+                "frame": 1309,
+                "time_s": 43.626352,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 0.867627,
+                "gaze_hit_distance_m": 0.8548281256349565,
+                "gaze_hit_exit_distance_m": 0.8783382377266751,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.845636833114646,
+                  1.503862087309644,
+                  2.7338223994955286
+                ],
+                "gaze_direction_world_unit": [
+                  -0.46690033929112645,
+                  -0.8535329629104641,
+                  0.23126944111817963
+                ],
+                "wearer_world_m": [
+                  -1.791089215545299,
+                  1.500065524227373,
+                  2.780493645753483
+                ],
+                "right_world": [
+                  0.8318868013260665,
+                  -0.02817476003384284,
+                  0.5542296750233799
+                ],
+                "forward_world": [
+                  -0.5029756713966644,
+                  -0.4602590763051799,
+                  0.7315579653464085
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.01395916624218696,
+                  "forward_m": 0.15225450545192526,
+                  "up_m": -0.5840027536137714,
+                  "distance_m": 0.6036849418206941
+                }
+              },
+              {
+                "frame": 1310,
+                "time_s": 43.65968,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 0.864559,
+                "gaze_hit_distance_m": 0.8520161032820421,
+                "gaze_hit_exit_distance_m": 0.875427629551617,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.855526915184056,
+                  1.504363411392008,
+                  2.726870376044227
+                ],
+                "gaze_direction_world_unit": [
+                  -0.4543063211106809,
+                  -0.856918476500143,
+                  0.24350870873862607
+                ],
+                "wearer_world_m": [
+                  -1.801431152695023,
+                  1.500566606910743,
+                  2.7740645966380795
+                ],
+                "right_world": [
+                  0.8265703296656726,
+                  -0.028808292942943015,
+                  0.5620956968115797
+                ],
+                "forward_world": [
+                  -0.5113780287138652,
+                  -0.4556075988846643,
+                  0.7286386124734757
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.0291133528584573,
+                  "forward_m": 0.1681434260488271,
+                  "up_m": -0.595175647701638,
+                  "distance_m": 0.6191557563773131
+                }
+              },
+              {
+                "frame": 1311,
+                "time_s": 43.693008,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 0.859308,
+                "gaze_hit_distance_m": 0.8460917661153246,
+                "gaze_hit_exit_distance_m": 0.8693325245221781,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.8650763808084576,
+                  1.504667462207313,
+                  2.720131451409112
+                ],
+                "gaze_direction_world_unit": [
+                  -0.43541370826998876,
+                  -0.8633228802437893,
+                  0.2551244933324611
+                ],
+                "wearer_world_m": [
+                  -1.811269858022402,
+                  1.500942552256745,
+                  2.7676608618045067
+                ],
+                "right_world": [
+                  0.8231746912182039,
+                  -0.02853933395493244,
+                  0.5670704842920534
+                ],
+                "forward_world": [
+                  -0.5171041336107641,
+                  -0.4501535409263583,
+                  0.7279870222703989
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.04256563587841872,
+                  "forward_m": 0.18443269865604744,
+                  "up_m": -0.6053527399503176,
+                  "distance_m": 0.6342548332150441
+                }
+              },
+              {
+                "frame": 1312,
+                "time_s": 43.726336,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 0.848657,
+                "gaze_hit_distance_m": 0.8353810811973759,
+                "gaze_hit_exit_distance_m": 0.858328495310083,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.874231236168279,
+                  1.5047585605320235,
+                  2.713756640144407
+                ],
+                "gaze_direction_world_unit": [
+                  -0.4075420032210392,
+                  -0.8745100217505506,
+                  0.2629481649839649
+                ],
+                "wearer_world_m": [
+                  -1.820608405104503,
+                  1.501216564283143,
+                  2.761507116082126
+                ],
+                "right_world": [
+                  0.8210128738441308,
+                  -0.026710968123808326,
+                  0.5702844774006134
+                ],
+                "forward_world": [
+                  -0.5206818364044509,
+                  -0.44472649204718895,
+                  0.7287720991571303
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.05375701679886043,
+                  "forward_m": 0.2008042009185076,
+                  "up_m": -0.6143533940222056,
+                  "distance_m": 0.6485693769430043
+                }
+              },
+              {
+                "frame": 1313,
+                "time_s": 43.759664,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 0.848631,
+                "gaze_hit_distance_m": 0.8356767648868402,
+                "gaze_hit_exit_distance_m": 0.8586281019515024,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.882887217252824,
+                  1.504743033899716,
+                  2.7081710920394624
+                ],
+                "gaze_direction_world_unit": [
+                  -0.4020365312938123,
+                  -0.8742031410226524,
+                  0.2722783423839808
+                ],
+                "wearer_world_m": [
+                  -1.8295342711370233,
+                  1.5015518288979361,
+                  2.756247500520141
+                ],
+                "right_world": [
+                  0.8177838782421235,
+                  -0.022481340935243482,
+                  0.5750861829300244
+                ],
+                "forward_world": [
+                  -0.524707469177947,
+                  -0.43966326618882867,
+                  0.7289569837466713
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.06170897536507876,
+                  "forward_m": 0.21676507944594348,
+                  "up_m": -0.62257691295709,
+                  "distance_m": 0.6621156317857131
+                }
+              },
+              {
+                "frame": 1314,
+                "time_s": 43.792992,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 0.844384,
+                "gaze_hit_distance_m": 0.8319400073262495,
+                "gaze_hit_exit_distance_m": 0.8547651128954664,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.8910293074138733,
+                  1.5046638930986647,
+                  2.7032292869624244
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3868534485346295,
+                  -0.8780453553339164,
+                  0.2817459198167761
+                ],
+                "wearer_world_m": [
+                  -1.837978835315428,
+                  1.501845626935903,
+                  2.75166240050025
+                ],
+                "right_world": [
+                  0.8141425401855762,
+                  -0.017791247317871295,
+                  0.5803924497950093
+                ],
+                "forward_world": [
+                  -0.5287818269750676,
+                  -0.435703755021256,
+                  0.7283900173130373
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.06674978556112134,
+                  "forward_m": 0.232151550350626,
+                  "up_m": -0.6302008172200081,
+                  "distance_m": 0.6749095837424602
+                }
+              },
+              {
+                "frame": 1315,
+                "time_s": 43.82632,
+                "gazed_object_id": "5267569353293638",
+                "gazed_object_name": "BlackCeramicDishSmall",
+                "gaze_depth_m": 0.842816,
+                "gaze_hit_distance_m": 0.830577907948493,
+                "gaze_hit_exit_distance_m": 0.8533247169867866,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.8986525652167254,
+                  1.5045184504788416,
+                  2.6986316297834154
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3824775816364806,
+                  -0.8793362998542467,
+                  0.2836874535543502
+                ],
+                "wearer_world_m": [
+                  -1.84581370691115,
+                  1.5019293165867298,
+                  2.7473082477806843
+                ],
+                "right_world": [
+                  0.8115919598386291,
+                  -0.014898096300848929,
+                  0.5840347056912835
+                ],
+                "forward_world": [
+                  -0.5316324792734328,
+                  -0.43335147956787257,
+                  0.7277179413329856
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.06981338813835787,
+                  "forward_m": 0.24675665246118508,
+                  "up_m": -0.6372546983465613,
+                  "distance_m": 0.6869179756433615
+                }
+              },
+              {
+                "frame": 1316,
+                "time_s": 43.859648,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.716087,
+                "gaze_hit_distance_m": 0.693407435530746,
+                "gaze_hit_exit_distance_m": 0.7690178926144985,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9056451721011458,
+                  1.5042521426792737,
+                  2.6944969707335464
+                ],
+                "gaze_direction_world_unit": [
+                  -0.364742434172405,
+                  -0.8844954667831475,
+                  0.29091360565303703
+                ],
+                "wearer_world_m": [
+                  -1.852988010441086,
+                  1.5018699345688102,
+                  2.743380609217448
+                ],
+                "right_world": [
+                  0.8093952176235022,
+                  -0.012244612729760823,
+                  0.5871366545765151
+                ],
+                "forward_world": [
+                  -0.5339640676639258,
+                  -0.4315267513364737,
+                  0.7270949300640073
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.07112607383748958,
+                  "forward_m": 0.2599754413547572,
+                  "up_m": -0.643608111169221,
+                  "distance_m": 0.6977661135724127
+                }
+              },
+              {
+                "frame": 1317,
+                "time_s": 43.892976,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.735642,
+                "gaze_hit_distance_m": 0.7006833821153728,
+                "gaze_hit_exit_distance_m": 0.7771799713179395,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9119344867948052,
+                  1.5038691548908383,
+                  2.6909695288363937
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3584158631640445,
+                  -0.8844167756133733,
+                  0.29890640014228065
+                ],
+                "wearer_world_m": [
+                  -1.859464350224356,
+                  1.50176641230689,
+                  2.7400666259288293
+                ],
+                "right_world": [
+                  0.807124540356856,
+                  -0.00863846726466927,
+                  0.590318010259768
+                ],
+                "forward_world": [
+                  -0.5361821875991328,
+                  -0.42922477723695496,
+                  0.7268251181042759
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.07109177368069283,
+                  "forward_m": 0.271247685856579,
+                  "up_m": -0.649144836007811,
+                  "distance_m": 0.7071197674250268
+                }
+              },
+              {
+                "frame": 1318,
+                "time_s": 43.926304,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.754978,
+                "gaze_hit_distance_m": 0.70228183211048,
+                "gaze_hit_exit_distance_m": 0.7789105673079914,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9175900150879022,
+                  1.5035234733899379,
+                  2.688015994977374
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3446980650845476,
+                  -0.8890636947899466,
+                  0.3012457311455513
+                ],
+                "wearer_world_m": [
+                  -1.865185370614204,
+                  1.5016489092530734,
+                  2.7371922183773267
+                ],
+                "right_world": [
+                  0.8063293700672198,
+                  -0.00581419306037495,
+                  0.5914381980613509
+                ],
+                "forward_world": [
+                  -0.5369698478067624,
+                  -0.4264461806573498,
+                  0.7278784497078763
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.0711259604366577,
+                  "forward_m": 0.280273696150272,
+                  "up_m": -0.6538833852107856,
+                  "distance_m": 0.714965543544924
+                }
+              },
+              {
+                "frame": 1319,
+                "time_s": 43.959632,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.76007,
+                "gaze_hit_distance_m": 0.7097339628787352,
+                "gaze_hit_exit_distance_m": 0.7868121686325367,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9227001900622935,
+                  1.5032208977059804,
+                  2.685598418737314
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3525828437683052,
+                  -0.8853795751513955,
+                  0.30296591587997107
+                ],
+                "wearer_world_m": [
+                  -1.8702315693831228,
+                  1.5014880892588707,
+                  2.7347115831630657
+                ],
+                "right_world": [
+                  0.8071118176184342,
+                  -0.004249447802984446,
+                  0.590383312818069
+                ],
+                "forward_world": [
+                  -0.5363364252661214,
+                  -0.4233012057618881,
+                  0.7301776004050589
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.07178835726009425,
+                  "forward_m": 0.2869826715995878,
+                  "up_m": -0.6580823652779985,
+                  "distance_m": 0.721515780511019
+                }
+              },
+              {
+                "frame": 1320,
+                "time_s": 43.99296,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.767803,
+                "gaze_hit_distance_m": 0.7121713947212113,
+                "gaze_hit_exit_distance_m": 0.7889026504474033,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9273473523306013,
+                  1.502769416728716,
+                  2.683698877260068
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3475624702247355,
+                  -0.8875931979513115,
+                  0.30228900780849416
+                ],
+                "wearer_world_m": [
+                  -1.874849256536146,
+                  1.5012032899061862,
+                  2.7327861351355285
+                ],
+                "right_world": [
+                  0.8074770385083352,
+                  -0.0023631641590368957,
+                  0.5898942682692946
+                ],
+                "forward_world": [
+                  -0.5361608591755076,
+                  -0.4199447818124032,
+                  0.7322417041638057
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.07228289533345202,
+                  "forward_m": 0.291564691082558,
+                  "up_m": -0.6622622294332919,
+                  "distance_m": 0.7272042674364669
+                }
+              },
+              {
+                "frame": 1321,
+                "time_s": 44.026288,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.772382,
+                "gaze_hit_distance_m": 0.7218094699076446,
+                "gaze_hit_exit_distance_m": 0.7989012220278342,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.931504455835533,
+                  1.5022405770357992,
+                  2.682217616248153
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3472740184383772,
+                  -0.8833730060306678,
+                  0.3147266883090847
+                ],
+                "wearer_world_m": [
+                  -1.878996639696359,
+                  1.5008562587059853,
+                  2.7312999410510437
+                ],
+                "right_world": [
+                  0.8075917795541753,
+                  -0.00015638160721309635,
+                  0.5897418868804506
+                ],
+                "forward_world": [
+                  -0.5359660354149816,
+                  -0.4173949015218724,
+                  0.733840517459409
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.07288080963753424,
+                  "forward_m": 0.2942643128068385,
+                  "up_m": -0.6667009944308255,
+                  "distance_m": 0.7323887725656061
+                }
+              },
+              {
+                "frame": 1322,
+                "time_s": 44.059616,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.776519,
+                "gaze_hit_distance_m": 0.7287696712518448,
+                "gaze_hit_exit_distance_m": 0.8060777755331963,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9350918057243944,
+                  1.5018702553323025,
+                  2.6810082165632654
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3451662753605947,
+                  -0.8822933367060224,
+                  0.32002923359881896
+                ],
+                "wearer_world_m": [
+                  -1.8824707506382468,
+                  1.500585504447515,
+                  2.729971832420192
+                ],
+                "right_world": [
+                  0.8089388954526807,
+                  0.001178586603201276,
+                  0.5878915498265104
+                ],
+                "forward_world": [
+                  -0.5339567487274036,
+                  -0.41694242286749117,
+                  0.7355604710027901
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.07451594223654347,
+                  "forward_m": 0.29537599593994973,
+                  "up_m": -0.6714408704848017,
+                  "distance_m": 0.737314347603724
+                }
+              },
+              {
+                "frame": 1323,
+                "time_s": 44.092944,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.781769,
+                "gaze_hit_distance_m": 0.7329893272345408,
+                "gaze_hit_exit_distance_m": 0.8103725927264607,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9382630322174839,
+                  1.50154849246409,
+                  2.680050782827199
+                ],
+                "gaze_direction_world_unit": [
+                  -0.34152843744678074,
+                  -0.8840284950780231,
+                  0.31914251723210807
+                ],
+                "wearer_world_m": [
+                  -1.885575567900621,
+                  1.500288046488082,
+                  2.728943564306686
+                ],
+                "right_world": [
+                  0.8097303330355272,
+                  0.0015316829241918128,
+                  0.586800171872499
+                ],
+                "forward_world": [
+                  -0.5328202041100718,
+                  -0.41703544291602584,
+                  0.7363314942632397
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.0760011538340136,
+                  "forward_m": 0.29542326944826436,
+                  "up_m": -0.6762599758254818,
+                  "distance_m": 0.7418750827592773
+                }
+              },
+              {
+                "frame": 1324,
+                "time_s": 44.126272,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.787348,
+                "gaze_hit_distance_m": 0.7344228137751003,
+                "gaze_hit_exit_distance_m": 0.8116291093212576,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.941077373647054,
+                  1.5011379720330422,
+                  2.679434703789724
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3398815043490242,
+                  -0.8878755111634096,
+                  0.31009295328620134
+                ],
+                "wearer_world_m": [
+                  -1.888473739832853,
+                  1.4998671473392649,
+                  2.728417398847664
+                ],
+                "right_world": [
+                  0.8087431111397162,
+                  0.001202300196092021,
+                  0.5881608068022655
+                ],
+                "forward_world": [
+                  -0.5345401948324321,
+                  -0.4156600109937636,
+                  0.7358624432386597
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.07644399948830137,
+                  "forward_m": 0.2948562033440073,
+                  "up_m": -0.6809085002237212,
+                  "distance_m": 0.7459358225646006
+                }
+              },
+              {
+                "frame": 1325,
+                "time_s": 44.1596,
+                "gazed_object_id": "4989808014384955",
+                "gazed_object_name": "BlackCeramicBowl",
+                "gaze_depth_m": 0.786433,
+                "gaze_hit_distance_m": 0.74340958559076,
+                "gaze_hit_exit_distance_m": 0.821069055448029,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.942799380100856,
+                  1.5010153623218259,
+                  2.679457592232319
+                ],
+                "gaze_direction_world_unit": [
+                  -0.3431720017004837,
+                  -0.8844047832146977,
+                  0.3163244484320592
+                ],
+                "wearer_world_m": [
+                  -1.889858036884988,
+                  1.4996843429797182,
+                  2.728073477157008
+                ],
+                "right_world": [
+                  0.812824617948479,
+                  0.00014417803307759103,
+                  0.5825084717577973
+                ],
+                "forward_world": [
+                  -0.5301808193843054,
+                  -0.41405531623388303,
+                  0.7399097876467411
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.07993850495173326,
+                  "forward_m": 0.29330916271235663,
+                  "up_m": -0.6854870921772902,
+                  "distance_m": 0.7498753116662921
+                }
+              },
+              {
+                "frame": 1326,
+                "time_s": 44.192928,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.828182,
+                "gaze_hit_distance_m": 0.8514967763410842,
+                "gaze_hit_exit_distance_m": 1.6977066954660192,
+                "gaze_depth_obb_residual_m": 0.023314776341084253,
+                "gaze_origin_world_m": [
+                  -1.9425482228989792,
+                  1.501514322268286,
+                  2.6805491351325537
+                ],
+                "gaze_direction_world_unit": [
+                  -0.22564891163093995,
+                  -0.8889312779907643,
+                  0.39860224747168543
+                ],
+                "wearer_world_m": [
+                  -1.8883388101419767,
+                  1.500199731082391,
+                  2.727747367298122
+                ],
+                "right_world": [
+                  0.8279710301619143,
+                  0.00016438121874551292,
+                  0.5607708499836932
+                ],
+                "forward_world": [
+                  -0.5107866947708325,
+                  -0.41248282374412326,
+                  0.7542909734055968
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.09065194244858032,
+                  "forward_m": 0.29013390601174915,
+                  "up_m": -0.6900185967847714,
+                  "distance_m": 0.7540033965415276
+                }
+              },
+              {
+                "frame": 1327,
+                "time_s": 44.226256,
+                "gazed_object_id": "6403392549732697",
+                "gazed_object_name": "BambooPlate",
+                "gaze_depth_m": 0.827939,
+                "gaze_hit_distance_m": 0.8275434356816275,
+                "gaze_hit_exit_distance_m": 0.8858084344472478,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9395813025527406,
+                  1.502578458816607,
+                  2.6832892392952297
+                ],
+                "gaze_direction_world_unit": [
+                  -0.009387455635583977,
+                  -0.857521673101693,
+                  0.5143621835220421
+                ],
+                "wearer_world_m": [
+                  -1.883202759351295,
+                  1.501817777897523,
+                  2.7278868057313264
+                ],
+                "right_world": [
+                  0.8534909004630149,
+                  0.007211341101870855,
+                  0.5210578464876476
+                ],
+                "forward_world": [
+                  -0.4734280385826903,
+                  -0.4071075991414409,
+                  0.7811077358502081
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.11009494176270936,
+                  "forward_m": 0.28444325421101635,
+                  "up_m": -0.6941579021996692,
+                  "distance_m": 0.7582110881899136
+                }
+              },
+              {
+                "frame": 1328,
+                "time_s": 44.259584,
+                "gazed_object_id": "6403392549732697",
+                "gazed_object_name": "BambooPlate",
+                "gaze_depth_m": 0.854285,
+                "gaze_hit_distance_m": 0.847853562841966,
+                "gaze_hit_exit_distance_m": 0.9074467091628744,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.934437219760543,
+                  1.503832061292617,
+                  2.687402258754633
+                ],
+                "gaze_direction_world_unit": [
+                  0.03821217054551662,
+                  -0.8381909829676044,
+                  0.5440364933476443
+                ],
+                "wearer_world_m": [
+                  -1.8755343888172042,
+                  1.5041536594846168,
+                  2.7286140869410085
+                ],
+                "right_world": [
+                  0.8825239033888275,
+                  0.021106089955725382,
+                  0.46979367057691235
+                ],
+                "forward_world": [
+                  -0.4237577509854506,
+                  -0.39748459652783497,
+                  0.813901323259065
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.13494544805807837,
+                  "forward_m": 0.2759959501105453,
+                  "up_m": -0.697615268615944,
+                  "distance_m": 0.7622670801202908
+                }
+              },
+              {
+                "frame": 1329,
+                "time_s": 44.292912,
+                "gazed_object_id": "5188521177876543",
+                "gazed_object_name": "SandwichBLT_A",
+                "gaze_depth_m": 0.857523,
+                "gaze_hit_distance_m": 0.8241855851048503,
+                "gaze_hit_exit_distance_m": 0.893343737006837,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9292391941809386,
+                  1.5045971993546123,
+                  2.6914957714730114
+                ],
+                "gaze_direction_world_unit": [
+                  -0.011663405659140064,
+                  -0.8316251971451287,
+                  0.5552148200847632
+                ],
+                "wearer_world_m": [
+                  -1.8683308644293328,
+                  1.5059243571008551,
+                  2.729659572648815
+                ],
+                "right_world": [
+                  0.9049660304893979,
+                  0.034141494173443615,
+                  0.4241118272765657
+                ],
+                "forward_world": [
+                  -0.3787744450600039,
+                  -0.389416710529294,
+                  0.8395740261168338
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.15684748237474358,
+                  "forward_m": 0.26733247795181847,
+                  "up_m": -0.7002438053367623,
+                  "distance_m": 0.7657735784209746
+                }
+              },
+              {
+                "frame": 1330,
+                "time_s": 44.32624,
+                "gazed_object_id": "5188521177876543",
+                "gazed_object_name": "SandwichBLT_A",
+                "gaze_depth_m": 0.842716,
+                "gaze_hit_distance_m": 0.8113231473956628,
+                "gaze_hit_exit_distance_m": 0.8793258497533918,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9249323600605062,
+                  1.5047719081170716,
+                  2.694830654364245
+                ],
+                "gaze_direction_world_unit": [
+                  -0.015415814425472074,
+                  -0.8417849867586178,
+                  0.5395927990006844
+                ],
+                "wearer_world_m": [
+                  -1.8626238781011808,
+                  1.506719228791472,
+                  2.730634602737511
+                ],
+                "right_world": [
+                  0.9202380408789815,
+                  0.042361635631972705,
+                  0.38905968686796394
+                ],
+                "forward_world": [
+                  -0.3441448660823918,
+                  -0.3857712755025084,
+                  0.8560051601166317
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.17351960127645127,
+                  "forward_m": 0.26018852941177945,
+                  "up_m": -0.7019763828334481,
+                  "distance_m": 0.7684907058127214
+                }
+              },
+              {
+                "frame": 1331,
+                "time_s": 44.359568,
+                "gazed_object_id": "5188521177876543",
+                "gazed_object_name": "SandwichBLT_A",
+                "gaze_depth_m": 0.839917,
+                "gaze_hit_distance_m": 0.8129914773640399,
+                "gaze_hit_exit_distance_m": 0.8764635940801028,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.92143231561416,
+                  1.5046726076023416,
+                  2.6973524958251867
+                ],
+                "gaze_direction_world_unit": [
+                  -0.015777784144077323,
+                  -0.8439375237405622,
+                  0.536209397111008
+                ],
+                "wearer_world_m": [
+                  -1.8579982542562068,
+                  1.5067958582736931,
+                  2.7311115444969434
+                ],
+                "right_world": [
+                  0.9322922497502748,
+                  0.044813981717265444,
+                  0.35891902721674757
+                ],
+                "forward_world": [
+                  -0.3152865504827492,
+                  -0.38564130761218507,
+                  0.867107359528134
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.18707806637626082,
+                  "forward_m": 0.2539981215008318,
+                  "up_m": -0.7028265486047902,
+                  "distance_m": 0.7703754967992904
+                }
+              },
+              {
+                "frame": 1332,
+                "time_s": 44.392896,
+                "gazed_object_id": "5188521177876543",
+                "gazed_object_name": "SandwichBLT_A",
+                "gaze_depth_m": 0.858781,
+                "gaze_hit_distance_m": 0.8163510716124972,
+                "gaze_hit_exit_distance_m": 0.8725914426942901,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9183652546221546,
+                  1.5043346007972447,
+                  2.699681919522578
+                ],
+                "gaze_direction_world_unit": [
+                  -0.014124064345592269,
+                  -0.8465296046702699,
+                  0.5321542438270677
+                ],
+                "wearer_world_m": [
+                  -1.8540247854215568,
+                  1.5064055077273568,
+                  2.731683123695761
+                ],
+                "right_world": [
+                  0.9418451031796011,
+                  0.0440996144540477,
+                  0.33314114969725855
+                ],
+                "forward_world": [
+                  -0.29154248005799105,
+                  -0.3857952925247253,
+                  0.8753085025220522
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.19856662959287524,
+                  "forward_m": 0.24826632222356337,
+                  "up_m": -0.7030399194096278,
+                  "distance_m": 0.7715763095260146
+                }
+              },
+              {
+                "frame": 1333,
+                "time_s": 44.426224,
+                "gazed_object_id": "5188521177876543",
+                "gazed_object_name": "SandwichBLT_A",
+                "gaze_depth_m": 0.839258,
+                "gaze_hit_distance_m": 0.8081412548494298,
+                "gaze_hit_exit_distance_m": 0.8759200681820732,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9152772292689237,
+                  1.503697731850218,
+                  2.7025107320419433
+                ],
+                "gaze_direction_world_unit": [
+                  -0.025525921033349552,
+                  -0.8441894887816194,
+                  0.5354367697366584
+                ],
+                "wearer_world_m": [
+                  -1.85026228298641,
+                  1.505751270916518,
+                  2.7331195777925594
+                ],
+                "right_world": [
+                  0.9488345116419216,
+                  0.043533696860049376,
+                  0.31275851188246484
+                ],
+                "forward_world": [
+                  -0.2732241134118266,
+                  -0.38336531296065024,
+                  0.8822582505530361
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.20861947970941688,
+                  "forward_m": 0.2426884449443597,
+                  "up_m": -0.702929875899482,
+                  "distance_m": 0.7723536619035353
+                }
+              },
+              {
+                "frame": 1334,
+                "time_s": 44.459552,
+                "gazed_object_id": "5188521177876543",
+                "gazed_object_name": "SandwichBLT_A",
+                "gaze_depth_m": 0.83925,
+                "gaze_hit_distance_m": 0.8065336738512758,
+                "gaze_hit_exit_distance_m": 0.8741634443555136,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.911911561042888,
+                  1.5028582210278771,
+                  2.7056657182540618
+                ],
+                "gaze_direction_world_unit": [
+                  -0.03312455061517022,
+                  -0.845152395858725,
+                  0.5334980711500275
+                ],
+                "wearer_world_m": [
+                  -1.846325428998484,
+                  1.5049217353209552,
+                  2.735030031513804
+                ],
+                "right_world": [
+                  0.9546342598238341,
+                  0.04343851409020685,
+                  0.2945955285883274
+                ],
+                "forward_world": [
+                  -0.256663734349788,
+                  -0.3815897485652002,
+                  0.8879825399519794
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.21827597317587114,
+                  "forward_m": 0.23696519120077636,
+                  "up_m": -0.7026668602608763,
+                  "distance_m": 0.7730055748929447
+                }
+              },
+              {
+                "frame": 1335,
+                "time_s": 44.49288,
+                "gazed_object_id": "5188521177876543",
+                "gazed_object_name": "SandwichBLT_A",
+                "gaze_depth_m": 0.843054,
+                "gaze_hit_distance_m": 0.8148908046864409,
+                "gaze_hit_exit_distance_m": 0.8833020656746812,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.9081277619973849,
+                  1.5019301373190885,
+                  2.7088785498271326
+                ],
+                "gaze_direction_world_unit": [
+                  -0.04474822039979803,
+                  -0.8385218661223665,
+                  0.543027326021182
+                ],
+                "wearer_world_m": [
+                  -1.8419761853993117,
+                  1.503981179547556,
+                  2.7369467496334314
+                ],
+                "right_world": [
+                  0.9602351555290312,
+                  0.043507875646034394,
+                  0.2757816361596738
+                ],
+                "forward_world": [
+                  -0.23885335443232691,
+                  -0.38343495003408756,
+                  0.8921472491516083
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.22822870255727493,
+                  "forward_m": 0.23085492549347025,
+                  "up_m": -0.7022973276903117,
+                  "distance_m": 0.7736949487857122
+                }
+              },
+              {
+                "frame": 1336,
+                "time_s": 44.526208,
+                "gazed_object_id": "5188521177876543",
+                "gazed_object_name": "SandwichBLT_A",
+                "gaze_depth_m": 0.816937,
+                "gaze_hit_distance_m": 0.823309716562376,
+                "gaze_hit_exit_distance_m": 0.8925517396290351,
+                "gaze_depth_obb_residual_m": 0.006372716562375924,
+                "gaze_origin_world_m": [
+                  -1.9039178832225008,
+                  1.5009785316394701,
+                  2.7121466843380717
+                ],
+                "gaze_direction_world_unit": [
+                  -0.05230600579013728,
+                  -0.8318497780692761,
+                  0.5525305679185342
+                ],
+                "wearer_world_m": [
+                  -1.83721907389754,
+                  1.502977572226367,
+                  2.738892419930208
+                ],
+                "right_world": [
+                  0.9655252589915633,
+                  0.04334579339346978,
+                  0.25667511847541047
+                ],
+                "forward_world": [
+                  -0.22052358621614598,
+                  -0.38771756568488513,
+                  0.8950108586948857
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.23825129425065153,
+                  "forward_m": 0.22449359572112543,
+                  "up_m": -0.7016797568603445,
+                  "distance_m": 0.7742838852252465
+                }
+              },
+              {
+                "frame": 1337,
+                "time_s": 44.559536,
+                "gazed_object_id": "6403392549732697",
+                "gazed_object_name": "BambooPlate",
+                "gaze_depth_m": 0.846277,
+                "gaze_hit_distance_m": 0.8414181014129712,
+                "gaze_hit_exit_distance_m": 0.9008933219850536,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.8992255929066868,
+                  1.5000325235655445,
+                  2.7154552369671014
+                ],
+                "gaze_direction_world_unit": [
+                  0.029712987971965643,
+                  -0.8399262773528817,
+                  0.5418865074514291
+                ],
+                "wearer_world_m": [
+                  -1.831997739346015,
+                  1.50194437252678,
+                  2.7408485872811954
+                ],
+                "right_world": [
+                  0.9705150660635995,
+                  0.04281232548102204,
+                  0.23720794955160068
+                ],
+                "forward_world": [
+                  -0.20193818995446455,
+                  -0.39291669622734127,
+                  0.8971273250011427
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.2483943977300883,
+                  "forward_m": 0.21782408966922112,
+                  "up_m": -0.7008211863336327,
+                  "distance_m": 0.7747886460693642
+                }
+              },
+              {
+                "frame": 1338,
+                "time_s": 44.592864,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.892083,
+                "gaze_hit_distance_m": 0.9002144753846183,
+                "gaze_hit_exit_distance_m": 1.5716174915001564,
+                "gaze_depth_obb_residual_m": 0.008131475384618336,
+                "gaze_origin_world_m": [
+                  -1.893914709605403,
+                  1.499086331318378,
+                  2.718721938193456
+                ],
+                "gaze_direction_world_unit": [
+                  0.13627644262622574,
+                  -0.8373187757867162,
+                  0.5294582126099999
+                ],
+                "wearer_world_m": [
+                  -1.8261500579192609,
+                  1.500907468971137,
+                  2.7426530296960507
+                ],
+                "right_world": [
+                  0.9754336374226891,
+                  0.04220117771072582,
+                  0.2162135046294973
+                ],
+                "forward_world": [
+                  -0.18209621003316406,
+                  -0.39789468127098815,
+                  0.8991778427584927
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.2591637233394512,
+                  "forward_m": 0.21042649494948745,
+                  "up_m": -0.699946199643239,
+                  "distance_m": 0.7754803850948826
+                }
+              },
+              {
+                "frame": 1339,
+                "time_s": 44.626192,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.888571,
+                "gaze_hit_distance_m": 0.8958438145059721,
+                "gaze_hit_exit_distance_m": 1.556034918253208,
+                "gaze_depth_obb_residual_m": 0.007272814505972058,
+                "gaze_origin_world_m": [
+                  -1.887938000049777,
+                  1.4981936271492888,
+                  2.7217885919866527
+                ],
+                "gaze_direction_world_unit": [
+                  0.0960826313920452,
+                  -0.8404675559221909,
+                  0.5332751779212672
+                ],
+                "wearer_world_m": [
+                  -1.8196276543124899,
+                  1.4999320935769842,
+                  2.744120992232306
+                ],
+                "right_world": [
+                  0.9802463646598674,
+                  0.04172676165330341,
+                  0.19332858540071945
+                ],
+                "forward_world": [
+                  -0.1605406284631124,
+                  -0.40304364491565,
+                  0.9009897485020438
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.2706348075834481,
+                  "forward_m": 0.20235813824347607,
+                  "up_m": -0.6992077022135568,
+                  "distance_m": 0.7765844616162866
+                }
+              },
+              {
+                "frame": 1340,
+                "time_s": 44.65952,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.88658,
+                "gaze_hit_distance_m": 0.8936545706632997,
+                "gaze_hit_exit_distance_m": 1.5582281941034428,
+                "gaze_depth_obb_residual_m": 0.00707457066329964,
+                "gaze_origin_world_m": [
+                  -1.8813068307772614,
+                  1.4974782269600673,
+                  2.7244619244413486
+                ],
+                "gaze_direction_world_unit": [
+                  0.09937178084769066,
+                  -0.8417073283654909,
+                  0.5307108652995396
+                ],
+                "wearer_world_m": [
+                  -1.812451662645959,
+                  1.4991444590482967,
+                  2.745059283331222
+                ],
+                "right_world": [
+                  0.9848079716358589,
+                  0.0415851339621956,
+                  0.1685939964405977
+                ],
+                "forward_world": [
+                  -0.13710768732285727,
+                  -0.40957837452605517,
+                  0.9019129875977904
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.2826694215497049,
+                  "forward_m": 0.19396736728649516,
+                  "up_m": -0.698690018342746,
+                  "distance_m": 0.7782628625233802
+                }
+              },
+              {
+                "frame": 1341,
+                "time_s": 44.692848,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.886642,
+                "gaze_hit_distance_m": 0.8934731449955389,
+                "gaze_hit_exit_distance_m": 1.552455645658992,
+                "gaze_depth_obb_residual_m": 0.006831144995538829,
+                "gaze_origin_world_m": [
+                  -1.8739099393163345,
+                  1.4972175352697326,
+                  2.7267060002158936
+                ],
+                "gaze_direction_world_unit": [
+                  0.09788523200863597,
+                  -0.8415730583802069,
+                  0.5311998388207587
+                ],
+                "wearer_world_m": [
+                  -1.8044819424421739,
+                  1.498854567734118,
+                  2.74528381159808
+                ],
+                "right_world": [
+                  0.9892722364022211,
+                  0.04206976048800837,
+                  0.13989488030742925
+                ],
+                "forward_world": [
+                  -0.109932545167438,
+                  -0.4162647999487683,
+                  0.9025732390430268
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.2958177709614066,
+                  "forward_m": 0.18450696042743217,
+                  "up_m": -0.6984503871849203,
+                  "distance_m": 0.7806304602188606
+                }
+              },
+              {
+                "frame": 1342,
+                "time_s": 44.726176,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.882478,
+                "gaze_hit_distance_m": 0.888609336422978,
+                "gaze_hit_exit_distance_m": 1.5659662309414382,
+                "gaze_depth_obb_residual_m": 0.006131336422978029,
+                "gaze_origin_world_m": [
+                  -1.8656489860917909,
+                  1.4976507219018236,
+                  2.7285439612144606
+                ],
+                "gaze_direction_world_unit": [
+                  0.08318845658869783,
+                  -0.8466802039725134,
+                  0.5255590479588886
+                ],
+                "wearer_world_m": [
+                  -1.7956149621701962,
+                  1.499344367246894,
+                  2.744681766511174
+                ],
+                "right_world": [
+                  0.9934880238683671,
+                  0.04350823252481373,
+                  0.10530232729001837
+                ],
+                "forward_world": [
+                  -0.07734813702658816,
+                  -0.421067794911557,
+                  0.9037251671757487
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3105037008536473,
+                  "forward_m": 0.17301528976900457,
+                  "up_m": -0.6985598374780377,
+                  "distance_m": 0.7837937772622378
+                }
+              },
+              {
+                "frame": 1343,
+                "time_s": 44.759504,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.878951,
+                "gaze_hit_distance_m": 0.884322528879326,
+                "gaze_hit_exit_distance_m": 1.581960507888119,
+                "gaze_depth_obb_residual_m": 0.005371528879326015,
+                "gaze_origin_world_m": [
+                  -1.8567078863680901,
+                  1.4985978403970048,
+                  2.7299331630155623
+                ],
+                "gaze_direction_world_unit": [
+                  0.06657421346248649,
+                  -0.8518708267864419,
+                  0.5195035789790434
+                ],
+                "wearer_world_m": [
+                  -1.7861183194734591,
+                  1.500477163891176,
+                  2.743410658696611
+                ],
+                "right_world": [
+                  0.9966267549381841,
+                  0.046395203658248924,
+                  0.06769487734603863
+                ],
+                "forward_world": [
+                  -0.041778628862284506,
+                  -0.42315675933384,
+                  0.9050927594453897
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3258472537796449,
+                  "forward_m": 0.16027863643857132,
+                  "up_m": -0.6992034256139438,
+                  "distance_m": 0.7878775948614213
+                }
+              },
+              {
+                "frame": 1344,
+                "time_s": 44.792832,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.891021,
+                "gaze_hit_distance_m": 0.8953437833174956,
+                "gaze_hit_exit_distance_m": 1.528061855793406,
+                "gaze_depth_obb_residual_m": 0.004322783317495693,
+                "gaze_origin_world_m": [
+                  -1.84730098711749,
+                  1.499910241991874,
+                  2.7307805513473604
+                ],
+                "gaze_direction_world_unit": [
+                  0.010917922266965696,
+                  -0.8429207686387435,
+                  0.5379269251216585
+                ],
+                "wearer_world_m": [
+                  -1.776255557477099,
+                  1.5021133878196349,
+                  2.7415394907316073
+                ],
+                "right_world": [
+                  0.9982777470815869,
+                  0.05077990709494776,
+                  0.029375852619797693
+                ],
+                "forward_world": [
+                  -0.005214595702776825,
+                  -0.4219511165093426,
+                  0.9066035866177542
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3411761100452394,
+                  "forward_m": 0.14708503091235361,
+                  "up_m": -0.7004975665854845,
+                  "distance_m": 0.792926216729069
+                }
+              },
+              {
+                "frame": 1345,
+                "time_s": 44.82616,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.898275,
+                "gaze_hit_distance_m": 0.9040684639795922,
+                "gaze_hit_exit_distance_m": 1.5214764562295326,
+                "gaze_depth_obb_residual_m": 0.005793463979592128,
+                "gaze_origin_world_m": [
+                  -1.8375533161315079,
+                  1.5017408857946046,
+                  2.730942367756565
+                ],
+                "gaze_direction_world_unit": [
+                  0.09795653643104618,
+                  -0.8366310651335107,
+                  0.5389368959572176
+                ],
+                "wearer_world_m": [
+                  -1.76614151647365,
+                  1.504342423326656,
+                  2.7387940282876437
+                ],
+                "right_world": [
+                  0.998382360989976,
+                  0.05568517103432841,
+                  -0.01148141937912045
+                ],
+                "forward_world": [
+                  0.0336941467460411,
+                  -0.41681279485017714,
+                  0.9083676560315435
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-front",
+                  "side": "left",
+                  "depth": "front",
+                  "right_m": -0.3566505410327969,
+                  "forward_m": 0.13274348182565562,
+                  "up_m": -0.7023356539339973,
+                  "distance_m": 0.7988089954257405
+                }
+              },
+              {
+                "frame": 1346,
+                "time_s": 44.859488,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 0.960978,
+                "gaze_hit_distance_m": 0.9724528946620506,
+                "gaze_hit_exit_distance_m": 1.5063512394225362,
+                "gaze_depth_obb_residual_m": 0.01147489466205065,
+                "gaze_origin_world_m": [
+                  -1.8271793050251257,
+                  1.5040801993504618,
+                  2.730454345046871
+                ],
+                "gaze_direction_world_unit": [
+                  0.31375641571533686,
+                  -0.7797646144612814,
+                  0.5417786057344028
+                ],
+                "wearer_world_m": [
+                  -1.755506820949878,
+                  1.5072385358250582,
+                  2.73505234876551
+                ],
+                "right_world": [
+                  0.9964267526375999,
+                  0.06230976074020986,
+                  -0.057019473380465646
+                ],
+                "forward_world": [
+                  0.07756459558862017,
+                  -0.4078779965900805,
+                  0.9097358261653962
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.37274129020599983,
+                  "forward_m": 0.11617517120431492,
+                  "up_m": -0.704561141847183,
+                  "distance_m": 0.8055055198009456
+                }
+              },
+              {
+                "frame": 1347,
+                "time_s": 44.892816,
+                "gazed_object_id": "8473544005996466",
+                "gazed_object_name": "BlackKitchenChair_B",
+                "gaze_depth_m": 1.04292,
+                "gaze_hit_distance_m": 0.9820588100060113,
+                "gaze_hit_exit_distance_m": 1.8657453242434472,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.8154347840756881,
+                  1.506654006829154,
+                  2.7295618181634667
+                ],
+                "gaze_direction_world_unit": [
+                  0.4718253062759455,
+                  -0.7172411174290241,
+                  0.5127826633445938
+                ],
+                "wearer_world_m": [
+                  -1.743669967910843,
+                  1.5107912225497542,
+                  2.7304314778136685
+                ],
+                "right_world": [
+                  0.9912580915953096,
+                  0.07450431235541458,
+                  -0.10888757177599262
+                ],
+                "forward_world": [
+                  0.12962700399414923,
+                  -0.39619686305166246,
+                  0.9089691334382719
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.39008906492724227,
+                  "forward_m": 0.09608743281562299,
+                  "up_m": -0.7069918964758105,
+                  "distance_m": 0.8131665358359076
+                }
+              },
+              {
+                "frame": 1348,
+                "time_s": 44.926144,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.15555,
+                "gaze_hit_distance_m": 1.1005729025912763,
+                "gaze_hit_exit_distance_m": 1.1830556453852117,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.8024392997468763,
+                  1.5092365763141173,
+                  2.728259260245276
+                ],
+                "gaze_direction_world_unit": [
+                  0.6195955311437146,
+                  -0.6457470387053943,
+                  0.44621983347891625
+                ],
+                "wearer_world_m": [
+                  -1.7308247517222333,
+                  1.514596069578186,
+                  2.724989085299114
+                ],
+                "right_world": [
+                  0.9819942906102077,
+                  0.09011486732518181,
+                  -0.16603169545577756
+                ],
+                "forward_world": [
+                  0.18808648193369687,
+                  -0.3843860907741727,
+                  0.903809055350274
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.40804303378600115,
+                  "forward_m": 0.07233340259901114,
+                  "up_m": -0.7094686776827804,
+                  "distance_m": 0.821630721897488
+                }
+              },
+              {
+                "frame": 1349,
+                "time_s": 44.959472,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.17294,
+                "gaze_hit_distance_m": 1.1215351842793262,
+                "gaze_hit_exit_distance_m": 1.2053086380727056,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7890067569355577,
+                  1.5116486577496386,
+                  2.726425099032171
+                ],
+                "gaze_direction_world_unit": [
+                  0.6581268074449113,
+                  -0.6352902072590352,
+                  0.4040735797885586
+                ],
+                "wearer_world_m": [
+                  -1.71780095408618,
+                  1.518005499998856,
+                  2.7188497509745484
+                ],
+                "right_world": [
+                  0.96890910674917,
+                  0.10305492210083611,
+                  -0.22493293642620782
+                ],
+                "forward_world": [
+                  0.24730619513753177,
+                  -0.37619440884291566,
+                  0.8929263198057978
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.4251586883823181,
+                  "forward_m": 0.04618404374642264,
+                  "up_m": -0.7118384370136877,
+                  "distance_m": 0.8304256960221271
+                }
+              },
+              {
+                "frame": 1350,
+                "time_s": 44.9928,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.15067,
+                "gaze_hit_distance_m": 1.0989281101470831,
+                "gaze_hit_exit_distance_m": 1.1807767620392378,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7758180838120707,
+                  1.5137106830433125,
+                  2.7244375941879713
+                ],
+                "gaze_direction_world_unit": [
+                  0.6394994104074818,
+                  -0.6504881185783138,
+                  0.40976299451869624
+                ],
+                "wearer_world_m": [
+                  -1.705227680297156,
+                  1.5207738783039182,
+                  2.7128114209004246
+                ],
+                "right_world": [
+                  0.9534519820067365,
+                  0.1121404353830949,
+                  -0.27991756064869605
+                ],
+                "forward_world": [
+                  0.30150430761159386,
+                  -0.36975625708714044,
+                  0.8788489419897836
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.44030263834238625,
+                  "forward_m": 0.019884750352695962,
+                  "up_m": -0.7138865196471069,
+                  "distance_m": 0.8389849698067984
+                }
+              },
+              {
+                "frame": 1351,
+                "time_s": 45.026128,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.13884,
+                "gaze_hit_distance_m": 1.0866149388966901,
+                "gaze_hit_exit_distance_m": 1.1673836899371093,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7633803353995006,
+                  1.5153114763584714,
+                  2.722760501077457
+                ],
+                "gaze_direction_world_unit": [
+                  0.6221164163194087,
+                  -0.6594700801649946,
+                  0.42198385977791997
+                ],
+                "wearer_world_m": [
+                  -1.6934833952601918,
+                  1.522856311078369,
+                  2.7077420148284603
+                ],
+                "right_world": [
+                  0.9380967891450229,
+                  0.11789878403850373,
+                  -0.32569048330898576
+                ],
+                "forward_world": [
+                  0.3460097440549086,
+                  -0.36204088291944314,
+                  0.8655655123177948
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.4530446033456072,
+                  "forward_m": -0.003981581203120421,
+                  "up_m": -0.7154577268501741,
+                  "distance_m": 0.8468441559809419
+                }
+              },
+              {
+                "frame": 1352,
+                "time_s": 45.059456,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.13163,
+                "gaze_hit_distance_m": 1.0789945720568814,
+                "gaze_hit_exit_distance_m": 1.1590774146209974,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.7518670406890648,
+                  1.5166044229641176,
+                  2.721358790591946
+                ],
+                "gaze_direction_world_unit": [
+                  0.6127484710255713,
+                  -0.6653664390574116,
+                  0.42641155358630245
+                ],
+                "wearer_world_m": [
+                  -1.68261198165067,
+                  1.5243930788025468,
+                  2.703719761740591
+                ],
+                "right_world": [
+                  0.9247907560453618,
+                  0.12064467527737122,
+                  -0.36084195967246674
+                ],
+                "forward_world": [
+                  0.3796012866277725,
+                  -0.35684224050402735,
+                  0.8535610573254884
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.46381891327252656,
+                  "forward_m": -0.023990686954746876,
+                  "up_m": -0.7167363761948204,
+                  "distance_m": 0.8540577090166398
+                }
+              },
+              {
+                "frame": 1353,
+                "time_s": 45.092784,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.13386,
+                "gaze_hit_distance_m": 1.0808430266659257,
+                "gaze_hit_exit_distance_m": 1.1609575872250637,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.741100197235878,
+                  1.5177289110930254,
+                  2.720189802713242
+                ],
+                "gaze_direction_world_unit": [
+                  0.608091652807766,
+                  -0.6651531917515451,
+                  0.4333540968864276
+                ],
+                "wearer_world_m": [
+                  -1.6723780649068503,
+                  1.5255493086202199,
+                  2.7005895064994534
+                ],
+                "right_world": [
+                  0.9141046488748664,
+                  0.12107601966152143,
+                  -0.38697970020180694
+                ],
+                "forward_world": [
+                  0.4038725121077774,
+                  -0.35672499291471294,
+                  0.8423979305493046
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.473337066535854,
+                  "forward_m": -0.040338667614574886,
+                  "up_m": -0.7178967496952,
+                  "distance_m": 0.8608431505707758
+                }
+              },
+              {
+                "frame": 1354,
+                "time_s": 45.126112,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.04716,
+                "gaze_hit_distance_m": 1.0652086873224607,
+                "gaze_hit_exit_distance_m": 1.1440755664585713,
+                "gaze_depth_obb_residual_m": 0.018048687322460566,
+                "gaze_origin_world_m": [
+                  -1.7302713164052146,
+                  1.5186466878943379,
+                  2.7194651737399607
+                ],
+                "gaze_direction_world_unit": [
+                  0.5922199855313391,
+                  -0.675951170273437,
+                  0.43859492033450587
+                ],
+                "wearer_world_m": [
+                  -1.662063661057252,
+                  1.5263780634627708,
+                  2.6981109403247014
+                ],
+                "right_world": [
+                  0.9040448028705501,
+                  0.11995839611874623,
+                  -0.4102596465695433
+                ],
+                "forward_world": [
+                  0.424844013078159,
+                  -0.35775215350632794,
+                  0.8315773933995739
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.4823132458804371,
+                  "forward_m": -0.056212226465271714,
+                  "up_m": -0.7189006873444888,
+                  "distance_m": 0.8675275671817492
+                }
+              },
+              {
+                "frame": 1355,
+                "time_s": 45.15944,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.09648,
+                "gaze_hit_distance_m": 1.1173326147511364,
+                "gaze_hit_exit_distance_m": 1.4471607972114342,
+                "gaze_depth_obb_residual_m": 0.020852614751136533,
+                "gaze_origin_world_m": [
+                  -1.7186853539426101,
+                  1.5193068337762665,
+                  2.7192714279999897
+                ],
+                "gaze_direction_world_unit": [
+                  0.6678031445895718,
+                  -0.6914727633109341,
+                  0.27550749114211076
+                ],
+                "wearer_world_m": [
+                  -1.651081197962583,
+                  1.526925154925429,
+                  2.6960399627406395
+                ],
+                "right_world": [
+                  0.8925641623882501,
+                  0.11837651251738043,
+                  -0.4351048348437242
+                ],
+                "forward_world": [
+                  0.4470904904566163,
+                  -0.35782346706143126,
+                  0.819800256015695
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.49106850874687125,
+                  "forward_m": -0.0742851145694372,
+                  "up_m": -0.7196609924313999,
+                  "distance_m": 0.8744017969771207
+                }
+              },
+              {
+                "frame": 1356,
+                "time_s": 45.192768,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.08724,
+                "gaze_hit_distance_m": 1.1074934256553726,
+                "gaze_hit_exit_distance_m": 1.4261411931074606,
+                "gaze_depth_obb_residual_m": 0.02025342565537258,
+                "gaze_origin_world_m": [
+                  -1.7059510142727243,
+                  1.5196786214775047,
+                  2.719488851017806
+                ],
+                "gaze_direction_world_unit": [
+                  0.668420389868507,
+                  -0.6979485530192671,
+                  0.2570641938239243
+                ],
+                "wearer_world_m": [
+                  -1.639104711608651,
+                  1.527268557136182,
+                  2.694150611184695
+                ],
+                "right_world": [
+                  0.8785408791870284,
+                  0.11804495745602414,
+                  -0.4628512845574579
+                ],
+                "forward_world": [
+                  0.4723908871906789,
+                  -0.358338785218542,
+                  0.8052578249897998
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left",
+                  "side": "left",
+                  "depth": "level",
+                  "right_m": -0.49966467805352655,
+                  "forward_m": -0.09570081212563691,
+                  "up_m": -0.7200752352368062,
+                  "distance_m": 0.8816642106477854
+                }
+              },
+              {
+                "frame": 1357,
+                "time_s": 45.226096,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.08267,
+                "gaze_hit_distance_m": 1.102374149029421,
+                "gaze_hit_exit_distance_m": 1.4149652831010477,
+                "gaze_depth_obb_residual_m": 0.01970414902942097,
+                "gaze_origin_world_m": [
+                  -1.6921796467657761,
+                  1.5197736710451466,
+                  2.7201397073060885
+                ],
+                "gaze_direction_world_unit": [
+                  0.6639748295013059,
+                  -0.7012662581862655,
+                  0.2595439479512964
+                ],
+                "wearer_world_m": [
+                  -1.626242817722733,
+                  1.5273976015555493,
+                  2.6925304342203833
+                ],
+                "right_world": [
+                  0.8621292077504428,
+                  0.1186586453210591,
+                  -0.49259857392623996
+                ],
+                "forward_world": [
+                  0.49975968440484897,
+                  -0.3593636385770928,
+                  0.7880977306858573
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.50774004403845,
+                  "forward_m": -0.12015310921811229,
+                  "up_m": -0.7201698332973706,
+                  "distance_m": 0.8893150795789473
+                }
+              },
+              {
+                "frame": 1358,
+                "time_s": 45.259424,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.08073,
+                "gaze_hit_distance_m": 1.1000170355522103,
+                "gaze_hit_exit_distance_m": 1.397484373833841,
+                "gaze_depth_obb_residual_m": 0.01928703555221034,
+                "gaze_origin_world_m": [
+                  -1.6778100631624713,
+                  1.5196418741309068,
+                  2.721363302106394
+                ],
+                "gaze_direction_world_unit": [
+                  0.6619724107135709,
+                  -0.702630869447634,
+                  0.26096434383517864
+                ],
+                "wearer_world_m": [
+                  -1.612862195154683,
+                  1.52723863157489,
+                  2.691494833471725
+                ],
+                "right_world": [
+                  0.8446615966418689,
+                  0.1183613084131428,
+                  -0.5220511352627615
+                ],
+                "forward_world": [
+                  0.5264791455490907,
+                  -0.3600087106158142,
+                  0.7702035040056869
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.514890320041177,
+                  "forward_m": -0.1461868882649468,
+                  "up_m": -0.7200660201445432,
+                  "distance_m": 0.8972055067483121
+                }
+              },
+              {
+                "frame": 1359,
+                "time_s": 45.292752,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.06276,
+                "gaze_hit_distance_m": 1.0806872759219093,
+                "gaze_hit_exit_distance_m": 1.401457152227444,
+                "gaze_depth_obb_residual_m": 0.017927275921909347,
+                "gaze_origin_world_m": [
+                  -1.6629581695303686,
+                  1.5193733157548879,
+                  2.7232810793369513
+                ],
+                "gaze_direction_world_unit": [
+                  0.6495229200711937,
+                  -0.7149711337452811,
+                  0.2587204170783136
+                ],
+                "wearer_world_m": [
+                  -1.599001253147575,
+                  1.5268313206423458,
+                  2.691313084233989
+                ],
+                "right_world": [
+                  0.8274685802831703,
+                  0.11648137487282317,
+                  -0.5492975859694743
+                ],
+                "forward_world": [
+                  0.5505610599385148,
+                  -0.3605614420379,
+                  0.7529129868682893
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5212080162713382,
+                  "forward_m": -0.17261425867578356,
+                  "up_m": -0.719833364657377,
+                  "distance_m": 0.9053251081228522
+                }
+              },
+              {
+                "frame": 1360,
+                "time_s": 45.32608,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.05982,
+                "gaze_hit_distance_m": 1.0771313106780245,
+                "gaze_hit_exit_distance_m": 1.3917436538441195,
+                "gaze_depth_obb_residual_m": 0.017311310678024494,
+                "gaze_origin_world_m": [
+                  -1.6475759046024454,
+                  1.5190299776613898,
+                  2.7259416570290047
+                ],
+                "gaze_direction_world_unit": [
+                  0.6431314628376068,
+                  -0.7169977042492773,
+                  0.26887955223412907
+                ],
+                "wearer_world_m": [
+                  -1.5845342689298034,
+                  1.5262403456607658,
+                  2.6921507637879043
+                ],
+                "right_world": [
+                  0.8118139817478179,
+                  0.11317049263002599,
+                  -0.572844218471856
+                ],
+                "forward_world": [
+                  0.5706251827573028,
+                  -0.3618809242525505,
+                  0.7371764357772936
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5271298573112261,
+                  "forward_m": -0.19842975954085507,
+                  "up_m": -0.7194908335599975,
+                  "distance_m": 0.9137326280248809
+                }
+              },
+              {
+                "frame": 1361,
+                "time_s": 45.359408,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.04796,
+                "gaze_hit_distance_m": 1.0642957894027925,
+                "gaze_hit_exit_distance_m": 1.3887738780437915,
+                "gaze_depth_obb_residual_m": 0.016335789402792456,
+                "gaze_origin_world_m": [
+                  -1.6315567572185075,
+                  1.518488791280966,
+                  2.729139317599138
+                ],
+                "gaze_direction_world_unit": [
+                  0.6330343448984456,
+                  -0.725140623878013,
+                  0.27099556044481987
+                ],
+                "wearer_world_m": [
+                  -1.569300612373097,
+                  1.5254033095551138,
+                  2.693862929362475
+                ],
+                "right_world": [
+                  0.7985281743937258,
+                  0.10944088865130774,
+                  -0.5919252035440253
+                ],
+                "forward_world": [
+                  0.5861608118541513,
+                  -0.3651626691100315,
+                  0.7232369789598149
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5333165734586732,
+                  "forward_m": -0.22281998877939707,
+                  "up_m": -0.718953147482577,
+                  "distance_m": 0.9224797792908283
+                }
+              },
+              {
+                "frame": 1362,
+                "time_s": 45.392736,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.03538,
+                "gaze_hit_distance_m": 1.050777726200303,
+                "gaze_hit_exit_distance_m": 1.384690830494012,
+                "gaze_depth_obb_residual_m": 0.015397726200303108,
+                "gaze_origin_world_m": [
+                  -1.6148168215688552,
+                  1.5176932967979417,
+                  2.73269466641901
+                ],
+                "gaze_direction_world_unit": [
+                  0.6228537659483531,
+                  -0.7337165529054926,
+                  0.2715017610190317
+                ],
+                "wearer_world_m": [
+                  -1.553218316550477,
+                  1.524270008756601,
+                  2.696219568882284
+                ],
+                "right_world": [
+                  0.7875019734897526,
+                  0.10540180005211675,
+                  -0.6072323297515697
+                ],
+                "forward_world": [
+                  0.5977580584720126,
+                  -0.37055996605229813,
+                  0.7108942362201914
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5400862787657768,
+                  "forward_m": -0.24592288279646263,
+                  "up_m": -0.7181801265020277,
+                  "distance_m": 0.9316404601005988
+                }
+              },
+              {
+                "frame": 1363,
+                "time_s": 45.426064,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.02486,
+                "gaze_hit_distance_m": 1.0393323549115578,
+                "gaze_hit_exit_distance_m": 1.3829220189436353,
+                "gaze_depth_obb_residual_m": 0.014472354911557739,
+                "gaze_origin_world_m": [
+                  -1.5973504831790284,
+                  1.5168401918312788,
+                  2.7366377575291314
+                ],
+                "gaze_direction_world_unit": [
+                  0.6111530984331162,
+                  -0.7409757929851307,
+                  0.27829258791002365
+                ],
+                "wearer_world_m": [
+                  -1.536406075666419,
+                  1.52288795445054,
+                  2.6989911712132635
+                ],
+                "right_world": [
+                  0.7766296608570464,
+                  0.09866383975960918,
+                  -0.6221831053644574
+                ],
+                "forward_world": [
+                  0.6080029936021927,
+                  -0.37586667909799,
+                  0.6993258177091852
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5465879806954859,
+                  "forward_m": -0.2699164087931196,
+                  "up_m": -0.7172934338695262,
+                  "distance_m": 0.9413411489193912
+                }
+              },
+              {
+                "frame": 1364,
+                "time_s": 45.459392,
+                "gazed_object_id": "4666210076742595",
+                "gazed_object_name": "ExtendableTable",
+                "gaze_depth_m": 1.01236,
+                "gaze_hit_distance_m": 1.0258103443246525,
+                "gaze_hit_exit_distance_m": 1.3788935228234995,
+                "gaze_depth_obb_residual_m": 0.01345034432465253,
+                "gaze_origin_world_m": [
+                  -1.5792378900532005,
+                  1.515911472348302,
+                  2.7410637366943678
+                ],
+                "gaze_direction_world_unit": [
+                  0.5998580610127875,
+                  -0.7498403160871583,
+                  0.2791232828129698
+                ],
+                "wearer_world_m": [
+                  -1.519022190557115,
+                  1.521223973792471,
+                  2.7021547587637818
+                ],
+                "right_world": [
+                  0.7646340003710601,
+                  0.08887939381742122,
+                  -0.6383065868618292
+                ],
+                "forward_world": [
+                  0.6183919730502808,
+                  -0.38005597271579894,
+                  0.6878581432752165
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5520960636351968,
+                  "forward_m": -0.29590041092129277,
+                  "up_m": -0.7163468625522401,
+                  "distance_m": 0.9515881168621786
+                }
+              },
+              {
+                "frame": 1365,
+                "time_s": 45.49272,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.01585,
+                "gaze_hit_distance_m": 0.9605718369712324,
+                "gaze_hit_exit_distance_m": 1.0322773298313452,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.5606688488935514,
+                  1.5145777737279942,
+                  2.746109479324843
+                ],
+                "gaze_direction_world_unit": [
+                  0.554235479092487,
+                  -0.7449516263467773,
+                  0.3713086426659269
+                ],
+                "wearer_world_m": [
+                  -1.5012249077864501,
+                  1.519140985261109,
+                  2.7059391337057237
+                ],
+                "right_world": [
+                  0.7520501190736304,
+                  0.07884808631581344,
+                  -0.6543726749228398
+                ],
+                "forward_world": [
+                  0.6287101405252502,
+                  -0.3838399104980412,
+                  0.6763065002715675
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5566526803150087,
+                  "forward_m": -0.323063915412055,
+                  "up_m": -0.715261474957172,
+                  "distance_m": 0.9622013705566833
+                }
+              },
+              {
+                "frame": 1366,
+                "time_s": 45.526048,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.00158,
+                "gaze_hit_distance_m": 0.9614126955223204,
+                "gaze_hit_exit_distance_m": 1.0333849452539614,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.5418588919076346,
+                  1.5128254371502967,
+                  2.7519755552013927
+                ],
+                "gaze_direction_world_unit": [
+                  0.5451941480930104,
+                  -0.74224438471914,
+                  0.38966217963518285
+                ],
+                "wearer_world_m": [
+                  -1.483174596873545,
+                  1.516735392233606,
+                  2.7106363792468766
+                ],
+                "right_world": [
+                  0.739761423126527,
+                  0.07001097794617986,
+                  -0.6692170797438124
+                ],
+                "forward_world": [
+                  0.6385957962682798,
+                  -0.3864244015617868,
+                  0.665485980968868
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5603617897720125,
+                  "forward_m": -0.3506394939463122,
+                  "up_m": -0.7137977302610613,
+                  "distance_m": 0.9728620610740568
+                }
+              },
+              {
+                "frame": 1367,
+                "time_s": 45.559376,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 0.982443,
+                "gaze_hit_distance_m": 0.9476252458129711,
+                "gaze_hit_exit_distance_m": 1.0187839982148768,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.523059853421911,
+                  1.510859725768118,
+                  2.758870429673034
+                ],
+                "gaze_direction_world_unit": [
+                  0.5316276378131225,
+                  -0.7509479858798006,
+                  0.39172589551408266
+                ],
+                "wearer_world_m": [
+                  -1.465055162820812,
+                  1.5142253160764692,
+                  2.7165361602078937
+                ],
+                "right_world": [
+                  0.7288281120070222,
+                  0.06234451218950088,
+                  -0.681852436343915
+                ],
+                "forward_world": [
+                  0.6475580522647723,
+                  -0.3862829123823788,
+                  0.6568516427234093
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5634008521616722,
+                  "forward_m": -0.3778940344779675,
+                  "up_m": -0.7116593834110336,
+                  "distance_m": 0.9832006405141862
+                }
+              },
+              {
+                "frame": 1368,
+                "time_s": 45.592704,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 0.960972,
+                "gaze_hit_distance_m": 0.9363983315060633,
+                "gaze_hit_exit_distance_m": 1.0069733871367816,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.5046665594837838,
+                  1.5085341428516248,
+                  2.76672096808414
+                ],
+                "gaze_direction_world_unit": [
+                  0.5198933455177996,
+                  -0.7573728602066356,
+                  0.3950914576509206
+                ],
+                "wearer_world_m": [
+                  -1.447186398756902,
+                  1.5113483772561571,
+                  2.723637642904574
+                ],
+                "right_world": [
+                  0.7204395758299248,
+                  0.05450751280314148,
+                  -0.6913723661139594
+                ],
+                "forward_world": [
+                  0.6538817175593764,
+                  -0.3855799138614474,
+                  0.6509737548228798
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5663382649129703,
+                  "forward_m": -0.40351583105932637,
+                  "up_m": -0.7089898791108817,
+                  "distance_m": 0.993091488686614
+                }
+              },
+              {
+                "frame": 1369,
+                "time_s": 45.626032,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 0.950999,
+                "gaze_hit_distance_m": 0.9178418606082699,
+                "gaze_hit_exit_distance_m": 0.9873420003107923,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4871058723396682,
+                  1.5056488652100242,
+                  2.7753225081489674
+                ],
+                "gaze_direction_world_unit": [
+                  0.5069935882492522,
+                  -0.7696007812041296,
+                  0.38816509251108716
+                ],
+                "wearer_world_m": [
+                  -1.429948985854833,
+                  1.507774379896057,
+                  2.731772144020993
+                ],
+                "right_world": [
+                  0.7153375464450671,
+                  0.04504388858105632,
+                  -0.6973257794943836
+                ],
+                "forward_world": [
+                  0.6559878081346998,
+                  -0.3871349759069363,
+                  0.6479247687873708
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5697365771248005,
+                  "forward_m": -0.42637028135582594,
+                  "up_m": -0.7060764597122714,
+                  "distance_m": 1.0024646383275297
+                }
+              },
+              {
+                "frame": 1370,
+                "time_s": 45.65936,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 0.936175,
+                "gaze_hit_distance_m": 0.8996253089824001,
+                "gaze_hit_exit_distance_m": 0.9680879489952178,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4706631070870542,
+                  1.5024453089382357,
+                  2.7844478910252253
+                ],
+                "gaze_direction_world_unit": [
+                  0.4913549796358495,
+                  -0.7817199342209467,
+                  0.384036754007546
+                ],
+                "wearer_world_m": [
+                  -1.4136949575017241,
+                  1.5037627543521768,
+                  2.7406191793010057
+                ],
+                "right_world": [
+                  0.7124323764388079,
+                  0.0340245137239501,
+                  -0.7009154310382979
+                ],
+                "forward_world": [
+                  0.6553042372983533,
+                  -0.3895621925597848,
+                  0.6471612277530511
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5731130557110476,
+                  "forward_m": -0.44700448716452923,
+                  "up_m": -0.702959070749159,
+                  "distance_m": 1.011149366473717
+                }
+              },
+              {
+                "frame": 1371,
+                "time_s": 45.692688,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 0.919293,
+                "gaze_hit_distance_m": 0.8820357265494022,
+                "gaze_hit_exit_distance_m": 0.949478333737515,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4554972976410634,
+                  1.4992548518700837,
+                  2.7939218059466513
+                ],
+                "gaze_direction_world_unit": [
+                  0.47400384171964033,
+                  -0.79380244596573,
+                  0.3810485990183485
+                ],
+                "wearer_world_m": [
+                  -1.398645999792943,
+                  1.499679749492751,
+                  2.7499239526354438
+                ],
+                "right_world": [
+                  0.7106986330356959,
+                  0.021669005954102566,
+                  -0.7031627885363073
+                ],
+                "forward_world": [
+                  0.6533855810661641,
+                  -0.39081559033591684,
+                  0.6483443967562453
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5759615212419508,
+                  "forward_m": -0.46602990402187927,
+                  "up_m": -0.6997391151610619,
+                  "distance_m": 1.0190929175891519
+                }
+              },
+              {
+                "frame": 1372,
+                "time_s": 45.726016,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 0.876961,
+                "gaze_hit_distance_m": 0.8713518456055015,
+                "gaze_hit_exit_distance_m": 0.938274477954796,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4415612623276708,
+                  1.4963552719146944,
+                  2.803699124624773
+                ],
+                "gaze_direction_world_unit": [
+                  0.44794034181691367,
+                  -0.8002360061496274,
+                  0.3987126592354948
+                ],
+                "wearer_world_m": [
+                  -1.384743621962415,
+                  1.495795996127312,
+                  2.759659317008049
+                ],
+                "right_world": [
+                  0.710303580053274,
+                  0.007731603885113569,
+                  -0.7038530006079862
+                ],
+                "forward_world": [
+                  0.6503389312315111,
+                  -0.3897853007735281,
+                  0.6520174030081909
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5786103596940392,
+                  "forward_m": -0.48323913165232385,
+                  "up_m": -0.6967983525462049,
+                  "distance_m": 1.0265660966622963
+                }
+              },
+              {
+                "frame": 1373,
+                "time_s": 45.759344,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.00898,
+                "gaze_hit_distance_m": 1.0023598530157358,
+                "gaze_hit_exit_distance_m": 1.0796538058862737,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4288946220155019,
+                  1.4938910690843938,
+                  2.8136692678131188
+                ],
+                "gaze_direction_world_unit": [
+                  0.5052614976118399,
+                  -0.6908861044244736,
+                  0.5170949716872287
+                ],
+                "wearer_world_m": [
+                  -1.3720449145753173,
+                  1.492216258429136,
+                  2.769699193055001
+                ],
+                "right_world": [
+                  0.7109696987380616,
+                  -0.008370439265554058,
+                  -0.7031728259985681
+                ],
+                "forward_world": [
+                  0.6463210842864469,
+                  -0.3862545238756555,
+                  0.6580854798522624
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5810668985203947,
+                  "forward_m": -0.4986801407671351,
+                  "up_m": -0.6943471313739312,
+                  "distance_m": 1.033653018279755
+                }
+              },
+              {
+                "frame": 1374,
+                "time_s": 45.792672,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.09321,
+                "gaze_hit_distance_m": 1.0314739291001545,
+                "gaze_hit_exit_distance_m": 1.1112717173018412,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4176828273179558,
+                  1.4918271248015338,
+                  2.8236093084374243
+                ],
+                "gaze_direction_world_unit": [
+                  0.513394465734206,
+                  -0.6688194364307571,
+                  0.5376864179109732
+                ],
+                "wearer_world_m": [
+                  -1.3608004467462191,
+                  1.488838633311819,
+                  2.779751294345265
+                ],
+                "right_world": [
+                  0.7116811828426649,
+                  -0.027455775428736007,
+                  -0.7019658641153943
+                ],
+                "forward_world": [
+                  0.641751870396177,
+                  -0.38106841287636783,
+                  0.6655384298076966
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5827458295495438,
+                  "forward_m": -0.512831091668914,
+                  "up_m": -0.6923062653722493,
+                  "distance_m": 1.0401328739701419
+                }
+              },
+              {
+                "frame": 1375,
+                "time_s": 45.826,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.0932,
+                "gaze_hit_distance_m": 1.0371010664609837,
+                "gaze_hit_exit_distance_m": 1.1101198119117355,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.4080557918189507,
+                  1.4899074958500715,
+                  2.833254753071442
+                ],
+                "gaze_direction_world_unit": [
+                  0.5270178579982563,
+                  -0.6630349213054678,
+                  0.5316360319620762
+                ],
+                "wearer_world_m": [
+                  -1.351109905270116,
+                  1.485487857697855,
+                  2.7896004920563846
+                ],
+                "right_world": [
+                  0.7129268267960096,
+                  -0.04825511205883737,
+                  -0.6995761458159946
+                ],
+                "forward_world": [
+                  0.6361493680871508,
+                  -0.37523997596366265,
+                  0.6741727834324879
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5841764082109252,
+                  "forward_m": -0.5249465765021016,
+                  "up_m": -0.6903985326445559,
+                  "distance_m": 1.0456964750678135
+                }
+              },
+              {
+                "frame": 1376,
+                "time_s": 45.859328,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.08016,
+                "gaze_hit_distance_m": 1.0163526366067648,
+                "gaze_hit_exit_distance_m": 1.0954711800701136,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.400058758964717,
+                  1.4877704349242948,
+                  2.8423209759452353
+                ],
+                "gaze_direction_world_unit": [
+                  0.5197816474196136,
+                  -0.6746641917829389,
+                  0.5240756313087132
+                ],
+                "wearer_world_m": [
+                  -1.342924797468884,
+                  1.4819894066812733,
+                  2.799073411190141
+                ],
+                "right_world": [
+                  0.7161919012128813,
+                  -0.06799885791736018,
+                  -0.6945828359231275
+                ],
+                "forward_world": [
+                  0.6284797896207553,
+                  -0.3698951539194138,
+                  0.6842446412981137
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5866680996617667,
+                  "forward_m": -0.5335846071328876,
+                  "up_m": -0.68826369544476,
+                  "distance_m": 1.0500470973233458
+                }
+              },
+              {
+                "frame": 1377,
+                "time_s": 45.892656,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.04909,
+                "gaze_hit_distance_m": 0.9840845648742078,
+                "gaze_hit_exit_distance_m": 1.0609607959717213,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.3934652646667223,
+                  1.4855541029053527,
+                  2.8505940351204475
+                ],
+                "gaze_direction_world_unit": [
+                  0.5069996991693743,
+                  -0.6949084712391803,
+                  0.5099544309467159
+                ],
+                "wearer_world_m": [
+                  -1.3360704769683531,
+                  1.4785708026387938,
+                  2.807872453180564
+                ],
+                "right_world": [
+                  0.7206561695346678,
+                  -0.0852373347325808,
+                  -0.6880329077008647
+                ],
+                "forward_world": [
+                  0.6194248711282834,
+                  -0.36658635902838776,
+                  0.6942098172757422
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5898889850922995,
+                  "forward_m": -0.5395085029908163,
+                  "up_m": -0.6860335476058008,
+                  "distance_m": 1.0534137211813863
+                }
+              },
+              {
+                "frame": 1378,
+                "time_s": 45.925984,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 0.966362,
+                "gaze_hit_distance_m": 0.9716454723643053,
+                "gaze_hit_exit_distance_m": 1.0477838330609879,
+                "gaze_depth_obb_residual_m": 0.005283472364305264,
+                "gaze_origin_world_m": [
+                  -1.3879835511010485,
+                  1.483550620730519,
+                  2.857870475672036
+                ],
+                "gaze_direction_world_unit": [
+                  0.5059935448553892,
+                  -0.7017591337618452,
+                  0.5015023935600922
+                ],
+                "wearer_world_m": [
+                  -1.3303510310883322,
+                  1.475570315791319,
+                  2.8156464413898736
+                ],
+                "right_world": [
+                  0.7247841806176337,
+                  -0.09919558282812882,
+                  -0.6817977177094493
+                ],
+                "forward_world": [
+                  0.6104499830629108,
+                  -0.3663491480798059,
+                  0.7022386488080048
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5928828448703323,
+                  "forward_m": -0.544191665926259,
+                  "up_m": -0.6839944258754056,
+                  "distance_m": 1.0561737601520695
+                }
+              },
+              {
+                "frame": 1379,
+                "time_s": 45.959312,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 0.957809,
+                "gaze_hit_distance_m": 0.9631090044456123,
+                "gaze_hit_exit_distance_m": 1.0387831698860266,
+                "gaze_depth_obb_residual_m": 0.005300004445612294,
+                "gaze_origin_world_m": [
+                  -1.3835821210341244,
+                  1.4817324389483462,
+                  2.8638492638866273
+                ],
+                "gaze_direction_world_unit": [
+                  0.5055427844376889,
+                  -0.7061125134872335,
+                  0.49581408955346307
+                ],
+                "wearer_world_m": [
+                  -1.325740207316877,
+                  1.473031126116127,
+                  2.822056179847251
+                ],
+                "right_world": [
+                  0.7284190474370136,
+                  -0.1091653588520552,
+                  -0.6763790473969875
+                ],
+                "forward_world": [
+                  0.6028024472191683,
+                  -0.3670931035185882,
+                  0.7084291516980881
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5955829406337669,
+                  "forward_m": -0.5477209742541193,
+                  "up_m": -0.6821312897950742,
+                  "distance_m": 1.0583101631040581
+                }
+              },
+              {
+                "frame": 1380,
+                "time_s": 45.99264,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 0.954734,
+                "gaze_hit_distance_m": 0.9600057084606424,
+                "gaze_hit_exit_distance_m": 1.0356101496051104,
+                "gaze_depth_obb_residual_m": 0.005271708460642399,
+                "gaze_origin_world_m": [
+                  -1.3802510216364008,
+                  1.480177189458811,
+                  2.8682776829316055
+                ],
+                "gaze_direction_world_unit": [
+                  0.5057957531722165,
+                  -0.7068173298901568,
+                  0.49455021811733063
+                ],
+                "wearer_world_m": [
+                  -1.322222135256187,
+                  1.471039859312695,
+                  2.826838338773268
+                ],
+                "right_world": [
+                  0.7315988617803781,
+                  -0.11525308375147927,
+                  -0.6719224896723058
+                ],
+                "forward_world": [
+                  0.5971789157277827,
+                  -0.36708217559008716,
+                  0.7131816171034121
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.5980696647129873,
+                  "forward_m": -0.5499716896336021,
+                  "up_m": -0.6805381736297311,
+                  "distance_m": 1.05985300349418
+                }
+              },
+              {
+                "frame": 1381,
+                "time_s": 46.025968,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 0.952913,
+                "gaze_hit_distance_m": 0.9582513565566495,
+                "gaze_hit_exit_distance_m": 1.0338122114642276,
+                "gaze_depth_obb_residual_m": 0.005338356556649493,
+                "gaze_origin_world_m": [
+                  -1.3778741362681275,
+                  1.4793828839120944,
+                  2.8710699894163847
+                ],
+                "gaze_direction_world_unit": [
+                  0.5083521580851956,
+                  -0.7072556377414518,
+                  0.49129171197268945
+                ],
+                "wearer_world_m": [
+                  -1.319711126008401,
+                  1.4699438605475792,
+                  2.829887095194984
+                ],
+                "right_world": [
+                  0.7338858143904787,
+                  -0.11945171549624459,
+                  -0.6686874450005983
+                ],
+                "forward_world": [
+                  0.593106366438324,
+                  -0.36717262834715114,
+                  0.7165257141812659
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.600138386398361,
+                  "forward_m": -0.5512621347560063,
+                  "up_m": -0.6797272358296146,
+                  "distance_m": 1.061171587997505
+                }
+              },
+              {
+                "frame": 1382,
+                "time_s": 46.059296,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 0.953273,
+                "gaze_hit_distance_m": 0.9525847236486882,
+                "gaze_hit_exit_distance_m": 1.027679462881357,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.3763966254270505,
+                  1.479578206665312,
+                  2.872223908338394
+                ],
+                "gaze_direction_world_unit": [
+                  0.5064165014663036,
+                  -0.7116800930189949,
+                  0.486881681975307
+                ],
+                "wearer_world_m": [
+                  -1.318168936286055,
+                  1.469879572135345,
+                  2.8311930125822236
+                ],
+                "right_world": [
+                  0.7350300166618486,
+                  -0.12309118206771918,
+                  -0.6667679022742883
+                ],
+                "forward_world": [
+                  0.5905140187729834,
+                  -0.3670445609725597,
+                  0.7187290754470989
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.6016628686066566,
+                  "forward_m": -0.5517869970116889,
+                  "up_m": -0.6799230166305698,
+                  "distance_m": 1.0624323065848396
+                }
+              },
+              {
+                "frame": 1383,
+                "time_s": 46.092624,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 0.956551,
+                "gaze_hit_distance_m": 0.9489714102199949,
+                "gaze_hit_exit_distance_m": 1.023656326381143,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.3758501941846921,
+                  1.4805663318790248,
+                  2.871820883809089
+                ],
+                "gaze_direction_world_unit": [
+                  0.5037868324300877,
+                  -0.715546646646303,
+                  0.48393369787946083
+                ],
+                "wearer_world_m": [
+                  -1.3176147446043158,
+                  1.4706656015125952,
+                  2.830849312550682
+                ],
+                "right_world": [
+                  0.7351774220129805,
+                  -0.126245912116143,
+                  -0.6660151108167984
+                ],
+                "forward_world": [
+                  0.5900472161955883,
+                  -0.36448898741116653,
+                  0.7204110359481031
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.6027020042257145,
+                  "forward_m": -0.5514786672315345,
+                  "up_m": -0.6809028074483485,
+                  "distance_m": 1.0634881567277585
+                }
+              },
+              {
+                "frame": 1384,
+                "time_s": 46.125952,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 0.959959,
+                "gaze_hit_distance_m": 0.9460645640235523,
+                "gaze_hit_exit_distance_m": 1.0205011936957007,
+                "gaze_depth_obb_residual_m": 0.0,
+                "gaze_origin_world_m": [
+                  -1.3760496967774405,
+                  1.4823229725000757,
+                  2.869967084038289
+                ],
+                "gaze_direction_world_unit": [
+                  0.49971706291835444,
+                  -0.7196764474334099,
+                  0.482025588571685
+                ],
+                "wearer_world_m": [
+                  -1.3178442038615739,
+                  1.472296094754411,
+                  2.828983623739109
+                ],
+                "right_world": [
+                  0.7346187103449258,
+                  -0.12873673047244874,
+                  -0.6661547902990888
+                ],
+                "forward_world": [
+                  0.5916926005803652,
+                  -0.35890540976019286,
+                  0.7218634034658581
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.6035432814766251,
+                  "forward_m": -0.550284908605273,
+                  "up_m": -0.682649297665362,
+                  "distance_m": 1.0644660806513744
+                }
+              },
+              {
+                "frame": 1385,
+                "time_s": 46.15928,
+                "gazed_object_id": "4508384915897847",
+                "gazed_object_name": "WhiteFlatwareTray",
+                "gaze_depth_m": 1.04793,
+                "gaze_hit_distance_m": 0.9904531577609726,
+                "gaze_hit_exit_distance_m": 1.036246320133258,
+                "gaze_depth_obb_residual_m": 0.011683679866742125,
+                "gaze_origin_world_m": [
+                  -1.3766825308486013,
+                  1.4849454561141542,
+                  2.8667466153202232
+                ],
+                "gaze_direction_world_unit": [
+                  0.5307671022222947,
+                  -0.6896070189356356,
+                  0.4926747838414849
+                ],
+                "wearer_world_m": [
+                  -1.31853180624913,
+                  1.474895051763492,
+                  2.82569123440682
+                ],
+                "right_world": [
+                  0.7335713142506648,
+                  -0.1301055314006552,
+                  -0.6670424856090548
+                ],
+                "forward_world": [
+                  0.5951389653551675,
+                  -0.35093890000386196,
+                  0.7229464021489144
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.60448526319909,
+                  "forward_m": -0.5482935554051315,
+                  "up_m": -0.6852870895076112,
+                  "distance_m": 1.065667232943514
+                }
+              },
+              {
+                "frame": 1386,
+                "time_s": 46.192608,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.03816,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.377801100220299,
+                  1.488246750338142,
+                  2.861965006566531
+                ],
+                "gaze_direction_world_unit": [
+                  0.5428296283280357,
+                  -0.673118362940258,
+                  0.5022426346716032
+                ],
+                "wearer_world_m": [
+                  -1.3197880315540258,
+                  1.478392033034218,
+                  2.8206681530328535
+                ],
+                "right_world": [
+                  0.7310565560270323,
+                  -0.12876117321255925,
+                  -0.6700573648299232
+                ],
+                "forward_world": [
+                  0.6020801628467651,
+                  -0.34030044503888285,
+                  0.7222846285314058
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.6047106568034386,
+                  "forward_m": -0.5463835801664104,
+                  "up_m": -0.6886048523868918,
+                  "distance_m": 1.0669520316574141
+                }
+              },
+              {
+                "frame": 1387,
+                "time_s": 46.225936,
+                "gazed_object_id": null,
+                "gazed_object_name": null,
+                "gaze_depth_m": 1.03169,
+                "gaze_hit_distance_m": null,
+                "gaze_hit_exit_distance_m": null,
+                "gaze_depth_obb_residual_m": null,
+                "gaze_origin_world_m": [
+                  -1.3796453326862927,
+                  1.492010451378317,
+                  2.8553757151011987
+                ],
+                "gaze_direction_world_unit": [
+                  0.5476606510637373,
+                  -0.6691324058832295,
+                  0.5023242326161103
+                ],
+                "wearer_world_m": [
+                  -1.321943987835922,
+                  1.4826418144801798,
+                  2.813532613565468
+                ],
+                "right_world": [
+                  0.7256083660853424,
+                  -0.12370708537476893,
+                  -0.6768966361971668
+                ],
+                "forward_world": [
+                  0.6142315612764628,
+                  -0.32698531116550444,
+                  0.71819231088468
+                ],
+                "wearer_timestamp_skew_ms": 0.003,
+                "object_pose_skew_ms": 0.0037,
+                "relation": {
+                  "label": "left-behind",
+                  "side": "left",
+                  "depth": "behind",
+                  "right_m": -0.6030284519019247,
+                  "forward_m": -0.5456205362247661,
+                  "up_m": -0.6923530348117403,
+                  "distance_m": 1.0680345538260736
+                }
+              }
+            ],
+            "gaze_events": [
+              {
+                "object_id": "4989808014384955",
+                "object_name": "BlackCeramicBowl",
+                "start_index": 1255,
+                "end_index": 1287,
+                "start_time_s": 41.82664,
+                "end_time_s": 42.893136,
+                "state_count": 33,
+                "direct_hit_count": 33,
+                "merged_gap_count": 0,
+                "hit_support_ratio": 1.0,
+                "median_relation": {
+                  "label": "front",
+                  "side": "center",
+                  "depth": "front",
+                  "right_m": -0.029355696150305116,
+                  "forward_m": 0.45436993305478407,
+                  "up_m": -0.7037735095993857,
+                  "distance_m": 0.8382189127993442
+                }
+              }
+            ],
+            "transition": {
+              "start_frame": 1217,
+              "end_frame": 1271,
+              "start_relation": "right-front",
+              "end_relation": "front",
+              "wearer_turn_deg": 39.122720872358755,
+              "pre_gazed_object_id": "4469271893111727"
+            },
+            "semantic_gt_id": "task5_onset_apartment_release_clean_seq134_m1292_1117_1387_17217083",
+            "answer_signature": "sha256:e0746116d368787f5f957ec5d390bfd063892451da4e1cbfddf75d8f16bb1253",
+            "evidence_signature": "sha256:15bd089fa65451ada537676a784dc7b632f907aa12f1f3be3f91808db5c8b695",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "task5_media": {
+        "object_id": "4989808014384955",
+        "anchor_frames": [
+          1217,
+          1271
+        ]
+      },
+      "case_policy": "one annotation-derived question per unique gaze/object window"
+    },
+    {
       "name": "task5_onset_apartment_release_clean_seq134_m1292_2545_2815_6e289be0",
       "title": "Task 5 · lemon",
       "video_clip": "./task5_media/task5_onset_apartment_release_clean_seq134_m1292_2545_2815_6e289be0.mp4",
@@ -38901,21 +64275,21 @@ window.QA_DATA = {
             },
             {
               "label": "B",
-              "text": "The lemon changes from right-front to left-front.",
-              "semantic_option_id": "relation_pair_1"
-            },
-            {
-              "label": "C",
               "text": "The lemon changes from right-front to right-front.",
               "semantic_option_id": "relation_pair_3"
             },
             {
-              "label": "D",
+              "label": "C",
               "text": "The lemon changes from left-front to left-front.",
               "semantic_option_id": "relation_pair_4"
+            },
+            {
+              "label": "D",
+              "text": "The lemon changes from right-front to left-front.",
+              "semantic_option_id": "relation_pair_1"
             }
           ],
-          "correct_option": "B",
+          "correct_option": "D",
           "correct_answer": "The lemon changes from right-front to left-front.",
           "answer": "The lemon changes from right-front to left-front.",
           "explanation": "Immediately before the gaze onset the lemon is right-front; during the sustained gaze it is left-front.",
@@ -51561,7 +76935,7 @@ window.QA_DATA = {
     },
     {
       "name": "task5_last_lite_release_recognition_birdhousetoy_seq030_612_2235_2505_158ce958",
-      "title": "Task 5 · bird house toy",
+      "title": "Task 5 · birdhouse toy",
       "video_clip": "./task5_media/task5_last_lite_release_recognition_birdhousetoy_seq030_612_2235_2505_158ce958.mp4",
       "original_image": "./task5_media/task5_last_lite_release_recognition_birdhousetoy_seq030_612_2235_2505_158ce958_gaze_evidence.jpg",
       "original_caption": "ADT RGB anchor frames · green: target 2D box · red: measured gaze projection",
@@ -51579,55 +76953,55 @@ window.QA_DATA = {
           "question_categories": [
             "last_gaze_annotated_object"
           ],
-          "question": "The bird house toy is the last gaze-annotated object in this window. How does its wearer-relative position evolve?",
+          "question": "The birdhouse toy is the last gaze-annotated object in this window. How does its wearer-relative position evolve?",
           "options": [
             {
               "label": "A",
-              "text": "The bird house toy follows: right-front → front.",
-              "semantic_option_id": "relation_sequence_2"
-            },
-            {
-              "label": "B",
-              "text": "The bird house toy follows: right-front → right.",
-              "semantic_option_id": "relation_sequence_3"
-            },
-            {
-              "label": "C",
-              "text": "The bird house toy follows: front → right-front.",
+              "text": "The birdhouse toy follows: front → right-front.",
               "semantic_option_id": "relation_sequence_1"
             },
             {
+              "label": "B",
+              "text": "The birdhouse toy follows: right-front → front.",
+              "semantic_option_id": "relation_sequence_2"
+            },
+            {
+              "label": "C",
+              "text": "The birdhouse toy follows: right-front → right.",
+              "semantic_option_id": "relation_sequence_3"
+            },
+            {
               "label": "D",
-              "text": "The bird house toy follows: right → right-behind.",
+              "text": "The birdhouse toy follows: right → right-behind.",
               "semantic_option_id": "relation_sequence_4"
             }
           ],
-          "correct_option": "C",
-          "correct_answer": "The bird house toy follows: front → right-front.",
-          "answer": "The bird house toy follows: front → right-front.",
+          "correct_option": "A",
+          "correct_answer": "The birdhouse toy follows: front → right-front.",
+          "answer": "The birdhouse toy follows: front → right-front.",
           "explanation": "Across the full window, the annotation-derived relation sequence is front → right-front.",
           "semantic_gt": {
             "schema_version": "limo4si.semantic_gt.v1",
             "semantic_gt_id": "task5_last_lite_release_recognition_birdhousetoy_seq030_612_2235_2505_158ce958",
             "task_id": "task5_human_state_grounded_spatial_reasoning",
             "question_type": "last_gaze_annotated_object_relation_change",
-            "question_focus": "The bird house toy is the last gaze-annotated object in this window. How does its wearer-relative position evolve?",
+            "question_focus": "The birdhouse toy is the last gaze-annotated object in this window. How does its wearer-relative position evolve?",
             "options": [
               {
                 "id": "relation_sequence_1",
-                "statement": "The bird house toy follows: front → right-front."
+                "statement": "The birdhouse toy follows: front → right-front."
               },
               {
                 "id": "relation_sequence_2",
-                "statement": "The bird house toy follows: right-front → front."
+                "statement": "The birdhouse toy follows: right-front → front."
               },
               {
                 "id": "relation_sequence_3",
-                "statement": "The bird house toy follows: right-front → right."
+                "statement": "The birdhouse toy follows: right-front → right."
               },
               {
                 "id": "relation_sequence_4",
-                "statement": "The bird house toy follows: right → right-behind."
+                "statement": "The birdhouse toy follows: right → right-behind."
               }
             ],
             "correct_option_id": "relation_sequence_1",
@@ -51681,9 +77055,9 @@ window.QA_DATA = {
               "correct_answer_selection",
               "evidence_completion"
             ],
-            "answer_signature": "sha256:a10ec36802572001f4a7d4ddcee05ec15ed3846db66c2a5243b84d7a7519bf2d"
+            "answer_signature": "sha256:c247b57f5f08c15c1f5222f46fb4119633fd4b4f22697211ddc5e843d5a7ccf6"
           },
-          "answer_signature": "sha256:a10ec36802572001f4a7d4ddcee05ec15ed3846db66c2a5243b84d7a7519bf2d",
+          "answer_signature": "sha256:c247b57f5f08c15c1f5222f46fb4119633fd4b4f22697211ddc5e843d5a7ccf6",
           "language_realization": {
             "schema_version": "limo4si.language_realization.v1",
             "realizer": "deterministic_template",
@@ -51692,7 +77066,7 @@ window.QA_DATA = {
             "draft": {
               "schema_version": "limo4si.language_realization.v1",
               "semantic_gt_id": "task5_last_lite_release_recognition_birdhousetoy_seq030_612_2235_2505_158ce958",
-              "answer_signature": "sha256:a10ec36802572001f4a7d4ddcee05ec15ed3846db66c2a5243b84d7a7519bf2d",
+              "answer_signature": "sha256:c247b57f5f08c15c1f5222f46fb4119633fd4b4f22697211ddc5e843d5a7ccf6",
               "question_template": "{{question_focus}}",
               "option_template": "{{option_statement}}",
               "explanation_template": "{{evidence_statement}}"
@@ -64229,7 +89603,7 @@ window.QA_DATA = {
               "last_supported_event_object_id": "4146932978767941"
             },
             "semantic_gt_id": "task5_last_lite_release_recognition_birdhousetoy_seq030_612_2235_2505_158ce958",
-            "answer_signature": "sha256:a10ec36802572001f4a7d4ddcee05ec15ed3846db66c2a5243b84d7a7519bf2d",
+            "answer_signature": "sha256:c247b57f5f08c15c1f5222f46fb4119633fd4b4f22697211ddc5e843d5a7ccf6",
             "evidence_signature": "sha256:39e52b43a0acef0018cc18ee3df7f53421dababcf12dcf60154181e8ab4fe34f",
             "reasoning_owner": "deterministic_code",
             "language_model_role": "wording_only"

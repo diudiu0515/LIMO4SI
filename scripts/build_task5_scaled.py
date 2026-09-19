@@ -38,7 +38,11 @@ def save_js(path: Path, data: dict[str, Any]) -> None:
 
 
 def shown_name(value: str) -> str:
-    aliases = {"KitchIsland": "kitchen island", "WhiteVase": "white vase", "WoodenBowl": "wooden bowl"}
+    aliases = {
+        "KitchIsland": "kitchen island", "WhiteVase": "white vase",
+        "WoodenBowl": "wooden bowl", "BlackCeramicDishLarge": "large black ceramic dish",
+        "BirdHouseToy": "birdhouse toy", "CoffeeCanisterLarge": "large coffee canister",
+    }
     if value in aliases:
         return aliases[value]
     normalized = re.sub(r"(?<!^)(?=[A-Z])", " ", value.replace("_", " "))
