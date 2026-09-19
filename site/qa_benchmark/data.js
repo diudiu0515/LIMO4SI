@@ -19,7 +19,6 @@ window.QA_DATA = {
       "title": "Task 4 · HOI-M3 · bedroom_data02 · window 08",
       "dataset": "HOI-M3",
       "video_clip": "./outputs/hoim3/bedroom_data02/win08_view0_15s.mp4",
-      "original_video": "./hoim3_data/videos/bedroom_data02/0.mp4",
       "localization_video": "./multihuman_media/hoi_m3_bedroom_data02_win08_localized.mp4",
       "localization_image": "./multihuman_media/hoi_m3_bedroom_data02_win08_localized.jpg",
       "original_image": "./multihuman_media/hoi_m3_bedroom_data02_win08_localized.jpg",
@@ -1692,7 +1691,6 @@ window.QA_DATA = {
       "title": "Task 4 · HOI-M3 · bedroom_data01 · window 06",
       "dataset": "HOI-M3",
       "video_clip": "./outputs/hoim3/bedroom_data01/win06_view0_15s.mp4",
-      "original_video": "./hoim3_data/videos/bedroom_data01/0.mp4",
       "localization_video": "./multihuman_media/hoi_m3_bedroom_data01_win06_localized.mp4",
       "localization_image": "./multihuman_media/hoi_m3_bedroom_data01_win06_localized.jpg",
       "original_image": "./multihuman_media/hoi_m3_bedroom_data01_win06_localized.jpg",
@@ -3372,7 +3370,6 @@ window.QA_DATA = {
       "title": "Task 4 · HOI-M3 · bedroom_data02 · window 05",
       "dataset": "HOI-M3",
       "video_clip": "./outputs/hoim3/bedroom_data02/win05_view0_15s.mp4",
-      "original_video": "./hoim3_data/videos/bedroom_data02/0.mp4",
       "localization_video": "./multihuman_media/hoi_m3_bedroom_data02_win05_localized.mp4",
       "localization_image": "./multihuman_media/hoi_m3_bedroom_data02_win05_localized.jpg",
       "original_image": "./multihuman_media/hoi_m3_bedroom_data02_win05_localized.jpg",
@@ -5036,7 +5033,6 @@ window.QA_DATA = {
       "title": "Task 4 · HOI-M3 · bedroom_data03 · window 03",
       "dataset": "HOI-M3",
       "video_clip": "./outputs/hoim3/bedroom_data03/win03_view0_15s.mp4",
-      "original_video": "./hoim3_data/videos/bedroom_data03/0.mp4",
       "localization_video": "./multihuman_media/hoi_m3_bedroom_data03_win03_localized.mp4",
       "localization_image": "./multihuman_media/hoi_m3_bedroom_data03_win03_localized.jpg",
       "original_image": "./multihuman_media/hoi_m3_bedroom_data03_win03_localized.jpg",
@@ -6999,7 +6995,6 @@ window.QA_DATA = {
         }
       ],
       "video_clip": "./outputs/hoim3/bedroom_data05/win02_view0_15s.mp4",
-      "original_video": "./hoim3_data/videos/bedroom_data05/0.mp4",
       "video_window": {
         "duration_sec": 15.0,
         "source": "data/HOI-M3/videos/bedroom_data05/0.mp4"
@@ -7137,7 +7132,6 @@ window.QA_DATA = {
       "title": "Task 4 · HOI-M3 · bedroom_data01 · window 02",
       "dataset": "HOI-M3",
       "video_clip": "./outputs/hoim3/bedroom_data01/win02_view0_15s.mp4",
-      "original_video": "./hoim3_data/videos/bedroom_data01/0.mp4",
       "localization_video": "./multihuman_media/hoi_m3_bedroom_data01_win02_localized.mp4",
       "localization_image": "./multihuman_media/hoi_m3_bedroom_data01_win02_localized.jpg",
       "original_image": "./multihuman_media/hoi_m3_bedroom_data01_win02_localized.jpg",
@@ -8800,7 +8794,6 @@ window.QA_DATA = {
       "title": "Task 4 · HOI-M3 · bedroom_data01 · window 04",
       "dataset": "HOI-M3",
       "video_clip": "./outputs/hoim3/bedroom_data01/win04_view0_15s.mp4",
-      "original_video": "./hoim3_data/videos/bedroom_data01/0.mp4",
       "localization_video": "./multihuman_media/hoi_m3_bedroom_data01_win04_localized.mp4",
       "localization_image": "./multihuman_media/hoi_m3_bedroom_data01_win04_localized.jpg",
       "original_image": "./multihuman_media/hoi_m3_bedroom_data01_win04_localized.jpg",
@@ -10456,7 +10449,6 @@ window.QA_DATA = {
       "title": "Task 4 · HOI-M3 · bedroom_data02 · window 04",
       "dataset": "HOI-M3",
       "video_clip": "./outputs/hoim3/bedroom_data02/win04_view0_15s.mp4",
-      "original_video": "./hoim3_data/videos/bedroom_data02/0.mp4",
       "localization_video": "./multihuman_media/hoi_m3_bedroom_data02_win04_localized.mp4",
       "localization_image": "./multihuman_media/hoi_m3_bedroom_data02_win04_localized.jpg",
       "original_image": "./multihuman_media/hoi_m3_bedroom_data02_win04_localized.jpg",
@@ -12135,7 +12127,6 @@ window.QA_DATA = {
       "title": "Task 4 · HOI-M3 · bedroom_data02 · window 06",
       "dataset": "HOI-M3",
       "video_clip": "./outputs/hoim3/bedroom_data02/win06_view0_15s.mp4",
-      "original_video": "./hoim3_data/videos/bedroom_data02/0.mp4",
       "localization_video": "./multihuman_media/hoi_m3_bedroom_data02_win06_localized.mp4",
       "localization_image": "./multihuman_media/hoi_m3_bedroom_data02_win06_localized.jpg",
       "original_image": "./multihuman_media/hoi_m3_bedroom_data02_win06_localized.jpg",
@@ -13841,7 +13832,6 @@ window.QA_DATA = {
       "title": "Task 4 · HOI-M3 · bedroom_data03 · window 09",
       "dataset": "HOI-M3",
       "video_clip": "./outputs/hoim3/bedroom_data03/win09_view0_15s.mp4",
-      "original_video": "./hoim3_data/videos/bedroom_data03/0.mp4",
       "localization_video": "./multihuman_media/hoi_m3_bedroom_data03_win09_localized.mp4",
       "localization_image": "./multihuman_media/hoi_m3_bedroom_data03_win09_localized.jpg",
       "original_image": "./multihuman_media/hoi_m3_bedroom_data03_win09_localized.jpg",
@@ -15566,7 +15556,6 @@ window.QA_DATA = {
       "title": "Task 4 · HOI-M3 · bedroom_data03 · window 08",
       "dataset": "HOI-M3",
       "video_clip": "./outputs/hoim3/bedroom_data03/win08_view0_15s.mp4",
-      "original_video": "./hoim3_data/videos/bedroom_data03/0.mp4",
       "localization_video": "./multihuman_media/hoi_m3_bedroom_data03_win08_localized.mp4",
       "localization_image": "./multihuman_media/hoi_m3_bedroom_data03_win08_localized.jpg",
       "original_image": "./multihuman_media/hoi_m3_bedroom_data03_win08_localized.jpg",
@@ -17245,7 +17234,6 @@ window.QA_DATA = {
       "title": "Task 4 · HOI-M3 · bedroom_data01 · window 01",
       "dataset": "HOI-M3",
       "video_clip": "./outputs/hoim3/bedroom_data01/win01_view0_15s.mp4",
-      "original_video": "./hoim3_data/videos/bedroom_data01/0.mp4",
       "localization_video": "./multihuman_media/hoi_m3_bedroom_data01_win01_localized.mp4",
       "localization_image": "./multihuman_media/hoi_m3_bedroom_data01_win01_localized.jpg",
       "original_image": "./multihuman_media/hoi_m3_bedroom_data01_win01_localized.jpg",
@@ -19082,6 +19070,3786 @@ window.QA_DATA = {
         "V2": "the man in a dark navy short-sleeve T-shirt and light gray trousers",
         "V3": "the man in a black long-sleeve top and black trousers"
       }
+    },
+    {
+      "name": "task5_egoexo_indiana_cooking_16_3_278f27b09b",
+      "title": "Task 5 · EgoExo4D · indiana_cooking_16_3",
+      "video_clip": "./task5_media/task5_egoexo_indiana_cooking_16_3_278f27b09b.mp4",
+      "original_image": "./task5_media/task5_egoexo_indiana_cooking_16_3_278f27b09b_evidence.jpg",
+      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
+      "video_window": {
+        "source_sequence": "indiana_cooking_16_3",
+        "start_sec": 174.0,
+        "end_sec": 189.0,
+        "duration_sec": 15.0,
+        "anchor_frames": [
+          5280,
+          5370,
+          5610
+        ],
+        "published_clip_duration_sec": 15.0
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_point_inside_relation_mask_at_anchor",
+          "question_categories": [
+            "evidence_closed_gaze_mask_anchor"
+          ],
+          "question": "At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera-wearer gaze land on the recipe sheet?",
+          "options": [
+            {
+              "label": "A",
+              "text": "At 5.0s into the clip, but not at 2.0s or 13.0s.",
+              "semantic_option_id": "anchor_2"
+            },
+            {
+              "label": "B",
+              "text": "At 2.0s into the clip, but not at 5.0s or 13.0s.",
+              "semantic_option_id": "anchor_1"
+            },
+            {
+              "label": "C",
+              "text": "At 13.0s into the clip, but not at 2.0s or 5.0s.",
+              "semantic_option_id": "anchor_3"
+            },
+            {
+              "label": "D",
+              "text": "At none of these clip times: 2.0s, 5.0s, or 13.0s.",
+              "semantic_option_id": "no_anchor"
+            }
+          ],
+          "correct_option": "A",
+          "correct_answer": "At 5.0s into the clip, but not at 2.0s or 13.0s.",
+          "answer": "At 5.0s into the clip, but not at 2.0s or 13.0s.",
+          "explanation": "The synchronized gaze point lands inside the annotated recipe sheet region only at 5.0 seconds into the clip. At 2.0s, 5.0s, and 13.0s, it lands on white flat plate, recipe sheet, white plastic storage bin, respectively.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_egoexo_indiana_cooking_16_3_278f27b09b",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_point_inside_relation_mask_at_anchor",
+            "question_focus": "At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera-wearer gaze land on the recipe sheet?",
+            "options": [
+              {
+                "id": "anchor_1",
+                "statement": "At 2.0s into the clip, but not at 5.0s or 13.0s."
+              },
+              {
+                "id": "anchor_2",
+                "statement": "At 5.0s into the clip, but not at 2.0s or 13.0s."
+              },
+              {
+                "id": "anchor_3",
+                "statement": "At 13.0s into the clip, but not at 2.0s or 5.0s."
+              },
+              {
+                "id": "no_anchor",
+                "statement": "At none of these clip times: 2.0s, 5.0s, or 13.0s."
+              }
+            ],
+            "correct_option_id": "anchor_2",
+            "evidence_statement": "The synchronized gaze point lands inside the annotated recipe sheet region only at 5.0 seconds into the clip. At 2.0s, 5.0s, and 13.0s, it lands on white flat plate, recipe sheet, white plastic storage bin, respectively.",
+            "semantic_facts": [
+              {
+                "id": "target_object_id",
+                "value": "Recipe sheet_0"
+              },
+              {
+                "id": "target_anchor_index",
+                "value": 1
+              },
+              {
+                "id": "anchor_hits",
+                "value": [
+                  {
+                    "frame": 5280,
+                    "object_id": "White flat plate_0"
+                  },
+                  {
+                    "frame": 5370,
+                    "object_id": "Recipe sheet_0"
+                  },
+                  {
+                    "frame": 5610,
+                    "object_id": "White plastic storage bin_0"
+                  }
+                ]
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:c2f3d2a7e55fa9ccfe309dff39fb3939f0ac2383e41e44add1679f2bb9a6d690"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 5280,
+                "gaze_frame_num": 1760,
+                "object_id": "White flat plate_0",
+                "decoded_mask_sha256": "sha256:2cbd21f5456adc3a0f148d050a0a105f43dde97977b6c416e890053b4b125e05"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 5370,
+                "gaze_frame_num": 1790,
+                "object_id": "Recipe sheet_0",
+                "decoded_mask_sha256": "sha256:44666ab14e2eb10601fb2fa2675072055c9bd8ecf02af051d739945be70d707b"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 5610,
+                "gaze_frame_num": 1870,
+                "object_id": "White plastic storage bin_0",
+                "decoded_mask_sha256": "sha256:08bd87214f394513bcea9553082344fae5681e9c5997032d749a95563cf0a04a"
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:c2f3d2a7e55fa9ccfe309dff39fb3939f0ac2383e41e44add1679f2bb9a6d690"
+              }
+            ],
+            "provenance": {
+              "dataset": "Ego-Exo4D v2",
+              "take_uid": "2041eb29-6086-4e5e-9881-0f14d9e6a8d8",
+              "take_name": "indiana_cooking_16_3",
+              "computation": "deterministic_frame_aligned_2d_point_in_mask",
+              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
+              "release_status": "signed_semantic_gt_egoexo_primary"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:64ff2d0d17232e2ecf4660b1dd7f266498663ad1a7a9a4e5332decfb6a11d89f"
+          },
+          "answer_signature": "sha256:64ff2d0d17232e2ecf4660b1dd7f266498663ad1a7a9a4e5332decfb6a11d89f",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_egoexo_indiana_cooking_16_3_278f27b09b",
+              "answer_signature": "sha256:64ff2d0d17232e2ecf4660b1dd7f266498663ad1a7a9a4e5332decfb6a11d89f",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "release_eligible": true,
+          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "release_status": "signed_semantic_gt_egoexo_primary",
+            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
+            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
+            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
+            "take_uid": "2041eb29-6086-4e5e-9881-0f14d9e6a8d8",
+            "take_name": "indiana_cooking_16_3",
+            "camera": "aria02_214-1",
+            "target_object_id": "Recipe sheet_0",
+            "target_object_name": "recipe sheet",
+            "target_anchor_index": 1,
+            "correct_semantic_option_id": "anchor_2",
+            "anchors": [
+              {
+                "video_frame": 5280,
+                "time_s": 176.0,
+                "gaze_frame_num": 1760,
+                "gaze_tracking_timestamp_us": 1421001345,
+                "alignment_skew_ms": 0.0,
+                "object_id": "White flat plate_0",
+                "object_name": "white flat plate",
+                "annotated_mask_count": 5,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  588.873704,
+                  1004.660454
+                ],
+                "rounded_pixel_xy": [
+                  589,
+                  1005
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 11450,
+                "boundary_margin_px": 33.953495,
+                "decoded_mask_sha256": "sha256:2cbd21f5456adc3a0f148d050a0a105f43dde97977b6c416e890053b4b125e05",
+                "clip_time_s": 2.0
+              },
+              {
+                "video_frame": 5370,
+                "time_s": 179.0,
+                "gaze_frame_num": 1790,
+                "gaze_tracking_timestamp_us": 1424000865,
+                "alignment_skew_ms": 0.0,
+                "object_id": "Recipe sheet_0",
+                "object_name": "recipe sheet",
+                "annotated_mask_count": 4,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  893.127655,
+                  1022.763005
+                ],
+                "rounded_pixel_xy": [
+                  893,
+                  1023
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 350240,
+                "boundary_margin_px": 259.580902,
+                "decoded_mask_sha256": "sha256:44666ab14e2eb10601fb2fa2675072055c9bd8ecf02af051d739945be70d707b",
+                "clip_time_s": 5.0
+              },
+              {
+                "video_frame": 5610,
+                "time_s": 187.0,
+                "gaze_frame_num": 1870,
+                "gaze_tracking_timestamp_us": 1431999585,
+                "alignment_skew_ms": 0.0,
+                "object_id": "White plastic storage bin_0",
+                "object_name": "white plastic storage bin",
+                "annotated_mask_count": 5,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  760.564821,
+                  982.396608
+                ],
+                "rounded_pixel_xy": [
+                  761,
+                  982
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 82442,
+                "boundary_margin_px": 120.0,
+                "decoded_mask_sha256": "sha256:08bd87214f394513bcea9553082344fae5681e9c5997032d749a95563cf0a04a",
+                "clip_time_s": 13.0
+              }
+            ],
+            "alignment_diagnostics": {
+              "video_fps": 30.0,
+              "gaze_frame_rate_hz_declared": 10.0,
+              "gaze_timestamp_rate_hz_measured": 10.0016,
+              "frame_mapping": "video_frame / 3 == gaze frame_num",
+              "maximum_anchor_skew_ms": 0.0,
+              "video_frame_count": 30325,
+              "source_video_resolution": [
+                448,
+                448
+              ]
+            },
+            "claim_limits": [
+              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
+              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
+            ],
+            "source_window": {
+              "start_sec": 174.0,
+              "end_sec": 189.0,
+              "duration_sec": 15.0
+            },
+            "source_evidence": {
+              "relations": "annotations/relations_val.json",
+              "gaze": "takes/indiana_cooking_16_3/eye_gaze/general_eye_gaze_2d.csv",
+              "video": "takes/indiana_cooking_16_3/frame_aligned_videos/downscaled/448/aria02_214-1.mp4"
+            },
+            "temporal_scope": "three explicit clip-relative checkpoints",
+            "semantic_gt_id": "task5_egoexo_indiana_cooking_16_3_278f27b09b",
+            "answer_signature": "sha256:64ff2d0d17232e2ecf4660b1dd7f266498663ad1a7a9a4e5332decfb6a11d89f",
+            "evidence_signature": "sha256:c2f3d2a7e55fa9ccfe309dff39fb3939f0ac2383e41e44add1679f2bb9a6d690",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
+    },
+    {
+      "name": "task5_egoexo_iiith_cooking_125_2_49a1e4f29d",
+      "title": "Task 5 · EgoExo4D · iiith_cooking_125_2",
+      "video_clip": "./task5_media/task5_egoexo_iiith_cooking_125_2_49a1e4f29d.mp4",
+      "original_image": "./task5_media/task5_egoexo_iiith_cooking_125_2_49a1e4f29d_evidence.jpg",
+      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
+      "video_window": {
+        "source_sequence": "iiith_cooking_125_2",
+        "start_sec": 1.5,
+        "end_sec": 16.5,
+        "duration_sec": 15.0,
+        "anchor_frames": [
+          60,
+          150,
+          480
+        ],
+        "published_clip_duration_sec": 15.0
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_target_sequence_across_clip_checkpoints",
+          "question_categories": [
+            "evidence_closed_gaze_mask_anchor"
+          ],
+          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
+          "options": [
+            {
+              "label": "A",
+              "text": "At 0.5s: pancake pan; at 3.5s: blue chopping plate; at 14.5s: egg crate.",
+              "semantic_option_id": "anchor_2"
+            },
+            {
+              "label": "B",
+              "text": "At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
+              "semantic_option_id": "anchor_1"
+            },
+            {
+              "label": "C",
+              "text": "At 0.5s: egg crate; at 3.5s: pancake pan; at 14.5s: blue chopping plate.",
+              "semantic_option_id": "anchor_3"
+            },
+            {
+              "label": "D",
+              "text": "At 0.5s: egg crate; at 3.5s: blue chopping plate; at 14.5s: pancake pan.",
+              "semantic_option_id": "no_anchor"
+            }
+          ],
+          "correct_option": "B",
+          "correct_answer": "At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
+          "answer": "At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
+          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_egoexo_iiith_cooking_125_2_49a1e4f29d",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_target_sequence_across_clip_checkpoints",
+            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
+            "options": [
+              {
+                "id": "anchor_1",
+                "statement": "At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate."
+              },
+              {
+                "id": "anchor_2",
+                "statement": "At 0.5s: pancake pan; at 3.5s: blue chopping plate; at 14.5s: egg crate."
+              },
+              {
+                "id": "anchor_3",
+                "statement": "At 0.5s: egg crate; at 3.5s: pancake pan; at 14.5s: blue chopping plate."
+              },
+              {
+                "id": "no_anchor",
+                "statement": "At 0.5s: egg crate; at 3.5s: blue chopping plate; at 14.5s: pancake pan."
+              }
+            ],
+            "correct_option_id": "anchor_1",
+            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
+            "semantic_facts": [
+              {
+                "id": "target_object_id",
+                "value": "pancake pan_0"
+              },
+              {
+                "id": "target_anchor_index",
+                "value": 0
+              },
+              {
+                "id": "anchor_hits",
+                "value": [
+                  {
+                    "frame": 60,
+                    "object_id": "pancake pan_0"
+                  },
+                  {
+                    "frame": 150,
+                    "object_id": "egg crate_0"
+                  },
+                  {
+                    "frame": 480,
+                    "object_id": "blue chopping plate_0"
+                  }
+                ]
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:fdfc50df5281a68dce64311a08f6de047b7cdff2aeda6122c5d2ca4f13c7840b"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 60,
+                "gaze_frame_num": 20,
+                "object_id": "pancake pan_0",
+                "decoded_mask_sha256": "sha256:4db3ee165c0e585aa86789d82c924410cfd0262cb075153950db163de89dea66"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 150,
+                "gaze_frame_num": 50,
+                "object_id": "egg crate_0",
+                "decoded_mask_sha256": "sha256:fd76de074f0255cfe3830ca8cf8241877a98fb8ebdf9fbac163ed594b664c425"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 480,
+                "gaze_frame_num": 160,
+                "object_id": "blue chopping plate_0",
+                "decoded_mask_sha256": "sha256:2c2c21cd226a23d7044f91bcb2d251aca3be973d83ab4c30cbdf6bcf2b90af3b"
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:fdfc50df5281a68dce64311a08f6de047b7cdff2aeda6122c5d2ca4f13c7840b"
+              }
+            ],
+            "provenance": {
+              "dataset": "Ego-Exo4D v2",
+              "take_uid": "4356d71a-56a5-413b-a407-14f144112d91",
+              "take_name": "iiith_cooking_125_2",
+              "computation": "deterministic_frame_aligned_2d_point_in_mask",
+              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
+              "release_status": "signed_semantic_gt_egoexo_primary"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:955cb6398ecdda1b8ea50f313a9cb977f9636750ce3b58ddfe7d03e84705f84f"
+          },
+          "answer_signature": "sha256:955cb6398ecdda1b8ea50f313a9cb977f9636750ce3b58ddfe7d03e84705f84f",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_egoexo_iiith_cooking_125_2_49a1e4f29d",
+              "answer_signature": "sha256:955cb6398ecdda1b8ea50f313a9cb977f9636750ce3b58ddfe7d03e84705f84f",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "release_eligible": true,
+          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "release_status": "signed_semantic_gt_egoexo_primary",
+            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
+            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
+            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
+            "take_uid": "4356d71a-56a5-413b-a407-14f144112d91",
+            "take_name": "iiith_cooking_125_2",
+            "camera": "aria01_214-1",
+            "target_object_id": "pancake pan_0",
+            "target_object_name": "pancake pan",
+            "target_anchor_index": 0,
+            "correct_semantic_option_id": "anchor_1",
+            "anchors": [
+              {
+                "video_frame": 60,
+                "time_s": 2.0,
+                "gaze_frame_num": 20,
+                "gaze_tracking_timestamp_us": 433233858,
+                "alignment_skew_ms": 0.0,
+                "object_id": "pancake pan_0",
+                "object_name": "pancake pan",
+                "annotated_mask_count": 1,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  690.93523,
+                  860.422814
+                ],
+                "rounded_pixel_xy": [
+                  691,
+                  860
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 111923,
+                "boundary_margin_px": 154.782959,
+                "decoded_mask_sha256": "sha256:4db3ee165c0e585aa86789d82c924410cfd0262cb075153950db163de89dea66",
+                "clip_time_s": 0.5
+              },
+              {
+                "video_frame": 150,
+                "time_s": 5.0,
+                "gaze_frame_num": 50,
+                "gaze_tracking_timestamp_us": 436233378,
+                "alignment_skew_ms": 0.0,
+                "object_id": "egg crate_0",
+                "object_name": "egg crate",
+                "annotated_mask_count": 3,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  1006.510834,
+                  855.741987
+                ],
+                "rounded_pixel_xy": [
+                  1007,
+                  856
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 19118,
+                "boundary_margin_px": 16.584497,
+                "decoded_mask_sha256": "sha256:fd76de074f0255cfe3830ca8cf8241877a98fb8ebdf9fbac163ed594b664c425",
+                "clip_time_s": 3.5
+              },
+              {
+                "video_frame": 480,
+                "time_s": 16.0,
+                "gaze_frame_num": 160,
+                "gaze_tracking_timestamp_us": 447231618,
+                "alignment_skew_ms": 0.0,
+                "object_id": "blue chopping plate_0",
+                "object_name": "blue chopping plate",
+                "annotated_mask_count": 5,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  772.899244,
+                  964.221975
+                ],
+                "rounded_pixel_xy": [
+                  773,
+                  964
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 42477,
+                "boundary_margin_px": 12.984499,
+                "decoded_mask_sha256": "sha256:2c2c21cd226a23d7044f91bcb2d251aca3be973d83ab4c30cbdf6bcf2b90af3b",
+                "clip_time_s": 14.5
+              }
+            ],
+            "alignment_diagnostics": {
+              "video_fps": 30.0,
+              "gaze_frame_rate_hz_declared": 10.0,
+              "gaze_timestamp_rate_hz_measured": 10.0016,
+              "frame_mapping": "video_frame / 3 == gaze frame_num",
+              "maximum_anchor_skew_ms": 0.0,
+              "video_frame_count": 12633,
+              "source_video_resolution": [
+                448,
+                448
+              ]
+            },
+            "claim_limits": [
+              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
+              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
+            ],
+            "source_window": {
+              "start_sec": 1.5,
+              "end_sec": 16.5,
+              "duration_sec": 15.0
+            },
+            "source_evidence": {
+              "relations": "annotations/relations_val.json",
+              "gaze": "takes/iiith_cooking_125_2/eye_gaze/general_eye_gaze_2d.csv",
+              "video": "takes/iiith_cooking_125_2/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
+            },
+            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
+            "semantic_gt_id": "task5_egoexo_iiith_cooking_125_2_49a1e4f29d",
+            "answer_signature": "sha256:955cb6398ecdda1b8ea50f313a9cb977f9636750ce3b58ddfe7d03e84705f84f",
+            "evidence_signature": "sha256:fdfc50df5281a68dce64311a08f6de047b7cdff2aeda6122c5d2ca4f13c7840b",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
+    },
+    {
+      "name": "task5_egoexo_iiith_cooking_145_2_c92a5c063f",
+      "title": "Task 5 · EgoExo4D · iiith_cooking_145_2",
+      "video_clip": "./task5_media/task5_egoexo_iiith_cooking_145_2_c92a5c063f.mp4",
+      "original_image": "./task5_media/task5_egoexo_iiith_cooking_145_2_c92a5c063f_evidence.jpg",
+      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
+      "video_window": {
+        "source_sequence": "iiith_cooking_145_2",
+        "start_sec": 362.5,
+        "end_sec": 377.5,
+        "duration_sec": 15.0,
+        "anchor_frames": [
+          10890,
+          11190,
+          11310
+        ],
+        "published_clip_duration_sec": 15.0
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_point_inside_relation_mask_at_anchor",
+          "question_categories": [
+            "evidence_closed_gaze_mask_anchor"
+          ],
+          "question": "At which stated clip time (0.5s, 10.5s, or 14.5s) does the camera-wearer gaze land on the white chopping board?",
+          "options": [
+            {
+              "label": "A",
+              "text": "At 0.5s into the clip, but not at 10.5s or 14.5s.",
+              "semantic_option_id": "anchor_1"
+            },
+            {
+              "label": "B",
+              "text": "At 10.5s into the clip, but not at 0.5s or 14.5s.",
+              "semantic_option_id": "anchor_2"
+            },
+            {
+              "label": "C",
+              "text": "At 14.5s into the clip, but not at 0.5s or 10.5s.",
+              "semantic_option_id": "anchor_3"
+            },
+            {
+              "label": "D",
+              "text": "At none of these clip times: 0.5s, 10.5s, or 14.5s.",
+              "semantic_option_id": "no_anchor"
+            }
+          ],
+          "correct_option": "C",
+          "correct_answer": "At 14.5s into the clip, but not at 0.5s or 10.5s.",
+          "answer": "At 14.5s into the clip, but not at 0.5s or 10.5s.",
+          "explanation": "The synchronized gaze point lands inside the annotated white chopping board region only at 14.5 seconds into the clip. At 0.5s, 10.5s, and 14.5s, it lands on large steel bowl, steel tomato bowl, white chopping board, respectively.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_egoexo_iiith_cooking_145_2_c92a5c063f",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_point_inside_relation_mask_at_anchor",
+            "question_focus": "At which stated clip time (0.5s, 10.5s, or 14.5s) does the camera-wearer gaze land on the white chopping board?",
+            "options": [
+              {
+                "id": "anchor_1",
+                "statement": "At 0.5s into the clip, but not at 10.5s or 14.5s."
+              },
+              {
+                "id": "anchor_2",
+                "statement": "At 10.5s into the clip, but not at 0.5s or 14.5s."
+              },
+              {
+                "id": "anchor_3",
+                "statement": "At 14.5s into the clip, but not at 0.5s or 10.5s."
+              },
+              {
+                "id": "no_anchor",
+                "statement": "At none of these clip times: 0.5s, 10.5s, or 14.5s."
+              }
+            ],
+            "correct_option_id": "anchor_3",
+            "evidence_statement": "The synchronized gaze point lands inside the annotated white chopping board region only at 14.5 seconds into the clip. At 0.5s, 10.5s, and 14.5s, it lands on large steel bowl, steel tomato bowl, white chopping board, respectively.",
+            "semantic_facts": [
+              {
+                "id": "target_object_id",
+                "value": "White chopping board_0"
+              },
+              {
+                "id": "target_anchor_index",
+                "value": 2
+              },
+              {
+                "id": "anchor_hits",
+                "value": [
+                  {
+                    "frame": 10890,
+                    "object_id": "Large steel bowl_0"
+                  },
+                  {
+                    "frame": 11190,
+                    "object_id": "Steel tomato bowl_0"
+                  },
+                  {
+                    "frame": 11310,
+                    "object_id": "White chopping board_0"
+                  }
+                ]
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:2cfbea6a15587f54a6d9c35ca5f33ab62d89d69003af8f53fc18525a6bc00e90"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 10890,
+                "gaze_frame_num": 3630,
+                "object_id": "Large steel bowl_0",
+                "decoded_mask_sha256": "sha256:a0e1344a1777d1232da4822ca5920e335543866b595558fdbd8ec6be49b80869"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 11190,
+                "gaze_frame_num": 3730,
+                "object_id": "Steel tomato bowl_0",
+                "decoded_mask_sha256": "sha256:d776030c48463bd76fdf90898c706d2e5133fea58b20eeff9019c6a9a79e880f"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 11310,
+                "gaze_frame_num": 3770,
+                "object_id": "White chopping board_0",
+                "decoded_mask_sha256": "sha256:0a3581d629773a184df1a02ac2578c3cb3cefd6e750ae085d32202912c5840c3"
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:2cfbea6a15587f54a6d9c35ca5f33ab62d89d69003af8f53fc18525a6bc00e90"
+              }
+            ],
+            "provenance": {
+              "dataset": "Ego-Exo4D v2",
+              "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+              "take_name": "iiith_cooking_145_2",
+              "computation": "deterministic_frame_aligned_2d_point_in_mask",
+              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
+              "release_status": "signed_semantic_gt_egoexo_primary"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:c6c23486fac8531d2f3d8dd65274db2bf76b6ccc96fb86c5b9b09c48e4175ae4"
+          },
+          "answer_signature": "sha256:c6c23486fac8531d2f3d8dd65274db2bf76b6ccc96fb86c5b9b09c48e4175ae4",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_egoexo_iiith_cooking_145_2_c92a5c063f",
+              "answer_signature": "sha256:c6c23486fac8531d2f3d8dd65274db2bf76b6ccc96fb86c5b9b09c48e4175ae4",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "release_eligible": true,
+          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "release_status": "signed_semantic_gt_egoexo_primary",
+            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
+            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
+            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
+            "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
+            "take_name": "iiith_cooking_145_2",
+            "camera": "aria01_214-1",
+            "target_object_id": "White chopping board_0",
+            "target_object_name": "white chopping board",
+            "target_anchor_index": 2,
+            "correct_semantic_option_id": "anchor_3",
+            "anchors": [
+              {
+                "video_frame": 10890,
+                "time_s": 363.0,
+                "gaze_frame_num": 3630,
+                "gaze_tracking_timestamp_us": 646437148,
+                "alignment_skew_ms": 0.0,
+                "object_id": "Large steel bowl_0",
+                "object_name": "large steel bowl",
+                "annotated_mask_count": 6,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  844.629913,
+                  855.419072
+                ],
+                "rounded_pixel_xy": [
+                  845,
+                  855
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 72590,
+                "boundary_margin_px": 99.463577,
+                "decoded_mask_sha256": "sha256:a0e1344a1777d1232da4822ca5920e335543866b595558fdbd8ec6be49b80869",
+                "clip_time_s": 0.5
+              },
+              {
+                "video_frame": 11190,
+                "time_s": 373.0,
+                "gaze_frame_num": 3730,
+                "gaze_tracking_timestamp_us": 656435548,
+                "alignment_skew_ms": 0.0,
+                "object_id": "Steel tomato bowl_0",
+                "object_name": "steel tomato bowl",
+                "annotated_mask_count": 5,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  905.154279,
+                  809.561915
+                ],
+                "rounded_pixel_xy": [
+                  905,
+                  810
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 46301,
+                "boundary_margin_px": 40.944191,
+                "decoded_mask_sha256": "sha256:d776030c48463bd76fdf90898c706d2e5133fea58b20eeff9019c6a9a79e880f",
+                "clip_time_s": 10.5
+              },
+              {
+                "video_frame": 11310,
+                "time_s": 377.0,
+                "gaze_frame_num": 3770,
+                "gaze_tracking_timestamp_us": 660434908,
+                "alignment_skew_ms": 0.0,
+                "object_id": "White chopping board_0",
+                "object_name": "white chopping board",
+                "annotated_mask_count": 10,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  790.141093,
+                  904.831271
+                ],
+                "rounded_pixel_xy": [
+                  790,
+                  905
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 89440,
+                "boundary_margin_px": 114.393799,
+                "decoded_mask_sha256": "sha256:0a3581d629773a184df1a02ac2578c3cb3cefd6e750ae085d32202912c5840c3",
+                "clip_time_s": 14.5
+              }
+            ],
+            "alignment_diagnostics": {
+              "video_fps": 30.0,
+              "gaze_frame_rate_hz_declared": 10.0,
+              "gaze_timestamp_rate_hz_measured": 10.0016,
+              "frame_mapping": "video_frame / 3 == gaze frame_num",
+              "maximum_anchor_skew_ms": 0.0,
+              "video_frame_count": 13373,
+              "source_video_resolution": [
+                448,
+                448
+              ]
+            },
+            "claim_limits": [
+              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
+              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
+            ],
+            "source_window": {
+              "start_sec": 362.5,
+              "end_sec": 377.5,
+              "duration_sec": 15.0
+            },
+            "source_evidence": {
+              "relations": "annotations/relations_val.json",
+              "gaze": "takes/iiith_cooking_145_2/eye_gaze/general_eye_gaze_2d.csv",
+              "video": "takes/iiith_cooking_145_2/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
+            },
+            "temporal_scope": "three explicit clip-relative checkpoints",
+            "semantic_gt_id": "task5_egoexo_iiith_cooking_145_2_c92a5c063f",
+            "answer_signature": "sha256:c6c23486fac8531d2f3d8dd65274db2bf76b6ccc96fb86c5b9b09c48e4175ae4",
+            "evidence_signature": "sha256:2cfbea6a15587f54a6d9c35ca5f33ab62d89d69003af8f53fc18525a6bc00e90",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
+    },
+    {
+      "name": "task5_egoexo_minnesota_cooking_060_4_655a676809",
+      "title": "Task 5 · EgoExo4D · minnesota_cooking_060_4",
+      "video_clip": "./task5_media/task5_egoexo_minnesota_cooking_060_4_655a676809.mp4",
+      "original_image": "./task5_media/task5_egoexo_minnesota_cooking_060_4_655a676809_evidence.jpg",
+      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
+      "video_window": {
+        "source_sequence": "minnesota_cooking_060_4",
+        "start_sec": 473.5,
+        "end_sec": 488.5,
+        "duration_sec": 15.0,
+        "anchor_frames": [
+          14280,
+          14340,
+          14580
+        ],
+        "published_clip_duration_sec": 15.0
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_target_sequence_across_clip_checkpoints",
+          "question_categories": [
+            "evidence_closed_gaze_mask_anchor"
+          ],
+          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
+          "options": [
+            {
+              "label": "A",
+              "text": "At 2.5s: mini-tomato package; at 4.5s: flat plate; at 12.5s: glass bowl.",
+              "semantic_option_id": "anchor_1"
+            },
+            {
+              "label": "B",
+              "text": "At 2.5s: glass bowl; at 4.5s: mini-tomato package; at 12.5s: flat plate.",
+              "semantic_option_id": "anchor_3"
+            },
+            {
+              "label": "C",
+              "text": "At 2.5s: glass bowl; at 4.5s: flat plate; at 12.5s: mini-tomato package.",
+              "semantic_option_id": "no_anchor"
+            },
+            {
+              "label": "D",
+              "text": "At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
+              "semantic_option_id": "anchor_2"
+            }
+          ],
+          "correct_option": "D",
+          "correct_answer": "At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
+          "answer": "At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
+          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_egoexo_minnesota_cooking_060_4_655a676809",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_target_sequence_across_clip_checkpoints",
+            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
+            "options": [
+              {
+                "id": "anchor_1",
+                "statement": "At 2.5s: mini-tomato package; at 4.5s: flat plate; at 12.5s: glass bowl."
+              },
+              {
+                "id": "anchor_2",
+                "statement": "At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate."
+              },
+              {
+                "id": "anchor_3",
+                "statement": "At 2.5s: glass bowl; at 4.5s: mini-tomato package; at 12.5s: flat plate."
+              },
+              {
+                "id": "no_anchor",
+                "statement": "At 2.5s: glass bowl; at 4.5s: flat plate; at 12.5s: mini-tomato package."
+              }
+            ],
+            "correct_option_id": "anchor_2",
+            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
+            "semantic_facts": [
+              {
+                "id": "target_object_id",
+                "value": "Glass bowl_1"
+              },
+              {
+                "id": "target_anchor_index",
+                "value": 1
+              },
+              {
+                "id": "anchor_hits",
+                "value": [
+                  {
+                    "frame": 14280,
+                    "object_id": "Mini Tomato package_0"
+                  },
+                  {
+                    "frame": 14340,
+                    "object_id": "Glass bowl_1"
+                  },
+                  {
+                    "frame": 14580,
+                    "object_id": "Flat plate_0"
+                  }
+                ]
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:c5d51f78258b20cf0d9786440c48b164c1d07eae1e21bc678be658074891a812"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 14280,
+                "gaze_frame_num": 4760,
+                "object_id": "Mini Tomato package_0",
+                "decoded_mask_sha256": "sha256:7181c14af3dc9341f27e49450af65bdedb31ba33124e90aa47e47efcb337c9f1"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 14340,
+                "gaze_frame_num": 4780,
+                "object_id": "Glass bowl_1",
+                "decoded_mask_sha256": "sha256:33f3515bcb37f1ead052e4684a71e0d318293a77df0cc08f457aa43ffda61b72"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 14580,
+                "gaze_frame_num": 4860,
+                "object_id": "Flat plate_0",
+                "decoded_mask_sha256": "sha256:8845cb435ed31a1dc9c1b60a76ca403a729d84c4879ae6d3d93c746edd7a76e4"
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:c5d51f78258b20cf0d9786440c48b164c1d07eae1e21bc678be658074891a812"
+              }
+            ],
+            "provenance": {
+              "dataset": "Ego-Exo4D v2",
+              "take_uid": "4c075527-7526-4c00-9681-53258fe70881",
+              "take_name": "minnesota_cooking_060_4",
+              "computation": "deterministic_frame_aligned_2d_point_in_mask",
+              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
+              "release_status": "signed_semantic_gt_egoexo_primary"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:60b4cbb7ca3227609545ddbfafe8ba9e400ba85fcb70020b57482cf8a16c2a67"
+          },
+          "answer_signature": "sha256:60b4cbb7ca3227609545ddbfafe8ba9e400ba85fcb70020b57482cf8a16c2a67",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_egoexo_minnesota_cooking_060_4_655a676809",
+              "answer_signature": "sha256:60b4cbb7ca3227609545ddbfafe8ba9e400ba85fcb70020b57482cf8a16c2a67",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "release_eligible": true,
+          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "release_status": "signed_semantic_gt_egoexo_primary",
+            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
+            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
+            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
+            "take_uid": "4c075527-7526-4c00-9681-53258fe70881",
+            "take_name": "minnesota_cooking_060_4",
+            "camera": "aria01_214-1",
+            "target_object_id": "Glass bowl_1",
+            "target_object_name": "glass bowl",
+            "target_anchor_index": 1,
+            "correct_semantic_option_id": "anchor_2",
+            "anchors": [
+              {
+                "video_frame": 14280,
+                "time_s": 476.0,
+                "gaze_frame_num": 4760,
+                "gaze_tracking_timestamp_us": 1953497321,
+                "alignment_skew_ms": 0.0,
+                "object_id": "Mini Tomato package_0",
+                "object_name": "mini-tomato package",
+                "annotated_mask_count": 6,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  886.756962,
+                  924.590588
+                ],
+                "rounded_pixel_xy": [
+                  887,
+                  925
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 20340,
+                "boundary_margin_px": 55.922489,
+                "decoded_mask_sha256": "sha256:7181c14af3dc9341f27e49450af65bdedb31ba33124e90aa47e47efcb337c9f1",
+                "clip_time_s": 2.5
+              },
+              {
+                "video_frame": 14340,
+                "time_s": 478.0,
+                "gaze_frame_num": 4780,
+                "gaze_tracking_timestamp_us": 1955497001,
+                "alignment_skew_ms": 0.0,
+                "object_id": "Glass bowl_1",
+                "object_name": "glass bowl",
+                "annotated_mask_count": 7,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  762.935924,
+                  1017.717395
+                ],
+                "rounded_pixel_xy": [
+                  763,
+                  1018
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 48313,
+                "boundary_margin_px": 111.654274,
+                "decoded_mask_sha256": "sha256:33f3515bcb37f1ead052e4684a71e0d318293a77df0cc08f457aa43ffda61b72",
+                "clip_time_s": 4.5
+              },
+              {
+                "video_frame": 14580,
+                "time_s": 486.0,
+                "gaze_frame_num": 4860,
+                "gaze_tracking_timestamp_us": 1963495721,
+                "alignment_skew_ms": 0.0,
+                "object_id": "Flat plate_0",
+                "object_name": "flat plate",
+                "annotated_mask_count": 6,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  780.326376,
+                  1079.186743
+                ],
+                "rounded_pixel_xy": [
+                  780,
+                  1079
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 61248,
+                "boundary_margin_px": 55.137989,
+                "decoded_mask_sha256": "sha256:8845cb435ed31a1dc9c1b60a76ca403a729d84c4879ae6d3d93c746edd7a76e4",
+                "clip_time_s": 12.5
+              }
+            ],
+            "alignment_diagnostics": {
+              "video_fps": 30.0,
+              "gaze_frame_rate_hz_declared": 10.0,
+              "gaze_timestamp_rate_hz_measured": 10.0016,
+              "frame_mapping": "video_frame / 3 == gaze frame_num",
+              "maximum_anchor_skew_ms": 0.0,
+              "video_frame_count": 22465,
+              "source_video_resolution": [
+                448,
+                448
+              ]
+            },
+            "claim_limits": [
+              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
+              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
+            ],
+            "source_window": {
+              "start_sec": 473.5,
+              "end_sec": 488.5,
+              "duration_sec": 15.0
+            },
+            "source_evidence": {
+              "relations": "annotations/relations_val.json",
+              "gaze": "takes/minnesota_cooking_060_4/eye_gaze/general_eye_gaze_2d.csv",
+              "video": "takes/minnesota_cooking_060_4/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
+            },
+            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
+            "semantic_gt_id": "task5_egoexo_minnesota_cooking_060_4_655a676809",
+            "answer_signature": "sha256:60b4cbb7ca3227609545ddbfafe8ba9e400ba85fcb70020b57482cf8a16c2a67",
+            "evidence_signature": "sha256:c5d51f78258b20cf0d9786440c48b164c1d07eae1e21bc678be658074891a812",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
+    },
+    {
+      "name": "task5_egoexo_uniandes_cooking_006_6_13837ab534",
+      "title": "Task 5 · EgoExo4D · uniandes_cooking_006_6",
+      "video_clip": "./task5_media/task5_egoexo_uniandes_cooking_006_6_13837ab534.mp4",
+      "original_image": "./task5_media/task5_egoexo_uniandes_cooking_006_6_13837ab534_evidence.jpg",
+      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
+      "video_window": {
+        "source_sequence": "uniandes_cooking_006_6",
+        "start_sec": 167.5,
+        "end_sec": 182.5,
+        "duration_sec": 15.0,
+        "anchor_frames": [
+          5040,
+          5250,
+          5460
+        ],
+        "published_clip_duration_sec": 15.0
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_point_inside_relation_mask_at_anchor",
+          "question_categories": [
+            "evidence_closed_gaze_mask_anchor"
+          ],
+          "question": "At which stated clip time (0.5s, 7.5s, or 14.5s) does the camera-wearer gaze land on the frying pan?",
+          "options": [
+            {
+              "label": "A",
+              "text": "At 0.5s into the clip, but not at 7.5s or 14.5s.",
+              "semantic_option_id": "anchor_1"
+            },
+            {
+              "label": "B",
+              "text": "At 7.5s into the clip, but not at 0.5s or 14.5s.",
+              "semantic_option_id": "anchor_2"
+            },
+            {
+              "label": "C",
+              "text": "At 14.5s into the clip, but not at 0.5s or 7.5s.",
+              "semantic_option_id": "anchor_3"
+            },
+            {
+              "label": "D",
+              "text": "At none of these clip times: 0.5s, 7.5s, or 14.5s.",
+              "semantic_option_id": "no_anchor"
+            }
+          ],
+          "correct_option": "A",
+          "correct_answer": "At 0.5s into the clip, but not at 7.5s or 14.5s.",
+          "answer": "At 0.5s into the clip, but not at 7.5s or 14.5s.",
+          "explanation": "The synchronized gaze point lands inside the annotated frying pan region only at 0.5 seconds into the clip. At 0.5s, 7.5s, and 14.5s, it lands on frying pan, stainless bowl, liquid milk pack, respectively.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_egoexo_uniandes_cooking_006_6_13837ab534",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_point_inside_relation_mask_at_anchor",
+            "question_focus": "At which stated clip time (0.5s, 7.5s, or 14.5s) does the camera-wearer gaze land on the frying pan?",
+            "options": [
+              {
+                "id": "anchor_1",
+                "statement": "At 0.5s into the clip, but not at 7.5s or 14.5s."
+              },
+              {
+                "id": "anchor_2",
+                "statement": "At 7.5s into the clip, but not at 0.5s or 14.5s."
+              },
+              {
+                "id": "anchor_3",
+                "statement": "At 14.5s into the clip, but not at 0.5s or 7.5s."
+              },
+              {
+                "id": "no_anchor",
+                "statement": "At none of these clip times: 0.5s, 7.5s, or 14.5s."
+              }
+            ],
+            "correct_option_id": "anchor_1",
+            "evidence_statement": "The synchronized gaze point lands inside the annotated frying pan region only at 0.5 seconds into the clip. At 0.5s, 7.5s, and 14.5s, it lands on frying pan, stainless bowl, liquid milk pack, respectively.",
+            "semantic_facts": [
+              {
+                "id": "target_object_id",
+                "value": "frying pan_0"
+              },
+              {
+                "id": "target_anchor_index",
+                "value": 0
+              },
+              {
+                "id": "anchor_hits",
+                "value": [
+                  {
+                    "frame": 5040,
+                    "object_id": "frying pan_0"
+                  },
+                  {
+                    "frame": 5250,
+                    "object_id": "stainless bowl_0"
+                  },
+                  {
+                    "frame": 5460,
+                    "object_id": "liquid milk pack_0"
+                  }
+                ]
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:cdffe9c587bc8fafcc5e8deddd37f0650845034a4d270534574f5325f97f26a1"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 5040,
+                "gaze_frame_num": 1680,
+                "object_id": "frying pan_0",
+                "decoded_mask_sha256": "sha256:c4363e69664f8018b34cd6c2e4c5b9208c2b2d571237960e617ef6c76249c578"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 5250,
+                "gaze_frame_num": 1750,
+                "object_id": "stainless bowl_0",
+                "decoded_mask_sha256": "sha256:7ee6ca9bc90186dbcc3b4ffc6cd8bc8f1fd55a84df4fc1619701afdc556b3e4c"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 5460,
+                "gaze_frame_num": 1820,
+                "object_id": "liquid milk pack_0",
+                "decoded_mask_sha256": "sha256:abb752536a456f655b5b46c6663a2e3e13d27a9c16a3a5a4834a6712a8f9125c"
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:cdffe9c587bc8fafcc5e8deddd37f0650845034a4d270534574f5325f97f26a1"
+              }
+            ],
+            "provenance": {
+              "dataset": "Ego-Exo4D v2",
+              "take_uid": "e420250d-b67f-4c46-bc40-31b8c9003d7e",
+              "take_name": "uniandes_cooking_006_6",
+              "computation": "deterministic_frame_aligned_2d_point_in_mask",
+              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
+              "release_status": "signed_semantic_gt_egoexo_primary"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:082453ad7d1a19fd476a53dc846524007f56fa39a00680149e5c66b94563ec79"
+          },
+          "answer_signature": "sha256:082453ad7d1a19fd476a53dc846524007f56fa39a00680149e5c66b94563ec79",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_egoexo_uniandes_cooking_006_6_13837ab534",
+              "answer_signature": "sha256:082453ad7d1a19fd476a53dc846524007f56fa39a00680149e5c66b94563ec79",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "release_eligible": true,
+          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "release_status": "signed_semantic_gt_egoexo_primary",
+            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
+            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
+            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
+            "take_uid": "e420250d-b67f-4c46-bc40-31b8c9003d7e",
+            "take_name": "uniandes_cooking_006_6",
+            "camera": "aria01_214-1",
+            "target_object_id": "frying pan_0",
+            "target_object_name": "frying pan",
+            "target_anchor_index": 0,
+            "correct_semantic_option_id": "anchor_1",
+            "anchors": [
+              {
+                "video_frame": 5040,
+                "time_s": 168.0,
+                "gaze_frame_num": 1680,
+                "gaze_tracking_timestamp_us": 1624616689,
+                "alignment_skew_ms": 0.0,
+                "object_id": "frying pan_0",
+                "object_name": "frying pan",
+                "annotated_mask_count": 3,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  621.837765,
+                  896.6388
+                ],
+                "rounded_pixel_xy": [
+                  622,
+                  897
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 45388,
+                "boundary_margin_px": 97.266678,
+                "decoded_mask_sha256": "sha256:c4363e69664f8018b34cd6c2e4c5b9208c2b2d571237960e617ef6c76249c578",
+                "clip_time_s": 0.5
+              },
+              {
+                "video_frame": 5250,
+                "time_s": 175.0,
+                "gaze_frame_num": 1750,
+                "gaze_tracking_timestamp_us": 1631615569,
+                "alignment_skew_ms": 0.0,
+                "object_id": "stainless bowl_0",
+                "object_name": "stainless bowl",
+                "annotated_mask_count": 3,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  828.79593,
+                  902.210924
+                ],
+                "rounded_pixel_xy": [
+                  829,
+                  902
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 31143,
+                "boundary_margin_px": 67.710083,
+                "decoded_mask_sha256": "sha256:7ee6ca9bc90186dbcc3b4ffc6cd8bc8f1fd55a84df4fc1619701afdc556b3e4c",
+                "clip_time_s": 7.5
+              },
+              {
+                "video_frame": 5460,
+                "time_s": 182.0,
+                "gaze_frame_num": 1820,
+                "gaze_tracking_timestamp_us": 1638614449,
+                "alignment_skew_ms": 0.0,
+                "object_id": "liquid milk pack_0",
+                "object_name": "liquid milk pack",
+                "annotated_mask_count": 2,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  631.936198,
+                  841.396247
+                ],
+                "rounded_pixel_xy": [
+                  632,
+                  841
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 20171,
+                "boundary_margin_px": 50.52869,
+                "decoded_mask_sha256": "sha256:abb752536a456f655b5b46c6663a2e3e13d27a9c16a3a5a4834a6712a8f9125c",
+                "clip_time_s": 14.5
+              }
+            ],
+            "alignment_diagnostics": {
+              "video_fps": 30.0,
+              "gaze_frame_rate_hz_declared": 10.0,
+              "gaze_timestamp_rate_hz_measured": 10.0016,
+              "frame_mapping": "video_frame / 3 == gaze frame_num",
+              "maximum_anchor_skew_ms": 0.0,
+              "video_frame_count": 15344,
+              "source_video_resolution": [
+                448,
+                448
+              ]
+            },
+            "claim_limits": [
+              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
+              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
+            ],
+            "source_window": {
+              "start_sec": 167.5,
+              "end_sec": 182.5,
+              "duration_sec": 15.0
+            },
+            "source_evidence": {
+              "relations": "annotations/relations_val.json",
+              "gaze": "takes/uniandes_cooking_006_6/eye_gaze/general_eye_gaze_2d.csv",
+              "video": "takes/uniandes_cooking_006_6/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
+            },
+            "temporal_scope": "three explicit clip-relative checkpoints",
+            "semantic_gt_id": "task5_egoexo_uniandes_cooking_006_6_13837ab534",
+            "answer_signature": "sha256:082453ad7d1a19fd476a53dc846524007f56fa39a00680149e5c66b94563ec79",
+            "evidence_signature": "sha256:cdffe9c587bc8fafcc5e8deddd37f0650845034a4d270534574f5325f97f26a1",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
+    },
+    {
+      "name": "task5_egoexo_sfu_cooking_010_3_dab0e9e401",
+      "title": "Task 5 · EgoExo4D · sfu_cooking_010_3",
+      "video_clip": "./task5_media/task5_egoexo_sfu_cooking_010_3_dab0e9e401.mp4",
+      "original_image": "./task5_media/task5_egoexo_sfu_cooking_010_3_dab0e9e401_evidence.jpg",
+      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
+      "video_window": {
+        "source_sequence": "sfu_cooking_010_3",
+        "start_sec": 168.5,
+        "end_sec": 183.5,
+        "duration_sec": 15.0,
+        "anchor_frames": [
+          5100,
+          5340,
+          5460
+        ],
+        "published_clip_duration_sec": 15.0
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_target_sequence_across_clip_checkpoints",
+          "question_categories": [
+            "evidence_closed_gaze_mask_anchor"
+          ],
+          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
+          "options": [
+            {
+              "label": "A",
+              "text": "At 1.5s: cream bowl; at 9.5s: tomato package; at 13.5s: chopping board.",
+              "semantic_option_id": "anchor_1"
+            },
+            {
+              "label": "B",
+              "text": "At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
+              "semantic_option_id": "anchor_3"
+            },
+            {
+              "label": "C",
+              "text": "At 1.5s: tomato package; at 9.5s: chopping board; at 13.5s: cream bowl.",
+              "semantic_option_id": "anchor_2"
+            },
+            {
+              "label": "D",
+              "text": "At 1.5s: cream bowl; at 9.5s: chopping board; at 13.5s: tomato package.",
+              "semantic_option_id": "no_anchor"
+            }
+          ],
+          "correct_option": "B",
+          "correct_answer": "At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
+          "answer": "At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
+          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_egoexo_sfu_cooking_010_3_dab0e9e401",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_target_sequence_across_clip_checkpoints",
+            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
+            "options": [
+              {
+                "id": "anchor_1",
+                "statement": "At 1.5s: cream bowl; at 9.5s: tomato package; at 13.5s: chopping board."
+              },
+              {
+                "id": "anchor_2",
+                "statement": "At 1.5s: tomato package; at 9.5s: chopping board; at 13.5s: cream bowl."
+              },
+              {
+                "id": "anchor_3",
+                "statement": "At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board."
+              },
+              {
+                "id": "no_anchor",
+                "statement": "At 1.5s: cream bowl; at 9.5s: chopping board; at 13.5s: tomato package."
+              }
+            ],
+            "correct_option_id": "anchor_3",
+            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
+            "semantic_facts": [
+              {
+                "id": "target_object_id",
+                "value": "chopping board_0"
+              },
+              {
+                "id": "target_anchor_index",
+                "value": 2
+              },
+              {
+                "id": "anchor_hits",
+                "value": [
+                  {
+                    "frame": 5100,
+                    "object_id": "tomato package_0"
+                  },
+                  {
+                    "frame": 5340,
+                    "object_id": "cream bowl_0"
+                  },
+                  {
+                    "frame": 5460,
+                    "object_id": "chopping board_0"
+                  }
+                ]
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:ef2212aace12d128fda54d4a34e37761b1a704adc50da0452bf6df33d156623f"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 5100,
+                "gaze_frame_num": 1700,
+                "object_id": "tomato package_0",
+                "decoded_mask_sha256": "sha256:423186ce46b8e2db931048e7fa3022a0a67d65b9f57370d3ef72643c0d966d21"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 5340,
+                "gaze_frame_num": 1780,
+                "object_id": "cream bowl_0",
+                "decoded_mask_sha256": "sha256:4bc020cc556b5a8dc7b6642a76dd15a556ee1d5f10f8ef1d9b555080fea45420"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 5460,
+                "gaze_frame_num": 1820,
+                "object_id": "chopping board_0",
+                "decoded_mask_sha256": "sha256:0bde595b634a91a45e686d7f6f65bc7551d7279b4260c3a8ffda870a025c7280"
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:ef2212aace12d128fda54d4a34e37761b1a704adc50da0452bf6df33d156623f"
+              }
+            ],
+            "provenance": {
+              "dataset": "Ego-Exo4D v2",
+              "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+              "take_name": "sfu_cooking_010_3",
+              "computation": "deterministic_frame_aligned_2d_point_in_mask",
+              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
+              "release_status": "signed_semantic_gt_egoexo_primary"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:6e01c409debe0c58b189b61af1ce9d3c831849709a3bd2bd0bce8d08aa00fba4"
+          },
+          "answer_signature": "sha256:6e01c409debe0c58b189b61af1ce9d3c831849709a3bd2bd0bce8d08aa00fba4",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_egoexo_sfu_cooking_010_3_dab0e9e401",
+              "answer_signature": "sha256:6e01c409debe0c58b189b61af1ce9d3c831849709a3bd2bd0bce8d08aa00fba4",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "release_eligible": true,
+          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "release_status": "signed_semantic_gt_egoexo_primary",
+            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
+            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
+            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
+            "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
+            "take_name": "sfu_cooking_010_3",
+            "camera": "aria01_214-1",
+            "target_object_id": "chopping board_0",
+            "target_object_name": "chopping board",
+            "target_anchor_index": 2,
+            "correct_semantic_option_id": "anchor_3",
+            "anchors": [
+              {
+                "video_frame": 5100,
+                "time_s": 170.0,
+                "gaze_frame_num": 1700,
+                "gaze_tracking_timestamp_us": 1339496263,
+                "alignment_skew_ms": 0.0,
+                "object_id": "tomato package_0",
+                "object_name": "tomato package",
+                "annotated_mask_count": 13,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  724.115447,
+                  871.523581
+                ],
+                "rounded_pixel_xy": [
+                  724,
+                  872
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 24680,
+                "boundary_margin_px": 43.741089,
+                "decoded_mask_sha256": "sha256:423186ce46b8e2db931048e7fa3022a0a67d65b9f57370d3ef72643c0d966d21",
+                "clip_time_s": 1.5
+              },
+              {
+                "video_frame": 5340,
+                "time_s": 178.0,
+                "gaze_frame_num": 1780,
+                "gaze_tracking_timestamp_us": 1347494983,
+                "alignment_skew_ms": 0.0,
+                "object_id": "cream bowl_0",
+                "object_name": "cream bowl",
+                "annotated_mask_count": 8,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  699.343383,
+                  903.649626
+                ],
+                "rounded_pixel_xy": [
+                  699,
+                  904
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 35597,
+                "boundary_margin_px": 39.759693,
+                "decoded_mask_sha256": "sha256:4bc020cc556b5a8dc7b6642a76dd15a556ee1d5f10f8ef1d9b555080fea45420",
+                "clip_time_s": 9.5
+              },
+              {
+                "video_frame": 5460,
+                "time_s": 182.0,
+                "gaze_frame_num": 1820,
+                "gaze_tracking_timestamp_us": 1351494343,
+                "alignment_skew_ms": 0.0,
+                "object_id": "chopping board_0",
+                "object_name": "chopping board",
+                "annotated_mask_count": 9,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  820.290666,
+                  948.228919
+                ],
+                "rounded_pixel_xy": [
+                  820,
+                  948
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 80803,
+                "boundary_margin_px": 84.984497,
+                "decoded_mask_sha256": "sha256:0bde595b634a91a45e686d7f6f65bc7551d7279b4260c3a8ffda870a025c7280",
+                "clip_time_s": 13.5
+              }
+            ],
+            "alignment_diagnostics": {
+              "video_fps": 30.0,
+              "gaze_frame_rate_hz_declared": 10.0,
+              "gaze_timestamp_rate_hz_measured": 10.0016,
+              "frame_mapping": "video_frame / 3 == gaze frame_num",
+              "maximum_anchor_skew_ms": 0.0,
+              "video_frame_count": 8255,
+              "source_video_resolution": [
+                448,
+                448
+              ]
+            },
+            "claim_limits": [
+              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
+              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
+            ],
+            "source_window": {
+              "start_sec": 168.5,
+              "end_sec": 183.5,
+              "duration_sec": 15.0
+            },
+            "source_evidence": {
+              "relations": "annotations/relations_val.json",
+              "gaze": "takes/sfu_cooking_010_3/eye_gaze/general_eye_gaze_2d.csv",
+              "video": "takes/sfu_cooking_010_3/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
+            },
+            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
+            "semantic_gt_id": "task5_egoexo_sfu_cooking_010_3_dab0e9e401",
+            "answer_signature": "sha256:6e01c409debe0c58b189b61af1ce9d3c831849709a3bd2bd0bce8d08aa00fba4",
+            "evidence_signature": "sha256:ef2212aace12d128fda54d4a34e37761b1a704adc50da0452bf6df33d156623f",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
+    },
+    {
+      "name": "task5_egoexo_iiith_cooking_32_1_06aeff1d04",
+      "title": "Task 5 · EgoExo4D · iiith_cooking_32_1",
+      "video_clip": "./task5_media/task5_egoexo_iiith_cooking_32_1_06aeff1d04.mp4",
+      "original_image": "./task5_media/task5_egoexo_iiith_cooking_32_1_06aeff1d04_evidence.jpg",
+      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
+      "video_window": {
+        "source_sequence": "iiith_cooking_32_1",
+        "start_sec": 29.0,
+        "end_sec": 44.0,
+        "duration_sec": 15.0,
+        "anchor_frames": [
+          930,
+          1170,
+          1260
+        ],
+        "published_clip_duration_sec": 15.0
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_point_inside_relation_mask_at_anchor",
+          "question_categories": [
+            "evidence_closed_gaze_mask_anchor"
+          ],
+          "question": "At which stated clip time (2.0s, 10.0s, or 13.0s) does the camera-wearer gaze land on the tawa pan?",
+          "options": [
+            {
+              "label": "A",
+              "text": "At 2.0s into the clip, but not at 10.0s or 13.0s.",
+              "semantic_option_id": "anchor_1"
+            },
+            {
+              "label": "B",
+              "text": "At 13.0s into the clip, but not at 2.0s or 10.0s.",
+              "semantic_option_id": "anchor_3"
+            },
+            {
+              "label": "C",
+              "text": "At 10.0s into the clip, but not at 2.0s or 13.0s.",
+              "semantic_option_id": "anchor_2"
+            },
+            {
+              "label": "D",
+              "text": "At none of these clip times: 2.0s, 10.0s, or 13.0s.",
+              "semantic_option_id": "no_anchor"
+            }
+          ],
+          "correct_option": "C",
+          "correct_answer": "At 10.0s into the clip, but not at 2.0s or 13.0s.",
+          "answer": "At 10.0s into the clip, but not at 2.0s or 13.0s.",
+          "explanation": "The synchronized gaze point lands inside the annotated tawa pan region only at 10.0 seconds into the clip. At 2.0s, 10.0s, and 13.0s, it lands on gas lighter, tawa pan, stainless paprika container, respectively.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_egoexo_iiith_cooking_32_1_06aeff1d04",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_point_inside_relation_mask_at_anchor",
+            "question_focus": "At which stated clip time (2.0s, 10.0s, or 13.0s) does the camera-wearer gaze land on the tawa pan?",
+            "options": [
+              {
+                "id": "anchor_1",
+                "statement": "At 2.0s into the clip, but not at 10.0s or 13.0s."
+              },
+              {
+                "id": "anchor_2",
+                "statement": "At 10.0s into the clip, but not at 2.0s or 13.0s."
+              },
+              {
+                "id": "anchor_3",
+                "statement": "At 13.0s into the clip, but not at 2.0s or 10.0s."
+              },
+              {
+                "id": "no_anchor",
+                "statement": "At none of these clip times: 2.0s, 10.0s, or 13.0s."
+              }
+            ],
+            "correct_option_id": "anchor_2",
+            "evidence_statement": "The synchronized gaze point lands inside the annotated tawa pan region only at 10.0 seconds into the clip. At 2.0s, 10.0s, and 13.0s, it lands on gas lighter, tawa pan, stainless paprika container, respectively.",
+            "semantic_facts": [
+              {
+                "id": "target_object_id",
+                "value": "tawa pan_0"
+              },
+              {
+                "id": "target_anchor_index",
+                "value": 1
+              },
+              {
+                "id": "anchor_hits",
+                "value": [
+                  {
+                    "frame": 930,
+                    "object_id": "gas lighter _0"
+                  },
+                  {
+                    "frame": 1170,
+                    "object_id": "tawa pan_0"
+                  },
+                  {
+                    "frame": 1260,
+                    "object_id": "stainless paprika container_0"
+                  }
+                ]
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:a0e63364d186f7c4da4ad13c7b8ea9f84f1bbd6798f3521b500aa402b2b749d4"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 930,
+                "gaze_frame_num": 310,
+                "object_id": "gas lighter _0",
+                "decoded_mask_sha256": "sha256:068ab3c45f6c92312d8ff6dc42a2bbfbdcc4d81925934cf1cb1b71c1af8f4b43"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 1170,
+                "gaze_frame_num": 390,
+                "object_id": "tawa pan_0",
+                "decoded_mask_sha256": "sha256:76baee4603ad7334bdeb6576db8d540e96e037cb3ed29c9c5dff1afa0bd437fb"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 1260,
+                "gaze_frame_num": 420,
+                "object_id": "stainless paprika container_0",
+                "decoded_mask_sha256": "sha256:8f0671d7edc092e34f4a9aa6ed786a683c1cbc8d8399237bf03cd7f43e7e87b2"
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:a0e63364d186f7c4da4ad13c7b8ea9f84f1bbd6798f3521b500aa402b2b749d4"
+              }
+            ],
+            "provenance": {
+              "dataset": "Ego-Exo4D v2",
+              "take_uid": "35bfade9-8ead-46a4-b2f0-cdcfb86df1d6",
+              "take_name": "iiith_cooking_32_1",
+              "computation": "deterministic_frame_aligned_2d_point_in_mask",
+              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
+              "release_status": "signed_semantic_gt_egoexo_primary"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:e2c9c0627ae7424695475434e0b89ce96a44658e49e01b3d8240fe1c6918878b"
+          },
+          "answer_signature": "sha256:e2c9c0627ae7424695475434e0b89ce96a44658e49e01b3d8240fe1c6918878b",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_egoexo_iiith_cooking_32_1_06aeff1d04",
+              "answer_signature": "sha256:e2c9c0627ae7424695475434e0b89ce96a44658e49e01b3d8240fe1c6918878b",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "release_eligible": true,
+          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "release_status": "signed_semantic_gt_egoexo_primary",
+            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
+            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
+            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
+            "take_uid": "35bfade9-8ead-46a4-b2f0-cdcfb86df1d6",
+            "take_name": "iiith_cooking_32_1",
+            "camera": "aria01_214-1",
+            "target_object_id": "tawa pan_0",
+            "target_object_name": "tawa pan",
+            "target_anchor_index": 1,
+            "correct_semantic_option_id": "anchor_2",
+            "anchors": [
+              {
+                "video_frame": 930,
+                "time_s": 31.0,
+                "gaze_frame_num": 310,
+                "gaze_tracking_timestamp_us": 203424419,
+                "alignment_skew_ms": 0.0,
+                "object_id": "gas lighter _0",
+                "object_name": "gas lighter",
+                "annotated_mask_count": 2,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  800.265214,
+                  984.323007
+                ],
+                "rounded_pixel_xy": [
+                  800,
+                  984
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 2455,
+                "boundary_margin_px": 10.0,
+                "decoded_mask_sha256": "sha256:068ab3c45f6c92312d8ff6dc42a2bbfbdcc4d81925934cf1cb1b71c1af8f4b43",
+                "clip_time_s": 2.0
+              },
+              {
+                "video_frame": 1170,
+                "time_s": 39.0,
+                "gaze_frame_num": 390,
+                "gaze_tracking_timestamp_us": 211423139,
+                "alignment_skew_ms": 0.0,
+                "object_id": "tawa pan_0",
+                "object_name": "tawa pan",
+                "annotated_mask_count": 2,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  747.736215,
+                  1060.761572
+                ],
+                "rounded_pixel_xy": [
+                  748,
+                  1061
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 103278,
+                "boundary_margin_px": 119.000084,
+                "decoded_mask_sha256": "sha256:76baee4603ad7334bdeb6576db8d540e96e037cb3ed29c9c5dff1afa0bd437fb",
+                "clip_time_s": 10.0
+              },
+              {
+                "video_frame": 1260,
+                "time_s": 42.0,
+                "gaze_frame_num": 420,
+                "gaze_tracking_timestamp_us": 214422659,
+                "alignment_skew_ms": 0.0,
+                "object_id": "stainless paprika container_0",
+                "object_name": "stainless paprika container",
+                "annotated_mask_count": 7,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  611.962708,
+                  809.412736
+                ],
+                "rounded_pixel_xy": [
+                  612,
+                  809
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 7332,
+                "boundary_margin_px": 24.968996,
+                "decoded_mask_sha256": "sha256:8f0671d7edc092e34f4a9aa6ed786a683c1cbc8d8399237bf03cd7f43e7e87b2",
+                "clip_time_s": 13.0
+              }
+            ],
+            "alignment_diagnostics": {
+              "video_fps": 30.0,
+              "gaze_frame_rate_hz_declared": 10.0,
+              "gaze_timestamp_rate_hz_measured": 10.0016,
+              "frame_mapping": "video_frame / 3 == gaze frame_num",
+              "maximum_anchor_skew_ms": 0.0,
+              "video_frame_count": 8720,
+              "source_video_resolution": [
+                448,
+                448
+              ]
+            },
+            "claim_limits": [
+              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
+              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
+            ],
+            "source_window": {
+              "start_sec": 29.0,
+              "end_sec": 44.0,
+              "duration_sec": 15.0
+            },
+            "source_evidence": {
+              "relations": "annotations/relations_val.json",
+              "gaze": "takes/iiith_cooking_32_1/eye_gaze/general_eye_gaze_2d.csv",
+              "video": "takes/iiith_cooking_32_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
+            },
+            "temporal_scope": "three explicit clip-relative checkpoints",
+            "semantic_gt_id": "task5_egoexo_iiith_cooking_32_1_06aeff1d04",
+            "answer_signature": "sha256:e2c9c0627ae7424695475434e0b89ce96a44658e49e01b3d8240fe1c6918878b",
+            "evidence_signature": "sha256:a0e63364d186f7c4da4ad13c7b8ea9f84f1bbd6798f3521b500aa402b2b749d4",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
+    },
+    {
+      "name": "task5_egoexo_sfu_cooking_007_3_60ab95d4a7",
+      "title": "Task 5 · EgoExo4D · sfu_cooking_007_3",
+      "video_clip": "./task5_media/task5_egoexo_sfu_cooking_007_3_60ab95d4a7.mp4",
+      "original_image": "./task5_media/task5_egoexo_sfu_cooking_007_3_60ab95d4a7_evidence.jpg",
+      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
+      "video_window": {
+        "source_sequence": "sfu_cooking_007_3",
+        "start_sec": 526.0,
+        "end_sec": 541.0,
+        "duration_sec": 15.0,
+        "anchor_frames": [
+          15840,
+          15930,
+          16170
+        ],
+        "published_clip_duration_sec": 15.0
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_target_sequence_across_clip_checkpoints",
+          "question_categories": [
+            "evidence_closed_gaze_mask_anchor"
+          ],
+          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
+          "options": [
+            {
+              "label": "A",
+              "text": "At 2.0s: pink frying pan; at 5.0s: wooden chopping board; at 13.0s: meat cleaver knife.",
+              "semantic_option_id": "anchor_2"
+            },
+            {
+              "label": "B",
+              "text": "At 2.0s: meat cleaver knife; at 5.0s: pink frying pan; at 13.0s: wooden chopping board.",
+              "semantic_option_id": "anchor_3"
+            },
+            {
+              "label": "C",
+              "text": "At 2.0s: meat cleaver knife; at 5.0s: wooden chopping board; at 13.0s: pink frying pan.",
+              "semantic_option_id": "no_anchor"
+            },
+            {
+              "label": "D",
+              "text": "At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
+              "semantic_option_id": "anchor_1"
+            }
+          ],
+          "correct_option": "D",
+          "correct_answer": "At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
+          "answer": "At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
+          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_egoexo_sfu_cooking_007_3_60ab95d4a7",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_target_sequence_across_clip_checkpoints",
+            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
+            "options": [
+              {
+                "id": "anchor_1",
+                "statement": "At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board."
+              },
+              {
+                "id": "anchor_2",
+                "statement": "At 2.0s: pink frying pan; at 5.0s: wooden chopping board; at 13.0s: meat cleaver knife."
+              },
+              {
+                "id": "anchor_3",
+                "statement": "At 2.0s: meat cleaver knife; at 5.0s: pink frying pan; at 13.0s: wooden chopping board."
+              },
+              {
+                "id": "no_anchor",
+                "statement": "At 2.0s: meat cleaver knife; at 5.0s: wooden chopping board; at 13.0s: pink frying pan."
+              }
+            ],
+            "correct_option_id": "anchor_1",
+            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
+            "semantic_facts": [
+              {
+                "id": "target_object_id",
+                "value": "pink frying pan_0"
+              },
+              {
+                "id": "target_anchor_index",
+                "value": 0
+              },
+              {
+                "id": "anchor_hits",
+                "value": [
+                  {
+                    "frame": 15840,
+                    "object_id": "pink frying pan_0"
+                  },
+                  {
+                    "frame": 15930,
+                    "object_id": "meat cleaver knife_0"
+                  },
+                  {
+                    "frame": 16170,
+                    "object_id": "wooden chopping board_0"
+                  }
+                ]
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:a4a3777fedf3bf1a282567b72c9dc37b246a5b7306b0c429433d1776dffdc8b5"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 15840,
+                "gaze_frame_num": 5280,
+                "object_id": "pink frying pan_0",
+                "decoded_mask_sha256": "sha256:8ec616aa4f53c6f359bc3ab77b29cead99883c74d2653a3223851d743dfdadc5"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 15930,
+                "gaze_frame_num": 5310,
+                "object_id": "meat cleaver knife_0",
+                "decoded_mask_sha256": "sha256:a6cca939af6a4ffbfc993ab7bbecc3b09b87ba7841f1fb0091592b5be7dbf6fe"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 16170,
+                "gaze_frame_num": 5390,
+                "object_id": "wooden chopping board_0",
+                "decoded_mask_sha256": "sha256:2aee9e384c24185ac84eb19968d1d17944f93550c92d8a0d1c76411e8c3980b0"
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:a4a3777fedf3bf1a282567b72c9dc37b246a5b7306b0c429433d1776dffdc8b5"
+              }
+            ],
+            "provenance": {
+              "dataset": "Ego-Exo4D v2",
+              "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
+              "take_name": "sfu_cooking_007_3",
+              "computation": "deterministic_frame_aligned_2d_point_in_mask",
+              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
+              "release_status": "signed_semantic_gt_egoexo_primary"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:fa521223b0ebd912c32be49b3bb7365cd449946d2bbdae3809830ec42e9fe2d2"
+          },
+          "answer_signature": "sha256:fa521223b0ebd912c32be49b3bb7365cd449946d2bbdae3809830ec42e9fe2d2",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_egoexo_sfu_cooking_007_3_60ab95d4a7",
+              "answer_signature": "sha256:fa521223b0ebd912c32be49b3bb7365cd449946d2bbdae3809830ec42e9fe2d2",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "release_eligible": true,
+          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "release_status": "signed_semantic_gt_egoexo_primary",
+            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
+            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
+            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
+            "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
+            "take_name": "sfu_cooking_007_3",
+            "camera": "aria01_214-1",
+            "target_object_id": "pink frying pan_0",
+            "target_object_name": "pink frying pan",
+            "target_anchor_index": 0,
+            "correct_semantic_option_id": "anchor_1",
+            "anchors": [
+              {
+                "video_frame": 15840,
+                "time_s": 528.0,
+                "gaze_frame_num": 5280,
+                "gaze_tracking_timestamp_us": 1325020378,
+                "alignment_skew_ms": 0.0,
+                "object_id": "pink frying pan_0",
+                "object_name": "pink frying pan",
+                "annotated_mask_count": 4,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  791.261928,
+                  962.300876
+                ],
+                "rounded_pixel_xy": [
+                  791,
+                  962
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 61190,
+                "boundary_margin_px": 104.654274,
+                "decoded_mask_sha256": "sha256:8ec616aa4f53c6f359bc3ab77b29cead99883c74d2653a3223851d743dfdadc5",
+                "clip_time_s": 2.0
+              },
+              {
+                "video_frame": 15930,
+                "time_s": 531.0,
+                "gaze_frame_num": 5310,
+                "gaze_tracking_timestamp_us": 1328019898,
+                "alignment_skew_ms": 0.0,
+                "object_id": "meat cleaver knife_0",
+                "object_name": "meat cleaver knife",
+                "annotated_mask_count": 8,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  480.545871,
+                  897.638169
+                ],
+                "rounded_pixel_xy": [
+                  481,
+                  898
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 5933,
+                "boundary_margin_px": 25.165895,
+                "decoded_mask_sha256": "sha256:a6cca939af6a4ffbfc993ab7bbecc3b09b87ba7841f1fb0091592b5be7dbf6fe",
+                "clip_time_s": 5.0
+              },
+              {
+                "video_frame": 16170,
+                "time_s": 539.0,
+                "gaze_frame_num": 5390,
+                "gaze_tracking_timestamp_us": 1336018618,
+                "alignment_skew_ms": 0.0,
+                "object_id": "wooden chopping board_0",
+                "object_name": "wooden chopping board",
+                "annotated_mask_count": 6,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  554.504394,
+                  877.609664
+                ],
+                "rounded_pixel_xy": [
+                  555,
+                  878
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 45743,
+                "boundary_margin_px": 22.590698,
+                "decoded_mask_sha256": "sha256:2aee9e384c24185ac84eb19968d1d17944f93550c92d8a0d1c76411e8c3980b0",
+                "clip_time_s": 13.0
+              }
+            ],
+            "alignment_diagnostics": {
+              "video_fps": 30.0,
+              "gaze_frame_rate_hz_declared": 10.0,
+              "gaze_timestamp_rate_hz_measured": 10.0016,
+              "frame_mapping": "video_frame / 3 == gaze frame_num",
+              "maximum_anchor_skew_ms": 0.0,
+              "video_frame_count": 21756,
+              "source_video_resolution": [
+                448,
+                448
+              ]
+            },
+            "claim_limits": [
+              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
+              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
+            ],
+            "source_window": {
+              "start_sec": 526.0,
+              "end_sec": 541.0,
+              "duration_sec": 15.0
+            },
+            "source_evidence": {
+              "relations": "annotations/relations_val.json",
+              "gaze": "takes/sfu_cooking_007_3/eye_gaze/general_eye_gaze_2d.csv",
+              "video": "takes/sfu_cooking_007_3/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
+            },
+            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
+            "semantic_gt_id": "task5_egoexo_sfu_cooking_007_3_60ab95d4a7",
+            "answer_signature": "sha256:fa521223b0ebd912c32be49b3bb7365cd449946d2bbdae3809830ec42e9fe2d2",
+            "evidence_signature": "sha256:a4a3777fedf3bf1a282567b72c9dc37b246a5b7306b0c429433d1776dffdc8b5",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
+    },
+    {
+      "name": "task5_egoexo_uniandes_cooking_001_5_8854e96840",
+      "title": "Task 5 · EgoExo4D · uniandes_cooking_001_5",
+      "video_clip": "./task5_media/task5_egoexo_uniandes_cooking_001_5_8854e96840.mp4",
+      "original_image": "./task5_media/task5_egoexo_uniandes_cooking_001_5_8854e96840_evidence.jpg",
+      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
+      "video_window": {
+        "source_sequence": "uniandes_cooking_001_5",
+        "start_sec": 478.5,
+        "end_sec": 493.5,
+        "duration_sec": 15.0,
+        "anchor_frames": [
+          14400,
+          14520,
+          14760
+        ],
+        "published_clip_duration_sec": 15.0
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_point_inside_relation_mask_at_anchor",
+          "question_categories": [
+            "evidence_closed_gaze_mask_anchor"
+          ],
+          "question": "At which stated clip time (1.5s, 5.5s, or 13.5s) does the camera-wearer gaze land on the aluminium skillet?",
+          "options": [
+            {
+              "label": "A",
+              "text": "At 13.5s into the clip, but not at 1.5s or 5.5s.",
+              "semantic_option_id": "anchor_3"
+            },
+            {
+              "label": "B",
+              "text": "At 1.5s into the clip, but not at 5.5s or 13.5s.",
+              "semantic_option_id": "anchor_1"
+            },
+            {
+              "label": "C",
+              "text": "At 5.5s into the clip, but not at 1.5s or 13.5s.",
+              "semantic_option_id": "anchor_2"
+            },
+            {
+              "label": "D",
+              "text": "At none of these clip times: 1.5s, 5.5s, or 13.5s.",
+              "semantic_option_id": "no_anchor"
+            }
+          ],
+          "correct_option": "A",
+          "correct_answer": "At 13.5s into the clip, but not at 1.5s or 5.5s.",
+          "answer": "At 13.5s into the clip, but not at 1.5s or 5.5s.",
+          "explanation": "The synchronized gaze point lands inside the annotated aluminium skillet region only at 13.5 seconds into the clip. At 1.5s, 5.5s, and 13.5s, it lands on stainless bowl, egg whisk, aluminium skillet, respectively.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_egoexo_uniandes_cooking_001_5_8854e96840",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_point_inside_relation_mask_at_anchor",
+            "question_focus": "At which stated clip time (1.5s, 5.5s, or 13.5s) does the camera-wearer gaze land on the aluminium skillet?",
+            "options": [
+              {
+                "id": "anchor_1",
+                "statement": "At 1.5s into the clip, but not at 5.5s or 13.5s."
+              },
+              {
+                "id": "anchor_2",
+                "statement": "At 5.5s into the clip, but not at 1.5s or 13.5s."
+              },
+              {
+                "id": "anchor_3",
+                "statement": "At 13.5s into the clip, but not at 1.5s or 5.5s."
+              },
+              {
+                "id": "no_anchor",
+                "statement": "At none of these clip times: 1.5s, 5.5s, or 13.5s."
+              }
+            ],
+            "correct_option_id": "anchor_3",
+            "evidence_statement": "The synchronized gaze point lands inside the annotated aluminium skillet region only at 13.5 seconds into the clip. At 1.5s, 5.5s, and 13.5s, it lands on stainless bowl, egg whisk, aluminium skillet, respectively.",
+            "semantic_facts": [
+              {
+                "id": "target_object_id",
+                "value": "alluminuim skiilet_0"
+              },
+              {
+                "id": "target_anchor_index",
+                "value": 2
+              },
+              {
+                "id": "anchor_hits",
+                "value": [
+                  {
+                    "frame": 14400,
+                    "object_id": "stainless bowl_0"
+                  },
+                  {
+                    "frame": 14520,
+                    "object_id": "egg whisk_1"
+                  },
+                  {
+                    "frame": 14760,
+                    "object_id": "alluminuim skiilet_0"
+                  }
+                ]
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:49e5a8fc53dc1566fc7781a23e3cf114f2ba48b4069d81177586b79ec26c80b4"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 14400,
+                "gaze_frame_num": 4800,
+                "object_id": "stainless bowl_0",
+                "decoded_mask_sha256": "sha256:7f8267322ad372d36c81d5fda63141c13c3875477abb573ced3107bc2f3c0af7"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 14520,
+                "gaze_frame_num": 4840,
+                "object_id": "egg whisk_1",
+                "decoded_mask_sha256": "sha256:22800787909b4caf66a32e8e3780a696822d54107d22363e247df363d14e603e"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 14760,
+                "gaze_frame_num": 4920,
+                "object_id": "alluminuim skiilet_0",
+                "decoded_mask_sha256": "sha256:a071b226ede6dc717e51748df34de748b0f681abac7094487ec97a17f7879a8e"
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:49e5a8fc53dc1566fc7781a23e3cf114f2ba48b4069d81177586b79ec26c80b4"
+              }
+            ],
+            "provenance": {
+              "dataset": "Ego-Exo4D v2",
+              "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+              "take_name": "uniandes_cooking_001_5",
+              "computation": "deterministic_frame_aligned_2d_point_in_mask",
+              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
+              "release_status": "signed_semantic_gt_egoexo_primary"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:f8b1a3dfe5cf8ad5c7016485243df8ee3afbed8653b8c3db906cef9cd1455131"
+          },
+          "answer_signature": "sha256:f8b1a3dfe5cf8ad5c7016485243df8ee3afbed8653b8c3db906cef9cd1455131",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_egoexo_uniandes_cooking_001_5_8854e96840",
+              "answer_signature": "sha256:f8b1a3dfe5cf8ad5c7016485243df8ee3afbed8653b8c3db906cef9cd1455131",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "release_eligible": true,
+          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "release_status": "signed_semantic_gt_egoexo_primary",
+            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
+            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
+            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
+            "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
+            "take_name": "uniandes_cooking_001_5",
+            "camera": "aria01_214-1",
+            "target_object_id": "alluminuim skiilet_0",
+            "target_object_name": "aluminium skillet",
+            "target_anchor_index": 2,
+            "correct_semantic_option_id": "anchor_3",
+            "anchors": [
+              {
+                "video_frame": 14400,
+                "time_s": 480.0,
+                "gaze_frame_num": 4800,
+                "gaze_tracking_timestamp_us": 1690082699,
+                "alignment_skew_ms": 0.0,
+                "object_id": "stainless bowl_0",
+                "object_name": "stainless bowl",
+                "annotated_mask_count": 10,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  824.128208,
+                  980.035569
+                ],
+                "rounded_pixel_xy": [
+                  824,
+                  980
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 65250,
+                "boundary_margin_px": 73.70388,
+                "decoded_mask_sha256": "sha256:7f8267322ad372d36c81d5fda63141c13c3875477abb573ced3107bc2f3c0af7",
+                "clip_time_s": 1.5
+              },
+              {
+                "video_frame": 14520,
+                "time_s": 484.0,
+                "gaze_frame_num": 4840,
+                "gaze_tracking_timestamp_us": 1694082059,
+                "alignment_skew_ms": 0.0,
+                "object_id": "egg whisk_1",
+                "object_name": "egg whisk",
+                "annotated_mask_count": 11,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  862.041643,
+                  983.353874
+                ],
+                "rounded_pixel_xy": [
+                  862,
+                  983
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 9325,
+                "boundary_margin_px": 16.0,
+                "decoded_mask_sha256": "sha256:22800787909b4caf66a32e8e3780a696822d54107d22363e247df363d14e603e",
+                "clip_time_s": 5.5
+              },
+              {
+                "video_frame": 14760,
+                "time_s": 492.0,
+                "gaze_frame_num": 4920,
+                "gaze_tracking_timestamp_us": 1702080779,
+                "alignment_skew_ms": 0.0,
+                "object_id": "alluminuim skiilet_0",
+                "object_name": "aluminium skillet",
+                "annotated_mask_count": 3,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  820.969535,
+                  972.501721
+                ],
+                "rounded_pixel_xy": [
+                  821,
+                  973
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 45673,
+                "boundary_margin_px": 102.057381,
+                "decoded_mask_sha256": "sha256:a071b226ede6dc717e51748df34de748b0f681abac7094487ec97a17f7879a8e",
+                "clip_time_s": 13.5
+              }
+            ],
+            "alignment_diagnostics": {
+              "video_fps": 30.0,
+              "gaze_frame_rate_hz_declared": 10.0,
+              "gaze_timestamp_rate_hz_measured": 10.0016,
+              "frame_mapping": "video_frame / 3 == gaze frame_num",
+              "maximum_anchor_skew_ms": 0.0,
+              "video_frame_count": 19965,
+              "source_video_resolution": [
+                448,
+                448
+              ]
+            },
+            "claim_limits": [
+              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
+              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
+            ],
+            "source_window": {
+              "start_sec": 478.5,
+              "end_sec": 493.5,
+              "duration_sec": 15.0
+            },
+            "source_evidence": {
+              "relations": "annotations/relations_val.json",
+              "gaze": "takes/uniandes_cooking_001_5/eye_gaze/general_eye_gaze_2d.csv",
+              "video": "takes/uniandes_cooking_001_5/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
+            },
+            "temporal_scope": "three explicit clip-relative checkpoints",
+            "semantic_gt_id": "task5_egoexo_uniandes_cooking_001_5_8854e96840",
+            "answer_signature": "sha256:f8b1a3dfe5cf8ad5c7016485243df8ee3afbed8653b8c3db906cef9cd1455131",
+            "evidence_signature": "sha256:49e5a8fc53dc1566fc7781a23e3cf114f2ba48b4069d81177586b79ec26c80b4",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
+    },
+    {
+      "name": "task5_egoexo_minnesota_cooking_010_2_a60293338e",
+      "title": "Task 5 · EgoExo4D · minnesota_cooking_010_2",
+      "video_clip": "./task5_media/task5_egoexo_minnesota_cooking_010_2_a60293338e.mp4",
+      "original_image": "./task5_media/task5_egoexo_minnesota_cooking_010_2_a60293338e_evidence.jpg",
+      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
+      "video_window": {
+        "source_sequence": "minnesota_cooking_010_2",
+        "start_sec": 130.0,
+        "end_sec": 145.0,
+        "duration_sec": 15.0,
+        "anchor_frames": [
+          3960,
+          4050,
+          4290
+        ],
+        "published_clip_duration_sec": 15.0
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_target_sequence_across_clip_checkpoints",
+          "question_categories": [
+            "evidence_closed_gaze_mask_anchor"
+          ],
+          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
+          "options": [
+            {
+              "label": "A",
+              "text": "At 2.0s: egg carton; at 5.0s: paper towel sheet; at 13.0s: paper towel.",
+              "semantic_option_id": "anchor_2"
+            },
+            {
+              "label": "B",
+              "text": "At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
+              "semantic_option_id": "anchor_1"
+            },
+            {
+              "label": "C",
+              "text": "At 2.0s: paper towel; at 5.0s: egg carton; at 13.0s: paper towel sheet.",
+              "semantic_option_id": "anchor_3"
+            },
+            {
+              "label": "D",
+              "text": "At 2.0s: paper towel; at 5.0s: paper towel sheet; at 13.0s: egg carton.",
+              "semantic_option_id": "no_anchor"
+            }
+          ],
+          "correct_option": "B",
+          "correct_answer": "At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
+          "answer": "At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
+          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_egoexo_minnesota_cooking_010_2_a60293338e",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_target_sequence_across_clip_checkpoints",
+            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
+            "options": [
+              {
+                "id": "anchor_1",
+                "statement": "At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet."
+              },
+              {
+                "id": "anchor_2",
+                "statement": "At 2.0s: egg carton; at 5.0s: paper towel sheet; at 13.0s: paper towel."
+              },
+              {
+                "id": "anchor_3",
+                "statement": "At 2.0s: paper towel; at 5.0s: egg carton; at 13.0s: paper towel sheet."
+              },
+              {
+                "id": "no_anchor",
+                "statement": "At 2.0s: paper towel; at 5.0s: paper towel sheet; at 13.0s: egg carton."
+              }
+            ],
+            "correct_option_id": "anchor_1",
+            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
+            "semantic_facts": [
+              {
+                "id": "target_object_id",
+                "value": "egg carton_0"
+              },
+              {
+                "id": "target_anchor_index",
+                "value": 0
+              },
+              {
+                "id": "anchor_hits",
+                "value": [
+                  {
+                    "frame": 3960,
+                    "object_id": "egg carton_0"
+                  },
+                  {
+                    "frame": 4050,
+                    "object_id": "paper towel_0"
+                  },
+                  {
+                    "frame": 4290,
+                    "object_id": "paper towel sheet_0"
+                  }
+                ]
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:884080439f056d46f016365d37d962c3207046a558151d145f07dd6d7df201c9"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 3960,
+                "gaze_frame_num": 1320,
+                "object_id": "egg carton_0",
+                "decoded_mask_sha256": "sha256:9d08f2d733a07ccb81777207252bbcae5a642d4f2f36e9ef343e3edc99d6b4a5"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 4050,
+                "gaze_frame_num": 1350,
+                "object_id": "paper towel_0",
+                "decoded_mask_sha256": "sha256:3d4faf004c47cbee38ec5dcbb88f576ad325b027bf8482af4de132f8557836bf"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 4290,
+                "gaze_frame_num": 1430,
+                "object_id": "paper towel sheet_0",
+                "decoded_mask_sha256": "sha256:f8888a7de57b06f5567a86f520174bdeac224b5e54b59eb52a7b767755ef5262"
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:884080439f056d46f016365d37d962c3207046a558151d145f07dd6d7df201c9"
+              }
+            ],
+            "provenance": {
+              "dataset": "Ego-Exo4D v2",
+              "take_uid": "d77bb04d-c881-48be-9cc2-d781c69207cd",
+              "take_name": "minnesota_cooking_010_2",
+              "computation": "deterministic_frame_aligned_2d_point_in_mask",
+              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
+              "release_status": "signed_semantic_gt_egoexo_primary"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:2f65746f552a6ce1620a8907bb5f529f70ae4079784527d648d100cd00b7f466"
+          },
+          "answer_signature": "sha256:2f65746f552a6ce1620a8907bb5f529f70ae4079784527d648d100cd00b7f466",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_egoexo_minnesota_cooking_010_2_a60293338e",
+              "answer_signature": "sha256:2f65746f552a6ce1620a8907bb5f529f70ae4079784527d648d100cd00b7f466",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "release_eligible": true,
+          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "release_status": "signed_semantic_gt_egoexo_primary",
+            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
+            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
+            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
+            "take_uid": "d77bb04d-c881-48be-9cc2-d781c69207cd",
+            "take_name": "minnesota_cooking_010_2",
+            "camera": "aria05_214-1",
+            "target_object_id": "egg carton_0",
+            "target_object_name": "egg carton",
+            "target_anchor_index": 0,
+            "correct_semantic_option_id": "anchor_1",
+            "anchors": [
+              {
+                "video_frame": 3960,
+                "time_s": 132.0,
+                "gaze_frame_num": 1320,
+                "gaze_tracking_timestamp_us": 727437715,
+                "alignment_skew_ms": 0.0,
+                "object_id": "egg carton_0",
+                "object_name": "egg carton",
+                "annotated_mask_count": 4,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  776.794504,
+                  1067.378781
+                ],
+                "rounded_pixel_xy": [
+                  777,
+                  1067
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 50440,
+                "boundary_margin_px": 83.0,
+                "decoded_mask_sha256": "sha256:9d08f2d733a07ccb81777207252bbcae5a642d4f2f36e9ef343e3edc99d6b4a5",
+                "clip_time_s": 2.0
+              },
+              {
+                "video_frame": 4050,
+                "time_s": 135.0,
+                "gaze_frame_num": 1350,
+                "gaze_tracking_timestamp_us": 730437235,
+                "alignment_skew_ms": 0.0,
+                "object_id": "paper towel_0",
+                "object_name": "paper towel",
+                "annotated_mask_count": 1,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  712.887876,
+                  896.334161
+                ],
+                "rounded_pixel_xy": [
+                  713,
+                  896
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 22542,
+                "boundary_margin_px": 33.165894,
+                "decoded_mask_sha256": "sha256:3d4faf004c47cbee38ec5dcbb88f576ad325b027bf8482af4de132f8557836bf",
+                "clip_time_s": 5.0
+              },
+              {
+                "video_frame": 4290,
+                "time_s": 143.0,
+                "gaze_frame_num": 1430,
+                "gaze_tracking_timestamp_us": 738435955,
+                "alignment_skew_ms": 0.0,
+                "object_id": "paper towel sheet_0",
+                "object_name": "paper towel sheet",
+                "annotated_mask_count": 5,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  742.420242,
+                  1101.288652
+                ],
+                "rounded_pixel_xy": [
+                  742,
+                  1101
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 26128,
+                "boundary_margin_px": 27.999994,
+                "decoded_mask_sha256": "sha256:f8888a7de57b06f5567a86f520174bdeac224b5e54b59eb52a7b767755ef5262",
+                "clip_time_s": 13.0
+              }
+            ],
+            "alignment_diagnostics": {
+              "video_fps": 30.0,
+              "gaze_frame_rate_hz_declared": 10.0,
+              "gaze_timestamp_rate_hz_measured": 10.0016,
+              "frame_mapping": "video_frame / 3 == gaze frame_num",
+              "maximum_anchor_skew_ms": 0.0,
+              "video_frame_count": 30019,
+              "source_video_resolution": [
+                448,
+                448
+              ]
+            },
+            "claim_limits": [
+              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
+              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
+            ],
+            "source_window": {
+              "start_sec": 130.0,
+              "end_sec": 145.0,
+              "duration_sec": 15.0
+            },
+            "source_evidence": {
+              "relations": "annotations/relations_val.json",
+              "gaze": "takes/minnesota_cooking_010_2/eye_gaze/general_eye_gaze_2d.csv",
+              "video": "takes/minnesota_cooking_010_2/frame_aligned_videos/downscaled/448/aria05_214-1.mp4"
+            },
+            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
+            "semantic_gt_id": "task5_egoexo_minnesota_cooking_010_2_a60293338e",
+            "answer_signature": "sha256:2f65746f552a6ce1620a8907bb5f529f70ae4079784527d648d100cd00b7f466",
+            "evidence_signature": "sha256:884080439f056d46f016365d37d962c3207046a558151d145f07dd6d7df201c9",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
+    },
+    {
+      "name": "task5_egoexo_sfu_cooking_007_1_4ec66ba784",
+      "title": "Task 5 · EgoExo4D · sfu_cooking_007_1",
+      "video_clip": "./task5_media/task5_egoexo_sfu_cooking_007_1_4ec66ba784.mp4",
+      "original_image": "./task5_media/task5_egoexo_sfu_cooking_007_1_4ec66ba784_evidence.jpg",
+      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
+      "video_window": {
+        "source_sequence": "sfu_cooking_007_1",
+        "start_sec": 253.0,
+        "end_sec": 268.0,
+        "duration_sec": 15.0,
+        "anchor_frames": [
+          7650,
+          7710,
+          7980
+        ],
+        "published_clip_duration_sec": 15.0
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_point_inside_relation_mask_at_anchor",
+          "question_categories": [
+            "evidence_closed_gaze_mask_anchor"
+          ],
+          "question": "At which stated clip time (2.0s, 4.0s, or 13.0s) does the camera-wearer gaze land on the non-stick pan?",
+          "options": [
+            {
+              "label": "A",
+              "text": "At 2.0s into the clip, but not at 4.0s or 13.0s.",
+              "semantic_option_id": "anchor_1"
+            },
+            {
+              "label": "B",
+              "text": "At 4.0s into the clip, but not at 2.0s or 13.0s.",
+              "semantic_option_id": "anchor_2"
+            },
+            {
+              "label": "C",
+              "text": "At 13.0s into the clip, but not at 2.0s or 4.0s.",
+              "semantic_option_id": "anchor_3"
+            },
+            {
+              "label": "D",
+              "text": "At none of these clip times: 2.0s, 4.0s, or 13.0s.",
+              "semantic_option_id": "no_anchor"
+            }
+          ],
+          "correct_option": "C",
+          "correct_answer": "At 13.0s into the clip, but not at 2.0s or 4.0s.",
+          "answer": "At 13.0s into the clip, but not at 2.0s or 4.0s.",
+          "explanation": "The synchronized gaze point lands inside the annotated non-stick pan region only at 13.0 seconds into the clip. At 2.0s, 4.0s, and 13.0s, it lands on blue and white bowl, kitchen cloth, non-stick pan, respectively.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_egoexo_sfu_cooking_007_1_4ec66ba784",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_point_inside_relation_mask_at_anchor",
+            "question_focus": "At which stated clip time (2.0s, 4.0s, or 13.0s) does the camera-wearer gaze land on the non-stick pan?",
+            "options": [
+              {
+                "id": "anchor_1",
+                "statement": "At 2.0s into the clip, but not at 4.0s or 13.0s."
+              },
+              {
+                "id": "anchor_2",
+                "statement": "At 4.0s into the clip, but not at 2.0s or 13.0s."
+              },
+              {
+                "id": "anchor_3",
+                "statement": "At 13.0s into the clip, but not at 2.0s or 4.0s."
+              },
+              {
+                "id": "no_anchor",
+                "statement": "At none of these clip times: 2.0s, 4.0s, or 13.0s."
+              }
+            ],
+            "correct_option_id": "anchor_3",
+            "evidence_statement": "The synchronized gaze point lands inside the annotated non-stick pan region only at 13.0 seconds into the clip. At 2.0s, 4.0s, and 13.0s, it lands on blue and white bowl, kitchen cloth, non-stick pan, respectively.",
+            "semantic_facts": [
+              {
+                "id": "target_object_id",
+                "value": "non-stick pan_0"
+              },
+              {
+                "id": "target_anchor_index",
+                "value": 2
+              },
+              {
+                "id": "anchor_hits",
+                "value": [
+                  {
+                    "frame": 7650,
+                    "object_id": "blue and white bowl_0"
+                  },
+                  {
+                    "frame": 7710,
+                    "object_id": "kitchen cloth_0"
+                  },
+                  {
+                    "frame": 7980,
+                    "object_id": "non-stick pan_0"
+                  }
+                ]
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:616c04f57ca19f2b48081efc88083eb5304950b7f28f9eb0762207261a8f6696"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 7650,
+                "gaze_frame_num": 2550,
+                "object_id": "blue and white bowl_0",
+                "decoded_mask_sha256": "sha256:ea02c2851d4f141bd9e2abbe6ef7c8c731ab55da78d8518931aad4d4ca5ecb34"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 7710,
+                "gaze_frame_num": 2570,
+                "object_id": "kitchen cloth_0",
+                "decoded_mask_sha256": "sha256:0bfb745ecab1d784d265a71e15dc7a01c31e6c8ed67170a01003288e4b4f16aa"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 7980,
+                "gaze_frame_num": 2660,
+                "object_id": "non-stick pan_0",
+                "decoded_mask_sha256": "sha256:25590d16b88a0a1cd874adf2fe29f1e787857dbbcea032a8c3c1e65448168ede"
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:616c04f57ca19f2b48081efc88083eb5304950b7f28f9eb0762207261a8f6696"
+              }
+            ],
+            "provenance": {
+              "dataset": "Ego-Exo4D v2",
+              "take_uid": "6eb10b39-5171-4293-afba-4084f5825748",
+              "take_name": "sfu_cooking_007_1",
+              "computation": "deterministic_frame_aligned_2d_point_in_mask",
+              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
+              "release_status": "signed_semantic_gt_egoexo_primary"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:c8bc0953e3ce018f7f12ef108b03127ce2eb7419f17c2db6079a3f211cb4ad75"
+          },
+          "answer_signature": "sha256:c8bc0953e3ce018f7f12ef108b03127ce2eb7419f17c2db6079a3f211cb4ad75",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_egoexo_sfu_cooking_007_1_4ec66ba784",
+              "answer_signature": "sha256:c8bc0953e3ce018f7f12ef108b03127ce2eb7419f17c2db6079a3f211cb4ad75",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "release_eligible": true,
+          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "release_status": "signed_semantic_gt_egoexo_primary",
+            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
+            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
+            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
+            "take_uid": "6eb10b39-5171-4293-afba-4084f5825748",
+            "take_name": "sfu_cooking_007_1",
+            "camera": "aria01_214-1",
+            "target_object_id": "non-stick pan_0",
+            "target_object_name": "non-stick pan",
+            "target_anchor_index": 2,
+            "correct_semantic_option_id": "anchor_3",
+            "anchors": [
+              {
+                "video_frame": 7650,
+                "time_s": 255.0,
+                "gaze_frame_num": 2550,
+                "gaze_tracking_timestamp_us": 516149818,
+                "alignment_skew_ms": 0.0,
+                "object_id": "blue and white bowl_0",
+                "object_name": "blue and white bowl",
+                "annotated_mask_count": 6,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  707.472827,
+                  1023.467755
+                ],
+                "rounded_pixel_xy": [
+                  707,
+                  1023
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 6795,
+                "boundary_margin_px": 10.5907,
+                "decoded_mask_sha256": "sha256:ea02c2851d4f141bd9e2abbe6ef7c8c731ab55da78d8518931aad4d4ca5ecb34",
+                "clip_time_s": 2.0
+              },
+              {
+                "video_frame": 7710,
+                "time_s": 257.0,
+                "gaze_frame_num": 2570,
+                "gaze_tracking_timestamp_us": 518149498,
+                "alignment_skew_ms": 0.0,
+                "object_id": "kitchen cloth_0",
+                "object_name": "kitchen cloth",
+                "annotated_mask_count": 6,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  718.215248,
+                  981.948018
+                ],
+                "rounded_pixel_xy": [
+                  718,
+                  982
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 57407,
+                "boundary_margin_px": 30.0,
+                "decoded_mask_sha256": "sha256:0bfb745ecab1d784d265a71e15dc7a01c31e6c8ed67170a01003288e4b4f16aa",
+                "clip_time_s": 4.0
+              },
+              {
+                "video_frame": 7980,
+                "time_s": 266.0,
+                "gaze_frame_num": 2660,
+                "gaze_tracking_timestamp_us": 527148058,
+                "alignment_skew_ms": 0.0,
+                "object_id": "non-stick pan_0",
+                "object_name": "non-stick pan",
+                "annotated_mask_count": 7,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  699.837178,
+                  969.717585
+                ],
+                "rounded_pixel_xy": [
+                  700,
+                  970
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 67314,
+                "boundary_margin_px": 94.482178,
+                "decoded_mask_sha256": "sha256:25590d16b88a0a1cd874adf2fe29f1e787857dbbcea032a8c3c1e65448168ede",
+                "clip_time_s": 13.0
+              }
+            ],
+            "alignment_diagnostics": {
+              "video_fps": 30.0,
+              "gaze_frame_rate_hz_declared": 10.0,
+              "gaze_timestamp_rate_hz_measured": 10.0016,
+              "frame_mapping": "video_frame / 3 == gaze frame_num",
+              "maximum_anchor_skew_ms": 0.0,
+              "video_frame_count": 14643,
+              "source_video_resolution": [
+                448,
+                448
+              ]
+            },
+            "claim_limits": [
+              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
+              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
+            ],
+            "source_window": {
+              "start_sec": 253.0,
+              "end_sec": 268.0,
+              "duration_sec": 15.0
+            },
+            "source_evidence": {
+              "relations": "annotations/relations_val.json",
+              "gaze": "takes/sfu_cooking_007_1/eye_gaze/general_eye_gaze_2d.csv",
+              "video": "takes/sfu_cooking_007_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
+            },
+            "temporal_scope": "three explicit clip-relative checkpoints",
+            "semantic_gt_id": "task5_egoexo_sfu_cooking_007_1_4ec66ba784",
+            "answer_signature": "sha256:c8bc0953e3ce018f7f12ef108b03127ce2eb7419f17c2db6079a3f211cb4ad75",
+            "evidence_signature": "sha256:616c04f57ca19f2b48081efc88083eb5304950b7f28f9eb0762207261a8f6696",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
+    },
+    {
+      "name": "task5_egoexo_sfu_cooking_010_1_718f6f57a3",
+      "title": "Task 5 · EgoExo4D · sfu_cooking_010_1",
+      "video_clip": "./task5_media/task5_egoexo_sfu_cooking_010_1_718f6f57a3.mp4",
+      "original_image": "./task5_media/task5_egoexo_sfu_cooking_010_1_718f6f57a3_evidence.jpg",
+      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
+      "video_window": {
+        "source_sequence": "sfu_cooking_010_1",
+        "start_sec": 216.0,
+        "end_sec": 231.0,
+        "duration_sec": 15.0,
+        "anchor_frames": [
+          6510,
+          6660,
+          6900
+        ],
+        "published_clip_duration_sec": 15.0
+      },
+      "qa": [
+        {
+          "task_id": "task5_human_state_grounded_spatial_reasoning",
+          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
+          "question_type": "gaze_target_sequence_across_clip_checkpoints",
+          "question_categories": [
+            "evidence_closed_gaze_mask_anchor"
+          ],
+          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
+          "options": [
+            {
+              "label": "A",
+              "text": "At 1.0s: dining table; at 6.0s: white plate; at 14.0s: white bowl.",
+              "semantic_option_id": "anchor_1"
+            },
+            {
+              "label": "B",
+              "text": "At 1.0s: white bowl; at 6.0s: dining table; at 14.0s: white plate.",
+              "semantic_option_id": "anchor_3"
+            },
+            {
+              "label": "C",
+              "text": "At 1.0s: white bowl; at 6.0s: white plate; at 14.0s: dining table.",
+              "semantic_option_id": "no_anchor"
+            },
+            {
+              "label": "D",
+              "text": "At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
+              "semantic_option_id": "anchor_2"
+            }
+          ],
+          "correct_option": "D",
+          "correct_answer": "At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
+          "answer": "At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
+          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
+          "semantic_gt": {
+            "schema_version": "limo4si.semantic_gt.v1",
+            "semantic_gt_id": "task5_egoexo_sfu_cooking_010_1_718f6f57a3",
+            "task_id": "task5_human_state_grounded_spatial_reasoning",
+            "question_type": "gaze_target_sequence_across_clip_checkpoints",
+            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
+            "options": [
+              {
+                "id": "anchor_1",
+                "statement": "At 1.0s: dining table; at 6.0s: white plate; at 14.0s: white bowl."
+              },
+              {
+                "id": "anchor_2",
+                "statement": "At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate."
+              },
+              {
+                "id": "anchor_3",
+                "statement": "At 1.0s: white bowl; at 6.0s: dining table; at 14.0s: white plate."
+              },
+              {
+                "id": "no_anchor",
+                "statement": "At 1.0s: white bowl; at 6.0s: white plate; at 14.0s: dining table."
+              }
+            ],
+            "correct_option_id": "anchor_2",
+            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
+            "semantic_facts": [
+              {
+                "id": "target_object_id",
+                "value": "white bowl_0"
+              },
+              {
+                "id": "target_anchor_index",
+                "value": 1
+              },
+              {
+                "id": "anchor_hits",
+                "value": [
+                  {
+                    "frame": 6510,
+                    "object_id": "dining table_0"
+                  },
+                  {
+                    "frame": 6660,
+                    "object_id": "white bowl_0"
+                  },
+                  {
+                    "frame": 6900,
+                    "object_id": "white plate_0"
+                  }
+                ]
+              },
+              {
+                "id": "result_evidence_signature",
+                "value": "sha256:878d0706ee8a369b1be60d3b755bd5a4a586ec022b4a41f35e2bbbca3af43fcd"
+              }
+            ],
+            "evidence_refs": [
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 6510,
+                "gaze_frame_num": 2170,
+                "object_id": "dining table_0",
+                "decoded_mask_sha256": "sha256:5c59d2d7f8caca92f16783816fb39adf4ac8c448b314d37a0087eedade942dd0"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 6660,
+                "gaze_frame_num": 2220,
+                "object_id": "white bowl_0",
+                "decoded_mask_sha256": "sha256:565735d3758cde19c7278a1fc5470cb56ea521af114e4377a5855efdbef82a58"
+              },
+              {
+                "kind": "egoexo_relations_mask_and_gaze_anchor",
+                "video_frame": 6900,
+                "gaze_frame_num": 2300,
+                "object_id": "white plate_0",
+                "decoded_mask_sha256": "sha256:7db1954c2d2fa9704313ffbf2de9010166beff12d5c3d18e6f26306fbe6e298c"
+              },
+              {
+                "kind": "result_json_sha256",
+                "sha256": "sha256:878d0706ee8a369b1be60d3b755bd5a4a586ec022b4a41f35e2bbbca3af43fcd"
+              }
+            ],
+            "provenance": {
+              "dataset": "Ego-Exo4D v2",
+              "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+              "take_name": "sfu_cooking_010_1",
+              "computation": "deterministic_frame_aligned_2d_point_in_mask",
+              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
+              "release_status": "signed_semantic_gt_egoexo_primary"
+            },
+            "reasoning_owner": "deterministic_code",
+            "language_model_permissions": [
+              "neutral_wording_variation",
+              "wrapping_locked_code_gt_as_natural_language"
+            ],
+            "language_model_forbidden": [
+              "spatial_reasoning",
+              "temporal_reasoning",
+              "gaze_reasoning",
+              "contact_reasoning",
+              "visibility_reasoning",
+              "option_generation",
+              "correct_answer_selection",
+              "evidence_completion"
+            ],
+            "answer_signature": "sha256:c3e50bdce2bdd019b4f04bf602a2bef828018f899208d001d4247d388db7586d"
+          },
+          "answer_signature": "sha256:c3e50bdce2bdd019b4f04bf602a2bef828018f899208d001d4247d388db7586d",
+          "language_realization": {
+            "schema_version": "limo4si.language_realization.v1",
+            "realizer": "deterministic_template",
+            "fallback_used": false,
+            "semantic_fields_mutable": false,
+            "draft": {
+              "schema_version": "limo4si.language_realization.v1",
+              "semantic_gt_id": "task5_egoexo_sfu_cooking_010_1_718f6f57a3",
+              "answer_signature": "sha256:c3e50bdce2bdd019b4f04bf602a2bef828018f899208d001d4247d388db7586d",
+              "question_template": "{{question_focus}}",
+              "option_template": "{{option_statement}}",
+              "explanation_template": "{{evidence_statement}}"
+            }
+          },
+          "status": "ok",
+          "release_eligible": true,
+          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
+          "result_json": {
+            "status": "ok",
+            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
+            "T_Q": true,
+            "H_Q": true,
+            "S_Q": true,
+            "annotation_direct": true,
+            "release_status": "signed_semantic_gt_egoexo_primary",
+            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
+            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
+            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
+            "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
+            "take_name": "sfu_cooking_010_1",
+            "camera": "aria01_214-1",
+            "target_object_id": "white bowl_0",
+            "target_object_name": "white bowl",
+            "target_anchor_index": 1,
+            "correct_semantic_option_id": "anchor_2",
+            "anchors": [
+              {
+                "video_frame": 6510,
+                "time_s": 217.0,
+                "gaze_frame_num": 2170,
+                "gaze_tracking_timestamp_us": 582217447,
+                "alignment_skew_ms": 0.0,
+                "object_id": "dining table_0",
+                "object_name": "dining table",
+                "annotated_mask_count": 7,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  611.27551,
+                  917.753205
+                ],
+                "rounded_pixel_xy": [
+                  611,
+                  918
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 93628,
+                "boundary_margin_px": 53.72559,
+                "decoded_mask_sha256": "sha256:5c59d2d7f8caca92f16783816fb39adf4ac8c448b314d37a0087eedade942dd0",
+                "clip_time_s": 1.0
+              },
+              {
+                "video_frame": 6660,
+                "time_s": 222.0,
+                "gaze_frame_num": 2220,
+                "gaze_tracking_timestamp_us": 587216647,
+                "alignment_skew_ms": 0.0,
+                "object_id": "white bowl_0",
+                "object_name": "white bowl",
+                "annotated_mask_count": 6,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  778.013973,
+                  939.318411
+                ],
+                "rounded_pixel_xy": [
+                  778,
+                  939
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 37922,
+                "boundary_margin_px": 53.32869,
+                "decoded_mask_sha256": "sha256:565735d3758cde19c7278a1fc5470cb56ea521af114e4377a5855efdbef82a58",
+                "clip_time_s": 6.0
+              },
+              {
+                "video_frame": 6900,
+                "time_s": 230.0,
+                "gaze_frame_num": 2300,
+                "gaze_tracking_timestamp_us": 595215367,
+                "alignment_skew_ms": 0.0,
+                "object_id": "white plate_0",
+                "object_name": "white plate",
+                "annotated_mask_count": 5,
+                "unique_annotated_mask_hit": true,
+                "inside": true,
+                "gaze_pixel_xy": [
+                  698.538945,
+                  828.703641
+                ],
+                "rounded_pixel_xy": [
+                  699,
+                  829
+                ],
+                "mask_width": 1408,
+                "mask_height": 1408,
+                "mask_area_px": 43229,
+                "boundary_margin_px": 51.331791,
+                "decoded_mask_sha256": "sha256:7db1954c2d2fa9704313ffbf2de9010166beff12d5c3d18e6f26306fbe6e298c",
+                "clip_time_s": 14.0
+              }
+            ],
+            "alignment_diagnostics": {
+              "video_fps": 30.0,
+              "gaze_frame_rate_hz_declared": 10.0,
+              "gaze_timestamp_rate_hz_measured": 10.0016,
+              "frame_mapping": "video_frame / 3 == gaze frame_num",
+              "maximum_anchor_skew_ms": 0.0,
+              "video_frame_count": 19097,
+              "source_video_resolution": [
+                448,
+                448
+              ]
+            },
+            "claim_limits": [
+              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
+              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
+            ],
+            "source_window": {
+              "start_sec": 216.0,
+              "end_sec": 231.0,
+              "duration_sec": 15.0
+            },
+            "source_evidence": {
+              "relations": "annotations/relations_val.json",
+              "gaze": "takes/sfu_cooking_010_1/eye_gaze/general_eye_gaze_2d.csv",
+              "video": "takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
+            },
+            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
+            "semantic_gt_id": "task5_egoexo_sfu_cooking_010_1_718f6f57a3",
+            "answer_signature": "sha256:c3e50bdce2bdd019b4f04bf602a2bef828018f899208d001d4247d388db7586d",
+            "evidence_signature": "sha256:878d0706ee8a369b1be60d3b755bd5a4a586ec022b4a41f35e2bbbca3af43fcd",
+            "reasoning_owner": "deterministic_code",
+            "language_model_role": "wording_only"
+          }
+        }
+      ],
+      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
     },
     {
       "name": "egobody_recording_20211002_S03_S18_03_1853_2300",
@@ -26177,3786 +29945,6 @@ window.QA_DATA = {
       "media_scope": "original EgoBody HoloLens PV RGB; official synchronized frame window",
       "original_image": "./multihuman_media/egobody_recording_20220315_S21_S30_01_2835_3284_endpoints.jpg",
       "original_caption": "Original HoloLens PV start and end frames used to audit left/right claims"
-    },
-    {
-      "name": "task5_egoexo_indiana_cooking_16_3_278f27b09b",
-      "title": "Task 5 · EgoExo4D · indiana_cooking_16_3",
-      "video_clip": "./task5_media/task5_egoexo_indiana_cooking_16_3_278f27b09b.mp4",
-      "original_image": "./task5_media/task5_egoexo_indiana_cooking_16_3_278f27b09b_evidence.jpg",
-      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
-      "video_window": {
-        "source_sequence": "indiana_cooking_16_3",
-        "start_sec": 174.0,
-        "end_sec": 189.0,
-        "duration_sec": 15.0,
-        "anchor_frames": [
-          5280,
-          5370,
-          5610
-        ],
-        "published_clip_duration_sec": 15.0
-      },
-      "qa": [
-        {
-          "task_id": "task5_human_state_grounded_spatial_reasoning",
-          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_point_inside_relation_mask_at_anchor",
-          "question_categories": [
-            "evidence_closed_gaze_mask_anchor"
-          ],
-          "question": "At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera-wearer gaze land on the recipe sheet?",
-          "options": [
-            {
-              "label": "A",
-              "text": "At 5.0s into the clip, but not at 2.0s or 13.0s.",
-              "semantic_option_id": "anchor_2"
-            },
-            {
-              "label": "B",
-              "text": "At 2.0s into the clip, but not at 5.0s or 13.0s.",
-              "semantic_option_id": "anchor_1"
-            },
-            {
-              "label": "C",
-              "text": "At 13.0s into the clip, but not at 2.0s or 5.0s.",
-              "semantic_option_id": "anchor_3"
-            },
-            {
-              "label": "D",
-              "text": "At none of these clip times: 2.0s, 5.0s, or 13.0s.",
-              "semantic_option_id": "no_anchor"
-            }
-          ],
-          "correct_option": "A",
-          "correct_answer": "At 5.0s into the clip, but not at 2.0s or 13.0s.",
-          "answer": "At 5.0s into the clip, but not at 2.0s or 13.0s.",
-          "explanation": "The synchronized gaze point lands inside the annotated recipe sheet region only at 5.0 seconds into the clip. At 2.0s, 5.0s, and 13.0s, it lands on white flat plate, recipe sheet, white plastic storage bin, respectively.",
-          "semantic_gt": {
-            "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "task5_egoexo_indiana_cooking_16_3_278f27b09b",
-            "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (2.0s, 5.0s, or 13.0s) does the camera-wearer gaze land on the recipe sheet?",
-            "options": [
-              {
-                "id": "anchor_1",
-                "statement": "At 2.0s into the clip, but not at 5.0s or 13.0s."
-              },
-              {
-                "id": "anchor_2",
-                "statement": "At 5.0s into the clip, but not at 2.0s or 13.0s."
-              },
-              {
-                "id": "anchor_3",
-                "statement": "At 13.0s into the clip, but not at 2.0s or 5.0s."
-              },
-              {
-                "id": "no_anchor",
-                "statement": "At none of these clip times: 2.0s, 5.0s, or 13.0s."
-              }
-            ],
-            "correct_option_id": "anchor_2",
-            "evidence_statement": "The synchronized gaze point lands inside the annotated recipe sheet region only at 5.0 seconds into the clip. At 2.0s, 5.0s, and 13.0s, it lands on white flat plate, recipe sheet, white plastic storage bin, respectively.",
-            "semantic_facts": [
-              {
-                "id": "target_object_id",
-                "value": "Recipe sheet_0"
-              },
-              {
-                "id": "target_anchor_index",
-                "value": 1
-              },
-              {
-                "id": "anchor_hits",
-                "value": [
-                  {
-                    "frame": 5280,
-                    "object_id": "White flat plate_0"
-                  },
-                  {
-                    "frame": 5370,
-                    "object_id": "Recipe sheet_0"
-                  },
-                  {
-                    "frame": 5610,
-                    "object_id": "White plastic storage bin_0"
-                  }
-                ]
-              },
-              {
-                "id": "result_evidence_signature",
-                "value": "sha256:c2f3d2a7e55fa9ccfe309dff39fb3939f0ac2383e41e44add1679f2bb9a6d690"
-              }
-            ],
-            "evidence_refs": [
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 5280,
-                "gaze_frame_num": 1760,
-                "object_id": "White flat plate_0",
-                "decoded_mask_sha256": "sha256:2cbd21f5456adc3a0f148d050a0a105f43dde97977b6c416e890053b4b125e05"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 5370,
-                "gaze_frame_num": 1790,
-                "object_id": "Recipe sheet_0",
-                "decoded_mask_sha256": "sha256:44666ab14e2eb10601fb2fa2675072055c9bd8ecf02af051d739945be70d707b"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 5610,
-                "gaze_frame_num": 1870,
-                "object_id": "White plastic storage bin_0",
-                "decoded_mask_sha256": "sha256:08bd87214f394513bcea9553082344fae5681e9c5997032d749a95563cf0a04a"
-              },
-              {
-                "kind": "result_json_sha256",
-                "sha256": "sha256:c2f3d2a7e55fa9ccfe309dff39fb3939f0ac2383e41e44add1679f2bb9a6d690"
-              }
-            ],
-            "provenance": {
-              "dataset": "Ego-Exo4D v2",
-              "take_uid": "2041eb29-6086-4e5e-9881-0f14d9e6a8d8",
-              "take_name": "indiana_cooking_16_3",
-              "computation": "deterministic_frame_aligned_2d_point_in_mask",
-              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
-              "release_status": "signed_semantic_gt_egoexo_primary"
-            },
-            "reasoning_owner": "deterministic_code",
-            "language_model_permissions": [
-              "neutral_wording_variation",
-              "wrapping_locked_code_gt_as_natural_language"
-            ],
-            "language_model_forbidden": [
-              "spatial_reasoning",
-              "temporal_reasoning",
-              "gaze_reasoning",
-              "contact_reasoning",
-              "visibility_reasoning",
-              "option_generation",
-              "correct_answer_selection",
-              "evidence_completion"
-            ],
-            "answer_signature": "sha256:64ff2d0d17232e2ecf4660b1dd7f266498663ad1a7a9a4e5332decfb6a11d89f"
-          },
-          "answer_signature": "sha256:64ff2d0d17232e2ecf4660b1dd7f266498663ad1a7a9a4e5332decfb6a11d89f",
-          "language_realization": {
-            "schema_version": "limo4si.language_realization.v1",
-            "realizer": "deterministic_template",
-            "fallback_used": false,
-            "semantic_fields_mutable": false,
-            "draft": {
-              "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "task5_egoexo_indiana_cooking_16_3_278f27b09b",
-              "answer_signature": "sha256:64ff2d0d17232e2ecf4660b1dd7f266498663ad1a7a9a4e5332decfb6a11d89f",
-              "question_template": "{{question_focus}}",
-              "option_template": "{{option_statement}}",
-              "explanation_template": "{{evidence_statement}}"
-            }
-          },
-          "status": "ok",
-          "release_eligible": true,
-          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
-          "result_json": {
-            "status": "ok",
-            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true,
-            "annotation_direct": true,
-            "release_status": "signed_semantic_gt_egoexo_primary",
-            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
-            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
-            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
-            "take_uid": "2041eb29-6086-4e5e-9881-0f14d9e6a8d8",
-            "take_name": "indiana_cooking_16_3",
-            "camera": "aria02_214-1",
-            "target_object_id": "Recipe sheet_0",
-            "target_object_name": "recipe sheet",
-            "target_anchor_index": 1,
-            "correct_semantic_option_id": "anchor_2",
-            "anchors": [
-              {
-                "video_frame": 5280,
-                "time_s": 176.0,
-                "gaze_frame_num": 1760,
-                "gaze_tracking_timestamp_us": 1421001345,
-                "alignment_skew_ms": 0.0,
-                "object_id": "White flat plate_0",
-                "object_name": "white flat plate",
-                "annotated_mask_count": 5,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  588.873704,
-                  1004.660454
-                ],
-                "rounded_pixel_xy": [
-                  589,
-                  1005
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 11450,
-                "boundary_margin_px": 33.953495,
-                "decoded_mask_sha256": "sha256:2cbd21f5456adc3a0f148d050a0a105f43dde97977b6c416e890053b4b125e05",
-                "clip_time_s": 2.0
-              },
-              {
-                "video_frame": 5370,
-                "time_s": 179.0,
-                "gaze_frame_num": 1790,
-                "gaze_tracking_timestamp_us": 1424000865,
-                "alignment_skew_ms": 0.0,
-                "object_id": "Recipe sheet_0",
-                "object_name": "recipe sheet",
-                "annotated_mask_count": 4,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  893.127655,
-                  1022.763005
-                ],
-                "rounded_pixel_xy": [
-                  893,
-                  1023
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 350240,
-                "boundary_margin_px": 259.580902,
-                "decoded_mask_sha256": "sha256:44666ab14e2eb10601fb2fa2675072055c9bd8ecf02af051d739945be70d707b",
-                "clip_time_s": 5.0
-              },
-              {
-                "video_frame": 5610,
-                "time_s": 187.0,
-                "gaze_frame_num": 1870,
-                "gaze_tracking_timestamp_us": 1431999585,
-                "alignment_skew_ms": 0.0,
-                "object_id": "White plastic storage bin_0",
-                "object_name": "white plastic storage bin",
-                "annotated_mask_count": 5,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  760.564821,
-                  982.396608
-                ],
-                "rounded_pixel_xy": [
-                  761,
-                  982
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 82442,
-                "boundary_margin_px": 120.0,
-                "decoded_mask_sha256": "sha256:08bd87214f394513bcea9553082344fae5681e9c5997032d749a95563cf0a04a",
-                "clip_time_s": 13.0
-              }
-            ],
-            "alignment_diagnostics": {
-              "video_fps": 30.0,
-              "gaze_frame_rate_hz_declared": 10.0,
-              "gaze_timestamp_rate_hz_measured": 10.0016,
-              "frame_mapping": "video_frame / 3 == gaze frame_num",
-              "maximum_anchor_skew_ms": 0.0,
-              "video_frame_count": 30325,
-              "source_video_resolution": [
-                448,
-                448
-              ]
-            },
-            "claim_limits": [
-              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
-              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
-            ],
-            "source_window": {
-              "start_sec": 174.0,
-              "end_sec": 189.0,
-              "duration_sec": 15.0
-            },
-            "source_evidence": {
-              "relations": "annotations/relations_val.json",
-              "gaze": "takes/indiana_cooking_16_3/eye_gaze/general_eye_gaze_2d.csv",
-              "video": "takes/indiana_cooking_16_3/frame_aligned_videos/downscaled/448/aria02_214-1.mp4"
-            },
-            "temporal_scope": "three explicit clip-relative checkpoints",
-            "semantic_gt_id": "task5_egoexo_indiana_cooking_16_3_278f27b09b",
-            "answer_signature": "sha256:64ff2d0d17232e2ecf4660b1dd7f266498663ad1a7a9a4e5332decfb6a11d89f",
-            "evidence_signature": "sha256:c2f3d2a7e55fa9ccfe309dff39fb3939f0ac2383e41e44add1679f2bb9a6d690",
-            "reasoning_owner": "deterministic_code",
-            "language_model_role": "wording_only"
-          }
-        }
-      ],
-      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
-    },
-    {
-      "name": "task5_egoexo_iiith_cooking_125_2_49a1e4f29d",
-      "title": "Task 5 · EgoExo4D · iiith_cooking_125_2",
-      "video_clip": "./task5_media/task5_egoexo_iiith_cooking_125_2_49a1e4f29d.mp4",
-      "original_image": "./task5_media/task5_egoexo_iiith_cooking_125_2_49a1e4f29d_evidence.jpg",
-      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
-      "video_window": {
-        "source_sequence": "iiith_cooking_125_2",
-        "start_sec": 1.5,
-        "end_sec": 16.5,
-        "duration_sec": 15.0,
-        "anchor_frames": [
-          60,
-          150,
-          480
-        ],
-        "published_clip_duration_sec": 15.0
-      },
-      "qa": [
-        {
-          "task_id": "task5_human_state_grounded_spatial_reasoning",
-          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_target_sequence_across_clip_checkpoints",
-          "question_categories": [
-            "evidence_closed_gaze_mask_anchor"
-          ],
-          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
-          "options": [
-            {
-              "label": "A",
-              "text": "At 0.5s: pancake pan; at 3.5s: blue chopping plate; at 14.5s: egg crate.",
-              "semantic_option_id": "anchor_2"
-            },
-            {
-              "label": "B",
-              "text": "At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
-              "semantic_option_id": "anchor_1"
-            },
-            {
-              "label": "C",
-              "text": "At 0.5s: egg crate; at 3.5s: pancake pan; at 14.5s: blue chopping plate.",
-              "semantic_option_id": "anchor_3"
-            },
-            {
-              "label": "D",
-              "text": "At 0.5s: egg crate; at 3.5s: blue chopping plate; at 14.5s: pancake pan.",
-              "semantic_option_id": "no_anchor"
-            }
-          ],
-          "correct_option": "B",
-          "correct_answer": "At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
-          "answer": "At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
-          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
-          "semantic_gt": {
-            "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "task5_egoexo_iiith_cooking_125_2_49a1e4f29d",
-            "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_target_sequence_across_clip_checkpoints",
-            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
-            "options": [
-              {
-                "id": "anchor_1",
-                "statement": "At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate."
-              },
-              {
-                "id": "anchor_2",
-                "statement": "At 0.5s: pancake pan; at 3.5s: blue chopping plate; at 14.5s: egg crate."
-              },
-              {
-                "id": "anchor_3",
-                "statement": "At 0.5s: egg crate; at 3.5s: pancake pan; at 14.5s: blue chopping plate."
-              },
-              {
-                "id": "no_anchor",
-                "statement": "At 0.5s: egg crate; at 3.5s: blue chopping plate; at 14.5s: pancake pan."
-              }
-            ],
-            "correct_option_id": "anchor_1",
-            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 0.5s: pancake pan; at 3.5s: egg crate; at 14.5s: blue chopping plate.",
-            "semantic_facts": [
-              {
-                "id": "target_object_id",
-                "value": "pancake pan_0"
-              },
-              {
-                "id": "target_anchor_index",
-                "value": 0
-              },
-              {
-                "id": "anchor_hits",
-                "value": [
-                  {
-                    "frame": 60,
-                    "object_id": "pancake pan_0"
-                  },
-                  {
-                    "frame": 150,
-                    "object_id": "egg crate_0"
-                  },
-                  {
-                    "frame": 480,
-                    "object_id": "blue chopping plate_0"
-                  }
-                ]
-              },
-              {
-                "id": "result_evidence_signature",
-                "value": "sha256:fdfc50df5281a68dce64311a08f6de047b7cdff2aeda6122c5d2ca4f13c7840b"
-              }
-            ],
-            "evidence_refs": [
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 60,
-                "gaze_frame_num": 20,
-                "object_id": "pancake pan_0",
-                "decoded_mask_sha256": "sha256:4db3ee165c0e585aa86789d82c924410cfd0262cb075153950db163de89dea66"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 150,
-                "gaze_frame_num": 50,
-                "object_id": "egg crate_0",
-                "decoded_mask_sha256": "sha256:fd76de074f0255cfe3830ca8cf8241877a98fb8ebdf9fbac163ed594b664c425"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 480,
-                "gaze_frame_num": 160,
-                "object_id": "blue chopping plate_0",
-                "decoded_mask_sha256": "sha256:2c2c21cd226a23d7044f91bcb2d251aca3be973d83ab4c30cbdf6bcf2b90af3b"
-              },
-              {
-                "kind": "result_json_sha256",
-                "sha256": "sha256:fdfc50df5281a68dce64311a08f6de047b7cdff2aeda6122c5d2ca4f13c7840b"
-              }
-            ],
-            "provenance": {
-              "dataset": "Ego-Exo4D v2",
-              "take_uid": "4356d71a-56a5-413b-a407-14f144112d91",
-              "take_name": "iiith_cooking_125_2",
-              "computation": "deterministic_frame_aligned_2d_point_in_mask",
-              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
-              "release_status": "signed_semantic_gt_egoexo_primary"
-            },
-            "reasoning_owner": "deterministic_code",
-            "language_model_permissions": [
-              "neutral_wording_variation",
-              "wrapping_locked_code_gt_as_natural_language"
-            ],
-            "language_model_forbidden": [
-              "spatial_reasoning",
-              "temporal_reasoning",
-              "gaze_reasoning",
-              "contact_reasoning",
-              "visibility_reasoning",
-              "option_generation",
-              "correct_answer_selection",
-              "evidence_completion"
-            ],
-            "answer_signature": "sha256:955cb6398ecdda1b8ea50f313a9cb977f9636750ce3b58ddfe7d03e84705f84f"
-          },
-          "answer_signature": "sha256:955cb6398ecdda1b8ea50f313a9cb977f9636750ce3b58ddfe7d03e84705f84f",
-          "language_realization": {
-            "schema_version": "limo4si.language_realization.v1",
-            "realizer": "deterministic_template",
-            "fallback_used": false,
-            "semantic_fields_mutable": false,
-            "draft": {
-              "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "task5_egoexo_iiith_cooking_125_2_49a1e4f29d",
-              "answer_signature": "sha256:955cb6398ecdda1b8ea50f313a9cb977f9636750ce3b58ddfe7d03e84705f84f",
-              "question_template": "{{question_focus}}",
-              "option_template": "{{option_statement}}",
-              "explanation_template": "{{evidence_statement}}"
-            }
-          },
-          "status": "ok",
-          "release_eligible": true,
-          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
-          "result_json": {
-            "status": "ok",
-            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true,
-            "annotation_direct": true,
-            "release_status": "signed_semantic_gt_egoexo_primary",
-            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
-            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
-            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
-            "take_uid": "4356d71a-56a5-413b-a407-14f144112d91",
-            "take_name": "iiith_cooking_125_2",
-            "camera": "aria01_214-1",
-            "target_object_id": "pancake pan_0",
-            "target_object_name": "pancake pan",
-            "target_anchor_index": 0,
-            "correct_semantic_option_id": "anchor_1",
-            "anchors": [
-              {
-                "video_frame": 60,
-                "time_s": 2.0,
-                "gaze_frame_num": 20,
-                "gaze_tracking_timestamp_us": 433233858,
-                "alignment_skew_ms": 0.0,
-                "object_id": "pancake pan_0",
-                "object_name": "pancake pan",
-                "annotated_mask_count": 1,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  690.93523,
-                  860.422814
-                ],
-                "rounded_pixel_xy": [
-                  691,
-                  860
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 111923,
-                "boundary_margin_px": 154.782959,
-                "decoded_mask_sha256": "sha256:4db3ee165c0e585aa86789d82c924410cfd0262cb075153950db163de89dea66",
-                "clip_time_s": 0.5
-              },
-              {
-                "video_frame": 150,
-                "time_s": 5.0,
-                "gaze_frame_num": 50,
-                "gaze_tracking_timestamp_us": 436233378,
-                "alignment_skew_ms": 0.0,
-                "object_id": "egg crate_0",
-                "object_name": "egg crate",
-                "annotated_mask_count": 3,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  1006.510834,
-                  855.741987
-                ],
-                "rounded_pixel_xy": [
-                  1007,
-                  856
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 19118,
-                "boundary_margin_px": 16.584497,
-                "decoded_mask_sha256": "sha256:fd76de074f0255cfe3830ca8cf8241877a98fb8ebdf9fbac163ed594b664c425",
-                "clip_time_s": 3.5
-              },
-              {
-                "video_frame": 480,
-                "time_s": 16.0,
-                "gaze_frame_num": 160,
-                "gaze_tracking_timestamp_us": 447231618,
-                "alignment_skew_ms": 0.0,
-                "object_id": "blue chopping plate_0",
-                "object_name": "blue chopping plate",
-                "annotated_mask_count": 5,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  772.899244,
-                  964.221975
-                ],
-                "rounded_pixel_xy": [
-                  773,
-                  964
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 42477,
-                "boundary_margin_px": 12.984499,
-                "decoded_mask_sha256": "sha256:2c2c21cd226a23d7044f91bcb2d251aca3be973d83ab4c30cbdf6bcf2b90af3b",
-                "clip_time_s": 14.5
-              }
-            ],
-            "alignment_diagnostics": {
-              "video_fps": 30.0,
-              "gaze_frame_rate_hz_declared": 10.0,
-              "gaze_timestamp_rate_hz_measured": 10.0016,
-              "frame_mapping": "video_frame / 3 == gaze frame_num",
-              "maximum_anchor_skew_ms": 0.0,
-              "video_frame_count": 12633,
-              "source_video_resolution": [
-                448,
-                448
-              ]
-            },
-            "claim_limits": [
-              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
-              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
-            ],
-            "source_window": {
-              "start_sec": 1.5,
-              "end_sec": 16.5,
-              "duration_sec": 15.0
-            },
-            "source_evidence": {
-              "relations": "annotations/relations_val.json",
-              "gaze": "takes/iiith_cooking_125_2/eye_gaze/general_eye_gaze_2d.csv",
-              "video": "takes/iiith_cooking_125_2/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
-            },
-            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
-            "semantic_gt_id": "task5_egoexo_iiith_cooking_125_2_49a1e4f29d",
-            "answer_signature": "sha256:955cb6398ecdda1b8ea50f313a9cb977f9636750ce3b58ddfe7d03e84705f84f",
-            "evidence_signature": "sha256:fdfc50df5281a68dce64311a08f6de047b7cdff2aeda6122c5d2ca4f13c7840b",
-            "reasoning_owner": "deterministic_code",
-            "language_model_role": "wording_only"
-          }
-        }
-      ],
-      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
-    },
-    {
-      "name": "task5_egoexo_iiith_cooking_145_2_c92a5c063f",
-      "title": "Task 5 · EgoExo4D · iiith_cooking_145_2",
-      "video_clip": "./task5_media/task5_egoexo_iiith_cooking_145_2_c92a5c063f.mp4",
-      "original_image": "./task5_media/task5_egoexo_iiith_cooking_145_2_c92a5c063f_evidence.jpg",
-      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
-      "video_window": {
-        "source_sequence": "iiith_cooking_145_2",
-        "start_sec": 362.5,
-        "end_sec": 377.5,
-        "duration_sec": 15.0,
-        "anchor_frames": [
-          10890,
-          11190,
-          11310
-        ],
-        "published_clip_duration_sec": 15.0
-      },
-      "qa": [
-        {
-          "task_id": "task5_human_state_grounded_spatial_reasoning",
-          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_point_inside_relation_mask_at_anchor",
-          "question_categories": [
-            "evidence_closed_gaze_mask_anchor"
-          ],
-          "question": "At which stated clip time (0.5s, 10.5s, or 14.5s) does the camera-wearer gaze land on the white chopping board?",
-          "options": [
-            {
-              "label": "A",
-              "text": "At 0.5s into the clip, but not at 10.5s or 14.5s.",
-              "semantic_option_id": "anchor_1"
-            },
-            {
-              "label": "B",
-              "text": "At 10.5s into the clip, but not at 0.5s or 14.5s.",
-              "semantic_option_id": "anchor_2"
-            },
-            {
-              "label": "C",
-              "text": "At 14.5s into the clip, but not at 0.5s or 10.5s.",
-              "semantic_option_id": "anchor_3"
-            },
-            {
-              "label": "D",
-              "text": "At none of these clip times: 0.5s, 10.5s, or 14.5s.",
-              "semantic_option_id": "no_anchor"
-            }
-          ],
-          "correct_option": "C",
-          "correct_answer": "At 14.5s into the clip, but not at 0.5s or 10.5s.",
-          "answer": "At 14.5s into the clip, but not at 0.5s or 10.5s.",
-          "explanation": "The synchronized gaze point lands inside the annotated white chopping board region only at 14.5 seconds into the clip. At 0.5s, 10.5s, and 14.5s, it lands on large steel bowl, steel tomato bowl, white chopping board, respectively.",
-          "semantic_gt": {
-            "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "task5_egoexo_iiith_cooking_145_2_c92a5c063f",
-            "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (0.5s, 10.5s, or 14.5s) does the camera-wearer gaze land on the white chopping board?",
-            "options": [
-              {
-                "id": "anchor_1",
-                "statement": "At 0.5s into the clip, but not at 10.5s or 14.5s."
-              },
-              {
-                "id": "anchor_2",
-                "statement": "At 10.5s into the clip, but not at 0.5s or 14.5s."
-              },
-              {
-                "id": "anchor_3",
-                "statement": "At 14.5s into the clip, but not at 0.5s or 10.5s."
-              },
-              {
-                "id": "no_anchor",
-                "statement": "At none of these clip times: 0.5s, 10.5s, or 14.5s."
-              }
-            ],
-            "correct_option_id": "anchor_3",
-            "evidence_statement": "The synchronized gaze point lands inside the annotated white chopping board region only at 14.5 seconds into the clip. At 0.5s, 10.5s, and 14.5s, it lands on large steel bowl, steel tomato bowl, white chopping board, respectively.",
-            "semantic_facts": [
-              {
-                "id": "target_object_id",
-                "value": "White chopping board_0"
-              },
-              {
-                "id": "target_anchor_index",
-                "value": 2
-              },
-              {
-                "id": "anchor_hits",
-                "value": [
-                  {
-                    "frame": 10890,
-                    "object_id": "Large steel bowl_0"
-                  },
-                  {
-                    "frame": 11190,
-                    "object_id": "Steel tomato bowl_0"
-                  },
-                  {
-                    "frame": 11310,
-                    "object_id": "White chopping board_0"
-                  }
-                ]
-              },
-              {
-                "id": "result_evidence_signature",
-                "value": "sha256:2cfbea6a15587f54a6d9c35ca5f33ab62d89d69003af8f53fc18525a6bc00e90"
-              }
-            ],
-            "evidence_refs": [
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 10890,
-                "gaze_frame_num": 3630,
-                "object_id": "Large steel bowl_0",
-                "decoded_mask_sha256": "sha256:a0e1344a1777d1232da4822ca5920e335543866b595558fdbd8ec6be49b80869"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 11190,
-                "gaze_frame_num": 3730,
-                "object_id": "Steel tomato bowl_0",
-                "decoded_mask_sha256": "sha256:d776030c48463bd76fdf90898c706d2e5133fea58b20eeff9019c6a9a79e880f"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 11310,
-                "gaze_frame_num": 3770,
-                "object_id": "White chopping board_0",
-                "decoded_mask_sha256": "sha256:0a3581d629773a184df1a02ac2578c3cb3cefd6e750ae085d32202912c5840c3"
-              },
-              {
-                "kind": "result_json_sha256",
-                "sha256": "sha256:2cfbea6a15587f54a6d9c35ca5f33ab62d89d69003af8f53fc18525a6bc00e90"
-              }
-            ],
-            "provenance": {
-              "dataset": "Ego-Exo4D v2",
-              "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
-              "take_name": "iiith_cooking_145_2",
-              "computation": "deterministic_frame_aligned_2d_point_in_mask",
-              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
-              "release_status": "signed_semantic_gt_egoexo_primary"
-            },
-            "reasoning_owner": "deterministic_code",
-            "language_model_permissions": [
-              "neutral_wording_variation",
-              "wrapping_locked_code_gt_as_natural_language"
-            ],
-            "language_model_forbidden": [
-              "spatial_reasoning",
-              "temporal_reasoning",
-              "gaze_reasoning",
-              "contact_reasoning",
-              "visibility_reasoning",
-              "option_generation",
-              "correct_answer_selection",
-              "evidence_completion"
-            ],
-            "answer_signature": "sha256:c6c23486fac8531d2f3d8dd65274db2bf76b6ccc96fb86c5b9b09c48e4175ae4"
-          },
-          "answer_signature": "sha256:c6c23486fac8531d2f3d8dd65274db2bf76b6ccc96fb86c5b9b09c48e4175ae4",
-          "language_realization": {
-            "schema_version": "limo4si.language_realization.v1",
-            "realizer": "deterministic_template",
-            "fallback_used": false,
-            "semantic_fields_mutable": false,
-            "draft": {
-              "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "task5_egoexo_iiith_cooking_145_2_c92a5c063f",
-              "answer_signature": "sha256:c6c23486fac8531d2f3d8dd65274db2bf76b6ccc96fb86c5b9b09c48e4175ae4",
-              "question_template": "{{question_focus}}",
-              "option_template": "{{option_statement}}",
-              "explanation_template": "{{evidence_statement}}"
-            }
-          },
-          "status": "ok",
-          "release_eligible": true,
-          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
-          "result_json": {
-            "status": "ok",
-            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true,
-            "annotation_direct": true,
-            "release_status": "signed_semantic_gt_egoexo_primary",
-            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
-            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
-            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
-            "take_uid": "fac6316e-d141-4bbd-b88b-a624491acb30",
-            "take_name": "iiith_cooking_145_2",
-            "camera": "aria01_214-1",
-            "target_object_id": "White chopping board_0",
-            "target_object_name": "white chopping board",
-            "target_anchor_index": 2,
-            "correct_semantic_option_id": "anchor_3",
-            "anchors": [
-              {
-                "video_frame": 10890,
-                "time_s": 363.0,
-                "gaze_frame_num": 3630,
-                "gaze_tracking_timestamp_us": 646437148,
-                "alignment_skew_ms": 0.0,
-                "object_id": "Large steel bowl_0",
-                "object_name": "large steel bowl",
-                "annotated_mask_count": 6,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  844.629913,
-                  855.419072
-                ],
-                "rounded_pixel_xy": [
-                  845,
-                  855
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 72590,
-                "boundary_margin_px": 99.463577,
-                "decoded_mask_sha256": "sha256:a0e1344a1777d1232da4822ca5920e335543866b595558fdbd8ec6be49b80869",
-                "clip_time_s": 0.5
-              },
-              {
-                "video_frame": 11190,
-                "time_s": 373.0,
-                "gaze_frame_num": 3730,
-                "gaze_tracking_timestamp_us": 656435548,
-                "alignment_skew_ms": 0.0,
-                "object_id": "Steel tomato bowl_0",
-                "object_name": "steel tomato bowl",
-                "annotated_mask_count": 5,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  905.154279,
-                  809.561915
-                ],
-                "rounded_pixel_xy": [
-                  905,
-                  810
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 46301,
-                "boundary_margin_px": 40.944191,
-                "decoded_mask_sha256": "sha256:d776030c48463bd76fdf90898c706d2e5133fea58b20eeff9019c6a9a79e880f",
-                "clip_time_s": 10.5
-              },
-              {
-                "video_frame": 11310,
-                "time_s": 377.0,
-                "gaze_frame_num": 3770,
-                "gaze_tracking_timestamp_us": 660434908,
-                "alignment_skew_ms": 0.0,
-                "object_id": "White chopping board_0",
-                "object_name": "white chopping board",
-                "annotated_mask_count": 10,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  790.141093,
-                  904.831271
-                ],
-                "rounded_pixel_xy": [
-                  790,
-                  905
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 89440,
-                "boundary_margin_px": 114.393799,
-                "decoded_mask_sha256": "sha256:0a3581d629773a184df1a02ac2578c3cb3cefd6e750ae085d32202912c5840c3",
-                "clip_time_s": 14.5
-              }
-            ],
-            "alignment_diagnostics": {
-              "video_fps": 30.0,
-              "gaze_frame_rate_hz_declared": 10.0,
-              "gaze_timestamp_rate_hz_measured": 10.0016,
-              "frame_mapping": "video_frame / 3 == gaze frame_num",
-              "maximum_anchor_skew_ms": 0.0,
-              "video_frame_count": 13373,
-              "source_video_resolution": [
-                448,
-                448
-              ]
-            },
-            "claim_limits": [
-              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
-              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
-            ],
-            "source_window": {
-              "start_sec": 362.5,
-              "end_sec": 377.5,
-              "duration_sec": 15.0
-            },
-            "source_evidence": {
-              "relations": "annotations/relations_val.json",
-              "gaze": "takes/iiith_cooking_145_2/eye_gaze/general_eye_gaze_2d.csv",
-              "video": "takes/iiith_cooking_145_2/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
-            },
-            "temporal_scope": "three explicit clip-relative checkpoints",
-            "semantic_gt_id": "task5_egoexo_iiith_cooking_145_2_c92a5c063f",
-            "answer_signature": "sha256:c6c23486fac8531d2f3d8dd65274db2bf76b6ccc96fb86c5b9b09c48e4175ae4",
-            "evidence_signature": "sha256:2cfbea6a15587f54a6d9c35ca5f33ab62d89d69003af8f53fc18525a6bc00e90",
-            "reasoning_owner": "deterministic_code",
-            "language_model_role": "wording_only"
-          }
-        }
-      ],
-      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
-    },
-    {
-      "name": "task5_egoexo_minnesota_cooking_060_4_655a676809",
-      "title": "Task 5 · EgoExo4D · minnesota_cooking_060_4",
-      "video_clip": "./task5_media/task5_egoexo_minnesota_cooking_060_4_655a676809.mp4",
-      "original_image": "./task5_media/task5_egoexo_minnesota_cooking_060_4_655a676809_evidence.jpg",
-      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
-      "video_window": {
-        "source_sequence": "minnesota_cooking_060_4",
-        "start_sec": 473.5,
-        "end_sec": 488.5,
-        "duration_sec": 15.0,
-        "anchor_frames": [
-          14280,
-          14340,
-          14580
-        ],
-        "published_clip_duration_sec": 15.0
-      },
-      "qa": [
-        {
-          "task_id": "task5_human_state_grounded_spatial_reasoning",
-          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_target_sequence_across_clip_checkpoints",
-          "question_categories": [
-            "evidence_closed_gaze_mask_anchor"
-          ],
-          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
-          "options": [
-            {
-              "label": "A",
-              "text": "At 2.5s: mini-tomato package; at 4.5s: flat plate; at 12.5s: glass bowl.",
-              "semantic_option_id": "anchor_1"
-            },
-            {
-              "label": "B",
-              "text": "At 2.5s: glass bowl; at 4.5s: mini-tomato package; at 12.5s: flat plate.",
-              "semantic_option_id": "anchor_3"
-            },
-            {
-              "label": "C",
-              "text": "At 2.5s: glass bowl; at 4.5s: flat plate; at 12.5s: mini-tomato package.",
-              "semantic_option_id": "no_anchor"
-            },
-            {
-              "label": "D",
-              "text": "At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
-              "semantic_option_id": "anchor_2"
-            }
-          ],
-          "correct_option": "D",
-          "correct_answer": "At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
-          "answer": "At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
-          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
-          "semantic_gt": {
-            "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "task5_egoexo_minnesota_cooking_060_4_655a676809",
-            "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_target_sequence_across_clip_checkpoints",
-            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
-            "options": [
-              {
-                "id": "anchor_1",
-                "statement": "At 2.5s: mini-tomato package; at 4.5s: flat plate; at 12.5s: glass bowl."
-              },
-              {
-                "id": "anchor_2",
-                "statement": "At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate."
-              },
-              {
-                "id": "anchor_3",
-                "statement": "At 2.5s: glass bowl; at 4.5s: mini-tomato package; at 12.5s: flat plate."
-              },
-              {
-                "id": "no_anchor",
-                "statement": "At 2.5s: glass bowl; at 4.5s: flat plate; at 12.5s: mini-tomato package."
-              }
-            ],
-            "correct_option_id": "anchor_2",
-            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 2.5s: mini-tomato package; at 4.5s: glass bowl; at 12.5s: flat plate.",
-            "semantic_facts": [
-              {
-                "id": "target_object_id",
-                "value": "Glass bowl_1"
-              },
-              {
-                "id": "target_anchor_index",
-                "value": 1
-              },
-              {
-                "id": "anchor_hits",
-                "value": [
-                  {
-                    "frame": 14280,
-                    "object_id": "Mini Tomato package_0"
-                  },
-                  {
-                    "frame": 14340,
-                    "object_id": "Glass bowl_1"
-                  },
-                  {
-                    "frame": 14580,
-                    "object_id": "Flat plate_0"
-                  }
-                ]
-              },
-              {
-                "id": "result_evidence_signature",
-                "value": "sha256:c5d51f78258b20cf0d9786440c48b164c1d07eae1e21bc678be658074891a812"
-              }
-            ],
-            "evidence_refs": [
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 14280,
-                "gaze_frame_num": 4760,
-                "object_id": "Mini Tomato package_0",
-                "decoded_mask_sha256": "sha256:7181c14af3dc9341f27e49450af65bdedb31ba33124e90aa47e47efcb337c9f1"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 14340,
-                "gaze_frame_num": 4780,
-                "object_id": "Glass bowl_1",
-                "decoded_mask_sha256": "sha256:33f3515bcb37f1ead052e4684a71e0d318293a77df0cc08f457aa43ffda61b72"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 14580,
-                "gaze_frame_num": 4860,
-                "object_id": "Flat plate_0",
-                "decoded_mask_sha256": "sha256:8845cb435ed31a1dc9c1b60a76ca403a729d84c4879ae6d3d93c746edd7a76e4"
-              },
-              {
-                "kind": "result_json_sha256",
-                "sha256": "sha256:c5d51f78258b20cf0d9786440c48b164c1d07eae1e21bc678be658074891a812"
-              }
-            ],
-            "provenance": {
-              "dataset": "Ego-Exo4D v2",
-              "take_uid": "4c075527-7526-4c00-9681-53258fe70881",
-              "take_name": "minnesota_cooking_060_4",
-              "computation": "deterministic_frame_aligned_2d_point_in_mask",
-              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
-              "release_status": "signed_semantic_gt_egoexo_primary"
-            },
-            "reasoning_owner": "deterministic_code",
-            "language_model_permissions": [
-              "neutral_wording_variation",
-              "wrapping_locked_code_gt_as_natural_language"
-            ],
-            "language_model_forbidden": [
-              "spatial_reasoning",
-              "temporal_reasoning",
-              "gaze_reasoning",
-              "contact_reasoning",
-              "visibility_reasoning",
-              "option_generation",
-              "correct_answer_selection",
-              "evidence_completion"
-            ],
-            "answer_signature": "sha256:60b4cbb7ca3227609545ddbfafe8ba9e400ba85fcb70020b57482cf8a16c2a67"
-          },
-          "answer_signature": "sha256:60b4cbb7ca3227609545ddbfafe8ba9e400ba85fcb70020b57482cf8a16c2a67",
-          "language_realization": {
-            "schema_version": "limo4si.language_realization.v1",
-            "realizer": "deterministic_template",
-            "fallback_used": false,
-            "semantic_fields_mutable": false,
-            "draft": {
-              "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "task5_egoexo_minnesota_cooking_060_4_655a676809",
-              "answer_signature": "sha256:60b4cbb7ca3227609545ddbfafe8ba9e400ba85fcb70020b57482cf8a16c2a67",
-              "question_template": "{{question_focus}}",
-              "option_template": "{{option_statement}}",
-              "explanation_template": "{{evidence_statement}}"
-            }
-          },
-          "status": "ok",
-          "release_eligible": true,
-          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
-          "result_json": {
-            "status": "ok",
-            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true,
-            "annotation_direct": true,
-            "release_status": "signed_semantic_gt_egoexo_primary",
-            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
-            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
-            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
-            "take_uid": "4c075527-7526-4c00-9681-53258fe70881",
-            "take_name": "minnesota_cooking_060_4",
-            "camera": "aria01_214-1",
-            "target_object_id": "Glass bowl_1",
-            "target_object_name": "glass bowl",
-            "target_anchor_index": 1,
-            "correct_semantic_option_id": "anchor_2",
-            "anchors": [
-              {
-                "video_frame": 14280,
-                "time_s": 476.0,
-                "gaze_frame_num": 4760,
-                "gaze_tracking_timestamp_us": 1953497321,
-                "alignment_skew_ms": 0.0,
-                "object_id": "Mini Tomato package_0",
-                "object_name": "mini-tomato package",
-                "annotated_mask_count": 6,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  886.756962,
-                  924.590588
-                ],
-                "rounded_pixel_xy": [
-                  887,
-                  925
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 20340,
-                "boundary_margin_px": 55.922489,
-                "decoded_mask_sha256": "sha256:7181c14af3dc9341f27e49450af65bdedb31ba33124e90aa47e47efcb337c9f1",
-                "clip_time_s": 2.5
-              },
-              {
-                "video_frame": 14340,
-                "time_s": 478.0,
-                "gaze_frame_num": 4780,
-                "gaze_tracking_timestamp_us": 1955497001,
-                "alignment_skew_ms": 0.0,
-                "object_id": "Glass bowl_1",
-                "object_name": "glass bowl",
-                "annotated_mask_count": 7,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  762.935924,
-                  1017.717395
-                ],
-                "rounded_pixel_xy": [
-                  763,
-                  1018
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 48313,
-                "boundary_margin_px": 111.654274,
-                "decoded_mask_sha256": "sha256:33f3515bcb37f1ead052e4684a71e0d318293a77df0cc08f457aa43ffda61b72",
-                "clip_time_s": 4.5
-              },
-              {
-                "video_frame": 14580,
-                "time_s": 486.0,
-                "gaze_frame_num": 4860,
-                "gaze_tracking_timestamp_us": 1963495721,
-                "alignment_skew_ms": 0.0,
-                "object_id": "Flat plate_0",
-                "object_name": "flat plate",
-                "annotated_mask_count": 6,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  780.326376,
-                  1079.186743
-                ],
-                "rounded_pixel_xy": [
-                  780,
-                  1079
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 61248,
-                "boundary_margin_px": 55.137989,
-                "decoded_mask_sha256": "sha256:8845cb435ed31a1dc9c1b60a76ca403a729d84c4879ae6d3d93c746edd7a76e4",
-                "clip_time_s": 12.5
-              }
-            ],
-            "alignment_diagnostics": {
-              "video_fps": 30.0,
-              "gaze_frame_rate_hz_declared": 10.0,
-              "gaze_timestamp_rate_hz_measured": 10.0016,
-              "frame_mapping": "video_frame / 3 == gaze frame_num",
-              "maximum_anchor_skew_ms": 0.0,
-              "video_frame_count": 22465,
-              "source_video_resolution": [
-                448,
-                448
-              ]
-            },
-            "claim_limits": [
-              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
-              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
-            ],
-            "source_window": {
-              "start_sec": 473.5,
-              "end_sec": 488.5,
-              "duration_sec": 15.0
-            },
-            "source_evidence": {
-              "relations": "annotations/relations_val.json",
-              "gaze": "takes/minnesota_cooking_060_4/eye_gaze/general_eye_gaze_2d.csv",
-              "video": "takes/minnesota_cooking_060_4/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
-            },
-            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
-            "semantic_gt_id": "task5_egoexo_minnesota_cooking_060_4_655a676809",
-            "answer_signature": "sha256:60b4cbb7ca3227609545ddbfafe8ba9e400ba85fcb70020b57482cf8a16c2a67",
-            "evidence_signature": "sha256:c5d51f78258b20cf0d9786440c48b164c1d07eae1e21bc678be658074891a812",
-            "reasoning_owner": "deterministic_code",
-            "language_model_role": "wording_only"
-          }
-        }
-      ],
-      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
-    },
-    {
-      "name": "task5_egoexo_uniandes_cooking_006_6_13837ab534",
-      "title": "Task 5 · EgoExo4D · uniandes_cooking_006_6",
-      "video_clip": "./task5_media/task5_egoexo_uniandes_cooking_006_6_13837ab534.mp4",
-      "original_image": "./task5_media/task5_egoexo_uniandes_cooking_006_6_13837ab534_evidence.jpg",
-      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
-      "video_window": {
-        "source_sequence": "uniandes_cooking_006_6",
-        "start_sec": 167.5,
-        "end_sec": 182.5,
-        "duration_sec": 15.0,
-        "anchor_frames": [
-          5040,
-          5250,
-          5460
-        ],
-        "published_clip_duration_sec": 15.0
-      },
-      "qa": [
-        {
-          "task_id": "task5_human_state_grounded_spatial_reasoning",
-          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_point_inside_relation_mask_at_anchor",
-          "question_categories": [
-            "evidence_closed_gaze_mask_anchor"
-          ],
-          "question": "At which stated clip time (0.5s, 7.5s, or 14.5s) does the camera-wearer gaze land on the frying pan?",
-          "options": [
-            {
-              "label": "A",
-              "text": "At 0.5s into the clip, but not at 7.5s or 14.5s.",
-              "semantic_option_id": "anchor_1"
-            },
-            {
-              "label": "B",
-              "text": "At 7.5s into the clip, but not at 0.5s or 14.5s.",
-              "semantic_option_id": "anchor_2"
-            },
-            {
-              "label": "C",
-              "text": "At 14.5s into the clip, but not at 0.5s or 7.5s.",
-              "semantic_option_id": "anchor_3"
-            },
-            {
-              "label": "D",
-              "text": "At none of these clip times: 0.5s, 7.5s, or 14.5s.",
-              "semantic_option_id": "no_anchor"
-            }
-          ],
-          "correct_option": "A",
-          "correct_answer": "At 0.5s into the clip, but not at 7.5s or 14.5s.",
-          "answer": "At 0.5s into the clip, but not at 7.5s or 14.5s.",
-          "explanation": "The synchronized gaze point lands inside the annotated frying pan region only at 0.5 seconds into the clip. At 0.5s, 7.5s, and 14.5s, it lands on frying pan, stainless bowl, liquid milk pack, respectively.",
-          "semantic_gt": {
-            "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "task5_egoexo_uniandes_cooking_006_6_13837ab534",
-            "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (0.5s, 7.5s, or 14.5s) does the camera-wearer gaze land on the frying pan?",
-            "options": [
-              {
-                "id": "anchor_1",
-                "statement": "At 0.5s into the clip, but not at 7.5s or 14.5s."
-              },
-              {
-                "id": "anchor_2",
-                "statement": "At 7.5s into the clip, but not at 0.5s or 14.5s."
-              },
-              {
-                "id": "anchor_3",
-                "statement": "At 14.5s into the clip, but not at 0.5s or 7.5s."
-              },
-              {
-                "id": "no_anchor",
-                "statement": "At none of these clip times: 0.5s, 7.5s, or 14.5s."
-              }
-            ],
-            "correct_option_id": "anchor_1",
-            "evidence_statement": "The synchronized gaze point lands inside the annotated frying pan region only at 0.5 seconds into the clip. At 0.5s, 7.5s, and 14.5s, it lands on frying pan, stainless bowl, liquid milk pack, respectively.",
-            "semantic_facts": [
-              {
-                "id": "target_object_id",
-                "value": "frying pan_0"
-              },
-              {
-                "id": "target_anchor_index",
-                "value": 0
-              },
-              {
-                "id": "anchor_hits",
-                "value": [
-                  {
-                    "frame": 5040,
-                    "object_id": "frying pan_0"
-                  },
-                  {
-                    "frame": 5250,
-                    "object_id": "stainless bowl_0"
-                  },
-                  {
-                    "frame": 5460,
-                    "object_id": "liquid milk pack_0"
-                  }
-                ]
-              },
-              {
-                "id": "result_evidence_signature",
-                "value": "sha256:cdffe9c587bc8fafcc5e8deddd37f0650845034a4d270534574f5325f97f26a1"
-              }
-            ],
-            "evidence_refs": [
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 5040,
-                "gaze_frame_num": 1680,
-                "object_id": "frying pan_0",
-                "decoded_mask_sha256": "sha256:c4363e69664f8018b34cd6c2e4c5b9208c2b2d571237960e617ef6c76249c578"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 5250,
-                "gaze_frame_num": 1750,
-                "object_id": "stainless bowl_0",
-                "decoded_mask_sha256": "sha256:7ee6ca9bc90186dbcc3b4ffc6cd8bc8f1fd55a84df4fc1619701afdc556b3e4c"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 5460,
-                "gaze_frame_num": 1820,
-                "object_id": "liquid milk pack_0",
-                "decoded_mask_sha256": "sha256:abb752536a456f655b5b46c6663a2e3e13d27a9c16a3a5a4834a6712a8f9125c"
-              },
-              {
-                "kind": "result_json_sha256",
-                "sha256": "sha256:cdffe9c587bc8fafcc5e8deddd37f0650845034a4d270534574f5325f97f26a1"
-              }
-            ],
-            "provenance": {
-              "dataset": "Ego-Exo4D v2",
-              "take_uid": "e420250d-b67f-4c46-bc40-31b8c9003d7e",
-              "take_name": "uniandes_cooking_006_6",
-              "computation": "deterministic_frame_aligned_2d_point_in_mask",
-              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
-              "release_status": "signed_semantic_gt_egoexo_primary"
-            },
-            "reasoning_owner": "deterministic_code",
-            "language_model_permissions": [
-              "neutral_wording_variation",
-              "wrapping_locked_code_gt_as_natural_language"
-            ],
-            "language_model_forbidden": [
-              "spatial_reasoning",
-              "temporal_reasoning",
-              "gaze_reasoning",
-              "contact_reasoning",
-              "visibility_reasoning",
-              "option_generation",
-              "correct_answer_selection",
-              "evidence_completion"
-            ],
-            "answer_signature": "sha256:082453ad7d1a19fd476a53dc846524007f56fa39a00680149e5c66b94563ec79"
-          },
-          "answer_signature": "sha256:082453ad7d1a19fd476a53dc846524007f56fa39a00680149e5c66b94563ec79",
-          "language_realization": {
-            "schema_version": "limo4si.language_realization.v1",
-            "realizer": "deterministic_template",
-            "fallback_used": false,
-            "semantic_fields_mutable": false,
-            "draft": {
-              "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "task5_egoexo_uniandes_cooking_006_6_13837ab534",
-              "answer_signature": "sha256:082453ad7d1a19fd476a53dc846524007f56fa39a00680149e5c66b94563ec79",
-              "question_template": "{{question_focus}}",
-              "option_template": "{{option_statement}}",
-              "explanation_template": "{{evidence_statement}}"
-            }
-          },
-          "status": "ok",
-          "release_eligible": true,
-          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
-          "result_json": {
-            "status": "ok",
-            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true,
-            "annotation_direct": true,
-            "release_status": "signed_semantic_gt_egoexo_primary",
-            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
-            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
-            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
-            "take_uid": "e420250d-b67f-4c46-bc40-31b8c9003d7e",
-            "take_name": "uniandes_cooking_006_6",
-            "camera": "aria01_214-1",
-            "target_object_id": "frying pan_0",
-            "target_object_name": "frying pan",
-            "target_anchor_index": 0,
-            "correct_semantic_option_id": "anchor_1",
-            "anchors": [
-              {
-                "video_frame": 5040,
-                "time_s": 168.0,
-                "gaze_frame_num": 1680,
-                "gaze_tracking_timestamp_us": 1624616689,
-                "alignment_skew_ms": 0.0,
-                "object_id": "frying pan_0",
-                "object_name": "frying pan",
-                "annotated_mask_count": 3,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  621.837765,
-                  896.6388
-                ],
-                "rounded_pixel_xy": [
-                  622,
-                  897
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 45388,
-                "boundary_margin_px": 97.266678,
-                "decoded_mask_sha256": "sha256:c4363e69664f8018b34cd6c2e4c5b9208c2b2d571237960e617ef6c76249c578",
-                "clip_time_s": 0.5
-              },
-              {
-                "video_frame": 5250,
-                "time_s": 175.0,
-                "gaze_frame_num": 1750,
-                "gaze_tracking_timestamp_us": 1631615569,
-                "alignment_skew_ms": 0.0,
-                "object_id": "stainless bowl_0",
-                "object_name": "stainless bowl",
-                "annotated_mask_count": 3,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  828.79593,
-                  902.210924
-                ],
-                "rounded_pixel_xy": [
-                  829,
-                  902
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 31143,
-                "boundary_margin_px": 67.710083,
-                "decoded_mask_sha256": "sha256:7ee6ca9bc90186dbcc3b4ffc6cd8bc8f1fd55a84df4fc1619701afdc556b3e4c",
-                "clip_time_s": 7.5
-              },
-              {
-                "video_frame": 5460,
-                "time_s": 182.0,
-                "gaze_frame_num": 1820,
-                "gaze_tracking_timestamp_us": 1638614449,
-                "alignment_skew_ms": 0.0,
-                "object_id": "liquid milk pack_0",
-                "object_name": "liquid milk pack",
-                "annotated_mask_count": 2,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  631.936198,
-                  841.396247
-                ],
-                "rounded_pixel_xy": [
-                  632,
-                  841
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 20171,
-                "boundary_margin_px": 50.52869,
-                "decoded_mask_sha256": "sha256:abb752536a456f655b5b46c6663a2e3e13d27a9c16a3a5a4834a6712a8f9125c",
-                "clip_time_s": 14.5
-              }
-            ],
-            "alignment_diagnostics": {
-              "video_fps": 30.0,
-              "gaze_frame_rate_hz_declared": 10.0,
-              "gaze_timestamp_rate_hz_measured": 10.0016,
-              "frame_mapping": "video_frame / 3 == gaze frame_num",
-              "maximum_anchor_skew_ms": 0.0,
-              "video_frame_count": 15344,
-              "source_video_resolution": [
-                448,
-                448
-              ]
-            },
-            "claim_limits": [
-              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
-              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
-            ],
-            "source_window": {
-              "start_sec": 167.5,
-              "end_sec": 182.5,
-              "duration_sec": 15.0
-            },
-            "source_evidence": {
-              "relations": "annotations/relations_val.json",
-              "gaze": "takes/uniandes_cooking_006_6/eye_gaze/general_eye_gaze_2d.csv",
-              "video": "takes/uniandes_cooking_006_6/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
-            },
-            "temporal_scope": "three explicit clip-relative checkpoints",
-            "semantic_gt_id": "task5_egoexo_uniandes_cooking_006_6_13837ab534",
-            "answer_signature": "sha256:082453ad7d1a19fd476a53dc846524007f56fa39a00680149e5c66b94563ec79",
-            "evidence_signature": "sha256:cdffe9c587bc8fafcc5e8deddd37f0650845034a4d270534574f5325f97f26a1",
-            "reasoning_owner": "deterministic_code",
-            "language_model_role": "wording_only"
-          }
-        }
-      ],
-      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
-    },
-    {
-      "name": "task5_egoexo_sfu_cooking_010_3_dab0e9e401",
-      "title": "Task 5 · EgoExo4D · sfu_cooking_010_3",
-      "video_clip": "./task5_media/task5_egoexo_sfu_cooking_010_3_dab0e9e401.mp4",
-      "original_image": "./task5_media/task5_egoexo_sfu_cooking_010_3_dab0e9e401_evidence.jpg",
-      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
-      "video_window": {
-        "source_sequence": "sfu_cooking_010_3",
-        "start_sec": 168.5,
-        "end_sec": 183.5,
-        "duration_sec": 15.0,
-        "anchor_frames": [
-          5100,
-          5340,
-          5460
-        ],
-        "published_clip_duration_sec": 15.0
-      },
-      "qa": [
-        {
-          "task_id": "task5_human_state_grounded_spatial_reasoning",
-          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_target_sequence_across_clip_checkpoints",
-          "question_categories": [
-            "evidence_closed_gaze_mask_anchor"
-          ],
-          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
-          "options": [
-            {
-              "label": "A",
-              "text": "At 1.5s: cream bowl; at 9.5s: tomato package; at 13.5s: chopping board.",
-              "semantic_option_id": "anchor_1"
-            },
-            {
-              "label": "B",
-              "text": "At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
-              "semantic_option_id": "anchor_3"
-            },
-            {
-              "label": "C",
-              "text": "At 1.5s: tomato package; at 9.5s: chopping board; at 13.5s: cream bowl.",
-              "semantic_option_id": "anchor_2"
-            },
-            {
-              "label": "D",
-              "text": "At 1.5s: cream bowl; at 9.5s: chopping board; at 13.5s: tomato package.",
-              "semantic_option_id": "no_anchor"
-            }
-          ],
-          "correct_option": "B",
-          "correct_answer": "At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
-          "answer": "At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
-          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
-          "semantic_gt": {
-            "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "task5_egoexo_sfu_cooking_010_3_dab0e9e401",
-            "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_target_sequence_across_clip_checkpoints",
-            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
-            "options": [
-              {
-                "id": "anchor_1",
-                "statement": "At 1.5s: cream bowl; at 9.5s: tomato package; at 13.5s: chopping board."
-              },
-              {
-                "id": "anchor_2",
-                "statement": "At 1.5s: tomato package; at 9.5s: chopping board; at 13.5s: cream bowl."
-              },
-              {
-                "id": "anchor_3",
-                "statement": "At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board."
-              },
-              {
-                "id": "no_anchor",
-                "statement": "At 1.5s: cream bowl; at 9.5s: chopping board; at 13.5s: tomato package."
-              }
-            ],
-            "correct_option_id": "anchor_3",
-            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 1.5s: tomato package; at 9.5s: cream bowl; at 13.5s: chopping board.",
-            "semantic_facts": [
-              {
-                "id": "target_object_id",
-                "value": "chopping board_0"
-              },
-              {
-                "id": "target_anchor_index",
-                "value": 2
-              },
-              {
-                "id": "anchor_hits",
-                "value": [
-                  {
-                    "frame": 5100,
-                    "object_id": "tomato package_0"
-                  },
-                  {
-                    "frame": 5340,
-                    "object_id": "cream bowl_0"
-                  },
-                  {
-                    "frame": 5460,
-                    "object_id": "chopping board_0"
-                  }
-                ]
-              },
-              {
-                "id": "result_evidence_signature",
-                "value": "sha256:ef2212aace12d128fda54d4a34e37761b1a704adc50da0452bf6df33d156623f"
-              }
-            ],
-            "evidence_refs": [
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 5100,
-                "gaze_frame_num": 1700,
-                "object_id": "tomato package_0",
-                "decoded_mask_sha256": "sha256:423186ce46b8e2db931048e7fa3022a0a67d65b9f57370d3ef72643c0d966d21"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 5340,
-                "gaze_frame_num": 1780,
-                "object_id": "cream bowl_0",
-                "decoded_mask_sha256": "sha256:4bc020cc556b5a8dc7b6642a76dd15a556ee1d5f10f8ef1d9b555080fea45420"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 5460,
-                "gaze_frame_num": 1820,
-                "object_id": "chopping board_0",
-                "decoded_mask_sha256": "sha256:0bde595b634a91a45e686d7f6f65bc7551d7279b4260c3a8ffda870a025c7280"
-              },
-              {
-                "kind": "result_json_sha256",
-                "sha256": "sha256:ef2212aace12d128fda54d4a34e37761b1a704adc50da0452bf6df33d156623f"
-              }
-            ],
-            "provenance": {
-              "dataset": "Ego-Exo4D v2",
-              "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
-              "take_name": "sfu_cooking_010_3",
-              "computation": "deterministic_frame_aligned_2d_point_in_mask",
-              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
-              "release_status": "signed_semantic_gt_egoexo_primary"
-            },
-            "reasoning_owner": "deterministic_code",
-            "language_model_permissions": [
-              "neutral_wording_variation",
-              "wrapping_locked_code_gt_as_natural_language"
-            ],
-            "language_model_forbidden": [
-              "spatial_reasoning",
-              "temporal_reasoning",
-              "gaze_reasoning",
-              "contact_reasoning",
-              "visibility_reasoning",
-              "option_generation",
-              "correct_answer_selection",
-              "evidence_completion"
-            ],
-            "answer_signature": "sha256:6e01c409debe0c58b189b61af1ce9d3c831849709a3bd2bd0bce8d08aa00fba4"
-          },
-          "answer_signature": "sha256:6e01c409debe0c58b189b61af1ce9d3c831849709a3bd2bd0bce8d08aa00fba4",
-          "language_realization": {
-            "schema_version": "limo4si.language_realization.v1",
-            "realizer": "deterministic_template",
-            "fallback_used": false,
-            "semantic_fields_mutable": false,
-            "draft": {
-              "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "task5_egoexo_sfu_cooking_010_3_dab0e9e401",
-              "answer_signature": "sha256:6e01c409debe0c58b189b61af1ce9d3c831849709a3bd2bd0bce8d08aa00fba4",
-              "question_template": "{{question_focus}}",
-              "option_template": "{{option_statement}}",
-              "explanation_template": "{{evidence_statement}}"
-            }
-          },
-          "status": "ok",
-          "release_eligible": true,
-          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
-          "result_json": {
-            "status": "ok",
-            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true,
-            "annotation_direct": true,
-            "release_status": "signed_semantic_gt_egoexo_primary",
-            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
-            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
-            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
-            "take_uid": "31c74ac0-8c3d-4d5e-b577-4e54f16fb52d",
-            "take_name": "sfu_cooking_010_3",
-            "camera": "aria01_214-1",
-            "target_object_id": "chopping board_0",
-            "target_object_name": "chopping board",
-            "target_anchor_index": 2,
-            "correct_semantic_option_id": "anchor_3",
-            "anchors": [
-              {
-                "video_frame": 5100,
-                "time_s": 170.0,
-                "gaze_frame_num": 1700,
-                "gaze_tracking_timestamp_us": 1339496263,
-                "alignment_skew_ms": 0.0,
-                "object_id": "tomato package_0",
-                "object_name": "tomato package",
-                "annotated_mask_count": 13,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  724.115447,
-                  871.523581
-                ],
-                "rounded_pixel_xy": [
-                  724,
-                  872
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 24680,
-                "boundary_margin_px": 43.741089,
-                "decoded_mask_sha256": "sha256:423186ce46b8e2db931048e7fa3022a0a67d65b9f57370d3ef72643c0d966d21",
-                "clip_time_s": 1.5
-              },
-              {
-                "video_frame": 5340,
-                "time_s": 178.0,
-                "gaze_frame_num": 1780,
-                "gaze_tracking_timestamp_us": 1347494983,
-                "alignment_skew_ms": 0.0,
-                "object_id": "cream bowl_0",
-                "object_name": "cream bowl",
-                "annotated_mask_count": 8,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  699.343383,
-                  903.649626
-                ],
-                "rounded_pixel_xy": [
-                  699,
-                  904
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 35597,
-                "boundary_margin_px": 39.759693,
-                "decoded_mask_sha256": "sha256:4bc020cc556b5a8dc7b6642a76dd15a556ee1d5f10f8ef1d9b555080fea45420",
-                "clip_time_s": 9.5
-              },
-              {
-                "video_frame": 5460,
-                "time_s": 182.0,
-                "gaze_frame_num": 1820,
-                "gaze_tracking_timestamp_us": 1351494343,
-                "alignment_skew_ms": 0.0,
-                "object_id": "chopping board_0",
-                "object_name": "chopping board",
-                "annotated_mask_count": 9,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  820.290666,
-                  948.228919
-                ],
-                "rounded_pixel_xy": [
-                  820,
-                  948
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 80803,
-                "boundary_margin_px": 84.984497,
-                "decoded_mask_sha256": "sha256:0bde595b634a91a45e686d7f6f65bc7551d7279b4260c3a8ffda870a025c7280",
-                "clip_time_s": 13.5
-              }
-            ],
-            "alignment_diagnostics": {
-              "video_fps": 30.0,
-              "gaze_frame_rate_hz_declared": 10.0,
-              "gaze_timestamp_rate_hz_measured": 10.0016,
-              "frame_mapping": "video_frame / 3 == gaze frame_num",
-              "maximum_anchor_skew_ms": 0.0,
-              "video_frame_count": 8255,
-              "source_video_resolution": [
-                448,
-                448
-              ]
-            },
-            "claim_limits": [
-              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
-              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
-            ],
-            "source_window": {
-              "start_sec": 168.5,
-              "end_sec": 183.5,
-              "duration_sec": 15.0
-            },
-            "source_evidence": {
-              "relations": "annotations/relations_val.json",
-              "gaze": "takes/sfu_cooking_010_3/eye_gaze/general_eye_gaze_2d.csv",
-              "video": "takes/sfu_cooking_010_3/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
-            },
-            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
-            "semantic_gt_id": "task5_egoexo_sfu_cooking_010_3_dab0e9e401",
-            "answer_signature": "sha256:6e01c409debe0c58b189b61af1ce9d3c831849709a3bd2bd0bce8d08aa00fba4",
-            "evidence_signature": "sha256:ef2212aace12d128fda54d4a34e37761b1a704adc50da0452bf6df33d156623f",
-            "reasoning_owner": "deterministic_code",
-            "language_model_role": "wording_only"
-          }
-        }
-      ],
-      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
-    },
-    {
-      "name": "task5_egoexo_iiith_cooking_32_1_06aeff1d04",
-      "title": "Task 5 · EgoExo4D · iiith_cooking_32_1",
-      "video_clip": "./task5_media/task5_egoexo_iiith_cooking_32_1_06aeff1d04.mp4",
-      "original_image": "./task5_media/task5_egoexo_iiith_cooking_32_1_06aeff1d04_evidence.jpg",
-      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
-      "video_window": {
-        "source_sequence": "iiith_cooking_32_1",
-        "start_sec": 29.0,
-        "end_sec": 44.0,
-        "duration_sec": 15.0,
-        "anchor_frames": [
-          930,
-          1170,
-          1260
-        ],
-        "published_clip_duration_sec": 15.0
-      },
-      "qa": [
-        {
-          "task_id": "task5_human_state_grounded_spatial_reasoning",
-          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_point_inside_relation_mask_at_anchor",
-          "question_categories": [
-            "evidence_closed_gaze_mask_anchor"
-          ],
-          "question": "At which stated clip time (2.0s, 10.0s, or 13.0s) does the camera-wearer gaze land on the tawa pan?",
-          "options": [
-            {
-              "label": "A",
-              "text": "At 2.0s into the clip, but not at 10.0s or 13.0s.",
-              "semantic_option_id": "anchor_1"
-            },
-            {
-              "label": "B",
-              "text": "At 13.0s into the clip, but not at 2.0s or 10.0s.",
-              "semantic_option_id": "anchor_3"
-            },
-            {
-              "label": "C",
-              "text": "At 10.0s into the clip, but not at 2.0s or 13.0s.",
-              "semantic_option_id": "anchor_2"
-            },
-            {
-              "label": "D",
-              "text": "At none of these clip times: 2.0s, 10.0s, or 13.0s.",
-              "semantic_option_id": "no_anchor"
-            }
-          ],
-          "correct_option": "C",
-          "correct_answer": "At 10.0s into the clip, but not at 2.0s or 13.0s.",
-          "answer": "At 10.0s into the clip, but not at 2.0s or 13.0s.",
-          "explanation": "The synchronized gaze point lands inside the annotated tawa pan region only at 10.0 seconds into the clip. At 2.0s, 10.0s, and 13.0s, it lands on gas lighter, tawa pan, stainless paprika container, respectively.",
-          "semantic_gt": {
-            "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "task5_egoexo_iiith_cooking_32_1_06aeff1d04",
-            "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (2.0s, 10.0s, or 13.0s) does the camera-wearer gaze land on the tawa pan?",
-            "options": [
-              {
-                "id": "anchor_1",
-                "statement": "At 2.0s into the clip, but not at 10.0s or 13.0s."
-              },
-              {
-                "id": "anchor_2",
-                "statement": "At 10.0s into the clip, but not at 2.0s or 13.0s."
-              },
-              {
-                "id": "anchor_3",
-                "statement": "At 13.0s into the clip, but not at 2.0s or 10.0s."
-              },
-              {
-                "id": "no_anchor",
-                "statement": "At none of these clip times: 2.0s, 10.0s, or 13.0s."
-              }
-            ],
-            "correct_option_id": "anchor_2",
-            "evidence_statement": "The synchronized gaze point lands inside the annotated tawa pan region only at 10.0 seconds into the clip. At 2.0s, 10.0s, and 13.0s, it lands on gas lighter, tawa pan, stainless paprika container, respectively.",
-            "semantic_facts": [
-              {
-                "id": "target_object_id",
-                "value": "tawa pan_0"
-              },
-              {
-                "id": "target_anchor_index",
-                "value": 1
-              },
-              {
-                "id": "anchor_hits",
-                "value": [
-                  {
-                    "frame": 930,
-                    "object_id": "gas lighter _0"
-                  },
-                  {
-                    "frame": 1170,
-                    "object_id": "tawa pan_0"
-                  },
-                  {
-                    "frame": 1260,
-                    "object_id": "stainless paprika container_0"
-                  }
-                ]
-              },
-              {
-                "id": "result_evidence_signature",
-                "value": "sha256:a0e63364d186f7c4da4ad13c7b8ea9f84f1bbd6798f3521b500aa402b2b749d4"
-              }
-            ],
-            "evidence_refs": [
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 930,
-                "gaze_frame_num": 310,
-                "object_id": "gas lighter _0",
-                "decoded_mask_sha256": "sha256:068ab3c45f6c92312d8ff6dc42a2bbfbdcc4d81925934cf1cb1b71c1af8f4b43"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 1170,
-                "gaze_frame_num": 390,
-                "object_id": "tawa pan_0",
-                "decoded_mask_sha256": "sha256:76baee4603ad7334bdeb6576db8d540e96e037cb3ed29c9c5dff1afa0bd437fb"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 1260,
-                "gaze_frame_num": 420,
-                "object_id": "stainless paprika container_0",
-                "decoded_mask_sha256": "sha256:8f0671d7edc092e34f4a9aa6ed786a683c1cbc8d8399237bf03cd7f43e7e87b2"
-              },
-              {
-                "kind": "result_json_sha256",
-                "sha256": "sha256:a0e63364d186f7c4da4ad13c7b8ea9f84f1bbd6798f3521b500aa402b2b749d4"
-              }
-            ],
-            "provenance": {
-              "dataset": "Ego-Exo4D v2",
-              "take_uid": "35bfade9-8ead-46a4-b2f0-cdcfb86df1d6",
-              "take_name": "iiith_cooking_32_1",
-              "computation": "deterministic_frame_aligned_2d_point_in_mask",
-              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
-              "release_status": "signed_semantic_gt_egoexo_primary"
-            },
-            "reasoning_owner": "deterministic_code",
-            "language_model_permissions": [
-              "neutral_wording_variation",
-              "wrapping_locked_code_gt_as_natural_language"
-            ],
-            "language_model_forbidden": [
-              "spatial_reasoning",
-              "temporal_reasoning",
-              "gaze_reasoning",
-              "contact_reasoning",
-              "visibility_reasoning",
-              "option_generation",
-              "correct_answer_selection",
-              "evidence_completion"
-            ],
-            "answer_signature": "sha256:e2c9c0627ae7424695475434e0b89ce96a44658e49e01b3d8240fe1c6918878b"
-          },
-          "answer_signature": "sha256:e2c9c0627ae7424695475434e0b89ce96a44658e49e01b3d8240fe1c6918878b",
-          "language_realization": {
-            "schema_version": "limo4si.language_realization.v1",
-            "realizer": "deterministic_template",
-            "fallback_used": false,
-            "semantic_fields_mutable": false,
-            "draft": {
-              "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "task5_egoexo_iiith_cooking_32_1_06aeff1d04",
-              "answer_signature": "sha256:e2c9c0627ae7424695475434e0b89ce96a44658e49e01b3d8240fe1c6918878b",
-              "question_template": "{{question_focus}}",
-              "option_template": "{{option_statement}}",
-              "explanation_template": "{{evidence_statement}}"
-            }
-          },
-          "status": "ok",
-          "release_eligible": true,
-          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
-          "result_json": {
-            "status": "ok",
-            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true,
-            "annotation_direct": true,
-            "release_status": "signed_semantic_gt_egoexo_primary",
-            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
-            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
-            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
-            "take_uid": "35bfade9-8ead-46a4-b2f0-cdcfb86df1d6",
-            "take_name": "iiith_cooking_32_1",
-            "camera": "aria01_214-1",
-            "target_object_id": "tawa pan_0",
-            "target_object_name": "tawa pan",
-            "target_anchor_index": 1,
-            "correct_semantic_option_id": "anchor_2",
-            "anchors": [
-              {
-                "video_frame": 930,
-                "time_s": 31.0,
-                "gaze_frame_num": 310,
-                "gaze_tracking_timestamp_us": 203424419,
-                "alignment_skew_ms": 0.0,
-                "object_id": "gas lighter _0",
-                "object_name": "gas lighter",
-                "annotated_mask_count": 2,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  800.265214,
-                  984.323007
-                ],
-                "rounded_pixel_xy": [
-                  800,
-                  984
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 2455,
-                "boundary_margin_px": 10.0,
-                "decoded_mask_sha256": "sha256:068ab3c45f6c92312d8ff6dc42a2bbfbdcc4d81925934cf1cb1b71c1af8f4b43",
-                "clip_time_s": 2.0
-              },
-              {
-                "video_frame": 1170,
-                "time_s": 39.0,
-                "gaze_frame_num": 390,
-                "gaze_tracking_timestamp_us": 211423139,
-                "alignment_skew_ms": 0.0,
-                "object_id": "tawa pan_0",
-                "object_name": "tawa pan",
-                "annotated_mask_count": 2,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  747.736215,
-                  1060.761572
-                ],
-                "rounded_pixel_xy": [
-                  748,
-                  1061
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 103278,
-                "boundary_margin_px": 119.000084,
-                "decoded_mask_sha256": "sha256:76baee4603ad7334bdeb6576db8d540e96e037cb3ed29c9c5dff1afa0bd437fb",
-                "clip_time_s": 10.0
-              },
-              {
-                "video_frame": 1260,
-                "time_s": 42.0,
-                "gaze_frame_num": 420,
-                "gaze_tracking_timestamp_us": 214422659,
-                "alignment_skew_ms": 0.0,
-                "object_id": "stainless paprika container_0",
-                "object_name": "stainless paprika container",
-                "annotated_mask_count": 7,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  611.962708,
-                  809.412736
-                ],
-                "rounded_pixel_xy": [
-                  612,
-                  809
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 7332,
-                "boundary_margin_px": 24.968996,
-                "decoded_mask_sha256": "sha256:8f0671d7edc092e34f4a9aa6ed786a683c1cbc8d8399237bf03cd7f43e7e87b2",
-                "clip_time_s": 13.0
-              }
-            ],
-            "alignment_diagnostics": {
-              "video_fps": 30.0,
-              "gaze_frame_rate_hz_declared": 10.0,
-              "gaze_timestamp_rate_hz_measured": 10.0016,
-              "frame_mapping": "video_frame / 3 == gaze frame_num",
-              "maximum_anchor_skew_ms": 0.0,
-              "video_frame_count": 8720,
-              "source_video_resolution": [
-                448,
-                448
-              ]
-            },
-            "claim_limits": [
-              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
-              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
-            ],
-            "source_window": {
-              "start_sec": 29.0,
-              "end_sec": 44.0,
-              "duration_sec": 15.0
-            },
-            "source_evidence": {
-              "relations": "annotations/relations_val.json",
-              "gaze": "takes/iiith_cooking_32_1/eye_gaze/general_eye_gaze_2d.csv",
-              "video": "takes/iiith_cooking_32_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
-            },
-            "temporal_scope": "three explicit clip-relative checkpoints",
-            "semantic_gt_id": "task5_egoexo_iiith_cooking_32_1_06aeff1d04",
-            "answer_signature": "sha256:e2c9c0627ae7424695475434e0b89ce96a44658e49e01b3d8240fe1c6918878b",
-            "evidence_signature": "sha256:a0e63364d186f7c4da4ad13c7b8ea9f84f1bbd6798f3521b500aa402b2b749d4",
-            "reasoning_owner": "deterministic_code",
-            "language_model_role": "wording_only"
-          }
-        }
-      ],
-      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
-    },
-    {
-      "name": "task5_egoexo_sfu_cooking_007_3_60ab95d4a7",
-      "title": "Task 5 · EgoExo4D · sfu_cooking_007_3",
-      "video_clip": "./task5_media/task5_egoexo_sfu_cooking_007_3_60ab95d4a7.mp4",
-      "original_image": "./task5_media/task5_egoexo_sfu_cooking_007_3_60ab95d4a7_evidence.jpg",
-      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
-      "video_window": {
-        "source_sequence": "sfu_cooking_007_3",
-        "start_sec": 526.0,
-        "end_sec": 541.0,
-        "duration_sec": 15.0,
-        "anchor_frames": [
-          15840,
-          15930,
-          16170
-        ],
-        "published_clip_duration_sec": 15.0
-      },
-      "qa": [
-        {
-          "task_id": "task5_human_state_grounded_spatial_reasoning",
-          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_target_sequence_across_clip_checkpoints",
-          "question_categories": [
-            "evidence_closed_gaze_mask_anchor"
-          ],
-          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
-          "options": [
-            {
-              "label": "A",
-              "text": "At 2.0s: pink frying pan; at 5.0s: wooden chopping board; at 13.0s: meat cleaver knife.",
-              "semantic_option_id": "anchor_2"
-            },
-            {
-              "label": "B",
-              "text": "At 2.0s: meat cleaver knife; at 5.0s: pink frying pan; at 13.0s: wooden chopping board.",
-              "semantic_option_id": "anchor_3"
-            },
-            {
-              "label": "C",
-              "text": "At 2.0s: meat cleaver knife; at 5.0s: wooden chopping board; at 13.0s: pink frying pan.",
-              "semantic_option_id": "no_anchor"
-            },
-            {
-              "label": "D",
-              "text": "At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
-              "semantic_option_id": "anchor_1"
-            }
-          ],
-          "correct_option": "D",
-          "correct_answer": "At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
-          "answer": "At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
-          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
-          "semantic_gt": {
-            "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "task5_egoexo_sfu_cooking_007_3_60ab95d4a7",
-            "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_target_sequence_across_clip_checkpoints",
-            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
-            "options": [
-              {
-                "id": "anchor_1",
-                "statement": "At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board."
-              },
-              {
-                "id": "anchor_2",
-                "statement": "At 2.0s: pink frying pan; at 5.0s: wooden chopping board; at 13.0s: meat cleaver knife."
-              },
-              {
-                "id": "anchor_3",
-                "statement": "At 2.0s: meat cleaver knife; at 5.0s: pink frying pan; at 13.0s: wooden chopping board."
-              },
-              {
-                "id": "no_anchor",
-                "statement": "At 2.0s: meat cleaver knife; at 5.0s: wooden chopping board; at 13.0s: pink frying pan."
-              }
-            ],
-            "correct_option_id": "anchor_1",
-            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 2.0s: pink frying pan; at 5.0s: meat cleaver knife; at 13.0s: wooden chopping board.",
-            "semantic_facts": [
-              {
-                "id": "target_object_id",
-                "value": "pink frying pan_0"
-              },
-              {
-                "id": "target_anchor_index",
-                "value": 0
-              },
-              {
-                "id": "anchor_hits",
-                "value": [
-                  {
-                    "frame": 15840,
-                    "object_id": "pink frying pan_0"
-                  },
-                  {
-                    "frame": 15930,
-                    "object_id": "meat cleaver knife_0"
-                  },
-                  {
-                    "frame": 16170,
-                    "object_id": "wooden chopping board_0"
-                  }
-                ]
-              },
-              {
-                "id": "result_evidence_signature",
-                "value": "sha256:a4a3777fedf3bf1a282567b72c9dc37b246a5b7306b0c429433d1776dffdc8b5"
-              }
-            ],
-            "evidence_refs": [
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 15840,
-                "gaze_frame_num": 5280,
-                "object_id": "pink frying pan_0",
-                "decoded_mask_sha256": "sha256:8ec616aa4f53c6f359bc3ab77b29cead99883c74d2653a3223851d743dfdadc5"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 15930,
-                "gaze_frame_num": 5310,
-                "object_id": "meat cleaver knife_0",
-                "decoded_mask_sha256": "sha256:a6cca939af6a4ffbfc993ab7bbecc3b09b87ba7841f1fb0091592b5be7dbf6fe"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 16170,
-                "gaze_frame_num": 5390,
-                "object_id": "wooden chopping board_0",
-                "decoded_mask_sha256": "sha256:2aee9e384c24185ac84eb19968d1d17944f93550c92d8a0d1c76411e8c3980b0"
-              },
-              {
-                "kind": "result_json_sha256",
-                "sha256": "sha256:a4a3777fedf3bf1a282567b72c9dc37b246a5b7306b0c429433d1776dffdc8b5"
-              }
-            ],
-            "provenance": {
-              "dataset": "Ego-Exo4D v2",
-              "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
-              "take_name": "sfu_cooking_007_3",
-              "computation": "deterministic_frame_aligned_2d_point_in_mask",
-              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
-              "release_status": "signed_semantic_gt_egoexo_primary"
-            },
-            "reasoning_owner": "deterministic_code",
-            "language_model_permissions": [
-              "neutral_wording_variation",
-              "wrapping_locked_code_gt_as_natural_language"
-            ],
-            "language_model_forbidden": [
-              "spatial_reasoning",
-              "temporal_reasoning",
-              "gaze_reasoning",
-              "contact_reasoning",
-              "visibility_reasoning",
-              "option_generation",
-              "correct_answer_selection",
-              "evidence_completion"
-            ],
-            "answer_signature": "sha256:fa521223b0ebd912c32be49b3bb7365cd449946d2bbdae3809830ec42e9fe2d2"
-          },
-          "answer_signature": "sha256:fa521223b0ebd912c32be49b3bb7365cd449946d2bbdae3809830ec42e9fe2d2",
-          "language_realization": {
-            "schema_version": "limo4si.language_realization.v1",
-            "realizer": "deterministic_template",
-            "fallback_used": false,
-            "semantic_fields_mutable": false,
-            "draft": {
-              "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "task5_egoexo_sfu_cooking_007_3_60ab95d4a7",
-              "answer_signature": "sha256:fa521223b0ebd912c32be49b3bb7365cd449946d2bbdae3809830ec42e9fe2d2",
-              "question_template": "{{question_focus}}",
-              "option_template": "{{option_statement}}",
-              "explanation_template": "{{evidence_statement}}"
-            }
-          },
-          "status": "ok",
-          "release_eligible": true,
-          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
-          "result_json": {
-            "status": "ok",
-            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true,
-            "annotation_direct": true,
-            "release_status": "signed_semantic_gt_egoexo_primary",
-            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
-            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
-            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
-            "take_uid": "f76f2040-989c-42df-b2fb-e0903165443d",
-            "take_name": "sfu_cooking_007_3",
-            "camera": "aria01_214-1",
-            "target_object_id": "pink frying pan_0",
-            "target_object_name": "pink frying pan",
-            "target_anchor_index": 0,
-            "correct_semantic_option_id": "anchor_1",
-            "anchors": [
-              {
-                "video_frame": 15840,
-                "time_s": 528.0,
-                "gaze_frame_num": 5280,
-                "gaze_tracking_timestamp_us": 1325020378,
-                "alignment_skew_ms": 0.0,
-                "object_id": "pink frying pan_0",
-                "object_name": "pink frying pan",
-                "annotated_mask_count": 4,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  791.261928,
-                  962.300876
-                ],
-                "rounded_pixel_xy": [
-                  791,
-                  962
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 61190,
-                "boundary_margin_px": 104.654274,
-                "decoded_mask_sha256": "sha256:8ec616aa4f53c6f359bc3ab77b29cead99883c74d2653a3223851d743dfdadc5",
-                "clip_time_s": 2.0
-              },
-              {
-                "video_frame": 15930,
-                "time_s": 531.0,
-                "gaze_frame_num": 5310,
-                "gaze_tracking_timestamp_us": 1328019898,
-                "alignment_skew_ms": 0.0,
-                "object_id": "meat cleaver knife_0",
-                "object_name": "meat cleaver knife",
-                "annotated_mask_count": 8,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  480.545871,
-                  897.638169
-                ],
-                "rounded_pixel_xy": [
-                  481,
-                  898
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 5933,
-                "boundary_margin_px": 25.165895,
-                "decoded_mask_sha256": "sha256:a6cca939af6a4ffbfc993ab7bbecc3b09b87ba7841f1fb0091592b5be7dbf6fe",
-                "clip_time_s": 5.0
-              },
-              {
-                "video_frame": 16170,
-                "time_s": 539.0,
-                "gaze_frame_num": 5390,
-                "gaze_tracking_timestamp_us": 1336018618,
-                "alignment_skew_ms": 0.0,
-                "object_id": "wooden chopping board_0",
-                "object_name": "wooden chopping board",
-                "annotated_mask_count": 6,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  554.504394,
-                  877.609664
-                ],
-                "rounded_pixel_xy": [
-                  555,
-                  878
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 45743,
-                "boundary_margin_px": 22.590698,
-                "decoded_mask_sha256": "sha256:2aee9e384c24185ac84eb19968d1d17944f93550c92d8a0d1c76411e8c3980b0",
-                "clip_time_s": 13.0
-              }
-            ],
-            "alignment_diagnostics": {
-              "video_fps": 30.0,
-              "gaze_frame_rate_hz_declared": 10.0,
-              "gaze_timestamp_rate_hz_measured": 10.0016,
-              "frame_mapping": "video_frame / 3 == gaze frame_num",
-              "maximum_anchor_skew_ms": 0.0,
-              "video_frame_count": 21756,
-              "source_video_resolution": [
-                448,
-                448
-              ]
-            },
-            "claim_limits": [
-              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
-              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
-            ],
-            "source_window": {
-              "start_sec": 526.0,
-              "end_sec": 541.0,
-              "duration_sec": 15.0
-            },
-            "source_evidence": {
-              "relations": "annotations/relations_val.json",
-              "gaze": "takes/sfu_cooking_007_3/eye_gaze/general_eye_gaze_2d.csv",
-              "video": "takes/sfu_cooking_007_3/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
-            },
-            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
-            "semantic_gt_id": "task5_egoexo_sfu_cooking_007_3_60ab95d4a7",
-            "answer_signature": "sha256:fa521223b0ebd912c32be49b3bb7365cd449946d2bbdae3809830ec42e9fe2d2",
-            "evidence_signature": "sha256:a4a3777fedf3bf1a282567b72c9dc37b246a5b7306b0c429433d1776dffdc8b5",
-            "reasoning_owner": "deterministic_code",
-            "language_model_role": "wording_only"
-          }
-        }
-      ],
-      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
-    },
-    {
-      "name": "task5_egoexo_uniandes_cooking_001_5_8854e96840",
-      "title": "Task 5 · EgoExo4D · uniandes_cooking_001_5",
-      "video_clip": "./task5_media/task5_egoexo_uniandes_cooking_001_5_8854e96840.mp4",
-      "original_image": "./task5_media/task5_egoexo_uniandes_cooking_001_5_8854e96840_evidence.jpg",
-      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
-      "video_window": {
-        "source_sequence": "uniandes_cooking_001_5",
-        "start_sec": 478.5,
-        "end_sec": 493.5,
-        "duration_sec": 15.0,
-        "anchor_frames": [
-          14400,
-          14520,
-          14760
-        ],
-        "published_clip_duration_sec": 15.0
-      },
-      "qa": [
-        {
-          "task_id": "task5_human_state_grounded_spatial_reasoning",
-          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_point_inside_relation_mask_at_anchor",
-          "question_categories": [
-            "evidence_closed_gaze_mask_anchor"
-          ],
-          "question": "At which stated clip time (1.5s, 5.5s, or 13.5s) does the camera-wearer gaze land on the aluminium skillet?",
-          "options": [
-            {
-              "label": "A",
-              "text": "At 13.5s into the clip, but not at 1.5s or 5.5s.",
-              "semantic_option_id": "anchor_3"
-            },
-            {
-              "label": "B",
-              "text": "At 1.5s into the clip, but not at 5.5s or 13.5s.",
-              "semantic_option_id": "anchor_1"
-            },
-            {
-              "label": "C",
-              "text": "At 5.5s into the clip, but not at 1.5s or 13.5s.",
-              "semantic_option_id": "anchor_2"
-            },
-            {
-              "label": "D",
-              "text": "At none of these clip times: 1.5s, 5.5s, or 13.5s.",
-              "semantic_option_id": "no_anchor"
-            }
-          ],
-          "correct_option": "A",
-          "correct_answer": "At 13.5s into the clip, but not at 1.5s or 5.5s.",
-          "answer": "At 13.5s into the clip, but not at 1.5s or 5.5s.",
-          "explanation": "The synchronized gaze point lands inside the annotated aluminium skillet region only at 13.5 seconds into the clip. At 1.5s, 5.5s, and 13.5s, it lands on stainless bowl, egg whisk, aluminium skillet, respectively.",
-          "semantic_gt": {
-            "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "task5_egoexo_uniandes_cooking_001_5_8854e96840",
-            "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (1.5s, 5.5s, or 13.5s) does the camera-wearer gaze land on the aluminium skillet?",
-            "options": [
-              {
-                "id": "anchor_1",
-                "statement": "At 1.5s into the clip, but not at 5.5s or 13.5s."
-              },
-              {
-                "id": "anchor_2",
-                "statement": "At 5.5s into the clip, but not at 1.5s or 13.5s."
-              },
-              {
-                "id": "anchor_3",
-                "statement": "At 13.5s into the clip, but not at 1.5s or 5.5s."
-              },
-              {
-                "id": "no_anchor",
-                "statement": "At none of these clip times: 1.5s, 5.5s, or 13.5s."
-              }
-            ],
-            "correct_option_id": "anchor_3",
-            "evidence_statement": "The synchronized gaze point lands inside the annotated aluminium skillet region only at 13.5 seconds into the clip. At 1.5s, 5.5s, and 13.5s, it lands on stainless bowl, egg whisk, aluminium skillet, respectively.",
-            "semantic_facts": [
-              {
-                "id": "target_object_id",
-                "value": "alluminuim skiilet_0"
-              },
-              {
-                "id": "target_anchor_index",
-                "value": 2
-              },
-              {
-                "id": "anchor_hits",
-                "value": [
-                  {
-                    "frame": 14400,
-                    "object_id": "stainless bowl_0"
-                  },
-                  {
-                    "frame": 14520,
-                    "object_id": "egg whisk_1"
-                  },
-                  {
-                    "frame": 14760,
-                    "object_id": "alluminuim skiilet_0"
-                  }
-                ]
-              },
-              {
-                "id": "result_evidence_signature",
-                "value": "sha256:49e5a8fc53dc1566fc7781a23e3cf114f2ba48b4069d81177586b79ec26c80b4"
-              }
-            ],
-            "evidence_refs": [
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 14400,
-                "gaze_frame_num": 4800,
-                "object_id": "stainless bowl_0",
-                "decoded_mask_sha256": "sha256:7f8267322ad372d36c81d5fda63141c13c3875477abb573ced3107bc2f3c0af7"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 14520,
-                "gaze_frame_num": 4840,
-                "object_id": "egg whisk_1",
-                "decoded_mask_sha256": "sha256:22800787909b4caf66a32e8e3780a696822d54107d22363e247df363d14e603e"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 14760,
-                "gaze_frame_num": 4920,
-                "object_id": "alluminuim skiilet_0",
-                "decoded_mask_sha256": "sha256:a071b226ede6dc717e51748df34de748b0f681abac7094487ec97a17f7879a8e"
-              },
-              {
-                "kind": "result_json_sha256",
-                "sha256": "sha256:49e5a8fc53dc1566fc7781a23e3cf114f2ba48b4069d81177586b79ec26c80b4"
-              }
-            ],
-            "provenance": {
-              "dataset": "Ego-Exo4D v2",
-              "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
-              "take_name": "uniandes_cooking_001_5",
-              "computation": "deterministic_frame_aligned_2d_point_in_mask",
-              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
-              "release_status": "signed_semantic_gt_egoexo_primary"
-            },
-            "reasoning_owner": "deterministic_code",
-            "language_model_permissions": [
-              "neutral_wording_variation",
-              "wrapping_locked_code_gt_as_natural_language"
-            ],
-            "language_model_forbidden": [
-              "spatial_reasoning",
-              "temporal_reasoning",
-              "gaze_reasoning",
-              "contact_reasoning",
-              "visibility_reasoning",
-              "option_generation",
-              "correct_answer_selection",
-              "evidence_completion"
-            ],
-            "answer_signature": "sha256:f8b1a3dfe5cf8ad5c7016485243df8ee3afbed8653b8c3db906cef9cd1455131"
-          },
-          "answer_signature": "sha256:f8b1a3dfe5cf8ad5c7016485243df8ee3afbed8653b8c3db906cef9cd1455131",
-          "language_realization": {
-            "schema_version": "limo4si.language_realization.v1",
-            "realizer": "deterministic_template",
-            "fallback_used": false,
-            "semantic_fields_mutable": false,
-            "draft": {
-              "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "task5_egoexo_uniandes_cooking_001_5_8854e96840",
-              "answer_signature": "sha256:f8b1a3dfe5cf8ad5c7016485243df8ee3afbed8653b8c3db906cef9cd1455131",
-              "question_template": "{{question_focus}}",
-              "option_template": "{{option_statement}}",
-              "explanation_template": "{{evidence_statement}}"
-            }
-          },
-          "status": "ok",
-          "release_eligible": true,
-          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
-          "result_json": {
-            "status": "ok",
-            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true,
-            "annotation_direct": true,
-            "release_status": "signed_semantic_gt_egoexo_primary",
-            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
-            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
-            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
-            "take_uid": "3528e260-6a6d-46d7-b97d-b6c029ec7304",
-            "take_name": "uniandes_cooking_001_5",
-            "camera": "aria01_214-1",
-            "target_object_id": "alluminuim skiilet_0",
-            "target_object_name": "aluminium skillet",
-            "target_anchor_index": 2,
-            "correct_semantic_option_id": "anchor_3",
-            "anchors": [
-              {
-                "video_frame": 14400,
-                "time_s": 480.0,
-                "gaze_frame_num": 4800,
-                "gaze_tracking_timestamp_us": 1690082699,
-                "alignment_skew_ms": 0.0,
-                "object_id": "stainless bowl_0",
-                "object_name": "stainless bowl",
-                "annotated_mask_count": 10,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  824.128208,
-                  980.035569
-                ],
-                "rounded_pixel_xy": [
-                  824,
-                  980
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 65250,
-                "boundary_margin_px": 73.70388,
-                "decoded_mask_sha256": "sha256:7f8267322ad372d36c81d5fda63141c13c3875477abb573ced3107bc2f3c0af7",
-                "clip_time_s": 1.5
-              },
-              {
-                "video_frame": 14520,
-                "time_s": 484.0,
-                "gaze_frame_num": 4840,
-                "gaze_tracking_timestamp_us": 1694082059,
-                "alignment_skew_ms": 0.0,
-                "object_id": "egg whisk_1",
-                "object_name": "egg whisk",
-                "annotated_mask_count": 11,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  862.041643,
-                  983.353874
-                ],
-                "rounded_pixel_xy": [
-                  862,
-                  983
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 9325,
-                "boundary_margin_px": 16.0,
-                "decoded_mask_sha256": "sha256:22800787909b4caf66a32e8e3780a696822d54107d22363e247df363d14e603e",
-                "clip_time_s": 5.5
-              },
-              {
-                "video_frame": 14760,
-                "time_s": 492.0,
-                "gaze_frame_num": 4920,
-                "gaze_tracking_timestamp_us": 1702080779,
-                "alignment_skew_ms": 0.0,
-                "object_id": "alluminuim skiilet_0",
-                "object_name": "aluminium skillet",
-                "annotated_mask_count": 3,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  820.969535,
-                  972.501721
-                ],
-                "rounded_pixel_xy": [
-                  821,
-                  973
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 45673,
-                "boundary_margin_px": 102.057381,
-                "decoded_mask_sha256": "sha256:a071b226ede6dc717e51748df34de748b0f681abac7094487ec97a17f7879a8e",
-                "clip_time_s": 13.5
-              }
-            ],
-            "alignment_diagnostics": {
-              "video_fps": 30.0,
-              "gaze_frame_rate_hz_declared": 10.0,
-              "gaze_timestamp_rate_hz_measured": 10.0016,
-              "frame_mapping": "video_frame / 3 == gaze frame_num",
-              "maximum_anchor_skew_ms": 0.0,
-              "video_frame_count": 19965,
-              "source_video_resolution": [
-                448,
-                448
-              ]
-            },
-            "claim_limits": [
-              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
-              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
-            ],
-            "source_window": {
-              "start_sec": 478.5,
-              "end_sec": 493.5,
-              "duration_sec": 15.0
-            },
-            "source_evidence": {
-              "relations": "annotations/relations_val.json",
-              "gaze": "takes/uniandes_cooking_001_5/eye_gaze/general_eye_gaze_2d.csv",
-              "video": "takes/uniandes_cooking_001_5/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
-            },
-            "temporal_scope": "three explicit clip-relative checkpoints",
-            "semantic_gt_id": "task5_egoexo_uniandes_cooking_001_5_8854e96840",
-            "answer_signature": "sha256:f8b1a3dfe5cf8ad5c7016485243df8ee3afbed8653b8c3db906cef9cd1455131",
-            "evidence_signature": "sha256:49e5a8fc53dc1566fc7781a23e3cf114f2ba48b4069d81177586b79ec26c80b4",
-            "reasoning_owner": "deterministic_code",
-            "language_model_role": "wording_only"
-          }
-        }
-      ],
-      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
-    },
-    {
-      "name": "task5_egoexo_minnesota_cooking_010_2_a60293338e",
-      "title": "Task 5 · EgoExo4D · minnesota_cooking_010_2",
-      "video_clip": "./task5_media/task5_egoexo_minnesota_cooking_010_2_a60293338e.mp4",
-      "original_image": "./task5_media/task5_egoexo_minnesota_cooking_010_2_a60293338e_evidence.jpg",
-      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
-      "video_window": {
-        "source_sequence": "minnesota_cooking_010_2",
-        "start_sec": 130.0,
-        "end_sec": 145.0,
-        "duration_sec": 15.0,
-        "anchor_frames": [
-          3960,
-          4050,
-          4290
-        ],
-        "published_clip_duration_sec": 15.0
-      },
-      "qa": [
-        {
-          "task_id": "task5_human_state_grounded_spatial_reasoning",
-          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_target_sequence_across_clip_checkpoints",
-          "question_categories": [
-            "evidence_closed_gaze_mask_anchor"
-          ],
-          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
-          "options": [
-            {
-              "label": "A",
-              "text": "At 2.0s: egg carton; at 5.0s: paper towel sheet; at 13.0s: paper towel.",
-              "semantic_option_id": "anchor_2"
-            },
-            {
-              "label": "B",
-              "text": "At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
-              "semantic_option_id": "anchor_1"
-            },
-            {
-              "label": "C",
-              "text": "At 2.0s: paper towel; at 5.0s: egg carton; at 13.0s: paper towel sheet.",
-              "semantic_option_id": "anchor_3"
-            },
-            {
-              "label": "D",
-              "text": "At 2.0s: paper towel; at 5.0s: paper towel sheet; at 13.0s: egg carton.",
-              "semantic_option_id": "no_anchor"
-            }
-          ],
-          "correct_option": "B",
-          "correct_answer": "At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
-          "answer": "At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
-          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
-          "semantic_gt": {
-            "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "task5_egoexo_minnesota_cooking_010_2_a60293338e",
-            "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_target_sequence_across_clip_checkpoints",
-            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
-            "options": [
-              {
-                "id": "anchor_1",
-                "statement": "At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet."
-              },
-              {
-                "id": "anchor_2",
-                "statement": "At 2.0s: egg carton; at 5.0s: paper towel sheet; at 13.0s: paper towel."
-              },
-              {
-                "id": "anchor_3",
-                "statement": "At 2.0s: paper towel; at 5.0s: egg carton; at 13.0s: paper towel sheet."
-              },
-              {
-                "id": "no_anchor",
-                "statement": "At 2.0s: paper towel; at 5.0s: paper towel sheet; at 13.0s: egg carton."
-              }
-            ],
-            "correct_option_id": "anchor_1",
-            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 2.0s: egg carton; at 5.0s: paper towel; at 13.0s: paper towel sheet.",
-            "semantic_facts": [
-              {
-                "id": "target_object_id",
-                "value": "egg carton_0"
-              },
-              {
-                "id": "target_anchor_index",
-                "value": 0
-              },
-              {
-                "id": "anchor_hits",
-                "value": [
-                  {
-                    "frame": 3960,
-                    "object_id": "egg carton_0"
-                  },
-                  {
-                    "frame": 4050,
-                    "object_id": "paper towel_0"
-                  },
-                  {
-                    "frame": 4290,
-                    "object_id": "paper towel sheet_0"
-                  }
-                ]
-              },
-              {
-                "id": "result_evidence_signature",
-                "value": "sha256:884080439f056d46f016365d37d962c3207046a558151d145f07dd6d7df201c9"
-              }
-            ],
-            "evidence_refs": [
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 3960,
-                "gaze_frame_num": 1320,
-                "object_id": "egg carton_0",
-                "decoded_mask_sha256": "sha256:9d08f2d733a07ccb81777207252bbcae5a642d4f2f36e9ef343e3edc99d6b4a5"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 4050,
-                "gaze_frame_num": 1350,
-                "object_id": "paper towel_0",
-                "decoded_mask_sha256": "sha256:3d4faf004c47cbee38ec5dcbb88f576ad325b027bf8482af4de132f8557836bf"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 4290,
-                "gaze_frame_num": 1430,
-                "object_id": "paper towel sheet_0",
-                "decoded_mask_sha256": "sha256:f8888a7de57b06f5567a86f520174bdeac224b5e54b59eb52a7b767755ef5262"
-              },
-              {
-                "kind": "result_json_sha256",
-                "sha256": "sha256:884080439f056d46f016365d37d962c3207046a558151d145f07dd6d7df201c9"
-              }
-            ],
-            "provenance": {
-              "dataset": "Ego-Exo4D v2",
-              "take_uid": "d77bb04d-c881-48be-9cc2-d781c69207cd",
-              "take_name": "minnesota_cooking_010_2",
-              "computation": "deterministic_frame_aligned_2d_point_in_mask",
-              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
-              "release_status": "signed_semantic_gt_egoexo_primary"
-            },
-            "reasoning_owner": "deterministic_code",
-            "language_model_permissions": [
-              "neutral_wording_variation",
-              "wrapping_locked_code_gt_as_natural_language"
-            ],
-            "language_model_forbidden": [
-              "spatial_reasoning",
-              "temporal_reasoning",
-              "gaze_reasoning",
-              "contact_reasoning",
-              "visibility_reasoning",
-              "option_generation",
-              "correct_answer_selection",
-              "evidence_completion"
-            ],
-            "answer_signature": "sha256:2f65746f552a6ce1620a8907bb5f529f70ae4079784527d648d100cd00b7f466"
-          },
-          "answer_signature": "sha256:2f65746f552a6ce1620a8907bb5f529f70ae4079784527d648d100cd00b7f466",
-          "language_realization": {
-            "schema_version": "limo4si.language_realization.v1",
-            "realizer": "deterministic_template",
-            "fallback_used": false,
-            "semantic_fields_mutable": false,
-            "draft": {
-              "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "task5_egoexo_minnesota_cooking_010_2_a60293338e",
-              "answer_signature": "sha256:2f65746f552a6ce1620a8907bb5f529f70ae4079784527d648d100cd00b7f466",
-              "question_template": "{{question_focus}}",
-              "option_template": "{{option_statement}}",
-              "explanation_template": "{{evidence_statement}}"
-            }
-          },
-          "status": "ok",
-          "release_eligible": true,
-          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
-          "result_json": {
-            "status": "ok",
-            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true,
-            "annotation_direct": true,
-            "release_status": "signed_semantic_gt_egoexo_primary",
-            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
-            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
-            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
-            "take_uid": "d77bb04d-c881-48be-9cc2-d781c69207cd",
-            "take_name": "minnesota_cooking_010_2",
-            "camera": "aria05_214-1",
-            "target_object_id": "egg carton_0",
-            "target_object_name": "egg carton",
-            "target_anchor_index": 0,
-            "correct_semantic_option_id": "anchor_1",
-            "anchors": [
-              {
-                "video_frame": 3960,
-                "time_s": 132.0,
-                "gaze_frame_num": 1320,
-                "gaze_tracking_timestamp_us": 727437715,
-                "alignment_skew_ms": 0.0,
-                "object_id": "egg carton_0",
-                "object_name": "egg carton",
-                "annotated_mask_count": 4,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  776.794504,
-                  1067.378781
-                ],
-                "rounded_pixel_xy": [
-                  777,
-                  1067
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 50440,
-                "boundary_margin_px": 83.0,
-                "decoded_mask_sha256": "sha256:9d08f2d733a07ccb81777207252bbcae5a642d4f2f36e9ef343e3edc99d6b4a5",
-                "clip_time_s": 2.0
-              },
-              {
-                "video_frame": 4050,
-                "time_s": 135.0,
-                "gaze_frame_num": 1350,
-                "gaze_tracking_timestamp_us": 730437235,
-                "alignment_skew_ms": 0.0,
-                "object_id": "paper towel_0",
-                "object_name": "paper towel",
-                "annotated_mask_count": 1,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  712.887876,
-                  896.334161
-                ],
-                "rounded_pixel_xy": [
-                  713,
-                  896
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 22542,
-                "boundary_margin_px": 33.165894,
-                "decoded_mask_sha256": "sha256:3d4faf004c47cbee38ec5dcbb88f576ad325b027bf8482af4de132f8557836bf",
-                "clip_time_s": 5.0
-              },
-              {
-                "video_frame": 4290,
-                "time_s": 143.0,
-                "gaze_frame_num": 1430,
-                "gaze_tracking_timestamp_us": 738435955,
-                "alignment_skew_ms": 0.0,
-                "object_id": "paper towel sheet_0",
-                "object_name": "paper towel sheet",
-                "annotated_mask_count": 5,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  742.420242,
-                  1101.288652
-                ],
-                "rounded_pixel_xy": [
-                  742,
-                  1101
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 26128,
-                "boundary_margin_px": 27.999994,
-                "decoded_mask_sha256": "sha256:f8888a7de57b06f5567a86f520174bdeac224b5e54b59eb52a7b767755ef5262",
-                "clip_time_s": 13.0
-              }
-            ],
-            "alignment_diagnostics": {
-              "video_fps": 30.0,
-              "gaze_frame_rate_hz_declared": 10.0,
-              "gaze_timestamp_rate_hz_measured": 10.0016,
-              "frame_mapping": "video_frame / 3 == gaze frame_num",
-              "maximum_anchor_skew_ms": 0.0,
-              "video_frame_count": 30019,
-              "source_video_resolution": [
-                448,
-                448
-              ]
-            },
-            "claim_limits": [
-              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
-              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
-            ],
-            "source_window": {
-              "start_sec": 130.0,
-              "end_sec": 145.0,
-              "duration_sec": 15.0
-            },
-            "source_evidence": {
-              "relations": "annotations/relations_val.json",
-              "gaze": "takes/minnesota_cooking_010_2/eye_gaze/general_eye_gaze_2d.csv",
-              "video": "takes/minnesota_cooking_010_2/frame_aligned_videos/downscaled/448/aria05_214-1.mp4"
-            },
-            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
-            "semantic_gt_id": "task5_egoexo_minnesota_cooking_010_2_a60293338e",
-            "answer_signature": "sha256:2f65746f552a6ce1620a8907bb5f529f70ae4079784527d648d100cd00b7f466",
-            "evidence_signature": "sha256:884080439f056d46f016365d37d962c3207046a558151d145f07dd6d7df201c9",
-            "reasoning_owner": "deterministic_code",
-            "language_model_role": "wording_only"
-          }
-        }
-      ],
-      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
-    },
-    {
-      "name": "task5_egoexo_sfu_cooking_007_1_4ec66ba784",
-      "title": "Task 5 · EgoExo4D · sfu_cooking_007_1",
-      "video_clip": "./task5_media/task5_egoexo_sfu_cooking_007_1_4ec66ba784.mp4",
-      "original_image": "./task5_media/task5_egoexo_sfu_cooking_007_1_4ec66ba784_evidence.jpg",
-      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
-      "video_window": {
-        "source_sequence": "sfu_cooking_007_1",
-        "start_sec": 253.0,
-        "end_sec": 268.0,
-        "duration_sec": 15.0,
-        "anchor_frames": [
-          7650,
-          7710,
-          7980
-        ],
-        "published_clip_duration_sec": 15.0
-      },
-      "qa": [
-        {
-          "task_id": "task5_human_state_grounded_spatial_reasoning",
-          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_point_inside_relation_mask_at_anchor",
-          "question_categories": [
-            "evidence_closed_gaze_mask_anchor"
-          ],
-          "question": "At which stated clip time (2.0s, 4.0s, or 13.0s) does the camera-wearer gaze land on the non-stick pan?",
-          "options": [
-            {
-              "label": "A",
-              "text": "At 2.0s into the clip, but not at 4.0s or 13.0s.",
-              "semantic_option_id": "anchor_1"
-            },
-            {
-              "label": "B",
-              "text": "At 4.0s into the clip, but not at 2.0s or 13.0s.",
-              "semantic_option_id": "anchor_2"
-            },
-            {
-              "label": "C",
-              "text": "At 13.0s into the clip, but not at 2.0s or 4.0s.",
-              "semantic_option_id": "anchor_3"
-            },
-            {
-              "label": "D",
-              "text": "At none of these clip times: 2.0s, 4.0s, or 13.0s.",
-              "semantic_option_id": "no_anchor"
-            }
-          ],
-          "correct_option": "C",
-          "correct_answer": "At 13.0s into the clip, but not at 2.0s or 4.0s.",
-          "answer": "At 13.0s into the clip, but not at 2.0s or 4.0s.",
-          "explanation": "The synchronized gaze point lands inside the annotated non-stick pan region only at 13.0 seconds into the clip. At 2.0s, 4.0s, and 13.0s, it lands on blue and white bowl, kitchen cloth, non-stick pan, respectively.",
-          "semantic_gt": {
-            "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "task5_egoexo_sfu_cooking_007_1_4ec66ba784",
-            "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_point_inside_relation_mask_at_anchor",
-            "question_focus": "At which stated clip time (2.0s, 4.0s, or 13.0s) does the camera-wearer gaze land on the non-stick pan?",
-            "options": [
-              {
-                "id": "anchor_1",
-                "statement": "At 2.0s into the clip, but not at 4.0s or 13.0s."
-              },
-              {
-                "id": "anchor_2",
-                "statement": "At 4.0s into the clip, but not at 2.0s or 13.0s."
-              },
-              {
-                "id": "anchor_3",
-                "statement": "At 13.0s into the clip, but not at 2.0s or 4.0s."
-              },
-              {
-                "id": "no_anchor",
-                "statement": "At none of these clip times: 2.0s, 4.0s, or 13.0s."
-              }
-            ],
-            "correct_option_id": "anchor_3",
-            "evidence_statement": "The synchronized gaze point lands inside the annotated non-stick pan region only at 13.0 seconds into the clip. At 2.0s, 4.0s, and 13.0s, it lands on blue and white bowl, kitchen cloth, non-stick pan, respectively.",
-            "semantic_facts": [
-              {
-                "id": "target_object_id",
-                "value": "non-stick pan_0"
-              },
-              {
-                "id": "target_anchor_index",
-                "value": 2
-              },
-              {
-                "id": "anchor_hits",
-                "value": [
-                  {
-                    "frame": 7650,
-                    "object_id": "blue and white bowl_0"
-                  },
-                  {
-                    "frame": 7710,
-                    "object_id": "kitchen cloth_0"
-                  },
-                  {
-                    "frame": 7980,
-                    "object_id": "non-stick pan_0"
-                  }
-                ]
-              },
-              {
-                "id": "result_evidence_signature",
-                "value": "sha256:616c04f57ca19f2b48081efc88083eb5304950b7f28f9eb0762207261a8f6696"
-              }
-            ],
-            "evidence_refs": [
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 7650,
-                "gaze_frame_num": 2550,
-                "object_id": "blue and white bowl_0",
-                "decoded_mask_sha256": "sha256:ea02c2851d4f141bd9e2abbe6ef7c8c731ab55da78d8518931aad4d4ca5ecb34"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 7710,
-                "gaze_frame_num": 2570,
-                "object_id": "kitchen cloth_0",
-                "decoded_mask_sha256": "sha256:0bfb745ecab1d784d265a71e15dc7a01c31e6c8ed67170a01003288e4b4f16aa"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 7980,
-                "gaze_frame_num": 2660,
-                "object_id": "non-stick pan_0",
-                "decoded_mask_sha256": "sha256:25590d16b88a0a1cd874adf2fe29f1e787857dbbcea032a8c3c1e65448168ede"
-              },
-              {
-                "kind": "result_json_sha256",
-                "sha256": "sha256:616c04f57ca19f2b48081efc88083eb5304950b7f28f9eb0762207261a8f6696"
-              }
-            ],
-            "provenance": {
-              "dataset": "Ego-Exo4D v2",
-              "take_uid": "6eb10b39-5171-4293-afba-4084f5825748",
-              "take_name": "sfu_cooking_007_1",
-              "computation": "deterministic_frame_aligned_2d_point_in_mask",
-              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
-              "release_status": "signed_semantic_gt_egoexo_primary"
-            },
-            "reasoning_owner": "deterministic_code",
-            "language_model_permissions": [
-              "neutral_wording_variation",
-              "wrapping_locked_code_gt_as_natural_language"
-            ],
-            "language_model_forbidden": [
-              "spatial_reasoning",
-              "temporal_reasoning",
-              "gaze_reasoning",
-              "contact_reasoning",
-              "visibility_reasoning",
-              "option_generation",
-              "correct_answer_selection",
-              "evidence_completion"
-            ],
-            "answer_signature": "sha256:c8bc0953e3ce018f7f12ef108b03127ce2eb7419f17c2db6079a3f211cb4ad75"
-          },
-          "answer_signature": "sha256:c8bc0953e3ce018f7f12ef108b03127ce2eb7419f17c2db6079a3f211cb4ad75",
-          "language_realization": {
-            "schema_version": "limo4si.language_realization.v1",
-            "realizer": "deterministic_template",
-            "fallback_used": false,
-            "semantic_fields_mutable": false,
-            "draft": {
-              "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "task5_egoexo_sfu_cooking_007_1_4ec66ba784",
-              "answer_signature": "sha256:c8bc0953e3ce018f7f12ef108b03127ce2eb7419f17c2db6079a3f211cb4ad75",
-              "question_template": "{{question_focus}}",
-              "option_template": "{{option_statement}}",
-              "explanation_template": "{{evidence_statement}}"
-            }
-          },
-          "status": "ok",
-          "release_eligible": true,
-          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
-          "result_json": {
-            "status": "ok",
-            "answer_type": "gaze_point_inside_relation_mask_at_anchor",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true,
-            "annotation_direct": true,
-            "release_status": "signed_semantic_gt_egoexo_primary",
-            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
-            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
-            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
-            "take_uid": "6eb10b39-5171-4293-afba-4084f5825748",
-            "take_name": "sfu_cooking_007_1",
-            "camera": "aria01_214-1",
-            "target_object_id": "non-stick pan_0",
-            "target_object_name": "non-stick pan",
-            "target_anchor_index": 2,
-            "correct_semantic_option_id": "anchor_3",
-            "anchors": [
-              {
-                "video_frame": 7650,
-                "time_s": 255.0,
-                "gaze_frame_num": 2550,
-                "gaze_tracking_timestamp_us": 516149818,
-                "alignment_skew_ms": 0.0,
-                "object_id": "blue and white bowl_0",
-                "object_name": "blue and white bowl",
-                "annotated_mask_count": 6,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  707.472827,
-                  1023.467755
-                ],
-                "rounded_pixel_xy": [
-                  707,
-                  1023
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 6795,
-                "boundary_margin_px": 10.5907,
-                "decoded_mask_sha256": "sha256:ea02c2851d4f141bd9e2abbe6ef7c8c731ab55da78d8518931aad4d4ca5ecb34",
-                "clip_time_s": 2.0
-              },
-              {
-                "video_frame": 7710,
-                "time_s": 257.0,
-                "gaze_frame_num": 2570,
-                "gaze_tracking_timestamp_us": 518149498,
-                "alignment_skew_ms": 0.0,
-                "object_id": "kitchen cloth_0",
-                "object_name": "kitchen cloth",
-                "annotated_mask_count": 6,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  718.215248,
-                  981.948018
-                ],
-                "rounded_pixel_xy": [
-                  718,
-                  982
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 57407,
-                "boundary_margin_px": 30.0,
-                "decoded_mask_sha256": "sha256:0bfb745ecab1d784d265a71e15dc7a01c31e6c8ed67170a01003288e4b4f16aa",
-                "clip_time_s": 4.0
-              },
-              {
-                "video_frame": 7980,
-                "time_s": 266.0,
-                "gaze_frame_num": 2660,
-                "gaze_tracking_timestamp_us": 527148058,
-                "alignment_skew_ms": 0.0,
-                "object_id": "non-stick pan_0",
-                "object_name": "non-stick pan",
-                "annotated_mask_count": 7,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  699.837178,
-                  969.717585
-                ],
-                "rounded_pixel_xy": [
-                  700,
-                  970
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 67314,
-                "boundary_margin_px": 94.482178,
-                "decoded_mask_sha256": "sha256:25590d16b88a0a1cd874adf2fe29f1e787857dbbcea032a8c3c1e65448168ede",
-                "clip_time_s": 13.0
-              }
-            ],
-            "alignment_diagnostics": {
-              "video_fps": 30.0,
-              "gaze_frame_rate_hz_declared": 10.0,
-              "gaze_timestamp_rate_hz_measured": 10.0016,
-              "frame_mapping": "video_frame / 3 == gaze frame_num",
-              "maximum_anchor_skew_ms": 0.0,
-              "video_frame_count": 14643,
-              "source_video_resolution": [
-                448,
-                448
-              ]
-            },
-            "claim_limits": [
-              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
-              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
-            ],
-            "source_window": {
-              "start_sec": 253.0,
-              "end_sec": 268.0,
-              "duration_sec": 15.0
-            },
-            "source_evidence": {
-              "relations": "annotations/relations_val.json",
-              "gaze": "takes/sfu_cooking_007_1/eye_gaze/general_eye_gaze_2d.csv",
-              "video": "takes/sfu_cooking_007_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
-            },
-            "temporal_scope": "three explicit clip-relative checkpoints",
-            "semantic_gt_id": "task5_egoexo_sfu_cooking_007_1_4ec66ba784",
-            "answer_signature": "sha256:c8bc0953e3ce018f7f12ef108b03127ce2eb7419f17c2db6079a3f211cb4ad75",
-            "evidence_signature": "sha256:616c04f57ca19f2b48081efc88083eb5304950b7f28f9eb0762207261a8f6696",
-            "reasoning_owner": "deterministic_code",
-            "language_model_role": "wording_only"
-          }
-        }
-      ],
-      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
-    },
-    {
-      "name": "task5_egoexo_sfu_cooking_010_1_718f6f57a3",
-      "title": "Task 5 · EgoExo4D · sfu_cooking_010_1",
-      "video_clip": "./task5_media/task5_egoexo_sfu_cooking_010_1_718f6f57a3.mp4",
-      "original_image": "./task5_media/task5_egoexo_sfu_cooking_010_1_718f6f57a3_evidence.jpg",
-      "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
-      "video_window": {
-        "source_sequence": "sfu_cooking_010_1",
-        "start_sec": 216.0,
-        "end_sec": 231.0,
-        "duration_sec": 15.0,
-        "anchor_frames": [
-          6510,
-          6660,
-          6900
-        ],
-        "published_clip_duration_sec": 15.0
-      },
-      "qa": [
-        {
-          "task_id": "task5_human_state_grounded_spatial_reasoning",
-          "task_name": "Task 5 · Human-State–Grounded Spatial Reasoning",
-          "question_type": "gaze_target_sequence_across_clip_checkpoints",
-          "question_categories": [
-            "evidence_closed_gaze_mask_anchor"
-          ],
-          "question": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
-          "options": [
-            {
-              "label": "A",
-              "text": "At 1.0s: dining table; at 6.0s: white plate; at 14.0s: white bowl.",
-              "semantic_option_id": "anchor_1"
-            },
-            {
-              "label": "B",
-              "text": "At 1.0s: white bowl; at 6.0s: dining table; at 14.0s: white plate.",
-              "semantic_option_id": "anchor_3"
-            },
-            {
-              "label": "C",
-              "text": "At 1.0s: white bowl; at 6.0s: white plate; at 14.0s: dining table.",
-              "semantic_option_id": "no_anchor"
-            },
-            {
-              "label": "D",
-              "text": "At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
-              "semantic_option_id": "anchor_2"
-            }
-          ],
-          "correct_option": "D",
-          "correct_answer": "At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
-          "answer": "At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
-          "explanation": "The annotation-supported gaze-target sequence spanning the clip is At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
-          "semantic_gt": {
-            "schema_version": "limo4si.semantic_gt.v1",
-            "semantic_gt_id": "task5_egoexo_sfu_cooking_010_1_718f6f57a3",
-            "task_id": "task5_human_state_grounded_spatial_reasoning",
-            "question_type": "gaze_target_sequence_across_clip_checkpoints",
-            "question_focus": "Across the annotation-supported early, middle, and late checkpoints spanning this 15-second clip, which sequence describes how the camera-wearer gaze target changes?",
-            "options": [
-              {
-                "id": "anchor_1",
-                "statement": "At 1.0s: dining table; at 6.0s: white plate; at 14.0s: white bowl."
-              },
-              {
-                "id": "anchor_2",
-                "statement": "At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate."
-              },
-              {
-                "id": "anchor_3",
-                "statement": "At 1.0s: white bowl; at 6.0s: dining table; at 14.0s: white plate."
-              },
-              {
-                "id": "no_anchor",
-                "statement": "At 1.0s: white bowl; at 6.0s: white plate; at 14.0s: dining table."
-              }
-            ],
-            "correct_option_id": "anchor_2",
-            "evidence_statement": "The annotation-supported gaze-target sequence spanning the clip is At 1.0s: dining table; at 6.0s: white bowl; at 14.0s: white plate.",
-            "semantic_facts": [
-              {
-                "id": "target_object_id",
-                "value": "white bowl_0"
-              },
-              {
-                "id": "target_anchor_index",
-                "value": 1
-              },
-              {
-                "id": "anchor_hits",
-                "value": [
-                  {
-                    "frame": 6510,
-                    "object_id": "dining table_0"
-                  },
-                  {
-                    "frame": 6660,
-                    "object_id": "white bowl_0"
-                  },
-                  {
-                    "frame": 6900,
-                    "object_id": "white plate_0"
-                  }
-                ]
-              },
-              {
-                "id": "result_evidence_signature",
-                "value": "sha256:878d0706ee8a369b1be60d3b755bd5a4a586ec022b4a41f35e2bbbca3af43fcd"
-              }
-            ],
-            "evidence_refs": [
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 6510,
-                "gaze_frame_num": 2170,
-                "object_id": "dining table_0",
-                "decoded_mask_sha256": "sha256:5c59d2d7f8caca92f16783816fb39adf4ac8c448b314d37a0087eedade942dd0"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 6660,
-                "gaze_frame_num": 2220,
-                "object_id": "white bowl_0",
-                "decoded_mask_sha256": "sha256:565735d3758cde19c7278a1fc5470cb56ea521af114e4377a5855efdbef82a58"
-              },
-              {
-                "kind": "egoexo_relations_mask_and_gaze_anchor",
-                "video_frame": 6900,
-                "gaze_frame_num": 2300,
-                "object_id": "white plate_0",
-                "decoded_mask_sha256": "sha256:7db1954c2d2fa9704313ffbf2de9010166beff12d5c3d18e6f26306fbe6e298c"
-              },
-              {
-                "kind": "result_json_sha256",
-                "sha256": "sha256:878d0706ee8a369b1be60d3b755bd5a4a586ec022b4a41f35e2bbbca3af43fcd"
-              }
-            ],
-            "provenance": {
-              "dataset": "Ego-Exo4D v2",
-              "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
-              "take_name": "sfu_cooking_010_1",
-              "computation": "deterministic_frame_aligned_2d_point_in_mask",
-              "selection_config": "outputs/qa/task5_egoexo_scale/generated_release_cases.json",
-              "release_status": "signed_semantic_gt_egoexo_primary"
-            },
-            "reasoning_owner": "deterministic_code",
-            "language_model_permissions": [
-              "neutral_wording_variation",
-              "wrapping_locked_code_gt_as_natural_language"
-            ],
-            "language_model_forbidden": [
-              "spatial_reasoning",
-              "temporal_reasoning",
-              "gaze_reasoning",
-              "contact_reasoning",
-              "visibility_reasoning",
-              "option_generation",
-              "correct_answer_selection",
-              "evidence_completion"
-            ],
-            "answer_signature": "sha256:c3e50bdce2bdd019b4f04bf602a2bef828018f899208d001d4247d388db7586d"
-          },
-          "answer_signature": "sha256:c3e50bdce2bdd019b4f04bf602a2bef828018f899208d001d4247d388db7586d",
-          "language_realization": {
-            "schema_version": "limo4si.language_realization.v1",
-            "realizer": "deterministic_template",
-            "fallback_used": false,
-            "semantic_fields_mutable": false,
-            "draft": {
-              "schema_version": "limo4si.language_realization.v1",
-              "semantic_gt_id": "task5_egoexo_sfu_cooking_010_1_718f6f57a3",
-              "answer_signature": "sha256:c3e50bdce2bdd019b4f04bf602a2bef828018f899208d001d4247d388db7586d",
-              "question_template": "{{question_focus}}",
-              "option_template": "{{option_statement}}",
-              "explanation_template": "{{evidence_statement}}"
-            }
-          },
-          "status": "ok",
-          "release_eligible": true,
-          "method": "Synchronized gaze point plus exact Relations mask containment; no LLM semantic judgment.",
-          "result_json": {
-            "status": "ok",
-            "answer_type": "gaze_target_sequence_across_clip_checkpoints",
-            "T_Q": true,
-            "H_Q": true,
-            "S_Q": true,
-            "annotation_direct": true,
-            "release_status": "signed_semantic_gt_egoexo_primary",
-            "annotation_source": "Ego-Exo4D v2 take_eye_gaze + Relations masks",
-            "gaze_grounding_method": "frame_aligned_2d_gaze_inside_relation_mask",
-            "coordinate_frame": "frame-aligned ego RGB annotation plane; containment only, no directional claim",
-            "take_uid": "e2b190bb-f8b2-43a7-b2da-b80f3708dcf3",
-            "take_name": "sfu_cooking_010_1",
-            "camera": "aria01_214-1",
-            "target_object_id": "white bowl_0",
-            "target_object_name": "white bowl",
-            "target_anchor_index": 1,
-            "correct_semantic_option_id": "anchor_2",
-            "anchors": [
-              {
-                "video_frame": 6510,
-                "time_s": 217.0,
-                "gaze_frame_num": 2170,
-                "gaze_tracking_timestamp_us": 582217447,
-                "alignment_skew_ms": 0.0,
-                "object_id": "dining table_0",
-                "object_name": "dining table",
-                "annotated_mask_count": 7,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  611.27551,
-                  917.753205
-                ],
-                "rounded_pixel_xy": [
-                  611,
-                  918
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 93628,
-                "boundary_margin_px": 53.72559,
-                "decoded_mask_sha256": "sha256:5c59d2d7f8caca92f16783816fb39adf4ac8c448b314d37a0087eedade942dd0",
-                "clip_time_s": 1.0
-              },
-              {
-                "video_frame": 6660,
-                "time_s": 222.0,
-                "gaze_frame_num": 2220,
-                "gaze_tracking_timestamp_us": 587216647,
-                "alignment_skew_ms": 0.0,
-                "object_id": "white bowl_0",
-                "object_name": "white bowl",
-                "annotated_mask_count": 6,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  778.013973,
-                  939.318411
-                ],
-                "rounded_pixel_xy": [
-                  778,
-                  939
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 37922,
-                "boundary_margin_px": 53.32869,
-                "decoded_mask_sha256": "sha256:565735d3758cde19c7278a1fc5470cb56ea521af114e4377a5855efdbef82a58",
-                "clip_time_s": 6.0
-              },
-              {
-                "video_frame": 6900,
-                "time_s": 230.0,
-                "gaze_frame_num": 2300,
-                "gaze_tracking_timestamp_us": 595215367,
-                "alignment_skew_ms": 0.0,
-                "object_id": "white plate_0",
-                "object_name": "white plate",
-                "annotated_mask_count": 5,
-                "unique_annotated_mask_hit": true,
-                "inside": true,
-                "gaze_pixel_xy": [
-                  698.538945,
-                  828.703641
-                ],
-                "rounded_pixel_xy": [
-                  699,
-                  829
-                ],
-                "mask_width": 1408,
-                "mask_height": 1408,
-                "mask_area_px": 43229,
-                "boundary_margin_px": 51.331791,
-                "decoded_mask_sha256": "sha256:7db1954c2d2fa9704313ffbf2de9010166beff12d5c3d18e6f26306fbe6e298c",
-                "clip_time_s": 14.0
-              }
-            ],
-            "alignment_diagnostics": {
-              "video_fps": 30.0,
-              "gaze_frame_rate_hz_declared": 10.0,
-              "gaze_timestamp_rate_hz_measured": 10.0016,
-              "frame_mapping": "video_frame / 3 == gaze frame_num",
-              "maximum_anchor_skew_ms": 0.0,
-              "video_frame_count": 19097,
-              "source_video_resolution": [
-                448,
-                448
-              ]
-            },
-            "claim_limits": [
-              "Claims only synchronized 2D gaze-point containment in a Relations annotation mask.",
-              "Does not claim 3D fixation depth, body-relative direction, contact, or an unannotated gaze target."
-            ],
-            "source_window": {
-              "start_sec": 216.0,
-              "end_sec": 231.0,
-              "duration_sec": 15.0
-            },
-            "source_evidence": {
-              "relations": "annotations/relations_val.json",
-              "gaze": "takes/sfu_cooking_010_1/eye_gaze/general_eye_gaze_2d.csv",
-              "video": "takes/sfu_cooking_010_1/frame_aligned_videos/downscaled/448/aria01_214-1.mp4"
-            },
-            "temporal_scope": "annotation-supported early/middle/late checkpoints spanning the 15-second clip",
-            "semantic_gt_id": "task5_egoexo_sfu_cooking_010_1_718f6f57a3",
-            "answer_signature": "sha256:c3e50bdce2bdd019b4f04bf602a2bef828018f899208d001d4247d388db7586d",
-            "evidence_signature": "sha256:878d0706ee8a369b1be60d3b755bd5a4a586ec022b4a41f35e2bbbca3af43fcd",
-            "reasoning_owner": "deterministic_code",
-            "language_model_role": "wording_only"
-          }
-        }
-      ],
-      "case_policy": "one signed annotation-derived question per unique 15-second EgoExo4D window"
     }
   ],
   "release_policy": {

@@ -119,7 +119,6 @@ def metric_group(scene: dict[str, Any], audit: dict[str, Any], question: dict[st
         "title": f"Task 4 · HOI-M3 · {seq} · window {win}",
         "dataset": "HOI-M3",
         "video_clip": f"./outputs/hoim3/{seq}/win{win}_view0_15s.mp4",
-        "original_video": f"./hoim3_data/videos/{seq}/0.mp4",
         "localization_video": f"./multihuman_media/{sid}_localized.mp4",
         "localization_image": f"./multihuman_media/{sid}_localized.jpg",
         "original_image": f"./multihuman_media/{sid}_localized.jpg",

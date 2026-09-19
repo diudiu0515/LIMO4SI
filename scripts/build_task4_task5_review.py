@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import copy
 import json
+import subprocess
 from collections import Counter
 from pathlib import Path
 from typing import Any
@@ -104,6 +105,33 @@ def select_review_data(data: dict[str, Any]) -> tuple[dict[str, Any], dict[str, 
                 missing_media.append(str(path.relative_to(ROOT)))
     if missing_media:
         raise ValueError("Task 4/5 review media is missing: " + ", ".join(missing_media))
+
+    media_errors = []
+    for relative in sorted(set(checked_media)):
+        path = ROOT / relative
+        if path.suffix.lower() != ".mp4":
+            continue
+        probe = subprocess.run([
+            "ffprobe", "-v", "error", "-select_streams", "v:0",
+            "-show_entries", "stream=codec_name,codec_tag_string,pix_fmt:format=duration",
+            "-of", "json", str(path),
+        ], capture_output=True, text=True)
+        if probe.returncode:
+            media_errors.append(f"{relative}: ffprobe failed")
+            continue
+        metadata = json.loads(probe.stdout)
+        stream = (metadata.get("streams") or [{}])[0]
+        duration_sec = float((metadata.get("format") or {}).get("duration") or 0)
+        if stream.get("codec_name") != "h264" or stream.get("codec_tag_string") != "avc1" or stream.get("pix_fmt") != "yuv420p":
+            media_errors.append(f"{relative}: not browser-compatible H.264/avc1 yuv420p")
+        if 0 < duration_sec <= 20.5:
+            decode = subprocess.run([
+                "ffmpeg", "-v", "error", "-i", str(path), "-f", "null", "-"
+            ], capture_output=True, text=True)
+            if decode.returncode:
+                media_errors.append(f"{relative}: full decode failed")
+    if media_errors:
+        raise ValueError("Task 4/5 review media validation failed: " + "; ".join(media_errors))
 
     signed = sum(
         bool(question.get("answer_signature"))

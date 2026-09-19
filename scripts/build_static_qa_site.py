@@ -5,10 +5,25 @@ import argparse
 import html
 import json
 import re
+import sys
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from limo4si.task4_contract import TASK4_CAPABILITIES, capability_for
+
+CAPABILITY_LABELS = {
+    "distance_evolution": "1 · Distance evolution",
+    "passing_side_and_final_position": "2 · Passing side + final position",
+    "dominant_interaction_relation": "3 · Dominant interaction relation",
+    "reunion_relation_restoration": "4 · Reunion relation restoration",
+    "relation_change_cause": "5 · Cause of relation change",
+    "group_reorganization": "6 · Group reorganization",
+    "physical_visibility_occlusion_timeline": "7 · Physical visibility/occlusion timeline",
+}
 
 
 def load_site_data(path: Path) -> dict[str, Any]:
@@ -293,7 +308,7 @@ def build_static_html(data: dict[str, Any]) -> str:
 <title>Task 4 + Task 5 Spatial QA</title>
 <link rel="stylesheet" href="styles.css" />
 <style>
-body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px}.caseNav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px}.caseNav a{padding:8px 10px;border:1px solid #dbe3ef;border-radius:999px;background:white;color:#2456d6;text-decoration:none;font-weight:750;font-size:13px}.staticCase{margin:28px 0;padding:18px;border-radius:18px;background:white;box-shadow:0 12px 30px rgba(15,23,42,.08)}.mediaGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.mediaGrid img{width:100%;border-radius:14px;border:1px solid #dbe3ef;background:#f8fafc}.videoPanel{margin:10px auto 16px;max-width:860px}.inlineVideo{display:block;width:100%;max-height:360px;border-radius:14px;border:1px solid #dbe3ef;background:#0f172a}.originalVideoBox{margin:12px 0 16px;border:1px solid #dbe3ef;border-radius:14px;background:#f8fafc;padding:10px}.originalVideoBox summary{cursor:pointer;font-weight:850;color:#2456d6}.originalVideoBox .inlineVideo{margin:10px auto 0}.visualEvidenceBox{margin:14px 0;padding:12px 14px;border:1px solid #dbe3ef;border-radius:14px;background:#f8fafc}.visualEvidenceBox summary,.questionEvidence summary{cursor:pointer;font-weight:850;color:#2456d6}.questionEvidence{margin-top:12px;padding:10px 12px;border:1px solid #dbe3ef;border-radius:10px;background:#f8fafc}.qaList{display:grid;gap:14px}.answerBox{display:block}.answerBox.hidden{display:none}.option{cursor:pointer;text-align:left;width:100%;font:inherit}.option.selected{outline:3px solid #7c3aed;background:#f3e8ff}.option.correctChoice{border-color:#16a34a;background:#dcfce7}.option.wrongChoice{border-color:#dc2626;background:#fee2e2}.submitAnswer{margin-top:10px;padding:9px 14px;border:0;border-radius:9px;background:#2456d6;color:#fff;font-weight:800;cursor:pointer}.submitAnswer:disabled{opacity:.45;cursor:not-allowed}.feedback{margin-top:10px;padding:10px;border-radius:10px;background:#f8fafc;border:1px solid #dbe3ef}.jsonBlock{white-space:pre-wrap}.topNote{padding:14px;border-radius:14px;background:white;border:1px solid #dbe3ef;color:#475569}.metaGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:14px 0}.metaBox{background:#f8fafc;border:1px solid #dbe3ef;border-radius:12px;padding:10px}.metaBox strong{display:block;color:#0f172a}.metaBox span{color:#64748b;font-size:13px}.coverageNotice{margin:12px 0;padding:12px 14px;border-radius:12px;border:1px solid #f59e0b;background:#fffbeb;color:#92400e;line-height:1.5}.coverageNotice.ok{border-color:#86efac;background:#f0fdf4;color:#166534}@media(max-width:900px){.mediaGrid{grid-template-columns:1fr}.staticShell{padding:14px}}
+body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px}.caseNav{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 22px}.caseNav a{padding:8px 10px;border:1px solid #dbe3ef;border-radius:999px;background:white;color:#2456d6;text-decoration:none;font-weight:750;font-size:13px}.staticCase{margin:28px 0;padding:18px;border-radius:18px;background:white;box-shadow:0 12px 30px rgba(15,23,42,.08)}.mediaGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}.mediaGrid img{width:100%;border-radius:14px;border:1px solid #dbe3ef;background:#f8fafc}.videoPanel{margin:10px auto 16px;max-width:860px}.inlineVideo{display:block;width:100%;max-height:360px;border-radius:14px;border:1px solid #dbe3ef;background:#0f172a}.originalVideoBox{margin:12px 0 16px;border:1px solid #dbe3ef;border-radius:14px;background:#f8fafc;padding:10px}.originalVideoBox summary{cursor:pointer;font-weight:850;color:#2456d6}.originalVideoBox .inlineVideo{margin:10px auto 0}.visualEvidenceBox{margin:14px 0;padding:12px 14px;border:1px solid #dbe3ef;border-radius:14px;background:#f8fafc}.visualEvidenceBox summary,.questionEvidence summary{cursor:pointer;font-weight:850;color:#2456d6}.questionEvidence{margin-top:12px;padding:10px 12px;border:1px solid #dbe3ef;border-radius:10px;background:#f8fafc}.qaList{display:grid;gap:14px}.answerBox{display:block}.answerBox.hidden{display:none}.option{cursor:pointer;text-align:left;width:100%;font:inherit}.option.selected{outline:3px solid #7c3aed;background:#f3e8ff}.option.correctChoice{border-color:#16a34a;background:#dcfce7}.option.wrongChoice{border-color:#dc2626;background:#fee2e2}.submitAnswer{margin-top:10px;padding:9px 14px;border:0;border-radius:9px;background:#2456d6;color:#fff;font-weight:800;cursor:pointer}.submitAnswer:disabled{opacity:.45;cursor:not-allowed}.feedback{margin-top:10px;padding:10px;border-radius:10px;background:#f8fafc;border:1px solid #dbe3ef}.jsonBlock{white-space:pre-wrap}.topNote{padding:14px;border-radius:14px;background:white;border:1px solid #dbe3ef;color:#475569}.metaGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:14px 0}.metaBox{background:#f8fafc;border:1px solid #dbe3ef;border-radius:12px;padding:10px}.metaBox strong{display:block;color:#0f172a}.metaBox span{color:#64748b;font-size:13px}.coverageNotice{margin:12px 0;padding:12px 14px;border-radius:12px;border:1px solid #f59e0b;background:#fffbeb;color:#92400e;line-height:1.5}.coverageNotice.ok{border-color:#86efac;background:#f0fdf4;color:#166534}.capabilityGrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:9px;margin:16px 0}.capabilityItem{padding:10px 12px;border:1px solid #dbe3ef;border-radius:11px;background:#fff}.capabilityItem.missing{background:#fff7ed;border-color:#fdba74}.capabilityBadge{display:inline-block;margin:4px 0 8px;padding:4px 8px;border-radius:999px;background:#e0e7ff;color:#3730a3;font-weight:800;font-size:12px}@media(max-width:900px){.mediaGrid{grid-template-columns:1fr}.staticShell{padding:14px}}
 </style>
 </head>
 <body>
@@ -302,6 +317,23 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
 <p class="topNote">This site contains only Task 4 multi-human reasoning and Task 5 gaze-grounded reasoning. Every answer is computed and signed before any optional language API call. Submit an answer first; localization, gaze/mask, and computed evidence remain collapsed until requested.</p>
 <nav class="caseNav">
 ''')
+    capability_counts = Counter()
+    capability_first_case = {}
+    for index, group in enumerate(data.get('groups', []), 1):
+        for question in group.get('qa', []):
+            if question.get('task_id') != 'task4_multi_human_relational_dynamics':
+                continue
+            capability = capability_for(str(question.get('question_type')))
+            if capability:
+                capability_counts[capability] += 1
+                capability_first_case.setdefault(capability, index)
+    parts.append('<h2>Task 4 · Seven requested categories</h2><div class="capabilityGrid">')
+    for capability in TASK4_CAPABILITIES:
+        count = capability_counts[capability]
+        cls = 'capabilityItem' if count else 'capabilityItem missing'
+        link = f'<a href="#case-{capability_first_case[capability]}">{count} published case(s)</a>' if count else '0 published · blocked: no physical blocker geometry'
+        parts.append(f'<div class="{cls}"><strong>{esc(CAPABILITY_LABELS[capability])}</strong><br>{link}</div>')
+    parts.append('</div>')
     for i, _ in enumerate(data.get('groups', []), 1):
         parts.append(f'<a href="#case-{i}">Case {i}</a>')
     parts.append('</nav>')
@@ -349,6 +381,9 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
             parts.append(f'<article class="card {esc(q.get("task_id"))}">')
             parts.append('<div class="cardHead"><div>')
             parts.append(f'<div class="taskName">{esc(q.get("task_name"))}</div>')
+            capability = capability_for(str(q.get("question_type"))) if q.get("task_id") == "task4_multi_human_relational_dynamics" else None
+            if capability:
+                parts.append(f'<div class="capabilityBadge">{esc(CAPABILITY_LABELS[capability])}</div>')
             parts.append(f'<div class="questionType">{esc(q.get("question_type"))}</div>')
             parts.append(f'<div class="question">Q{qi}. {display_text(group, q.get("question"))}</div>')
             parts.append(f'</div><span class="pill {status_class}">{esc(q.get("status"))}</span></div>')

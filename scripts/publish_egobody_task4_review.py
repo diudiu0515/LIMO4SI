@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import subprocess
 import sys
 from pathlib import Path
 
@@ -22,6 +23,14 @@ def load_site(path: Path) -> dict:
     if not match:
         raise ValueError(f"cannot parse {path}")
     return json.loads(match.group(1))
+
+
+def encode_h264(raw: Path, output: Path) -> None:
+    subprocess.run([
+        "ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-i", str(raw),
+        "-an", "-c:v", "libx264", "-preset", "veryfast", "-crf", "22", "-pix_fmt", "yuv420p", "-movflags", "+faststart", str(output),
+    ], check=True)
+    raw.unlink()
 
 
 def recording_id(case_id: str) -> str:
@@ -48,7 +57,8 @@ def render_pv_clip(scene: dict, pv_root: Path, output: Path) -> None:
         raise ValueError(f"cannot read raw PV frames for {recording}")
     height, width = first.shape[:2]
     output.parent.mkdir(parents=True, exist_ok=True)
-    writer = cv2.VideoWriter(str(output), cv2.VideoWriter_fourcc(*"mp4v"), 30, (width, height))
+    raw_output = output.with_name(output.stem + ".raw.mp4")
+    writer = cv2.VideoWriter(str(raw_output), cv2.VideoWriter_fourcc(*"mp4v"), 30, (width, height))
     for frame_id in range(start, end + 1):
         nearest = min(available, key=lambda value: abs(value - frame_id))
         if abs(nearest - frame_id) > 15:
@@ -59,6 +69,7 @@ def render_pv_clip(scene: dict, pv_root: Path, output: Path) -> None:
             writer.release(); raise ValueError(f"cannot read {indexed[nearest]}")
         writer.write(image)
     writer.release()
+    encode_h264(raw_output, output)
     if not output.is_file() or output.stat().st_size == 0:
         raise RuntimeError(f"failed to render raw PV clip {output}")
 
@@ -72,7 +83,8 @@ def render(scene: dict, output: Path) -> None:
     def pixel(p):
         return int(100 + (p[0] - xmin) / span * 700), int(500 - (p[2] - zmin) / span * 400)
     output.parent.mkdir(parents=True, exist_ok=True)
-    writer = cv2.VideoWriter(str(output), cv2.VideoWriter_fourcc(*"mp4v"), 15, (900, 600))
+    raw_output = output.with_name(output.stem + ".raw.mp4")
+    writer = cv2.VideoWriter(str(raw_output), cv2.VideoWriter_fourcc(*"mp4v"), 15, (900, 600))
     colors = {"A": (210, 110, 35), "B": (55, 70, 220)}
     for index, frame in enumerate(frames):
         canvas = np.full((600, 900, 3), 246, np.uint8)
@@ -99,6 +111,7 @@ def render(scene: dict, output: Path) -> None:
         for _ in range(8):
             writer.write(canvas)
     writer.release()
+    encode_h264(raw_output, output)
     cv2.imwrite(str(output.with_suffix(".jpg")), canvas)
     if not output.is_file() or output.stat().st_size == 0:
         raise RuntimeError(f"failed to render {output}")
