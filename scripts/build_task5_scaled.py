@@ -23,6 +23,21 @@ from limo4si.semantic_gt import (
 from limo4si.task5_human_state import circular_yaw_change_deg
 from limo4si.task5_scaling import CATEGORY_BY_TYPE, REQUESTED_CATEGORIES, sustained_relation_sequence
 
+RELATION_TEXT = {
+    "left-front": "front-left",
+    "front": "straight ahead",
+    "right-front": "front-right",
+    "right": "right side",
+    "right-behind": "rear-right",
+    "behind": "straight behind",
+    "left-behind": "rear-left",
+    "left": "left side",
+    "level": "same level",
+}
+
+
+def relation_text(value: str) -> str:
+    return RELATION_TEXT.get(value, value.replace("-", " "))
 TASK5_NAME = "Task 5 · Human-State–Grounded Spatial Reasoning"
 RELATIONS = ["left-front", "front", "right-front", "right", "right-behind", "behind", "left-behind", "left"]
 
@@ -104,8 +119,8 @@ def transition_options(
     object_name: str, start: str, end: str, seed: str, correct_index: int | None = None,
 ) -> tuple[list[dict[str, str]], str, str]:
     template = f"The {object_name} changes from {{}} to {{}}."
-    correct = template.format(start, end)
-    alternatives = [template.format(*pair) for pair in _parallel_pair_distractors(start, end)]
+    correct = template.format(relation_text(start), relation_text(end))
+    alternatives = [template.format(*(relation_text(value) for value in pair)) for pair in _parallel_pair_distractors(start, end)]
     options, label = make_options(correct, alternatives, seed, correct_index)
     return options, label, correct
 
@@ -115,7 +130,7 @@ def sequence_options(
 ) -> tuple[list[dict[str, str]], str, str]:
     arrow = " → "
     template = f"The {object_name} follows: {{}}."
-    correct = template.format(arrow.join(sequence))
+    correct = template.format(arrow.join(relation_text(value) for value in sequence))
     candidates: list[list[str]] = []
     if len(sequence) > 1:
         candidates.append(list(reversed(sequence)))
@@ -124,7 +139,7 @@ def sequence_options(
         candidates.append(shifted)
     alternatives: list[str] = []
     for values in candidates:
-        text = template.format(arrow.join(values))
+        text = template.format(arrow.join(relation_text(value) for value in values))
         if text != correct and text not in alternatives:
             alternatives.append(text)
         if len(alternatives) == 3:
@@ -204,10 +219,13 @@ def build_question(
         option_specs, correct_option_id = _semantic_options(
             [option["text"] for option in rendered], correct_text, "relation_pair",
         )
-        question_focus = f"Between the two sustained gazes at the {display}, how does its wearer-relative position change?"
+        question_focus = (
+            f"Comparing the first clear view of the {display} with its later clear view "
+            "in this clip, how does its wearer-relative position change?"
+        )
         evidence_statement = (
             f"At the first gaze event the {display} is {start_relation}; "
-            f"at the later event it is {end_relation}."
+            f"at the last gaze event it is {end_relation}."
         )
         event_evidence = selected
         transition = {
@@ -216,7 +234,7 @@ def build_question(
         }
         semantic_facts = [
             {"id": "first_relation", "value": start_relation, "frame": anchor_frames[0]},
-            {"id": "second_relation", "value": end_relation, "frame": anchor_frames[1]},
+            {"id": "last_relation", "value": end_relation, "frame": anchor_frames[1]},
         ]
         evidence_refs = [{"kind": "gaze_event", "start_index": int(event["start_index"])} for event in selected]
     elif qtype == "gaze_onset_side_change":
@@ -230,7 +248,10 @@ def build_question(
         option_specs, correct_option_id = _semantic_options(
             [option["text"] for option in rendered], correct_text, "relation_pair",
         )
-        question_focus = f"As gaze turns to the {display}, how does it shift in the wearer's body-relative view?"
+        question_focus = (
+            f"As the wearer visibly turns toward the {display} near the middle of this clip, "
+            "how does the object's wearer-relative position change?"
+        )
         evidence_statement = (
             f"Immediately before the gaze onset the {display} is {start_relation}; "
             f"during the sustained gaze it is {end_relation}."
@@ -264,10 +285,7 @@ def build_question(
         option_specs, correct_option_id = _semantic_options(
             [option["text"] for option in rendered], correct_text, "relation_sequence",
         )
-        question_focus = (
-            f"The {display} is the last gaze-annotated object in this window. "
-            "How does its wearer-relative position evolve?"
-        )
+        question_focus = f"Across this clip, which sequence best describes how the {display} shifts relative to the wearer?"
         evidence_statement = (
             f"Across the full window, the annotation-derived relation sequence is {' → '.join(relation_sequence)}."
         )
@@ -469,8 +487,6 @@ def main() -> None:
         groups.append({
             "name": spec["id"], "title": f"Task 5 · {shown_name(question['result_json']['object_name'])}",
             "video_clip": media_url(args.media_url_prefix, f"{spec['id']}.mp4"),
-            "original_image": media_url(args.media_url_prefix, f"{spec['id']}_gaze_evidence.jpg"),
-            "original_caption": "ADT RGB anchor frames · green: target 2D box · red: measured gaze projection",
             "video_window": {
                 "source_video": source_label, "source_sequence": analysis["sequence_name"],
                 "start_sec": start_s, "duration_sec": duration,
@@ -503,6 +519,10 @@ def main() -> None:
         "semantic_gt_schema": "limo4si.semantic_gt.v1",
         "reasoning_owner": "deterministic_code",
         "language_realizer": language_realizer.name if language_realizer else "deterministic_template",
+        "private_audit_evidence": {
+            group["name"]: f"{group['name']}_gaze_evidence.jpg"
+            for group in groups
+        },
     }
     data_path = resolve(args.site_data)
     data = load_js(data_path)

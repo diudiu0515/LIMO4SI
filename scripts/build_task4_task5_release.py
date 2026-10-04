@@ -38,6 +38,11 @@ def run_stage(script: str, *arguments: str) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
+        "--task5-dataset-root",
+        default="data/adt",
+        help="Directory containing unpacked ADT annotations and VRS media.",
+    )
+    parser.add_argument(
         "--language-client-factory",
         help=(
             "Optional language-only structured-output "
@@ -61,7 +66,20 @@ def main() -> None:
         *language_arguments,
     )
     run_stage("project_task4_task5_release.py")
-    run_stage("build_task5_egoexo.py", *language_arguments)
+    run_stage(
+        "scale_task5_adt.py",
+        args.task5_dataset_root,
+        "--target-per-category", "2",
+        "--max-cases-per-sequence", "1",
+        "--target-window-sec", "15",
+        "--minimum-window-sec", "14.5",
+        "--maximum-window-sec", "15.5",
+        "--output-root", "outputs/qa/task5_scale_15s",
+        "--reuse-analysis",
+        "--reuse-media",
+        *language_arguments,
+    )
+    run_stage("build_task5_behave_release.py")
     run_stage(
         "project_task4_task5_release.py",
         "--require-both",

@@ -16,10 +16,15 @@ sys.path.insert(0, str(ROOT / "src"))
 
 from limo4si.scale_quality import require_release_quality
 from limo4si.semantic_gt import load_language_realizer
-from limo4si.task4_annotation import generate_task4_release
+from limo4si.task4_scaling import generate_task4_scale_release, realize_task4_release
+from limo4si.task5_scaling import REQUESTED_CATEGORIES, balanced_category_targets as task5_category_targets
 
 BUNDLE_SCHEMA = "limo4si.annotation_bundle.v1"
 
+ADT_REQUIRED_FILES = {
+    "video.vrs", "eyegaze.csv", "aria_trajectory.csv", "scene_objects.csv",
+    "3d_bounding_box.csv", "2d_bounding_box.csv", "instances.json",
+}
 
 def resolve(path: Path, base: Path = ROOT) -> Path:
     return path if path.is_absolute() else (base / path).resolve()
@@ -63,10 +68,14 @@ def detect_kind(path: Path) -> str:
             return "bundle"
         if isinstance(value, dict) and isinstance(value.get("scenes"), list):
             return "task4"
+    if path.is_dir():
+        adt_parents = {candidate.parent for candidate in path.rglob("eyegaze.csv")}
+        if any(ADT_REQUIRED_FILES.issubset({item.name for item in parent.iterdir()}) for parent in adt_parents):
+            return "task5_adt"
     if path.is_dir() and (path / "takes.json").is_file() and (
         path / "annotations" / "relations_val.json"
     ).is_file():
-        return "task5"
+        return "task5_egoexo"
     if path.is_dir() and (path / "smplx_camera_wearer_val").is_dir() and (path / "smplx_interactee_val").is_dir():
         return "task4_egobody"
     if path.is_dir():
@@ -93,18 +102,26 @@ def normalized_task4(path: Path, output_dir: Path) -> Path:
 
 
 def build_task4(
-    annotations: Path, output_dir: Path, site_data: Path,
-    language_client_factory: str | None,
+    annotations: Path, output_dir: Path, site_data: Path, target_count: int,
+    allow_partial: bool, language_client_factory: str | None,
 ) -> dict[str, Any]:
     source = normalized_task4(annotations, output_dir)
     payload = load_json(source)
     scenes = payload.get("scenes") if isinstance(payload, dict) else None
     if not isinstance(scenes, list):
         raise ValueError("Task 4 annotation payload must contain a scenes list")
-    realizer = load_language_realizer(language_client_factory)
-    data, audit = generate_task4_release(scenes, realizer=realizer)
+    data, audit = generate_task4_scale_release(
+        scenes, target_count=target_count, allow_partial=True,
+    )
+    (output_dir / "task4_annotation_audit.json").write_text(
+        json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8",
+    )
+    if audit["selection"]["status"] != "ok" and not allow_partial:
+        raise ValueError(f"Task 4 scale target is incomplete: {audit['selection']['deficits']}")
     if not data["groups"]:
         raise ValueError("Task 4 produced no accepted cases; inspect annotation audit")
+    realizer = load_language_realizer(language_client_factory)
+    realize_task4_release(data, realizer)
     quality = require_release_quality(data)
     save_site(site_data, data)
     rows = [
@@ -113,9 +130,6 @@ def build_task4(
     ]
     (output_dir / "task4_qa.jsonl").write_text(
         "".join(json.dumps(row, ensure_ascii=False) + "\n" for row in rows), encoding="utf-8",
-    )
-    (output_dir / "task4_annotation_audit.json").write_text(
-        json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8",
     )
     (output_dir / "task4_quality.json").write_text(
         json.dumps(quality, ensure_ascii=False, indent=2) + "\n", encoding="utf-8",
@@ -131,7 +145,51 @@ def empty_site(path: Path) -> None:
     })
 
 
-def build_task5(
+def build_task5_adt(
+    annotations: Path, output_dir: Path, site_data: Path, site_dir: Path,
+    target_count: int, target_per_category: int | None,
+    max_cases_per_sequence: int, language_client_factory: str | None,
+) -> dict[str, Any]:
+    """Run the annotation-only ADT miner, selector, publisher, and gates."""
+    scale_dir = output_dir / "task5_adt_scale"
+    targets = (
+        {category: target_per_category for category in REQUESTED_CATEGORIES}
+        if target_per_category is not None
+        else task5_category_targets(target_count)
+    )
+    arguments = [
+        str(annotations),
+        "--target-per-category", "1",
+        "--max-cases-per-sequence", str(max_cases_per_sequence),
+        "--target-window-sec", "15",
+        "--minimum-window-sec", "14.5",
+        "--maximum-window-sec", "15.5",
+        "--output-root", str(scale_dir),
+        "--site-media-dir", str(site_dir / "task5_media"),
+        "--site-data", str(site_data),
+        "--site-index", str(site_dir / "index.html"),
+        "--reuse-analysis",
+        "--reuse-media",
+        "--allow-subset",
+    ]
+    for category, count in targets.items():
+        arguments += ["--category-target", f"{category}={count}"]
+    if language_client_factory:
+        arguments += ["--language-client-factory", language_client_factory]
+    if not site_data.exists():
+        empty_site(site_data)
+    run_script("scale_task5_adt.py", *arguments)
+    report = load_json(scale_dir / "pipeline_report.json")
+    selection = report["selection"]
+    return {
+        "task": "task5", "backend": "adt",
+        "accepted_count": int(selection["selected_count"]),
+        "rejected_count": int(report.get("rejected_sequence_count") or 0),
+        "category_counts": selection["selected_counts"],
+    }
+
+
+def build_task5_egoexo(
     annotations: Path, output_dir: Path, site_data: Path, site_dir: Path,
     target_count: int, language_client_factory: str | None,
 ) -> dict[str, Any]:
@@ -157,7 +215,7 @@ def build_task5(
         build_arguments += ["--language-client-factory", language_client_factory]
     run_script("build_task5_egoexo.py", *build_arguments)
     report = load_json(scale_dir / "pipeline_report.json")
-    return {"task": "task5", "accepted_count": report["selected_count"], "rejected_count": 0}
+    return {"task": "task5", "backend": "egoexo", "accepted_count": report["selected_count"], "rejected_count": 0}
 
 
 def bundle_sources(path: Path) -> tuple[Path | None, Path | None]:
@@ -177,8 +235,28 @@ def main() -> None:
     parser.add_argument("annotations", type=Path)
     parser.add_argument("--task", choices=("auto", "task4", "task5"), default="auto")
     parser.add_argument("--output-dir", type=Path, default=Path("outputs/annotation_release"))
+    parser.add_argument("--task5-backend", choices=("auto", "adt", "egoexo"), default="auto")
     parser.add_argument("--site-dir", type=Path, default=Path("site/annotation_release"))
-    parser.add_argument("--task5-target-count", type=int, default=12)
+    parser.add_argument(
+        "--task4-target-count", type=int, default=40,
+        help="Balanced total across all seven canonical Task 4 categories.",
+    )
+    parser.add_argument(
+        "--task5-target-count", type=int, default=40,
+        help="Balanced total across the three canonical Task 5 categories.",
+    )
+    parser.add_argument(
+        "--task5-target-per-category", type=int,
+        help="Optional equal per-category override for the ADT backend.",
+    )
+    parser.add_argument(
+        "--task5-max-cases-per-sequence", type=int, default=0,
+        help="Maximum selected ADT windows per source sequence; 0 chooses a data-dependent cap.",
+    )
+    parser.add_argument(
+        "--allow-incomplete-scale", action="store_true",
+        help="Write an explicitly incomplete Task 4 pilot instead of failing on category deficits.",
+    )
     parser.add_argument("--language-client-factory")
     args = parser.parse_args()
 
@@ -194,19 +272,37 @@ def main() -> None:
         task4_source, task5_source = bundle_sources(annotations)
     elif kind in {"task4", "task4_raw", "task4_egobody"} or args.task == "task4":
         task4_source = annotations
-    elif kind == "task5" or args.task == "task5":
+    elif kind in {"task5_adt", "task5_egoexo"} or args.task == "task5":
         task5_source = annotations
     else:
         raise ValueError(f"cannot route annotation kind {kind}")
 
     reports = []
     if task4_source:
-        reports.append(build_task4(task4_source, output_dir, site_data, args.language_client_factory))
-    if task5_source:
-        reports.append(build_task5(
-            task5_source, output_dir, site_data, site_dir,
-            args.task5_target_count, args.language_client_factory,
+        reports.append(build_task4(
+            task4_source, output_dir, site_data, args.task4_target_count,
+            args.allow_incomplete_scale, args.language_client_factory,
         ))
+    if task5_source:
+        detected_task5 = detect_kind(task5_source)
+        backend = args.task5_backend
+        if backend == "auto":
+            backend = "adt" if detected_task5 == "task5_adt" else "egoexo"
+        if backend == "adt":
+            if detected_task5 != "task5_adt":
+                raise ValueError("ADT backend requires VRS, gaze, pose, and 2D/3D object annotations")
+            reports.append(build_task5_adt(
+                task5_source, output_dir, site_data, site_dir,
+                args.task5_target_count, args.task5_target_per_category,
+                args.task5_max_cases_per_sequence, args.language_client_factory,
+            ))
+        else:
+            if detected_task5 != "task5_egoexo":
+                raise ValueError("EgoExo backend requires takes.json and annotations/relations_val.json")
+            reports.append(build_task5_egoexo(
+                task5_source, output_dir, site_data, site_dir,
+                args.task5_target_count, args.language_client_factory,
+            ))
     run_script("project_task4_task5_release.py", "--data-js", str(site_data))
     run_script("build_static_qa_site.py", "--data-js", str(site_data), "--output", str(site_dir / "index.html"))
     quality_path = output_dir / "release_quality.json"

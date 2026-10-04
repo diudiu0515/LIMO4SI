@@ -144,7 +144,10 @@ def add_task4_topology(data: dict[str, Any], evidence: dict[str, Any]) -> None:
         "video_clip": "./outputs/hoim3/bedroom_data05/win_extra_90s_view0_15s.mp4",
         "original_image": "./multihuman_media/hoi_m3_bedroom_data05_win_extra_90s_localized.jpg",
         "localization_video": "./multihuman_media/hoi_m3_bedroom_data05_win_extra_90s_localized.mp4",
-        "duration_sec": evidence["duration_sec"],
+        "video_window": {
+            "duration_sec": evidence["duration_sec"],
+            "source": "data/HOI-M3/videos/bedroom_data05/0.mp4",
+        },
         "visual_person_audit": audit,
         "qa": [q],
         "case_policy": "one temporal question per unique video window",
@@ -232,6 +235,11 @@ def _set_options(group: dict[str, Any], correct: str, distractors: list[str]) ->
 def _person(group: dict[str, Any], person_id: str) -> str:
     aliases = group.get("person_display_aliases") or {}
     return aliases.get(person_id, person_id)
+
+def _gender_reference(person: str) -> str:
+    """Use a concise reference only when a reviewed gender term is present."""
+    match = re.search(r"\b(man|woman)\b", person)
+    return f"the {match.group(1)}" if match else person
 
 def _relation_words(value: str) -> str:
     return value.replace("_", "-")
@@ -380,17 +388,34 @@ def apply_multihuman_copy_edits(data: dict[str, Any]) -> None:
         elif qtype == "reunion_relation_restoration":
             analysis = result["reunion_analysis"]
             start_rel, end_rel = _relation_words(analysis["start_relation"]), _relation_words(analysis["end_relation"] )
+            short_a, short_b = _gender_reference(a), _gender_reference(b)
+            q["question"] = (
+                f"After {a} and {b} separate and come close again, is {short_b} back in the same "
+                f"body-centered position relative to {short_a}?"
+            )
             if analysis["restored"]:
-                correct = f"Yes. The relation begins {start_rel} and returns to {end_rel} after the reunion."
-                opposite = f"No. The relation begins {start_rel} but changes to {end_rel} after the reunion."
+                correct = (
+                    f"Yes. {B} begins {start_rel} and returns to {end_rel} relative to {a} after the reunion."
+                )
+                opposite = (
+                    f"No. {B} begins {start_rel} but ends {end_rel} relative to {a} after the reunion."
+                )
             else:
-                correct = f"No. The relation begins {start_rel} but changes to {end_rel} after the reunion."
-                opposite = f"Yes. The relation begins {start_rel} and returns to {start_rel} after the reunion."
+                correct = (
+                    f"No. {B} begins {start_rel} but ends {end_rel} relative to {a} after the reunion."
+                )
+                opposite = (
+                    f"Yes. {B} begins {start_rel} and returns to {start_rel} relative to {a} after the reunion."
+                )
             _set_options(group, correct, [
                 opposite,
-                f"Yes. The relation begins {end_rel} and returns to {end_rel} after the reunion.",
-                f"No. The relation begins {end_rel} but changes to {start_rel} after the reunion.",
+                f"Yes. {B} begins {end_rel} and returns to {end_rel} relative to {a} after the reunion.",
+                f"No. {B} begins {end_rel} but ends {start_rel} relative to {a} after the reunion.",
             ])
+            q["explanation"] = (
+                f"Using {a} as the body-frame reference, {b} changes from {start_rel} "
+                f"at the start to {end_rel} after the reunion."
+            )
         elif qtype == "passing_side_and_final_position":
             analysis = result["passing_analysis"]
             side = analysis["passing_side"]; other_side = "left" if side == "right" else "right"
@@ -511,6 +536,11 @@ def validate_scale(data: dict[str, Any]) -> dict[str, Any]:
         if len(group.get("qa", [])) != 1:
             raise ValueError(f"one-question policy failed: {group['name']}")
         q = group["qa"][0]
+        duration = (group.get("video_window") or {}).get("duration_sec")
+        if not isinstance(duration, (int, float)) or not 14.5 <= float(duration) <= 15.5:
+            raise ValueError(
+                f"15-second video-window gate failed: {group['name']} has duration {duration!r}"
+            )
         q["question_categories"] = categories(group, q)
         if len(q.get("options", [])) != 4 or len({x["text"] for x in q["options"]}) != 4:
             raise ValueError(f"four-option gate failed: {group['name']}")

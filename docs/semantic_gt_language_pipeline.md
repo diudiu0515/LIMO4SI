@@ -20,17 +20,23 @@ The release path is:
 
 ## Current Task 4/5 coverage
 
-- `build_task4_curated.py` seals deterministic standalone artifacts.
-- `build_task4_scaled.py` re-seals only after identity aliases, symmetric
-  distractors, and published-number rounding are complete.
-- build_task5_egoexo.py constructs the primary 15-second EgoExo4D gaze/mask
-  release and binds each synchronized point-in-mask claim to a full result_json
+- `limo4si.task4_scaling` mines all seven Task 4 families, balances the
+  requested total, enforces one question per 15-second source window, and seals
+  only after identities, coordinate transforms, distractors, and evidence are
+  complete.
+- `scale_task5_adt.py` mines, balances, and publishes the primary three-family
+  15-second ADT release from synchronized gaze, wearer pose, and object boxes.
+- `build_task5_egoexo.py` is an explicit compatibility backend, not the
+  automatic Task 5 scale path.
 - `limo4si.multihuman.multihuman_qas` seals its direct Task 4 output so callers
   cannot bypass the release-layer contract.
 - `build_multihuman_dynamic_qa.py --language-client-factory module:create_client`
   exposes the same wording-only adapter for standalone Task 4 generation.
 - `calibrate_multihuman_video_evidence.py` re-seals Task 4 after visual identity
   auditing changes its evidence or replaces metric questions with 2D questions.
+- `scripts/generate_qa.py` is the unified annotation entry point. Its default
+  scale contract requests 40 Task 4 cases and 40 Task 5 cases and fails closed
+  with category deficits when the supplied annotations cannot support them.
 
 Every Task 4/5 release question is rejected if it is unsigned, if its evidence
 changes after sealing, or if public text can no longer be reconstructed from the
@@ -51,7 +57,7 @@ class Client:
 Then expose a zero-argument factory and pass it to the existing build command:
 
 ```bash
-PYTHONPATH=src:. python3 scripts/build_task5_egoexo.py \
+PYTHONPATH=src:scripts python3 scripts/generate_qa.py /path/to/annotations \
   --language-client-factory my_adapter:create_client
 ```
 

@@ -1,4 +1,5 @@
 import unittest
+import copy
 
 import numpy as np
 
@@ -162,10 +163,16 @@ class Task5EgoExoTests(unittest.TestCase):
         group = {
             "name": "task5_egoexo_release_fixture",
             "video_window": {"start_sec": 97.5, "duration_sec": 15.0},
+            "pre_question_visual_evidence": True,
+            "original_image": "./task5_media/release_fixture_evidence.jpg",
             "qa": [question],
         }
         self.assertEqual(validate_release({"groups": [group]})["status"], "ok")
-        import copy
+        missing_visual_evidence = copy.deepcopy(group)
+        missing_visual_evidence.pop("pre_question_visual_evidence")
+        errors = validate_release({"groups": [missing_visual_evidence]})["cases"][0]["errors"]
+        self.assertTrue(any("pre-question visual evidence" in error for error in errors))
+
         bad = copy.deepcopy(group)
         bad_question = bad["qa"][0]
         bad_question["correct_option"] = "A"

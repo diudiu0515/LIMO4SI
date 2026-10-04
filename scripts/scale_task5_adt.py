@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import csv
 import hashlib
 import json
 import os
@@ -30,6 +31,84 @@ REQUIRED_SEQUENCE_FILES = {
     "video.vrs", "eyegaze.csv", "aria_trajectory.csv", "scene_objects.csv",
     "3d_bounding_box.csv", "2d_bounding_box.csv", "instances.json",
 }
+
+def _evidence_frames(candidate: dict[str, Any], analysis: dict[str, Any]) -> list[int]:
+    """Resolve every RGB panel frame required to audit one candidate."""
+    uid = str(candidate["object_id"])
+    question_type = candidate["question_type"]
+    if question_type == "gaze_target_at_evidence_anchor":
+        return [int(frame) for frame in candidate["anchor_frames"]]
+    if question_type == "relation_change_between_gazes":
+        events = [
+            next(
+                event for event in analysis["gaze_events"]
+                if str(event["object_id"]) == uid and int(event["start_index"]) == int(start)
+            )
+            for start in candidate["event_start_frames"]
+        ]
+        return [(int(event["start_index"]) + int(event["end_index"])) // 2 for event in events]
+    if question_type == "gaze_onset_side_change":
+        event = next(
+            event for event in analysis["gaze_events"]
+            if str(event["object_id"]) == uid
+            and int(event["start_index"]) == int(candidate["event_start_frames"][0])
+        )
+        return [int(candidate["pre_frame"]), (int(event["start_index"]) + int(event["end_index"])) // 2]
+    if question_type == "last_gaze_annotated_object_relation_change":
+        lo, hi = (int(value) for value in candidate["window_frames"])
+        runs: list[list[Any]] = []
+        for frame_index in range(lo, hi + 1):
+            label = analysis["states"][frame_index]["object_relations"][uid]["label"]
+            if not runs or runs[-1][0] != label:
+                runs.append([label, frame_index, frame_index])
+            else:
+                runs[-1][2] = frame_index
+        stable = [run for run in runs if int(run[2]) - int(run[1]) + 1 >= 6]
+        collapsed: list[list[Any]] = []
+        for label, start, end in stable:
+            if collapsed and collapsed[-1][0] == label:
+                collapsed[-1][2] = end
+            else:
+                collapsed.append([label, start, end])
+        return [(int(start) + int(end)) // 2 for _, start, end in collapsed]
+    raise ValueError(f"unsupported release question type: {question_type}")
+
+
+def _filter_rgb_auditable_candidates(
+    candidates: list[dict[str, Any]], analysis: dict[str, Any], sequence: Path,
+    maximum_skew_ms: float = 50.0,
+) -> tuple[list[dict[str, Any]], dict[str, int]]:
+    """Reject candidates before selection unless every evidence panel has a fresh RGB box."""
+    box_times: dict[str, list[int]] = defaultdict(list)
+    with (sequence / "2d_bounding_box.csv").open(newline="", encoding="utf-8") as handle:
+        for row in csv.DictReader(handle):
+            if row["stream_id"] == "214-1":
+                box_times[str(row["object_uid"])].append(int(row["timestamp[ns]"]))
+    for values in box_times.values():
+        values.sort()
+    kept: list[dict[str, Any]] = []
+    rejected: Counter[str] = Counter()
+    for candidate in candidates:
+        uid = str(candidate["object_id"])
+        times = box_times.get(uid)
+        if not times:
+            rejected["missing_rgb_2d_box"] += 1
+            continue
+        frames = _evidence_frames(candidate, analysis)
+        if len(frames) < 2:
+            rejected["insufficient_evidence_panels"] += 1
+            continue
+        skews_ms = [
+            min(abs(timestamp - int(analysis["states"][frame]["timestamp_ns"])) for timestamp in times) / 1_000_000
+            for frame in frames
+        ]
+        if any(skew > maximum_skew_ms for skew in skews_ms):
+            rejected["stale_rgb_2d_box"] += 1
+            continue
+        candidate["evidence_frame_indices"] = frames
+        candidate["maximum_rgb_box_skew_ms"] = round(max(skews_ms), 6)
+        kept.append(candidate)
+    return kept, dict(rejected)
 
 
 def resolve(path: Path) -> Path:
@@ -73,9 +152,9 @@ def main() -> None:
     parser.add_argument("--max-cases-per-sequence", type=int, default=0)
     parser.add_argument("--minimum-gaze-run", type=int, default=4)
     parser.add_argument("--minimum-repeated-gaze-gap-sec", type=float, default=2.0)
-    parser.add_argument("--target-window-sec", type=float, default=9.0)
-    parser.add_argument("--minimum-window-sec", type=float, default=8.5)
-    parser.add_argument("--maximum-window-sec", type=float, default=10.0)
+    parser.add_argument("--target-window-sec", type=float, default=15.0)
+    parser.add_argument("--minimum-window-sec", type=float, default=14.5)
+    parser.add_argument("--maximum-window-sec", type=float, default=15.5)
     parser.add_argument("--maximum-hit-distance-m", type=float, default=8.0)
     parser.add_argument("--maximum-wearer-skew-ms", type=float, default=10.0)
     parser.add_argument("--maximum-object-pose-skew-ms", type=float, default=50.0)
@@ -85,6 +164,7 @@ def main() -> None:
     parser.add_argument("--site-index", type=Path, default=Path("site/qa_benchmark/index.html"))
     parser.add_argument("--reuse-analysis", action="store_true")
     parser.add_argument("--reuse-media", action="store_true")
+    parser.add_argument("--allow-subset", action="store_true", help="Allow Task 5-only intermediate publication.")
     parser.add_argument("--language-client-factory", help="Optional module:function language-only client factory.")
     parser.add_argument("--plan-only", action="store_true", help="Mine/select/write config, but do not export media or update the site")
     args = parser.parse_args()
@@ -164,6 +244,11 @@ def main() -> None:
                 analysis_path.write_text(json.dumps(analysis, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
                 record["analysis_status"] = "mined" if not args.reuse_analysis else "remined_stale_cache"
             candidates, diagnostics = generate_task5_candidates(analysis, candidate_policy)
+            candidates, evidence_rejections = _filter_rgb_auditable_candidates(
+                candidates, analysis, sequence, args.maximum_object_pose_skew_ms,
+            )
+            diagnostics["rgb_evidence_rejection_counts"] = evidence_rejections
+            diagnostics["rgb_auditable_candidate_count"] = len(candidates)
             for candidate in candidates:
                 candidate["analysis"] = portable(analysis_path)
                 candidate["sequence_path"] = str(sequence)
@@ -264,10 +349,12 @@ def main() -> None:
             "--output", str(resolve(args.site_index)),
         )
         combined_quality = output_root / "combined_scale_quality.json"
-        run_script(
-            "validate_task4_task5_release.py", str(resolve(args.site_data)),
-            "--output", str(combined_quality),
-        )
+        validation_arguments = [
+            str(resolve(args.site_data)), "--output", str(combined_quality),
+        ]
+        if args.allow_subset:
+            validation_arguments.append("--allow-subset")
+        run_script("validate_task4_task5_release.py", *validation_arguments)
         quality = json.loads(combined_quality.read_text(encoding="utf-8"))
         report.update({
             "status": "ok" if quality.get("status") == "ok" else "failed",

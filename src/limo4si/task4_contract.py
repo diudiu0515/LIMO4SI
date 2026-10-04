@@ -26,6 +26,7 @@ QUESTION_CAPABILITIES = {
     "passing_side_and_final_position": "passing_side_and_final_position",
     "reunion_relation_restoration": "reunion_relation_restoration",
     "relation_change_cause": "relation_change_cause",
+    "metric_group_reorganization_over_video": "group_reorganization",
     "physical_visibility_occlusion_timeline": "physical_visibility_occlusion_timeline",
 }
 

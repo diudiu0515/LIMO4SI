@@ -4,6 +4,7 @@ from __future__ import annotations
 import hashlib
 import math
 import re
+from itertools import combinations
 from collections import Counter, defaultdict
 from dataclasses import asdict, dataclass
 from typing import Any, Mapping, Sequence
@@ -22,6 +23,18 @@ REQUESTED_CATEGORIES = (
     "after_gaze_turns_to_object",
     "last_gaze_annotated_object",
 )
+
+def balanced_category_targets(total: int) -> dict[str, int]:
+    """Split a Task 5 total across the three reasoning families."""
+    if total < len(REQUESTED_CATEGORIES):
+        raise ValueError(
+            f"Task 5 target must be at least {len(REQUESTED_CATEGORIES)}"
+        )
+    quotient, remainder = divmod(total, len(REQUESTED_CATEGORIES))
+    return {
+        category: quotient + (index < remainder)
+        for index, category in enumerate(REQUESTED_CATEGORIES)
+    }
 
 @dataclass(frozen=True)
 class Task5CandidatePolicy:
@@ -47,9 +60,9 @@ class Task5CandidatePolicy:
     min_pre_gaze_gap_sec: float = 0.40
     max_pre_gaze_gap_sec: float = 1.50
     max_repeated_window_sec: float = 12.0
-    target_window_sec: float = 9.0
-    min_window_sec: float = 8.5
-    max_window_sec: float = 10.0
+    target_window_sec: float = 15.0
+    min_window_sec: float = 14.5
+    max_window_sec: float = 15.5
     max_relation_sequence_length: int = 4
     max_candidates_per_object_category: int = 8
 
@@ -125,7 +138,7 @@ def _expanded_window(
     states: Mapping[int, Mapping[str, Any]], core_start: int, core_end: int, policy: Task5CandidatePolicy,
     *, align_end: bool = False, allowed_start_frame: int | None = None, allowed_end_frame: int | None = None,
 ) -> tuple[int, int] | None:
-    """Return a real annotation-covered ~9 s window containing the core event."""
+    """Return a real annotation-covered target-duration window containing the core event."""
     ordered = sorted(states.values(), key=lambda state: float(state["time_s"]))
     if allowed_start_frame is not None:
         ordered = [state for state in ordered if int(state["frame_index"]) >= allowed_start_frame]
@@ -228,7 +241,7 @@ def generate_task5_candidates(
 
     # 1. Compare two temporally distinct sustained gazes at the same object.
     for object_id, object_events in by_object.items():
-        for pair_index, (first, second) in enumerate(zip(object_events, object_events[1:])):
+        for (first_index, first), (second_index, second) in combinations(enumerate(object_events), 2):
             if (
                 int(first["direct_hit_count"]) < policy.min_repeated_event_direct_hits
                 or int(second["direct_hit_count"]) < policy.min_repeated_event_direct_hits
@@ -257,16 +270,8 @@ def generate_task5_candidates(
                 rejection_counts["repeated_not_salient"] += 1
                 continue
             score = shift + min(gap, 2.0) * 0.05 + min(int(first["state_count"]), int(second["state_count"])) / 100
-            allowed_start = (
-                int(object_events[pair_index - 1]["end_index"]) + 1 if pair_index > 0 else None
-            )
-            allowed_end = (
-                int(object_events[pair_index + 2]["start_index"]) - 1
-                if pair_index + 2 < len(object_events) else None
-            )
             window = _expanded_window(
                 states, int(first["start_index"]), int(second["end_index"]), policy,
-                allowed_start_frame=allowed_start, allowed_end_frame=allowed_end,
             )
             if window is None:
                 rejection_counts["repeated_no_target_duration_annotation_window"] += 1
@@ -275,7 +280,11 @@ def generate_task5_candidates(
                 event for event in raw_by_object[object_id]
                 if int(event["start_index"]) >= window[0] and int(event["end_index"]) <= window[1]
             ]
-            if target_events_in_window != [first, second]:
+            if (
+                len(target_events_in_window) < 2
+                or target_events_in_window[0] is not first
+                or target_events_in_window[-1] is not second
+            ):
                 rejection_counts["repeated_extra_target_gaze_in_public_window"] += 1
                 continue
             candidates.append(_candidate(
@@ -333,7 +342,7 @@ def generate_task5_candidates(
             transition_signature=f"{_relation(states, before_frame, object_id)['label']}->{after['label']}",
         ))
 
-    # 3. End a real ~9 s window on a sustained gaze, so the target is still the last gaze object.
+    # 3. End a real target-duration window on a sustained gaze, so the target remains the last gaze object.
     for event in events:
         object_id = str(event["object_id"])
         if (
@@ -461,18 +470,24 @@ def select_balanced_candidates(
                 key = (str(row["sequence_name"]), int(row["window_frames"][0]), int(row["window_frames"][1]))
                 if key in used_windows or sequence_counts[str(row["sequence_name"])] >= max_cases_per_sequence:
                     continue
-                conflicts = [
+                same_sequence = [
                     chosen for chosen in selected
                     if str(chosen["sequence_name"]) == str(row["sequence_name"])
-                    and (
-                        str(chosen["object_id"]) == str(row["object_id"])
-                        or max(int(chosen["window_frames"][0]), key[1])
-                        <= min(int(chosen["window_frames"][1]), key[2])
-                    )
                 ]
+                overlaps = any(
+                    max(int(chosen["window_frames"][0]), key[1])
+                    <= min(int(chosen["window_frames"][1]), key[2])
+                    for chosen in same_sequence
+                )
+                if overlaps:
+                    continue
+                repeated_object = sum(
+                    str(chosen["object_id"]) == str(row["object_id"])
+                    for chosen in same_sequence
+                )
                 diversity = sequence_counts[str(row["sequence_name"])] * 0.05
                 diversity += object_category_counts[(category, str(row["object_id"]))] * 0.10
-                diversity += len(conflicts) * 100.0
+                diversity += repeated_object * 5.0
                 signature = str(row.get("transition_signature") or "")
                 if signature:
                     diversity += transition_counts[(category, signature)] * 10.0

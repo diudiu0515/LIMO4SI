@@ -12,12 +12,22 @@ from dataclasses import asdict, dataclass
 from typing import Any, Iterable, Mapping, Sequence
 
 from .semantic_gt import LanguageRealizationError, SemanticGTError, validate_sealed_question
-from .multihuman import derive_task4_answer_semantics
+from .multihuman import derive_task4_answer_semantics, distance_evolution_pattern
+from .task4_dynamics import (
+    passing_side_and_final_position,
+    relation_change_cause,
+    reunion_relation_restoration,
+)
 from .task4_contract import validate_compound_option_parts
 
 TASK1_ID = "task1_dynamic_human_referenced_relations"
 TASK3_ID = "task3_human_scene_topological_reasoning"
 TASK4_ID = "task4_multi_human_relational_dynamics"
+EVIDENCE_CLOSED_METRIC_TYPES = {
+    "metric_distance_pattern_over_video",
+    "metric_group_reorganization_over_video",
+    "physical_visibility_occlusion_timeline",
+}
 TASK5_ID = "task5_human_state_grounded_spatial_reasoning"
 TOPOLOGY_TYPES = {
     "visible_pair_topology_change_2d",
@@ -53,10 +63,9 @@ class ScaleQualityPolicy:
     min_task3_local_travel_m: float = 0.35
     min_task3_grounding_inliers: int = 12
     min_task5_span_ratio: float = 0.85
-    # Legacy ADT pilot windows remain readable for compatibility tests.
-    min_task5_window_sec: float = 8.5
-    max_task5_window_sec: float = 10.0
-    # Current EgoExo4D release windows follow the shared Task 1/4 15 s policy.
+    min_task5_window_sec: float = 14.5
+    max_task5_window_sec: float = 15.5
+    # EgoExo4D releases use the same shared 15-second policy.
     min_task5_egoexo_window_sec: float = 14.5
     max_task5_egoexo_window_sec: float = 15.5
     min_task5_egoexo_anchor_span_ratio: float = 0.65
@@ -91,6 +100,7 @@ class ScaleQualityPolicy:
     max_temporal_gap_ratio: float = 0.30
     min_transition_run_length: int = 2
     min_distance_pattern_range_m: float = 0.25
+    min_group_pair_margin_m: float = 0.05
     min_topology_margin_normalized: float = 0.03
     endpoint_tolerance_sec: float = 0.60
     forbid_sample_count_in_answers: bool = True
@@ -448,6 +458,7 @@ def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any]
         else:
             warnings.append("an intermittent extra person is excluded; the question explicitly names the annotated pair")
     result = question["result_json"]
+    qtype = question.get("question_type")
     timeline = result.get("pair_timeline") or {}
     coordinate_frame = timeline.get("coordinate_frame") or result.get("human_coordinate_frame") or {}
     right_sign = coordinate_frame.get("right_sign")
@@ -458,12 +469,14 @@ def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any]
         and bool(orientation_calibration.get("source"))
     )
     if (
+        qtype not in EVIDENCE_CLOSED_METRIC_TYPES and (
         right_sign not in (1, -1)
         or (right_sign == -1 and not calibrated_negative)
         or "forward" not in str(coordinate_frame.get("forward_axis", "")).lower()
         or (
             "scene-up cross forward" not in str(coordinate_frame.get("right_axis", "")).lower()
             and not ("explicit" in str(coordinate_frame.get("right_axis", "")).lower() and "+x" in str(coordinate_frame.get("right_axis", "")).lower())
+        )
         )
     ):
         errors.append("metric Task 4 lacks a validated face-forward human coordinate frame and lateral calibration")
@@ -514,7 +527,6 @@ def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any]
             errors.append("distance_series_m is missing values or differs in length from timeline")
         elif any(abs(float(a) - b) > 1e-6 for a, b in zip(stored_distances, distances)):
             errors.append("distance_series_m is stale and differs from pair_timeline")
-    qtype = question.get("question_type")
     distance_pattern_types = {
         "metric_distance_pattern_over_video", "metric_separation_over_video",
         "nonmonotonic_distance_pattern", "approach_while_facing",
@@ -525,6 +537,39 @@ def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any]
         metrics["distance_range_m"] = round(distance_range, 6)
         if distance_range < policy.min_distance_pattern_range_m:
             errors.append("distance change is too small for a salient temporal-pattern question")
+    if qtype == "metric_distance_pattern_over_video":
+        try:
+            recomputed = distance_evolution_pattern(
+                states, policy.min_distance_pattern_range_m,
+            )
+            if result.get("distance_pattern") != recomputed["pattern"]:
+                errors.append("stored distance pattern differs from recomputed timeline")
+        except (KeyError, TypeError, ValueError) as exc:
+            errors.append(f"distance pattern cannot be recomputed: {exc}")
+    event_specs = {
+        "passing_side_and_final_position": (
+            passing_side_and_final_position, "passing_analysis", {},
+        ),
+        "reunion_relation_restoration": (
+            reunion_relation_restoration, "reunion_analysis", {},
+        ),
+        "relation_change_cause": (
+            relation_change_cause,
+            "causal_decomposition",
+            {"right_sign": int(right_sign)} if right_sign in (-1, 1) else {},
+        ),
+    }
+    if qtype in event_specs:
+        analyzer, result_key, keyword_arguments = event_specs[qtype]
+        try:
+            recomputed = analyzer(states, **keyword_arguments)
+            if result.get(result_key) != recomputed:
+                errors.append(
+                    f"stored {result_key} differs from independently recomputed evidence"
+                )
+        except (KeyError, TypeError, ValueError) as exc:
+            errors.append(f"{qtype} cannot be independently recomputed: {exc}")
+
     count_key = DOMINANCE_TYPES.get(qtype)
     if count_key:
         counts = result.get(count_key) or {}
@@ -557,6 +602,90 @@ def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any]
             metrics["transition_endpoint_segment_support"] = [start_support, end_support]
             if min(start_support, end_support) < policy.min_transition_run_length:
                 errors.append("relation transition lacks repeated support in an endpoint segment")
+    if qtype == "physical_visibility_occlusion_timeline":
+        blocked = [state.get("line_of_sight_blocked") for state in states]
+        statuses = [state.get("line_of_sight_status") for state in states]
+        if timeline.get("line_of_sight_evidence_status") != "evaluated":
+            errors.append("physical visibility question lacks evaluated blocker geometry")
+        if any(status != "evaluated" for status in statuses) or any(value is None for value in blocked):
+            errors.append("physical visibility is not evaluated in every temporal state")
+        elif blocked[0] == blocked[-1]:
+            errors.append("physical visibility question has no endpoint transition")
+        else:
+            segment = max(policy.min_transition_run_length, len(blocked) // 4)
+            support = [
+                sum(value == blocked[0] for value in blocked[:segment]),
+                sum(value == blocked[-1] for value in blocked[-segment:]),
+            ]
+            metrics["visibility_endpoint_segment_support"] = support
+            if min(support) < policy.min_transition_run_length:
+                errors.append("physical visibility transition lacks stable endpoint support")
+    if qtype == "metric_group_reorganization_over_video":
+        multi = result.get("multi_person_timeline") or {}
+        multi_states = multi.get("states") or []
+        person_ids = [str(value) for value in multi.get("metric_person_ids") or []]
+        if multi.get("status") != "ok" or len(person_ids) < 3:
+            errors.append("group reorganization requires at least three stable metric tracks")
+        _validate_time_series(
+            multi_states,
+            float(duration) if _finite(duration) else None,
+            policy.min_task4_span_ratio,
+            policy,
+            errors,
+            metrics,
+        )
+        aliases = group.get("person_display_aliases") or {}
+        identity_status = group.get("person_display_alias_status") or {}
+        _validate_person_descriptions(
+            aliases,
+            person_ids,
+            errors,
+            annotation_identity=identity_status.get("source") == "annotation_identity",
+        )
+        _validate_person_attribute_audit(group, person_ids, errors)
+        pair_count = len(person_ids) * (len(person_ids) - 1) // 2
+        for state in multi_states:
+            rows = state.get("pair_distances_m") or []
+            if len(rows) != pair_count or any(
+                not _finite(row.get("distance_m")) or float(row["distance_m"]) < 0
+                for row in rows
+            ):
+                errors.append("group timeline lacks a complete finite all-pairs distance matrix")
+                break
+            ordered = sorted(rows, key=lambda row: float(row["distance_m"]))
+            if state.get("closest_pair") != ordered[0].get("pair"):
+                errors.append("stored closest group pair differs from recomputed distances")
+                break
+            margin = float(ordered[1]["distance_m"]) - float(ordered[0]["distance_m"])
+            if not _finite(state.get("closest_pair_margin_m")) or abs(
+                float(state["closest_pair_margin_m"]) - margin
+            ) > 1e-6:
+                errors.append("stored closest-pair margin differs from recomputed distances")
+                break
+        if multi_states:
+            start_pair = str(multi_states[0].get("closest_pair"))
+            end_pair = str(multi_states[-1].get("closest_pair"))
+            if start_pair == end_pair:
+                errors.append("group reorganization has no endpoint closest-pair change")
+            segment = max(policy.min_transition_run_length, len(multi_states) // 4)
+            support = [
+                sum(str(row.get("closest_pair")) == start_pair for row in multi_states[:segment]),
+                sum(str(row.get("closest_pair")) == end_pair for row in multi_states[-segment:]),
+            ]
+            metrics["group_endpoint_segment_support"] = support
+            if min(support) < policy.min_transition_run_length:
+                errors.append("group reorganization lacks stable endpoint pair support")
+            endpoint_margins = [
+                float(row["closest_pair_margin_m"])
+                for row in multi_states[:segment] + multi_states[-segment:]
+                if _finite(row.get("closest_pair_margin_m"))
+            ]
+            if (
+                len(endpoint_margins) != 2 * segment
+                or min(endpoint_margins, default=0.0) < policy.min_group_pair_margin_m
+            ):
+                errors.append("group reorganization closest-pair margin is below threshold")
+
 
 
 def _validate_task3(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], metrics: dict[str, Any]) -> None:
@@ -650,6 +779,12 @@ def _validate_task5_egoexo(
 
     result = question["result_json"]
     duration = (group.get("video_window") or {}).get("duration_sec")
+    if group.get("pre_question_visual_evidence") is not True:
+        errors.append("EgoExo4D Task 5 gaze question lacks required pre-question visual evidence")
+    evidence_image = group.get("original_image")
+    if not isinstance(evidence_image, str) or not evidence_image.strip():
+        errors.append("EgoExo4D Task 5 gaze question lacks a published evidence image")
+
     if (
         not _finite(duration)
         or not policy.min_task5_egoexo_window_sec
@@ -738,7 +873,37 @@ def _validate_task5_egoexo(
 
 def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], metrics: dict[str, Any]) -> None:
     """Independently audit annotation-derived gaze/object/wearer claims."""
-    if question.get("question_type") in {"gaze_point_inside_relation_mask_at_anchor", "gaze_target_sequence_across_clip_checkpoints"}:
+    if question.get("question_type") == "human_object_net_displacement_ratio":
+        result = question["result_json"]
+        if result.get("annotation_direct") is not True or result.get("annotation_source") != "BEHAVE":
+            errors.append("Task 5 motion ratio is not directly derived from BEHAVE annotations")
+        duration = (group.get("video_window") or {}).get("duration_sec")
+        if not _finite(duration) or not 14.5 <= float(duration) <= 15.5:
+            errors.append("Task 5 BEHAVE motion-ratio video must be about 15 seconds")
+        human = result.get("human_net_displacement_m")
+        obj = result.get("object_net_displacement_m")
+        ratio = result.get("object_to_human_displacement_ratio")
+        if not all(_finite(value) and float(value) > 0 for value in (human, obj, ratio)):
+            errors.append("Task 5 BEHAVE motion ratio lacks positive finite measurements")
+        elif abs(float(obj) / float(human) - float(ratio)) > 1e-6:
+            errors.append("Task 5 BEHAVE motion ratio is inconsistent with its displacements")
+        endpoint = result.get("robust_endpoint_policy") or {}
+        if endpoint.get("method") != "componentwise_median" or int(endpoint.get("support_frames") or 0) < 15:
+            errors.append("Task 5 BEHAVE motion ratio lacks robust endpoint aggregation")
+        if int(result.get("state_count") or 0) < 400:
+            errors.append("Task 5 BEHAVE motion ratio lacks full-window temporal support")
+        scope = str(result.get("evidence_scope", "")).lower()
+        if "smpl-h" not in scope or "registered object" not in scope or "net displacement" not in scope:
+            errors.append("Task 5 BEHAVE motion-ratio evidence scope is incomplete")
+        metrics.update({
+            "human_net_displacement_m": human,
+            "object_net_displacement_m": obj,
+            "object_to_human_displacement_ratio": ratio,
+        })
+        return
+    if question.get("question_type") in {
+        "gaze_point_inside_relation_mask_at_anchor", "gaze_target_sequence_across_clip_checkpoints",
+    }:
         _validate_task5_egoexo(group, question, policy, errors, metrics)
         return
     result = question["result_json"]
@@ -873,8 +1038,13 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
         if run_start is not None and direct_hits_in_run >= policy.min_task5_gaze_run_states:
             target_runs.append((run_start, last_hit))
         published_runs = [(int(event["start_index"]), int(event["end_index"])) for event in events]
-        if target_runs != published_runs:
-            errors.append("repeated-gaze window contains an unreported target gaze or mismatched event bounds")
+        if (
+            len(target_runs) < 2
+            or len(published_runs) != 2
+            or published_runs[0] != target_runs[0]
+            or published_runs[-1] != target_runs[-1]
+        ):
+            errors.append("published gaze events are not the first and last sustained target gazes in the clip")
         if len(events) != 2:
             errors.append("repeated-gaze Task 5 QA must contain exactly two gaze events")
         elif float(events[1]["start_time_s"]) - float(events[0]["end_time_s"]) < policy.min_task5_event_gap_sec:

@@ -9,6 +9,7 @@ from limo4si.task5_scaling import (
     REQUESTED_CATEGORIES,
     Task5CandidatePolicy,
     _expanded_window,
+    balanced_category_targets,
     generate_task5_candidates,
     select_balanced_candidates,
     sustained_relation_sequence,
@@ -29,19 +30,49 @@ class Task5ScalingTests(unittest.TestCase):
             target_window_sec=4.0, min_window_sec=0.5, max_window_sec=6.0,
         )
 
-    def test_automatic_miner_finds_two_per_category(self):
+    def test_single_short_source_reports_nonoverlap_deficits(self):
         candidates, diagnostics = generate_task5_candidates(self.analysis, self.sample_only_policy)
         selected, report = select_balanced_candidates(candidates, target_per_category=2)
-        self.assertEqual(report["status"], "ok")
-        self.assertEqual(Counter(row["category"] for row in selected), Counter({value: 2 for value in REQUESTED_CATEGORIES}))
         expected = 2 * len(REQUESTED_CATEGORIES)
         self.assertGreaterEqual(diagnostics["candidate_count"], expected)
-        self.assertEqual(len({(row["sequence_name"], *row["window_frames"]) for row in selected}), expected)
+        self.assertEqual(report["status"], "insufficient_candidates")
+        self.assertLess(len(selected), expected)
+        for index, left in enumerate(selected):
+            for right in selected[index + 1:]:
+                if left["sequence_name"] != right["sequence_name"]:
+                    continue
+                self.assertLess(
+                    min(left["window_frames"][1], right["window_frames"][1]),
+                    max(left["window_frames"][0], right["window_frames"][0]),
+                )
 
-    def test_window_expansion_uses_real_nine_second_annotation_span(self):
+    def test_balanced_selector_reaches_total_with_distinct_sources(self):
+        candidates = []
+        for category in REQUESTED_CATEGORIES:
+            for index in range(2):
+                candidates.append({
+                    "id": f"{category}_{index}",
+                    "category": category,
+                    "sequence_name": f"sequence_{category}_{index}",
+                    "object_id": f"object_{index}",
+                    "window_frames": [0, 150],
+                    "candidate_score": 1.0,
+                })
+        selected, report = select_balanced_candidates(candidates, target_per_category=2)
+        self.assertEqual(report["status"], "ok")
+        self.assertEqual(Counter(row["category"] for row in selected), Counter({
+            value: 2 for value in REQUESTED_CATEGORIES
+        }))
+        self.assertEqual(balanced_category_targets(40), {
+            REQUESTED_CATEGORIES[0]: 14,
+            REQUESTED_CATEGORIES[1]: 13,
+            REQUESTED_CATEGORIES[2]: 13,
+        })
+
+    def test_window_expansion_uses_real_fifteen_second_annotation_span(self):
         states = {
             frame: {"frame_index": frame, "time_s": frame / 10.0}
-            for frame in range(121)
+            for frame in range(201)
         }
         policy = Task5CandidatePolicy()
         centered = _expanded_window(states, 40, 60, policy)
@@ -49,28 +80,23 @@ class Task5ScalingTests(unittest.TestCase):
         start, end = centered
         self.assertLessEqual(start, 40)
         self.assertGreaterEqual(end, 60)
-        self.assertAlmostEqual(states[end]["time_s"] - states[start]["time_s"], 9.0, places=6)
+        self.assertAlmostEqual(states[end]["time_s"] - states[start]["time_s"], 15.0, places=6)
 
-        end_aligned = _expanded_window(states, 90, 110, policy, align_end=True)
+        end_aligned = _expanded_window(states, 160, 180, policy, align_end=True)
         self.assertIsNotNone(end_aligned)
         start, end = end_aligned
-        self.assertEqual(end, 110)
-        self.assertAlmostEqual(states[end]["time_s"] - states[start]["time_s"], 9.0, places=6)
+        self.assertEqual(end, 180)
+        self.assertAlmostEqual(states[end]["time_s"] - states[start]["time_s"], 15.0, places=6)
 
-    def test_default_policy_uses_real_nine_second_source_coverage(self):
+    def test_default_policy_rejects_fixture_without_fifteen_second_coverage(self):
         candidates, diagnostics = generate_task5_candidates(self.analysis)
-        self.assertGreater(len(candidates), 0)
-        times = {int(state["frame_index"]): float(state["time_s"]) for state in self.analysis["states"]}
-        for candidate in candidates:
-            start, end = candidate["window_frames"]
-            self.assertGreaterEqual(times[end] - times[start], 8.5)
-            self.assertLessEqual(times[end] - times[start], 10.0)
+        self.assertEqual(candidates, [])
         self.assertEqual(diagnostics["policy"]["min_event_gap_sec"], 2.0)
 
     def test_default_policy_requires_two_second_repeated_gaze_gap(self):
         policy = Task5CandidatePolicy()
         self.assertEqual(policy.min_event_gap_sec, 2.0)
-        self.assertEqual((policy.min_window_sec, policy.target_window_sec, policy.max_window_sec), (8.5, 9.0, 10.0))
+        self.assertEqual((policy.min_window_sec, policy.target_window_sec, policy.max_window_sec), (14.5, 15.0, 15.5))
 
     def test_published_task5_options_have_equal_information_slots(self):
         for line in (ROOT / "outputs/qa/task5_scaled_qa.jsonl").read_text().splitlines():

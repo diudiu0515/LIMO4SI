@@ -25,14 +25,14 @@ class AnnotationEvidenceError(ValueError):
     """The annotation cannot support release-grade deterministic QA."""
 
 
-def _dominant(values: Sequence[str]) -> tuple[str, float, float]:
+def dominant_relation(values: Sequence[str]) -> tuple[str, float, float]:
     ordered = Counter(values).most_common()
     winner, count = ordered[0]
     runner_up = ordered[1][1] if len(ordered) > 1 else 0
     return winner, count / len(values), (count - runner_up) / len(values)
 
 
-def _validate_frame(scene: Mapping[str, Any]) -> None:
+def validate_human_coordinate_frame(scene: Mapping[str, Any]) -> None:
     frame = scene.get("human_coordinate_frame")
     if not isinstance(frame, Mapping):
         raise AnnotationEvidenceError("missing human_coordinate_frame")
@@ -54,7 +54,7 @@ def _coverage(scene: Mapping[str, Any], person_id: str) -> float:
     return found / len(frames) if frames else 0.0
 
 
-def _identity_evidence(scene: Mapping[str, Any]) -> tuple[dict[str, str], dict[str, Any], dict[str, Any]]:
+def annotation_identity_evidence(scene: Mapping[str, Any]) -> tuple[dict[str, str], dict[str, Any], dict[str, Any]]:
     configured = scene.get("person_identities") or {}
     aliases = {
         "A": str(configured.get("A") or "the first annotated person"),
@@ -82,7 +82,7 @@ def _identity_evidence(scene: Mapping[str, Any]) -> tuple[dict[str, str], dict[s
     return aliases, audit, status
 
 
-def _facing_text(state: str, a: str, b: str) -> str:
+def facing_relation_text(state: str, a: str, b: str) -> str:
     return {
         "facing_each_other": f"For most of the clip, {a} and {b} face each other.",
         "back_to_back_or_away": f"For most of the clip, {a} and {b} face away from each other.",
@@ -90,7 +90,7 @@ def _facing_text(state: str, a: str, b: str) -> str:
     }[state]
 
 
-def _options(correct: str, alternatives: list[str], seed: str) -> tuple[list[dict[str, str]], str]:
+def build_balanced_options(correct: str, alternatives: list[str], seed: str) -> tuple[list[dict[str, str]], str]:
     if len(alternatives) != 3 or len({correct, *alternatives}) != 4:
         raise ValueError("four unique semantic options are required")
     offset = sum(map(ord, seed)) % 4
@@ -106,7 +106,7 @@ def generate_task4_group(
 ) -> dict[str, Any]:
     """Generate one high-confidence question without dataset-specific case ids."""
     policy = policy or Task4GenerationPolicy()
-    _validate_frame(scene)
+    validate_human_coordinate_frame(scene)
     timeline = pair_timeline(scene)
     states = timeline.get("states") or []
     if timeline.get("status") != "ok" or len(states) < policy.min_states:
@@ -115,7 +115,7 @@ def generate_task4_group(
     times = [float(state["t"]) for state in states]
     if duration <= 0 or (times[-1] - times[0]) / duration < policy.min_span_ratio:
         raise AnnotationEvidenceError("annotation time coverage is below threshold")
-    aliases, identity_audit, alias_status = _identity_evidence(scene)
+    aliases, identity_audit, alias_status = annotation_identity_evidence(scene)
     a, b = aliases["A"], aliases["B"]
     qtype = ""
     analysis: dict[str, Any] = {}
@@ -178,19 +178,19 @@ def generate_task4_group(
                 method = "Compares translation-only and anchor-rotation-only counterfactual relations."
             except ValueError:
                 facing = [str(state["facing_state"]) for state in states]
-                winner, dominance, margin = _dominant(facing)
+                winner, dominance, margin = dominant_relation(facing)
                 if dominance < policy.min_dominance_ratio or margin < policy.min_dominance_margin:
                     raise AnnotationEvidenceError("no unambiguous supported Task 4 capability")
                 qtype = "dominant_facing_relation_over_video"
-                correct = _facing_text(winner, a, b)
-                alternatives = [_facing_text(value, a, b) for value in ("facing_each_other", "back_to_back_or_away", "side_by_side_or_oblique") if value != winner]
+                correct = facing_relation_text(winner, a, b)
+                alternatives = [facing_relation_text(value, a, b) for value in ("facing_each_other", "back_to_back_or_away", "side_by_side_or_oblique") if value != winner]
                 alternatives.append(f"For most of the clip, {a} and {b} have no dominant facing relation.")
                 analysis = {"facing_counts": dict(Counter(facing))}
                 question_text = f"What body-facing relation dominates between {a} and {b} over the annotated time window?"
                 explanation = "The deterministic timeline aggregates the annotation-provided body-forward vectors over the complete window."
                 method = "Projects annotated body-forward vectors and applies temporal dominance gates."
 
-    options, label = _options(correct, alternatives, str(scene["scene_id"]) + qtype)
+    options, label = build_balanced_options(correct, alternatives, str(scene["scene_id"]) + qtype)
     result = {
         "scene_id": scene["scene_id"], "answer_type": qtype,
         "T_Q": True, "H_Q": True, "S_Q": True, "pair_timeline": timeline,

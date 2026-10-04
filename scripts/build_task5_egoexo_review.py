@@ -153,9 +153,9 @@ def render_evidence(path: Path, video: Path, anchors: list[dict[str, Any]], mask
         cv2.drawMarker(canvas, (gaze_x, gaze_y), (20, 20, 245), cv2.MARKER_CROSS, 28, 4)
         cv2.circle(canvas, (gaze_x, gaze_y), 11, (20, 20, 245), 3)
         cv2.rectangle(canvas, (0, 0), (width, 66), (18, 25, 38), -1)
-        label = f"moment {index}  clip t={anchor['clip_time_s']:.1f}s  hit: {anchor['object_name']}"
+        label = f"checkpoint {index}  clip t={anchor['clip_time_s']:.1f}s"
         cv2.putText(canvas, label, (12, 27), cv2.FONT_HERSHEY_SIMPLEX, 0.58, (255, 255, 255), 2)
-        detail = f"margin {anchor['boundary_margin_px']:.1f}px  unique among {anchor['annotated_mask_count']} masks"
+        detail = "red: gaze point   green: uniquely hit annotated region"
         cv2.putText(canvas, detail, (12, 53), cv2.FONT_HERSHEY_SIMPLEX, 0.48, (220, 230, 240), 1)
         panels.append(canvas)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -411,7 +411,11 @@ def build_case(
         "title": f"Task 5 · EgoExo4D · {take_name}",
         "video_clip": f"{media_url_prefix.rstrip('/')}/{clip_path.name}",
         "original_image": f"{media_url_prefix.rstrip('/')}/{evidence_path.name}",
-        "original_caption": "Post-answer audit: green is the uniquely hit Relations mask; red is synchronized 2D gaze.",
+        "pre_question_visual_evidence": True,
+        "original_caption": (
+            "Question evidence at the three stated checkpoints: red is synchronized 2D gaze; "
+            "green is the uniquely hit annotated region. Object names are intentionally hidden."
+        ),
         "video_window": {
             "source_sequence": take_name,
             "start_sec": round(start_sec, 6),

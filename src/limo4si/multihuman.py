@@ -223,12 +223,60 @@ def pair_timeline(scene: Mapping[str, Any], a_id: str = 'A', b_id: str = 'B') ->
     }
 
 
+
+def distance_evolution_pattern(
+    states: Sequence[Mapping[str, Any]], minimum_change_m: float = 0.25,
+) -> dict[str, Any]:
+    """Classify a salient full-window distance trend from metric pair states."""
+    if len(states) < 8:
+        raise ValueError("distance evolution needs at least eight states")
+    distances = [float(state["distance_m"]) for state in states]
+    count = len(distances)
+    width = max(2, count // 4)
+    start = sum(distances[:width]) / width
+    end = sum(distances[-width:]) / width
+    minimum_index = min(range(count), key=distances.__getitem__)
+    maximum_index = max(range(count), key=distances.__getitem__)
+    minimum = distances[minimum_index]
+    maximum = distances[maximum_index]
+    if width <= minimum_index < count - width and min(start, end) - minimum >= minimum_change_m:
+        pattern, salience = "closer_then_farther", min(start, end) - minimum
+    elif width <= maximum_index < count - width and maximum - max(start, end) >= minimum_change_m:
+        pattern, salience = "farther_then_closer", maximum - max(start, end)
+    elif end - start <= -minimum_change_m:
+        pattern, salience = "continuous_closer", start - end
+    elif end - start >= minimum_change_m:
+        pattern, salience = "continuous_farther", end - start
+    else:
+        raise ValueError("distance evolution is not salient")
+    return {
+        "pattern": pattern,
+        "salience_m": salience,
+        "start_segment_mean_m": start,
+        "end_segment_mean_m": end,
+        "minimum_index": minimum_index,
+        "maximum_index": maximum_index,
+    }
+
+
 def derive_task4_answer_semantics(question_type: str, result: Mapping[str, Any]) -> dict[str, Any]:
     """Derive the code-owned answer key from evidence, never from wording."""
     if question_type in {"visible_pair_topology_change_2d", "visible_pair_topology_consistency_2d"}:
         start = {row["pair"]: float(row["distance"]) for row in result.get("start_pair_distances_normalized", [])}
         end = {row["pair"]: float(row["distance"]) for row in result.get("end_pair_distances_normalized", [])}
         return {"kind": "image_plane_closest_pair", "start_pair": min(start, key=start.get), "end_pair": min(end, key=end.get)}
+    if question_type == "metric_group_reorganization_over_video":
+        timeline = result.get("multi_person_timeline") or {}
+        states = timeline.get("states") or []
+        if timeline.get("status") != "ok" or not states:
+            raise ValueError("group-reorganization semantics require a non-empty multi-person timeline")
+        return {
+            "kind": question_type,
+            "metric_person_ids": list(timeline.get("metric_person_ids") or []),
+            "start_closest_pair": str(states[0]["closest_pair"]),
+            "end_closest_pair": str(states[-1]["closest_pair"]),
+            "closest_pair_sequence": [str(state["closest_pair"]) for state in states],
+        }
     states = (result.get("pair_timeline") or {}).get("states") or []
     if not states:
         raise ValueError("Task 4 metric answer semantics require a non-empty pair timeline")
@@ -261,6 +309,15 @@ def derive_task4_answer_semantics(question_type: str, result: Mapping[str, Any])
         fields["field_state"] = visibility[0]
     elif question_type == "body_forward_field_transition_over_video":
         fields["field_sequence"] = [state["body_forward_field"]["state"] for state in states]
+    elif question_type == "physical_visibility_occlusion_timeline":
+        blocked = [state.get("line_of_sight_blocked") for state in states]
+        if any(value is None for value in blocked):
+            raise ValueError("physical-visibility semantics require evaluated blocker geometry")
+        fields["blocked_sequence"] = blocked
+        fields["start_visibility"] = "blocked" if blocked[0] else "clear"
+        fields["end_visibility"] = "blocked" if blocked[-1] else "clear"
+    elif question_type == "metric_distance_pattern_over_video":
+        fields["distance_pattern"] = str(distance_evolution_pattern(states)["pattern"])
     fields.update({"start_distance_m": distances[0], "end_distance_m": distances[-1], "minimum_distance_m": min(distances), "maximum_distance_m": max(distances), "maximum_distance_index": distances.index(max(distances))})
     return fields
 
