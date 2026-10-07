@@ -44,7 +44,10 @@ def validate_human_coordinate_frame(scene: Mapping[str, Any]) -> None:
     if "forward" not in str(frame.get("forward_axis", "")).lower():
         raise AnnotationEvidenceError("forward axis is not explicit")
     right_axis = str(frame.get("right_axis", "")).lower()
-    if "scene-up cross forward" not in right_axis and not ("explicit" in right_axis and "+x" in right_axis):
+    if "scene-up cross forward" not in right_axis and not (
+        "explicit" in right_axis
+        and any(marker in right_axis for marker in ("+x", "-x", "human-right", "anatomical-right"))
+    ):
         raise AnnotationEvidenceError("right axis is not explicit")
 
 

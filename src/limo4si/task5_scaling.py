@@ -95,6 +95,30 @@ def _event_duration(event: Mapping[str, Any]) -> float:
     return float(event["end_time_s"]) - float(event["start_time_s"])
 
 
+def _target_event_pair_closes_window(
+    events: Sequence[Mapping[str, Any]],
+    first: Mapping[str, Any],
+    second: Mapping[str, Any],
+    window: tuple[int, int],
+) -> bool:
+    """Require the selected pair to bound all target-gaze runs visible in the clip."""
+    window_start, window_end = window
+    overlapping = [
+        event for event in events
+        if int(event["end_index"]) >= window_start
+        and int(event["start_index"]) <= window_end
+    ]
+
+    def bounds(event: Mapping[str, Any]) -> tuple[int, int]:
+        return int(event["start_index"]), int(event["end_index"])
+
+    return (
+        len(overlapping) >= 2
+        and bounds(overlapping[0]) == bounds(first)
+        and bounds(overlapping[-1]) == bounds(second)
+    )
+
+
 def _relation_run_length(
     states: Mapping[int, Mapping[str, Any]], frame: int, object_id: str,
 ) -> int:
@@ -276,14 +300,8 @@ def generate_task5_candidates(
             if window is None:
                 rejection_counts["repeated_no_target_duration_annotation_window"] += 1
                 continue
-            target_events_in_window = [
-                event for event in raw_by_object[object_id]
-                if int(event["start_index"]) >= window[0] and int(event["end_index"]) <= window[1]
-            ]
-            if (
-                len(target_events_in_window) < 2
-                or target_events_in_window[0] is not first
-                or target_events_in_window[-1] is not second
+            if not _target_event_pair_closes_window(
+                raw_by_object[object_id], first, second, window,
             ):
                 rejection_counts["repeated_extra_target_gaze_in_public_window"] += 1
                 continue
@@ -439,7 +457,7 @@ def generate_task5_candidates(
 
 def select_balanced_candidates(
     candidates: Sequence[Mapping[str, Any]], target_per_category: int,
-    max_cases_per_sequence: int = 0,
+    max_cases_per_sequence: int = 1,
     category_targets: Mapping[str, int] | None = None,
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
     """Select every category with deterministic sequence/object diversity."""
@@ -448,25 +466,47 @@ def select_balanced_candidates(
     categories = list(REQUESTED_CATEGORIES)
     targets = {category: target_per_category for category in categories}
     if category_targets:
-        unknown = sorted(set(category_targets) - set(categories))
-        if unknown or any(int(value) < 1 for value in category_targets.values()):
+        normalized_targets: dict[str, int] = {}
+        unknown: list[str] = []
+        for key, value in category_targets.items():
+            normalized = CATEGORY_BY_TYPE.get(str(key), str(key))
+            if normalized not in categories:
+                unknown.append(str(key))
+                continue
+            if normalized in normalized_targets and normalized_targets[normalized] != int(value):
+                raise ValueError(
+                    f"conflicting category targets for {normalized}: "
+                    f"{normalized_targets[normalized]} and {int(value)}"
+                )
+            normalized_targets[normalized] = int(value)
+        if unknown or any(value < 1 for value in normalized_targets.values()):
             raise ValueError(f"invalid category targets: unknown={unknown}, values={category_targets}")
-        targets.update({key: int(value) for key, value in category_targets.items()})
-    sequence_names = sorted({str(row["sequence_name"]) for row in candidates})
-    total_target = sum(targets.values())
-    if max_cases_per_sequence <= 0:
-        max_cases_per_sequence = max(1, math.ceil(total_target / max(1, len(sequence_names))) + 1)
+        targets.update(normalized_targets)
+    if max_cases_per_sequence != 1:
+        raise ValueError(
+            "release selection requires exactly one question per source sequence"
+        )
+    pools = {
+        category: [dict(row) for row in candidates if row["category"] == category]
+        for category in categories
+    }
+    sequence_capabilities: dict[str, set[str]] = defaultdict(set)
+    for row in candidates:
+        if row["category"] in categories:
+            sequence_capabilities[str(row["sequence_name"])].add(str(row["category"]))
     selected: list[dict[str, Any]] = []
     sequence_counts: Counter[str] = Counter()
     object_category_counts: Counter[tuple[str, str]] = Counter()
     transition_counts: Counter[tuple[str, str]] = Counter()
     used_windows: set[tuple[str, int, int]] = set()
-    deficits: dict[str, int] = {}
-    for category in categories:
-        pool = [dict(row) for row in candidates if row["category"] == category]
-        while sum(row["category"] == category for row in selected) < targets[category]:
+    remaining = dict(targets)
+    while any(value > 0 for value in remaining.values()):
+        eligible_by_category: dict[str, list[tuple[float, str, dict[str, Any], tuple[str, int, int]]]] = {}
+        for category in categories:
+            if remaining[category] <= 0:
+                continue
             eligible = []
-            for row in pool:
+            for row in pools[category]:
                 key = (str(row["sequence_name"]), int(row["window_frames"][0]), int(row["window_frames"][1]))
                 if key in used_windows or sequence_counts[str(row["sequence_name"])] >= max_cases_per_sequence:
                     continue
@@ -492,20 +532,42 @@ def select_balanced_candidates(
                 if signature:
                     diversity += transition_counts[(category, signature)] * 10.0
                 eligible.append((float(row["candidate_score"]) - diversity, row["id"], row, key))
-            if not eligible:
-                break
-            _, _, chosen, window_key = max(eligible, key=lambda item: (item[0], item[1]))
-            selected.append(chosen)
-            used_windows.add(window_key)
-            sequence_counts[str(chosen["sequence_name"])] += 1
-            object_category_counts[(category, str(chosen["object_id"]))] += 1
-            signature = str(chosen.get("transition_signature") or "")
-            if signature:
-                transition_counts[(category, signature)] += 1
-            pool = [row for row in pool if row["id"] != chosen["id"]]
-        count = sum(row["category"] == category for row in selected)
-        if count < targets[category]:
-            deficits[category] = targets[category] - count
+            if eligible:
+                eligible_by_category[category] = eligible
+        if not eligible_by_category:
+            break
+        # Fill the category with the fewest independent remaining sources per
+        # required slot first.  This removes category-order starvation while
+        # keeping selection deterministic and one-question-per-source.
+        category = min(
+            eligible_by_category,
+            key=lambda value: (
+                len({item[3][0] for item in eligible_by_category[value]}) / remaining[value],
+                categories.index(value),
+            ),
+        )
+        eligible = eligible_by_category[category]
+        _, _, chosen, window_key = max(
+            eligible,
+            key=lambda item: (
+                -len(sequence_capabilities[str(item[2]["sequence_name"])]),
+                item[0],
+                item[1],
+            ),
+        )
+        selected.append(chosen)
+        used_windows.add(window_key)
+        sequence_counts[str(chosen["sequence_name"])] += 1
+        object_category_counts[(category, str(chosen["object_id"]))] += 1
+        signature = str(chosen.get("transition_signature") or "")
+        if signature:
+            transition_counts[(category, signature)] += 1
+        pools[category] = [row for row in pools[category] if row["id"] != chosen["id"]]
+        remaining[category] -= 1
+    deficits = {
+        category: remaining[category]
+        for category in categories if remaining[category] > 0
+    }
     selected.sort(key=lambda row: (categories.index(row["category"]), row["sequence_name"], row["id"]))
     return selected, {
         "status": "ok" if not deficits else "insufficient_candidates",
@@ -515,5 +577,6 @@ def select_balanced_candidates(
         "selected_counts": dict(Counter(row["category"] for row in selected)),
         "selected_sequence_counts": dict(sequence_counts),
         "max_cases_per_sequence": max_cases_per_sequence,
+        "one_question_per_source_video": True,
         "deficits": deficits,
     }

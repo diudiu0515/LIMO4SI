@@ -4,7 +4,7 @@ from __future__ import annotations
 import copy
 from collections import Counter, defaultdict
 from dataclasses import dataclass
-from typing import Any, Callable, Mapping, Sequence
+from typing import Any, Callable, Iterable, Mapping, Sequence
 
 from .multihuman import (
     derive_task4_answer_semantics,
@@ -29,6 +29,7 @@ from .task4_dynamics import (
     passing_side_and_final_position,
     relation_change_cause,
     reunion_relation_restoration,
+    stable_visibility_timeline,
 )
 
 
@@ -157,7 +158,7 @@ def _seal(
         "generator": "limo4si.task4_scaling.generate_task4_candidates",
         "reasoning_owner": "deterministic_code",
     })
-    return {
+    group = {
         "name": str(scene["scene_id"]),
         "title": str(scene.get("title") or scene["scene_id"]),
         "dataset": str(scene.get("dataset") or "annotation bundle"),
@@ -175,6 +176,9 @@ def _seal(
         "qa": [question],
         "_candidate_score": 0.0,
     }
+    if scene.get("video_identity_overlay") is not None:
+        group["video_identity_overlay"] = copy.deepcopy(scene["video_identity_overlay"])
+    return group
 
 
 def _distance_candidate(scene: Mapping[str, Any], base: tuple[Any, ...], policy: Task4ScalePolicy, realizer: LanguageRealizer | None) -> dict[str, Any]:
@@ -208,15 +212,22 @@ def _distance_candidate(scene: Mapping[str, Any], base: tuple[Any, ...], policy:
 def _passing_candidate(scene: Mapping[str, Any], base: tuple[Any, ...], policy: Task4ScalePolicy, realizer: LanguageRealizer | None) -> dict[str, Any]:
     timeline, states, aliases, audit, alias_status = base
     validate_human_coordinate_frame(scene)
-    analysis = passing_side_and_final_position(states)
-    a, b = aliases["A"], aliases["B"]
+    relation_key = str(scene.get("passing_relation_key") or "a_relative_to_b")
+    analysis = passing_side_and_final_position(states, relation_key=relation_key)
+    actor_id, anchor_id = str(analysis["actor_id"]), str(analysis["anchor_id"])
+    calibrated = scene.get("face_forward_person_ids")
+    if calibrated is not None and anchor_id not in {str(value) for value in calibrated}:
+        raise AnnotationEvidenceError(
+            f"passing anchor {anchor_id} lacks an explicitly calibrated face-forward axis"
+        )
+    actor, anchor = aliases[actor_id], aliases[anchor_id]
     side = str(analysis["passing_side"])
     other_side = "left" if side == "right" else "right"
     final_relation = _relation(str(analysis["final_relation"]))
     start_relation = _relation(str(analysis["start_relation"]))
 
     def text(pass_side: str, relation: str) -> str:
-        return f"{_sentence(a)} passes on {b}'s {pass_side} side and finishes {relation} relative to {b}."
+        return f"{_sentence(actor)} passes on {anchor}'s {pass_side} side and finishes {relation} relative to {anchor}."
 
     correct = text(side, final_relation)
     alternatives = [
@@ -235,7 +246,7 @@ def _passing_candidate(scene: Mapping[str, Any], base: tuple[Any, ...], policy: 
     }
     candidate = _seal(
         scene, "passing_side_and_final_position",
-        f"As {a} passes {b}, on which of {b}'s body-centered sides does the pass occur, and where does {a} finish?",
+        f"As {actor} passes {anchor}, on which of {anchor}'s body-centered sides does the pass occur, and where does {actor} finish?",
         correct, alternatives, {"pair_timeline": timeline, "passing_analysis": analysis},
         "The signed body-frame path crosses sides at an interior closest approach.",
         "Uses the annotated face-forward human frame, approach minimum, side crossing, and final relation.",
@@ -248,6 +259,38 @@ def _passing_candidate(scene: Mapping[str, Any], base: tuple[Any, ...], policy: 
 def _dominant_candidate(scene: Mapping[str, Any], base: tuple[Any, ...], policy: Task4ScalePolicy, realizer: LanguageRealizer | None) -> dict[str, Any]:
     timeline, states, aliases, audit, alias_status = base
     validate_human_coordinate_frame(scene)
+    if scene.get("dominant_relation_mode") == "body_centric_position":
+        calibrated = scene.get("face_forward_person_ids")
+        if calibrated is not None and "A" not in {str(value) for value in calibrated}:
+            raise AnnotationEvidenceError(
+                "dominant body-centric position requires A's calibrated face-forward axis"
+            )
+        relations = [str(state["b_relative_to_a"]) for state in states]
+        winner, dominance, margin = dominant_relation(relations)
+        if dominance < policy.generation.min_dominance_ratio or margin < policy.generation.min_dominance_margin:
+            raise ValueError("dominant body-centric position is ambiguous")
+        a, b = aliases["A"], aliases["B"]
+        correct = f"For most of the clip, {b} stays {_relation(winner)} relative to {a}."
+        relation_order = (
+            "left_front", "center_front", "right_front",
+            "left_same_depth", "right_same_depth",
+            "left_behind", "center_behind", "right_behind",
+        )
+        alternatives = [
+            f"For most of the clip, {b} stays {_relation(value)} relative to {a}."
+            for value in relation_order if value != winner
+        ][:3]
+        candidate = _seal(
+            scene, "dominant_body_centric_position",
+            f"Allowing for brief deviations, where does {b} remain relative to {a} for most of the clip?",
+            correct, alternatives,
+            {"pair_timeline": timeline, "relation_counts": dict(Counter(relations))},
+            "The answer is the sustained majority relation in the complete annotated timeline.",
+            "Projects the other participant into the anchor's calibrated face-forward/right frame and applies dominance and margin gates.",
+            aliases, audit, alias_status, realizer,
+        )
+        candidate["_candidate_score"] = dominance + margin
+        return candidate
     facing = [str(state["facing_state"]) for state in states]
     winner, dominance, margin = dominant_relation(facing)
     if dominance < policy.generation.min_dominance_ratio or margin < policy.generation.min_dominance_margin:
@@ -369,31 +412,31 @@ def _visibility_candidate(scene: Mapping[str, Any], base: tuple[Any, ...], polic
     statuses = [state.get("line_of_sight_status") for state in states]
     if any(status != "evaluated" for status in statuses) or any(value is None for value in blocked):
         raise ValueError("physical blocker geometry is unavailable")
-    span = max(policy.min_transition_run_states, len(states) // 4)
-    if blocked[0] == blocked[-1]:
-        raise ValueError("physical visibility does not change between stable endpoints")
-    if (
-        sum(value == blocked[0] for value in blocked[:span]) < policy.min_transition_run_states
-        or sum(value == blocked[-1] for value in blocked[-span:]) < policy.min_transition_run_states
-    ):
-        raise ValueError("visibility transition lacks stable endpoint support")
+    analysis = stable_visibility_timeline(
+        [bool(value) for value in blocked],
+        minimum_run_states=policy.min_transition_run_states,
+    )
     texts = {
-        (False, False): "Their physical line of sight stays clear throughout.",
-        (True, True): "Their physical line of sight stays blocked throughout.",
-        (False, True): "Their physical line of sight changes from clear to blocked.",
-        (True, False): "Their physical line of sight changes from blocked to clear.",
+        ("clear", "blocked"): "It is clear at first, then becomes blocked and remains blocked.",
+        ("blocked", "clear"): "It is blocked at first, then becomes clear and remains clear.",
+        ("clear", "blocked", "clear"): "It is clear at first, becomes blocked, and then becomes clear again.",
+        ("blocked", "clear", "blocked"): "It is blocked at first, becomes clear, and then becomes blocked again.",
     }
-    key = (bool(blocked[0]), bool(blocked[-1]))
+    key = tuple(analysis["stable_states"])
+    if key not in texts:
+        raise ValueError(f"unsupported stable physical-visibility pattern: {key}")
     candidate = _seal(
         scene, "physical_visibility_occlusion_timeline",
-        f"How does the physical line of sight between {aliases['A']} and {aliases['B']} change across the clip?",
+        f"Before, during, and after the movement, how does the physical line of sight between {aliases['A']} and {aliases['B']} change?",
         texts[key], [text for state, text in texts.items() if state != key],
-        {"pair_timeline": timeline},
-        "The annotated blocker geometry intersects the head-to-head segment at one stable endpoint but not the other.",
+        {"pair_timeline": timeline, "visibility_timeline_analysis": analysis},
+        "Exact annotated blocker geometry intersects the head-to-head segment in the stated stable phases.",
         "Evaluates head-to-head segment intersection against annotated blocker geometry in every temporal state.",
         aliases, audit, alias_status, realizer,
     )
-    candidate["_candidate_score"] = sum(left != right for left, right in zip(blocked, blocked[1:]))
+    candidate["_candidate_score"] = min(
+        int(run["state_count"]) for run in analysis["stable_runs"]
+    ) + 0.01 * int(analysis["transition_count"])
     return candidate
 
 
@@ -416,12 +459,31 @@ def generate_task4_candidates(
     base = _base(scene, policy)
     candidates: list[dict[str, Any]] = []
     rejected: dict[str, str] = {}
-    for builder in _BUILDERS:
+    declared = scene.get("supported_task4_capabilities")
+    if declared is not None:
+        supported = {str(value) for value in declared}
+        unknown = supported - set(TASK4_CAPABILITIES)
+        if unknown:
+            raise AnnotationEvidenceError(
+                f"scene declares unknown Task 4 capabilities: {sorted(unknown)}"
+            )
+    else:
+        supported = set(TASK4_CAPABILITIES)
+    for builder, expected_capability in zip(_BUILDERS, TASK4_CAPABILITIES):
+        if expected_capability not in supported:
+            rejected[builder.__name__.removeprefix("_").removesuffix("_candidate")] = (
+                "source annotation capability is not declared"
+            )
+            continue
         try:
             candidate = builder(scene, copy.deepcopy(base), policy, None)
             capability = capability_for(candidate["qa"][0]["question_type"])
             if capability is None:
                 raise RuntimeError("candidate question type is outside the Task 4 contract")
+            if capability != expected_capability:
+                raise RuntimeError(
+                    f"builder capability mismatch: expected {expected_capability}, got {capability}"
+                )
             candidate["_capability"] = capability
             candidates.append(candidate)
         except (AnnotationEvidenceError, KeyError, TypeError, ValueError) as exc:
@@ -432,26 +494,36 @@ def generate_task4_candidates(
 def select_task4_candidates(
     candidates: Sequence[Mapping[str, Any]], targets: Mapping[str, int],
 ) -> tuple[list[dict[str, Any]], dict[str, Any]]:
-    """Greedily preserve scarce categories and low-versatility source windows."""
+    """Select at most one question from each source video."""
     unknown = sorted(set(targets) - set(TASK4_CAPABILITIES))
     if unknown or any(int(value) < 1 for value in targets.values()):
         raise ValueError(f"invalid Task 4 category targets: unknown={unknown}, targets={targets}")
     remaining = {category: int(targets[category]) for category in TASK4_CAPABILITIES}
     by_category: dict[str, list[dict[str, Any]]] = defaultdict(list)
     scene_capabilities: dict[str, set[str]] = defaultdict(set)
+    source_video_by_scene: dict[str, str] = {}
     for source in candidates:
         candidate = dict(source)
         category = str(candidate["_capability"])
         scene_id = str(candidate["name"])
+        video_window = candidate.get("video_window") or {}
+        source_video_by_scene[scene_id] = str(
+            video_window.get("source")
+            or video_window.get("source_video")
+            or candidate.get("video_clip")
+            or scene_id
+        )
         by_category[category].append(candidate)
         scene_capabilities[scene_id].add(category)
     selected: list[dict[str, Any]] = []
     used_scenes: set[str] = set()
+    used_source_videos: set[str] = set()
     while any(value > 0 for value in remaining.values()):
         viable = {
             category: [
                 row for row in by_category[category]
                 if str(row["name"]) not in used_scenes
+                and source_video_by_scene[str(row["name"])] not in used_source_videos
             ]
             for category, needed in remaining.items() if needed > 0
         }
@@ -475,6 +547,7 @@ def select_task4_candidates(
         )
         selected.append(chosen)
         used_scenes.add(str(chosen["name"]))
+        used_source_videos.add(source_video_by_scene[str(chosen["name"])])
         remaining[category] -= 1
     selected.sort(key=lambda row: (
         TASK4_CAPABILITIES.index(str(row["_capability"])),
@@ -500,6 +573,7 @@ def select_task4_candidates(
         "selected_counts": dict(counts),
         "deficits": deficits,
         "one_question_per_window": True,
+        "one_question_per_source_video": True,
     }
 
 def realize_task4_release(
@@ -531,7 +605,7 @@ def realize_task4_release(
 
 
 def generate_task4_scale_release(
-    scenes: Sequence[Mapping[str, Any]], *, target_count: int = 40,
+    scenes: Iterable[Mapping[str, Any]], *, target_count: int = 40,
     allow_partial: bool = False, policy: Task4ScalePolicy | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     """Mine seven categories, balance them to the target, and fail closed on deficits."""
@@ -539,7 +613,9 @@ def generate_task4_scale_release(
     targets = balanced_category_targets(target_count)
     all_candidates: list[dict[str, Any]] = []
     scene_audits: list[dict[str, Any]] = []
+    input_scene_count = 0
     for scene in scenes:
+        input_scene_count += 1
         try:
             candidates, rejected = generate_task4_candidates(scene, policy=policy)
             all_candidates.extend(candidates)
@@ -582,7 +658,7 @@ def generate_task4_scale_release(
     }
     audit = {
         "status": selection["status"],
-        "input_scene_count": len(scenes),
+        "input_scene_count": input_scene_count,
         "candidate_count": len(all_candidates),
         "candidate_counts": dict(Counter(
             str(candidate["_capability"]) for candidate in all_candidates

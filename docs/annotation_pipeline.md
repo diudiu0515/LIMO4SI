@@ -36,7 +36,7 @@ A JSON object with a `scenes` list. Every scene must contain:
 - metric blocker centers and radii for physical-visibility questions.
 
 Task 4 mines all seven canonical families, then selects at most one question
-from each source window. The default 40-case target is split 6/6/6/6/6/5/5.
+from each source video. The default 40-case target is split 6/6/6/6/6/5/5.
 If any category lacks evidence, the build records the exact deficit and fails;
 neither templates nor a language API may fill it.
 
@@ -62,19 +62,33 @@ does not visually guess attributes.
 ### Task 5 ADT annotations
 
 A dataset root containing one or more unpacked ADT sequences. Each complete
-sequence must contain `video.vrs`, `eyegaze.csv`, `aria_trajectory.csv`,
+sequence must contain `metadata.json`, `eyegaze.csv`, `aria_trajectory.csv`,
 `scene_objects.csv`, `3d_bounding_box.csv`, `2d_bounding_box.csv`, and
-`instances.json`.
+`instances.json`, plus either the official `preview_rgb.mp4` or `video.vrs`.
+The device serial in `metadata.json` must resolve to a reviewed calibration in
+`configs/adt_device_calibrations.json`; unknown devices fail closed.
 
 The default 40-case backend target is balanced 14/13/13 across relation change
-between early and later clear views, relation change during a visible wearer
-turn, and full-window evolution of the final gaze-annotated object. Windows
-selected from one long sequence may not overlap.
+between the first and later sustained gazes, relation change during a measured
+wearer turn, and full-window evolution of the final gaze-annotated object.
+Exactly one question may be selected from each source sequence.
 
 Public inputs are unmodified RGB clips. Gaze and box overlays are private audit
 artifacts and are never model inputs. Every public window is 14.5–15.5 seconds,
 and candidates fail before selection if required RGB box evidence is absent or
-more than 50 ms from an evidence frame.
+more than 50 ms from an evidence frame. Release selection takes at most one
+question from each source sequence, even when multiple non-overlapping windows
+would otherwise qualify.
+
+ADT gaze-relative seconds are not assumed to share the RGB stream's zero point.
+The exporter resolves both public-video boundaries and every private evidence
+panel from the annotation `timestamp_ns` in the `DEVICE_TIME` domain. The
+official preview's embedded per-frame timestamp table is preferred; the VRS RGB
+stream is the fallback. Timestamp count, ordering, frame count, media source,
+and both boundary skews are persisted and validated. RGB boundary/frame skew
+must be at most 50 ms. The signed evidence timeline stores these device
+timestamps, the public `video_window` stores the matching media boundaries, and
+the release gate rejects any disagreement.
 
 EgoExo4D remains an explicit compatibility backend for its
 `takes.json`/`relations_val.json` schema. It is never selected for an ADT root

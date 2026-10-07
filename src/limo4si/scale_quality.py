@@ -17,6 +17,7 @@ from .task4_dynamics import (
     passing_side_and_final_position,
     relation_change_cause,
     reunion_relation_restoration,
+    stable_visibility_timeline,
 )
 from .task4_contract import validate_compound_option_parts
 
@@ -48,6 +49,11 @@ SEQUENCE_TYPES = {
     "body_forward_field_transition_over_video": "body_forward_field_sequence",
 }
 SAMPLE_WORDING = re.compile(r"\b(?:sample|samples|sampled)\b|\b\d+\s*/\s*\d+\b", re.I)
+RAW_RELATION_LABEL = re.compile(
+    r"\b(?:left_front|center_front|right_front|left_same_depth|right_same_depth|"
+    r"left_behind|center_behind|right_behind)\b",
+    re.I,
+)
 
 
 @dataclass(frozen=True)
@@ -224,6 +230,17 @@ def _validate_common(case_id: str, question: Mapping[str, Any], policy: ScaleQua
         return
     labels = [option.get("label") for option in options]
     texts = [option.get("text") for option in options]
+    public_text = "\n".join(
+        str(value or "")
+        for value in (
+            question.get("question"),
+            question.get("explanation"),
+            question.get("correct_answer"),
+            *texts,
+        )
+    )
+    if RAW_RELATION_LABEL.search(public_text):
+        errors.append("public wording exposes an internal relation label")
     if len(set(labels)) != 4 or len(set(texts)) != 4:
         errors.append("option labels and texts must be unique")
     profiles = [option_information_profile(str(text)) for text in texts]
@@ -232,7 +249,16 @@ def _validate_common(case_id: str, question: Mapping[str, Any], policy: ScaleQua
     numeric_counts = [profile["numbers"] for profile in profiles]
     temporal_counts = [profile["temporal_markers"] for profile in profiles]
     relation_counts = [profile["relation_markers"] for profile in profiles]
+    sequence_slot_counts = [str(text).count("→") + 1 for text in texts]
+    parallel_relation_sequence = (
+        bool(sequence_slot_counts)
+        and min(sequence_slot_counts) > 1
+        and len(set(sequence_slot_counts)) == 1
+    )
     metrics["option_information_profiles"] = profiles
+    metrics["parallel_relation_sequence_slots"] = (
+        sequence_slot_counts[0] if parallel_relation_sequence else None
+    )
     if units and min(units) > 0 and max(units) / min(units) > policy.max_option_information_ratio:
         errors.append(f"option information ratio {max(units) / min(units):.2f} exceeds {policy.max_option_information_ratio:.2f}")
     if word_counts and min(word_counts) > 0 and max(word_counts) / min(word_counts) > policy.max_option_word_count_ratio:
@@ -241,7 +267,11 @@ def _validate_common(case_id: str, question: Mapping[str, Any], policy: ScaleQua
         errors.append("answer choices expose unequal numeric detail")
     if temporal_counts and max(temporal_counts) - min(temporal_counts) > policy.max_option_temporal_marker_gap:
         errors.append("answer choices expose unequal temporal detail")
-    if relation_counts and max(relation_counts) - min(relation_counts) > policy.max_option_relation_marker_gap:
+    if (
+        relation_counts
+        and not parallel_relation_sequence
+        and max(relation_counts) - min(relation_counts) > policy.max_option_relation_marker_gap
+    ):
         errors.append("answer choices expose unequal relation detail")
     decimals = [places for text in texts for places in _distance_decimal_places(str(text))]
     decimals.extend(_distance_decimal_places(str(question.get("correct_answer", ""))))
@@ -475,7 +505,13 @@ def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any]
         or "forward" not in str(coordinate_frame.get("forward_axis", "")).lower()
         or (
             "scene-up cross forward" not in str(coordinate_frame.get("right_axis", "")).lower()
-            and not ("explicit" in str(coordinate_frame.get("right_axis", "")).lower() and "+x" in str(coordinate_frame.get("right_axis", "")).lower())
+            and not (
+                "explicit" in str(coordinate_frame.get("right_axis", "")).lower()
+                and any(
+                    marker in str(coordinate_frame.get("right_axis", "")).lower()
+                    for marker in ("+x", "-x", "human-right", "anatomical-right")
+                )
+            )
         )
         )
     ):
@@ -548,7 +584,12 @@ def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any]
             errors.append(f"distance pattern cannot be recomputed: {exc}")
     event_specs = {
         "passing_side_and_final_position": (
-            passing_side_and_final_position, "passing_analysis", {},
+            passing_side_and_final_position, "passing_analysis", {
+                "relation_key": str(
+                    (result.get("passing_analysis") or {}).get("relation_key")
+                    or "a_relative_to_b"
+                ),
+            },
         ),
         "reunion_relation_restoration": (
             reunion_relation_restoration, "reunion_analysis", {},
@@ -609,23 +650,38 @@ def _validate_metric_task4(group: Mapping[str, Any], question: Mapping[str, Any]
             errors.append("physical visibility question lacks evaluated blocker geometry")
         if any(status != "evaluated" for status in statuses) or any(value is None for value in blocked):
             errors.append("physical visibility is not evaluated in every temporal state")
-        elif blocked[0] == blocked[-1]:
-            errors.append("physical visibility question has no endpoint transition")
         else:
-            segment = max(policy.min_transition_run_length, len(blocked) // 4)
-            support = [
-                sum(value == blocked[0] for value in blocked[:segment]),
-                sum(value == blocked[-1] for value in blocked[-segment:]),
-            ]
-            metrics["visibility_endpoint_segment_support"] = support
-            if min(support) < policy.min_transition_run_length:
-                errors.append("physical visibility transition lacks stable endpoint support")
+            try:
+                recomputed = stable_visibility_timeline(
+                    [bool(value) for value in blocked],
+                    minimum_run_states=policy.min_transition_run_length,
+                )
+                stored = result.get("visibility_timeline_analysis") or {}
+                if list(stored.get("stable_states") or []) != recomputed["stable_states"]:
+                    errors.append("stored stable visibility phases disagree with deterministic recomputation")
+                metrics["stable_visibility_states"] = recomputed["stable_states"]
+                metrics["visibility_transition_count"] = recomputed["transition_count"]
+                metrics["minimum_stable_visibility_run"] = min(
+                    run["state_count"] for run in recomputed["stable_runs"]
+                )
+            except ValueError as exc:
+                errors.append(str(exc))
     if qtype == "metric_group_reorganization_over_video":
         multi = result.get("multi_person_timeline") or {}
         multi_states = multi.get("states") or []
         person_ids = [str(value) for value in multi.get("metric_person_ids") or []]
         if multi.get("status") != "ok" or len(person_ids) < 3:
             errors.append("group reorganization requires at least three stable metric tracks")
+        overlay = group.get("video_identity_overlay") or {}
+        person_to_marker = overlay.get("person_to_marker") or {}
+        if overlay.get("required") is True:
+            if set(person_to_marker) != set(person_ids):
+                errors.append("required video identity overlay does not cover every metric person")
+            for person_id in person_ids:
+                marker = str(person_to_marker.get(person_id) or "").lower()
+                alias = str((group.get("person_display_aliases") or {}).get(person_id) or "").lower()
+                if not marker or marker not in alias:
+                    errors.append(f"person {person_id} alias does not name its visible video marker")
         _validate_time_series(
             multi_states,
             float(duration) if _finite(duration) else None,
@@ -871,6 +927,45 @@ def _validate_task5_egoexo(
         errors.append("EgoExo4D Task 5 result is not marked as the primary signed release path")
 
 
+def _validate_task5_media_alignment(
+    group: Mapping[str, Any], states: Sequence[Mapping[str, Any]],
+    errors: list[str], metrics: dict[str, Any],
+) -> None:
+    """Bind public RGB boundaries to signed annotation device timestamps."""
+    device_timestamps = [state.get("timestamp_ns") for state in states]
+    if (
+        not device_timestamps
+        or any(not isinstance(value, int) or isinstance(value, bool) for value in device_timestamps)
+        or any(right <= left for left, right in zip(device_timestamps, device_timestamps[1:]))
+    ):
+        errors.append("Task 5 timeline lacks strictly increasing device timestamps")
+        return
+    media_alignment = (group.get("video_window") or {}).get("media_alignment") or {}
+    metrics["media_time_domain"] = media_alignment.get("time_domain")
+    metrics["media_kind"] = media_alignment.get("media_kind")
+    metrics["media_boundary_timestamp_ns"] = [device_timestamps[0], device_timestamps[-1]]
+    if media_alignment.get("time_domain") != "device_time_ns":
+        errors.append("Task 5 public video is not aligned in the annotation device-time domain")
+    elif (
+        media_alignment.get("start_device_time_ns") != device_timestamps[0]
+        or media_alignment.get("end_device_time_ns") != device_timestamps[-1]
+    ):
+        errors.append("Task 5 public video boundaries disagree with signed annotation timestamps")
+    if media_alignment.get("media_kind") not in {"official_preview_mp4", "vrs_rgb_stream"}:
+        errors.append("Task 5 public video lacks a supported, timestamp-audited media source")
+    if media_alignment.get("timestamp_source") not in {
+        "mp4_format_description_json", "vrs_rgb_stream_device_time",
+    }:
+        errors.append("Task 5 public video lacks an explicit device-time timestamp source")
+    for boundary in ("start_boundary_skew_ms", "end_boundary_skew_ms"):
+        skew = media_alignment.get(boundary)
+        if not _finite(skew) or float(skew) > 50.0:
+            errors.append(f"Task 5 public video {boundary} is missing or exceeds 50 ms")
+    frame_count = media_alignment.get("frame_count")
+    if not isinstance(frame_count, int) or isinstance(frame_count, bool) or frame_count < 2:
+        errors.append("Task 5 public video aligned frame count is invalid")
+
+
 def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], policy: ScaleQualityPolicy, errors: list[str], metrics: dict[str, Any]) -> None:
     """Independently audit annotation-derived gaze/object/wearer claims."""
     if question.get("question_type") == "human_object_net_displacement_ratio":
@@ -925,10 +1020,11 @@ def _validate_task5(group: Mapping[str, Any], question: Mapping[str, Any], polic
     duration = (group.get("video_window") or {}).get("duration_sec")
     if not _finite(duration) or not policy.min_task5_window_sec <= float(duration) <= policy.max_task5_window_sec:
         errors.append(
-            f"Task 5 public video must be about 9 seconds "
+            f"Task 5 public video must be about 15 seconds "
             f"({policy.min_task5_window_sec:g}–{policy.max_task5_window_sec:g} s)"
         )
     _validate_time_series(states, float(duration) if _finite(duration) else None, policy.min_task5_span_ratio, policy, errors, metrics)
+    _validate_task5_media_alignment(group, states, errors, metrics)
     target = str(result.get("object_id"))
     target_category = str(result.get("object_category", "")).lower()
     if not target_category:

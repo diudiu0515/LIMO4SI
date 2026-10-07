@@ -185,6 +185,20 @@ class SemanticGTTests(unittest.TestCase):
         self.assertEqual(question["correct_option"], "B")
         self.assertFalse(client.call["json_schema"]["additionalProperties"])
         self.assertNotIn("correct_option_id", client.call["payload"])
+        self.assertIn("style_hint", client.call["payload"])
+
+    def test_gpt_realizer_rejects_bare_question_and_explanation_placeholders(self):
+        gt = example_gt()
+        response = {
+            "schema_version": LANGUAGE_REALIZATION_SCHEMA_VERSION,
+            "semantic_gt_id": gt["semantic_gt_id"],
+            "answer_signature": gt["answer_signature"],
+            "question_template": "{{question_focus}}",
+            "option_template": "{{option_statement}}",
+            "explanation_template": "{{evidence_statement}}",
+        }
+        with self.assertRaisesRegex(LanguageRealizationError, "wrapper words"):
+            realize_question(gt, realizer=GPTLanguageRealizer(FakeStructuredClient(response)))
 
 
 if __name__ == "__main__":

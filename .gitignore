@@ -19,6 +19,10 @@ __pycache__/
 /outputs/qa/task5_egoexo_review.jsonl
 /outputs/qa/task5_egoexo_review_audit.json
 /outputs/qa/task5_egoexo_scale/
+/outputs/annotation_release/
+/outputs/audit/
+/outputs/qa/task4_scale*/
+/outputs/qa/task5_scale*/
 /site/qa_benchmark/hoim3_data
 /site/qa_benchmark/task5_media/task5c_behave_backpack_24_33_blurred.mp4
 /site/task5_review/
@@ -29,3 +33,5 @@ __pycache__/
 /site/qa_benchmark/task5_media/task5_last_*
 /.gitignore.orig
 /site/qa_benchmark/multihuman_media/egobody_*
+/site/qa_benchmark/multihuman_media/adt_*
+/site/qa_benchmark/multihuman_media/panoptic_*

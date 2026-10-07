@@ -5,11 +5,21 @@ from __future__ import annotations
 import argparse
 import csv
 import json
-import math
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "src"))
+
+from limo4si.adt_media import (  # noqa: E402
+    closest_timestamp_index,
+    index_gaze_rows_by_device_timestamp,
+    load_sequence_calibration,
+    pixel_inside_box,
+    preview_frame_timestamps,
+    project_gaze_to_raw_rgb,
+    resolve_rgb_media,
+)
 
 
 def main() -> None:
@@ -20,19 +30,27 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, default=ROOT / "site/qa_benchmark/task5_media")
     args = parser.parse_args()
     import cv2
-    import numpy as np
     from projectaria_tools.core import data_provider
+    from projectaria_tools.core.sensor_data import TimeDomain, TimeQueryOptions
     from projectaria_tools.core.stream_id import StreamId
 
     config = json.loads(args.config.read_text(encoding="utf-8"))
     analysis = json.loads(args.analysis.read_text(encoding="utf-8"))
-    provider = data_provider.create_vrs_data_provider(str(args.sequence / "video.vrs"))
+    rgb_media, media_kind = resolve_rgb_media(args.sequence)
     stream = StreamId("214-1")
-    device_calibration = provider.get_device_calibration()
-    camera_calibration = device_calibration.get_camera_calib("camera-rgb")
-    transform_camera_cpf = device_calibration.get_transform_cpf_sensor("camera-rgb").inverse().to_matrix()
+    provider = None
+    preview = None
+    preview_timestamps: list[int] = []
+    if media_kind == "vrs_rgb_stream":
+        provider = data_provider.create_vrs_data_provider(str(rgb_media))
+    else:
+        load_sequence_calibration(args.sequence)
+        preview_timestamps = preview_frame_timestamps(rgb_media)
+        preview = cv2.VideoCapture(str(rgb_media))
+        if not preview.isOpened():
+            raise RuntimeError(f"could not open {rgb_media}")
     with (args.sequence / "eyegaze.csv").open(newline="", encoding="utf-8") as handle:
-        gaze_rows = list(csv.DictReader(handle))
+        gaze_by_timestamp = index_gaze_rows_by_device_timestamp(csv.DictReader(handle))
     boxes: dict[tuple[int, str], list[int]] = {}
     with (args.sequence / "2d_bounding_box.csv").open(newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
@@ -63,12 +81,17 @@ def main() -> None:
             raise ValueError(f"{spec['id']} target has no RGB 2D bounding-box annotation")
         if spec["question_type"] == "gaze_target_at_evidence_anchor":
             frame_ids = [int(frame) for frame in spec["anchor_frames"]]
+            show_target_gaze = [
+                str(analysis["states"][frame].get("gazed_object_id")) == uid for frame in frame_ids
+            ]
         elif spec["question_type"] == "relation_change_between_gazes":
             events = [next(event for event in analysis["gaze_events"] if str(event["object_id"]) == uid and event["start_index"] == frame) for frame in spec["event_start_frames"]]
             frame_ids = [(event["start_index"] + event["end_index"]) // 2 for event in events]
+            show_target_gaze = [True] * len(frame_ids)
         elif spec["question_type"] == "gaze_onset_side_change":
             event = next(event for event in analysis["gaze_events"] if str(event["object_id"]) == uid and event["start_index"] == spec["event_start_frames"][0])
             frame_ids = [spec["pre_frame"], (event["start_index"] + event["end_index"]) // 2]
+            show_target_gaze = [False, True]
         else:
             lo, hi = (int(value) for value in spec["window_frames"])
             minimum_run = int((config.get("selection_policy") or {}).get("minimum_relation_run_states", 6))
@@ -96,28 +119,57 @@ def main() -> None:
             ]
             if len(frame_ids) < 2:
                 raise ValueError(f"{spec['id']} has fewer than two sustained relation evidence stages")
+            show_target_gaze = [False] * len(frame_ids)
         panels = []
         for panel_index, frame_index in enumerate(frame_ids):
-            image, _ = provider.get_image_data_by_index(stream, int(frame_index))
-            rgb = image.to_numpy_array()
-            canvas = cv2.cvtColor(rgb, cv2.COLOR_RGB2BGR)
             state = analysis["states"][frame_index]
             timestamp = int(state["timestamp_ns"])
+            if provider is not None:
+                image, record = provider.get_image_data_by_time_ns(
+                    stream, timestamp, TimeDomain.DEVICE_TIME, TimeQueryOptions.CLOSEST,
+                )
+                rgb_timestamp = int(record.capture_timestamp_ns)
+                canvas = cv2.cvtColor(image.to_numpy_array(), cv2.COLOR_RGB2BGR)
+            else:
+                frame = closest_timestamp_index(preview_timestamps, timestamp)
+                preview.set(cv2.CAP_PROP_POS_FRAMES, frame)
+                ok, encoded_canvas = preview.read()
+                if not ok:
+                    raise RuntimeError(f"could not decode preview frame {frame} for {spec['id']}")
+                rgb_timestamp = preview_timestamps[frame]
+                # ADT preview frames are already rotated clockwise for display.
+                # Restore sensor orientation while applying raw 2D annotations;
+                # the common path below rotates the completed panel back.
+                canvas = cv2.rotate(encoded_canvas, cv2.ROTATE_90_COUNTERCLOCKWISE)
+            rgb_skew_ms = abs(rgb_timestamp - timestamp) / 1_000_000
+            if rgb_skew_ms > 50.0:
+                raise ValueError(
+                    f"{spec['id']} nearest RGB frame is stale by {rgb_skew_ms:.1f} ms"
+                )
             nearest = min(box_times[uid], key=lambda value: abs(value - timestamp))
             skew_ms = abs(nearest - timestamp) / 1_000_000
             if skew_ms > 50.0:
                 raise ValueError(f"{spec['id']} nearest 2D box is stale by {skew_ms:.1f} ms")
             x1, y1, x2, y2 = boxes[(nearest, uid)]
             cv2.rectangle(canvas, (x1, y1), (x2, y2), (30, 210, 40), 8)
-            gaze = gaze_rows[frame_index]
+            gaze = gaze_by_timestamp.get(timestamp)
+            if gaze is None:
+                raise ValueError(
+                    f"{spec['id']} evidence frame {frame_index} has no exact gaze row at {timestamp}"
+                )
             depth = float(gaze["depth_m"]) or float(state.get("gaze_hit_distance_m") or 1.0)
-            point_cpf = np.array([
-                math.tan(float(gaze["yaw_rads_cpf"])) * depth,
-                math.tan(float(gaze["pitch_rads_cpf"])) * depth, depth, 1.0,
-            ])
-            point_camera = transform_camera_cpf @ point_cpf
-            pixel = camera_calibration.project(point_camera[:3] / point_camera[3])
+            pixel = (
+                project_gaze_to_raw_rgb(
+                    args.sequence, float(gaze["yaw_rads_cpf"]),
+                    float(gaze["pitch_rads_cpf"]), depth,
+                )
+                if show_target_gaze[panel_index] else None
+            )
             if pixel is not None:
+                if not pixel_inside_box(pixel, (x1, y1, x2, y2), margin=12.0):
+                    raise ValueError(
+                        f"{spec['id']} gaze projection falls outside the target RGB box"
+                    )
                 px, py = (int(round(value)) for value in pixel)
                 cv2.drawMarker(canvas, (px, py), (20, 20, 240), cv2.MARKER_CROSS, 55, 8)
                 cv2.circle(canvas, (px, py), 18, (20, 20, 240), 5)
@@ -131,7 +183,7 @@ def main() -> None:
                 )
             else:
                 relation = state["object_relations"][uid]["label"]
-                label = f"t={state['time_s']:.1f}s  {target_name}  {relation}"
+                label = f"t={state['time_s']:.1f}s  {target_name}  {relation.replace('-', ' ')}"
             cv2.rectangle(canvas, (0, 0), (1408, 80), (15, 23, 42), -1)
             cv2.putText(canvas, label, (24, 54), cv2.FONT_HERSHEY_SIMPLEX, 1.25, (255, 255, 255), 3, cv2.LINE_AA)
             panels.append(cv2.resize(canvas, (448, 448), interpolation=cv2.INTER_AREA))
@@ -139,6 +191,8 @@ def main() -> None:
         output = args.output_dir / f"{spec['id']}_gaze_evidence.jpg"
         cv2.imwrite(str(output), combined, [cv2.IMWRITE_JPEG_QUALITY, 88])
         print(output)
+    if preview is not None:
+        preview.release()
 
 
 if __name__ == "__main__":

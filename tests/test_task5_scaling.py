@@ -9,11 +9,13 @@ from limo4si.task5_scaling import (
     REQUESTED_CATEGORIES,
     Task5CandidatePolicy,
     _expanded_window,
+    _target_event_pair_closes_window,
     balanced_category_targets,
     generate_task5_candidates,
     select_balanced_candidates,
     sustained_relation_sequence,
 )
+from build_task5_scaled import sequence_options
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -69,6 +71,38 @@ class Task5ScalingTests(unittest.TestCase):
             REQUESTED_CATEGORIES[2]: 13,
         })
 
+    def test_selector_does_not_starve_a_category_with_one_unique_source(self):
+        first, second, third = REQUESTED_CATEGORIES
+        candidates = [
+            {"id": "first_flexible", "category": first, "sequence_name": "shared", "object_id": "a", "window_frames": [0, 150], "candidate_score": 10.0},
+            {"id": "first_exclusive", "category": first, "sequence_name": "first_only", "object_id": "b", "window_frames": [0, 150], "candidate_score": 1.0},
+            {"id": "second_exclusive", "category": second, "sequence_name": "second_only", "object_id": "c", "window_frames": [0, 150], "candidate_score": 1.0},
+            {"id": "third_only", "category": third, "sequence_name": "shared", "object_id": "d", "window_frames": [0, 150], "candidate_score": 1.0},
+        ]
+        selected, report = select_balanced_candidates(candidates, target_per_category=1)
+        self.assertEqual(report["status"], "ok")
+        self.assertEqual({row["id"] for row in selected}, {
+            "first_exclusive", "second_exclusive", "third_only",
+        })
+
+    def test_release_selector_rejects_more_than_one_case_per_source_video(self):
+        with self.assertRaisesRegex(ValueError, "one question per source sequence"):
+            select_balanced_candidates([], target_per_category=1, max_cases_per_sequence=2)
+
+    def test_selector_accepts_public_question_type_target_names(self):
+        candidates = [{
+            "id": "one", "category": "between_repeated_gaze_events",
+            "sequence_name": "sequence_one", "object_id": "object_one",
+            "window_frames": [0, 150], "candidate_score": 1.0,
+        }]
+        selected, report = select_balanced_candidates(
+            candidates,
+            target_per_category=1,
+            category_targets={"relation_change_between_gazes": 1},
+        )
+        self.assertEqual(len(selected), 1)
+        self.assertEqual(report["target_by_category"]["between_repeated_gaze_events"], 1)
+
     def test_window_expansion_uses_real_fifteen_second_annotation_span(self):
         states = {
             frame: {"frame_index": frame, "time_s": frame / 10.0}
@@ -97,6 +131,24 @@ class Task5ScalingTests(unittest.TestCase):
         policy = Task5CandidatePolicy()
         self.assertEqual(policy.min_event_gap_sec, 2.0)
         self.assertEqual((policy.min_window_sec, policy.target_window_sec, policy.max_window_sec), (14.5, 15.0, 15.5))
+
+    def test_repeated_gaze_pair_must_be_the_only_target_runs_overlapping_clip(self):
+        leading = {"start_index": 0, "end_index": 12}
+        first = {"start_index": 30, "end_index": 42}
+        second = {"start_index": 90, "end_index": 102}
+        events = [leading, first, second]
+        self.assertFalse(_target_event_pair_closes_window(events, first, second, (8, 110)))
+        self.assertTrue(_target_event_pair_closes_window(events, first, second, (20, 110)))
+        middle = {"start_index": 60, "end_index": 66}
+        self.assertTrue(_target_event_pair_closes_window([first, middle, second], first, second, (20, 110)))
+
+    def test_sequence_options_have_equal_word_counts(self):
+        options, _, _ = sequence_options(
+            "wooden bowl", ["front", "left-front", "right"], "case", 0,
+        )
+        profiles = [option_information_profile(option["text"]) for option in options]
+        self.assertEqual(len({profile["words"] for profile in profiles}), 1)
+        self.assertEqual(len({profile["information_units"] for profile in profiles}), 1)
 
     def test_published_task5_options_have_equal_information_slots(self):
         for line in (ROOT / "outputs/qa/task5_scaled_qa.jsonl").read_text().splitlines():

@@ -23,6 +23,7 @@ from limo4si.task5_human_state import (
     transpose,
     unit,
 )
+from limo4si.adt_media import load_sequence_calibration
 
 
 def rows(path: Path) -> list[dict[str, str]]:
@@ -131,22 +132,13 @@ def gaze_hit(
     residual, _, _, entry, uid, exit_distance = min(candidates)
     return uid, entry, exit_distance, residual
 
-def calibration_device_from_cpf(vrs_path: Path) -> list[list[float]]:
-    try:
-        from projectaria_tools.core import data_provider
-    except ImportError as exc:
-        raise RuntimeError("Install projectaria-tools to read the VRS device/CPF calibration") from exc
-    provider = data_provider.create_vrs_data_provider(str(vrs_path))
-    return provider.get_device_calibration().get_transform_device_cpf().to_matrix().tolist()
-
-
 def mine(
     sequence: Path, minimum_gaze_run: int = 4, maximum_hit_distance_m: float = 8.0,
     maximum_wearer_skew_ms: float = 10.0, maximum_object_pose_skew_ms: float = 50.0,
     maximum_internal_gaze_gap_states: int = 1, maximum_gaze_depth_residual_m: float = 0.05,
 ) -> dict[str, Any]:
     required = {
-        "video.vrs", "eyegaze.csv", "aria_trajectory.csv", "scene_objects.csv",
+        "metadata.json", "eyegaze.csv", "aria_trajectory.csv", "scene_objects.csv",
         "3d_bounding_box.csv", "instances.json",
     }
     missing = sorted(name for name in required if not (sequence / name).is_file())
@@ -181,7 +173,8 @@ def mine(
         if row.get("instance_type") == "object" and row.get("category") != "shelter"
     }
     static, dynamic = parse_object_poses(sequence / "scene_objects.csv")
-    transform = calibration_device_from_cpf(sequence / "video.vrs")
+    calibration = load_sequence_calibration(sequence)
+    transform = calibration["transform_device_cpf"]
     rotation_device_cpf = [row[:3] for row in transform[:3]]
     translation_device_cpf = [row[3] for row in transform[:3]]
     first_timestamp_us = gaze_stamps_us[0]
@@ -270,14 +263,21 @@ def mine(
     intervals = sorted((right - left) / 1_000_000 for left, right in zip(gaze_stamps_us, gaze_stamps_us[1:]))
     median_interval_s = intervals[len(intervals) // 2] if intervals else 0.0
     return {
-        "schema_version": 5,
+        "schema_version": 6,
         "dataset": "Aria Digital Twin v2",
         "sequence_name": sequence.name,
         "source_files": [
-            "video.vrs", "eyegaze.csv", "aria_trajectory.csv", "scene_objects.csv",
+            "metadata.json", "eyegaze.csv", "aria_trajectory.csv", "scene_objects.csv",
             "3d_bounding_box.csv", "instances.json",
         ],
         "coordinate_frame": "gravity-aligned wearer CPF: +right and +forward, metric world positions",
+        "coordinate_calibration": {
+            "device_serial": calibration["device_serial"],
+            "schema_version": "limo4si.adt_device_calibrations.v1",
+            "source_sequence": calibration["source_sequence"],
+            "source_api": calibration["source_api"],
+            "transform_device_cpf": transform,
+        },
         "gaze_definition": "smallest eligible same-time object OBB containing the measured fixation depth along the gaze ray",
         "minimum_gaze_run_states": minimum_gaze_run,
         "maximum_internal_gaze_gap_states": maximum_internal_gaze_gap_states,

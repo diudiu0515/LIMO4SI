@@ -94,6 +94,14 @@ class Task4ScalingTests(unittest.TestCase):
         self.assertLessEqual(max(targets.values()) - min(targets.values()), 1)
         self.assertTrue(all(value >= 5 for value in targets.values()))
 
+    def test_scale_release_accepts_a_single_pass_scene_iterator(self):
+        scenes = _scenes()
+        data, audit = generate_task4_scale_release(
+            (scene for scene in scenes), target_count=7, allow_partial=True,
+        )
+        self.assertEqual(audit["input_scene_count"], len(scenes))
+        self.assertTrue(data["groups"])
+
     def test_synthetic_annotations_cover_all_seven_release_categories(self):
         accepted = {}
         for scene in _scenes():
@@ -111,6 +119,27 @@ class Task4ScalingTests(unittest.TestCase):
                 )
                 accepted.setdefault(candidate["_capability"], candidate)
         self.assertEqual(set(accepted), set(TASK4_CAPABILITIES))
+
+    def test_transient_physical_occlusion_is_a_complete_timeline_event(self):
+        zeros = [[0.0, 0.0, 0.0] for _ in range(8)]
+        scene = _scene(
+            "transient_visibility",
+            zeros,
+            [[2.0, 0.0, z] for z in (2.0, 2.0, 0.0, 0.0, 0.0, 2.0, 2.0, 2.0)],
+            blockers=[{"id": "partition", "center": [1.0, 1.6, 0.0], "radius": 0.3}],
+        )
+        candidates, _ = generate_task4_candidates(scene)
+        visibility = next(
+            row for row in candidates
+            if row["_capability"] == "physical_visibility_occlusion_timeline"
+        )
+        question = visibility["qa"][0]
+        self.assertEqual(
+            question["result_json"]["answer_semantics"]["stable_visibility_states"],
+            ["clear", "blocked", "clear"],
+        )
+        group = {key: value for key, value in visibility.items() if not key.startswith("_")}
+        self.assertEqual(validate_release({"groups": [group]})["status"], "ok")
 
     def test_selection_uses_one_question_per_source_window(self):
         candidates = [
@@ -130,6 +159,23 @@ class Task4ScalingTests(unittest.TestCase):
 
         self.assertEqual(len({row["name"] for row in selected}), len(selected))
 
+    def test_selection_uses_one_question_per_source_video(self):
+        candidates = []
+        for index, category in enumerate(TASK4_CAPABILITIES):
+            candidates.append({
+                "name": f"scene_{index}",
+                "video_window": {"source": "shared_long_video.mp4"},
+                "_capability": category,
+                "_candidate_score": 1.0,
+                "qa": [],
+            })
+        selected, report = select_task4_candidates(
+            candidates, {category: 1 for category in TASK4_CAPABILITIES},
+        )
+        self.assertEqual(len(selected), 1)
+        self.assertTrue(report["one_question_per_source_video"])
+        self.assertEqual(sum(report["deficits"].values()), len(TASK4_CAPABILITIES) - 1)
+
     def test_missing_body_axis_allows_only_evidence_closed_candidates(self):
         scene = _scenes()[0]
         scene.pop("human_coordinate_frame")
@@ -146,6 +192,37 @@ class Task4ScalingTests(unittest.TestCase):
         }
         self.assertEqual(
             validate_release({"groups": [distance_group]})["status"], "ok",
+        )
+
+    def test_source_capability_whitelist_prevents_unsupported_direction_claims(self):
+        scene = _scenes()[0]
+        scene["supported_task4_capabilities"] = ["distance_evolution"]
+        candidates, rejected = generate_task4_candidates(scene)
+        self.assertEqual(
+            [candidate["_capability"] for candidate in candidates],
+            ["distance_evolution"],
+        )
+        self.assertEqual(
+            rejected["passing"], "source annotation capability is not declared",
+        )
+
+    def test_body_centric_dominant_mode_needs_only_the_anchor_face_frame(self):
+        scene = _scene(
+            "anchor_only_dominant",
+            [[0.0, 0.0, 0.0] for _ in range(8)],
+            [[1.0, 0.0, 2.0] for _ in range(8)],
+        )
+        scene["dominant_relation_mode"] = "body_centric_position"
+        scene["face_forward_person_ids"] = ["A"]
+        candidates, _ = generate_task4_candidates(scene)
+        dominant = [
+            row for row in candidates
+            if row["_capability"] == "dominant_interaction_relation"
+        ]
+        self.assertEqual(len(dominant), 1)
+        self.assertEqual(
+            dominant[0]["qa"][0]["question_type"],
+            "dominant_body_centric_position",
         )
 
     def test_language_realization_runs_only_after_deterministic_selection(self):

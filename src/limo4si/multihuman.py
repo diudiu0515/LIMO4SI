@@ -14,6 +14,10 @@ HOI-M3 style data can be converted into it:
   "landmarks": [{"id":"table", "center":[x,y,z]}],
   "blockers": [{"id":"partition", "center":[x,y,z], "radius":0.4}]
 }
+
+Blockers may instead carry an exact oriented box as ``local_min``,
+``local_max``, ``translation`` and ``rotation_world_from_local``.  A frame's
+``blockers`` override the scene-level list when object poses vary over time.
 """
 from __future__ import annotations
 
@@ -107,6 +111,66 @@ def line_blocked(a_xyz: Vec, b_xyz: Vec, blockers: Sequence[Mapping[str, Any]]) 
     ab_len2 = dot(ab, ab)
     best = None
     for blk in blockers or []:
+        local_min = blk.get('local_min')
+        local_max = blk.get('local_max')
+        translation = blk.get('translation')
+        rotation = blk.get('rotation_world_from_local')
+        if local_min is not None or local_max is not None or translation is not None or rotation is not None:
+            if not (
+                isinstance(local_min, Sequence) and len(local_min) == 3
+                and isinstance(local_max, Sequence) and len(local_max) == 3
+                and isinstance(translation, Sequence) and len(translation) == 3
+                and isinstance(rotation, Sequence) and len(rotation) == 3
+                and all(isinstance(row, Sequence) and len(row) == 3 for row in rotation)
+            ):
+                continue
+            # T_world_object maps local coordinates into world coordinates.
+            # Its inverse rotation is the matrix transpose; transform both
+            # segment endpoints into object-local coordinates before applying
+            # the standard slab intersection test.
+            def to_local(point: Vec) -> list[float]:
+                delta = sub(point, translation)
+                return [
+                    sum(float(rotation[row][axis]) * delta[row] for row in range(3))
+                    for axis in range(3)
+                ]
+
+            local_a, local_b = to_local(a_xyz), to_local(b_xyz)
+            direction = sub(local_b, local_a)
+            enter, leave = 0.0, 1.0
+            hit = True
+            for axis in range(3):
+                low, high = float(local_min[axis]), float(local_max[axis])
+                if low > high:
+                    hit = False
+                    break
+                if abs(direction[axis]) < 1e-12:
+                    if local_a[axis] < low or local_a[axis] > high:
+                        hit = False
+                        break
+                    continue
+                first = (low - local_a[axis]) / direction[axis]
+                second = (high - local_a[axis]) / direction[axis]
+                if first > second:
+                    first, second = second, first
+                enter, leave = max(enter, first), min(leave, second)
+                if enter > leave:
+                    hit = False
+                    break
+            # Endpoints inside an object (enter == 0) are treated as invalid
+            # blocker evidence, not as an occluded head-to-head segment.
+            if hit and 0.05 < enter < 0.95:
+                depth = enter
+                cand = {
+                    'blocker_id': blk.get('id'),
+                    'geometry': 'oriented_box',
+                    'entry_depth_fraction': enter,
+                    'exit_depth_fraction': leave,
+                    'depth_fraction': depth,
+                }
+                if best is None or depth < best.get('depth_fraction', 1.0):
+                    best = cand
+            continue
         c = blk.get('center')
         if not c or ab_len2 < 1e-9:
             continue
@@ -184,7 +248,11 @@ def pair_timeline(scene: Mapping[str, Any], a_id: str = 'A', b_id: str = 'B') ->
         b = calibrated_person(b, b_id)
         d = dist(a['pelvis'], b['pelvis'])
         score = facing_score(a, b)
-        los = line_blocked(a.get('head', a['pelvis']), b.get('head', b['pelvis']), blockers)
+        frame_blockers = (
+            [*blockers, *fr.get('blockers', [])]
+            if 'blockers' in fr else blockers
+        )
+        los = line_blocked(a.get('head', a['pelvis']), b.get('head', b['pelvis']), frame_blockers)
         forward_field = forward_field_state(a, b)
         rows.append({
             't': fr.get('t'),
@@ -316,6 +384,12 @@ def derive_task4_answer_semantics(question_type: str, result: Mapping[str, Any])
         fields["blocked_sequence"] = blocked
         fields["start_visibility"] = "blocked" if blocked[0] else "clear"
         fields["end_visibility"] = "blocked" if blocked[-1] else "clear"
+        analysis = result.get("visibility_timeline_analysis") or {}
+        stable_states = list(analysis.get("stable_states") or [])
+        if not stable_states:
+            raise ValueError("physical-visibility semantics require stable visibility phases")
+        fields["stable_visibility_states"] = stable_states
+        fields["visibility_transition_count"] = int(analysis.get("transition_count") or 0)
     elif question_type == "metric_distance_pattern_over_video":
         fields["distance_pattern"] = str(distance_evolution_pattern(states)["pattern"])
     fields.update({"start_distance_m": distances[0], "end_distance_m": distances[-1], "minimum_distance_m": min(distances), "maximum_distance_m": max(distances), "maximum_distance_index": distances.index(max(distances))})

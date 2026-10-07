@@ -1,7 +1,9 @@
 import copy
 import unittest
 
-from limo4si.scale_quality import TASK1_ID, TASK4_ID, validate_release
+from limo4si.scale_quality import (
+    TASK1_ID, TASK4_ID, _validate_task5_media_alignment, validate_release,
+)
 from limo4si.multihuman import derive_task4_answer_semantics
 from limo4si.semantic_gt import seal_deterministic_question
 
@@ -91,6 +93,31 @@ def metric_group(qtype="dominant_facing_relation_over_video", counts=None, cover
 
 
 class ScaleQualityTests(unittest.TestCase):
+    def test_task5_media_boundaries_require_matching_device_timestamps(self):
+        states = [{"timestamp_ns": 100}, {"timestamp_ns": 200}]
+        group = {"video_window": {"media_alignment": {
+            "time_domain": "device_time_ns",
+            "start_device_time_ns": 100,
+            "end_device_time_ns": 200,
+            "media_kind": "official_preview_mp4",
+            "timestamp_source": "mp4_format_description_json",
+            "start_boundary_skew_ms": 0.0,
+            "end_boundary_skew_ms": 0.0,
+            "frame_count": 3,
+        }}}
+        errors, metrics = [], {}
+        _validate_task5_media_alignment(group, states, errors, metrics)
+        self.assertEqual(errors, [])
+        self.assertEqual(metrics["media_boundary_timestamp_ns"], [100, 200])
+
+        group["video_window"]["media_alignment"]["end_device_time_ns"] = 201
+        errors = []
+        _validate_task5_media_alignment(group, states, errors, {})
+        self.assertIn(
+            "Task 5 public video boundaries disagree with signed annotation timestamps",
+            errors,
+        )
+
     def test_accepts_identity_aligned_temporal_case(self):
         report = validate_release({"groups": [metric_group()]})
         self.assertEqual(report["status"], "ok")
@@ -107,6 +134,17 @@ class ScaleQualityTests(unittest.TestCase):
         group["qa"][0]["options"][0]["text"] = "Old answer"
         errors = validate_release({"groups": [group]})["cases"][0]["errors"]
         self.assertTrue(any("stale" in error for error in errors))
+
+    def test_rejects_internal_relation_labels_in_public_wording(self):
+        group = metric_group()
+        group["qa"][0]["explanation"] = (
+            "The annotation sequence changes from left_front to right_front."
+        )
+        group["qa"][0] = seal_deterministic_question(
+            group["qa"][0], case_id="metric_case",
+        )
+        errors = validate_release({"groups": [group]})["cases"][0]["errors"]
+        self.assertIn("public wording exposes an internal relation label", errors)
 
     def test_rejects_partial_visual_identity_coverage(self):
         errors = validate_release({"groups": [metric_group(coverage=0.47)]})["cases"][0]["errors"]
@@ -191,6 +229,24 @@ class ScaleQualityTests(unittest.TestCase):
         group["qa"][0]["answer"] = group["qa"][0]["options"][0]["text"]
         errors = validate_release({"groups": [group]})["cases"][0]["errors"]
         self.assertTrue(any("information ratio" in error or "word-count ratio" in error for error in errors))
+
+    def test_equal_slot_relation_sequences_do_not_use_word_count_as_relation_count(self):
+        group = metric_group()
+        texts = [
+            "The vase follows: front-left → front-right → left side.",
+            "The vase follows: straight ahead → straight ahead → straight ahead.",
+            "The vase follows: rear-left → rear-right → right side.",
+            "The vase follows: straight behind → straight behind → straight behind.",
+        ]
+        for option, text in zip(group["qa"][0]["options"], texts):
+            option["text"] = text
+        group["qa"][0]["correct_answer"] = texts[0]
+        group["qa"][0]["answer"] = texts[0]
+        group["qa"][0] = seal_deterministic_question(
+            group["qa"][0], case_id="metric_case",
+        )
+        errors = validate_release({"groups": [group]})["cases"][0]["errors"]
+        self.assertNotIn("answer choices expose unequal relation detail", errors)
 
     def test_front_behind_task1_requires_consistent_orientation_audit(self):
         states = [

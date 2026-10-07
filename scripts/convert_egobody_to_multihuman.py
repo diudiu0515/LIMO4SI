@@ -15,7 +15,7 @@ import numpy as np
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from limo4si.egobody_task4 import pv_face_axes, smplx_forward  # noqa: E402
+from limo4si.egobody_task4 import pv_face_axes, smplx_head_forward  # noqa: E402
 
 
 def _frames(root: Path, recording: str) -> dict[int, Path]:
@@ -31,7 +31,9 @@ def _person(path: Path, person_id: str, *, forward: list[float] | None = None, r
     with path.open("rb") as handle:
         row = pickle.load(handle)
     pelvis = [float(value) for value in row["transl"][0]]
-    forward = forward or smplx_forward(row["global_orient"][0])
+    forward = forward or smplx_head_forward(
+        row["global_orient"][0], row["body_pose"][0]
+    )
     # Head is deliberately a documented proxy until SMPL-X joints are loaded.
     head = [pelvis[0], pelvis[1] - 1.6, pelvis[2]]
     return {"id": person_id, "pelvis": pelvis, "head": head, "forward": forward, **({"right": right} if right is not None else {})}
@@ -157,7 +159,7 @@ def main() -> None:
                 "frames": frames,
                 "person_identities": {"A": "the camera wearer", "B": "the interaction partner"},
                 "human_coordinate_frame": {
-                    "forward_axis": "camera-wearer face-forward = synchronized HoloLens PV optical -Z transformed to master-Kinect and projected to ground",
+                    "forward_axis": "camera-wearer face-forward = synchronized HoloLens PV optical -Z; interaction-partner face-forward = SMPL-X head-chain canonical +Z; both transformed to master-Kinect and projected to ground",
                     "right_axis": "explicit synchronized HoloLens PV optical +X (human right) transformed to master-Kinect",
                     "right_sign": 1,
                     "orientation_calibration": {
@@ -167,11 +169,15 @@ def main() -> None:
                 },
                 "evidence_source": [
                     "EgoBody paired camera-wearer/interactee SMPL-X transl",
-                    "EgoBody paired SMPL-X global_orient for interaction-partner body orientation",
+                    "EgoBody SMPL-X global_orient and body_pose head kinematic chain for interaction-partner face orientation",
                     "EgoBody per-frame PV camera-to-world pose for camera-wearer face orientation",
                     "PV image timestamp synchronized to official PV pose",
                 ],
-                "source_file": str(args.dataset_root),
+                # Every recording is one independent long source video.  All
+                # candidate windows from it deliberately share this identifier
+                # so the scale selector can release at most one question.
+                "source_video": f"egobody://{recording}/PV",
+                "source_file": f"egobody://{recording}/PV",
             })
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_text(json.dumps({"schema": "limo4si.task4_annotations.v1", "scenes": scenes}, indent=2) + "\n")

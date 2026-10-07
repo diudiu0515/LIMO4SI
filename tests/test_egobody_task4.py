@@ -3,7 +3,7 @@ import unittest
 
 import numpy as np
 
-from limo4si.egobody_task4 import pv_face_axes, smplx_forward
+from limo4si.egobody_task4 import pv_face_axes, smplx_forward, smplx_head_forward
 
 
 class EgoBodyTask4Tests(unittest.TestCase):
@@ -14,6 +14,14 @@ class EgoBodyTask4Tests(unittest.TestCase):
 
     def test_yaw_rotates_forward_on_ground_plane(self):
         forward = smplx_forward([0.0, math.pi / 2.0, 0.0])
+        self.assertAlmostEqual(forward[0], 1.0, places=6)
+        self.assertAlmostEqual(forward[2], 0.0, places=6)
+
+    def test_head_chain_accumulates_neck_and_head_yaw(self):
+        body_pose = np.zeros((21, 3))
+        body_pose[11, 1] = math.pi / 4.0
+        body_pose[14, 1] = math.pi / 4.0
+        forward = smplx_head_forward([0.0, 0.0, 0.0], body_pose.reshape(-1))
         self.assertAlmostEqual(forward[0], 1.0, places=6)
         self.assertAlmostEqual(forward[2], 0.0, places=6)
 

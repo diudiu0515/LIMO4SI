@@ -386,14 +386,18 @@ body{background:#eef2f7}.staticShell{max-width:1180px;margin:0 auto;padding:24px
             parts.append('<details class="originalVideoBox"><summary>Show original full video on this page</summary>')
             parts.append(f'<video class="inlineVideo" controls muted playsinline preload="none"><source src="{esc(group["original_video"])}" type="video/mp4">Your browser cannot play this video.</video></details>')
         evidence_summary = 'Show gaze and object localization evidence' if str(group.get('name', '')).startswith('task5_') else 'Show localization and top-down evidence'
+        evidence_image = group.get('original_image')
+        if not evidence_image and str(group.get('name', '')).startswith('task5_') and group.get('video_clip'):
+            media_dir = str(group['video_clip']).rsplit('/', 1)[0]
+            evidence_image = f"{media_dir}/{group['name']}_gaze_evidence.jpg"
         evidence_is_input = group.get('pre_question_visual_evidence') is True
         if evidence_is_input:
             parts.append('<div class="visualEvidenceBox"><div class="taskName">Required visual evidence for the question</div><div class="mediaGrid">')
         else:
             parts.append(f'<details class="visualEvidenceBox"><summary>{evidence_summary}</summary><div class="mediaGrid">')
-        if group.get('original_image'):
+        if evidence_image:
             original_caption = group.get('original_caption') or ('Original-video localization: boxes + head/pelvis points + persistent 2D IDs' if group.get('localization_image') else 'Photo / skeleton evidence')
-            parts.append(f'<figure><img src="{esc(group["original_image"])}" loading="lazy" alt="original"><figcaption>{esc(original_caption)}</figcaption></figure>')
+            parts.append(f'<figure><img src="{esc(evidence_image)}" loading="lazy" alt="original"><figcaption>{esc(original_caption)}</figcaption></figure>')
         if group.get('topdown_image'):
             topdown_caption = 'Metric 3D top-down map (annotation tracks + calibrated face/body axes)' if group.get('visual_person_audit') else 'Top-down human-centered map'
             parts.append(f'<figure><img src="{esc(group["topdown_image"])}" loading="lazy" alt="topdown"><figcaption>{esc(topdown_caption)}</figcaption></figure>')

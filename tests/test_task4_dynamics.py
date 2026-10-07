@@ -10,6 +10,16 @@ class Task4DynamicsTests(unittest.TestCase):
         self.assertEqual(result["passing_side"], "left")
         self.assertEqual(result["final_relation"], "right_front")
 
+    def test_passing_can_use_b_around_face_calibrated_a(self):
+        ds = [3.0, 2.0, 1.0, 0.5, 1.0, 2.0, 3.0, 3.5]
+        rel = ["right_front"] * 4 + ["left_behind"] * 4
+        rows = [{"distance_m": d, "b_relative_to_a": r} for d, r in zip(ds, rel)]
+        result = passing_side_and_final_position(rows, relation_key="b_relative_to_a")
+        self.assertEqual(result["actor_id"], "B")
+        self.assertEqual(result["anchor_id"], "A")
+        self.assertEqual(result["passing_side"], "right")
+        self.assertEqual(result["final_relation"], "left_behind")
+
     def test_reunion_compares_signed_start_and_end_relation(self):
         ds = [1.0, 1.2, 2.0, 3.0, 2.5, 1.5, 1.1, 1.0]
         rows = [{"distance_m": d, "b_relative_to_a": "left_front" if i < 4 else "right_front"} for i, d in enumerate(ds)]

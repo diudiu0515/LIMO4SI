@@ -25,10 +25,16 @@ from limo4si.task5_scaling import (  # noqa: E402
     generate_task5_candidates,
     select_balanced_candidates,
 )
+from limo4si.adt_media import (  # noqa: E402
+    index_gaze_rows_by_device_timestamp,
+    pixel_inside_box,
+    project_gaze_to_raw_rgb,
+    rgb_window_alignment,
+)
 from mine_task5_adt import mine  # noqa: E402
 
 REQUIRED_SEQUENCE_FILES = {
-    "video.vrs", "eyegaze.csv", "aria_trajectory.csv", "scene_objects.csv",
+    "metadata.json", "eyegaze.csv", "aria_trajectory.csv", "scene_objects.csv",
     "3d_bounding_box.csv", "2d_bounding_box.csv", "instances.json",
 }
 
@@ -79,13 +85,22 @@ def _filter_rgb_auditable_candidates(
     maximum_skew_ms: float = 50.0,
 ) -> tuple[list[dict[str, Any]], dict[str, int]]:
     """Reject candidates before selection unless every evidence panel has a fresh RGB box."""
+    boxes: dict[tuple[str, int], tuple[float, float, float, float]] = {}
     box_times: dict[str, list[int]] = defaultdict(list)
     with (sequence / "2d_bounding_box.csv").open(newline="", encoding="utf-8") as handle:
         for row in csv.DictReader(handle):
             if row["stream_id"] == "214-1":
-                box_times[str(row["object_uid"])].append(int(row["timestamp[ns]"]))
+                uid, timestamp = str(row["object_uid"]), int(row["timestamp[ns]"])
+                box_times[uid].append(timestamp)
+                boxes[(uid, timestamp)] = tuple(
+                    float(row[key]) for key in (
+                        "x_min[pixel]", "y_min[pixel]", "x_max[pixel]", "y_max[pixel]",
+                    )
+                )
     for values in box_times.values():
         values.sort()
+    with (sequence / "eyegaze.csv").open(newline="", encoding="utf-8") as handle:
+        gaze_by_timestamp = index_gaze_rows_by_device_timestamp(csv.DictReader(handle))
     kept: list[dict[str, Any]] = []
     rejected: Counter[str] = Counter()
     for candidate in candidates:
@@ -105,8 +120,35 @@ def _filter_rgb_auditable_candidates(
         if any(skew > maximum_skew_ms for skew in skews_ms):
             rejected["stale_rgb_2d_box"] += 1
             continue
+        if candidate["question_type"] == "relation_change_between_gazes":
+            target_gaze_frames = frames
+        elif candidate["question_type"] == "gaze_onset_side_change":
+            target_gaze_frames = frames[1:]
+        else:
+            target_gaze_frames = []
+        projection_failed = False
+        for frame in target_gaze_frames:
+            state = analysis["states"][frame]
+            timestamp = int(state["timestamp_ns"])
+            gaze = gaze_by_timestamp.get(timestamp)
+            if gaze is None or str(state.get("gazed_object_id")) != uid:
+                projection_failed = True
+                break
+            pixel = project_gaze_to_raw_rgb(
+                sequence, float(gaze["yaw_rads_cpf"]), float(gaze["pitch_rads_cpf"]),
+                float(gaze["depth_m"]),
+            )
+            nearest = min(times, key=lambda value: abs(value - timestamp))
+            x1, y1, x2, y2 = boxes[(uid, nearest)]
+            if not pixel_inside_box(pixel, (x1, y1, x2, y2), margin=12.0):
+                projection_failed = True
+                break
+        if projection_failed:
+            rejected["gaze_projection_outside_target_box"] += 1
+            continue
         candidate["evidence_frame_indices"] = frames
         candidate["maximum_rgb_box_skew_ms"] = round(max(skews_ms), 6)
+        candidate["gaze_projection_validated_frames"] = target_gaze_frames
         kept.append(candidate)
     return kept, dict(rejected)
 
@@ -125,7 +167,12 @@ def portable(path: Path) -> str:
 
 def discover_sequences(dataset_root: Path) -> list[Path]:
     candidates = {path.parent for path in dataset_root.rglob("eyegaze.csv")}
-    return sorted(path for path in candidates if REQUIRED_SEQUENCE_FILES.issubset({item.name for item in path.iterdir()}))
+    complete = []
+    for path in candidates:
+        names = {item.name for item in path.iterdir()}
+        if REQUIRED_SEQUENCE_FILES.issubset(names) and {"video.vrs", "preview_rgb.mp4"} & names:
+            complete.append(path)
+    return sorted(complete)
 
 
 def run_script(name: str, *arguments: str) -> None:
@@ -149,7 +196,10 @@ def main() -> None:
         "--sequence-name", action="append", default=[],
         help="Restrict the run to an exact sequence directory name; repeat for multiple sequences.",
     )
-    parser.add_argument("--max-cases-per-sequence", type=int, default=0)
+    parser.add_argument(
+        "--max-cases-per-sequence", type=int, default=1,
+        help="Release invariant; exactly one question is selected from each source sequence.",
+    )
     parser.add_argument("--minimum-gaze-run", type=int, default=4)
     parser.add_argument("--minimum-repeated-gaze-gap-sec", type=float, default=2.0)
     parser.add_argument("--target-window-sec", type=float, default=15.0)
@@ -168,6 +218,8 @@ def main() -> None:
     parser.add_argument("--language-client-factory", help="Optional module:function language-only client factory.")
     parser.add_argument("--plan-only", action="store_true", help="Mine/select/write config, but do not export media or update the site")
     args = parser.parse_args()
+    if args.max_cases_per_sequence != 1:
+        raise SystemExit("Task 5 release requires --max-cases-per-sequence 1")
     language_args = (
         ["--language-client-factory", args.language_client_factory]
         if args.language_client_factory else []
@@ -231,7 +283,7 @@ def main() -> None:
             use_cache = False
             if args.reuse_analysis and analysis_path.is_file():
                 analysis = json.loads(analysis_path.read_text(encoding="utf-8"))
-                use_cache = int(analysis.get("schema_version") or 0) >= 5 and analysis.get("sequence_name") == sequence_name
+                use_cache = int(analysis.get("schema_version") or 0) >= 6 and analysis.get("sequence_name") == sequence_name
             if use_cache:
                 record["analysis_status"] = "reused"
             else:
@@ -287,21 +339,45 @@ def main() -> None:
             "Nothing was published."
         )
 
-    # Export one browser video per selected source sequence, then attach per-case sources.
+    # Export only the selected annotation window from each source.  Gaze time_s
+    # starts at the first valid gaze row, which need not match the first RGB
+    # frame, so device timestamps are the sole media-alignment authority.
     selected_by_sequence: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for candidate in selected:
         selected_by_sequence[str(candidate["sequence_name"])].append(candidate)
     for sequence_name, cases in selected_by_sequence.items():
+        if len(cases) != 1:
+            raise RuntimeError(
+                f"release invariant violated: {sequence_name} has {len(cases)} selected cases"
+            )
         sequence = sequence_sources[sequence_name]
         media_slug = re.sub(r"[^a-zA-Z0-9_.-]+", "_", sequence_name)[:96]
-        source_media = media_dir / f"{media_slug}_rgb.mp4"
-        for case in cases:
-            case["media_source"] = portable(source_media)
+        case = cases[0]
+        analysis = json.loads(analysis_paths[sequence_name].read_text(encoding="utf-8"))
+        states_by_frame = {
+            int(state["frame_index"]): state for state in analysis["states"]
+        }
+        lo, hi = (int(value) for value in case["window_frames"])
+        start_device_time_ns = int(states_by_frame[lo]["timestamp_ns"])
+        end_device_time_ns = int(states_by_frame[hi]["timestamp_ns"])
+        rgb_input, alignment = rgb_window_alignment(
+            sequence, start_device_time_ns, end_device_time_ns,
+        )
+        source_media = media_dir / f"{case['id']}_rgb_window_source.mp4"
+        case.update({
+            "media_source": portable(source_media),
+            "media_source_is_exact_window": True,
+            "media_alignment": alignment,
+        })
         if args.plan_only:
             continue
         media_dir.mkdir(parents=True, exist_ok=True)
         if not (args.reuse_media and source_media.is_file()):
-            run_script("export_task5_adt_video.py", str(sequence / "video.vrs"), str(source_media))
+            run_script(
+                "export_task5_adt_video.py", str(rgb_input), str(source_media),
+                "--start-device-time-ns", str(start_device_time_ns),
+                "--end-device-time-ns", str(end_device_time_ns),
+            )
         evidence_config = selection_dir / f"{media_slug}_evidence_cases.json"
         evidence_config.write_text(json.dumps({"cases": cases}, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         run_script(

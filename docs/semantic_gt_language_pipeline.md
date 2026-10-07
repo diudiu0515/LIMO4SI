@@ -26,6 +26,10 @@ The release path is:
   complete.
 - `scale_task5_adt.py` mines, balances, and publishes the primary three-family
   15-second ADT release from synchronized gaze, wearer pose, and object boxes.
+  It exports RGB by annotation device timestamp rather than by gaze-row index or
+  an assumed shared zero point, prefers the official preview's embedded
+  DEVICE_TIME table with a VRS fallback, and enforces one question per source
+  sequence.
 - `build_task5_egoexo.py` is an explicit compatibility backend, not the
   automatic Task 5 scale path.
 - `limo4si.multihuman.multihuman_qas` seals its direct Task 4 output so callers
@@ -65,6 +69,26 @@ PYTHONPATH=src:scripts python3 scripts/generate_qa.py /path/to/annotations \
 adapter must not add a correct-answer field or transform evidence. Provider
 errors fail the build; deterministic fallback can be selected explicitly by a
 calling pipeline if desired.
+
+The repository includes an environment-only OpenAI-compatible adapter. Keep
+the credential outside the repository and invoke it as follows:
+
+```bash
+export LIMO4SI_LANGUAGE_API_KEY='...'
+export LIMO4SI_LANGUAGE_BASE_URL='https://provider.example/v1'
+export LIMO4SI_LANGUAGE_MODEL='provider-model-name'
+python scripts/generate_qa.py /path/to/annotations \
+  --language-client-factory limo4si.language_client:create_client
+```
+
+For automated workspaces where command invocations are logged, put the secret
+in a permission-restricted temporary file and set
+`LIMO4SI_LANGUAGE_API_KEY_FILE` to its path instead. The file must remain
+outside the repository and should be removed after the build.
+
+The adapter sends only the answer-blind request produced by
+`make_language_request`; it never receives annotations, media, evidence arrays,
+or `correct_option_id`. Credentials are not serialized into QA artifacts.
 
 The provider-facing JSON Schema is available from
 `language_realization_json_schema()`. OpenAI's Responses API supports strict

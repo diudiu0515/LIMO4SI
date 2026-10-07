@@ -28,6 +28,29 @@ def smplx_forward(global_orient: Sequence[float]) -> list[float]:
     return (horizontal / length).tolist()
 
 
+def smplx_head_forward(
+    global_orient: Sequence[float], body_pose: Sequence[float],
+) -> list[float]:
+    """Transform canonical face +Z through the SMPL-X head kinematic chain.
+
+    ``body_pose`` uses the official 21-joint SMPL-X body order (root omitted).
+    The head chain is root → spine1 → spine2 → spine3 → neck → head, whose
+    zero-based body-pose indices are 2, 5, 8, 11, and 14.
+    """
+    local = np.asarray(body_pose, dtype=float).reshape(-1, 3)
+    if local.shape != (21, 3):
+        raise ValueError("SMPL-X body_pose must contain 21 axis-angle joints")
+    rotation = rodrigues(global_orient)
+    for index in (2, 5, 8, 11, 14):
+        rotation = rotation @ rodrigues(local[index])
+    value = rotation @ np.array([0.0, 0.0, 1.0])
+    horizontal = np.array([value[0], 0.0, value[2]])
+    length = float(np.linalg.norm(horizontal))
+    if length < 1e-6:
+        raise ValueError("SMPL-X head forward is vertical and cannot define a face frame")
+    return (horizontal / length).tolist()
+
+
 def pv_face_axes(
     pv2world: Sequence[float] | np.ndarray,
     holo_to_kinect: Sequence[Sequence[float]] | np.ndarray,

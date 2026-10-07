@@ -191,11 +191,21 @@ def language_realization_json_schema() -> dict[str, Any]:
 def make_language_request(semantic_gt: Mapping[str, Any], variant_key: str = "default") -> dict[str, Any]:
     """Return the deliberately answer-blind payload exposed to a language model."""
     validate_semantic_gt(semantic_gt)
+    style_hints = (
+        "concise video-review prompt",
+        "natural benchmark-evaluation prompt",
+        "direct observation-focused prompt",
+        "compact annotation-evidence prompt",
+        "fluent full-sequence review prompt",
+        "plain-language assessment prompt",
+    )
+    style_index = int(hashlib.sha256(str(variant_key).encode("utf-8")).hexdigest()[:8], 16) % len(style_hints)
     return {
         "schema_version": LANGUAGE_REALIZATION_SCHEMA_VERSION,
         "semantic_gt_id": semantic_gt["semantic_gt_id"],
         "answer_signature": semantic_gt["answer_signature"],
         "variant_key": str(variant_key),
+        "style_hint": style_hints[style_index],
         "locked_clauses": {
             "question_focus": semantic_gt["question_focus"],
             "option_statements": [option["statement"] for option in semantic_gt["options"]],
@@ -237,15 +247,53 @@ class GPTLanguageRealizer:
         self.client = client
 
     def realize(self, request: Mapping[str, Any]) -> Mapping[str, Any]:
-        prompt = (
+        base_prompt = (
             "You are a language realizer, not a reasoning system. The supplied clauses are immutable, "
             "code-computed ground truth. Create neutral stylistic wrappers around the required placeholders. "
-            "Never infer spatial, temporal, gaze, contact, visibility, option, evidence, or answer content."
+            "Use the request's style_hint and variant_key to vary phrasing across cases. The question_template "
+            "and explanation_template must each contain a short natural wrapper of at least two words in "
+            "addition to the required placeholder; returning a bare placeholder is invalid. The option_template "
+            "may remain bare so every option stays perfectly parallel. Never infer spatial, temporal, gaze, "
+            "contact, visibility, option, evidence, or answer content."
+            " Wrapper text outside placeholders must contain no digits and none of these reserved words: "
+            "left, right, front, behind, above, below, near, far, closer, farther, more, less, first, "
+            "second, third, fourth, before, after, during, gaze, look, contact, touch, visible, not, no, "
+            "never, neither, both, same, different, answer, option, correct. Safe examples include "
+            "'Review the complete recording and consider: {{question_focus}}' and "
+            "'The annotation record establishes: {{evidence_statement}}'."
         )
-        return self.client.create_structured_output(
-            system_prompt=prompt,
-            payload=request,
-            json_schema=language_realization_json_schema(),
+        failure = ""
+        for attempt in range(3):
+            prompt = base_prompt + (
+                f" A prior draft was rejected by the local validator: {failure}. Return a corrected draft."
+                if failure else ""
+            )
+            draft = self.client.create_structured_output(
+                system_prompt=prompt,
+                payload=request,
+                json_schema=language_realization_json_schema(),
+            )
+            try:
+                if draft.get("schema_version") != LANGUAGE_REALIZATION_SCHEMA_VERSION:
+                    raise LanguageRealizationError("schema version mismatch")
+                if draft.get("semantic_gt_id") != request.get("semantic_gt_id"):
+                    raise LanguageRealizationError("semantic GT ID mismatch")
+                if draft.get("answer_signature") != request.get("answer_signature"):
+                    raise LanguageRealizationError("answer signature mismatch")
+                for field in LOCKED_PLACEHOLDERS:
+                    _validate_locked_template(field, draft.get(field))
+                for field in ("question_template", "explanation_template"):
+                    placeholder = LOCKED_PLACEHOLDERS[field]
+                    literal = str(draft.get(field) or "").replace(placeholder, " ")
+                    if len(re.findall(r"[A-Za-z]+", literal)) < 2:
+                        raise LanguageRealizationError(
+                            f"{field} needs at least two neutral wrapper words"
+                        )
+                return draft
+            except LanguageRealizationError as exc:
+                failure = str(exc)
+        raise LanguageRealizationError(
+            f"GPT language realization failed local validation after three attempts: {failure}"
         )
 
 

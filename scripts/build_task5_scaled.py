@@ -32,12 +32,30 @@ RELATION_TEXT = {
     "behind": "straight behind",
     "left-behind": "rear-left",
     "left": "left side",
-    "level": "same level",
+    "level": "centered nearby",
+}
+
+# Sequence choices use one readable token per temporal slot. This keeps all four
+# choices equally informative even when the underlying relations differ.
+SEQUENCE_RELATION_TEXT = {
+    "left-front": "left-diagonal",
+    "front": "frontward",
+    "right-front": "right-diagonal",
+    "right": "rightward",
+    "right-behind": "rear-rightward",
+    "behind": "behind",
+    "left-behind": "rear-leftward",
+    "left": "leftward",
+    "level": "level-nearby",
 }
 
 
 def relation_text(value: str) -> str:
     return RELATION_TEXT.get(value, value.replace("-", " "))
+
+
+def sequence_relation_text(value: str) -> str:
+    return SEQUENCE_RELATION_TEXT.get(value, value.replace(" ", "-"))
 TASK5_NAME = "Task 5 · Human-State–Grounded Spatial Reasoning"
 RELATIONS = ["left-front", "front", "right-front", "right", "right-behind", "behind", "left-behind", "left"]
 
@@ -57,12 +75,15 @@ def shown_name(value: str) -> str:
         "KitchIsland": "kitchen island", "WhiteVase": "white vase",
         "WoodenBowl": "wooden bowl", "BlackCeramicDishLarge": "large black ceramic dish",
         "BirdHouseToy": "birdhouse toy", "CoffeeCanisterLarge": "large coffee canister",
+        "GreenDecorationTall": "tall green decoration",
     }
     if value in aliases:
         return aliases[value]
     normalized = re.sub(r"(?<!^)(?=[A-Z])", " ", value.replace("_", " "))
     tokens = [token for token in normalized.lower().split() if token not in {"anon"}]
     if len(tokens) > 1 and tokens[-1] in {"a", "b"}:
+        tokens.pop()
+    if len(tokens) > 1 and tokens[-1].isdigit():
         tokens.pop()
     return " ".join(tokens)
 
@@ -130,7 +151,7 @@ def sequence_options(
 ) -> tuple[list[dict[str, str]], str, str]:
     arrow = " → "
     template = f"The {object_name} follows: {{}}."
-    correct = template.format(arrow.join(relation_text(value) for value in sequence))
+    correct = template.format(arrow.join(sequence_relation_text(value) for value in sequence))
     candidates: list[list[str]] = []
     if len(sequence) > 1:
         candidates.append(list(reversed(sequence)))
@@ -139,7 +160,7 @@ def sequence_options(
         candidates.append(shifted)
     alternatives: list[str] = []
     for values in candidates:
-        text = template.format(arrow.join(relation_text(value) for value in values))
+        text = template.format(arrow.join(sequence_relation_text(value) for value in values))
         if text != correct and text not in alternatives:
             alternatives.append(text)
         if len(alternatives) == 3:
@@ -152,6 +173,7 @@ def sequence_options(
 def compact_state(state: dict[str, Any], object_id: str) -> dict[str, Any]:
     return {
         "frame": state["frame_index"], "time_s": state["time_s"],
+        "timestamp_ns": state["timestamp_ns"],
         "gazed_object_id": state["gazed_object_id"], "gazed_object_name": state["gazed_object_name"],
         "gaze_depth_m": state["gaze_depth_m"],
         "gaze_hit_distance_m": state["gaze_hit_distance_m"],
@@ -220,12 +242,12 @@ def build_question(
             [option["text"] for option in rendered], correct_text, "relation_pair",
         )
         question_focus = (
-            f"Comparing the first clear view of the {display} with its later clear view "
+            f"Comparing the first sustained gaze at the {display} with the last sustained gaze "
             "in this clip, how does its wearer-relative position change?"
         )
         evidence_statement = (
-            f"At the first gaze event the {display} is {start_relation}; "
-            f"at the last gaze event it is {end_relation}."
+            f"At the first sustained gaze the {display} is {relation_text(start_relation)}; "
+            f"at the last sustained gaze it is {relation_text(end_relation)}."
         )
         event_evidence = selected
         transition = {
@@ -249,12 +271,12 @@ def build_question(
             [option["text"] for option in rendered], correct_text, "relation_pair",
         )
         question_focus = (
-            f"As the wearer visibly turns toward the {display} near the middle of this clip, "
+            f"As the wearer turns toward the {display} near the middle of this clip, "
             "how does the object's wearer-relative position change?"
         )
         evidence_statement = (
-            f"Immediately before the gaze onset the {display} is {start_relation}; "
-            f"during the sustained gaze it is {end_relation}."
+            f"Immediately before the gaze onset the {display} is {relation_text(start_relation)}; "
+            f"during the sustained gaze it is {relation_text(end_relation)}."
         )
         event_evidence = selected
         transition = {
@@ -287,7 +309,8 @@ def build_question(
         )
         question_focus = f"Across this clip, which sequence best describes how the {display} shifts relative to the wearer?"
         evidence_statement = (
-            f"Across the full window, the annotation-derived relation sequence is {' → '.join(relation_sequence)}."
+            "Across the full window, the annotation-derived relation sequence is "
+            f"{' → '.join(relation_text(value) for value in relation_sequence)}."
         )
         event_evidence = [last_event]
         anchor_frames = [lo, hi]
@@ -373,6 +396,7 @@ def build_question(
         "annotation_source": analysis["dataset"],
         "analysis_schema_version": analysis.get("schema_version"),
         "coordinate_frame": analysis["coordinate_frame"],
+        "coordinate_calibration": analysis.get("coordinate_calibration"),
         "alignment_diagnostics": analysis.get("alignment_diagnostics"),
         "maximum_internal_gaze_gap_states": analysis.get("maximum_internal_gaze_gap_states"),
         "gaze_definition": analysis["gaze_definition"],
@@ -400,13 +424,19 @@ def build_question(
             "dataset": analysis["dataset"], "sequence_name": analysis["sequence_name"],
             "analysis_schema_version": analysis.get("schema_version"),
             "coordinate_frame": analysis["coordinate_frame"],
+            "coordinate_calibration_schema": (
+                (analysis.get("coordinate_calibration") or {}).get("schema_version")
+            ),
+            "coordinate_calibration_device": (
+                (analysis.get("coordinate_calibration") or {}).get("device_serial")
+            ),
             "computation": "deterministic_annotation_geometry",
         },
     )
     language = realize_question(
         semantic_gt, realizer=realizer, variant_key=str(spec.get("language_variant", "default")),
         correct_index=int(correct_index) if correct_index is not None else None,
-        fallback_on_error=False,
+        fallback_on_error=realizer is not None,
     )
     result.update({
         "semantic_gt_id": semantic_gt["semantic_gt_id"],
@@ -482,14 +512,36 @@ def main() -> None:
             )
         media_output_dir = resolve(args.media_output_dir)
         destination = media_output_dir / f"{spec['id']}.mp4"
-        ensure_clip(source_media, destination, start_s, duration)
+        source_start_s = start_s
+        media_alignment = dict(spec.get("media_alignment") or {})
+        if spec.get("media_source_is_exact_window"):
+            expected_start_ns = int(states_by_frame[lo]["timestamp_ns"])
+            expected_end_ns = int(states_by_frame[hi]["timestamp_ns"])
+            if (
+                media_alignment.get("time_domain") != "device_time_ns"
+                or int(media_alignment.get("start_device_time_ns", -1)) != expected_start_ns
+                or int(media_alignment.get("end_device_time_ns", -1)) != expected_end_ns
+            ):
+                raise ValueError(
+                    f"{spec['id']} exact-window media timestamps disagree with annotation evidence"
+                )
+            source_start_s = 0.0
+        ensure_clip(source_media, destination, source_start_s, duration)
         source_label = str(source_media.relative_to(ROOT)) if source_media.is_relative_to(ROOT) else str(source_media)
         groups.append({
             "name": spec["id"], "title": f"Task 5 · {shown_name(question['result_json']['object_name'])}",
             "video_clip": media_url(args.media_url_prefix, f"{spec['id']}.mp4"),
+            "original_image": media_url(args.media_url_prefix, f"{spec['id']}_gaze_evidence.jpg"),
+            "original_caption": (
+                "Annotation-derived gaze and object localization audit; not part of the model input"
+            ),
             "video_window": {
                 "source_video": source_label, "source_sequence": analysis["sequence_name"],
                 "start_sec": start_s, "duration_sec": duration,
+                "media_alignment": media_alignment or {
+                    "time_domain": "legacy_relative_seconds",
+                    "source_start_sec": source_start_s,
+                },
             },
             "qa": [question], "task5_media": media,
             "case_policy": "one annotation-derived question per unique gaze/object window",

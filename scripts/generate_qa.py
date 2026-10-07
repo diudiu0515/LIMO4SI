@@ -20,6 +20,7 @@ from limo4si.task4_scaling import generate_task4_scale_release, realize_task4_re
 from limo4si.task5_scaling import REQUESTED_CATEGORIES, balanced_category_targets as task5_category_targets
 
 BUNDLE_SCHEMA = "limo4si.annotation_bundle.v1"
+TASK4_MANIFEST_SCHEMA = "limo4si.task4_annotation_manifest.v1"
 
 ADT_REQUIRED_FILES = {
     "video.vrs", "eyegaze.csv", "aria_trajectory.csv", "scene_objects.csv",
@@ -66,6 +67,8 @@ def detect_kind(path: Path) -> str:
         value = load_json(path)
         if isinstance(value, dict) and value.get("schema") == BUNDLE_SCHEMA:
             return "bundle"
+        if isinstance(value, dict) and value.get("schema") == TASK4_MANIFEST_SCHEMA:
+            return "task4"
         if isinstance(value, dict) and isinstance(value.get("scenes"), list):
             return "task4"
     if path.is_dir():
@@ -101,17 +104,31 @@ def normalized_task4(path: Path, output_dir: Path) -> Path:
     return normalized
 
 
+def iter_task4_scenes(path: Path):
+    """Yield normalized scenes from a payload or recursively from a manifest."""
+    value = load_json(path)
+    if not isinstance(value, dict):
+        raise ValueError(f"Task 4 annotation payload must be an object: {path}")
+    if value.get("schema") == TASK4_MANIFEST_SCHEMA:
+        sources = value.get("sources")
+        if not isinstance(sources, list) or not sources:
+            raise ValueError(f"Task 4 manifest has no sources: {path}")
+        for source in sources:
+            yield from iter_task4_scenes(resolve(Path(str(source)), path.parent))
+        return
+    scenes = value.get("scenes")
+    if not isinstance(scenes, list):
+        raise ValueError(f"Task 4 annotation payload must contain a scenes list: {path}")
+    yield from scenes
+
+
 def build_task4(
     annotations: Path, output_dir: Path, site_data: Path, target_count: int,
     allow_partial: bool, language_client_factory: str | None,
 ) -> dict[str, Any]:
     source = normalized_task4(annotations, output_dir)
-    payload = load_json(source)
-    scenes = payload.get("scenes") if isinstance(payload, dict) else None
-    if not isinstance(scenes, list):
-        raise ValueError("Task 4 annotation payload must contain a scenes list")
     data, audit = generate_task4_scale_release(
-        scenes, target_count=target_count, allow_partial=True,
+        iter_task4_scenes(source), target_count=target_count, allow_partial=True,
     )
     (output_dir / "task4_annotation_audit.json").write_text(
         json.dumps(audit, ensure_ascii=False, indent=2) + "\n", encoding="utf-8",
@@ -250,8 +267,8 @@ def main() -> None:
         help="Optional equal per-category override for the ADT backend.",
     )
     parser.add_argument(
-        "--task5-max-cases-per-sequence", type=int, default=0,
-        help="Maximum selected ADT windows per source sequence; 0 chooses a data-dependent cap.",
+        "--task5-max-cases-per-sequence", type=int, default=1,
+        help="Release invariant: one selected question per ADT source sequence.",
     )
     parser.add_argument(
         "--allow-incomplete-scale", action="store_true",
@@ -259,6 +276,8 @@ def main() -> None:
     )
     parser.add_argument("--language-client-factory")
     args = parser.parse_args()
+    if args.task5_max_cases_per_sequence != 1:
+        parser.error("Task 5 release requires --task5-max-cases-per-sequence 1")
 
     annotations = resolve(args.annotations)
     output_dir = resolve(args.output_dir)

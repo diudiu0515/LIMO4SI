@@ -1,8 +1,10 @@
 """Fail-closed evidence audit for EgoExo4D Task 4 candidates.
 
-This module only decides whether the supplied annotations can support a
-deterministic multi-human claim.  It does not infer spatial relations from
-video and it never calls a language model.
+EgoPose provides one camera-wearer pose per annotated timestamp; its JSON
+list must not be interpreted as distinct people.  This module only decides
+whether other supplied annotations can support a deterministic multi-human
+claim.  It does not infer spatial relations from video and never calls a
+language model.
 """
 from __future__ import annotations
 
@@ -39,15 +41,15 @@ def audit_task4_evidence(
         passing_reasons.append("fewer than two independently tracked human trajectories")
     if len(tracked_ego_cameras) < 2:
         passing_reasons.append("fewer than two trajectory-bearing Aria ego cameras")
-    if not multi_subject_takes:
-        passing_reasons.append("EgoPose has fewer than two annotated subjects per frame")
+    passing_reasons.append(
+        "EgoPose provides one camera-wearer pose per timestamp, not multi-person identity tracks"
+    )
     passing_reasons.append("no annotation-backed body-forward vector for two distinct people")
 
     occlusion_reasons: list[str] = []
     if not related_takes:
         occlusion_reasons.append("no Relations annotation for this capture")
-    if not multi_subject_takes:
-        occlusion_reasons.append("no two-person target geometry")
+    occlusion_reasons.append("no two-person target geometry")
     if "semidense_points.csv.gz" not in files:
         occlusion_reasons.append("no semidense scene point cloud in the downloaded capture package")
     occlusion_reasons.append("Relations object masks do not provide time-aligned 3D blocker surfaces")
@@ -64,7 +66,7 @@ def audit_task4_evidence(
     }
     accepted = [name for name, row in capabilities.items() if row["status"] == "accepted"]
     return {
-        "schema_version": "limo4si.egoexo_task4_evidence_audit.v1",
+        "schema_version": "limo4si.egoexo_task4_evidence_audit.v2",
         "capture_uid": str(capture.get("capture_uid") or ""),
         "capture_name": capture_name,
         "reasoning_owner": "deterministic_code",
