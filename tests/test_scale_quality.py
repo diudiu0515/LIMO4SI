@@ -123,6 +123,17 @@ class ScaleQualityTests(unittest.TestCase):
         self.assertEqual(report["status"], "ok")
         self.assertEqual(report["accepted_count"], 1)
 
+    def test_rejects_temporary_absolute_public_media_path(self):
+        group = metric_group()
+        group["video_clip"] = "/tmp/generated/case.mp4"
+        errors = validate_release({"groups": [group]})["cases"][0]["errors"]
+        self.assertIn("video_clip must be a site-relative URL", errors)
+
+    def test_accepts_site_relative_public_media_path(self):
+        group = metric_group()
+        group["video_clip"] = "./multihuman_media/case.mp4"
+        self.assertEqual(validate_release({"groups": [group]})["status"], "ok")
+
     def test_rejects_explicit_legacy_non_release_question(self):
         group = metric_group()
         group["qa"][0]["release_eligible"] = False

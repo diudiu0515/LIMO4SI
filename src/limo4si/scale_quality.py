@@ -1300,6 +1300,19 @@ def validate_release(data: Mapping[str, Any], policy: ScaleQualityPolicy | None 
         errors: list[str] = []
         warnings: list[str] = []
         metrics: dict[str, Any] = {}
+        for field in (
+            "video_clip", "localization_video", "metric_evidence_video",
+            "original_video", "original_image", "topdown_image",
+        ):
+            media_url = group.get(field)
+            if media_url and (
+                not isinstance(media_url, str)
+                or media_url.startswith("/")
+                or "://" in media_url
+                or ".." in media_url.split("/")
+                or "\\" in media_url
+            ):
+                errors.append(f"{field} must be a site-relative URL")
         if case_id in seen:
             errors.append("duplicate case/window name")
         seen.add(case_id)

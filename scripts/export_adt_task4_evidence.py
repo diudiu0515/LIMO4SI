@@ -34,7 +34,9 @@ def duration(path: Path) -> float:
     return float(value)
 
 
-def export(group: dict[str, Any], dataset_root: Path, output_dir: Path) -> dict[str, Any]:
+def export(
+    group: dict[str, Any], dataset_root: Path, output_dir: Path, media_url_prefix: str,
+) -> dict[str, Any]:
     window = group.get("video_window") or {}
     source = str(window.get("source") or "")
     match = re.search(r"(?:^|/)adt/([^/]+)/(?:video\.vrs|preview_rgb\.mp4)$", source)
@@ -60,7 +62,7 @@ def export(group: dict[str, Any], dataset_root: Path, output_dir: Path) -> dict[
     actual_duration = duration(output)
     if not 14.5 <= actual_duration <= 15.5:
         raise ValueError(f"{group.get('name')}: encoded duration {actual_duration} is outside policy")
-    group["video_clip"] = str(output)
+    group["video_clip"] = f"{media_url_prefix.rstrip('/')}/{output.name}"
     return {
         "case_id": group["name"], "sequence": sequence, "source": str(preview),
         "start_sec": start, "duration_sec": actual_duration, "output": str(output),
@@ -72,6 +74,7 @@ def main() -> None:
     parser.add_argument("--site-data", type=Path, required=True)
     parser.add_argument("--dataset-root", type=Path, default=Path("data/adt"))
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--media-url-prefix", default="./multihuman_media")
     parser.add_argument("--audit-output", type=Path, required=True)
     parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
@@ -86,7 +89,9 @@ def main() -> None:
         raise ValueError("release contains no selected ADT groups")
     with ThreadPoolExecutor(max_workers=args.workers) as executor:
         rows = list(executor.map(
-            lambda group: export(group, args.dataset_root, args.output_dir), groups,
+            lambda group: export(
+                group, args.dataset_root, args.output_dir, args.media_url_prefix,
+            ), groups,
         ))
     save_site(args.site_data, data)
     args.audit_output.parent.mkdir(parents=True, exist_ok=True)

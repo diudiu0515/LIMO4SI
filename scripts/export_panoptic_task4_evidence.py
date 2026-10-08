@@ -161,7 +161,9 @@ def write_ass(
     return {"frame_count": total_frames, "projection_coverage": coverage, "event_count": len(events)}
 
 
-def export_group(group: dict[str, Any], output_dir: Path) -> dict[str, Any]:
+def export_group(
+    group: dict[str, Any], output_dir: Path, media_url_prefix: str,
+) -> dict[str, Any]:
     overlay = group.get("video_identity_overlay") or {}
     source = Path(str((group.get("video_window") or {}).get("source") or ""))
     if not source.is_file():
@@ -187,7 +189,7 @@ def export_group(group: dict[str, Any], output_dir: Path) -> dict[str, Any]:
         "-vf", f"ass={ass_path}", "-an", "-c:v", "libx264",
         "-preset", "fast", "-crf", "20", "-movflags", "+faststart", str(output),
     ], check=True)
-    group["video_clip"] = str(output)
+    group["video_clip"] = f"{media_url_prefix.rstrip('/')}/{output.name}"
     group["video_identity_overlay"] = {
         **overlay, "status": "rendered_and_projection_audited", **overlay_audit,
     }
@@ -198,6 +200,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--site-data", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--media-url-prefix", default="./multihuman_media")
     parser.add_argument("--audit-output", type=Path, required=True)
     args = parser.parse_args()
     data = load_site(args.site_data)
@@ -207,7 +210,10 @@ def main() -> None:
     ]
     if not selected:
         raise ValueError("release contains no selected Panoptic groups")
-    rows = [export_group(group, args.output_dir) for group in selected]
+    rows = [
+        export_group(group, args.output_dir, args.media_url_prefix)
+        for group in selected
+    ]
     save_site(args.site_data, data)
     args.audit_output.parent.mkdir(parents=True, exist_ok=True)
     args.audit_output.write_text(json.dumps({
